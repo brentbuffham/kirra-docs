@@ -1,70 +1,97 @@
-# Kirra — Blast Design Software
+# Kirra — Help & User Guide
 
-Welcome to the official help documentation for **Kirra**, a professional blast design application developed by [Brent Buffham](https://blastingapps.com).
-
-Kirra provides mining engineers, blasting technicians, and drill-and-blast contractors with a powerful, intuitive environment for designing, analysing, and exporting blast patterns directly on desktop.
+Welcome to the official documentation for **Kirra**, a web-based blasting pattern design application developed by [Brent Buffham](https://blastingapps.com) for the mining, quarrying, and construction industries.
 
 ---
 
-## What You'll Find Here
-
-This documentation covers two products:
+## Products
 
 | Product | Description |
 |---------|-------------|
-| **Kirra Design** | The core blast design application — pattern layout, hole properties, charging, timing, import/export, and analysis |
-| **Kirra Scheduler** | A companion scheduling tool for managing and sequencing blast events *(remains publicly available)* |
+| **[Kirra Design](https://kirra-design.com)** | The core blast design application — 2D/3D pattern layout, hole management, surface tools, charging, timing, 20+ import/export formats, blast analytics, and flyrock modelling |
+| **[Kirra Scheduler](https://github.com/brentbuffham/KirraScheduler)** | A companion scheduling tool for planning and sequencing blast events with Gantt charts, equipment management, and 3D playback |
 
 ---
 
-## Quick Links
+## Kirra Design
 
 ### Getting Started
-- [Overview — What Kirra does and who it's for](getting-started/overview.md)
-- [Your First Blast — Step-by-step walkthrough](getting-started/first-blast.md)
-- [Interface Tour — Panels, toolbars, and controls](getting-started/interface-tour.md)
+- [Overview — What Kirra Does](getting-started/overview.md)
+- [Interface Tour — Menus, Toolbars, and Panels](getting-started/interface-tour.md)
+- [Your First Blast — Step-by-Step Walkthrough](getting-started/first-blast.md)
 
-### Blast Design
+### Blast Hole Design
 - [Adding Holes](blast-design/adding-holes.md)
-- [Pattern Generation](blast-design/pattern-generation.md)
 - [Editing Holes](blast-design/editing-holes.md)
+- [Pattern Generation](blast-design/pattern-generation.md)
 - [Timing Sequences](blast-design/timing-sequences.md)
+
+### Surfaces
+- [Importing Surfaces](surfaces/importing-surfaces.md)
+- [Surface Gradients](surfaces/gradients.md)
+- [Surface Boolean & CSG](surfaces/boolean-csg.md)
+- [Mesh Editing & Clean Mesh](surfaces/mesh-editing.md)
+- [Surface Contours](surfaces/contours.md)
 
 ### Importing Data
 - [CSV Formats](importing/csv-formats.md)
 - [DXF Import](importing/dxf.md)
-- [Surpac DTM / STR Surfaces](importing/surpac-dtm-str.md)
-- [Epiroc iRedes XML](importing/epiroc-iredes.md)
+- [Surpac DTM / STR](importing/surpac-dtm-str.md)
+- [OBJ / PLY / GLTF / GLB](importing/3d-mesh.md)
+- [Other Formats (IREDES, KML, LAS, Shapefile)](importing/other-formats.md)
 
 ### Exporting Data
-- [Kirra CSV](exporting/kirra-csv.md)
+- [CSV Export](exporting/csv-export.md)
 - [DXF Export](exporting/dxf-export.md)
-- [Epiroc XML](exporting/epiroc-xml.md)
-- [MineStar AQM](exporting/minestar-aqm.md)
-- [PDF / Print](exporting/pdf-print.md)
+- [GLTF / GLB Export](exporting/gltf-export.md)
+- [GeoTIFF Export](exporting/geotiff-export.md)
+- [Other Formats (IREDES, AQM, KML)](exporting/other-formats.md)
+
+### Printing
+- [Print to PDF](printing/pdf-print.md)
+- [Print from Template (XLSX)](printing/xlsx-templates.md)
 
 ### Charging
 - [Charging Overview](charging/overview.md)
 - [Deck Builder](charging/deck-builder.md)
-- [Charge Rules](charging/charge-rules.md)
-- [Products CSV](charging/products-csv.md)
+- [Products CSV Reference](charging/products-csv.md)
 
-### Analysis
-- [Blast Statistics](analysis/blast-statistics.md)
-- [Voronoi Analysis](analysis/voronoi.md)
-- [PPV Analytics](analysis/ppv-analytics.md)
+### Blast Analytics
+- [Analytics Overview](analysis/overview.md)
+- [PPV & Vibration Models](analysis/ppv-models.md)
+- [Flyrock Modelling](analysis/flyrock.md)
+- [Blast Statistics & Voronoi](analysis/statistics-voronoi.md)
+
+### KAD Drawing Tools
+- [Drawing Points, Lines, and Polygons](kad/drawing-tools.md)
+- [Extrude, Boolean, and Section Plane](kad/advanced-tools.md)
 
 ### Reference
 - [Hole Properties](reference/hole-properties.md)
 - [Coordinate System](reference/coordinate-system.md)
-- [Keyboard Shortcuts](reference/keyboard-shortcuts.md)
+- [Keyboard Shortcuts & Mouse Controls](reference/keyboard-shortcuts.md)
 - [FAQ](reference/faq.md)
 
 ---
 
-## About
-- [About Kirra & Brent Buffham](about.md)
+## Kirra Scheduler
+
+- [Quick Start](scheduler/quick-start.md)
+- [Gantt Chart](scheduler/gantt-chart.md)
+- [Equipment Management](scheduler/equipment.md)
+- [Drill Blocks](scheduler/drill-blocks.md)
+- [Dependencies](scheduler/dependencies.md)
+- [Pattern Preparation](scheduler/pattern-preparation.md)
+- [3D Playback](scheduler/3d-playback.md)
+- [Import & Export](scheduler/import-export.md)
+- [Theming](scheduler/theming.md)
 
 ---
 
-> **Licence Notice:** Kirra Design is moving to a private repository under the Kirra Licence. Kirra Scheduler remains publicly available. See [About](about.md) for details.
+## About
+
+- [About Kirra & Licensing](about.md)
+
+---
+
+> **Kirra Licence v1.0** — Kirra Design is free for mining, quarrying, construction, and research use. Commercial software integration requires written permission from Brent Buffham. See [About](about.md) for details.

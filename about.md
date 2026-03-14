@@ -1,10 +1,10 @@
 # About Kirra
 
-## Kirra Blast Design Software
+## What is Kirra?
 
-Kirra is a professional blast design application created and maintained by **Brent Buffham**, a practising drill-and-blast engineer based in Australia.
+**Kirra** is a web-based blasting pattern design application built for the mining, quarrying, and construction industries. It runs in your browser — no installation required — and provides a complete workflow from importing drill data through to exporting production-ready blast packages.
 
-The software is developed to address the real-world needs of blast engineers and contractors working in open-cut mining — providing a fast, practical tool that fits into production workflows without the overhead of larger mine planning suites.
+Kirra combines a 2D canvas editor with a Three.js-powered 3D visualisation engine, supporting 20+ industry file formats, GPU-accelerated blast analytics, surface management with boolean operations, and comprehensive charge design tools.
 
 ---
 
@@ -12,9 +12,10 @@ The software is developed to address the real-world needs of blast engineers and
 
 **Brent Buffham**
 Blast Engineer & Software Developer
-[blastingapps.com](https://blastingapps.com)
+- [blastingapps.com](https://blastingapps.com)
+- [kirra-design.com](https://kirra-design.com)
 
-Brent has worked across surface mining operations and brings field experience in drill-and-blast design, initiation systems, and vibration management to the development of Kirra.
+Brent has worked across surface mining operations in Australia and brings field experience in drill-and-blast design, initiation systems, and vibration management to the development of Kirra.
 
 ---
 
@@ -22,46 +23,61 @@ Brent has worked across surface mining operations and brings field experience in
 
 ### Kirra Design
 
-Kirra Design is the core blast design application — covering pattern layout, hole management, charging, timing, import/export, and analysis. It is moving to a **private repository** under the Kirra Licence.
+The core blast design application, covering:
 
-For download, licensing, and support enquiries, visit [blastingapps.com](https://blastingapps.com).
+- **2D/3D pattern design** with combined canvas and Three.js rendering
+- **20+ import/export formats** including CSV, DXF, Surpac DTM/STR, GLTF/GLB, IREDES XML, KML, Shapefile, LAS, and more
+- **Surface management** with gradient colouring, boolean operations, mesh editing, contour generation, and textured OBJ support
+- **Charging system** with typed decks, formula-driven positioning, and mass-based calculations
+- **Blast analytics** with 10 GPU/CPU shader models (PPV, Heelan, Blair Heavy, Damage, Pressure, Powder Factor, and more)
+- **Flyrock modelling** with Richards & Moore, Lundborg, and McKenzie algorithms and 3D shroud visualisation
+- **Print system** with vector PDF, raster PDF, and custom XLSX templates
+- **Dockview panels** for resizable, dockable workspace layout
+- **Internationalisation** with English, Russian, and Spanish language support
+- **Dark/Light themes** with customisable colour schemes
+
+For access, visit [kirra-design.com](https://kirra-design.com).
 
 ### Kirra Scheduler
 
-Kirra Scheduler is a companion tool for managing and sequencing blast events across a project or mine site. It remains **publicly available** on GitHub:
+A companion tool for planning and sequencing blast events across a mine site or project, featuring:
 
-[github.com/brentbuffham/kirrascheduler](https://github.com/brentbuffham/kirrascheduler)
+- **Gantt chart scheduling** across four phases (Pattern Preparation, Drilling, Loading, Blasting)
+- **Equipment management** for drill rigs, MPUs, ancillary fleet, and personnel
+- **Dependency engine** linking phases with configurable lead times and drill percentage thresholds
+- **3D playback** of the scheduled blast sequence
+- **Import/Export** of Kirra projects (KAP/KGP), DXF, and CSV
+
+Kirra Scheduler is publicly available: [github.com/brentbuffham/KirraScheduler](https://github.com/brentbuffham/KirraScheduler)
 
 ---
 
 ## Licence
 
-### Kirra Design — Kirra Licence
+### Kirra Design — Kirra Licence v1.0
 
-Kirra Design is distributed under the **Kirra Licence**. Key terms:
+Kirra Design is distributed under the **Kirra Licence v1.0** (2026). Key terms:
 
-- The software may be used for commercial and non-commercial blast design purposes
-- Redistribution of the source code or application binaries is not permitted without written authorisation from Brent Buffham
-- The software is provided as-is; no warranty is given for fitness for any particular purpose
-- Users are responsible for ensuring blast designs are reviewed and approved by a competent person in accordance with local regulations
+**Free for:**
+- Individual blast engineers, shot firers, surveyors, geologists, and other professionals using Kirra for their own work
+- Mining, quarrying, civil construction, and demolition companies using Kirra internally for blasting operations (including contractors and consultants)
+- Researchers and academic institutions using Kirra for non-commercial research, education, or publication
 
-Full licence terms are provided with the application at installation and are available at [blastingapps.com](https://blastingapps.com).
+**Requires written permission:**
+- Incorporating Kirra into any commercial software product or service
+- Redistributing the source code as part of another software package
+- Hosting Kirra as a paid or subscription-based service (SaaS)
 
-### Kirra Scheduler — Public Licence
+**You must always:**
+- Keep the licence and copyright notice intact
+- Credit Brent Buffham and blastingapps.com / kirra-design.com
+- Not misrepresent the origin of the software
 
-Kirra Scheduler is released under its own public licence. See the [Kirra Scheduler repository](https://github.com/brentbuffham/kirrascheduler) for details.
+Full licence text is included with the application. For commercial licensing enquiries, contact [blastingapps.com](https://blastingapps.com).
 
----
+### Kirra Scheduler
 
-## Documentation
-
-This documentation repository covers both Kirra Design and Kirra Scheduler user guides:
-
-- **Kirra Design** — user-facing guide for blast design, charging, timing, import, export, and analysis
-- **Kirra Scheduler** — user guide for blast event scheduling
-
-Documentation is maintained at:
-[github.com/brentbuffham/kirra-docs](https://github.com/brentbuffham/kirra-docs)
+Kirra Scheduler is released under its own public licence. See the [Kirra Scheduler repository](https://github.com/brentbuffham/KirraScheduler) for details.
 
 ---
 
@@ -69,6 +85,8 @@ Documentation is maintained at:
 
 Blast design software is a **decision support tool**. All blast designs produced with Kirra must be reviewed and approved by a qualified and licenced shotfirer or blast engineer in accordance with the applicable regulations, standards, and site-specific safety management plans. The developer accepts no liability for outcomes resulting from blast designs produced using this software.
 
+Blasting is inherently dangerous — always apply professional judgement and comply with all applicable regulations and standards.
+
 ---
 
-*© Brent Buffham / blastingapps.com. All rights reserved.*
+*Copyright 2021-2026 Brent Buffham | [blastingapps.com](https://blastingapps.com) | [kirra-design.com](https://kirra-design.com)*

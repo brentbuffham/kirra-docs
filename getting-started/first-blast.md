@@ -1,112 +1,121 @@
 # Your First Blast — Step-by-Step Walkthrough
 
-This guide walks you through creating a complete blast design from scratch — from opening Kirra for the first time to exporting a production-ready file.
+This guide walks you through creating a blast design from scratch — from opening Kirra to exporting a production-ready file.
 
 ---
 
 ## Before You Start
 
-Make sure you have:
-- Kirra installed and licensed (see [Overview](overview.md))
+- A modern browser (Chrome recommended)
 - Hole survey data (CSV, DXF, or other supported format) **or** bench coordinates to generate a pattern manually
 
 ---
 
 ## Step 1 — Open Kirra
 
-Launch Kirra from the Start Menu or desktop shortcut. You'll be greeted by the main workspace:
+1. Open Kirra in your browser by navigating to the application URL.
+2. The **Welcome popup** appears with version info, a quick guide, and licence details.
+3. Dismiss the popup to start.
 
-- **Left panel** — toolbox and pattern generation controls
-- **Central canvas** — the blast design viewport
-- **Right panel** — hole properties and selection details
-- **Bottom bar** — coordinates, status, and zoom level
-
-See [Interface Tour](interface-tour.md) for a full description of every panel.
+![Welcome screen](../screenshots/welcome.png)
+*The Welcome popup on startup.*
 
 ---
 
-## Step 2 — Set Up Your Coordinate System
+## Step 2 — Import Your Data
 
-Before placing any holes, set the coordinate reference for your project:
+1. Go to **File → Import**.
+2. Choose your format: CSV, DXF, DTM/STR, OBJ, PLY, GLTF/GLB, IREDES, KML, SHP, or LAS.
+3. Select your file and complete any import mapping if prompted.
+4. The canvas **auto-centres** on your imported data.
 
-1. Go to **Project → Settings → Coordinate System**
-2. Enter the easting/northing origin (if working in local mine grid, leave at `0, 0`)
-3. Confirm the Z datum (metres above sea level or bench elevation)
-4. Click **Apply**
+![Data loaded notice](../screenshots/loadednotice.png)
+*Kirra confirms when data has been loaded successfully.*
+
+![Continue dialog](../screenshots/continue.png)
+*If prompted, click Continue to proceed.*
+
+> **Tip:** See the [Importing](../importing/csv-formats.md) section for format-specific guidance.
 
 ---
 
-## Step 3 — Import or Generate Your Pattern
+## Step 3 — Toggle Between 2D and 3D
 
-### Option A — Import Existing Drill Data
-1. Click **File → Import** (or press `Ctrl+I`)
-2. Select the file type: CSV, DXF, Surpac STR, or Epiroc iRedes
-3. Browse to your file and click **Open**
-4. Map columns to Kirra fields in the import wizard
-5. Click **Finish** — holes appear on the canvas
+- Use the view toggle to switch between **2D** (plan view) and **3D** (elevation view).
+- 2D is ideal for pattern layout; 3D shows terrain and hole depths.
 
-See the [Importing](../importing/csv-formats.md) section for format-specific guidance.
+---
 
-### Option B — Generate a New Pattern
-1. Select **Pattern → Generate** from the toolbar or menu
-2. Choose a pattern type: **Rectangular**, **Staggered**, **Polygon**, or **Along Line**
-3. Enter your burden, spacing, and hole count (or draw a boundary)
-4. Click **Generate** — holes are placed on the canvas
+## Step 4 — Select Holes
+
+- **Click** a hole to select it.
+- **Shift+click** to add or remove holes from the selection (multi-select).
+- Selected holes highlight on the canvas.
+
+---
+
+## Step 5 — View Hole Properties
+
+- **Right-click** a hole to open the context menu.
+- Choose **Properties** (or equivalent) to view and edit collar, toe, diameter, bearing, inclination, subdrill, timing, and charge info.
+
+---
+
+## Step 6 — Generate a Pattern (Optional)
+
+If you are building a pattern from scratch:
+
+1. Go to **Pattern → Add Pattern**.
+2. Choose **Rectangular**, **Polygon**, or **Line-based**.
+3. Enter burden, spacing, and hole count (or draw a boundary).
+4. Click **Generate** — holes appear on the canvas.
 
 See [Pattern Generation](../blast-design/pattern-generation.md) for full details.
 
 ---
 
-## Step 4 — Review and Edit Hole Properties
+## Step 7 — Assign Timing
 
-1. Click any hole on the canvas to select it (it highlights in the selection colour)
-2. The **right panel** shows all properties: depth, diameter, bearing, inclination, subdrill, etc.
-3. Edit values directly in the panel or double-click the hole to open the **Hole Editor**
-4. To edit multiple holes, drag a selection box or use `Ctrl+Click`, then edit from the panel (bulk-edit applies to all selected holes)
+1. Open the **Connect** toolbar (floating toolbar on the right).
+2. Use the Connect tool to set delay sequences between holes.
+3. Assign inter-hole and inter-row delays as required.
 
-See [Editing Holes](../blast-design/editing-holes.md) for selection and bulk-edit options.
-
----
-
-## Step 5 — Assign Timing
-
-1. Open the **Timing** panel (menu: **View → Timing Panel** or shortcut `T`)
-2. Select an initiation sequence method: **Manual**, **Along Row**, or **Echelon**
-3. Enter your inter-hole and inter-row delay values (milliseconds)
-4. Click **Apply Timing** — each hole receives a calculated firing time
-5. Use the **Timing Diagram** view to visually verify the sequence
-
-See [Timing Sequences](../blast-design/timing-sequences.md) for advanced tie-in and connector options.
+See [Timing Sequences](../blast-design/timing-sequences.md) for advanced options.
 
 ---
 
-## Step 6 — Build Your Charge Deck (Optional)
+## Step 8 — Add Charging (Optional)
 
-1. Open the **Charging** panel (menu: **View → Charging Panel** or shortcut `C`)
-2. Select one or more holes
-3. Click **Apply Charge Template** and choose a pre-built deck template, or build manually using the Deck Builder
-4. Review the explosive mass, stemming length, and VOD per hole
+1. Open the **Charging** panel.
+2. Select one or more holes.
+3. Build deck configurations: stemming, boosters, explosive products.
+4. Apply to selected holes.
 
-See [Charging Overview](../charging/overview.md) for the full charging workflow.
-
----
-
-## Step 7 — Run Analysis (Optional)
-
-- **Statistics** — open **Analysis → Blast Statistics** to see total holes, metres, explosive mass, and timing spread
-- **Voronoi** — open **Analysis → Voronoi** to visualise rock volume per hole
-- **PPV** — open **Analysis → PPV Analytics** to shade the pattern by predicted peak particle velocity
+See [Charging Overview](../charging/overview.md) for the full workflow.
 
 ---
 
-## Step 8 — Export Your Blast
+## Step 9 — Run Analysis (Optional)
 
-1. Click **File → Export** (or press `Ctrl+E`)
-2. Select the export format: Kirra CSV, DXF, Epiroc XML, MineStar AQM, or PDF
-3. Configure any format-specific options in the export dialog
-4. Choose a save location and click **Export**
+1. Open the **Surface** toolbar.
+2. Click **Blast Analysis Shader** for vibration modelling.
+3. View predicted PPV, Voronoi rock distribution, and blast statistics.
 
-See the [Exporting](../exporting/kirra-csv.md) section for format-specific guidance.
+---
+
+## Step 10 — Export
+
+1. Go to **File → Export**.
+2. Choose your format: CSV, DXF, GLB, GeoTIFF, IREDES, etc.
+3. Configure any format-specific options.
+4. Save the file to your chosen location.
+
+---
+
+## Step 11 — Print
+
+- **File → Print to PDF** — Print the current view directly to PDF.
+- **File → Print from Template** — Use an XLSX template for formatted reports.
 
 ---
 
@@ -114,15 +123,24 @@ See the [Exporting](../exporting/kirra-csv.md) section for format-specific guida
 
 | Step | Action |
 |------|--------|
-| 1 | Open Kirra |
-| 2 | Set coordinate system |
-| 3 | Import drill data or generate a pattern |
-| 4 | Review and edit hole properties |
-| 5 | Assign timing sequences |
-| 6 | Build charge decks *(optional)* |
-| 7 | Run analysis *(optional)* |
-| 8 | Export the blast package |
+| 1 | Open Kirra in your browser |
+| 2 | Import data (File → Import) |
+| 3 | Toggle 2D/3D views |
+| 4 | Select holes (click, Shift+click) |
+| 5 | View properties (right-click) |
+| 6 | Generate pattern (Pattern → Add Pattern) |
+| 7 | Assign timing (Connect tool) |
+| 8 | Add charging *(optional)* |
+| 9 | Run analysis *(optional)* |
+| 10 | Export (File → Export) |
+| 11 | Print (File → Print to PDF or Print from Template) |
 
 ---
 
-*Next: [Interface Tour →](interface-tour.md)*
+## Screenshots
+
+*More step-by-step screenshots coming soon.*
+
+---
+
+*[← Overview](overview.md) | [Interface Tour](interface-tour.md)*

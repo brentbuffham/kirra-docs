@@ -1,94 +1,61 @@
 # Coordinate System
 
-This page explains how Kirra handles spatial coordinates, and the conventions used for bearings, inclinations, and elevations.
+This page explains how Kirra handles spatial coordinates, bearings, inclinations, and elevations.
 
 ---
 
 ## Coordinate Axes
 
-Kirra uses a standard **right-hand Cartesian** coordinate system:
+Kirra uses UTM-style real-world coordinates:
 
 | Axis | Direction |
 |------|-----------|
-| **X (Easting)** | Positive to the East |
-| **Y (Northing)** | Positive to the North |
-| **Z (Elevation)** | Positive upward |
-
-All hole locations are stored and displayed as Easting, Northing, Elevation (E, N, Z) in metres.
-
----
-
-## Coordinate Reference System (CRS)
-
-Kirra does not perform coordinate transformation internally. You must ensure that all data (holes, surfaces, DXF files) are in a consistent coordinate system before loading them into the same project.
-
-### Setting the Project CRS
-
-1. Go to **Project → Settings → Coordinate System**
-2. Enter a description (e.g., `MGA2020 Zone 54`, `Mine Local Grid`, `UTM Zone 50S`)
-3. Optionally set the **False Easting** and **False Northing** offset if working in a local mine grid offset from a geodetic origin
-4. Click **Save**
-
-The CRS description is embedded in export files (e.g., Epiroc XML, MineStar AQM) where the format supports it.
-
----
-
-## Bearing Convention
-
-Kirra uses **azimuth** for drill bearing, measured **clockwise from North**:
-
-| Bearing (degrees) | Direction |
-|-------------------|-----------|
-| 0° | North |
-| 90° | East |
-| 180° | South |
-| 270° | West |
-| 360° | North (same as 0°) |
-
-This matches the standard surveying convention used across the mining industry.
-
-> **Dip vs. Bearing (Surpac convention):** Surpac STR files may use a different convention (dip direction). Check your source data and convert if necessary.
-
----
-
-## Inclination Convention
-
-Kirra measures inclination as the **angle from vertical**:
-
-| Inclination (degrees) | Drill Direction |
-|-----------------------|-----------------|
-| 0° | Straight down (vertical) |
-| 15° | Slightly inclined |
-| 25° | Typical production blast angle |
-| 90° | Horizontal |
-
-> **DIP convention:** Some software (e.g., Surpac, Datamine) records inclination as **dip from horizontal**, where 90° = vertical. If importing from such a source, subtract from 90° to convert: `Kirra inclination = 90° − source dip`.
-
----
-
-## Elevation and Datum
-
-- All elevations in Kirra are in **metres above datum** (AHD for Australian projects, or the site datum)
-- Collar elevation is the survey elevation at the hole collar
-- Toe elevation is calculated downward from the collar using depth, bearing, and inclination
-
-### Bench Elevation
-For bench blasting, the collar elevation typically equals the bench crest elevation, and the toe elevation is approximately the bench floor elevation minus subdrill.
-
----
-
-## Local Mine Grid vs. Geodetic Coordinates
-
-Many mine sites use a **local mine grid** — a rotated, translated, or scaled coordinate system specific to the site. Kirra works with whatever coordinates you provide. Ensure that:
-
-1. All imported files (CSV, DXF, DTM) use the same grid
-2. Export files intended for external systems (GPS, fleet management) are transformed to the required coordinate system before or after export using your mine survey tools
+| **X** | East-West (meters east) |
+| **Y** | North-South (meters north) |
+| **Z** | Elevation (meters altitude) |
 
 ---
 
 ## Canvas Display
 
-The Kirra canvas displays Easting on the horizontal axis and Northing on the vertical axis. North is always up. The bottom-left corner of the canvas shows the current cursor position in E/N/Z as you move the mouse.
+The Kirra canvas uses:
+
+- **Y-up** is North (+ve)
+- **Y-down** is South (-ve)
+- **West** is X (-ve)
+- **East** is X (+ve)
+
+Data values can be very large (e.g., UTM coordinates). Kirra translates coordinates based on the data centroid for display.
+
+---
+
+## Bearing Convention
+
+Bearing is measured **clockwise from North**:
+
+| Bearing | Direction |
+|---------|-----------|
+| 0° | North |
+| 90° | East |
+| 180° | South |
+| 270° | West |
+
+---
+
+## Hole Angle vs. Dip (Mast Angle)
+
+| Convention | Vertical | Horizontal |
+|------------|----------|------------|
+| **Hole Angle** | 0° = vertical (straight down) | 90° = horizontal |
+| **Dip (Mast Angle)** | 90° = vertical | 0° = horizontal |
+
+> **Note:** Other systems use different conventions. For example, Surpac uses -90 for vertical down. Always verify your source data when importing.
+
+---
+
+## 3D Rendering
+
+The Three.js 3D view uses a **local origin** offset from the data centroid. This avoids floating-point precision issues when working with large UTM values. Z elevations are never transformed or scaled.
 
 ---
 

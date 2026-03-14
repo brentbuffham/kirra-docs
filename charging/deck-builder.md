@@ -1,118 +1,257 @@
 # Deck Builder
 
-The Deck Builder is the visual tool in Kirra for designing individual charge columns. Use it to stack explosive layers, boosters, and stemming into a complete charge deck design, either for a single hole or as a reusable template.
+The Deck Builder is Kirra's visual tool for designing charge columns. It provides a drag-and-drop interface for stacking explosive decks, stemming layers, spacers, and primers into a complete charge design. You can apply the design to individual holes or save it as a reusable rule.
 
 ---
 
 ## Opening the Deck Builder
 
-In the **Charging Panel**, either:
-- Select a hole and click **Edit Charge**, or
-- Click **New Template** to create a reusable design without applying it to a specific hole
+There are several ways to open the Deck Builder:
+
+- In the **Charging tab**, click **Deck Builder**
+- Select a hole, then right-click and choose **Edit Charge**
+- Go to **Charging tab > New Rule** to create a reusable design
+
+> *Screenshot coming soon*
 
 ---
 
-## Deck Builder Interface
+## Deck Builder Layout
 
-The Deck Builder shows a vertical schematic of the hole:
+The Deck Builder dialog has three main panels:
+
+| Panel | Description |
+|-------|-------------|
+| **Product Palette** (left) | Displays all loaded products. Drag a product onto the Section View to add a deck. |
+| **Section View** (centre) | Interactive 2D cross-section of the hole showing all decks from collar to toe. Click to select a deck; drag deck boundaries to resize. |
+| **Formula Builder** (right) | Drag-and-drop formula construction for setting deck lengths and primer positions. |
+
+---
+
+## Adding Decks
+
+### By Dragging from the Product Palette
+
+1. Locate the product you want in the Product Palette (left panel)
+2. Drag it onto the Section View at the desired position
+3. The deck appears in the hole cross-section with a default length
+4. Adjust the length as needed (see below)
+
+### By Type
+
+1. Click **Add Deck** and choose the deck type: Inert, Coupled, Decoupled, or Spacer
+2. Select a product from the dropdown
+3. Enter the deck length or formula
+4. The deck is added to the charge column
+
+---
+
+## Configuring Deck Properties
+
+Select any deck in the Section View to edit its properties:
+
+| Property | Description |
+|----------|-------------|
+| **Product** | The explosive or stemming product (from your products database) |
+| **Length** | Deck length in metres, or a formula, or a mass value |
+| **Scaling Mode** | How the deck adapts when applied to different hole lengths |
+| **Swap Conditions** | Optional product substitution rules for wet, damp, or reactive holes |
+
+### Setting Deck Length
+
+You can set the length of a deck in four ways:
+
+| Method | How to Enter | Example |
+|--------|-------------|---------|
+| **Fixed length** | Type a number in metres | `3.5` |
+| **Formula** | Type a formula starting with `fx:` | `fx:holeLength - 3.5` |
+| **Mass** | Type `m:` followed by kilograms | `m:50` (50 kg) |
+| **Drag** | Drag the deck boundary in the Section View | Visual resize |
+
+> **Note:** Dragging a deck boundary in the Section View overrides any formula on that deck. Use formulas for designs that need to adapt to different hole sizes.
+
+### Scaling Modes
+
+Each deck has a scaling mode that controls how it behaves when applied to holes of different lengths:
+
+| Mode | Badge | Behaviour |
+|------|-------|-----------|
+| **Proportional** | (none) | Deck length scales proportionally with hole length (default) |
+| **Fixed Length** | **F** (blue) | Deck keeps its exact length regardless of hole depth |
+| **Fixed Mass** | **M** (orange) | Deck recalculates length to maintain the same explosive mass at different diameters |
+| **Variable** | **VR** (green) | Formula is re-evaluated for each hole (set automatically for formula-based decks) |
+
+---
+
+## Using the Formula Builder
+
+The Formula Builder panel provides a drag-and-drop interface for creating deck length and primer depth formulas.
+
+### Variable Chips
+
+Drag or click these variable chips to insert them into the formula bar:
+
+| Variable | Description |
+|----------|-------------|
+| `holeLength` | Total hole length from collar to toe (metres) |
+| `holeDiameter` | Hole diameter (millimetres) |
+| `benchHeight` | Vertical distance from collar to grade (metres) |
+| `subdrillLength` | Distance from grade to toe along the hole (metres) |
+| `chargeBase` | Depth to the base of the deepest charge deck (metres) |
+| `chargeTop` | Depth to the top of the deepest charge deck (metres) |
+| `chargeLength` | Length of the deepest charge deck (metres) |
+| `stemLength` | Depth to the top of the first charge deck (metres) |
+| `deckBase[N]` | Base depth of any deck at position N (works for all deck types) |
+| `deckTop[N]` | Top depth of any deck at position N |
+| `deckLength[N]` | Length of any deck at position N |
+
+### Operator Chips
+
+Drag or click operator chips: `+`, `-`, `*`, `/`, `(`, `)`, `?`, `:`, `&&`, `||`, and comparison operators.
+
+### Building a Formula
+
+1. Click on a deck to select it, then click **Edit** on the length field
+2. In the Formula Builder, drag variable and operator chips into the formula bar (or type directly)
+3. The formula bar shows a **live preview** of the calculated value
+4. Click **Apply to Field** to set the formula on the selected deck
+
+### Example: Stemming that is 30% of hole length
+
+1. Drag `holeLength` into the formula bar
+2. Drag `*` operator
+3. Type `0.3`
+4. The formula bar shows: `fx:holeLength * 0.3` with a preview like `= 3.60 m`
+5. Click **Apply to Field**
+
+---
+
+## Adding Primers
+
+Primers are detonator assemblies positioned at specific depths within the charge column.
+
+### How to Add a Primer
+
+1. Click **Add Primer** in the Deck Builder
+2. Set the primer depth using a fixed value (in metres) or a formula
+3. Select the **Detonator** product
+4. Select the **Booster** product (or choose "None" for detonating cord)
+
+### Primer Depth Formulas
+
+Primer depth formulas work the same as deck length formulas. Common patterns:
+
+| Formula | What It Does |
+|---------|-------------|
+| `fx:chargeBase - 0.3` | Places the primer 0.3 m above the base of the deepest charge deck |
+| `fx:deckBase[4] - 0.3` | Places the primer 0.3 m above the deck at position 4 (any deck type) |
+| `fx:holeLength * 0.95` | Places the primer at 95% of hole depth |
+
+### Multiple Primers
+
+For multi-deck configurations, you can add multiple primers targeting different decks. Each primer has its own depth formula:
+
+- Primer 1: `fx:deckBase[8] - 0.3` (targets the bottom charge deck)
+- Primer 2: `fx:deckBase[4] - 0.3` (targets the upper charge deck)
+
+---
+
+## Swap Conditions (Product Substitution)
+
+Each deck can carry swap rules that automatically substitute the product when certain hole conditions are met.
+
+### Setting Swap Conditions
+
+1. Select a deck in the Section View
+2. In the deck properties panel, find the **Swap Conditions** field
+3. Enter rules using condition codes:
+
+| Code | Condition | Example |
+|------|-----------|---------|
+| `w` | Wet hole | Swap ANFO to water-resistant ANFO |
+| `d` | Damp hole | Swap ANFO to emulsion |
+| `r` | Reactive ground | Swap to a reactive-ground-safe product |
+| `t` | Temperature threshold | Swap if borehole temperature exceeds a limit |
+
+### How Swap Conditions Work
+
+When a charge rule is applied to a hole:
+
+1. Kirra checks the hole's condition flags (wet, damp, reactive, temperature)
+2. If a condition matches a swap rule on a deck, the product is substituted
+3. The original product name is recorded for reference
+4. Per-hole overrides take priority over deck-level rules
+
+---
+
+## Deck Order
+
+Decks are ordered from collar (top) to toe (bottom) using a position number. The Section View displays this visually:
 
 ```
-┌──────────────────────┐  ← Collar (top)
-│  ████ Stemming ████  │  ← Stemming zone
-│  ████   200 mm  ████ │
-├──────────────────────┤
-│  ░░░░ ANFO  ░░░░░░░  │  ← Deck 1: bulk explosive
-│  ░░░░ 4.5 m  ░░░░░░  │
-│  ░░░░ 52.4 kg ░░░░░  │
-├──────────────────────┤
-│  ▲▲▲▲ Booster ▲▲▲▲  │  ← Booster at toe
-└──────────────────────┘  ← Toe (bottom)
+Collar (0 m)
+  +-------------------+
+  |  Position 1       |  Stemming (Inert, Fixed Length)
+  +-------------------+
+  |  Position 2       |  ANFO (Coupled, Formula)
+  +-------------------+
+  |  Position 3       |  Gas Bag (Spacer)
+  +-------------------+
+  |  Position 4       |  ANFO (Coupled, Fixed Length)
+  +-------------------+
+  |  Position 5       |  Stemming (Inert, Formula)
+  +-------------------+
+Toe (hole length)
 ```
 
-Each segment is colour-coded by product type.
+Position numbers do not need to be sequential — gaps are allowed. The engine sorts all decks by position number to determine the collar-to-toe order.
 
 ---
 
-## Adding a Stemming Layer
+## Saving as a Rule
 
-1. Click **Add Layer → Stemming**
-2. Enter the stemming length (m)
-3. Stemming is always placed at the top of the column (collar end)
-4. Kirra validates that stemming plus charge length does not exceed hole depth
+1. After designing your charge column, click **Save as Rule**
+2. Enter a rule name and description
+3. Set the scaling mode for each deck (Proportional, Fixed Length, Fixed Mass)
+4. Review and edit primer depth formulas if needed (indexed formulas are auto-generated based on deck positions)
+5. Click **Save** — the rule appears in the charge configuration list
 
----
-
-## Adding a Charge Deck
-
-1. Click **Add Layer → Explosive Deck**
-2. Select the **Product** from your product database (populated from your [Products CSV](products-csv.md))
-3. Enter the **Deck Length** (m)
-4. Kirra automatically calculates the mass based on hole diameter, length, and product density
-5. Repeat to add multiple decks (multi-deck designs)
-
-### Air Deck
-1. Click **Add Layer → Air Deck**
-2. Enter the air deck length (m)
-3. Air decks appear as an empty (white) section in the column schematic
+Saved rules can be applied to any selection of holes and are included when you export charge configurations.
 
 ---
 
-## Adding a Booster / Primer
+## Applying a Charge Design to Holes
 
-1. Click **Add Layer → Booster**
-2. Select the booster product
-3. Set placement: **Toe**, **Base of Deck**, or **Top of Deck**
-4. Kirra adds the booster mass to the deck total
+### To the Current Hole
 
----
+Click **Apply** in the Deck Builder to save the charge design to the currently selected hole.
 
-## Editing Layers
+### To Multiple Holes
 
-- **Drag** layers up or down the column to reorder them
-- **Double-click** a layer to edit its product or length
-- **Right-click → Delete** to remove a layer
-
----
-
-## Layer Coupling Factor
-
-Each explosive deck has an optional **coupling factor** (0–1) to account for air-coupled or cartridged explosive:
-
-- `1.0` — fully coupled (bulk explosive filling the borehole)
-- `< 1.0` — partially coupled (cartridge or airgap; reduces effective mass)
-
-Set the coupling factor in the **deck properties** panel on the right side of the Deck Builder.
+1. Close the Deck Builder
+2. Select the holes you want to charge
+3. In the Charging tab, choose the saved rule from the dropdown
+4. Click **Apply to Selected**
+5. Kirra evaluates all formulas for each hole and generates the charge columns
 
 ---
 
-## Saving as a Template
+## Previewing the Charge Column
 
-Click **Save as Template** at the top of the Deck Builder to save the current design as a named charge template. Templates are stored with the project and can be applied to other holes via the Charging Panel or [Charge Rules](charge-rules.md).
+The Section View in the Deck Builder shows a live preview of the charge design, including:
 
----
+- Colour-coded deck types
+- Deck lengths and masses
+- Product names
+- Scaling mode badges (F, M, VR)
+- Primer positions with depth labels
 
-## Applying to the Current Hole
-
-Click **Apply** to save the charge design to the currently selected hole. The Charging Panel updates immediately with the new mass and deck count.
-
----
-
-## Summary Table
-
-The Deck Builder displays a summary at the bottom:
-
-| Field | Value |
-|-------|-------|
-| Total charge length (m) | Sum of all explosive + booster deck lengths |
-| Total stemming (m) | Sum of all stemming layers |
-| Total hole use (m) | Charge + stemming; must equal hole depth |
-| Total explosive mass (kg) | Sum of all deck masses |
-| Charge factor (kg/t) | Calculated from rock density and Voronoi volume (if available) |
+As you change formulas or drag deck boundaries, the preview updates in real time.
 
 ---
 
 ## Related Topics
 
-- [Charging Overview](overview.md)
-- [Charge Rules](charge-rules.md)
-- [Products CSV](products-csv.md)
+- [Charging Overview](overview.md) — introduction to the charging system
+- [Products CSV Reference](products-csv.md) — CSV format and formula reference
+- [Charge Rules](charge-rules.md) — automatic charge assignment

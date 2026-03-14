@@ -1,89 +1,63 @@
 # DXF Import
 
-Kirra can import AutoCAD DXF files to bring in hole locations, bench boundaries, surface contours, and design geometry. Both 2D and 3D DXF files are supported.
+Kirra imports AutoCAD DXF files (both ASCII and binary formats) and converts them into blast holes and KAD drawing entities.
+
+> *Screenshot coming soon*
 
 ---
 
-## Accessing the DXF Import
+## How to Import
 
-1. Click **File → Import** or press `Ctrl+I`
-2. Select **DXF** as the file type
-3. Browse to your `.dxf` file and click **Open**
-4. The **DXF Import** dialog opens — see below for layer options
-
----
-
-## DXF Import Dialog
-
-The dialog shows a list of all layers found in the DXF file. For each layer you can:
-
-| Control | Description |
-|---------|-------------|
-| **Import as** | Set the entity type: *Holes*, *Boundary*, *Surface Contour*, *Design Line*, or *Ignore* |
-| **Colour** | Preview colour of the layer as it will appear in Kirra |
-| **Point count** | Number of point or block entities found in this layer |
-
-Click **OK** to import the selected layers.
+1. Click **File > Import**
+2. Select your `.dxf` file
+3. Kirra auto-detects whether the file is ASCII or binary DXF
+4. Entities are imported and appear in the TreeView
 
 ---
 
-## Importing Hole Locations from DXF
+## Supported DXF Entity Types
 
-Holes are read from **POINT** entities, **BLOCK INSERT** entities (block references), or **CIRCLE** entities in the DXF:
-
-- **POINT / BLOCK INSERT** — each entity becomes one hole; the XYZ position becomes the collar coordinate
-- **CIRCLE** — the centre of each circle becomes the collar, and the radius is used to infer hole diameter if the **Infer diameter from circle radius** option is checked
-
-### Hole ID Assignment
-- If the layer contains **TEXT** or **MTEXT** entities near each hole, Kirra can attempt to match them as Hole IDs — enable **Match labels to holes** in the import options
-- Otherwise, Kirra auto-assigns IDs based on the import prefix set in **Project → Settings → Import Defaults**
-
-### Depth, Bearing, and Inclination
-DXF does not natively store drill geometry. After import, Kirra will assign default depth, bearing, and inclination from **Project → Settings → Import Defaults**. Edit individual holes afterwards in the right panel.
-
----
-
-## Importing Boundaries and Lines
-
-Layers set to **Boundary** are loaded as closed polygons overlaid on the canvas. They can be used as:
-- Visual reference
-- Clip boundaries for pattern generation (see [Pattern Generation](../blast-design/pattern-generation.md))
-
-Layers set to **Design Line** are loaded as open polylines for use with the **Along Polyline** pattern generator.
+| DXF Entity | Imported As | Notes |
+|------------|-------------|-------|
+| POINT | KAD point or blast hole collar | Auto-detected based on attributes |
+| LINE | KAD line (2-point polyline) | |
+| POLYLINE | KAD line or polygon | Open = line, closed = polygon |
+| LWPOLYLINE | KAD line or polygon | Lightweight polyline variant |
+| CIRCLE | KAD circle | |
+| ELLIPSE | KAD polyline | Approximated as arc segments |
+| TEXT / MTEXT | KAD text entity | |
+| 3DFACE | Surface triangles | Imported as triangulated surface |
 
 ---
 
-## Supported DXF Versions
+## Layer Handling
 
-| DXF Version | Support |
-|-------------|---------|
-| R12 / R14 | ✅ Full |
-| 2000 / 2004 | ✅ Full |
-| 2007 / 2010 | ✅ Full |
-| 2013 / 2018 | ✅ Full |
-| Binary DXF | ✅ Supported |
+- Each DXF layer becomes a separate entity in Kirra
+- The layer name becomes the `entityName`
+- DXF colour codes are converted to hex colours
 
 ---
 
-## Coordinate Systems
+## Binary DXF
 
-DXF files do not always embed coordinate system metadata. If your DXF is in a local mine grid, the coordinates are used as-is. If the file is in a projected system (e.g., UTM), ensure your Kirra project's coordinate system matches — set it in **Project → Settings → Coordinate System**.
+Kirra automatically detects binary DXF files (identified by their header bytes). Binary DXF files are approximately 25% smaller and parse up to 5x faster than ASCII DXF.
 
 ---
 
-## Common Issues
+## 3DFACE Surface Import
 
-| Issue | Solution |
-|-------|---------|
-| No holes appear after import | Check that the hole layer is set to *Holes* and that entities are POINT or BLOCK INSERT types |
-| Holes appear in the wrong location | Coordinate system mismatch — verify project settings |
-| Import fails with "unsupported entity" warning | Some advanced DXF entities (e.g., SPLINE) are not supported; convert to POLYLINE in CAD first |
-| Text labels not matched | Enable **Match labels to holes** and ensure text is on the same layer or a designated label layer |
+DXF files containing large numbers of 3DFACE entities (surface triangles) are imported using a spatial-hash vertex deduplication algorithm for fast performance. This handles files with 100,000+ triangles efficiently.
+
+---
+
+## Coordinate System
+
+Full 3D coordinates (X, Y, Z) are preserved on import. No coordinate transformation is applied -- ensure your DXF uses the same coordinate system as your project.
 
 ---
 
 ## Related Topics
 
-- [CSV Formats](csv-formats.md)
 - [DXF Export](../exporting/dxf-export.md)
-- [Pattern Generation — Polygon and Polyline](../blast-design/pattern-generation.md)
+- [CSV Import](csv-formats.md)
+- [Coordinate System](../reference/coordinate-system.md)

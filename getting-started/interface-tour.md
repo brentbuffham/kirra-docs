@@ -1,151 +1,179 @@
 # Interface Tour
 
-This page walks through every panel, toolbar, and control in the Kirra workspace so you can find what you need quickly.
-
----
-
-## Workspace Layout
-
-```
-┌─────────────────────────────────────────────────────┐
-│                    Menu Bar                         │
-├──────────────────────────────────────────────────── │
-│                    Toolbar                          │
-├──────────┬──────────────────────────┬───────────────┤
-│          │                          │               │
-│  Left    │      Canvas / Viewport   │  Right Panel  │
-│  Panel   │                          │  (Properties) │
-│          │                          │               │
-├──────────┴──────────────────────────┴───────────────┤
-│                  Status Bar                         │
-└─────────────────────────────────────────────────────┘
-```
+This page walks through the Kirra workspace — menus, panels, toolbars, and controls — so you can find what you need quickly.
 
 ---
 
 ## Menu Bar
 
+The menu bar sits at the top of the window.
+
 | Menu | Key Items |
 |------|-----------|
-| **File** | New, Open, Save, Import, Export, Print, Recent Files |
+| **File** | Import, Export, Print, KAP project save/load |
 | **Edit** | Undo, Redo, Select All, Delete, Find Hole |
 | **View** | Toggle panels, Zoom controls, Fullscreen |
-| **Pattern** | Generate, Rotate, Mirror, Renumber |
-| **Analysis** | Statistics, Voronoi, PPV Analytics |
-| **Project** | Settings, Coordinate System, Units |
-| **Help** | Documentation, About, Check for Updates |
+| **Pattern** | Add Pattern (rectangular, polygon, line-based), Rotate, Mirror, Renumber |
+| **Settings** | Theme (dark/light), Language, Preferences |
 
 ---
 
-## Toolbar
+## File Menu — Import and Export
 
-The main toolbar sits below the menu bar and provides one-click access to the most common actions:
+![File manager import dialog](../screenshots/filemanager.png)
+*The File Manager handles import and export across 20+ formats.*
 
-| Icon / Label | Action | Keyboard Shortcut |
-|---|---|---|
-| **New** | Create a new blast | `Ctrl+N` |
-| **Open** | Open an existing blast file | `Ctrl+O` |
-| **Save** | Save the current blast | `Ctrl+S` |
-| **Import** | Import holes from file | `Ctrl+I` |
-| **Export** | Export the blast package | `Ctrl+E` |
-| **Select** | Switch to selection tool | `S` |
-| **Add Hole** | Place a hole manually | `A` |
-| **Generate Pattern** | Open pattern generator | `G` |
-| **Timing** | Open timing panel | `T` |
-| **Charging** | Open charging panel | `C` |
-| **Zoom In / Out** | Adjust viewport scale | `+` / `-` |
-| **Fit to Screen** | Fit all holes in viewport | `F` |
-| **Undo / Redo** | Step back or forward | `Ctrl+Z` / `Ctrl+Y` |
+### Import
 
----
+| Format | Description |
+|--------|-------------|
+| **CSV** | Comma-separated hole data |
+| **DXF** | AutoCAD DXF drawings |
+| **DTM / STR** | Surpac surface files |
+| **OBJ** | OBJ mesh (with MTL for textures) |
+| **PLY** | PLY point clouds and meshes |
+| **GLTF / GLB** | glTF 3D models |
+| **IREDES** | Epiroc iRedes XML |
+| **KML** | Google Earth KML/KMZ |
+| **SHP** | Esri Shapefile |
+| **LAS** | LAS point clouds |
 
-## Left Panel — Toolbox
+### Export
 
-The left panel contains collapsible sections:
+| Format | Description |
+|--------|-------------|
+| **CSV** | Kirra CSV hole data |
+| **DXF** | DXF drawings |
+| **GLB** | glTF binary 3D export |
+| **GeoTIFF** | Georeferenced raster imagery |
+| **IREDES** | Epiroc iRedes XML |
 
-### Pattern Tools
-- **Generate** — opens the pattern generation dialog
-- **Add Hole** — click-to-place single holes on the canvas
-- **Rotate Pattern** — rotate selected holes around a pivot
-- **Mirror Pattern** — flip selected holes horizontally or vertically
-- **Renumber** — re-sequence hole IDs across the selection
+### Print
 
-### Layer Controls
-- Toggle visibility of hole labels, timing numbers, charge information, and surface data overlays
+- **Print to PDF** — Print the current view directly to PDF
+- **Print from Template** — Use XLSX templates for formatted reports
 
-### Display Options
-- Switch between **plan view** (top down) and **section view**
-- Adjust hole symbol size and label density
+### Project
 
----
-
-## Central Canvas — Viewport
-
-The viewport is the main working area where holes are displayed and edited.
-
-### Navigation
-| Action | How |
-|--------|-----|
-| Pan | Hold middle mouse button and drag, or hold `Space` + drag |
-| Zoom | Scroll wheel, or `+` / `-` keys |
-| Fit all holes | Press `F` |
-| Select hole | Left-click on hole symbol |
-| Multi-select | Drag a selection box, or `Ctrl+Click` |
-| Deselect | Click empty canvas area |
-
-### Hole Symbols
-Holes are drawn as circles (or triangles for angled holes) coloured by:
-- **Default** — grey outline
-- **Selected** — highlighted in the selection colour (default: orange)
-- **By delay** — colour-coded by timing delay when the timing palette is active
-- **By charge** — colour-coded by explosive product when the charge palette is active
-- **By PPV** — shaded by predicted vibration when PPV mode is active
-
-### Snap and Grid
-- Enable the **snap grid** from the View menu or the toolbar grid toggle
-- Set grid spacing in **Project → Settings → Grid**
+- **KAP** — Save and load Kirra project files (holes, surfaces, drawings, layers)
 
 ---
 
-## Right Panel — Properties
+## Dockview Panels
 
-The right panel shows details for the currently selected hole(s).
+Kirra uses **Dockview** panels — resizable, dockable, and pop-out.
 
-### Single Hole Selected
-Displays all fields for that hole: ID, Easting, Northing, Elevation (collar), Depth, Diameter, Bearing, Inclination, Subdrill, and any custom fields. Values are directly editable.
+| Panel | Purpose |
+|-------|---------|
+| **Viewport** | Main 2D canvas or 3D view — where you design and interact |
+| **Explorer** | TreeView — hierarchical list of all loaded entities (holes, surfaces, KAD drawings) |
 
-### Multiple Holes Selected
-Shows a **bulk-edit form**. Fields left blank are unchanged; entering a value applies it to all selected holes.
-
-### No Selection
-Shows project-level summary: total holes, total metres, and bench area.
+Panels can be resized by dragging their edges, docked in different positions, or popped out into separate windows.
 
 ---
 
-## Bottom Status Bar
+## Floating Toolbars
+
+![Floating toolbars on the right side of the workspace](../screenshots/toolbarsfloating.png)
+*Floating toolbars provide quick access to Blast Holes, Patterns, Surfaces, KAD, Modify, and Connect tools.*
+
+Floating toolbars appear on the **right side** of the workspace:
+
+| Toolbar | Tools |
+|---------|-------|
+| **Blast Holes** | Add hole, select, edit hole properties |
+| **Patterns** | Generate rectangular, polygon, or line-based patterns |
+| **Surfaces** | Surface import, visibility, gradient options |
+| **KAD tools** | Points, lines, polygons, circles, text for vector drawings |
+| **Modify** | Rotate, mirror, renumber, bulk edit |
+| **Connect** | Assign timing delays and tie-in sequences |
+
+---
+
+## Surface Tool Buttons
+
+The Surface toolbar includes specialised tools:
+
+| Tool | Purpose |
+|------|---------|
+| **Blast Analysis Shader** | Vibration modelling with GPU/CPU analytics |
+| **Flyrock Shroud** | Flyrock trajectory visualisation |
+| **Surface Intersection** | Find intersections between surfaces |
+| **Boolean** | Union, subtract, intersect surface meshes |
+| **Solid CSG** | Solid constructive solid geometry operations |
+| **Extrude KAD** | Extrude KAD drawings to 3D |
+| **KAD Boolean** | Boolean operations on KAD geometry |
+| **Section Plane** | Slice surfaces with a section plane |
+| **Surface Contours** | Generate contour lines from surfaces |
+
+---
+
+## Status Bar
+
+The status bar at the **bottom** shows:
 
 | Element | Shows |
 |---------|-------|
-| Cursor position | Live Easting / Northing / Elevation at the cursor |
-| Zoom level | Current viewport scale (e.g., `1:500`) |
-| Selection count | Number of currently selected holes |
-| Project status | Unsaved changes indicator (`*`) and last save time |
+| **Mouse coordinates** | Live 2D (X, Y) and 3D (X, Y, Z) position at the cursor |
+| **Scale** | Current viewport scale (e.g., 1:500) |
+| **Entity counts** | Number of holes, surfaces, or selected entities |
 
 ---
 
-## Floating Panels
+## TreeView (Explorer)
 
-The following panels can be opened from the **View** menu or toolbar and can be docked or floated:
+![Data Explorer TreeView showing loaded entities](../screenshots/dataexplorer-treeview.png)
+*The TreeView in the Explorer panel lists all loaded entities -- holes, surfaces, and KAD drawings.*
 
-| Panel | Shortcut | Purpose |
-|-------|----------|---------|
-| **Timing** | `T` | View and edit delay assignments and firing sequence |
-| **Charging** | `C` | Build and apply charge deck designs |
-| **Statistics** | `Shift+S` | Summary table of blast KPIs |
-| **Voronoi** | `Shift+V` | Rock volume per hole visualisation |
-| **PPV Analytics** | `Shift+P` | Vibration prediction shader |
-| **Import Log** | — | Warnings and errors from the last import operation |
+The **TreeView** in the Explorer panel lists all loaded entities in a hierarchy:
+
+- Holes grouped by entity name
+- Surfaces and KAD drawings
+- Node IDs use a Braille separator (⣿) — e.g., `hole⣿Pattern_01⣿holeID` for holes, `entityType⣿entityName⣿element⣿pointID` for KAD entities
+
+Expand and collapse nodes to navigate your data. Click a node to select it on the canvas.
 
 ---
 
-*Next: [Adding Holes →](../blast-design/adding-holes.md)*
+## 2D Canvas
+
+The main 2D viewport shows your blast pattern in plan view.
+
+| Action | How |
+|--------|-----|
+| **Pan** | Default mode — click and drag (or middle mouse drag) |
+| **Zoom** | Scroll wheel |
+| **Select holes** | Left-click on a hole |
+| **Multi-select** | Shift+click to add to selection |
+
+---
+
+## 3D View
+
+Switch to 3D for elevation and terrain context.
+
+| Action | How |
+|--------|-----|
+| **Orbit** | Alt + drag |
+| **Camera roll** | Alt + Shift + drag |
+| **Zoom** | Scroll wheel |
+| **Context menu** | Right-click |
+
+The 3D view uses the same coordinate space as 2D — no Z scaling or elevation transform.
+
+---
+
+## Theme and Language
+
+- **Theme toggle** — Switch between dark and light mode (Settings menu or toolbar)
+- **Language selector** — Choose English, Russian, or Spanish (Settings menu)
+
+---
+
+## Screenshots
+
+*More annotated interface screenshots coming soon.*
+
+---
+
+*Next: [Your First Blast →](first-blast.md)*
