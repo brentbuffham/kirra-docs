@@ -2,7 +2,11 @@
 
 Kirra provides tools for combining, subtracting, and intersecting surfaces. These operations enable pit shell manipulation, surface clipping, and design surface combination directly within the application.
 
-> *Screenshot coming soon -- boolean operation preview with colour-coded regions*
+![Building triangulations for boolean operation](../screenshots/build-triangulations.png)
+*Building triangulations during a surface boolean operation -- splitting triangles along the intersection boundary.*
+
+![Completed solid after boolean merge](../screenshots/completed-solid.png)
+*The completed solid after merging the kept regions from a boolean operation.*
 
 ---
 

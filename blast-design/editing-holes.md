@@ -35,7 +35,12 @@ The TreeView panel on the left shows all entities (patterns) and their holes in 
 
 > **Tip:** Use the TreeView to quickly find and select holes by name, especially in large patterns with many overlapping holes.
 
-> *Screenshot coming soon*
+### Viewing Hole Properties
+
+Right-click a hole to access its properties and context menu:
+
+![Hole properties context menu](../screenshots/hole-properties-context.png)
+*Right-click a hole to view and edit properties, charge details, timing, and more.*
 
 ---
 

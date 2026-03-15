@@ -2,6 +2,9 @@
 
 The Kirra Charging module lets you design explosive charge configurations for every hole in your blast. You can build multi-deck charge columns with stemming, bulk explosives, packaged explosives, air decks, and boosters — then apply them across your pattern with a single click.
 
+![Hole charge details](../screenshots/hole-charge-details.png)
+*Charge details for a blast hole showing deck configuration, product assignment, and mass calculations.*
+
 ---
 
 ## What the Charging System Does

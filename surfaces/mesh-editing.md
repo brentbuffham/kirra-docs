@@ -2,7 +2,8 @@
 
 Kirra provides interactive mesh editing and automated mesh repair tools for loaded surfaces.
 
-> *Screenshot coming soon -- Clean Mesh dialog with diagnostics*
+![Repair triangles dialog](../screenshots/repair-triangles.png)
+*The Clean Mesh dialog showing diagnostics and repair tools for surface mesh quality.*
 
 ---
 
