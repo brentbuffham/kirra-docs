@@ -71,5 +71,6 @@ Creates a cross-section cutting plane through loaded surfaces for subsurface vis
 ## Related Topics
 
 - [Drawing Points, Lines, and Polygons](drawing-tools.md)
+- [Modify Toolbar](modify-tools.md) -- Transform, Offset, Radii, Reorder, Boolean, Join, Split tools
 - [Surface Boolean & CSG](../surfaces/boolean-csg.md)
 - [Importing Surfaces](../surfaces/importing-surfaces.md)

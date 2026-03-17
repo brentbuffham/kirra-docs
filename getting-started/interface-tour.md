@@ -85,7 +85,7 @@ Floating toolbars appear on the **right side** of the workspace:
 | **Patterns** | Generate rectangular, polygon, or line-based patterns |
 | **Surfaces** | Surface import, visibility, gradient options |
 | **KAD tools** | Points, lines, polygons, circles, text for vector drawings |
-| **Modify** | Rotate, mirror, renumber, bulk edit |
+| **Modify** | [Assign Surface/Grade, Transform, Offset, Radii, Reorder, Boolean, Join, Split](../kad/modify-tools.md) |
 | **Connect** | Assign timing delays and tie-in sequences |
 
 ---

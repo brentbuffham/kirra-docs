@@ -100,13 +100,16 @@ Right-click a KAD entity and select **Show Statistics** to see:
 
 ## Split and Join Lines
 
-- **Split**: Select a KAD line, right-click > Split, then click on the line at the desired split point. Two new entities are created.
-- **Join**: Select two or more KAD lines, right-click > Join. The endpoints are connected automatically.
+Split and Join are available from the **Modify toolbar** as dedicated tools with full dialog support, or from the right-click context menu.
+
+- **Split**: Click the Split button in the Modify toolbar, select a line or polygon, then click on vertices to mark split points. Supports multi-point splitting -- select several vertices before executing the split. See [Modify Toolbar -- Split KAD Lines](modify-tools.md#split-kad-lines) for full details.
+- **Join**: Click the Join button in the Modify toolbar, pick two lines, and they are joined end-to-end. Options include weld tolerance, close as polygon, and delete originals. See [Modify Toolbar -- Join KAD Lines](modify-tools.md#join-kad-lines) for full details.
 
 ---
 
 ## Related Topics
 
+- [Modify Toolbar](modify-tools.md) -- Transform, Offset, Radii, Reorder, Boolean, Join, Split tools
 - [Extrude, Boolean, and Section Plane](advanced-tools.md)
 - [Interface Tour](../getting-started/interface-tour.md)
 - [DXF Export](../exporting/dxf-export.md)
