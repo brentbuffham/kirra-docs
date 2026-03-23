@@ -24,10 +24,12 @@
 - **Blast analytics** — 10 GPU/CPU models for vibration prediction, Voronoi rock distribution, and blast statistics
 - **Flyrock modelling** — Flyrock shroud visualisation for safety planning
 - **Charging system** — Build deck-loaded charge designs with stemming, boosters, and explosive products
-- **Print to PDF** — Direct print or print from XLSX templates
-- **Dockview panels** — Resizable, dockable, and pop-out panels for Viewport and Explorer
-- **Dark and light themes** — Toggle between themes for comfortable viewing
-- **Internationalisation** — English, Russian, and Spanish language support
+- **Print to PDF** -- Direct print or print from XLSX templates
+- **Orbit Focus** -- Click any point in 3D to set it as the orbit centre for targeted inspection
+- **Dockview panels** -- Resizable, dockable, and pop-out panels for Viewport and Explorer
+- **Pattern Templates** -- Save and reuse standard pattern configurations (burden, spacing, diameter, hole type) as named templates
+- **Dark and light themes** -- Toggle between themes for comfortable viewing
+- **Internationalisation** -- English, Chinese, French, Mongolian, Russian, and Spanish language support
 
 ---
 

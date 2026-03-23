@@ -24,6 +24,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 - [Adding Holes](blast-design/adding-holes.md)
 - [Editing Holes](blast-design/editing-holes.md)
 - [Pattern Generation](blast-design/pattern-generation.md)
+- [Pattern Templates](blast-design/pattern-templates.md)
 - [Timing Sequences](blast-design/timing-sequences.md)
 
 ### Surfaces
@@ -65,10 +66,12 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 ### KAD Drawing Tools
 - [Drawing Points, Lines, and Polygons](kad/drawing-tools.md)
 - [Extrude, Boolean, and Section Plane](kad/advanced-tools.md)
+- [Modify Toolbar](kad/modify-tools.md)
 
 ### Reference
 - [Hole Properties](reference/hole-properties.md)
 - [Coordinate System](reference/coordinate-system.md)
+- [3D View & Orbit Focus](reference/3d-tools.md)
 - [Keyboard Shortcuts & Mouse Controls](reference/keyboard-shortcuts.md)
 - [FAQ](reference/faq.md)
 

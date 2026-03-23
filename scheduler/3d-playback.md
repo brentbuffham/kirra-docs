@@ -42,17 +42,18 @@ The 3D Playback view is divided into a sidebar with controls and the main 3D vie
 | **Surfaces** | Per-surface visibility checkbox and opacity slider (0 - 100%) |
 | **Blast Layers** | Toggle visibility of blast boundaries, drill holes, and blast labels |
 | **Equipment** | Toggle visibility of drill/MPU models and equipment labels |
-| **Display** | Wireframe overlay toggle, ground grid toggle |
+| **Display** | Wireframe overlay toggle, ground grid toggle, single-colour surface mode with colour picker |
 
 ### Camera Presets
 
-Three buttons in the top-right corner of the viewport:
+Four buttons in the top-right corner of the viewport:
 
 | Button | View |
 |---|---|
 | **Top** | Plan view looking straight down |
 | **Iso** | Isometric view at 45 degrees |
 | **3D** | Perspective view from a lower angle |
+| **Ortho** | Toggle between perspective and orthographic projection |
 
 ### Timeline Controls
 
@@ -65,6 +66,7 @@ The bottom bar provides playback controls:
 | **Play / Pause** | Animate through the schedule day by day |
 | **Scrubber** | Drag to jump to any day |
 | **Speed** | 1x, 2x, 5x, 10x playback speed |
+| **Loop** | Toggle loop playback -- when enabled, the timeline automatically restarts from the beginning after reaching the end |
 
 > *Screenshot coming soon*
 
@@ -84,7 +86,7 @@ Mining coordinates are typically large UTM values (6-7 digits). To maintain prec
 
 ## Surface Rendering
 
-Surfaces are rendered as 3D meshes with vertex colours based on elevation. The colour gradient maps from the lowest to highest elevation:
+Surfaces are rendered as 3D meshes with vertex colours based on elevation. The default colour gradient maps from the lowest to highest elevation:
 
 | Elevation | Colour |
 |---|---|
@@ -94,6 +96,10 @@ Surfaces are rendered as 3D meshes with vertex colours based on elevation. The c
 | High (100%) | Red |
 
 Each surface can be independently shown or hidden, and its opacity adjusted using the sidebar slider.
+
+### Single-Colour Mode
+
+Use the **Display** section in the sidebar to switch from elevation gradient to a single flat colour for all surfaces. A colour picker lets you choose the colour. This is useful for presentations or when colour-coding by surface purpose rather than elevation.
 
 ---
 

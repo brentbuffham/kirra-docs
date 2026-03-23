@@ -32,8 +32,11 @@ The core blast design application, covering:
 - **Blast analytics** with 10 GPU/CPU shader models (PPV, Heelan, Blair Heavy, Damage, Pressure, Powder Factor, and more)
 - **Flyrock modelling** with Richards & Moore, Lundborg, and McKenzie algorithms and 3D shroud visualisation
 - **Print system** with vector PDF, raster PDF, and custom XLSX templates
+- **DXF batch upload** for importing multiple DXF files simultaneously
 - **Dockview panels** for resizable, dockable workspace layout
-- **Internationalisation** with English, Russian, and Spanish language support
+- **Pattern Templates** for reusable pattern configurations across projects
+- **Orbit Focus** tool for targeted 3D inspection around any clicked point
+- **Internationalisation** with English, Chinese, French, Mongolian, Russian, and Spanish language support
 - **Dark/Light themes** with customisable colour schemes
 
 For access, visit [kirra-design.com](https://kirra-design.com).
@@ -42,11 +45,19 @@ For access, visit [kirra-design.com](https://kirra-design.com).
 
 A companion tool for planning and sequencing blast events across a mine site or project, featuring:
 
-- **Gantt chart scheduling** across four phases (Pattern Preparation, Drilling, Loading, Blasting)
-- **Equipment management** for drill rigs, MPUs, ancillary fleet, and personnel
-- **Dependency engine** linking phases with configurable lead times and drill percentage thresholds
-- **3D playback** of the scheduled blast sequence
-- **Import/Export** of Kirra projects (KAP/KGP), DXF, and CSV
+- **Gantt chart scheduling** across four phases (Pattern Preparation, Drilling, Loading, Blasting) with drag, resize, multi-select, and reorder
+- **Equipment management** for drill rigs, MPUs, ancillary fleet, and personnel with CSV import/export
+- **Dependency engine** linking phases with configurable lead times, drill percentage thresholds, predecessor constraints, and auto-schedule
+- **Pattern library** with drag-and-drop assignment to blasts and multi-pattern support
+- **Drill blocks** for splitting drilling into independently-scheduled segments with per-block rig assignment
+- **Blast calendar** with layer toggles and iCal/CSV calendar export
+- **Explosive forecast** with weekly demand projection and charge source tracking
+- **Conformance tracking** with planned vs actual volumes and CSV actuals import
+- **3D playback** of the scheduled blast sequence with loop playback, surface colour options, and orthographic camera
+- **Delay palette** for drag-and-drop schedule interruption management
+- **Plan cycle colours** for visual period banding on the Gantt timeline
+- **Import/Export** of Kirra projects (KAP/KGP), DXF, CSV, iCal, and equipment/pattern libraries
+- **Dark/Light/Colourblind** theming
 
 Kirra Scheduler is publicly available: [github.com/brentbuffham/KirraScheduler](https://github.com/brentbuffham/KirraScheduler)
 

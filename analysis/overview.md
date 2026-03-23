@@ -113,13 +113,21 @@ When no charging data exists, models estimate the charged length as 70% of hole 
 
 ## Transparency
 
-You can adjust the transparency of an analysis mesh after it has been generated without re-running the analysis. The mesh is preserved and only the visual opacity changes.
+You can adjust the transparency of an analysis mesh after it has been generated without re-running the analysis. The mesh is preserved and only the visual opacity changes. This applies to both GPU shader overlays and CPU-generated results (Blair Heavy).
 
 ---
 
-## GLB Export
+## GLB Export and Persistence
 
-Analysis surfaces can be exported to GLB format for archiving or use in external 3D viewers. This is also used internally to persist Blair Heavy results to IndexedDB.
+Analysis surfaces can be exported to GLB format for archiving or use in external 3D viewers. Blair Heavy results are automatically exported to GLB and persisted to IndexedDB, so they survive page reloads without needing to recompute the CPU model.
+
+When reloading a project, analysis meshes from previous sessions are automatically restored from their GLB representation in IndexedDB.
+
+---
+
+## Analysis Plane Elevation
+
+When using the **Generate Analysis Plane** render mode, the flat analysis plane is placed at the **Drawing RL** (reduced level) elevation. For 2D baked images on existing mesh surfaces, a flat bake plane is created at the Drawing RL to produce a flattened overhead view.
 
 ---
 

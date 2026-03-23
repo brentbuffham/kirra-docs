@@ -81,7 +81,7 @@ Floating toolbars appear on the **right side** of the workspace:
 
 | Toolbar | Tools |
 |---------|-------|
-| **Blast Holes** | Add hole, select, edit hole properties |
+| **Blast Holes** | Add hole, select, edit hole properties, [pattern templates](../blast-design/pattern-templates.md) |
 | **Patterns** | Generate rectangular, polygon, or line-based patterns |
 | **Surfaces** | Surface import, visibility, gradient options |
 | **KAD tools** | Points, lines, polygons, circles, text for vector drawings |
@@ -133,6 +133,13 @@ The **TreeView** in the Explorer panel lists all loaded entities in a hierarchy:
 
 Expand and collapse nodes to navigate your data. Click a node to select it on the canvas.
 
+### TreeView Features
+
+- **Visibility toggle** -- Show or hide individual entities via checkbox
+- **Duplicate** -- Right-click an entity to create a copy
+- **Context menu** -- Right-click for options including statistics, move to layer, split/join lines, and delete
+- **Dock/Popout** -- The TreeView can be docked to the side, popped out into a separate window, or collapsed
+
 ---
 
 ## 2D Canvas
@@ -150,23 +157,32 @@ The main 2D viewport shows your blast pattern in plan view.
 
 ## 3D View
 
-Switch to 3D for elevation and terrain context.
+Switch to 3D for elevation and terrain context using the **2D/3D** toggle in the top bar.
 
 | Action | How |
 |--------|-----|
+| **Pan** | Click and drag (default mode) |
 | **Orbit** | Alt + drag |
 | **Camera roll** | Alt + Shift + drag |
-| **Zoom** | Scroll wheel |
+| **Zoom** | Scroll wheel (zooms towards cursor) |
 | **Context menu** | Right-click |
 
-The 3D view uses the same coordinate space as 2D — no Z scaling or elevation transform.
+The 3D view uses the same coordinate space as 2D -- no Z scaling or elevation transform.
+
+### Orbit Focus
+
+The **Orbit Focus** tool lets you click any point in the 3D scene to set it as the new orbit centre. This is especially useful when inspecting specific blast holes or surface features up close. See [3D View & Orbit Focus](../reference/3d-tools.md) for full details.
+
+### 3D Settings
+
+The **3D Settings** button opens renderer configuration options including renderer mode selection, instanced hole rendering, LOD overrides, and simplification thresholds.
 
 ---
 
 ## Theme and Language
 
-- **Theme toggle** — Switch between dark and light mode (Settings menu or toolbar)
-- **Language selector** — Choose English, Russian, or Spanish (Settings menu)
+- **Theme toggle** -- Switch between dark and light mode (Settings menu or toolbar)
+- **Language selector** -- Choose from English, Chinese, French, Mongolian, Russian, or Spanish (Settings menu or top bar dropdown)
 
 ---
 

@@ -95,6 +95,37 @@ When 3D blast solids have been imported (via `.kap` or `.kirra` files), the dept
 
 The Calendar sub-tab shows a month-grid view with blast dates plotted on their respective days.
 
+### Navigation
+
+Use the **< >** arrow buttons to step between months, or click **Today** to jump to the current month. The month and year are displayed in the calendar header.
+
+### Layer Toggles
+
+Toggle visibility of different scheduling phases on the calendar:
+
+| Layer | Colour | Description |
+|---|---|---|
+| **Prep** | Teal | Pattern preparation dates |
+| **Drill** | Blue | Drilling dates |
+| **Load** | Amber | Loading dates |
+| **Blast** | Red | Blast fire dates |
+
+Each layer appears as a coloured bar on the calendar cells where that phase is scheduled.
+
+### Calendar Export
+
+Click the **Export** button on the calendar view to open the calendar export dialog. Two event modes and two file formats are available:
+
+**Event Modes:**
+
+- **Per-phase** -- Creates separate calendar events for each phase (Prep, Drill, Load, Blast) of each blast
+- **Per-blast** -- Creates a single event per blast spanning its full date range from earliest phase to blast date
+
+**File Formats:**
+
+- **iCal (.ics)** -- Standard calendar format for Outlook, Google Calendar, Apple Calendar, and other calendar applications
+- **Calendar CSV (.csv)** -- Spreadsheet-friendly phase-by-phase or per-blast schedule
+
 ---
 
 ## Related Topics

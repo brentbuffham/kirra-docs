@@ -132,6 +132,46 @@ Personnel are tracked with role and certification information:
 
 ---
 
+## CSV Import / Export
+
+All equipment types support CSV import and export for sharing fleet definitions between projects and team members.
+
+### Export Equipment Library
+
+Click **Export Library** from the Equipment tab to download the current fleet (drills, MPUs, ancillary, personnel) as a CSV file. This captures all properties including maintenance windows.
+
+### Export Equipment Template
+
+Click **Export Template** to download a blank CSV with column headers and example rows. Use this to prepare equipment data in a spreadsheet before importing.
+
+### Import Equipment
+
+Click **Import CSV** and select a file to load equipment definitions. The importer:
+
+1. Detects equipment type from the CSV structure (drill, MPU, ancillary, personnel)
+2. Validates required fields
+3. Replaces existing fleet of that type with the imported data
+4. Reports success and import counts
+
+---
+
+## Crew Roles
+
+Personnel are categorised by role, which determines their assignment options:
+
+| Role | Description | Assignment |
+|---|---|---|
+| **Drill Operator** | Operates drill rigs | Assigned to drilling phase |
+| **Drill Offsider** | Assists drill operators | Assigned to drilling phase |
+| **Shot Firer** | Licensed to initiate blasts | Required for blasting phase |
+| **Blast Engineer** | Designs blast patterns | Assigned to loading/blasting |
+| **Loading Operator** | Operates MPU/loading trucks | Assigned to loading phase |
+| **Field Tech** | General field support | Assigned to any phase |
+
+Crew members with drill certifications can only be assigned to rigs matching their certified types. The sidebar palette on the Gantt chart includes crew chips that can be dragged onto phase rows for assignment.
+
+---
+
 ## Related Topics
 
 - [Quick Start](quick-start.md) -- Step 2 covers initial equipment setup
@@ -139,3 +179,4 @@ Personnel are tracked with role and certification information:
 - [Pattern Preparation](pattern-preparation.md) -- Assigning ancillary equipment for floor prep
 - [Dependencies](dependencies.md) -- How drill rates and MPU rates affect schedule calculations
 - [Drill Blocks](drill-blocks.md) -- Assigning different rigs to different blocks of a blast
+- [Import & Export](import-export.md) -- Equipment CSV templates in the export menu

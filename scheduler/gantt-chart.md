@@ -127,7 +127,29 @@ Click **Recalc Dates** to run the [dependency engine](dependencies.md) across al
 
 ### Plan Week Colours
 
-The settings bar includes a **Plan Cycle** dropdown that controls repeating colour bands on the timeline, helping visualise planning periods.
+The settings bar includes planning period controls for visual banding on the timeline:
+
+| Control | Description |
+|---|---|
+| **Week Start Day** | Choose which day of the week the Gantt columns align to (Monday, Tuesday, etc.). This affects the weekend shading and week number labels. |
+| **Plan Cycle (Weeks)** | Set how many weeks make up a repeating planning cycle (e.g., 2, 4, 6). The timeline alternates background colours for each cycle period, helping you distinguish planning periods visually. |
+| **Per-Week Colours** | Click the colour palette button to open a popup where you can assign custom colours to each week within a cycle. This is useful for colour-coding fortnightly or monthly planning periods. |
+
+> *Screenshot coming soon*
+
+### Delay Palette
+
+A delay palette appears in the sidebar for drag-and-drop delay assignment:
+
+| Delay Type | Description |
+|---|---|
+| **UD** | Unplanned Downtime |
+| **SD** | Scheduled Downtime |
+| **SM** | Scheduled Maintenance |
+| **Weather** | Weather delay |
+| **Custom** | User-defined delay types |
+
+Drag a delay chip onto a drill, load, or prep bar to add a schedule interruption. The delay appears as a hatched or coloured overlay on the Gantt bar. Right-click a delay to extend, shrink, or remove it.
 
 > *Screenshot coming soon*
 
