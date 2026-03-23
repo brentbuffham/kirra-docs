@@ -201,9 +201,12 @@ See the [Import / Export](import-export.md) page for details on each format.
 - **Colourblind mode** -- Click the **CB** button for a deuteranopia-safe palette that replaces red/green with magenta/blue.
 - **Dependency connectors** -- Green arrows between sections show the dependency chain. They turn red if a dependency is breached.
 - **Maintenance warnings** -- If a drill is scheduled during its maintenance window, the affected dates are highlighted red and a warning icon appears.
-- **Blast Overview tab** -- Shows a summary table of all blasts with key metrics, useful for a quick check before printing or sharing.
-- **Explosive Forecast tab** -- Shows projected explosive consumption across your schedule.
+- **Blast Overview tab** -- Shows a summary table of all blasts with key metrics and a calendar view. You can drag patterns from the [Pattern Library](pattern-library.md) onto blast rows to assign them.
+- **Pattern Library tab** -- Manages drill and blast pattern definitions. Add, edit, copy, and import/export patterns via CSV. See [Pattern Library](pattern-library.md).
+- **Explosive Forecast tab** -- Shows projected weekly explosive consumption across your schedule. See [Explosive Forecast](explosive-forecast.md).
+- **Conformance tab** -- Track planned vs actual volumes. Import actuals via CSV or query from Snowflake, CData, OData, or generic REST APIs. See [Conformance](conformance.md).
 - **3D Playback** -- Import a `.kap` file from the Kirra App to see your pit shell surfaces in 3D. The timeline lets you animate the schedule day by day.
+- **Calendar Export** -- Export your schedule as iCal (.ics) or calendar CSV for Outlook, Google Calendar, or other calendar apps.
 - **KAP files** -- These are ZIP archives containing data. They can be large (80 MB+ surfaces) so import may take 30-60 seconds for production sites.
 
 ---
@@ -211,10 +214,14 @@ See the [Import / Export](import-export.md) page for details on each format.
 ## Related Topics
 
 - [Gantt Chart](gantt-chart.md)
+- [Blast Overview](blast-overview.md)
+- [Pattern Library](pattern-library.md)
 - [Equipment](equipment.md)
 - [Drill Blocks](drill-blocks.md)
 - [Dependencies](dependencies.md)
 - [Pattern Preparation](pattern-preparation.md)
+- [Explosive Forecast](explosive-forecast.md)
+- [Conformance](conformance.md)
 - [3D Playback](3d-playback.md)
 - [Import / Export](import-export.md)
 - [Theming](theming.md)

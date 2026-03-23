@@ -93,12 +93,48 @@ When a blast has drill blocks:
 
 ---
 
+## Auto Schedule
+
+The **Auto Schedule** function automatically stacks and sequences drilling:
+
+1. Sorts blasts by their current drill start date
+2. Tracks each drill rig's availability end date
+3. Finds the earliest date when all assigned rigs are available for each blast
+4. Applies the **Drill Overlap %** setting to control how much overlap is allowed between consecutive blasts on the same rig
+5. Recalculates all downstream dates via the dependency engine
+
+Auto Schedule preserves equipment assignments -- it only adjusts timing.
+
+---
+
+## Auto Calc
+
+Recalculates drill days, load days, and prep days for a blast based on current equipment rates, accounting for:
+
+- Combined penetration rates of all assigned drills (using effective hours)
+- Combined loading rates of all assigned MPUs
+- Current progress -- only the remaining work is recalculated
+
+---
+
+## Fleet Conflict Detection
+
+The fleet conflict system detects when drill rigs are over-allocated:
+
+- **Per-drill conflicts** -- A single rig assigned to two or more blasts on the same day
+- **Per-model conflicts** -- More rigs of a given type assigned than exist in the fleet on a given day
+
+Conflict cells are highlighted on the Gantt chart.
+
+---
+
 ## Practical Tips
 
 - **Set Drill % for Load to 80%** if you want loading crews to begin as soon as most holes are drilled, without waiting for the last few holes.
 - **Use Min Lead Days** to build in safety buffer between loading completion and the blast date.
 - **Use Recalc Dates** after any changes to global settings to ensure all blasts are updated.
 - **Check for red connectors** -- these indicate a dependency breach that needs attention.
+- **Use Auto Schedule** to quickly build an initial stacked schedule when starting a new plan.
 
 ---
 
@@ -109,3 +145,4 @@ When a blast has drill blocks:
 - [Drill Blocks](drill-blocks.md) -- How blocks interact with the dependency engine
 - [Equipment](equipment.md) -- MPU rates and drill maintenance that affect calculations
 - [Pattern Preparation](pattern-preparation.md) -- The optional prep phase before drilling
+- [Conformance](conformance.md) -- Actuals import can update drill/load progress

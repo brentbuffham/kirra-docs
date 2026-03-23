@@ -84,6 +84,14 @@ Click any section header (PATTERN PREP, DRILLING, LOADING, BLASTING) to collapse
 
 Hold **Shift + Scroll** or **Alt + Scroll** to scroll the Gantt timeline left and right.
 
+### Multi-Select
+
+Hold **Ctrl** (or **Cmd** on Mac) and click multiple blast names to select them. Multi-selected blasts can be acted on together via the context menu.
+
+### Reorder Blasts
+
+Drag a blast name vertically to reorder it within the schedule. The new order persists across re-renders.
+
 ### Context Menu (Right-Click)
 
 Right-click any blast name to access:
@@ -94,8 +102,32 @@ Right-click any blast name to access:
 - **Add Block** -- Add another block (if already split)
 - **Edit Block** -- Opens the block editor for a specific block
 - **Merge Blocks** -- Combines all blocks back to a single schedule
+- **No Drill / No Load / No Blast** -- Exclude a phase
 - **Duplicate** -- Create a copy of the blast
 - **Remove** -- Delete the blast from the schedule
+
+### Sidebar Palette
+
+A sidebar palette appears beside the Gantt chart for drag-and-drop assignment:
+
+- **Drill rigs** -- Drag onto a DRILLING row to assign a drill
+- **MPUs** -- Drag onto a LOADING row to assign an MPU
+- **Ancillary** -- Drag onto a PATTERN PREP row to assign ancillary equipment
+- **Crew** -- Drag operator/technician/shot firer chips onto phase rows
+- **Delay types** -- Drag delay chips onto bars to add schedule interruptions
+- **Patterns** -- Patterns visible in the [Pattern Library](pattern-library.md) appear as draggable chips
+
+### Auto Schedule
+
+Click **Auto Schedule** in the toolbar to automatically stack and sequence blasts. The auto-scheduler orders blasts by drill start, stacks drilling across available rigs, and applies the **Drill Overlap %** setting to control overlap between consecutive blasts.
+
+### Recalc Dates
+
+Click **Recalc Dates** to run the [dependency engine](dependencies.md) across all blasts, updating loading start dates and blast dates.
+
+### Plan Week Colours
+
+The settings bar includes a **Plan Cycle** dropdown that controls repeating colour bands on the timeline, helping visualise planning periods.
 
 > *Screenshot coming soon*
 
@@ -108,3 +140,5 @@ Right-click any blast name to access:
 - [Dependencies](dependencies.md) -- How dates cascade between phases
 - [Pattern Preparation](pattern-preparation.md) -- The floor prep phase before drilling
 - [Equipment](equipment.md) -- Managing your fleet
+- [Pattern Library](pattern-library.md) -- Patterns in the sidebar palette
+- [Blast Overview](blast-overview.md) -- Summary table and calendar view
