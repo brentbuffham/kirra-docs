@@ -4,6 +4,7 @@ Downloadable XLSX example templates for Kirra's Print from Template system.
 
 | File | Description |
 |------|-------------|
+| `01-Kirra_Print_Sheets.xlsx` | General-purpose print sheet layout |
 | `Voronoi-Showcase.xlsx` | All 10 Voronoi metrics across 3 legend modes (default, fixed, min-max) |
 | `HoleSection-Grid.xlsx` | `[+>]` grid pagination with holeSection, filter, and math-wrapped fields |
 | `MultiMap-Views.xlsx` | Four-quadrant layout with different display code combinations |
