@@ -61,6 +61,20 @@ Use it as a starting point for your own custom templates.
 
 ---
 
+## Example Templates
+
+Downloadable example templates are available that demonstrate advanced features not covered by the basic reference template:
+
+- **Voronoi Showcase** — All 10 Voronoi metric codes with paired legends across fixed, min-max, and default legend modes
+- **Hole Section Grid** — `[+>]` grid pagination with `holeSection()` render tokens, `filter()` directives, and math-wrapped indexed fields
+- **Multi-Map Views** — Multiple map views on one page with different display code combinations
+- **Charging Report** — `blastSummary()`, `chargeSummary()`, `productList()`, `groupTable()`, and per-hole charging tables
+- **Hole Data Table** — Per-row `[++]` tables with footer aggregations, filtered subsets, and measured data
+
+See [Template Examples](template-examples.md) for detailed walkthroughs of each template, and [Print Formula Reference](pdf-print.md) for the complete list of all variables, functions, and display codes.
+
+---
+
 ## Output Formats
 
 | Format | Description |
@@ -75,7 +89,8 @@ The XLSX output option is available only when using a custom template. Use it wh
 
 ## Related Topics
 
-- [Print to PDF](pdf-print.md)
+- [Print Formula Reference](pdf-print.md) — Complete list of all variables, functions, display codes, and render tokens
+- [Template Examples](template-examples.md) — Downloadable example templates with detailed walkthroughs
 - [Blast Statistics](../analysis/blast-statistics.md)
 - [Charging Overview](../charging/overview.md)
 - [Interface Tour](../getting-started/interface-tour.md)

@@ -860,6 +860,7 @@ Fills left-to-right, top-to-bottom: cell A1 = hole 1, B1 = hole 2, C1 = hole 3, 
 
 ## Related Topics
 
+- [Template Examples](template-examples.md) — Downloadable example templates with detailed walkthroughs
 - [Print from Template (XLSX)](xlsx-templates.md) — Template workflow and output formats
 - [Blast Statistics](../analysis/blast-statistics.md)
 - [Charging Overview](../charging/overview.md)
