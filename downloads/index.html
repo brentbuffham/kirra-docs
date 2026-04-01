@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kirra Design — Desktop Downloads</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --bg: #cecece;
+      --text: #000;
+      --btn: #828282;
+      --btn-text: #000;
+      --btn-hover: #ff0000;
+      --muted: #555;
+    }
+    body.dark-mode {
+      --bg: #1a1a1a;
+      --text: #cecece;
+      --btn: #3a3a3a;
+      --btn-text: #cecece;
+      --muted: #999;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      transition: background-color 0.4s, color 0.4s;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 24px; margin-bottom: 2px; }
+    .subtitle { font-size: 12px; font-style: italic; margin-bottom: 16px; }
+    .version-badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: bold;
+      color: #7a0a0a;
+      margin-bottom: 16px;
+    }
+    body.dark-mode .version-badge { color: #ff6b6b; }
+    hr { border: none; border-top: 1px solid var(--btn); margin: 16px 0; }
+
+    .dark-mode-toggle {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    .dark-mode-toggle input { display: none; }
+    .dark-mode-toggle label {
+      display: flex;
+      align-items: center;
+      width: 48px; height: 22px;
+      background: #999;
+      border-radius: 34px;
+      cursor: pointer;
+      position: relative;
+      transition: background-color 0.4s;
+    }
+    .dark-mode-toggle input:checked + label { background: #666; }
+    .dark-mode-toggle label::after {
+      content: "";
+      position: absolute;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      top: 1px; left: 1px;
+      background: #fff;
+      transition: transform 0.4s;
+    }
+    .dark-mode-toggle input:checked + label::after { transform: translateX(24px); }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    @media (min-width: 520px) {
+      .download-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .download-grid a {
+      display: block;
+      padding: 14px 12px;
+      background: var(--btn);
+      color: var(--btn-text);
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 14px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .download-grid a:hover {
+      background: var(--btn-hover);
+      color: #000;
+    }
+    .download-grid a .platform-label {
+      display: block;
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .download-grid a .file-detail {
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
+    .note {
+      font-size: 12px;
+      font-style: italic;
+      color: var(--muted);
+      margin: 12px 0;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--btn);
+      color: var(--btn-text);
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 13px;
+      transition: background-color 0.3s;
+    }
+    .back-link:hover { background: var(--btn-hover); color: #000; }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Kirra Design — Desktop Downloads</h1>
+    <div class="subtitle">Offline desktop installers built automatically from the latest release</div>
+
+    <div class="dark-mode-toggle">
+      <span>&#9728;&nbsp;&nbsp;</span>
+      <input type="checkbox" id="dark-mode-toggle">
+      <label for="dark-mode-toggle"></label>
+      <span>&nbsp;&nbsp;&#127768;</span>
+    </div>
+
+    <hr>
+
+    <div class="version-badge" id="version-badge">Version: --</div>
+
+    <div class="download-grid" id="download-grid">
+      <!-- Populated by CI — fallback content shown if JS is disabled -->
+      <noscript>
+        <p>Enable JavaScript or check the files in this directory for the latest installers.</p>
+      </noscript>
+    </div>
+
+    <div class="note">
+      <strong>Not sure which Mac you have?</strong> Click the Apple menu &rarr; "About This Mac".
+      If it says "Apple M1 / M2 / M3 / M4" choose <strong>Apple Silicon</strong>, otherwise choose <strong>Intel</strong>.
+    </div>
+
+    <hr>
+
+    <div style="text-align:center;">
+      <a class="back-link" href="https://kirra-design.com">Open Kirra Design (web app)</a>
+      &nbsp;
+      <a class="back-link" href="https://brentbuffham.github.io/kirra-docs/">Kirra Documentation</a>
+    </div>
+
+    <div class="footer">
+      Created by Brent Buffham &copy; 2021-2026 &mdash; <a href="https://blastingapps.com" style="color:inherit;">blastingapps.com</a>
+    </div>
+  </div>
+
+  <script>
+    // Step 1) Dark mode toggle (syncs with blastingapps preference)
+    var toggle = document.getElementById("dark-mode-toggle");
+    var pref = localStorage.getItem("darkMode");
+    if (pref === "true") {
+      document.body.classList.add("dark-mode");
+      toggle.checked = true;
+    }
+    toggle.addEventListener("change", function () {
+      if (toggle.checked) {
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("darkMode", "true");
+      } else {
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("darkMode", "false");
+      }
+    });
+
+    // Step 2) Build download buttons from the RELEASE_DATA injected by CI
+    // CI replaces this line with: var RELEASE_DATA = { version: "1.0.40", files: [...] };
+    // RELEASE_DATA_PLACEHOLDER
+
+    if (typeof RELEASE_DATA !== "undefined") {
+      var badge = document.getElementById("version-badge");
+      badge.textContent = "Version: " + RELEASE_DATA.version;
+
+      var grid = document.getElementById("download-grid");
+      grid.innerHTML = "";
+
+      var platformLabels = {
+        "Windows": { label: "Windows 10/11", detail: "Setup installer (.exe)" },
+        "Windows-msi": { label: "Windows (IT/Admin)", detail: "MSI package (.msi)" },
+        "Mac-Apple-Silicon": { label: "Mac (Apple Silicon)", detail: "M1/M2/M3/M4 — 2020 onwards (.dmg)" },
+        "Mac-Intel": { label: "Mac (Intel)", detail: "2019 and earlier (.dmg)" },
+        "Linux-deb": { label: "Linux (Debian/Ubuntu)", detail: "DEB package (.deb)" },
+        "Linux-AppImage": { label: "Linux (AppImage)", detail: "Portable — no install needed" },
+        "Linux-rpm": { label: "Linux (Fedora/RHEL)", detail: "RPM package (.rpm)" }
+      };
+
+      var i, f, key, info, a, span1, span2;
+      for (i = 0; i < RELEASE_DATA.files.length; i++) {
+        f = RELEASE_DATA.files[i];
+        key = f.platform;
+        info = platformLabels[key] || { label: key, detail: f.name };
+        a = document.createElement("a");
+        a.href = "./" + f.name;
+        a.download = f.name;
+        span1 = document.createElement("span");
+        span1.className = "platform-label";
+        span1.textContent = info.label;
+        span2 = document.createElement("span");
+        span2.className = "file-detail";
+        span2.textContent = info.detail;
+        a.appendChild(span1);
+        a.appendChild(span2);
+        grid.appendChild(a);
+      }
+    }
+  </script>
+</body>
+</html>
