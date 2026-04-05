@@ -4,6 +4,20 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 
 ---
 
+## Documentation freshness
+
+These guides were **reviewed against the Kirra Design source tree** at:
+
+| Field | Value |
+|--------|--------|
+| **Kirra app version** | **1.0.45** (`package.json` / `package-lock.json`) |
+| **Git commit** | `4dab41888d37ecf72e456a9835ce81ae6e294f25` (short: `4dab4188`) |
+| **Commit date** | 2026-04-05 (author timezone +0800) |
+
+Use this block to judge whether the docs may be ahead of or behind your installed build. For the live app version in use, check **Help → About** (or your deployment’s `package.json`).
+
+---
+
 ## Products
 
 | Product | Description |
@@ -56,6 +70,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 ### Charging
 - [Charging Overview](charging/overview.md)
 - [Deck Builder](charging/deck-builder.md)
+- [Harness Wire Assignment](charging/harness-wire-assignment.md)
 - [Products CSV Reference](charging/products-csv.md)
 
 ### Blast Analytics

@@ -25,7 +25,7 @@ This workflow is separate from **connector timing** (`fromHoleID`, `timingDelayM
 | **Strip** | One offset copy of the contour at a given perpendicular distance; assigned a single time value for that row of the mesh. |
 | **Quad strip** | Corresponding points on two adjacent strips form quads, split into two triangles each. |
 | **Self-intersection** | Offset polylines can fold back on themselves at large offsets or sharp corners. |
-| **Smooth temporal mesh** | Checkbox in the dialog for future post-processing; behaviour may be deferred in the application build you use. |
+| **Smooth temporal mesh** | When enabled, the generator **subdivides** the triangulated temporal mesh (two midpoint passes) then applies **Laplacian smoothing** in **X, Y, and Z** (time). **Smoothing strength** is controlled by a numeric field (fractional passes supported, e.g. `1` = one full pass blend toward neighbours). |
 | **Bézier handle** | Per-knot `cpIn` / `cpOut` control points; handles are collinear with independent lengths when editing. |
 | **Timing Relief tool** | One contour plus explicit **start time** and **relief (ms/m)** → offset strips in both time directions. |
 | **Time Range tool** | Two contours plus **Line 1** and **Line 2** times → stitched mesh; effective relief is derived between the boundaries. |
@@ -71,7 +71,11 @@ Closing the dialog deactivates drawing mode and removes draw-complete listeners.
 - **Timing Relief** — Single contour workflow; parameters are **Start Time (ms)** and **Relief (ms/m)** on the main parameter form.
 - **Time Range** — Two contours; **Range Parameters** expose **Line 1 Time**, **Line 2 Time**, and optional **Extra Pts** (Steiner-style density) per line.
 - **Bezier** — When checked, relief mode uses Bézier knots and handles; the mesh generator samples the curve to a polyline before strip offset.
-- **Smooth** — Persists `smoothEnabled` on the construct; full mesh smoothing may still be under development.
+- **Smooth** — Enables post-processing on the generated mesh: **triangle subdivision** plus **Laplacian smooth** of vertex positions (including time as **Z**). Use the adjacent numeric field for **smoothing strength** (`smoothPasses` on the construct). Changing either triggers surface regeneration.
+
+### Edit on canvas (dialog open)
+
+With the **Electronic Timing** dialog open (and the draw tool idle), **hover and drag** contour **knots** and Bézier **handles** in 2D or 3D. The **ElectronicTimingEditTool** uses capture-phase mouse events so drags do not start a canvas pan; **C1 continuity** is enforced when moving one side of a handle pair.
 
 ### Drawing
 
@@ -119,4 +123,5 @@ Constructs are stored in IndexedDB under the **`TIMING_CONSTRUCTS`** object stor
 
 - [Timing Sequences](timing-sequences.md) — Connector-based firing order, auto-timing, and validation.
 - [Charging Overview](../charging/overview.md) — Deck builder and electronic initiators.
+- [Harness Wire Assignment](../charging/harness-wire-assignment.md) — SurfaceWire path/commander tool (separate from mesh timing).
 - Kirra wiki: [Electronic Timing Constructs](https://github.com/brentbuffham/Kirra/wiki/Electronic-Timing-Constructs) — Source file map and implementation notes.

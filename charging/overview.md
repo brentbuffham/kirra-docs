@@ -20,6 +20,7 @@ The Kirra Charging module lets you design explosive charge configurations for ev
 | **Swap conditions** | Automatically substitute products for wet, damp, reactive, or high-temperature holes |
 | **Downhole timing** | Calculate detonation timing for each deck within a hole |
 | **Electronic timing mesh (optional)** | Draw timing contours and interpolate fire times for **Electronic** detonators — see [Electronic Timing Constructs](../blast-design/electronic-timing-constructs.md) |
+| **Harness wire assignment (optional)** | Assign path/channel and commander IDs for **SurfaceWire** / harness products — see [Harness Wire Assignment](harness-wire-assignment.md) |
 | **Visualisation** | View charges in 2D radial, 2D section, or 3D spatial views |
 | **Export** | Include charge data in CSV, XML, and PDF reports |
 
