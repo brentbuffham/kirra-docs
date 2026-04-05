@@ -185,6 +185,14 @@ Timing information is included in all standard export formats:
 
 ---
 
+## Electronic timing constructs (optional)
+
+For **electronic detonators** in the charging design, you can build a **temporal mesh** (time as Z) from drawn contours and assign firing times by **XY interpolation** at the collar. That system is separate from connector delays and is documented in:
+
+- [Electronic Timing Constructs](electronic-timing-constructs.md)
+
+---
+
 ## Related Topics
 
 - [Pattern Generation](pattern-generation.md) — generate your pattern before assigning timing

@@ -26,6 +26,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 - [Pattern Generation](blast-design/pattern-generation.md)
 - [Pattern Templates](blast-design/pattern-templates.md)
 - [Timing Sequences](blast-design/timing-sequences.md)
+- [Electronic Timing Constructs](blast-design/electronic-timing-constructs.md)
 
 ### Surfaces
 - [Importing Surfaces](surfaces/importing-surfaces.md)
