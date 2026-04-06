@@ -2,7 +2,7 @@
 
 Kirra can model **electronic initiation** products that use **surface / harness wire** (product type **HarnessWire**, initiator type **SurfaceWire** in the product database). The **Harness Wire Assignment** tool lets you assign **path/channel** and **commander / programming unit / blaster** identifiers to holes that act as **chain anchors** (self-connected timing), using labels that adapt to the selected **electronic system** specification.
 
-> **Availability:** The toolbar control uses the same **experimental electronics** styling as Electronic Timing (`harnessAssignBtn` in `index.html`). It may be hidden until that experimental UI is enabled in your theme or build.
+> **Availability:** **Harness Wire Assignment** shares the same **`experimental-electronics`** visibility rule as **Electronic Timing** (from **v1.0.46**): the control is **shown** when any loaded hole has an **Electronic** detonator in charging, and **hidden** otherwise. See `index.html` (`harnessAssignBtn`) and `_updateElectronicTimingVisibility` in `kirra.js`.
 
 ---
 
@@ -15,7 +15,7 @@ Kirra can model **electronic initiation** products that use **surface / harness 
 
 ## Using the tool
 
-1. Enable **Harness Wire Assignment** on the floating toolbar (experimental electronics section).
+1. Enable **Harness Wire Assignment** on the floating toolbar (visible when electronic detonators exist in charging — see **Availability**).
 2. Click a valid **self-connected** hole in **2D** or **3D**.
 3. A **FloatingDialog** opens with fields built from `createEnhancedFormContent`:
    - **Path / channel** — Numeric **or** letter input (e.g. **A, B, C** for systems that use letter paths such as some Davey Bickford specs).

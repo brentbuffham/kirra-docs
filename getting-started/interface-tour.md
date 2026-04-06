@@ -55,7 +55,7 @@ The menu bar sits at the top of the window.
 
 ### Project
 
-- **KAP** — Save and load Kirra project files (holes, surfaces, drawings, layers)
+- **KAP** — Save and load Kirra project files (holes, surfaces, drawings, layers, charging, timing constructs as of v1.0.47+)
 
 ---
 

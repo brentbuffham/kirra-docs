@@ -10,9 +10,9 @@ These guides were **reviewed against the Kirra Design source tree** at:
 
 | Field | Value |
 |--------|--------|
-| **Kirra app version** | **1.0.45** (`package.json` / `package-lock.json`) |
-| **Git commit** | `4dab41888d37ecf72e456a9835ce81ae6e294f25` (short: `4dab4188`) |
-| **Commit date** | 2026-04-05 (author timezone +0800) |
+| **Kirra app version** | **1.0.47** (`package.json` / `package-lock.json`) |
+| **Git commit** | `fb78e20c34c46e678f5b84b5c91a6f5295098c11` (short: `fb78e20c`) |
+| **Commit date** | 2026-04-06 (author timezone +0800) |
 
 Use this block to judge whether the docs may be ahead of or behind your installed build. For the live app version in use, check **Help → About** (or your deployment’s `package.json`).
 

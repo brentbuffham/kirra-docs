@@ -76,6 +76,7 @@ A `.kap` file is a ZIP archive containing:
 | Charging | Per-hole charging data |
 | Configs | Charge configurations |
 | Layers | Drawing and surface layer organisation |
+| Timing constructs | Electronic timing geometry (`timingConstructs.json`) — Kirra App v1.0.47+ |
 | Textures | OBJ texture files (if any) |
 | Images | GeoTIFF imagery files (if any) |
 
@@ -88,6 +89,7 @@ A `.kap` file is a ZIP archive containing:
 | **Drawings** (polygons) | Blast boundary outlines for the 3D view |
 | **Charge Configs** | Merged into the scheduler's configuration library |
 | Products, charging, layers | Not imported (not needed for scheduling) |
+| Timing constructs | Not imported by Scheduler (Kirra App feature only) |
 
 #### Performance
 

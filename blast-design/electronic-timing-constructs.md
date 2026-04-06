@@ -4,7 +4,7 @@
 
 This workflow is separate from **connector timing** (`fromHoleID`, `timingDelayMilliseconds`, visible arrows between collars). Electronic timing writes **primer detonator** fields for initiators marked **Electronic** in the charge design.
 
-> **Availability:** The in-app control is labelled experimental and may be hidden until enabled in the UI (see the Kirra wiki [Electronic Timing Constructs](https://github.com/brentbuffham/Kirra/wiki/Electronic-Timing-Constructs) page for the toolbar element).
+> **Availability:** The **Electronic Timing** toolbar control is part of the `experimental-electronics` UI group. From **v1.0.46**, that group is **shown automatically** when loaded charging data includes at least one **Electronic** detonator on any hole (`hasAnyElectronicCharging` in `kirra.js`); it stays **hidden** when no electronic detonators are present. There is no separate global “enable experimental electronics” toggle. Visibility is refreshed when charging is loaded with the project.
 
 ---
 
@@ -45,7 +45,7 @@ Connector-based hole-to-hole delays and electronic mesh times can coexist in one
 
 ## Opening the Electronic Timing dialog
 
-When the toolbar control is visible: toggle **Electronic Timing** on the Blast Holes floating toolbar. The dialog is a **dockable FloatingDialog** titled **Electronic Timing** (default size about 340×680 px).
+When the Blast Holes toolbar shows the control (see **Availability** above): toggle **Electronic Timing**. The dialog is a **dockable FloatingDialog** titled **Electronic Timing** (default size about 340×680 px).
 
 Closing the dialog deactivates drawing mode and removes draw-complete listeners.
 
@@ -116,6 +116,8 @@ Colour stops define how **time** maps to colours on the canvas for construct vis
 ## Persistence
 
 Constructs are stored in IndexedDB under the **`TIMING_CONSTRUCTS`** object store and held in memory in `window.loadedTimingConstructs` (a `Map`). See the wiki [IndexedDB Schema](https://github.com/brentbuffham/Kirra/wiki/IndexedDB-Schema) for the store description.
+
+**KAP project files (v1.0.47+):** Exporting a **.kap** (ZIP) includes **`timingConstructs.json`** — an array of `[id, constructJSON]` pairs. Importing a KAP restores constructs into memory and saves them back to IndexedDB (`KAPParser.js` / `KAPWriter.js`). Use KAP for full project round-trips that include electronic timing geometry.
 
 ---
 

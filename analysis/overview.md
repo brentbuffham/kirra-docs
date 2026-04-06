@@ -2,6 +2,8 @@
 
 Kirra includes a GPU-accelerated blast analytics system that overlays vibration, damage, and energy predictions directly on your blast pattern. Most models run in real-time on the GPU via WebGL fragment shaders, enabling interactive what-if analysis as you move holes or adjust charges.
 
+**Recent builds (e.g. v1.0.46):** shader code paths were tuned for **heavier multi-deck columns** and **large patterns** (loop limits and per-model iteration in GLSL, plus related dialog/helper updates). Very deep deck counts may still hit GPU static limits on some models — use **PPV Per-Deck** or **Blair Heavy** where per-deck fidelity matters most.
+
 > *Screenshot coming soon -- analytics dialog with model selection and parameter controls*
 
 ---
