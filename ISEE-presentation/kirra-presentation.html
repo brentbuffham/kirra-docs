@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirra Design — ISEE Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #111111;
+    --bg-secondary: #12131a;
+    --bg-card: #1a1a26;
+    --bg-card-hover: #222233;
+    --accent: #FE1211;
+    --accent-glow: #ff6b6b67;
+    --accent-soft: #9f000068;
+    --text-primary: #777777;
+    --text-secondary: #a08888;
+    --text-muted: #6a5555;
+    --border: rgba(255, 255, 255, 0.06);
+    --font-display: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg-secondary);
+  }
+
+  body {
+    font-family: var(--font-display);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ─── Progress Bar ─── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), #ff6b6b);
+    z-index: 1000;
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+
+  /* ─── Navigation ─── */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-brand .logo-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+
+  .nav-slide-counter {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .nav-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .nav-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 1rem;
+  }
+
+  .nav-btn:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    border-color: var(--accent);
+  }
+
+  /* ─── Slides ─── */
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide-inner {
+    max-width: 1100px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .slide-inner.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── Slide Backgrounds ─── */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(230, 57, 70, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .slide:nth-child(even)::before {
+    background: radial-gradient(ellipse at 80% 100%, rgba(230, 57, 70, 0.03) 0%, transparent 50%);
+  }
+
+  /* Parallax grid */
+  .slide-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  /* ─── Typography ─── */
+  .slide-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 650px;
+    font-weight: 300;
+  }
+
+  .highlight {
+    color: var(--accent);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── Title Slide ─── */
+  .title-slide {
+    text-align: center;
+  }
+
+  .title-slide h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .title-tagline {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .title-meta {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .title-meta span {
+    color: var(--accent);
+  }
+
+  .title-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    background: var(--accent);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    box-shadow: 0 0 40px var(--accent-glow), 0 0 80px rgba(230, 57, 70, 0.15);
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 40px var(--accent-glow), 0 0 80px rgba(230, 57, 70, 0.15); }
+    50% { box-shadow: 0 0 60px var(--accent-glow), 0 0 120px rgba(230, 57, 70, 0.25); }
+  }
+
+  /* ─── Feature Cards ─── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(230, 57, 70, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ─── List Styles ─── */
+  .feature-list {
+    list-style: none;
+    margin-top: 1.5rem;
+  }
+
+  .feature-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .feature-list li:last-child {
+    border-bottom: none;
+  }
+
+  .feature-list .li-icon {
+    color: var(--accent);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  /* ─── Two Column ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* ─── Stats Row ─── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-family: var(--font-mono);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  /* ─── Format Tags ─── */
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .tag {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0.75rem 1.7rem;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 1px solid rgba(230, 57, 70, 0.15);
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    background: rgba(230, 57, 70, 0.2);
+    border-color: var(--accent);
+  }
+
+  /* ─── Tech Stack ─── */
+  .tech-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .tech-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .tech-item:hover {
+    border-color: rgba(230, 57, 70, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .tech-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .tech-role {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* ─── Roadmap ─── */
+  .roadmap {
+    margin-top: 2rem;
+  }
+
+  .roadmap-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .roadmap-item:last-child {
+    border-bottom: none;
+  }
+
+  .roadmap-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.35rem;
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
+
+  .roadmap-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .roadmap-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* ─── CTA / Final Slide ─── */
+  .cta-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .cta-btn.primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .cta-btn.primary:hover {
+    box-shadow: 0 0 40px var(--accent-glow);
+    transform: translateY(-2px);
+  }
+
+  .cta-btn.secondary {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+  }
+
+  .cta-btn.secondary:hover {
+    border-color: var(--accent);
+  }
+
+  /* ─── Keyboard Hint ─── */
+  .key-hint {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    z-index: 999;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  kbd {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+  }
+
+  /* ─── Screenshot Slide (full-viewport parallax pan) ─── */
+  .slide-screenshot {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .slide-bg-screenshot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    will-change: transform;
+    transform: translateY(0);
+  }
+
+  .slide-bg-screenshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1.08);
+    transition: transform 4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .slide-screenshot.ken-burns-active .slide-bg-screenshot img {
+    transform: scale(1);
+  }
+
+  .slide-screenshot-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 15, 0.35) 0%,
+      rgba(10, 10, 15, 0.08) 30%,
+      rgba(10, 10, 15, 0.08) 70%,
+      rgba(10, 10, 15, 0.6) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .slide-screenshot .slide-inner {
+    position: relative;
+    z-index: 2;
+    align-self: flex-end;
+    padding-bottom: 4rem;
+  }
+
+  .slide-screenshot .slide-caption {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  }
+
+  .slide-screenshot .slide-subcaption {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  /* ─── Animations ─── */
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+  .stagger-5 { transition-delay: 0.5s; }
+  .stagger-6 { transition-delay: 0.6s; }
+
+  .card.animate-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .card.animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 768px) {
+    .slide { padding: 5rem 2rem; }
+    .two-col { grid-template-columns: 1fr; gap: 2rem; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="logo-dot"></div>
+    <span>Kirra Design</span>
+  </div>
+  <div class="nav-slide-counter" id="slideCounter">01 / 14</div>
+  <div class="nav-controls">
+    <button class="nav-btn" onclick="goToSlide('prev')" title="Previous (←)">&#8592;</button>
+    <button class="nav-btn" onclick="goToSlide('next')" title="Next (→)">&#8594;</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 1: Title -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-1">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner title-slide">
+    <div class="title-logo">
+      <img src="icons/Kirra-Icon-App512x512.png" alt="Kirra" style="width: 128px; height: 128px;">
+    </div>
+    <br><br>
+    <h1 class="text-gradient">Kirra Design</h1>
+    <br><br>
+    <div class="title-tagline">Browser-Based 3D Blast &amp; Mine Design</div>
+    <div class="title-meta">
+      <span>Brent Buffham</span> · blastingapps.com · kirra-design.com<br>
+      ISEE Chapter Event · April 2026
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 2: The Problem -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-2">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">The Problem</div>
+    <h2>Blast design software is <span class="highlight">expensive</span>, <span class="highlight">closed</span>, and <span class="highlight">tied to legacy platforms</span></h2>
+    <div class="subtitle">
+      Commercial tools cost tens of thousands per licence annually. They lock your data in proprietary formats, require desktop installs, and haven't fundamentally changed in decades.
+    </div>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-value">$$$</div>
+        <div class="stat-label">Annual licence costs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">🔒</div>
+        <div class="stat-label">Proprietary formats</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">💻</div>
+        <div class="stat-label">Desktop-only installs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">🐌</div>
+        <div class="stat-label">Slow to innovate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 3: What is Kirra? -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-3">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">The Solution</div>
+    <h2>What is <span class="highlight">Kirra</span>?</h2>
+    <div class="subtitle" style="margin-bottom: 2rem;">
+      A free, browser-based application for 3D blast design and mine design — built by a blasting professional, for blasting professionals.
+    </div>
+    <ul class="feature-list">
+      <li><span class="li-icon">▸</span> Runs in any modern browser — no installs, no licence fees</li>
+      <li><span class="li-icon">▸</span> Full 3D blast design with patterns, timing, and charge loading</li>
+      <li><span class="li-icon">▸</span> Mine design surfaces, meshes, and cross-sections</li>
+      <li><span class="li-icon">▸</span> GPU-accelerated analytics — PPV, damage, pressure</li>
+      <li><span class="li-icon">▸</span> Reads and writes industry-standard file formats</li>
+      <li><span class="li-icon">▸</span> Optional desktop mode via Tauri for offline use</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 4: Key Features Overview -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-4">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Capabilities</div>
+    <h2>Key Features</h2>
+    <div class="card-grid">
+      <div class="card animate-in stagger-1">
+        <span class="card-icon">📐</span>
+        <h3>Pattern Design</h3>
+        <p>Create blast patterns with configurable burden, spacing, hole angles, and sub-drill. Pattern templates for common layouts.</p>
+      </div>
+      <div class="card animate-in stagger-2">
+        <span class="card-icon">⏱️</span>
+        <h3>Timing &amp; Tie-up</h3>
+        <p>Visual tie-in editor with delay assignment. Surface and in-hole delay support. Real-time timing contours.</p>
+      </div>
+      <div class="card animate-in stagger-3">
+        <span class="card-icon">💥</span>
+        <h3>Charge Loading</h3>
+        <p>Multi-deck charge designs with stemming, air decks, and product selection. Automatic mass and volume calculations.</p>
+      </div>
+      <div class="card animate-in stagger-4">
+        <span class="card-icon">📊</span>
+        <h3>Blast Analytics</h3>
+        <p>GPU shader-powered PPV prediction, damage contours, and borehole pressure analysis at interactive frame rates.</p>
+      </div>
+      <div class="card animate-in stagger-5">
+        <span class="card-icon">🌐</span>
+        <h3>3D Visualisation</h3>
+        <p>Three.js powered 3D scene with surfaces, holes, and annotations. Dark and light themes. 2D/3D toggle.</p>
+      </div>
+      <div class="card animate-in stagger-6">
+        <span class="card-icon">📁</span>
+        <h3>File I/O</h3>
+        <p>Import and export CSV, KAP, Surpac STR/DTM, Shapefile, LAS, AQM, SPF, CBLAST, and more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 5: Design Tools -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-5">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Design</div>
+    <h2>Blast Pattern Design</h2>
+    <div class="two-col">
+      <div>
+        <div class="subtitle">
+          Design patterns directly on surfaces or flat planes. Edit individual holes or selections. Move, rotate, and snap to benches.
+        </div>
+        <ul class="feature-list">
+          <li><span class="li-icon">▸</span> Rectangular, staggered, and custom pattern templates</li>
+          <li><span class="li-icon">▸</span> Individual hole editing — length, diameter, angle, dip, bearing</li>
+          <li><span class="li-icon">▸</span> Multi-select and bulk property editing</li>
+          <li><span class="li-icon">▸</span> Sub-drill and stemming auto-calculation</li>
+        </ul>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+        <div style="text-align: center; color: var(--text-muted);">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">📐</div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem;">[Live demo / screenshot]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 6: Timing & Tie-up -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-6">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Timing</div>
+    <h2>Timing &amp; Tie-up Design</h2>
+    <div class="subtitle" style="margin-bottom: 2rem;">
+      Visually connect holes with surface and in-hole delays. See timing contours update in real time.
+    </div>
+    <ul class="feature-list">
+      <li><span class="li-icon">▸</span> Click-and-drag tie-in connections between holes</li>
+      <li><span class="li-icon">▸</span> Surface delay and in-hole delay channels</li>
+      <li><span class="li-icon">▸</span> Timing contour overlays with colour mapping</li>
+      <li><span class="li-icon">▸</span> Delay time display per hole</li>
+      <li><span class="li-icon">▸</span> Channel colour coding for readability</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 7: Electronic Timing Screenshot -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide slide-screenshot" id="slide-7">
+  <div class="slide-bg-screenshot"><img src="icons/ElectronicTiming.png" alt="Electronic Timing in Kirra"></div>
+  <div class="slide-screenshot-overlay"></div>
+  <div class="slide-inner">
+    <div class="slide-caption">Electronic Timing &amp; Tie-up in Kirra</div>
+    <div class="slide-subcaption">Real-time delay assignment with visual connectors and timing contours</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 8: Analytics -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-8">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Analytics</div>
+    <h2>GPU-Powered <span class="highlight">Blast Analytics</span></h2>
+    <div class="subtitle" style="margin-bottom: 2rem;">
+      Kirra's analytics engine uses WebGPU fragment shaders and Web Workers to compute blast predictions at interactive frame rates.
+    </div>
+    <div class="card-grid">
+      <div class="card animate-in stagger-1">
+        <span class="card-icon">🌊</span>
+        <h3>Blair &amp; Minchinton PPV</h3>
+        <p>Time-domain PPV prediction. "Blair Lite" as a GPU fragment shader for real-time display. "Blair Heavy" on CPU with row-level checkpointing.</p>
+      </div>
+      <div class="card animate-in stagger-2">
+        <span class="card-icon">🔴</span>
+        <h3>Scaled Heelan &amp; Damage</h3>
+        <p>Damage contours computed from vibration models. Visualise damage zones per hole and across the pattern.</p>
+      </div>
+      <div class="card animate-in stagger-3">
+        <span class="card-icon">💨</span>
+        <h3>Borehole Pressure</h3>
+        <p>Chapman-Jouguet detonation pressure with decoupled charge coupling ratio corrections. DataTexture GPU packing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 9: Flyrock Shroud Screenshot -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide slide-screenshot" id="slide-9">
+  <div class="slide-bg-screenshot"><img src="icons/FlyrockShroud.png" alt="Flyrock Shroud in Kirra"></div>
+  <div class="slide-screenshot-overlay"></div>
+  <div class="slide-inner">
+    <div class="slide-caption">3D Flyrock Shroud Modelling</div>
+    <div class="slide-subcaption">Chernigovskii ballistic envelope over blast pattern — Richards &amp; Moore, Lundborg, and McKenzie algorithms</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 10: Temporal Shader -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-10">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Visualisation</div>
+    <h2>The Temporal Life-Cycle Shader</h2>
+    <div class="two-col">
+      <div>
+        <div class="subtitle">
+          One of the most powerful features — watch the life of a blast hole unfold in time. Based on an idea from a spreadsheet created 16 years ago.
+        </div>
+        <ul class="feature-list">
+          <li><span class="li-icon">▸</span> Initiation from collar or toe, propagation along the charge</li>
+          <li><span class="li-icon">▸</span> Damage zones visible in real time — crest vs toe differences</li>
+          <li><span class="li-icon">▸</span> Neighbouring holes receiving damage before they detonate</li>
+          <li><span class="li-icon">▸</span> Full 3D time-playback of the entire blast sequence</li>
+        </ul>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+        <div style="text-align: center; color: var(--text-muted);">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">🎬</div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem;">[Live demo / animation]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 11: File Formats -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-11">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Interoperability</div>
+    <h2>Speaks Your <span class="highlight">File Formats</span></h2>
+    <div class="subtitle" style="margin-bottom: 1rem;">
+      Kirra reads and writes formats from across the industry — no data lock-in.
+    </div>
+    <div class="tag-cloud">
+      <span class="tag">CSV</span>
+      <span class="tag">DXF</span>
+      <span class="tag">KAP</span>
+      <span class="tag">KAD</span>
+      <span class="tag">Surpac STR</span>
+      <span class="tag">Surpac DTM</span>
+      <span class="tag">ESRI Shapefile</span>
+      <span class="tag">LAS (LiDAR)</span>
+      <span class="tag">OBJ</span>
+      <span class="tag">PLY</span>
+      <span class="tag">GLTF</span>
+      <span class="tag">KML / KMZ</span>
+      <span class="tag">GeoTIFF</span>
+      <span class="tag">Point Cloud XYZ</span>
+      <span class="tag">SPF (ShotPlus)</span>
+      <span class="tag">IKN (Orica)</span>
+      <span class="tag">DigiShot (DetNet)</span>
+      <span class="tag">BPD (DaveyTronic)</span>
+      <span class="tag">CBLAST</span>
+      <span class="tag">AQM (Minestar)</span>
+      <span class="tag">IREDES MWD XML</span>
+      <span class="tag">Wenco NAV</span>
+      <span class="tag">Epiroc Surface Manager</span>
+    </div>
+    <h3 style="margin-top: 2.5rem; color: var(--text-muted);">In progress. Coming soon.</h3>
+    <div class="tag-cloud" style="margin-top: 0.75rem;">
+      <span class="tag" style="font-size: 1rem; padding: 0.5rem 1.1rem; opacity: 0.6;">Deswik .duf</span>
+      <span class="tag" style="font-size: 1rem; padding: 0.5rem 1.1rem; opacity: 0.6;">Datamine .dm</span>
+      <span class="tag" style="font-size: 1rem; padding: 0.5rem 1.1rem; opacity: 0.6;">Vulcan .00t</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 12: Powerful Charging Tools -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-12">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Charging</div>
+    <h2>Powerful <span class="highlight">Charging Tools</span></h2>
+    <div class="subtitle" style="margin-bottom: 2rem;">
+      Design complex multi-deck charge configurations with a visual deck builder, manage explosive products, and generate print-ready loading sheets.
+    </div>
+    <div class="two-col">
+      <div>
+        <ul class="feature-list">
+          <li><span class="li-icon">▸</span> Visual deck builder with stemming, air decks, and multiple charge columns</li>
+          <li><span class="li-icon">▸</span> Product manager for explosive density, VOD, and energy properties</li>
+          <li><span class="li-icon">▸</span> Print-ready loading sheets and blast reports as PDF</li>
+          <li><span class="li-icon">▸</span> Real-time mass and volume calculations per hole and per pattern</li>
+        </ul>
+      </div>
+      <div class="card animate-in stagger-1" style="text-align: center;">
+        <span class="card-icon"><img src="icons/2DChargingView.jpg" alt="2D Charging Graphic" style="width: 100%; max-width: 280px; border-radius: 8px;"></span>
+        <h3>2D Charging Graphic</h3>
+        <p>Unique per-hole cross-section — instantly see decks, stemming, air gaps, and product fills at a glance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 13: Deck Builder Screenshot -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide slide-screenshot" id="slide-13">
+  <div class="slide-bg-screenshot"><img src="icons/DeckBuilder.png" alt="Deck Builder in Kirra"></div>
+  <div class="slide-screenshot-overlay"></div>
+  <div class="slide-inner">
+    <div class="slide-caption">Visual Deck Builder</div>
+    <div class="slide-subcaption">Multi-deck charge design with stemming, air decks, and product assignment</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 14: Product Manager Screenshot -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide slide-screenshot" id="slide-14">
+  <div class="slide-bg-screenshot"><img src="icons/ProductManger.png" alt="Product Manager in Kirra"></div>
+  <div class="slide-screenshot-overlay"></div>
+  <div class="slide-inner">
+    <div class="slide-caption">Product Manager</div>
+    <div class="slide-subcaption">Define explosive products with density, VOD, and energy — assign to decks across selections</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 15: Print Templates Screenshot -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide slide-screenshot" id="slide-15">
+  <div class="slide-bg-screenshot"><img src="icons/PrintTemplates.png" alt="Print Templates in Kirra"></div>
+  <div class="slide-screenshot-overlay"></div>
+  <div class="slide-inner">
+    <div class="slide-caption">Print Templates</div>
+    <div class="slide-subcaption">Professional loading sheets and blast reports — customisable PDF output with hole-by-hole summaries</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 16: Architecture -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-16">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Under the Hood</div>
+    <h2>Technology Stack</h2>
+    <div class="subtitle" style="margin-bottom: 1rem;">
+      Built entirely with modern web technologies. No server required — everything runs in the browser.
+    </div>
+    <div class="tech-stack">
+      <div class="tech-item">
+        <div class="tech-name">Three.js</div>
+        <div class="tech-role">3D rendering</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-name">Vite</div>
+        <div class="tech-role">Build tooling</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-name">WebGPU</div>
+        <div class="tech-role">GPU compute shaders</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-name">Web Workers</div>
+        <div class="tech-role">Background processing</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-name">Tauri v2</div>
+        <div class="tech-role">Desktop wrapper</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-name">JavaScript</div>
+        <div class="tech-role">Core language</div>
+      </div>
+    </div>
+    <div style="margin-top: 2rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+      Solo-developed with an estimated 3,500+ hours of engineering. All code and work by Brent Buffham.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 17: Free & Accessible -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-17">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner" style="text-align: center;">
+    <div class="slide-label">Licence</div>
+    <h2>Free for the <span class="highlight">Industry</span></h2>
+    <div class="subtitle" style="margin: 0 auto 2rem; text-align: center;">
+      Kirra is available at no cost. The goal is to provide a professional-grade alternative to expensive commercial blast design tools — accessible to everyone from grad engineers to experienced practitioners.
+    </div>
+    <div class="stats-row" style="max-width: 600px; margin: 0 auto; grid-template-columns: repeat(3, 1fr);">
+      <div class="stat">
+        <div class="stat-value">$0</div>
+        <div class="stat-label">Licence cost</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">🌐</div>
+        <div class="stat-label">Browser-based</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">6</div>
+        <div class="stat-label">Languages</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 18: Roadmap -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-18">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">What's Next</div>
+    <h2>Roadmap</h2>
+    <div class="roadmap">
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-content">
+          <h3>Support for as Many Formats as Available</h3>
+          <p>Continuously expanding file format support — from drill &amp; blast systems to mine planning packages — so Kirra can read and write data from any workflow.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-content">
+          <h3>Limited Block Model Ingestion &amp; Display</h3>
+          <p>Import and visualise block models for ore grade context, enabling blast designs informed by geology directly within the 3D scene.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-content">
+          <h3>Perfect the Triangulation System</h3>
+          <p>Maturing the trimesh-boolean library for robust open-mesh CSG — surface intersections, pit design cut-fills, and reliable boolean operations.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-content">
+          <h3>Improve UI/UX &amp; Stability</h3>
+          <p>Refining the user interface, streamlining workflows, and hardening stability across large datasets and edge cases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 19: Q&A -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-19">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner" style="text-align: center;"><br><br>
+    <div class="title-logo" style="margin-bottom: 2rem;">
+      <img src="icons/Kirra-Icon-App512x512.png" alt="Kirra" style="width: 256px; height: 256px;">
+    </div>
+    <br><br><br>
+    <h2>Thank You</h2>
+    <div class="title-tagline" style="margin-bottom: 2rem;">Questions &amp; Discussion</div>
+    <div style="margin: 2rem auto; width: 200px;">
+      <img src="icons/Kirra-QRCODE.png" alt="Scan to visit kirra-design.com" style="width: 100%; border-radius: 12px;">
+    </div>
+    <div class="cta-links">
+      <a href="https://kirra-design.com" target="_blank" class="cta-btn primary">kirra-design.com</a>
+      <a href="https://blastingapps.com" target="_blank" class="cta-btn secondary">blastingapps.com</a>
+    </div>
+    <div class="title-meta" style="margin-top: 2rem;">
+      Brent Buffham · <span>X:@blastingapps</span>
+    </div>
+  </div>
+</section>
+
+<!-- Keyboard Hint -->
+<div class="key-hint">
+  <span><kbd>←</kbd> <kbd>→</kbd> navigate</span>
+  <span><kbd>F</kbd> fullscreen</span>
+</div>
+
+<script>
+  // ─── State ───
+  const totalSlides = document.querySelectorAll('.slide').length;
+  let currentSlide = 1;
+
+  // ─── Intersection Observer for slide-in animations ───
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const slideObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const inner = entry.target.querySelector('.slide-inner');
+      const cards = entry.target.querySelectorAll('.animate-in');
+
+      if (entry.isIntersecting) {
+        if (inner) inner.classList.add('visible');
+        cards.forEach(c => c.classList.add('visible'));
+        if (entry.target.classList.contains('slide-screenshot')) {
+          entry.target.classList.add('ken-burns-active');
+        }
+        updateSlideCounter(entry.target);
+      } else {
+        if (inner) inner.classList.remove('visible');
+        cards.forEach(c => c.classList.remove('visible'));
+        if (entry.target.classList.contains('slide-screenshot')) {
+          entry.target.classList.remove('ken-burns-active');
+        }
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.slide').forEach(slide => {
+    slideObserver.observe(slide);
+  });
+
+  // ─── Update counter ───
+  function updateSlideCounter(el) {
+    const id = el.id;
+    const num = parseInt(id.replace('slide-', ''));
+    if (num) {
+      currentSlide = num;
+      document.getElementById('slideCounter').textContent =
+        String(num).padStart(2, '0') + ' / ' + String(totalSlides).padStart(2, '0');
+    }
+  }
+
+  // ─── Progress bar ───
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.width = progress + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  // ─── Navigation ───
+  function goToSlide(dir) {
+    if (dir === 'next' && currentSlide < totalSlides) {
+      currentSlide++;
+    } else if (dir === 'prev' && currentSlide > 1) {
+      currentSlide--;
+    }
+    document.getElementById('slide-' + currentSlide).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ─── Keyboard controls ───
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault();
+      goToSlide('next');
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      goToSlide('prev');
+    } else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      currentSlide = 1;
+      document.getElementById('slide-1').scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      currentSlide = totalSlides;
+      document.getElementById('slide-' + totalSlides).scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // ─── Parallax on grid backgrounds + screenshot backgrounds ───
+  window.addEventListener('scroll', () => {
+    const grids = document.querySelectorAll('.slide-grid-bg');
+    grids.forEach(grid => {
+      const rect = grid.parentElement.getBoundingClientRect();
+      const offset = rect.top * 0.15;
+      grid.style.transform = 'translateY(' + offset + 'px)';
+    });
+
+    const screenshots = document.querySelectorAll('.slide-bg-screenshot');
+    screenshots.forEach(function(bg) {
+      var slide = bg.parentElement;
+      var rect = slide.getBoundingClientRect();
+      var img = bg.querySelector('img');
+      if (!img || !img.naturalHeight) return;
+
+      var viewH = window.innerHeight;
+      var imgH = img.offsetHeight;
+      var travel = imgH - viewH;
+      if (travel <= 0) return;
+
+      // progress: 0 when slide top enters viewport, 1 when slide bottom leaves
+      var progress = 1 - ((rect.bottom) / (viewH + rect.height));
+      progress = Math.max(0, Math.min(1, progress));
+
+      bg.style.transform = 'translateY(' + (-progress * travel) + 'px)';
+    });
+  }, { passive: true });
+
+  // Init
+  updateProgress();
+</script>
+</body>
+</html>
