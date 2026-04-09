@@ -10,9 +10,9 @@ These guides were **reviewed against the Kirra Design source tree** at:
 
 | Field | Value |
 |--------|--------|
-| **Kirra app version** | **1.0.47** (`package.json` / `package-lock.json`) |
-| **Git commit** | `fb78e20c34c46e678f5b84b5c91a6f5295098c11` (short: `fb78e20c`) |
-| **Commit date** | 2026-04-06 (author timezone +0800) |
+| **Kirra app version** | **1.0.58** (`package.json` / `package-lock.json`) |
+| **Git commit** | `4f4339e20fe33c9be5c3e8283b28ec2850c2322f` (short: `4f4339e2`) |
+| **Commit date** | 2026-04-09 (author timezone +0800) |
 
 Use this block to judge whether the docs may be ahead of or behind your installed build. For the live app version in use, check **Help → About** (or your deployment’s `package.json`).
 
@@ -28,7 +28,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 ### Kirra App Presentation ISEE April 2026
 
 <p align="left">
-  <a href="ISEE-presentation/kirrapresentation.html">
+  <a href="ISEE-presentation/kirra-presentation.html">
     <img src="ISEE-presentation/icons/Kirra-Icon-App512x512.png" alt="Kirra App Presentation" width="128" height="128">
   </a>
 </p>
@@ -97,6 +97,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Coordinate System](reference/coordinate-system.md)
 - [3D View & Orbit Focus](reference/3d-tools.md)
 - [Keyboard Shortcuts & Mouse Controls](reference/keyboard-shortcuts.md)
+- [JavaScript pitfalls — zero vs falsy & import zoom](reference/javascript-pitfalls.md) *(contributors)*
 - [FAQ](reference/faq.md)
 
 ---

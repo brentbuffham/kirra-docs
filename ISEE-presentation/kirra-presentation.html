@@ -576,7 +576,7 @@
   }
 
   .slide-screenshot.ken-burns-active .slide-bg-screenshot img {
-    transform: scale(1);
+    transform: scale(0.90);
   }
 
   .slide-screenshot-overlay {
@@ -654,7 +654,7 @@
     <div class="logo-dot"></div>
     <span>Kirra Design</span>
   </div>
-  <div class="nav-slide-counter" id="slideCounter">01 / 14</div>
+  <div class="nav-slide-counter" id="slideCounter">01 / 21</div>
   <div class="nav-controls">
     <button class="nav-btn" onclick="goToSlide('prev')" title="Previous (←)">&#8592;</button>
     <button class="nav-btn" onclick="goToSlide('next')" title="Next (→)">&#8594;</button>
@@ -826,6 +826,13 @@
       <li><span class="li-icon">▸</span> Delay time display per hole</li>
       <li><span class="li-icon">▸</span> Channel colour coding for readability</li>
     </ul>
+    <div style="margin-top: 2rem; padding: 1rem 1.25rem; border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); line-height: 1.7;">
+      <strong style="color: var(--text-secondary);">Note:</strong>
+      File format outputs are still largely untested against live field data.
+      The &lt;CRC&gt; DaveyTronic (BPD) export has not yet been fully solutioned.
+      If any suppliers or users would like to provide their format specifications, I am happy to incorporate them &mdash;
+      please reach out via <a href="https://blastingapps.com" style="color: var(--accent); text-decoration: none;">blastingapps.com</a>.
+    </div>
   </div>
 </section>
 
@@ -873,9 +880,42 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 9: Flyrock Shroud Screenshot -->
+<!-- SLIDE 9: Blair Heavy PPV Screenshot -->
 <!-- ══════════════════════════════════════════ -->
 <section class="slide slide-screenshot" id="slide-9">
+  <div class="slide-bg-screenshot"><img src="icons/BlairHeavy.png" alt="Blair Heavy PPV in Kirra"></div>
+  <div class="slide-screenshot-overlay"></div>
+  <div class="slide-inner">
+    <div class="slide-caption">Blair &amp; Minchinton Heavy PPV</div>
+    <div class="slide-subcaption">Time-domain peak particle velocity prediction with row-level checkpointing</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 10: Flyrock Modelling Details -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide" id="slide-10">
+  <div class="slide-grid-bg"></div>
+  <div class="slide-inner">
+    <div class="slide-label">Safety</div>
+    <h2>Flyrock <span class="highlight">Modelling</span></h2>
+    <div class="subtitle" style="margin-bottom: 2rem;">
+      Predict flyrock throw distances and visualise 3D ballistic envelopes around every blast hole &mdash; helping engineers set exclusion zones with confidence.
+    </div>
+    <ul class="feature-list">
+      <li><span class="li-icon">&#9656;</span> 3D Chernigovskii ballistic shroud rendered per hole</li>
+      <li><span class="li-icon">&#9656;</span> Richards &amp; Moore, Lundborg, and McKenzie throw models</li>
+      <li><span class="li-icon">&#9656;</span> Configurable launch angle, stemming factor, and rock density</li>
+      <li><span class="li-icon">&#9656;</span> Surface intersection available for generating exclusion zones on terrain</li>
+      <li><span class="li-icon">&#9656;</span> Visual overlay in both 2D and 3D views</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SLIDE 11: Flyrock Shroud Screenshot -->
+<!-- ══════════════════════════════════════════ -->
+<section class="slide slide-screenshot" id="slide-11">
   <div class="slide-bg-screenshot"><img src="icons/FlyrockShroud.png" alt="Flyrock Shroud in Kirra"></div>
   <div class="slide-screenshot-overlay"></div>
   <div class="slide-inner">
@@ -885,9 +925,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 10: Temporal Shader -->
+<!-- SLIDE 12: Temporal Shader -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide" id="slide-10">
+<section class="slide" id="slide-12">
   <div class="slide-grid-bg"></div>
   <div class="slide-inner">
     <div class="slide-label">Visualisation</div>
@@ -915,9 +955,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 11: File Formats -->
+<!-- SLIDE 13: File Formats -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide" id="slide-11">
+<section class="slide" id="slide-13">
   <div class="slide-grid-bg"></div>
   <div class="slide-inner">
     <div class="slide-label">Interoperability</div>
@@ -960,9 +1000,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 12: Powerful Charging Tools -->
+<!-- SLIDE 14: Powerful Charging Tools -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide" id="slide-12">
+<section class="slide" id="slide-14">
   <div class="slide-grid-bg"></div>
   <div class="slide-inner">
     <div class="slide-label">Charging</div>
@@ -989,9 +1029,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 13: Deck Builder Screenshot -->
+<!-- SLIDE 15: Deck Builder Screenshot -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide slide-screenshot" id="slide-13">
+<section class="slide slide-screenshot" id="slide-15">
   <div class="slide-bg-screenshot"><img src="icons/DeckBuilder.png" alt="Deck Builder in Kirra"></div>
   <div class="slide-screenshot-overlay"></div>
   <div class="slide-inner">
@@ -1001,9 +1041,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 14: Product Manager Screenshot -->
+<!-- SLIDE 16: Product Manager Screenshot -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide slide-screenshot" id="slide-14">
+<section class="slide slide-screenshot" id="slide-16">
   <div class="slide-bg-screenshot"><img src="icons/ProductManger.png" alt="Product Manager in Kirra"></div>
   <div class="slide-screenshot-overlay"></div>
   <div class="slide-inner">
@@ -1013,9 +1053,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 15: Print Templates Screenshot -->
+<!-- SLIDE 17: Print Templates Screenshot -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide slide-screenshot" id="slide-15">
+<section class="slide slide-screenshot" id="slide-17">
   <div class="slide-bg-screenshot"><img src="icons/PrintTemplates.png" alt="Print Templates in Kirra"></div>
   <div class="slide-screenshot-overlay"></div>
   <div class="slide-inner">
@@ -1025,9 +1065,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 16: Architecture -->
+<!-- SLIDE 18: Architecture -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide" id="slide-16">
+<section class="slide" id="slide-18">
   <div class="slide-grid-bg"></div>
   <div class="slide-inner">
     <div class="slide-label">Under the Hood</div>
@@ -1068,9 +1108,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 17: Free & Accessible -->
+<!-- SLIDE 19: Free & Accessible -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide" id="slide-17">
+<section class="slide" id="slide-19">
   <div class="slide-grid-bg"></div>
   <div class="slide-inner" style="text-align: center;">
     <div class="slide-label">Licence</div>
@@ -1096,9 +1136,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 18: Roadmap -->
+<!-- SLIDE 20: Roadmap -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide" id="slide-18">
+<section class="slide" id="slide-20">
   <div class="slide-grid-bg"></div>
   <div class="slide-inner">
     <div class="slide-label">What's Next</div>
@@ -1137,9 +1177,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SLIDE 19: Q&A -->
+<!-- SLIDE 21: Q&A -->
 <!-- ══════════════════════════════════════════ -->
-<section class="slide" id="slide-19">
+<section class="slide" id="slide-21">
   <div class="slide-grid-bg"></div>
   <div class="slide-inner" style="text-align: center;"><br><br>
     <div class="title-logo" style="margin-bottom: 2rem;">
