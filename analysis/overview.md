@@ -2,7 +2,7 @@
 
 Kirra includes a GPU-accelerated blast analytics system that overlays vibration, damage, and energy predictions directly on your blast pattern. Most models run in real-time on the GPU via WebGL fragment shaders, enabling interactive what-if analysis as you move holes or adjust charges.
 
-**Recent builds (e.g. v1.0.46):** shader code paths were tuned for **heavier multi-deck columns** and **large patterns** (loop limits and per-model iteration in GLSL, plus related dialog/helper updates). Very deep deck counts may still hit GPU static limits on some models — use **PPV Per-Deck** or **Blair Heavy** where per-deck fidelity matters most.
+**Recent builds (e.g. v1.0.60):** shader code paths were tuned for **heavier multi-deck columns** and **large patterns** (loop limits and per-model iteration in GLSL, plus related dialog/helper updates). Very deep deck counts may still hit GPU static limits on some models — use **PPV Per-Deck**, **Temporal Lifecycle**, or **Blair Heavy** where per-deck fidelity or detonation timing along the column matters most.
 
 > *Screenshot coming soon -- analytics dialog with model selection and parameter controls*
 
@@ -10,20 +10,37 @@ Kirra includes a GPU-accelerated blast analytics system that overlays vibration,
 
 ## Available Models
 
-Kirra provides **10 analytics models**:
+Kirra provides **11 analytics models** in the Blast Analysis dialog:
 
 | # | Model | Output | Best For |
 |---|-------|--------|----------|
 | 1 | **PPV Site Law** | mm/s | Compliance prediction, comparison with monitoring data |
-| 2 | **PPV Per-Deck** | mm/s | Multi-deck configurations, individual deck contributions |
+| 2 | **PPV Per-Deck** | mm/s | Multi-deck configurations, scaled-distance PPV per deck (no VOD burn front) |
 | 3 | **Heelan Original** | mm/s | Physics-based directional vibration (Heelan 1953) |
 | 4 | **Scaled Heelan** | mm/s | Site-calibrated directional vibration (Blair & Minchinton 2006) |
 | 5 | **Blair Lite (Scaled Heelan 90%)** | mm/s | Updated Blair radiation patterns (Blair 2015) |
-| 6 | **Blair Heavy (Time-Domain)** | mm/s | Full waveform synthesis -- highest fidelity, runs on CPU |
-| 7 | **Non-Linear Damage** | Damage Index 0-1 | Fragmentation, overbreak, damage zone mapping |
-| 8 | **Jointed Rock Damage** | Damage Ratio | Structural assessment near joints, wall control |
-| 9 | **Borehole Pressure** | MPa | Near-field wall damage, presplit design |
-| 10 | **Volumetric Powder Factor** | kg/m3 | Energy distribution, fragmentation prediction |
+| 6 | **Temporal Lifecycle (VOD ramp)** | mm/s | Detonation as a ramp from **primer** along the charge at VOD; time animation of burn fronts (still **incoherent** RMS sum — not wave interference) |
+| 7 | **Blair Heavy (Time-Domain)** | mm/s | Full **coherent** waveform synthesis — only path that can show constructive/destructive interference; runs on CPU |
+| 8 | **Non-Linear Damage** | Damage Index 0-1 | Fragmentation, overbreak, damage zone mapping |
+| 9 | **Jointed Rock Damage** | Damage Ratio | Structural assessment near joints, wall control |
+| 10 | **Borehole Pressure** | MPa | Near-field wall damage, presplit design |
+| 11 | **Volumetric Powder Factor** | kg/m3 | Energy distribution, fragmentation prediction |
+
+---
+
+## Wave collision and interference (what the shaders actually show)
+
+**None of the GPU fragment shaders visualise classical wave collision** (constructive or destructive interference between overlapping P/S wave trains in the phase-coherent sense). What they implement instead is summarised below. **Blair Heavy (CPU)** is the only model that performs **true coherent superposition with phase**; it can produce cancellation and reinforcement in the time domain. **All GPU models** use **incoherent** summation (RMS / energy-style stacking): contributions **add energy**, they do **not** cancel like coherent interference fringes.
+
+| Model | Superposition method | Shows collision / interference? |
+|-------|----------------------|-------------------------------|
+| **PPV**, **PPV Per-Deck** | Scaled distance — no waveform synthesis | No |
+| **Heelan**, **Scaled Heelan** | Incoherent (RMS) sum of energies | No — RMS cannot cancel |
+| **Blair Lite** (Scaled Heelan 90%), **+COH** path family | Incoherent (RMS) with directional radiation | No |
+| **Temporal Lifecycle** | Incoherent (RMS) with **VOD ramp** from **primer**, time filtering (`uDisplayTime`) | No — shows **burn-front timing** and primer-relative ordering, **not** interference |
+| **Blair Heavy** (Blair & Minchinton) | Full **time-domain** waveform synthesis | **Yes** — coherent superposition; phases can constructively or destructively combine |
+
+For a deeper model-by-model read, see [PPV & Vibration Models](ppv-models.md).
 
 ---
 
@@ -35,7 +52,7 @@ Access the Blast Analysis Shader from the Surface toolbar. The dialog presents:
 
 | Field | Description |
 |-------|-------------|
-| **Analytics Model** | Select from the 10 models listed above |
+| **Analytics Model** | Select from the 11 models listed above (including **Temporal Lifecycle**) |
 | **Render On** | Choose a loaded surface or "Generate Analysis Plane" for a flat rectangle |
 | **Blast Pattern** | Filter to a specific entity or "All Blast Holes" |
 | **Apply Mode** | "Overlay on Original" or "Create Duplicate Surface" |
@@ -70,7 +87,9 @@ Each model has an expandable **Model Parameters** section for tuning site consta
 
 ## Time Interaction
 
-Timing-capable models support animated playback via the **Interact** button:
+Timing-capable models (including **Temporal Lifecycle**) support animated playback via the **Interact** button — the shader advances **`uDisplayTime`** so you see which decks/holes have fired by that instant. This is **not** the same as displaying wave interference; for coherent superposition use **Blair Heavy** (one-shot CPU run, no Interact slider).
+
+Controls:
 
 | Control | Description |
 |---------|-------------|

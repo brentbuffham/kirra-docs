@@ -1,6 +1,8 @@
 # PPV & Vibration Models
 
-Kirra provides 6 vibration prediction models ranging from simple empirical site laws to full time-domain waveform synthesis. This page summarises each model and its key parameters.
+Kirra provides **seven** vibration-focused models in the analytics dialog (plus separate damage/energy models below), from empirical site laws through VOD-ramp **Temporal Lifecycle** to full time-domain **Blair Heavy**. This page summarises each model and its key parameters.
+
+For **which models can show wave interference** (constructive/destructive), see the table in [Blast Analytics Overview](overview.md) (section **Wave collision and interference**).
 
 > *Screenshot coming soon -- PPV overlay on blast pattern*
 
@@ -26,12 +28,16 @@ The simplest model. Computes Peak Particle Velocity using the empirical scaled-d
 
 ## 2. PPV Per-Deck
 
-Per-deck variant of the site law. Instead of treating each hole as a single point charge, this model evaluates PPV separately for each charged deck using that deck's own mass and position.
+Per-deck variant of the **scaled-distance site law**. Instead of treating each hole as a single point charge, this model evaluates PPV separately for each charged deck using that deck's own mass and position (top / centre / base sampling in the shader).
+
+**Superposition:** Like **PPV Site Law**, this path does **not** synthesise time-domain waveforms. It does **not** display constructive/destructive interference — it is **not** a coherent phase model. For coherent superposition, use **Blair Heavy**.
 
 **Advantages over PPV Site Law:**
 - Multi-deck holes show per-deck influence zones
 - Air gaps between decks are naturally excluded
 - Each deck uses its own mass, not the total hole mass
+
+**Contrast with Temporal Lifecycle:** **PPV Per-Deck** does **not** propagate a detonation front along the column at VOD from the primer. If you need burn-front timing along the explosive column, use **Temporal Lifecycle** or **Blair Heavy**.
 
 Same parameters as PPV Site Law, with an additional max display distance setting.
 
@@ -88,9 +94,21 @@ Same energy summation approach as Scaled Heelan but uses Blair's (2015) improved
 
 ---
 
-## 6. Blair Heavy (Time-Domain)
+## 6. Temporal Lifecycle (VOD ramp) (`temporal_lifecycle`)
 
-Full time-domain waveform superposition model. **Runs on CPU via Web Workers** (not GPU), computing PPV on a 3D voxel grid for truly volumetric output. Uses multiple workers based on your computer's processor count.
+GPU model that treats detonation as a **continuous ramp** propagating from the **primer** along the charge column at **VOD**, rather than firing each deck as a simultaneous point source. At an observation point, P-wave arrivals from positions along the charge occur at different times (Mach-cone style behaviour when VOD exceeds rock P-wave speed).
+
+**Per-primer data:** The shader uses a **primer texture** (`uPrimerData`) together with the deck texture. Each primer row carries **deck index**, **primer fraction** along that deck (top toward base), **delay**, and **VOD**, so multiple primers per hole can drive separate burn fronts. Deck row 2 packs `primerFrac` in the fractional part of the auxiliary channel for primer-aware ordering (see `TemporalLifeCycleModel.js` in the Kirra source).
+
+**Superposition:** Contributions are still combined with **incoherent (RMS) energy summation** — same limitation as Scaled Heelan family on GPU: **no** coherent interference fringes. The model shows **when** energy arrives from the moving detonation front under **`uDisplayTime`** filtering, not wave cancellation.
+
+**Time Interaction:** Supported — use **Interact** to animate firing time and watch the sequence evolve.
+
+---
+
+## 7. Blair Heavy (Time-Domain)
+
+Full **coherent** time-domain waveform superposition model — the **only** analytics path that superposes waveforms with **phase** so that **constructive and destructive interference** can appear in the result. **Runs on CPU via Web Workers** (not GPU), computing PPV on a 3D voxel grid for truly volumetric output. Uses multiple workers based on your computer's processor count.
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -107,8 +125,9 @@ Full time-domain waveform superposition model. **Runs on CPU via Web Workers** (
 | Elements per Deck | 12 | |
 
 **Key differences from other models:**
+- Coherent superposition — phases can cancel or reinforce (unlike GPU RMS models)
 - Time-domain waveform synthesis with P/S arrival times
-- Primer location controls detonation front direction
+- Primer location controls detonation front direction and cumulative mass ordering
 - Results are exported to GLB for safe persistence in IndexedDB
 - Does not support time interaction or real-time updates
 
@@ -116,7 +135,7 @@ Full time-domain waveform superposition model. **Runs on CPU via Web Workers** (
 
 ## Damage and Energy Models
 
-### 7. Non-Linear Damage (Holmberg-Persson)
+### 8. Non-Linear Damage (Holmberg-Persson)
 
 Computes cumulative damage index based on PPV threshold for crack initiation.
 
@@ -131,7 +150,7 @@ Computes cumulative damage index based on PPV threshold for crack initiation.
 
 **Output:** Damage Index (0-1). Values approaching 1.0 indicate significant damage.
 
-### 8. Jointed Rock Damage
+### 9. Jointed Rock Damage
 
 Combines intact rock fracture with joint-controlled failure. Evaluates both dynamic stress against tensile strength and Mohr-Coulomb failure on joints.
 
@@ -139,7 +158,7 @@ Additional parameters: joint set angle, joint cohesion, joint friction angle.
 
 **Output:** Damage Ratio (values > 1.0 = failure).
 
-### 9. Borehole Pressure
+### 10. Borehole Pressure
 
 Computes borehole wall pressure and its attenuation with distance from each charged deck.
 
@@ -149,7 +168,7 @@ Where Pb = rho_e x VOD^2 / 8 (borehole wall pressure).
 
 **Output:** MPa. Best for near-field wall damage assessment and presplit design.
 
-### 10. Volumetric Powder Factor
+### 11. Volumetric Powder Factor
 
 Per-deck powder factor analysis. Each charged deck contributes its mass within a spherical volume at the observation distance.
 
