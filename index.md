@@ -25,6 +25,14 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 | **[Kirra Design](https://kirra-design.com)** | The core blast design application — 2D/3D pattern layout, hole management, surface tools, charging, timing, 20+ import/export formats, blast analytics, and flyrock modelling |
 | **[Kirra Scheduler](https://github.com/brentbuffham/KirraScheduler)** | A companion scheduling tool for planning and sequencing blast events with Gantt charts, equipment management, and 3D playback |
 
+### Kirra App Presentation ISEE April 2026
+
+<p align="left">
+  <a href="ISEE-presentation/kirrapresentation.html">
+    <img src="ISEE-presentation/icons/Kirra-Icon-App512x512.png" alt="Kirra App Presentation" width="128" height="128">
+  </a>
+</p>
+
 ---
 
 ## Kirra Design
