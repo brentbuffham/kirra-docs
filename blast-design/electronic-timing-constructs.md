@@ -29,6 +29,8 @@ This workflow is separate from **connector timing** (`fromHoleID`, `timingDelayM
 | **Bézier handle** | Per-knot `cpIn` / `cpOut` control points; handles are collinear with independent lengths when editing. |
 | **Timing Relief tool** | One contour plus explicit **start time** and **relief (ms/m)** → offset strips in both time directions. |
 | **Time Range tool** | Two contours plus **Line 1** and **Line 2** times → stitched mesh; effective relief is derived between the boundaries. |
+| **Manual offset (`timeOffsetMs`)** | Extra milliseconds added in the **Electronic Timing** dialog with **+** / **−** (per selected holes’ **Electronic** detonators). Cleared by **Apply & Reset Offsets** (on re-apply) or **Reset Selected Hole Offsets**. |
+| **Loading-stage offset (`offsetDelayMs`)** | Set in **Deck Builder** for the detonator; **always kept** when you apply timing or reset manual offsets — it is not the same field as `timeOffsetMs`. |
 
 ---
 
@@ -37,7 +39,7 @@ This workflow is separate from **connector timing** (`fromHoleID`, `timingDelayM
 1. **Charge the holes** with at least one **Electronic** detonator on primers that should follow the mesh.
 2. **Create a timing construct** and draw geometry (see below).
 3. **Assign holes** to the construct (only assigned holes are considered when applying times).
-4. Click **Apply Timing** to interpolate time at each hole’s **collar XY** and write electronic detonator fields (including a link back to the construct id).
+4. Use **Apply & Keep Offsets** or **Apply & Reset Offsets** to re-sample times from the temporal surface at each assigned hole’s **collar XY** and write electronic detonator fields (including a link back to the construct id). See **Apply timing and offsets** below.
 
 Connector-based hole-to-hole delays and electronic mesh times can coexist in one project; they address different initiation models.
 
