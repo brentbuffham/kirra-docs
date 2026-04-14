@@ -24,7 +24,7 @@ This guide walks you through creating a blast design from scratch — from openi
 
 ## Step 2 — Import Your Data
 
-1. Go to **File → Import**.
+1. Open the import dialog from the **File** menu *[VERIFY: exact menu path — File → Import]*.
 2. Choose your format: CSV, DXF, DTM/STR, OBJ, PLY, GLTF/GLB, IREDES, KML, SHP, or LAS.
 3. Select your file and complete any import mapping if prompted.
 4. The canvas **auto-centres** on your imported data.
@@ -65,12 +65,16 @@ This guide walks you through creating a blast design from scratch — from openi
 
 If you are building a pattern from scratch:
 
-1. Go to **Pattern → Add Pattern**.
-2. Choose **Rectangular**, **Polygon**, or **Line-based**.
+1. Open the **Holes** toolbar on the right of the workspace.
+2. Click the pattern tool that matches your layout:
+   - **Add Pattern Block** for a rectangular grid
+   - **Add Pattern in Polygon** for a polygon boundary
+   - **Holes Along Line** for a single straight row
+   - **Holes Along Polyline** for a curved or multi-segment path
 3. Enter burden, spacing, and hole count (or draw a boundary).
-4. Click **Generate** — holes appear on the canvas.
+4. Click **Generate** — holes appear on the canvas. *[VERIFY: button label]*
 
-See [Pattern Generation](../blast-design/pattern-generation.md) for full details.
+See [Holes Toolbar](../blast-design/holes-toolbar.md) and [Pattern Generation](../blast-design/pattern-generation.md) for full details.
 
 ---
 
@@ -105,7 +109,7 @@ See [Charging Overview](../charging/overview.md) for the full workflow.
 
 ## Step 10 — Export
 
-1. Go to **File → Export**.
+1. Open the export dialog from the **File** menu *[VERIFY: exact menu path — File → Export]*.
 2. Choose your format: CSV, DXF, GLB, GeoTIFF, IREDES, etc.
 3. Configure any format-specific options.
 4. Save the file to your chosen location.
@@ -114,8 +118,8 @@ See [Charging Overview](../charging/overview.md) for the full workflow.
 
 ## Step 11 — Print
 
-- **File → Print to PDF** — Print the current view directly to PDF.
-- **File → Print from Template** — Use an XLSX template for formatted reports.
+- **Print to PDF** — Print the current view directly to PDF. *[VERIFY: exact menu path]*
+- **Print from Template** — Use an XLSX template for formatted reports. *[VERIFY: exact menu path]*
 
 ---
 
@@ -124,16 +128,16 @@ See [Charging Overview](../charging/overview.md) for the full workflow.
 | Step | Action |
 |------|--------|
 | 1 | Open Kirra in your browser |
-| 2 | Import data (File → Import) |
+| 2 | Import data (File menu) |
 | 3 | Toggle 2D/3D views |
 | 4 | Select holes (click, Shift+click) |
 | 5 | View properties (right-click) |
-| 6 | Generate pattern (Pattern → Add Pattern) |
-| 7 | Assign timing (Connect tool) |
+| 6 | Generate pattern (Holes toolbar — Add Pattern Block, Polygon, Line, or Polyline) |
+| 7 | Assign timing (Connect toolbar) |
 | 8 | Add charging *(optional)* |
 | 9 | Run analysis *(optional)* |
-| 10 | Export (File → Export) |
-| 11 | Print (File → Print to PDF or Print from Template) |
+| 10 | Export (File menu) |
+| 11 | Print (Print to PDF or Print from Template) |
 
 ---
 

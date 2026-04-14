@@ -43,6 +43,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Your First Blast — Step-by-Step Walkthrough](getting-started/first-blast.md)
 
 ### Blast Hole Design
+- [Holes Toolbar](blast-design/holes-toolbar.md) — button-by-button reference
 - [Adding Holes](blast-design/adding-holes.md)
 - [Editing Holes](blast-design/editing-holes.md)
 - [Pattern Generation](blast-design/pattern-generation.md)
@@ -93,6 +94,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Modify Toolbar](kad/modify-tools.md)
 
 ### Reference
+- [Select Toolbar](reference/select-toolbar.md) — button-by-button reference
 - [Hole Properties](reference/hole-properties.md)
 - [Coordinate System](reference/coordinate-system.md)
 - [3D View & Orbit Focus](reference/3d-tools.md)

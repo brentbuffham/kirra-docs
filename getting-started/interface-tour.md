@@ -10,11 +10,12 @@ The menu bar sits at the top of the window.
 
 | Menu | Key Items |
 |------|-----------|
-| **File** | Import, Export, Print, KAP project save/load |
-| **Edit** | Undo, Redo, Select All, Delete, Find Hole |
-| **View** | Toggle panels, Zoom controls, Fullscreen |
-| **Pattern** | Add Pattern (rectangular, polygon, line-based), Rotate, Mirror, Renumber |
-| **Settings** | Theme (dark/light), Language, Preferences |
+| **File** | Import, Export, Print, KAP project save/load *[VERIFY: exact menu items]* |
+| **Edit** | Undo, Redo, Select All, Delete, Find Hole *[VERIFY]* |
+| **View** | Toggle panels, Zoom controls, Fullscreen *[VERIFY]* |
+| **Settings** | Theme (dark/light), Language, Preferences *[VERIFY]* |
+
+> *[SCREENSHOT NEEDED: Menu bar with each menu expanded so the exact items can be confirmed.]*
 
 ---
 
@@ -68,25 +69,25 @@ Kirra uses **Dockview** panels — resizable, dockable, and pop-out.
 | **Viewport** | Main 2D canvas or 3D view — where you design and interact |
 | **Explorer** | TreeView — hierarchical list of all loaded entities (holes, surfaces, KAD drawings) |
 
-Panels can be resized by dragging their edges, docked in different positions, or popped out into separate windows.
+You can resize panels by dragging their edges, dock them in different positions, or pop them out into separate windows.
 
 ---
 
 ## Floating Toolbars
 
 ![Floating toolbars on the right side of the workspace](../screenshots/toolbarsfloating.png)
-*Floating toolbars provide quick access to Blast Holes, Patterns, Surfaces, KAD, Modify, and Connect tools.*
+*The six floating toolbars: Select, Holes, KAD, Surface, Connect, and Modify.*
 
 Floating toolbars appear on the **right side** of the workspace:
 
-| Toolbar | Tools |
-|---------|-------|
-| **Blast Holes** | Add hole, select, edit hole properties, [pattern templates](../blast-design/pattern-templates.md) |
-| **Patterns** | Generate rectangular, polygon, or line-based patterns |
-| **Surfaces** | Surface import, visibility, gradient options |
-| **KAD tools** | Points, lines, polygons, circles, text for vector drawings |
+| Toolbar | Purpose |
+|---------|---------|
+| **Select** | [Undo/redo, selection tools, H/K/V mode, ruler, protractor, zoom, reset view, section view, orbit focus, 3D settings](../reference/select-toolbar.md) |
+| **Holes** | [Place holes, generate patterns, renumber, and manage charging](../blast-design/holes-toolbar.md) |
+| **KAD** | [Draw points, lines, polygons, circles, and text for vector drawings](../kad/drawing-tools.md) |
+| **Surface** | Surface import, visibility, gradient options, analysis shaders, and mesh operations |
+| **Connect** | Assign timing delays, tie-in sequences, and detonator harnesses |
 | **Modify** | [Assign Surface/Grade, Transform, Offset, Radii, Reorder, Boolean, Join, Split](../kad/modify-tools.md) |
-| **Connect** | Assign timing delays and tie-in sequences |
 
 ---
 

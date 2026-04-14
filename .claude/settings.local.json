@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /c/Users/brent/desktop/git/kirra-docs/surfaces/*.md)",
+      "Bash(ls:*)"
+    ]
+  }
+}

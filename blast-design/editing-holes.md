@@ -109,7 +109,7 @@ Common bulk-edit operations:
 ## Rotating a Selection
 
 1. Select the holes to rotate
-2. Click **Pattern > Rotate**, or right-click and choose **Rotate Selection**
+2. Right-click and choose **Rotate Selection** *[VERIFY: exact context-menu label]*
 3. Enter the rotation angle in degrees (positive = clockwise)
 4. Choose the **pivot point**: centroid of the selection, or click a custom point on the canvas
 5. Click **Apply**
@@ -121,7 +121,7 @@ Common bulk-edit operations:
 ## Mirroring a Selection
 
 1. Select the holes to mirror
-2. Click **Pattern > Mirror**, or right-click and choose **Mirror Selection**
+2. Right-click and choose **Mirror Selection** *[VERIFY: exact context-menu label]*
 3. Choose axis: **Horizontal** (flip North/South) or **Vertical** (flip East/West)
 4. Click **Apply**
 
@@ -130,7 +130,7 @@ Common bulk-edit operations:
 ## Scaling a Selection
 
 1. Select all holes in the pattern
-2. Click **Pattern > Scale**
+2. Open the Scale dialog *[VERIFY: exact tool location — likely the right-click context menu or a future Modify toolbar entry]*
 3. Enter scale factors for X and Y
 4. Click **Apply**
 
@@ -140,9 +140,9 @@ This is useful for adjusting burden and spacing across an entire pattern.
 
 ## Renumbering Holes
 
-1. Select the holes to renumber (or press `Ctrl+A` for all)
-2. Click **Pattern > Renumber**
-3. Set the prefix, start number, and sort order (by row, by easting, by northing, or by current number)
+1. Select the holes to renumber (or press `Ctrl+A` for all) *[VERIFY: Ctrl+A select-all]*
+2. Click **Renumber Holes** on the [Holes toolbar](holes-toolbar.md)
+3. Set the prefix, start number, and sort order (by row, by easting, by northing, or by current number) *[VERIFY: exact sort options]*
 4. Click **Apply** — Hole IDs update throughout the project, including any timing and charge references
 
 ---

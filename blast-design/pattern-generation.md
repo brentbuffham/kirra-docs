@@ -6,12 +6,14 @@ Kirra can automatically generate blast patterns in several geometric configurati
 
 ## Choosing a Pattern Method
 
-| Method | Best For | Menu Path |
-|--------|----------|-----------|
-| **Rectangular Grid** | Standard bench blasting with uniform rows and columns | Pattern > Add Pattern |
-| **Polygon Pattern** | Irregular blast boundaries, pit edges, complex shapes | Pattern > Polygon Pattern |
-| **Line Pattern** | Single-row presplit, buffer, or production lines | Pattern > Add Line |
-| **Polyline Pattern** | Curved or multi-segment rows following contours | Pattern > Add Polyline |
+| Method | Best For | Tool |
+|--------|----------|------|
+| **Rectangular Grid** | Standard bench blasting with uniform rows and columns | Holes toolbar → Add Pattern Block |
+| **Polygon Pattern** | Irregular blast boundaries, pit edges, complex shapes | Holes toolbar → Add Pattern in Polygon |
+| **Line Pattern** | Single-row presplit, buffer, or production lines | Holes toolbar → Holes Along Line |
+| **Polyline Pattern** | Curved or multi-segment rows following contours | Holes toolbar → Holes Along Polyline |
+
+See the [Holes Toolbar](holes-toolbar.md) reference for each button.
 
 > *Screenshot coming soon*
 
@@ -21,7 +23,7 @@ Kirra can automatically generate blast patterns in several geometric configurati
 
 Creates a regular grid of blast holes with uniform burden and spacing. This is the most common pattern type for bench blasting.
 
-**Menu:** Pattern > Add Pattern
+**Tool:** Holes toolbar → Add Pattern Block
 
 ### Parameters
 
@@ -37,7 +39,7 @@ Creates a regular grid of blast holes with uniform burden and spacing. This is t
 | **Subdrill** | Vertical distance below grade (metres, positive = downhole) | 1.5 m |
 | **Hole Angle** | Angle from vertical (0 = vertical) | 0 degrees |
 | **Hole Bearing** | Direction of hole angle (0 = North, clockwise) | 0 degrees |
-| **Hole Diameter** | Diameter in millimetres | 115 mm |
+| **Hole Diameter** | Diameter in millimetres | 115 mm *[VERIFY: typical value]* |
 | **Hole Type** | Classification | Production |
 | **First Hole Position** | Easting and Northing of the pattern origin | Site coordinates |
 
@@ -55,7 +57,7 @@ Rows (Burden direction)
 
 ### Steps
 
-1. Go to **Pattern > Add Pattern**
+1. Click **Add Pattern Block** on the [Holes toolbar](holes-toolbar.md)
 2. Enter the pattern name (e.g. `Bench_150`)
 3. Set the starting position (Easting, Northing, Elevation)
 4. Configure the number of rows and columns
@@ -74,11 +76,11 @@ Generated holes are numbered sequentially: `H001`, `H002`, `H003`, etc. Row-base
 
 Fills an irregular polygon boundary with holes at the specified burden and spacing. Holes that fall outside the boundary are automatically excluded.
 
-**Menu:** Pattern > Polygon Pattern
+**Tool:** Holes toolbar → Add Pattern in Polygon
 
 ### Steps
 
-1. Go to **Pattern > Polygon Pattern**
+1. Click **Add Pattern in Polygon** on the [Holes toolbar](holes-toolbar.md)
 2. Define the boundary by clicking points on the canvas to trace the polygon outline, then double-click to close it. Alternatively, select an existing polygon from a DXF import.
 3. Enter burden and spacing
 4. Set collar elevation and hole properties (bench height, subdrill, angle, bearing, diameter)
@@ -106,11 +108,11 @@ Fills an irregular polygon boundary with holes at the specified burden and spaci
 
 Creates a single straight row of holes between two points.
 
-**Menu:** Pattern > Add Line
+**Tool:** Holes toolbar → Holes Along Line
 
 ### Steps
 
-1. Go to **Pattern > Add Line**
+1. Click **Holes Along Line** on the [Holes toolbar](holes-toolbar.md)
 2. Define the start point and end point by clicking on the canvas or entering coordinates
 3. Enter the number of holes or the spacing between holes:
    - If you specify hole count, spacing is calculated automatically
@@ -138,11 +140,11 @@ Start --> *  *  *  *  *  *  * <-- End
 
 Creates a curved or multi-segment row of holes following a polyline path. This is ideal for contour-following patterns.
 
-**Menu:** Pattern > Add Polyline
+**Tool:** Holes toolbar → Holes Along Polyline
 
 ### Steps
 
-1. Go to **Pattern > Add Polyline**
+1. Click **Holes Along Polyline** on the [Holes toolbar](holes-toolbar.md)
 2. Click multiple points on the canvas to define the path, or select an existing polyline
 3. Enter the hole spacing along the path (metres)
 4. Set hole properties (collar elevation, bench height, subdrill, angle, bearing, diameter, type)
@@ -213,9 +215,9 @@ After generation, holes behave like any manually placed hole. You can:
 - Select and drag individual holes to adjust positions
 - Bulk-edit properties via the right panel
 - Add or delete holes
-- Rotate the entire pattern with **Pattern > Rotate**
-- Mirror the pattern with **Pattern > Mirror**
-- Renumber IDs with **Pattern > Renumber**
+- Rotate the entire pattern *[VERIFY: tool location — may be via right-click Rotate Selection or the Modify toolbar]*
+- Mirror the pattern *[VERIFY: tool location]*
+- Renumber IDs with **Renumber Holes** on the [Holes toolbar](holes-toolbar.md)
 
 ---
 
@@ -232,7 +234,7 @@ When creating or importing patterns with names that already exist:
 
 ## Pattern Statistics
 
-After pattern creation, view statistics via **View > Pattern Statistics** or by selecting the entity in the TreeView:
+After pattern creation, view statistics via **View > Pattern Statistics** *[VERIFY: menu path]* or by selecting the entity in the TreeView:
 
 - Total hole count
 - Total drilled length (sum of all hole lengths)

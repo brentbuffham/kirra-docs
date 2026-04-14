@@ -19,15 +19,15 @@ Before placing holes, configure the default properties that every new hole will 
 | Property | Description | Typical Value |
 |----------|-------------|---------------|
 | **Hole ID prefix** | Text prefix for auto-generated IDs (e.g. `H`, `BH`, `R1-`) | `H` |
-| **Diameter** | Hole diameter in millimetres | 115 mm |
-| **Bench Height** | Vertical distance from collar to grade (metres) | 10.0 m |
-| **Subdrill** | Vertical distance below grade (metres, positive = downhole) | 1.5 m |
+| **Diameter** | Hole diameter in millimetres | 115 mm *[VERIFY: built-in default]* |
+| **Bench Height** | Vertical distance from collar to grade (metres) | 10.0 m *[VERIFY]* |
+| **Subdrill** | Vertical distance below grade (metres, positive = downhole) | 1.5 m *[VERIFY]* |
 | **Bearing** | Drill azimuth in degrees (0 = North, clockwise) | 0 |
 | **Angle** | Drill angle from vertical in degrees (0 = vertical, 90 = horizontal) | 0 |
-| **Collar Elevation** | Default collar Z elevation; override per-hole as needed | 150.0 m |
+| **Collar Elevation** | Default collar Z elevation; override per-hole as needed | 150.0 m *[VERIFY]* |
 | **Hole Type** | Classification of the hole | Production |
 
-These defaults are saved with the project and persist between sessions.
+Typical values above are illustrative — confirm the built-in defaults against the live Hole Defaults panel. The defaults are saved with the project and persist between sessions.
 
 ---
 
@@ -79,7 +79,7 @@ For angled holes, the Grade point is automatically interpolated along the hole v
 
 | Property | Description |
 |----------|-------------|
-| **Hole Diameter** | Diameter in millimetres (default: 115 mm) |
+| **Hole Diameter** | Diameter in millimetres *[VERIFY: default value]* |
 | **Hole Length** | Calculated 3D distance from collar to toe (metres) |
 | **Subdrill Length** | Vector distance along the hole from grade to toe (metres) |
 
@@ -138,7 +138,7 @@ Custom hole types are also supported. You can enter any name you like.
 
 Kirra auto-increments the numeric portion of the Hole ID. For example, with prefix `H`, holes are numbered `H001`, `H002`, `H003`, and so on. You can manually override any ID in the Hole Properties dialog or in the right panel.
 
-To renumber an entire selection, use **Pattern > Renumber**.
+To renumber an entire selection, use **Renumber Holes** on the [Holes toolbar](holes-toolbar.md).
 
 ---
 

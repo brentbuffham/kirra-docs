@@ -137,7 +137,7 @@ Offsets KAD lines and polygons inward or outward by a specified distance, creati
 | **Projection (°)** | Slope angle for offset. 0° = horizontal, positive = up slope, negative = down slope |
 | **Number of Offsets** | How many parallel offsets to create (1 or more) |
 | **Priority Mode** | Distance Priority (total distance) or other modes |
-| **Offset Color** | Color for the new offset entities |
+| **Offset Colour** | Colour for the new offset entities *[VERIFY: UI label spelling]* |
 | **Handle Crossovers** | Automatically resolve self-intersections in the offset result |
 | **Keep Elevations** | Interpolate Z values from the original entity |
 | **Limit to Elevation** | Constrain the offset to a fixed elevation |
@@ -176,7 +176,7 @@ Creates circular polygons around selected blast holes or KAD points.
 | **Starburst Offset (%)** | 100% = circle, 50% = even points at half radius, 0% = star shape |
 | **Point Location** | Which hole point to use: Start/Collar Location or other options |
 | **Line Width** | Width of the polygon outline |
-| **Polygon Color** | Color for the generated polygons |
+| **Polygon Colour** | Colour for the generated polygons *[VERIFY: UI label spelling]* |
 | **Union Circles** | Combine overlapping circles into a single polygon |
 
 ### Notes
@@ -230,7 +230,7 @@ Performs 2D boolean operations on KAD polygon entities. Supports Union, Intersec
 | **Subject (A)** | The primary polygon (pick from canvas or dropdown) |
 | **Clip (B)** | The clipping polygon (pick from canvas or dropdown) |
 | **Operation** | Union (A + B), Intersect, Difference (A - B), or XOR |
-| **Output Color** | Color for the result polygon |
+| **Output Colour** | Colour for the result polygon *[VERIFY: UI label spelling]* |
 | **Line Width** | Width of the result polygon outline |
 | **Layer Name** | Target layer for the output |
 
@@ -318,7 +318,7 @@ Splits a KAD line or polygon at one or more selected vertices, creating separate
 
 The following improvements were made to the Modify toolbar tools in recent updates:
 
-- **Offset KAD**: The dialog now remembers the last used parameter values (offset amount, projection angle, number of offsets, color, etc.) across executions
+- **Offset KAD**: The dialog now remembers the last used parameter values (offset amount, projection angle, number of offsets, colour, etc.) across executions
 - **Split KAD Lines**: Major refactor with multi-point split support -- select multiple vertices before splitting. The dialog remembers checkbox states and provides improved status feedback
 - **Join KAD Lines**: The dialog now remembers checkbox states (Close as Poly, Delete Originals) between executions
 - **KAD Drawing**: Point ID labels and drawing are now restricted to the selected KAD entity, improving clarity and performance when working with large datasets
