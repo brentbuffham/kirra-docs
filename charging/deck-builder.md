@@ -97,6 +97,8 @@ Drag or click these variable chips to insert them into the formula bar:
 | `holeDiameter` | Hole diameter (millimetres) |
 | `benchHeight` | Vertical distance from collar to grade (metres) |
 | `subdrillLength` | Distance from grade to toe along the hole (metres) |
+| `holeX` | Hole collar X coordinate — easting (metres) |
+| `holeY` | Hole collar Y coordinate — northing (metres) |
 | `chargeBase` | Depth to the base of the deepest charge deck (metres) |
 | `chargeTop` | Depth to the top of the deepest charge deck (metres) |
 | `chargeLength` | Length of the deepest charge deck (metres) |
@@ -123,6 +125,77 @@ Drag or click operator chips: `+`, `-`, `*`, `/`, `(`, `)`, `?`, `:`, `&&`, `||`
 3. Type `0.3`
 4. The formula bar shows: `fx:holeLength * 0.3` with a preview like `= 3.60 m`
 5. Click **Apply to Field**
+
+### Custom Functions
+
+The Formula Builder includes function chips that you can click or drag into the formula bar. These functions use the hole's properties (diameter, length, position) automatically.
+
+#### massLength(kg, density)
+
+Calculates the deck length required to hold a given mass of explosive at the hole's diameter.
+
+| Parameter | Description |
+|-----------|-------------|
+| `kg` | Target mass in kilograms |
+| `density` | Density in g/cc, or a product name in quotes |
+
+```
+fx:chargeTop[4] - massLength(50, 0.85)    // 50 kg ANFO above deck 4
+fx:chargeTop[4] - massLength(50, "ANFO")  // Same, using product lookup
+```
+
+#### sdobStem(targetSDoB, density)
+
+Calculates the stemming length required to achieve a target Scaled Depth of Burial. This is the Chiappetta SDoB formula used in flyrock risk assessment, solved in reverse to give you the stemming.
+
+| Parameter | Description |
+|-----------|-------------|
+| `targetSDoB` | Target SDoB value in m/kg^(1/3) (typical: 1.2 to 1.8) |
+| `density` | Explosive density in g/cc |
+
+```
+fx:sdobStem(1.5, 1.2)                    // Stem for SDoB 1.5, emulsion 1.2 g/cc
+fx:sdobStem(1.8, 0.85)                   // Stem for SDoB 1.8, ANFO 0.85 g/cc
+fx:Math.max(sdobStem(1.5, 1.2), 2.5)     // SDoB stem with a 2.5 m minimum
+```
+
+Use this as the **base depth** of a stemming deck. The charge deck below it fills the remainder of the hole. Each hole in the blast gets a stemming length tailored to its diameter and depth.
+
+**Typical SDoB targets:**
+
+| SDoB | Risk Level |
+|------|------------|
+| < 0.8 | Very high flyrock risk |
+| 0.8 – 1.2 | High — review stemming |
+| 1.2 – 1.8 | Normal blast conditions |
+| 1.8 – 2.5 | Well-confined |
+| > 2.5 | Over-confined |
+
+#### ppvKG(monitorX, monitorY, targetPPV, K, b)
+
+Calculates the Maximum Instantaneous Charge (MIC) in kilograms that keeps vibration below a target at a monitor location. The function uses the hole's collar coordinates (`holeX`, `holeY`) to compute the distance to the monitor point.
+
+| Parameter | Description |
+|-----------|-------------|
+| `monitorX` | Monitor easting (metres) |
+| `monitorY` | Monitor northing (metres) |
+| `targetPPV` | PPV target in mm/s |
+| `K` | Site constant from vibration regression |
+| `b` | Site exponent from vibration regression |
+
+```
+fx:ppvKG(500000, 6000000, 5, 1140, 1.6)   // MIC (kg) for 5 mm/s at monitor
+```
+
+Each hole in the blast gets a different MIC because each hole is a different distance from the monitor. Holes closer to the monitor are allowed less charge; holes further away get more.
+
+To convert the MIC to a charge column length, combine with `massLength`:
+
+```
+fx:deckBase[1] + massLength(ppvKG(500000, 6000000, 5, 1140, 1.6), 1.2)
+```
+
+This sets the charge deck base to: stemming base + the column length that holds the PPV-limited charge mass at 1.2 g/cc.
 
 ---
 

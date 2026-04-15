@@ -20,7 +20,9 @@ Import blast hole data from Orica ShotPlus `.spf` files. The SPF format is a ZIP
 
 ## Orica CBLAST CSV
 
-Import CBLAST CSV files, which use 4 records per hole (HOLE, PRODUCT, DETONATOR, STRATA). Kirra parses the multi-record structure and consolidates it into standard blast hole objects.
+Import CBLAST CSV files, which use 4 records per hole (HOLE, PRODUCT, DETONATOR, STRATA). Kirra parses the multi-record structure and consolidates it into standard blast hole objects with full charging data (decks, primers).
+
+> **Product Name Matching:** CBLAST files contain product names (e.g. "ANFO 0820", "Stemming") but not product properties like density, VOD, or energy. To get accurate mass calculations, powder factor, SDoB, and other analytics, import a Kirra Charge Config ZIP that contains a `products.csv` with matching product names. **Product names in the CBLAST file must match exactly** (case-sensitive) with names in your charge config products — for example, if your CBLAST uses "ANFO 0820", your products.csv must also have "ANFO 0820", not "ANFO" or "Anfo 0820".
 
 ---
 
