@@ -82,8 +82,17 @@ Open the Voronoi overlay from the Analysis section of the toolbar. All holes mus
 
 ---
 
+---
+
+## Voronoi PPV Modes
+
+In addition to the area / volume / powder-factor metrics above, the Voronoi dropdown in v1.0.75+ can colour cells by one of four **PPV modes**: Max PPV, Dominant Hole, Compliance, or Max Allowable Charge. These modes evaluate the empirical scaled-distance site law against user-defined monitor points rather than rock-volume geometry. See **[PPV Voronoi Modes](ppv-voronoi-modes.md)** for the full reference.
+
+---
+
 ## Related Topics
 
 - [Analytics Overview](overview.md)
+- [PPV Voronoi Modes (A/B/C/E)](ppv-voronoi-modes.md)
 - [Charging Overview](../charging/overview.md)
 - [Print to PDF](../printing/pdf-print.md)

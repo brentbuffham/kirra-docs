@@ -44,6 +44,30 @@ For a deeper model-by-model read, see [PPV & Vibration Models](ppv-models.md).
 
 ---
 
+## Per-cell Voronoi PPV (empirical, receptor-aware) — new in v1.0.75
+
+Alongside the 11 shader models above, Kirra v1.0.75 adds a **per-hole Voronoi PPV** suite with four output modes (A/B/C/E) and user-configurable **monitor points** (receptors). This path is complementary to the shaders:
+
+| | Shader analytics (this page) | Voronoi PPV modes |
+|---|---|---|
+| **Granularity** | Per-pixel over a surface / plane | Per Voronoi cell, one per hole |
+| **Physics** | Site law, Heelan, Blair (Lite / Heavy), Temporal Lifecycle VOD ramp | Empirical scaled-distance law evaluated per deck |
+| **Receptor-aware** | No — paints a spatial field | Yes — every cell is evaluated against every enabled monitor |
+| **Multi-receptor compliance** | Not directly | Mode C collapses to pass/fail per hole across all monitors |
+| **RMS timing window** | Temporal Lifecycle / Blair Heavy | Mode A only (configurable coherence window, optional P-wave arrival-time gate) |
+| **Runs on** | GPU (or CPU Workers for Blair Heavy) | CPU, real-time |
+
+The four Voronoi PPV modes are:
+
+- **Mode A — PPV Max** — cells coloured by peak PPV at the cell centroid from the whole pattern
+- **Mode B — Dominant Hole** — cells coloured by each hole's impact at the binding monitor
+- **Mode C — Compliance** — cells coloured by the worst per-monitor ratio (`thisHolePPV / monitorTarget`)
+- **Mode E — Max Allowable Charge** — cells show the largest charge each hole could hold and still keep every monitor below its target
+
+Open the Voronoi Options dialog, pick a PPV mode, and add monitors with **+ Add Monitor** or **Pick from KAD points**. Full reference: **[PPV Voronoi Modes](ppv-voronoi-modes.md)**.
+
+---
+
 ## How to Use
 
 ### Opening the Dialog
@@ -164,6 +188,7 @@ When using the **Generate Analysis Plane** render mode, the flat analysis plane 
 ## Related Topics
 
 - [PPV & Vibration Models](ppv-models.md)
+- [PPV Voronoi Modes (A/B/C/E) — per-cell, receptor-aware](ppv-voronoi-modes.md)
 - [Flyrock Modelling](flyrock.md)
 - [Blast Statistics & Voronoi](statistics-voronoi.md)
 - [Charging Overview](../charging/overview.md)

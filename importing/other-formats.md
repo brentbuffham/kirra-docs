@@ -12,6 +12,24 @@ Import drill plans from Epiroc drill rigs using the IREDES (Intelligent Rock Exc
 
 ---
 
+## Maptek Vulcan ARCH_D *(new in v1.0.73)*
+
+Import Vulcan design files in the text-based `FMT_4` ARCH_D format (`.arch_d`). The parser reads:
+
+- **POLHED blocks** — either a **blast hole** (2 or 3 points sharing X/Y, with Link MVAR data) or a **KAD polyline** (polylines with `Attr_len` / `Attr_tem` attribute templates are treated as polylines, not holes)
+- **TXTHED blocks** — text annotations, with font name preserved where present
+- **Layer line** — the layer name becomes the imported entity name (falls back to `VULCAN_IMPORT`)
+
+**Blast-hole geometry:** 3-point holes are interpreted as `collar → grade → toe` (sub-drilled); 2-point holes are interpreted as `collar → toe` with no sub-drill. Angle is computed from vertical (Kirra convention: 0° = vertical) and bearing from north clockwise.
+
+**Summary metadata:** Where the file contains a Vulcan-style summary TXTHED (e.g. `Diameter: 0.076m`, `Burden:`, `Spacing:`), those values are extracted and applied to every imported hole. Otherwise the default hole diameter is 115 mm.
+
+**Colours:** A small Vulcan index-palette (1 = red, 2 = green, 3 = blue, 5 = yellow, 23 = white, 220 = orange, 420 = cyan, 720 = magenta) is recognised; all other indices fall back to white.
+
+**Round-trip:** Export is supported via `VulcanArchDWriter` so Kirra-authored files are readable by Vulcan and re-importable here.
+
+---
+
 ## Orica ShotPlus SPF
 
 Import blast hole data from Orica ShotPlus `.spf` files. The SPF format is a ZIP archive containing XML blast data. Import only -- export is not supported.
