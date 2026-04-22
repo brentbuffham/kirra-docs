@@ -159,11 +159,6 @@
       </noscript>
     </div>
 
-    <div class="note">
-      <strong>Not sure which Mac you have?</strong> Click the Apple menu &rarr; "About This Mac".
-      If it says "Apple M1 / M2 / M3 / M4" choose <strong>Apple Silicon</strong>, otherwise choose <strong>Intel</strong>.
-    </div>
-
     <hr>
 
     <div style="text-align:center;">
@@ -197,7 +192,7 @@
 
     // Step 2) Build download buttons from the RELEASE_DATA injected by CI
     // CI replaces this line with: var RELEASE_DATA = { version: "1.0.40", files: [...] };
-        var RELEASE_DATA = { version: "1.0.72", files: [{"platform":"Linux-AppImage","name":"Linux-Kirra-v1.0.72.AppImage"},{"platform":"Linux-deb","name":"Linux-Kirra-v1.0.72.deb"},{"platform":"Linux-rpm","name":"Linux-Kirra-v1.0.72.rpm"},{"platform":"Mac-Apple-Silicon","name":"Mac-Apple-Silicon-Kirra-v1.0.72.dmg"},{"platform":"Mac-Intel","name":"Mac-Intel-Kirra-v1.0.72.dmg"},{"platform":"Windows","name":"Windows-Kirra-v1.0.72-Setup.exe"},{"platform":"Windows-msi","name":"Windows-Kirra-v1.0.72-Setup.msi"}] };
+        var RELEASE_DATA = { version: "1.0.80", files: [{"platform":"Linux-deb","name":"Linux-Kirra-v1.0.80.deb"},{"platform":"Mac-Universal","name":"Mac-Universal-Kirra-v1.0.80.dmg"},{"platform":"Windows","name":"Windows-Kirra-v1.0.80-Setup.exe"}] };
 
     if (typeof RELEASE_DATA !== "undefined") {
       var badge = document.getElementById("version-badge");
@@ -208,12 +203,8 @@
 
       var platformLabels = {
         "Windows": { label: "Windows 10/11", detail: "Setup installer (.exe)" },
-        "Windows-msi": { label: "Windows (IT/Admin)", detail: "MSI package (.msi)" },
-        "Mac-Apple-Silicon": { label: "Mac (Apple Silicon)", detail: "M1/M2/M3/M4 — 2020 onwards (.dmg)" },
-        "Mac-Intel": { label: "Mac (Intel)", detail: "2019 and earlier (.dmg)" },
-        "Linux-deb": { label: "Linux (Debian/Ubuntu)", detail: "DEB package (.deb)" },
-        "Linux-AppImage": { label: "Linux (AppImage)", detail: "Portable — no install needed" },
-        "Linux-rpm": { label: "Linux (Fedora/RHEL)", detail: "RPM package (.rpm)" }
+        "Mac-Universal": { label: "Mac (Universal)", detail: "Intel + Apple Silicon (.dmg)" },
+        "Linux-deb": { label: "Linux (Debian/Ubuntu)", detail: "DEB package — sudo dpkg -i" }
       };
 
       var i, f, key, info, a, span1, span2;
