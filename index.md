@@ -96,6 +96,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 
 ### Reference
 - [Select Toolbar](reference/select-toolbar.md) — button-by-button reference
+- [Supported File Formats](reference/supported-formats.md) — full import/export matrix
 - [Hole Properties](reference/hole-properties.md)
 - [Coordinate System](reference/coordinate-system.md)
 - [3D View & Orbit Focus](reference/3d-tools.md)
