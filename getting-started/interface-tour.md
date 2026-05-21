@@ -30,7 +30,7 @@ The bar across the top of the window holds the global navigation controls — a 
 | Button | Purpose |
 |--------|---------|
 | **📑 Data Explorer** | Toggle the Data Explorer (TreeView) panel |
-| **📁 File Manager** | *[VERIFY: opens the File Manager panel or jumps to the File Management group in the Left Sidenav]* |
+| **📁 File Explorer** | Open the OS file explorer at the project location — **Tauri desktop build only** (not available in the browser build) |
 
 > *[SCREENSHOT NEEDED: hamburger menu expanded so the side-panel sections can be confirmed.]*
 
