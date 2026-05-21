@@ -166,18 +166,6 @@ The most comprehensive format, adding comments, visibility, and condition data.
 
 ---
 
-## BMM CSV (Blast Movement Monitor)
-
-The BMM format is used by Blast Movement Monitor systems to track rock movement during blasting. Kirra can import BMM CSV files containing monitor positions and displacement vectors.
-
-To import a BMM CSV:
-
-1. Click **File > Import**
-2. Select your BMM `.csv` file
-3. Kirra detects the BMM column layout and imports the data
-
----
-
 ## Custom CSV Import
 
 If your CSV file uses a non-standard column order or field names, use the Custom CSV importer:
