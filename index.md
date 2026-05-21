@@ -10,9 +10,9 @@ These guides were **reviewed against the Kirra Design source tree** at:
 
 | Field | Value |
 |--------|--------|
-| **Kirra app version** | **1.0.75** (`package.json` / `package-lock.json`) |
-| **Git commit** | `84820e63a83737b49adb09b557764cc1b6b17b92` (short: `84820e63`) |
-| **Commit date** | 2026-04-17 (author timezone +0800) |
+| **Kirra app version** | **1.0.240** (`package.json` / `package-lock.json`) |
+| **Git commit** | `8372cd581d630941483ec8db7f9f1e724d0011e4` (short: `8372cd58`) |
+| **Commit date** | 2026-05-21 (author timezone +0800) |
 
 Use this block to judge whether the docs may be ahead of or behind your installed build. For the live app version in use, check **Help → About** (or your deployment’s `package.json`).
 
@@ -44,6 +44,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 
 ### Blast Hole Design
 - [Holes Toolbar](blast-design/holes-toolbar.md) — button-by-button reference
+- [Connect Toolbar](blast-design/connect-toolbar.md) — button-by-button reference *(updated with Continuous Connect)*
 - [Adding Holes](blast-design/adding-holes.md)
 - [Editing Holes](blast-design/editing-holes.md)
 - [Pattern Generation](blast-design/pattern-generation.md)
@@ -52,6 +53,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Electronic Timing Constructs](blast-design/electronic-timing-constructs.md)
 
 ### Surfaces
+- [Surfaces Toolbar](surfaces/surfaces-toolbar.md) — button-by-button reference
 - [Importing Surfaces](surfaces/importing-surfaces.md)
 - [Surface Gradients](surfaces/gradients.md)
 - [Surface Boolean & CSG](surfaces/boolean-csg.md)
@@ -83,13 +85,16 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Products CSV Reference](charging/products-csv.md)
 
 ### Blast Analytics
+- [Analyse Toolbar](analysis/analyse-toolbar.md) — button-by-button reference
 - [Analytics Overview](analysis/overview.md)
 - [PPV & Vibration Models (shader suite)](analysis/ppv-models.md)
-- [PPV Voronoi Modes (A/B/C/E) — per-cell, receptor-aware](analysis/ppv-voronoi-modes.md) *(new in v1.0.75)*
+- [PPV Voronoi Modes (A/B/C/E/F) — per-cell, receptor-aware](analysis/ppv-voronoi-modes.md) *(Mode F added v1.0.230)*
+- [Time Window Dialog — IDI, Spectrum, Synthesis, Forward Array, Detune, Constrain](analysis/time-window.md) *(new)*
 - [Flyrock Modelling](analysis/flyrock.md)
 - [Blast Statistics & Voronoi](analysis/statistics-voronoi.md)
 
 ### KAD Drawing Tools
+- [KAD Toolbar](kad/kad-toolbar.md) — button-by-button reference
 - [Drawing Points, Lines, and Polygons](kad/drawing-tools.md)
 - [Extrude, Boolean, and Section Plane](kad/advanced-tools.md)
 - [Modify Toolbar](kad/modify-tools.md)
