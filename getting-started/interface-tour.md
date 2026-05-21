@@ -6,23 +6,33 @@ This page walks through the Kirra workspace — the top app navigation bar, the 
 
 ## App Navigation Bar
 
-The compact bar across the top-left of the window holds the global navigation controls.
+The bar across the top of the window holds the global navigation controls — a left-side cluster of app buttons and a right-side cluster of panel toggles.
 
-![App navigation bar](../screenshots/AppNavigationButtonsFixed.png)
-*Left-to-right: hamburger menu, Kirra dog + name, Data Explorer, Help, Recent, Back, 2D / 3D toggle, theme toggle.*
+![App navigation bar](../screenshots/AppNavBar-Full.png)
+*Full-width App Navigation Bar — left cluster holds app and view controls; right cluster toggles the Data Explorer and File Manager panels.*
+
+### Left cluster (left to right)
 
 | Button | Purpose |
 |--------|---------|
-| **☰ Hamburger** | Opens / closes the side App Navigation panel (File Management, Print, hole tools, View Controls, About) |
-| **🐕 Kirra** | App identity — the dog icon and "Kirra" name. Click for the About card *[VERIFY: click target — About card or no-op]* |
-| **📑 Data Explorer** | Toggle the Data Explorer (TreeView) panel |
-| **? Help** | Open in-app help *[VERIFY: links to kirra-docs site or in-app popup]* |
-| **↻ Recent / Reload** | Recent files / reload current project *[VERIFY: exact behaviour]* |
-| **↩ Back / Return** | Return to the previous view *[VERIFY]* |
-| **2D / 3D** | Toggle between 2D plan view and 3D viewport |
-| **☀ Theme** | Toggle dark / light theme |
+| **☰ Hamburger** | Opens / closes the side App Navigation panel (File Management, Print, +/- Holes, Edit Holes, Record Actuals, View Controls & Snap, About) |
+| **🐕 Kirra** | App identity — the dog icon and "Kirra" name. *[VERIFY: click behaviour — About card or no-op]* |
+| **📖 Quick guide / shortcuts** | *[VERIFY: opens keyboard shortcut reference or in-app tutorial card]* |
+| **? Help** | Open help — *[VERIFY: links to kirra-docs site or shows an in-app popup]* |
+| **↻ Recent / Reload** | *[VERIFY: recent files list or reload current project]* |
+| **↩ Back / Return** | Return to the previous view *[VERIFY: exact behaviour]* |
+| **▦ Toolbar Reset** | Reset every floating toolbar to its default dock position. Use this if a toolbar has been dragged off-screen or you want a clean layout |
+| **2D / 3D** | Toggle between 2D plan view and 3D viewport. The button is highlighted blue when 2D is active |
+| **☀ Theme** | Toggle dark / light theme. The button is highlighted red/orange when active |
 
-> *[SCREENSHOT NEEDED: hamburger menu expanded so the visible toggles can be confirmed against the side panel]*
+### Right cluster (left to right)
+
+| Button | Purpose |
+|--------|---------|
+| **📑 Data Explorer** | Toggle the Data Explorer (TreeView) panel |
+| **📁 File Manager** | *[VERIFY: opens the File Manager panel or the File Management group in the side panel]* |
+
+> *[SCREENSHOT NEEDED: hamburger menu expanded so the side-panel sections can be confirmed.]*
 
 ---
 
