@@ -15,22 +15,22 @@ The bar across the top of the window holds the global navigation controls — a 
 
 | Button | Purpose |
 |--------|---------|
-| **☰ Hamburger** | Opens / closes the side App Navigation panel (File Management, Print, +/- Holes, Edit Holes, Record Actuals, View Controls & Snap, About) |
-| **🐕 Kirra** | App identity — the dog icon and "Kirra" name. *[VERIFY: click behaviour — About card or no-op]* |
-| **📖 Quick guide / shortcuts** | *[VERIFY: opens keyboard shortcut reference or in-app tutorial card]* |
-| **? Help** | Open help — *[VERIFY: links to kirra-docs site or shows an in-app popup]* |
-| **↻ Recent / Reload** | *[VERIFY: recent files list or reload current project]* |
-| **↩ Back / Return** | Return to the previous view *[VERIFY: exact behaviour]* |
+| **☰ Hamburger** | Opens the **Left Sidenav** — File Management, Print, +/- Holes, Edit Holes, Record Actuals, View Controls & Snap, About |
+| **🐕 Kirra** | App identity (no action on click) |
+| **📖 Book** | **Language select** — pick the UI language |
+| **? Help** | Open help |
+| **↻ Reset / Reload** | Reset or reload the current project state |
+| **↩ Back** | Navigate back to **blastingapps.com** (external) |
 | **▦ Toolbar Reset** | Reset every floating toolbar to its default dock position. Use this if a toolbar has been dragged off-screen or you want a clean layout |
 | **2D / 3D** | Toggle between 2D plan view and 3D viewport. The button is highlighted blue when 2D is active |
-| **☀ Theme** | Toggle dark / light theme. The button is highlighted red/orange when active |
+| **☀ Day / Night** | Toggle day (light) / night (dark) theme. The button is highlighted red/orange when active |
 
 ### Right cluster (left to right)
 
 | Button | Purpose |
 |--------|---------|
 | **📑 Data Explorer** | Toggle the Data Explorer (TreeView) panel |
-| **📁 File Manager** | *[VERIFY: opens the File Manager panel or the File Management group in the side panel]* |
+| **📁 File Manager** | *[VERIFY: opens the File Manager panel or jumps to the File Management group in the Left Sidenav]* |
 
 > *[SCREENSHOT NEEDED: hamburger menu expanded so the side-panel sections can be confirmed.]*
 
