@@ -32,9 +32,11 @@ The parser dispatches strictly on column count. Pick the preset that matches you
 | **9** | + `holeDiameter, holeType` | Diameter (mm) and hole type |
 | **12** | + `fromHoleID, delay, color` | Tying / delay / colour (single entity) |
 | **14** | `entityName, entityType, …` (rest as 12-col) | Multi-entity grouping — **recommended round-trip format** |
-| **30** | 14 + grade, subdrill, bench, length, angle, bearing, time, measured-* | Full design + as-drilled data |
-| **32** | 30 + `rowID, posID` | Row / position bookkeeping |
-| **35** | 32 + `burden, spacing, connectorCurve` | **Complete** — every parsed field |
+| **30** | Own column order — see below | Full design + as-drilled data (grade, subdrill, bench, angle, bearing, timing, measured-*) |
+| **32** | 30-col + `rowID, posID` | Row / position bookkeeping |
+| **35** | 32-col + `burden, spacing, connectorCurve` | **Complete** — every parsed field |
+
+> **30-col is not "14 + extras".** Cols 1-9 match the 14-col layout, but from col 10 onward the order diverges — grade, subdrill, and bench come **before** `holeDiameter`. See the [30-Column section](#30-column-full-design--as-drilled) for the exact order.
 
 ---
 
@@ -131,24 +133,38 @@ Pattern_A,hole,H002,477755.5,6771850.2,335.0,477756.2,6771849.8,320.0,115,Produc
 
 ## 30-Column (Full Design + As-Drilled)
 
-Adds grade-point coordinates, subdrill, bench height, calculated length, hole orientation, hole timing, and the measured / as-drilled fields.
+The 30-column layout is **not** "14-col + extras". It has its own column order — grade, subdrill, and bench come **before** `holeDiameter`, and the measured / as-drilled fields fill the tail.
 
-Columns 1-14 are the 14-col layout. Columns 15-30 add:
+| Column | Field | Notes |
+|--------|-------|-------|
+| 1 | `entityName` | Blast pattern name |
+| 2 | `entityType` | `hole` for blast holes |
+| 3 | `holeID` | |
+| 4-6 | `startX, startY, startZ` | Collar |
+| 7-9 | `endX, endY, endZ` | Toe |
+| 10-12 | `gradeX, gradeY, gradeZ` | Grade point — computed from subdrill on read, re-derived on write |
+| 13 | `subdrillAmount` | **Vertical** delta-Z (m), not along-hole |
+| 14 | `subdrillLength` | Along-hole subdrill (m) |
+| 15 | `benchHeight` | Bench height (m) |
+| 16 | `holeDiameter` | mm |
+| 17 | `holeType` | e.g. `Production` |
+| 18 | `fromHoleID` | Upstream tying hole (use `entityName:::holeID`) |
+| 19 | `delay` | **Relative** milliseconds. Accepts `na` / `n/a` / `null` / `nan` (case-insensitive) → stored as `NaN` for the harness-wire / null-connector convention |
+| 20 | `color` | `#RRGGBB` or named colour |
+| 21 | `holeLength` | Calculated (m) |
+| 22 | `holeAngle` | Angle from vertical (`0` = vertical) |
+| 23 | `holeBearing` | Azimuth clockwise from North |
+| 24 | `holeTime` | Hole fire time |
+| 25 | `measuredLength` | As-drilled length (m) |
+| 26 | `measuredLengthTimeStamp` | When the length was measured |
+| 27 | `measuredMass` | As-loaded mass (kg) |
+| 28 | `measuredMassTimeStamp` | When the mass was measured |
+| 29 | `measuredComment` | Free-text comment |
+| 30 | `measuredCommentTimeStamp` | When the comment was recorded |
 
-| Column | Field |
-|--------|-------|
-| 15-17 | Grade `X / Y / Z` |
-| 18 | `subdrill` — **vertical** delta-Z (m), **not** along the hole vector |
-| 19 | Bench height |
-| 20 | Hole length (calculated) |
-| 21 | `holeAngle` — angle from vertical (`0` = vertical) |
-| 22 | `holeBearing` — azimuth clockwise from North |
-| 23 | `timingDelayMilliseconds` — absolute fire time *[VERIFY: vs relative]* |
-| 24-30 | Measured / as-drilled fields *[VERIFY: full per-column list — measured length, mass, comment, etc.]* |
+> **Two subdrill fields:** `subdrillAmount` is the **vertical** drop below grade (Δz). `subdrillLength` is the same value projected along the hole vector. Both are written on export so importers can use whichever convention they prefer.
 
-> **`subdrill` convention:** Vertical delta-Z, not along-hole. Grade is computed from subdrill on read and re-derived on write.
-
-> **`timingDelayMilliseconds` literals:** Accepts `na`, `n/a`, `null`, and `nan` (case-insensitive) and converts them to `NaN` — the harness-wire / null-connector convention.
+> **Measured timestamps:** Each measured field has a paired `…TimeStamp` column. Empty timestamps are allowed.
 
 ---
 
@@ -160,6 +176,8 @@ Columns 1-14 are the 14-col layout. Columns 15-30 add:
 |--------|-------|
 | 31 | `rowID` |
 | 32 | `posID` |
+
+Empty `rowID` / `posID` parse as `null`. Holes with `null` or `0` row/pos are treated as unassigned and may be processed by smart row detection.
 
 ---
 
