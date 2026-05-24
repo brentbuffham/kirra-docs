@@ -16,7 +16,7 @@ Formulas can be typed into any of these fields in the Deck Builder dialog:
 - **Base Depth** of any deck
 - **Length** of any deck
 - **Primer Depth** of any primer
-- **Mass (kg)** of any deck *(after Plan B — currently number-only)*
+- **Mass (kg)** of any deck (Deck Builder dialog + charge rule templates as of v1.0.273)
 - **Swap predicates** *(boolean-only, see "Two evaluators" below)*
 
 ## The `fx:` prefix
@@ -471,7 +471,7 @@ When Custom CSV charging export/import is enabled, every formula string survives
 
 **Editing the evaluated number in CSV does not re-trigger the formula.** The imported number wins until the next "Apply Charge Rule" runs.
 
-When the Mass field accepts formulas, PPV examples #1–#7 collapse to:
+In the Mass field (v1.0.271+) and rule-template mass slot (v1.0.273+), PPV examples #1–#7 collapse to:
 
 > Deck[2] Type = COUPLED (ANFO)
 > Deck[2] Top = `fx:deckBase[1]`
