@@ -81,7 +81,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 ### Charging
 - [Charging Overview](charging/overview.md)
 - [Deck Builder](charging/deck-builder.md)
-- [Deck Builder Formula Guide & Examples](charging/Deck%20Builder%20Formula%20Guide%20Examples.md) — every variable, every function, with worked PPV and SDoB examples
+- [Deck Builder Formula Guide & Examples](charging/Deck%20Builder%20Formula%20Guide%20Examples.html) — every variable, every function, with worked PPV and SDoB examples
 - [Harness Wire Assignment](charging/harness-wire-assignment.md)
 - [Products CSV Reference](charging/products-csv.md)
 
