@@ -60,9 +60,11 @@ Boolean evaluator accepts string equality (e.g. `holeType == "Production"`); num
 | Indexed | `deckBase[N]` | m | base depth of deck N (1-based, 1 = deepest) |
 | | `deckTop[N]` | m | top depth of deck N |
 | | `deckLength[N]` | m | length of deck N |
+| | `deckDensity[N]` | g/cc | effective density of deck N's product *(v1.0.272+)* — adapts to product swaps |
 | | `chargeBase[N]` | m | base depth of charge-only deck N |
 | | `chargeTop[N]` | m | top depth of charge-only deck N |
 | | `chargeLength[N]` | m | length of charge-only deck N |
+| | `chargeDensity[N]` | g/cc | effective density of charge-only deck N *(v1.0.272+)* |
 
 Undefined indexed variables resolve to `0` — use `> 0` as the "does this deck exist?" test.
 
@@ -505,6 +507,46 @@ The `sdobKg` function is the **inverse of `sdobStem`** — it returns the deck m
 > Deck[2] Mass = `fx:Math.round(sdobKg(1.5,"ANFO")/5)*5`
 
 **Description:** Rounds the SDoB-target mass to the nearest 5 kg — useful when loading is hand-weighed or the truck dispenses in fixed increments. Use `Math.ceil(... / 5) * 5` if you must never under-charge.
+
+---
+
+## Pattern 11 — Adaptive density via `deckDensity[N]` *(v1.0.272+)*
+
+When one rule has to cover multiple products (e.g. a deck that swaps from ANFO → Emulsion in wet holes), hard-coding `"ANFO"` in the formula breaks the moment the swap fires. The fix: reference the deck's **own** density via the indexed variable `deckDensity[N]`. The formula then adapts automatically — same expression, any product.
+
+#### Example: PPV-bounded length that follows the deck's actual product
+
+> Deck[1] Type = INERT (Stemming), Top = `0`, Base = (VR — auto-fills above charge)
+> Deck[2] Type = COUPLED (ANFO, with swap rule `swap:w{Emulsion}`)
+> Deck[2] Top = `fx:deckBase[1]`
+> Deck[2] Length = `fx:massLength(ppvKG(36153.16,156036.286,4,1140,1.6), deckDensity[2])`
+> Deck[2] Base = (derived from Top + Length)
+
+**Description:** `massLength`'s second argument is `deckDensity[2]` — whatever the actual product on Deck 2 happens to be at the moment the formula evaluates. In a wet hole the swap fires (ANFO → Emulsion), `deckDensity[2]` flips from 0.82 to 1.15, and the charge length shrinks accordingly to hold the same PPV-allowed kg. No second formula needed for the wet case.
+
+#### Example: SDoB-target mass adapts to swap
+
+> Deck[2] Mass = `fx:sdobKg(1.4, deckDensity[2])`
+
+**Description:** SDoB-compliant deck mass for whatever product Deck 2 currently has. Same single formula serves ANFO, Emulsion, gassed emulsion, etc.
+
+#### Example: Stem sized to whichever product Deck 2 ends up with
+
+> Deck[1] Type = INERT (Stemming), Top = `0`
+> Deck[1] Base = `fx:Math.max(holeLength - massLength(ppvKG(36153.16,156036.286,4,1140,1.6), deckDensity[2]), 2.5)`
+> Deck[2] Type = COUPLED (ANFO with `swap:w{Emulsion}`)
+> Deck[2] Top = `fx:deckBase[1]`
+> Deck[2] Base = `fx:holeLength`
+
+**Description:** The PPV-aware stem-base formula uses Deck 2's actual density. ANFO holes → longer charge → shorter stem. Emulsion holes (wet, after swap) → denser, so shorter charge for same kg → longer stem. One rule, two products, both PPV-compliant.
+
+#### What's order-independent
+
+`deckDensity[N]` and `chargeDensity[N]` are **pre-populated for every deck before the layout loop runs**, so any deck's formula can reference any other deck's density regardless of position-resolution order. Deck 1's base formula can use `deckDensity[2]` even though Deck 2 isn't laid out yet.
+
+This differs from position-indexed vars (`deckBase[N]`, `deckTop[N]`, `chargeBase[N]`, etc.) — those still resolve sequentially because they depend on previously-resolved depths. A formula on Deck 1 cannot reliably reference `deckBase[2]` (it's still 0 at that point), but `deckDensity[2]` is fine.
+
+**Rule of thumb**: densities are stable, positions cascade.
 
 ---
 
