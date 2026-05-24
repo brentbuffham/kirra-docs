@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(wc -l /c/Users/brent/desktop/git/kirra-docs/surfaces/*.md)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(findstr /i kirra)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git fetch *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(git push *)"
     ]
   }
 }
