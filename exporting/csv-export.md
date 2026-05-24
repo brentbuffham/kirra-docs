@@ -1,63 +1,227 @@
 # CSV Export
 
-Kirra exports blast hole data to CSV in several column formats, from compact 12-column exports to comprehensive all-data exports.
+Kirra writes blast holes to CSV in three flavours:
 
-> *Screenshot coming soon*
+| Flavour | Where | Best for |
+|---------|-------|----------|
+| **Preset BlastHole CSV** | Kirra tab → *Holes CSV / TXT (preset columns)* | Round-trip with another Kirra session or a system that expects a fixed Kirra column layout |
+| **Measured Data CSV** | Kirra tab → *Measured Data* | Sending as-built / as-loaded data back to a corporate system or back into another Kirra project |
+| **Custom CSV** | Blasts tab → *Custom CSV* | Matching any downstream system's column layout — pick fields, units, order, custom headers, custom text columns; supports **charging round-trip** (v1.0.270+) |
 
----
-
-## How to Export
-
-1. Click **File > Export**
-2. Select one of the CSV export formats
-3. Choose a save location and filename
-4. The CSV file is downloaded
+> *Source of truth: `src/fileIO/TextIO/BlastHoleCSVWriter.js`, `CustomBlastHoleTextWriter.js`, and the Kirra wiki page [Custom CSV Format](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format).*
 
 ---
 
-## Export Formats
+## How to Open the Export Dialog
 
-| Format | Columns | Best For |
-|--------|---------|----------|
-| **12-Column** | ID, collar XYZ, toe XYZ, diameter, type, from-hole, delay, colour | CAD import, basic data exchange |
-| **14-Column (Kirra Standard)** | Entity name, entity type + 12-column fields | Kirra round-trip, sharing designs |
-| **35-Column (All Data)** | Complete export with grade, subdrill, bench height, geometry, measured data, timestamps, visibility | Full backup, detailed reporting |
-| **Actual Data** | Measured/actual fields only | As-built documentation |
-| **All Columns (Dynamic)** | Only columns that contain data | Flexible export, avoids empty columns |
-| **Custom CSV** | User-defined column order | Matching downstream system requirements |
+1. Open the **Left Sidenav** (☰ in the App Navigation Bar)
+2. Under **File Management**, click **Export**
+
+The Export dialog is tabbed by file family — identical layout to the Import dialog.
+
+![Export dialog — Kirra tab](../screenshots/MeasuredCSVExport.png)
+*Export dialog on the Kirra tab — KAP, KAD, Holes CSV / TXT (preset columns), Measured Data. The Measured Data confirmation sub-dialog is shown.*
+
+| Tab | Counts | What's on it |
+|-----|--------|--------------|
+| **Kirra** | 4 | KAP project, KAD drawing, Holes CSV / TXT, Measured Data |
+| **Blasts** | 7 | Custom CSV + vendor formats (CBLAST, ShotPlus, DigiShot, etc.) |
+| **Drawings / CAD** | 5 | DXF, Vulcan ARCH_D, Surpac, KML/KMZ, ESRI Shapefile |
+| **Surfaces / Mesh** | 4 | GeoTIFF, OBJ/GLTF, Point Cloud, LAS |
+| **Operations** | 2 | Epiroc Surface Manager, Wenco NAV |
 
 ---
 
-## 14-Column Format (Recommended)
+## Holes CSV / TXT (preset columns)
 
-The 14-column Kirra Standard format is the recommended exchange format:
+The Kirra tab shows a **single row** for `Holes CSV / TXT (preset columns)` with a **column-count dropdown** — picking the preset is how you choose between the eight variants (4 / 7 / 9 / 12 / 14 / 30 / 32 / 35).
 
-| Column | Field |
-|--------|-------|
-| 1 | Entity Name (pattern name) |
-| 2 | Entity Type (always "hole") |
-| 3 | Hole ID |
-| 4-6 | Collar Easting, Northing, Elevation |
-| 7-9 | Toe Easting, Northing, Elevation |
-| 10 | Diameter (mm) |
-| 11 | Hole Type |
-| 12 | From Hole (timing source) |
-| 13 | Delay (ms) |
-| 14 | Colour (hex) |
+When you select a preset in the dropdown, an orange info bubble shows the column list and a description of what that preset produces. The descriptions visible in the screenshot:
+
+| Preset | In-app description |
+|--------|--------------------|
+| **4 columns — written/read in this order** | `{holeID, startX, startY, startZ}` — Creates dummy holes (0 m length, collar = toe = imported XYZ). Adjust hole properties in the workspace to add length, angle, and bearing per hole. |
+| **7** | + `endX, endY, endZ`. Length, angle, and bearing are derived from the geometry. Diameter is left at 0 (a valid no-diameter hole). |
+| **9** | + `holeDiameter, holeType`. Holes default to connecting to themselves with zero delay — set tying via hole properties. |
+| **12** | + `fromHoleID, delay, color`. Single default entity (no entity name in file). |
+| **14** | `entityName, entityType, …` prepended. **Default for Kirra round-trip exports.** |
+| **30** | Standard round-trip without rowID / posID / burden / spacing / connectorCurve. Preserves grade points, subdrill, bench, timing, and measured fields. |
+| **32** | 30-column + `rowID` + `posID` for full row/position bookkeeping. |
+| **35** | **Complete** — every blast hole property the parser reads back (design + measured + row/pos + burden / spacing / connector). |
+
+For the full column-by-column order of each preset, see [CSV Import — preset variants](../importing/csv-formats.md#blasthole-csv--eight-preset-variants). The writer and parser share the same column order — round-trip is lossless when both ends use the same preset.
+
+> **`safeToFixed`** writes `0.0000` for any `NaN` numeric value so the file stays parseable in non-tolerant CSV readers.
+
+> **Visible holes only.** Hidden holes are filtered out at export — toggle visibility in the Data Explorer to control what gets written.
+
+---
+
+## Measured Data CSV
+
+Picks the measured / as-built fields out of the visible holes and writes a compact CSV. Useful for handoff to a corporate or QA system that only cares about as-loaded data.
+
+![Export Measured Data confirmation dialog](../screenshots/MeasuredCSVExport.png)
+*The Measured Data confirmation sub-dialog (visible inside the Export dialog).*
+
+| Field | Value |
+|-------|-------|
+| **Filename (without .csv)** | Auto-suggested as `MLC-EXPORT-<YYYYMMDD>_<HHMMSS>` (e.g. `MLC-EXPORT-20260524_142415`); editable before Export |
+| **Holes to Export** | Live count of visible holes (e.g. `151`) |
+| **Export Format** | `Measured Data CSV` (fixed) |
+| **Contains** | Entity Name, Hole ID, Measured Length, Measured Mass, Measured Comment *[VERIFY: full column list — dialog text is truncated after "Measured Co..."]* |
+| **Timestamps** | Included for every measurement |
+
+Footer: **Cancel** / **Export** *(green)*.
+
+The writer key for this preset is **`blasthole-csv-actual`**.
+
+---
+
+## Custom CSV Export
+
+The Custom CSV export — accessed from the **Blasts** tab in the Export dialog — is the escape hatch when you need a non-Kirra column layout. It opens the **Custom CSV Export — Select Columns** dialog.
+
+![Custom CSV Export — Select Columns dialog](../screenshots/CustomCSVExport.png)
+*Left: field picker grouped by category. Right: column order (drag to reorder). Bottom: custom text fields and Export button.*
+
+### File header controls
+
+| Control | Purpose |
+|---------|---------|
+| **Filename (without .csv)** | Output filename — `.csv` is appended automatically |
+| **Holes to Export** | Live count of visible holes that will be written (e.g. `151`) |
+| **Include column headers** | When ticked, the first row of the CSV is the column names |
+| **Convert diameter to** | Unit conversion for the diameter column — dropdown, default **Millimeters**. `mm → in` divides by 25.4; `mm → m` divides by 1000 |
+| **Convert subdrill to negative** | When ticked, subdrill values are written as negatives (some downstream systems expect this) |
+
+### Select Columns to Export
+
+Fields are grouped by category. Tick each column you want to include. Each row has a **Custom header** input — type a name to override the default column header in the output CSV.
+
+| Group | Fields |
+|-------|--------|
+| **Identifiers** | Blast Name, Entity Type, Hole ID, Hole Type, Row ID, Position ID |
+| **Collar** | Start X (mE), Start Y (mN), Start Z (mRL) |
+| **Toe** | End X (mE), End Y (mN), End Z (mRL) |
+| **Grade** | Grade X (mE), Grade Y (mN), Grade Z (mRL) |
+| **Geometry** | Hole Angle (0° = vertical), Hole Dip (0° = horizontal), Hole Bearing, Hole Length, Diameter, Subdrill Amount, Subdrill Length, Bench Height, Burden, Spacing |
+| **Timing** | From Hole ID, Timing Delay (ms), Initiation Time *[VERIFY: remaining timing fields below the dialog fold]* |
+
+> **Hole Angle vs Hole Dip.** Both are exposed — pick the convention your downstream system uses:
+> - **Hole Angle** — `0°` = vertical (Kirra's native convention)
+> - **Hole Dip** — `0°` = horizontal (converted on export as `90 − holeAngle`)
+
+> **Subdrill Amount vs Subdrill Length.** Two fields, two conventions:
+> - **Subdrill Amount** — vertical Δz (m)
+> - **Subdrill Length** — along-hole subdrill (m)
+
+### Column Order (Drag to Reorder)
+
+The right-hand panel lists every selected column with its **position number** (1, 2, 3, …). Drag rows to reorder — the output CSV writes columns in this order.
+
+### Custom Text Fields (3 maximum)
+
+Three Name / Value pairs at the bottom let you append arbitrary text columns to every row. Useful for tagging exports with an instruction, a designer, a project code, or any fixed value the downstream system expects.
+
+| Field | Example |
+|-------|---------|
+| Name | `Instruction` |
+| Value | `Over drill 0.2m for fall back` |
+
+The Name becomes the column header; the Value is written into every data row.
+
+### Charging round-trip (v1.0.270+)
+
+When any visible hole has **charging applied**, the Custom CSV exporter exposes additional column groups that round-trip the full Deck Builder state:
+
+| Group | Per-deck or per-primer | Example column |
+|-------|------------------------|----------------|
+| **Charging Summary** *(write-only, Excel-friendly)* | Whole-hole totals + brace-packed per-deck cells | `designExplosiveMassKg`, `designExplosiveMassPerDeck` |
+| **Deck[N]** *(round-trippable)* | Per-deck attributes | `deckType[N]`, `deckBase[N]`, `deckProduct[N]`, `deckBaseFormula[N]`, `deckScalingMode[N]`, `deckMassFormula[N]` |
+| **Primer[N]** *(round-trippable)* | Per-primer attributes | `primerDepth[N]`, `primerDeckIndex[N]`, `primerDetonatorName[N]`, `primerDetonatorDelayMs[N]`, `primerBoosterName[N]` |
+
+When a CSV with `deck*[N]` or `primer*[N]` headers is re-imported through Custom CSV, the parser auto-detects the charging columns (no manual mapping needed) and reconstructs each hole's `HoleCharging` — decks, primers, and verbatim `fx:` formula strings.
+
+For the full column inventory and the worked round-trip example, see the Kirra wiki: [Custom CSV Format → Charging columns](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format#charging-columns-v10270).
+
+> **Round-trip limit:** Formula strings ride along as text but only re-evaluate when the next **Apply Charge Rule** runs. The imported numeric values are the source of truth until then.
+
+### Footer
+
+| Button | Action |
+|--------|--------|
+| **Cancel** | Close without exporting |
+| **Export** *(green)* | Write the CSV file using the selected columns, order, custom fields, and any charging columns |
+
+---
+
+## Charging CSV
+
+On the **Blasts** tab the Export dialog has a single **Charging CSV** entry with a 4-option dropdown — picking the dropdown value selects the writer key.
+
+![Export dialog — Blasts tab with Charging CSV dropdown](../screenshots/ChargingExport.png)
+*Blasts tab — Charging CSV row with dropdown showing the four sub-formats.*
+
+| Dropdown option | Writer key | What it writes |
+|-----------------|------------|----------------|
+| **Charging Summary** | `charging-summary` | Per-hole charge totals (one row per hole) |
+| **Charging Detail** | `charging-detail` | Per-deck breakdown (one row per deck) |
+| **Charging Primers** | `charging-primers` | Primer placements |
+| **Charging Timing** | `charging-timing` | Computed deck fire times |
+
+The row description reads *"Summary / deck detail / primers / timing exports of charged holes"*.
+
+> **Only charged holes are written.** Holes with no charging assignment are excluded. Assign charging in the [Deck Builder](../charging/deck-builder.md) first.
+
+See [Charging Overview](../charging/overview.md) for what each charging field carries.
+
+### Other entries on the Blasts tab
+
+The Blasts tab in the Export dialog also includes:
+
+| Format | Extensions | Notes |
+|--------|------------|-------|
+| **Custom CSV** | `.csv` / `.txt` | The flexible exporter documented above |
+| **CBLAST** | `.csv` | Carlson / CBLAST blast design CSV |
+| **Minestar AQM** | `.aqm` | Caterpillar MineStar AQM blast file |
+| **DetNet ViewShot** | `.vxt` | `.vxt` only (the `.vs3` binary is not reverse-engineered) |
+| **DetNet DigiShot / ParVS3** | `.parvs3` | Row-per-deck with absolute delays on explosive decks; primer rows land on the deck containing the primer |
+| **Electronic Timing** | `.bpd` / `.ikn` / `.csv` | Auto-detected from your blast's harness / detonator system — override the target vendor format in the dropdown (default detected from system; e.g. *Davey BPD*) |
 
 ---
 
 ## Tips
 
-- **Coordinate units:** Metres (Easting, Northing, Elevation)
-- **Diameter:** Millimetres
-- **Delays:** Milliseconds
-- **File encoding:** UTF-8
+- **Coordinate units** — Easting (X), Northing (Y), Elevation (Z) in metres
+- **Diameter** — millimetres by default; Custom CSV lets you convert to inches or metres
+- **Delays** — milliseconds, relative to `fromHoleID`. Use `na`, `n/a`, `null`, or `nan` to write a null connector (the harness-wire convention)
+- **File encoding** — UTF-8 (no BOM)
+- **Decimal separator** — period (`.`); 4 decimal places by default
+- **Empty fields** — preset writers fill `NaN` with `0.0000`; Custom CSV writes them as empty cells *[VERIFY: Custom CSV empty-cell behaviour]*
 
 ---
 
-## Related Topics
+## Round-trip fidelity
 
-- [CSV Import](../importing/csv-formats.md)
+| Round-trip | Preserves | Loses |
+|------------|-----------|-------|
+| 14 → import → 14 | name, ID, collar/toe, diameter, type, tying, delay, colour | grade, subdrill, measured, row/pos |
+| 35 → import → 35 | everything the parser knows about | nothing |
+| 35 → import → 14 → 35 | re-derives grade from subdrill (small drift) | `rowID`, `posID`, `burden`, `spacing`, `connectorCurve` |
+| Custom CSV (geometry) → re-import | the geometry fields you ticked | anything you didn't tick |
+| Custom CSV with Deck[N] / Primer[N] → re-import | full charging state — decks, primers, verbatim formula strings | live formula re-evaluation until next Apply Charge Rule |
+
+For the most faithful Kirra-to-Kirra round-trip, prefer **KAP** — it carries every project state (charging, timing constructs, drawings, surfaces, layers) instead of just the holes.
+
+---
+
+## Related topics
+
+- [CSV Import](../importing/csv-formats.md) — preset variants and Custom CSV import side
+- [Kirra wiki: Custom CSV Format](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format) — authoritative parser/writer reference
+- [Kirra wiki: BlastHole CSV Format](https://github.com/brentbuffham/Kirra/wiki/BlastHole-CSV-Format) — authoritative preset reference
 - [DXF Export](dxf-export.md)
+- [Other Formats (IREDES, AQM, KML)](other-formats.md)
+- [Charging Overview](../charging/overview.md)
 - [Hole Properties Reference](../reference/hole-properties.md)

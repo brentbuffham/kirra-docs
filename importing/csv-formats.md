@@ -205,7 +205,7 @@ If you have an unusual header layout, use **Custom CSV** instead — it does hea
 
 ## Custom CSV Import
 
-If your CSV does not match a preset (different column order, different field names, extra columns), use **Custom CSV** on the **Blasts** tab of the Import dialog.
+If your CSV does not match a preset (different column order, different field names, extra columns), use **Custom CSV** on the **Blasts** tab of the Import dialog. Custom CSV also handles `.txt` and configurable delimiters (comma, tab, pipe, semicolon).
 
 ![Import dialog — Blasts tab](../screenshots/filemanager2.png)
 *Custom CSV is the first entry on the Blasts tab — "Pick your own column order, units, and custom fields".*
@@ -213,10 +213,85 @@ If your CSV does not match a preset (different column order, different field nam
 1. Left Sidenav → **Import**
 2. **Blasts** tab → **Custom CSV** → click **Open**
 3. Choose your `.csv` or `.txt` file
-4. Map the columns to Kirra fields in the wizard *[VERIFY: full wizard walkthrough — screenshot needed]*
+4. Map the columns to Kirra fields in the wizard (or rely on header auto-detection — see below) *[VERIFY: full wizard walkthrough — screenshot needed]*
 5. Confirm to import
 
-Custom CSV uses **smart row detection** to find the first data row — it skips header rows and any non-numeric preamble.
+### Header auto-detection
+
+`CsvColumnAutoDetect.autoDetectColumns()` scans the header row, normalises each header (lowercase, alphanumeric only), and matches against a keyword list per Kirra field. Match priority:
+
+1. **Exact match**
+2. **Longest matching keyword**
+3. **Earliest column** wins ties
+
+Examples of headers Kirra recognises out of the box:
+
+| Header in your CSV | Maps to |
+|--------------------|---------|
+| `Hole ID`, `HoleID`, `BlastHoleId` | `holeID` |
+| `Easting`, `XEast`, `X` | `startXLocation` |
+| `Northing`, `YNorth`, `Y` | `startYLocation` |
+| `Elev`, `Elevation`, `Z`, `Collar Z` | `startZLocation` |
+| `Bearing`, `Azimuth` | `holeBearing` |
+| `Dip` | interpreted via `angle_convention` (dip-from-horizontal converts to Kirra's angle-from-vertical as `90 − value`) |
+| `Diameter`, `BitSize` | `holeDiameter` (with unit conversion) |
+
+If your file uses headers Kirra doesn't recognise, you can override with a manual `columnOrder` mapping in the wizard.
+
+### Geometry priority
+
+When a CSV provides multiple geometry specs at once, the parser picks the first match:
+
+1. **Collar + Toe** coordinates (overrides L/A/B if both present)
+2. **Collar + Length / Angle / Bearing + Subdrill** (forward calc)
+3. **Toe + L/A/B + Subdrill** (reverse calc — collar back-derived from toe)
+4. **Collar + L/A/B only** (subdrill defaults to 1)
+5. **Collar only** (length = `benchHeight + subdrill`, angle = 0, bearing = 0)
+
+Subdrill is always the **vertical Δz**, not along-hole.
+
+### Smart row detection
+
+For files without explicit `rowID` / `posID`:
+
+- **Alphanumeric IDs** (e.g. `A1, A2, B1`) — letter becomes the row, number becomes the position
+- **Pure numeric** — fits holes to linear sequences using collar XY (tolerance `2 × diameter`)
+- **Fallback** — auto-assigns when the pattern is unclear
+
+### Duplicate handling
+
+Configurable per import:
+
+| Mode | Behaviour |
+|------|-----------|
+| `update-blast-hole` | Match on `entityName + holeID`, overwrite existing |
+| `update-location` | Match on collar proximity (0.01 m tolerance), overwrite existing |
+| `skip` | Keep the first, drop subsequent duplicates |
+
+### Time → delay back-calculation
+
+If the CSV provides absolute `holeTime` but no `timingDelayMilliseconds`, Kirra walks the timing graph and derives each delay as `myTime − fromHoleTime`.
+
+### Unit conversion
+
+- **Diameter** — `m → mm` (× 1000) or `in → mm` (× 25.4) on import; reverse on export
+- **Angle** — `dip-from-horizontal` (90 = horizontal) converts to Kirra's `angle-from-vertical` (0 = vertical) as `90 − value`
+
+### NaN guard
+
+Invalid coordinates **do not abort** the import:
+
+- `end ← collar` (zero-length / dummy hole) when the toe is bad
+- `grade ← collar ± 10` when the grade is bad
+- A user-facing report flags every row that fell back to a default
+
+### Charging columns (v1.0.270+)
+
+When the parser sees any header matching `^(deck|primer)([A-Z][A-Za-z]*)\[(\d+)\]$` (e.g. `deckType[1]`, `primerDepth[2]`) in the first row, it switches on a charging-reconstruction pass — no manual mapping needed. Each hole gets a `HoleCharging` rebuilt from the deck and primer cells, including verbatim `fx:` formula strings.
+
+Round-trip is full for design, formulas, and primer assignments — but live formula re-evaluation does not happen on import. The imported numeric values are the source of truth until the next **Apply Charge Rule** runs.
+
+For the full Custom CSV reference (every recognised header, every charging column, worked examples), see the Kirra wiki: [Custom CSV Format](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format).
 
 ---
 
