@@ -69,8 +69,8 @@ Picks the measured / as-built fields out of the visible holes and writes a compa
 | **Filename (without .csv)** | Auto-suggested as `MLC-EXPORT-<YYYYMMDD>_<HHMMSS>` (e.g. `MLC-EXPORT-20260524_142415`); editable before Export |
 | **Holes to Export** | Live count of visible holes (e.g. `151`) |
 | **Export Format** | `Measured Data CSV` (fixed) |
-| **Contains** | Entity Name, Hole ID, Measured Length, Measured Mass, Measured Comment *[VERIFY: full column list — dialog text is truncated after "Measured Co..."]* |
-| **Timestamps** | Included for every measurement |
+| **Contains** | 9 columns in this order: `entityName`, `entityType`, `holeID`, `measuredLength`, `measuredLengthTimeStamp`, `measuredMass`, `measuredMassTimeStamp`, `measuredComment`, `measuredCommentTimeStamp` |
+| **Timestamps** | Included for every measurement (one timestamp column per value) |
 
 Footer: **Cancel** / **Export** *(green)*.
 
@@ -92,12 +92,18 @@ The Custom CSV export — accessed from the **Blasts** tab in the Export dialog 
 | **Filename (without .csv)** | Output filename — `.csv` is appended automatically |
 | **Holes to Export** | Live count of visible holes that will be written (e.g. `151`) |
 | **Include column headers** | When ticked, the first row of the CSV is the column names |
-| **Convert diameter to** | Unit conversion for the diameter column — dropdown, default **Millimeters**. `mm → in` divides by 25.4; `mm → m` divides by 1000 |
+| **Convert diameter to** | Unit conversion for the diameter column — dropdown with three options: **Millimeters**, **Meters**, **Inches**. `mm → in` divides by 25.4; `mm → m` divides by 1000 |
 | **Convert subdrill to negative** | When ticked, subdrill values are written as negatives (some downstream systems expect this) |
 
 ### Select Columns to Export
 
 Fields are grouped by category. Tick each column you want to include. Each row has a **Custom header** input — type a name to override the default column header in the output CSV.
+
+The Custom CSV dialog scrolls — the full field list spans four screen-heights. The screenshots below show each section.
+
+#### Page 1 — Identifiers / Collar / Toe / Grade / Geometry / start of Timing
+
+(See the main dialog screenshot above.)
 
 | Group | Fields |
 |-------|--------|
@@ -106,7 +112,40 @@ Fields are grouped by category. Tick each column you want to include. Each row h
 | **Toe** | End X (mE), End Y (mN), End Z (mRL) |
 | **Grade** | Grade X (mE), Grade Y (mN), Grade Z (mRL) |
 | **Geometry** | Hole Angle (0° = vertical), Hole Dip (0° = horizontal), Hole Bearing, Hole Length, Diameter, Subdrill Amount, Subdrill Length, Bench Height, Burden, Spacing |
-| **Timing** | From Hole ID, Timing Delay (ms), Initiation Time *[VERIFY: remaining timing fields below the dialog fold]* |
+
+#### Page 2 — Timing / Measured / Charging Summary
+
+![Custom CSV Export — page 2 (Timing, Measured, Charging Summary)](../screenshots/CustomCSVExport-2.png)
+
+| Group | Fields |
+|-------|--------|
+| **Timing** | From Hole ID, Timing Delay (ms), Initiation Time, Tie Color |
+| **Measured** | Measured Length, Measured Length Timestamp, Measured Mass, Measured Mass Timestamp, Measured Comment, Measured Comment Timestamp |
+| **Charging Summary** | Total Explosive Mass (kg), Explosive Mass per Deck, Total Primer/Booster Mass (kg), Primer Mass per Deck, Total Detonator Count, Detonator Count per Deck, Length per Deck, Total Stemming Length (m), Total Stemming Mass (kg), Stemming Length per Deck, Stemming Mass per Deck, Total Air Length (m), Air Length per Deck, Total Water Length (m), Total Water Mass (kg), Water Length per Deck, Water Mass per Deck |
+
+> **Charging Summary is write-only.** The brace-packed `*per Deck` columns (e.g. `EXP{[1]0.000|[2]52.350}`) are Excel-friendly but not parsed back on import. For round-trippable charging, use the **Deck[N]** and **Primer[N]** groups below.
+
+#### Page 3 — Deck[N] groups
+
+![Custom CSV Export — page 3 (Deck[1] / Deck[2])](../screenshots/CustomCSVExport-3.png)
+
+A **Deck[N]** group appears for each deck index from 1 up to the maximum deck count across the visible holes (capped at 20). Every group exposes the same 12 attributes:
+
+| Group | Fields |
+|-------|--------|
+| **Deck[N]** | Type, Top (m), Base (m), Length (m), Product, Density (g/cc), Mass (kg), Scaling Mode, Top Formula, Base Formula, Length Formula, Mass Formula |
+
+Round-trippable — `*Formula` columns carry the verbatim `fx:` string so formulas survive a re-import.
+
+#### Page 4 — Primer[N] groups
+
+![Custom CSV Export — page 4 (Primer[1])](../screenshots/CustomCSVExport-4.png)
+
+A **Primer[N]** group appears for each primer index across the visible holes:
+
+| Group | Fields |
+|-------|--------|
+| **Primer[N]** | Deck Index, Depth (m), Depth Formula, Detonator, Detonator Type, Detonator Delay (ms), Detonator VoD (m/s), Detonator Qty, Booster, Booster Mass (g), Booster Qty, Total Downhole Delay (ms) |
 
 > **Hole Angle vs Hole Dip.** Both are exposed — pick the convention your downstream system uses:
 > - **Hole Angle** — `0°` = vertical (Kirra's native convention)
@@ -133,17 +172,11 @@ The Name becomes the column header; the Value is written into every data row.
 
 ### Charging round-trip (v1.0.270+)
 
-When any visible hole has **charging applied**, the Custom CSV exporter exposes additional column groups that round-trip the full Deck Builder state:
-
-| Group | Per-deck or per-primer | Example column |
-|-------|------------------------|----------------|
-| **Charging Summary** *(write-only, Excel-friendly)* | Whole-hole totals + brace-packed per-deck cells | `designExplosiveMassKg`, `designExplosiveMassPerDeck` |
-| **Deck[N]** *(round-trippable)* | Per-deck attributes | `deckType[N]`, `deckBase[N]`, `deckProduct[N]`, `deckBaseFormula[N]`, `deckScalingMode[N]`, `deckMassFormula[N]` |
-| **Primer[N]** *(round-trippable)* | Per-primer attributes | `primerDepth[N]`, `primerDeckIndex[N]`, `primerDetonatorName[N]`, `primerDetonatorDelayMs[N]`, `primerBoosterName[N]` |
+The **Charging Summary**, **Deck[N]**, and **Primer[N]** groups on pages 2-4 only appear when at least one visible hole has **charging applied**. The exporter scans the visible holes, finds the maximum deck and primer count, and emits exactly that many groups (capped at 20 each for dialog scannability).
 
 When a CSV with `deck*[N]` or `primer*[N]` headers is re-imported through Custom CSV, the parser auto-detects the charging columns (no manual mapping needed) and reconstructs each hole's `HoleCharging` — decks, primers, and verbatim `fx:` formula strings.
 
-For the full column inventory and the worked round-trip example, see the Kirra wiki: [Custom CSV Format → Charging columns](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format#charging-columns-v10270).
+For the underlying column names (`deckType[N]`, `deckBaseFormula[N]`, `primerDetonatorDelayMs[N]`, etc.) and worked round-trip examples, see the Kirra wiki: [Custom CSV Format → Charging columns](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format#charging-columns-v10270).
 
 > **Round-trip limit:** Formula strings ride along as text but only re-evaluate when the next **Apply Charge Rule** runs. The imported numeric values are the source of truth until then.
 
@@ -198,7 +231,7 @@ The Blasts tab in the Export dialog also includes:
 - **Delays** — milliseconds, relative to `fromHoleID`. Use `na`, `n/a`, `null`, or `nan` to write a null connector (the harness-wire convention)
 - **File encoding** — UTF-8 (no BOM)
 - **Decimal separator** — period (`.`); 4 decimal places by default
-- **Empty fields** — preset writers fill `NaN` with `0.0000`; Custom CSV writes them as empty cells *[VERIFY: Custom CSV empty-cell behaviour]*
+- **Empty fields** — preset writers fill `NaN` with `0.0000` to stay parseable in non-tolerant readers; Custom CSV writes empty cells
 
 ---
 

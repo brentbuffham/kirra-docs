@@ -213,8 +213,53 @@ If your CSV does not match a preset (different column order, different field nam
 1. Left Sidenav → **Import**
 2. **Blasts** tab → **Custom CSV** → click **Open**
 3. Choose your `.csv` or `.txt` file
-4. Map the columns to Kirra fields in the wizard (or rely on header auto-detection — see below) *[VERIFY: full wizard walkthrough — screenshot needed]*
-5. Confirm to import
+4. The **Import CSV: Map Columns** dialog opens — review the auto-detected mapping (or override manually) and click **Import**
+
+### The Map Columns dialog
+
+![Custom CSV Import — Map Columns dialog](../screenshots/CustomCSVImport-MapColumns.png)
+*Import CSV: Map Columns — file header, dialog-wide settings, column mapping (left), and live preview (right).*
+
+The dialog shows the file name and row / column counts at the top, followed by dialog-wide settings, the column mapper, and a live preview.
+
+#### Dialog-wide settings
+
+| Control | Purpose |
+|---------|---------|
+| **Header rows to skip** | Number of rows to ignore at the top of the file (default detected) |
+| **Column Detection** | Dropdown — defaults to **Auto detect columns** (header-keyword matching); switch to manual to set every mapping yourself |
+| **Auto-detect spatial rows** | When ticked, smart row detection assigns rowID / posID from collar XY when the file does not carry them explicitly |
+| **Duplicate Handling** | Radio buttons — **Update by Blast+ID** (default), **Update by location** (0.01 m tolerance), **Skip duplicates** |
+| **Angle Convention** | Dropdown — **Angle (0° = vertical)** for Kirra's native convention, or *Dip (0° = horizontal)* to convert (`90 − value`) |
+| **Diameter Units** | Dropdown — `mm` (default), `m`, `in` — values are converted to mm on import |
+
+#### Column Mapping panel
+
+The left side groups Kirra fields by category. Each row has a dropdown — pick which **CSV column** in the file (`Col 1: <name>`, `Col 2: <name>`, …) supplies that Kirra field, or leave it as `-- calculate --` to let Kirra derive it from the other fields.
+
+| Group | Fields |
+|-------|--------|
+| **Hole Identifiers** | Blast Name, **Hole ID** (required, marked with *), Hole Type, Row ID, Position ID |
+| **Hole Location - Collar** | **Start X (mE)** *, **Start Y (mN)** *, **Start Z (mRL)** * (all required) |
+| **Hole Location - End/Toe** | End X (mE), End Y (mN), End Z (mRL) |
+| **Hole Location - Grade** | Grade X (mE), Grade Y (mN), Grade Z (mRL) |
+| **Hole Geometry** | Hole Angle/Dip, Hole Bearing, Hole Length |
+
+Required fields are marked with **`*`** and shaded pink in the preview until mapped.
+
+#### Live preview panels (right side)
+
+| Panel | Shows |
+|-------|-------|
+| **Original Data Preview** | Top of the source file with column names as Kirra read them |
+| **Mapped Data Preview** | What each Kirra field will receive after the mapping is applied. Pink-highlighted cells are required fields that are not yet mapped |
+
+#### Footer
+
+| Button | Action |
+|--------|--------|
+| **Cancel** | Discard the mapping and close |
+| **Import** *(green)* | Apply the mapping, run the parser, and load the holes |
 
 ### Header auto-detection
 
