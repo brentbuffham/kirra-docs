@@ -72,6 +72,7 @@ Undefined indexed variables resolve to `0` — use `> 0` as the "does this deck 
 |---|---|---|---|
 | `massLength` | `(kg, density)` or `(kg, "Product")` | m | Length needed to hold a given mass at the hole's current diameter |
 | `sdobStem` | `(targetSDoB, density)` or `(targetSDoB, "Product")` | m | Stem length for a target Chiappetta Scaled Depth of Burial |
+| `sdobKg` | `(targetSDoB, density)` or `(targetSDoB, "Product")` | kg | **Inverse of `sdobStem`** — deck mass that achieves the target SDoB at the current hole length and diameter |
 | `ppvKG` | `(monitorX, monitorY, targetPPV, K, b)` | kg | Max instantaneous charge at this hole that keeps PPV under target at the monitor — uses site law `PPV = K · (D/√Q)^(−b)` |
 | `Math.min` | `(a, b, ...)` | number | Standard JS Math |
 | `Math.max` | `(a, b, ...)` | number | |
@@ -476,6 +477,34 @@ When the Mass field accepts formulas, PPV examples #1–#7 collapse to:
 > Deck[2] Mass = `fx:ppvKG(36153.16,156036.286,4,1140,1.6)`
 
 — no `massLength` wrapping, no arithmetic in the stem. The stem deck above auto-scales to fill the remainder when its Scaling Mode is set to VR (Variable). On product swap, the Mass cell shows the evaluated kg as a plain number so the user can edit it directly, or re-enter `fx:` to restore the formula.
+
+---
+
+## Pattern 10 — SDoB + PPV combined (Mass field with `sdobKg`)
+
+The `sdobKg` function is the **inverse of `sdobStem`** — it returns the deck mass that achieves a target SDoB at the current hole length and diameter. Combined with `ppvKG` (which returns PPV-allowable mass), this gives the cleanest production-grade form: both constraints expressed as masses in one Mass-field expression.
+
+#### Example: PPV-or-SDoB compliant — whichever is more restrictive
+
+> Deck[1] Type = INERT (Stemming), Top = `0`, Base = (VR Variable scaling — auto-fills above charge)
+> Deck[2] Type = COUPLED (ANFO)
+> Deck[2] Top = `fx:deckBase[1]`
+> Deck[2] Base = `fx:holeLength`
+> Deck[2] Mass = `fx:Math.min(ppvKG(36153.16,156036.286,4,1140,1.6),sdobKg(1.4,"ANFO"))`
+
+**Description:** *"Use the smaller of (a) the PPV-allowable mass for 4 mm/s at the monitor, or (b) the mass that gives an SDoB of 1.4 with ANFO."* Both constraints checked per-hole — every hole gets the more conservative limit automatically. The stem deck above auto-fills the remainder (set its Scaling Mode to VR, no formula needed).
+
+#### Example: SDoB-only mass target
+
+> Deck[2] Mass = `fx:sdobKg(1.5,"ANFO")`
+
+**Description:** Sets the charge mass to whatever delivers a Chiappetta SDoB of 1.5 at this hole. Equivalent to the older Stem Base form `fx:sdobStem(1.5,"ANFO")` but expressed in kg instead of stem length. Use whichever side of the equation makes the design intent clearer.
+
+#### Example: SDoB with truck-loadable rounding
+
+> Deck[2] Mass = `fx:Math.round(sdobKg(1.5,"ANFO")/5)*5`
+
+**Description:** Rounds the SDoB-target mass to the nearest 5 kg — useful when loading is hand-weighed or the truck dispenses in fixed increments. Use `Math.ceil(... / 5) * 5` if you must never under-charge.
 
 ---
 
