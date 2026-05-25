@@ -192,15 +192,16 @@ These variables refer to properties of the hole being charged:
 | `subdrillLength` | Distance from grade to toe along the hole (metres) |
 | `stemLength` | Depth to the top of the first charge deck (metres) |
 
-### Deepest Charge Variables
+### Charge-Total Variables
 
-These refer to the deepest charge deck in the configuration:
+These refer to all charge decks in the configuration:
 
 | Variable | Description |
 |----------|-------------|
-| `chargeBase` | Depth from collar to the base of the deepest charge deck |
-| `chargeTop` | Depth from collar to the top of the deepest charge deck |
-| `chargeLength` | Length of the deepest charge deck |
+| `chargeBase` | Depth to the base of the deepest charge deck |
+| `chargeTop` | Depth to the top of the shallowest charge deck |
+| `chargeLength` | Sum of all COUPLED / DECOUPLED deck lengths |
+| `stemLength` | Sum of all stemming (INERT) deck lengths |
 
 ### Indexed Deck Variables (All Deck Types)
 
@@ -211,6 +212,7 @@ Use these to reference any deck by its position number. They work for inert, cou
 | `deckBase[N]` | Base depth of the deck at position N |
 | `deckTop[N]` | Top depth of the deck at position N |
 | `deckLength[N]` | Length of the deck at position N |
+| `deckDensity[N]` *(v1.0.272+)* | Effective density (g/cc) of deck N's product |
 
 ### Indexed Charge Variables (Explosive Decks Only)
 
@@ -221,8 +223,13 @@ These only work for coupled and decoupled (explosive) decks:
 | `chargeBase[N]` | Base depth of the charge deck at position N |
 | `chargeTop[N]` | Top depth of the charge deck at position N |
 | `chargeLength[N]` | Length of the charge deck at position N |
+| `chargeDensity[N]` *(v1.0.272+)* | Effective density (g/cc) of charge deck N |
 
 > **Tip:** Prefer `deckBase[N]` over `chargeBase[N]` when referencing other decks. `deckBase[N]` works for all deck types, so you can reference stemming layers, spacers, and charge decks with the same syntax.
+
+> **Indexed densities are order-independent.** `deckDensity[N]` and `chargeDensity[N]` are populated for every deck *before* the position-resolution loop runs, so a formula on Deck 1 can safely reference `deckDensity[2]`. Position-indexed variables (`deckBase[N]`, etc.) still resolve sequentially.
+
+> **Why this matters for product swaps.** A swap rule (e.g. `swap:w{Emulsion}`) can change the product on a deck mid-layout. Formulas that hard-code a product name break when the swap fires; formulas that reference `deckDensity[N]` adapt automatically. See [Deck Builder Formula Guide & Examples — Pattern 11](Deck%20Builder%20Formula%20Guide%20Examples.html#pattern-11) for worked examples.
 
 ### Math Functions
 

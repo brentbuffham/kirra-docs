@@ -100,12 +100,23 @@ Drag or click these variable chips to insert them into the formula bar:
 | `holeX` | Hole collar X coordinate — easting (metres) |
 | `holeY` | Hole collar Y coordinate — northing (metres) |
 | `chargeBase` | Depth to the base of the deepest charge deck (metres) |
-| `chargeTop` | Depth to the top of the deepest charge deck (metres) |
-| `chargeLength` | Length of the deepest charge deck (metres) |
-| `stemLength` | Depth to the top of the first charge deck (metres) |
+| `chargeTop` | Depth to the top of the shallowest charge deck (metres) |
+| `chargeLength` | Sum of all COUPLED / DECOUPLED deck lengths (metres) |
+| `stemLength` | Sum of all stemming (INERT) deck lengths (metres) |
 | `deckBase[N]` | Base depth of any deck at position N (works for all deck types) |
 | `deckTop[N]` | Top depth of any deck at position N |
 | `deckLength[N]` | Length of any deck at position N |
+| `deckDensity[N]` *(v1.0.272+)* | Effective density (g/cc) of deck N's product — pre-populated for all decks, order-independent |
+| `chargeBase[N]` | Base depth of the charge-only deck at position N (COUPLED / DECOUPLED only) |
+| `chargeTop[N]` | Top depth of the charge-only deck at position N |
+| `chargeLength[N]` | Length of the charge-only deck at position N |
+| `chargeDensity[N]` *(v1.0.272+)* | Effective density (g/cc) of charge-only deck N |
+
+> **Indexed densities are order-independent.** `deckDensity[N]` and `chargeDensity[N]` are populated for **every** deck before the position-resolution loop runs, so a formula on Deck 1 can safely reference `deckDensity[2]`. The position-indexed variables (`deckBase[N]`, `deckTop[N]`, `chargeBase[N]`) still resolve sequentially — Deck 1 cannot read Deck 2's depths.
+
+> **`chargeBase[N]` vs `deckBase[N]`.** `chargeBase[N]` only counts COUPLED / DECOUPLED decks. `deckBase[N]` counts everything (including INERT / Stemming / SPACER). For cross-deck references, prefer `deckBase[N]`.
+
+See the [Deck Builder Formula Guide & Examples](Deck%20Builder%20Formula%20Guide%20Examples.html) for worked examples, including **Pattern 11 — Adaptive density via `deckDensity[N]`** (formulas that adapt automatically when a product swap fires).
 
 ### Operator Chips
 
