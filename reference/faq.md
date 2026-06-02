@@ -40,10 +40,15 @@ Free for mining, quarrying, construction professionals and researchers. Commerci
 
 Click the "Report" button in the Welcome popup, or email blastingapps.xyz@gmail.com.
 
+### Where is the formula documentation?
+
+Kirra has three separate `fx:` formula engines (charging, print templates, blast groups). Start at the [Formula Engine](../formula-help/formula-engine.md) hub, then open the engine-specific guide you need.
+
 ---
 
 ## Related Topics
 
+- [Formula Engine](../formula-help/formula-engine.md)
 - [Getting Started](../getting-started/overview.md)
 - [Coordinate System](coordinate-system.md)
 - [Keyboard Shortcuts](keyboard-shortcuts.md)

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kirra Formula Engine — Help</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kirra fx: formulas — charging, print templates, and blast group engines.">
+  <style>
+    :root {
+      --bg: #cecece;
+      --text: #000;
+      --link: #7a0a0a;
+      --muted: #555;
+      --card: #e8e8e8;
+    }
+    body.dark-mode {
+      --bg: #1a1a1a;
+      --text: #cecece;
+      --link: #ff6b6b;
+      --muted: #999;
+      --card: #2a2a2a;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      transition: background-color 0.4s, color 0.4s;
+    }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 26px; margin-bottom: 4px; }
+    .subtitle { font-size: 13px; font-style: italic; color: var(--muted); margin-bottom: 16px; }
+    a { color: var(--link); }
+    hr { border: none; border-top: 1px solid var(--muted); margin: 20px 0; opacity: 0.4; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+    th, td { border: 1px solid var(--muted); padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: var(--card); }
+    .card {
+      background: var(--card);
+      padding: 14px 16px;
+      margin: 12px 0;
+      border-radius: 4px;
+    }
+    code { font-family: Consolas, monospace; font-size: 13px; }
+    .back-link { font-size: 14px; }
+    .dark-mode-toggle { display: flex; align-items: center; margin-bottom: 12px; font-size: 14px; }
+    .dark-mode-toggle input { display: none; }
+    .dark-mode-toggle label {
+      display: flex; align-items: center;
+      width: 48px; height: 22px;
+      background: #999; border-radius: 34px;
+      cursor: pointer; position: relative;
+      margin-right: 8px;
+    }
+    .dark-mode-toggle input:checked + label { background: #666; }
+    .dark-mode-toggle label::after {
+      content: ""; position: absolute;
+      width: 20px; height: 20px; border-radius: 50%;
+      top: 1px; left: 1px; background: #fff;
+      transition: transform 0.4s;
+    }
+    .dark-mode-toggle input:checked + label::after { transform: translateX(24px); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="back-link"><a href="https://brentbuffham.github.io/kirra-docs/">← Kirra Documentation</a></p>
+
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="darkModeToggle" aria-label="Dark mode">
+      <label for="darkModeToggle"></label>
+      <span>Dark mode</span>
+    </div>
+
+    <h1>Kirra Formula Engine</h1>
+    <p class="subtitle">Three engines share the <code>fx:</code> prefix — they are not interchangeable.</p>
+
+    <p>
+      Full guide (Markdown, same content as the docs site):
+      <a href="https://brentbuffham.github.io/kirra-docs/formula-help/formula-engine/">formula-engine</a>
+    </p>
+
+    <hr>
+
+    <h2>Three engines</h2>
+    <table>
+      <thead>
+        <tr><th>Engine</th><th>Where</th><th>Reference</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Charging</strong></td>
+          <td>Deck Builder — lengths, mass, primers, swaps</td>
+          <td><a href="../charging/Deck%20Builder%20Formula%20Guide%20Examples.html">Deck Builder Formula Guide</a></td>
+        </tr>
+        <tr>
+          <td><strong>Print template</strong></td>
+          <td>XLSX print template cells</td>
+          <td><a href="../printing/pdf-print.html">Print Formula Reference</a></td>
+        </tr>
+        <tr>
+          <td><strong>Blast group</strong></td>
+          <td>Assign Group — Formula field</td>
+          <td><a href="blast-group-formulas.html">Blast Group Formulas</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Quick examples</h2>
+    <table>
+      <thead>
+        <tr><th>Goal</th><th>Engine</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Stem below 3.5 m collar</td><td>Charging</td><td><code>fx:holeLength - 3.5</code></td></tr>
+        <tr><td>Total drill metres on report</td><td>Print</td><td><code>fx:round(sum(holeLength[i]), 1)</code></td></tr>
+        <tr><td>Holes shorter than 2 m</td><td>Blast group</td><td><code>fx:holeLength &lt; 2</code></td></tr>
+      </tbody>
+    </table>
+
+    <div class="card">
+      <strong>Rules</strong>
+      <ul>
+        <li>Always use <code>fx:</code> for exports and new work.</li>
+        <li>One expression per evaluation — no loops or goal-seek.</li>
+        <li>Do not put print functions in charge decks or charging vars in group predicates.</li>
+      </ul>
+    </div>
+
+    <h2>AI help (Claude)</h2>
+    <p>
+      Install the <strong>Kirra Formula</strong> skill so Claude picks the right engine and traces your formula:
+      <a href="formula-skill.html">Formula Skill — Install &amp; Use</a>.
+      Download:
+      <a href="kirra-formula.zip">kirra-formula.zip</a>
+    </p>
+
+    <h2>Related</h2>
+    <ul>
+      <li><a href="../charging/deck-builder.html">Deck Builder</a></li>
+      <li><a href="../charging/overview.html">Charging Overview</a></li>
+      <li><a href="../printing/xlsx-templates.html">Print from Template (XLSX)</a></li>
+      <li><a href="../printing/template-examples.html">Template Examples</a></li>
+    </ul>
+
+    <hr>
+    <p class="subtitle">
+      <strong>Kirra Licence v1.0</strong> — Free for mining, quarrying, construction, and research.
+      <a href="../about.html">About &amp; licensing</a>.
+    </p>
+  </div>
+  <script>
+    (function() {
+      var toggle = document.getElementById("darkModeToggle");
+      if (localStorage.getItem("kirraDocsDark") === "1") {
+        document.body.classList.add("dark-mode");
+        toggle.checked = true;
+      }
+      toggle.addEventListener("change", function() {
+        document.body.classList.toggle("dark-mode", toggle.checked);
+        localStorage.setItem("kirraDocsDark", toggle.checked ? "1" : "0");
+      });
+    })();
+  </script>
+</body>
+</html>

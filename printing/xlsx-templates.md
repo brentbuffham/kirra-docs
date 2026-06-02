@@ -37,6 +37,10 @@ Upload your own XLSX spreadsheet to create fully custom layouts. Your template c
 
 ---
 
+Kirra print cells use the **`fx:`** print-template engine (not Deck Builder charging formulas). See the [Formula Engine](../formula-help/formula-engine.md) hub and the [Print Formula Reference](pdf-print.md) before mixing syntax from charge decks.
+
+---
+
 ## Template Workflow
 
 1. **Import** an XLSX template file (or select from your saved library)
@@ -89,6 +93,7 @@ The XLSX output option is available only when using a custom template. Use it wh
 
 ## Related Topics
 
+- [Formula Engine](../formula-help/formula-engine.md) — three engines; print vs charging vs blast group
 - [Print Formula Reference](pdf-print.md) — Complete list of all variables, functions, display codes, and render tokens
 - [Template Examples](template-examples.md) — Downloadable example templates with detailed walkthroughs
 - [Blast Statistics](../analysis/blast-statistics.md)

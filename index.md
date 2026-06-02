@@ -77,11 +77,18 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 ### Printing
 - [Print to PDF](printing/pdf-print.md)
 - [Print from Template (XLSX)](printing/xlsx-templates.md)
+- [Formula Engine](formula-help/formula-engine.md) — print vs charging `fx:` (see also [Print Formula Reference](printing/pdf-print.md))
+
+### Formula Engine
+- [Formula Engine Overview](formula-help/formula-engine.md) — three `fx:` engines (charging, print, blast group); when to use which
+- [Deck Builder Formula Guide & Examples](charging/Deck%20Builder%20Formula%20Guide%20Examples.html) — charging engine: variables, functions, PPV/SDoB examples
+- [Print Formula Reference](printing/pdf-print.md) — print template engine: cells, aggregation, maps, legends
+- [Blast Group Formulas](formula-help/blast-group-formulas.md) — Assign Group predicates (boolean)
+- [Claude Formula Skill — Install & Use](formula-help/formula-skill.md) — optional AI helper; [download zip](formula-help/kirra-formula.zip)
 
 ### Charging
 - [Charging Overview](charging/overview.md)
 - [Deck Builder](charging/deck-builder.md)
-- [Deck Builder Formula Guide & Examples](charging/Deck%20Builder%20Formula%20Guide%20Examples.html) — every variable, every function, with worked PPV and SDoB examples
 - [Harness Wire Assignment](charging/harness-wire-assignment.md)
 - [Products CSV Reference](charging/products-csv.md)
 
@@ -101,6 +108,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Modify Toolbar](kad/modify-tools.md)
 
 ### Reference
+- [Formula Engine Overview](formula-help/formula-engine.md) — hub for all `fx:` formula documentation
 - [Select Toolbar](reference/select-toolbar.md) — button-by-button reference
 - [Supported File Formats](reference/supported-formats.md) — full import/export matrix
 - [Hole Properties](reference/hole-properties.md)

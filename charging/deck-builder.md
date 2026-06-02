@@ -116,6 +116,8 @@ Drag or click these variable chips to insert them into the formula bar:
 
 > **`chargeBase[N]` vs `deckBase[N]`.** `chargeBase[N]` only counts COUPLED / DECOUPLED decks. `deckBase[N]` counts everything (including INERT / Stemming / SPACER). For cross-deck references, prefer `deckBase[N]`.
 
+See the [Formula Engine](../formula-help/formula-engine.md) hub if you are unsure whether a formula belongs in charging, a print template, or a blast group.
+
 See the [Deck Builder Formula Guide & Examples](Deck%20Builder%20Formula%20Guide%20Examples.html) for worked examples, including **Pattern 11 — Adaptive density via `deckDensity[N]`** (formulas that adapt automatically when a product swap fires).
 
 ### Operator Chips
@@ -336,6 +338,8 @@ As you change formulas or drag deck boundaries, the preview updates in real time
 
 ## Related Topics
 
+- [Formula Engine](../formula-help/formula-engine.md) — charging vs print vs blast group
+- [Deck Builder Formula Guide & Examples](Deck%20Builder%20Formula%20Guide%20Examples.html) — full charging formula reference
 - [Charging Overview](overview.md) — introduction to the charging system
 - [Products CSV Reference](products-csv.md) — CSV format and formula reference
 - [Charge Rules](charge-rules.md) — automatic charge assignment

@@ -2,6 +2,8 @@
 
 A complete reference for the Deck Builder formula engine — every variable, every function, every operator, with worked mining examples grouped by use case.
 
+> **Other engines:** Print templates and blast groups use different `fx:` variables and functions. See the [Formula Engine](../formula-help/formula-engine.md) hub before copying formulas between Deck Builder, XLSX reports, and Assign Group.
+
 ---
 
 ## Why formulas?

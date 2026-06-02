@@ -2,6 +2,8 @@
 
 Kirra's XLSX template system uses `fx:` prefixed formulas to populate cells with blast data, statistics, graphics, and calculated values. This page is the complete reference for every formula, variable, display code, and render token available.
 
+This is the **print template** formula engine only. Charge deck formulas and blast-group predicates use different variables and functions — see the [Formula Engine](../formula-help/formula-engine.md) hub.
+
 All formulas are entered in XLSX cells with the `fx:` prefix. Standard Excel formulas (`=`) are preserved in XLSX output but ignored in PDF output.
 
 ---
@@ -859,6 +861,8 @@ Fills left-to-right, top-to-bottom: cell A1 = hole 1, B1 = hole 2, C1 = hole 3, 
 ---
 
 ## Related Topics
+
+- [Formula Engine](../formula-help/formula-engine.md) — print vs charging vs blast group
 
 - [Template Examples](template-examples.md) — Downloadable example templates with detailed walkthroughs
 - [Print from Template (XLSX)](xlsx-templates.md) — Template workflow and output formats

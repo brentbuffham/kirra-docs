@@ -70,7 +70,7 @@ One of Kirra's most powerful features is the ability to use formulas to calculat
 | Hole length minus 3.5 metres | Charge fills everything below 3.5 m of stemming |
 | 50 kg at hole diameter | Calculates the deck length needed to deliver exactly 50 kg of explosive |
 
-Formulas are covered in detail in the [Deck Builder](deck-builder.md) and [Products CSV Reference](products-csv.md) pages.
+Formulas are covered in the [Formula Engine](../formula-help/formula-engine.md) hub, the [Deck Builder](deck-builder.md), the [Deck Builder Formula Guide & Examples](Deck%20Builder%20Formula%20Guide%20Examples.html), and the [Products CSV Reference](products-csv.md) pages.
 
 ---
 
@@ -176,6 +176,8 @@ You can also export just the charging data in four CSV formats:
 
 ## Related Topics
 
+- [Formula Engine](../formula-help/formula-engine.md) — which `fx:` engine to use (charging vs print vs blast group)
 - [Deck Builder](deck-builder.md) — design charge columns with the visual builder
+- [Deck Builder Formula Guide & Examples](Deck%20Builder%20Formula%20Guide%20Examples.html) — charging formulas reference
 - [Products CSV Reference](products-csv.md) — CSV format for charge configurations and products
 - [Charge Rules](charge-rules.md) — automatic charge assignment rules

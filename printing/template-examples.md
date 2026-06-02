@@ -2,6 +2,8 @@
 
 This page walks through practical XLSX template examples that demonstrate Kirra's advanced print formula features. Each example is a focused template you can download, open in Excel, and use as a starting point for your own reports.
 
+Print cells use the **print template** engine — not Deck Builder charging formulas. See [Formula Engine](../formula-help/formula-engine.md) before copying `fx:` syntax from charge rules.
+
 Download the example templates from the [examples/](examples/) folder.
 
 ---
