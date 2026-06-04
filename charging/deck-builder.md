@@ -103,6 +103,10 @@ Drag or click these variable chips to insert them into the formula bar:
 | `chargeTop` | Depth to the top of the shallowest charge deck (metres) |
 | `chargeLength` | Sum of all COUPLED / DECOUPLED deck lengths (metres) |
 | `stemLength` | Sum of all stemming (INERT) deck lengths (metres) |
+| `firstChargeTop` | Depth to the top of the **first** (shallowest) charge deck — the geometric uncharged zone (metres) |
+| `inertLength` | Sum of **all** inert deck lengths, including Stemming / DrillCuttings / StemGel / SPACER (metres) |
+| `airLength` | Sum of all Air deck lengths (metres) |
+| `waterLength` | Sum of all Water deck lengths (metres) |
 | `deckBase[N]` | Base depth of any deck at position N (works for all deck types) |
 | `deckTop[N]` | Top depth of any deck at position N |
 | `deckLength[N]` | Length of any deck at position N |
@@ -115,6 +119,8 @@ Drag or click these variable chips to insert them into the formula bar:
 > **Indexed densities are order-independent.** `deckDensity[N]` and `chargeDensity[N]` are populated for **every** deck before the position-resolution loop runs, so a formula on Deck 1 can safely reference `deckDensity[2]`. The position-indexed variables (`deckBase[N]`, `deckTop[N]`, `chargeBase[N]`) still resolve sequentially — Deck 1 cannot read Deck 2's depths.
 
 > **`chargeBase[N]` vs `deckBase[N]`.** `chargeBase[N]` only counts COUPLED / DECOUPLED decks. `deckBase[N]` counts everything (including INERT / Stemming / SPACER). For cross-deck references, prefer `deckBase[N]`.
+
+> **Unit badges.** Each chip shows a small muted unit after its name — `m` (metres), `mm` (hole diameter), `g/cc` (density), or, for function chips, the **return** unit (`sdobStem → m`, `sdobKg → kg`, `ppvKG → kg`). The badge is a display hint only; it is never inserted into the formula. Because functions nest, the badge tells you what a call returns, so you know which field it belongs in — `sdobKg → kg` feeds a **Mass** field, while `sdobStem → m` feeds a **length** field.
 
 See the [Formula Engine](../formula-help/formula-engine.md) hub if you are unsure whether a formula belongs in charging, a print template, or a blast group.
 
@@ -183,6 +189,22 @@ Use this as the **base depth** of a stemming deck. The charge deck below it fill
 | 1.2 – 1.8 | Normal blast conditions |
 | 1.8 – 2.5 | Well-confined |
 | > 2.5 | Over-confined |
+
+#### sdobKg(targetSDoB, density)
+
+The inverse of `sdobStem` — returns the **deck mass in kilograms** (not a length) that achieves a target Scaled Depth of Burial at the hole's current length and diameter. Internally it solves the stemming with `sdobStem`, then converts the remaining charge column to a mass. Use it in a deck's **Mass** field, or nested inside another function — **not** a length field.
+
+| Parameter | Description |
+|-----------|-------------|
+| `targetSDoB` | Target SDoB value in m/kg^(1/3) (typical: 1.2 to 1.8) |
+| `density` | Explosive density in g/cc, or a product name in quotes |
+
+```
+fx:sdobKg(1.4, "ANFO")                                       // kg of ANFO that hits SDoB 1.4
+fx:Math.min(ppvKG(x, y, 4, 1140, 1.6), sdobKg(1.4, "ANFO"))  // smaller of the PPV-allowed and SDoB-compliant mass
+```
+
+`sdobKg` returns **kg** while `sdobStem` returns **m**, so mind which field you drop each into — the chip's unit badge shows the return unit.
 
 #### ppvKG(monitorX, monitorY, targetPPV, K, b)
 
