@@ -145,6 +145,63 @@ Drag or click operator chips: `+`, `-`, `*`, `/`, `(`, `)`, `?`, `:`, `&&`, `||`
 4. The formula bar shows: `fx:holeLength * 0.3` with a preview like `= 3.60 m`
 5. Click **Apply to Field**
 
+### Describe it in plain English
+
+At the top of the Formula Builder is a **"Describe it…"** box. Type what you want the deck to do in
+ordinary English, click **Interpret**, and Kirra fills the formula bar with the matching `fx:`
+formula and shows a one-line readback of what it understood. You can edit the result before applying.
+
+This is a **deterministic translator**, not a chatbot — it recognises a fixed set of charging
+patterns and will tell you plainly when a request is outside what a charge formula can express
+(rather than guessing). It only works in the Deck Builder (deck length, mass, and primer-depth
+fields).
+
+**Things it understands:**
+
+| You type | You get |
+|----------|---------|
+| `25 kg of ANFO` | `fx:massLength(25, "ANFO")` |
+| `stemming 25% of the hole length` | `fx:holeLength * 0.25` |
+| `hole length minus 3.5` | `fx:holeLength - 3.5` |
+| `stem to SDoB 1.5 but never under 1.6 m` | `fx:Math.max(1.6, sdobStem(1.5, "ANFO"))` |
+| `mass of ANFO for SDoB 1.4` | `fx:sdobKg(1.4, "ANFO")` |
+| `primer 0.3 m above deck 4` | `fx:deckBase[4] - 0.3` |
+| `if hole over 5 m then 25% of length else 40% of length` | `fx:holeLength > 5 ? holeLength * 0.25 : holeLength * 0.4` |
+| `25% if hole > 5 m, 40% if 5 to 3 m, 75% if 3 to 1.5 m` | nested ternary on `holeLength` |
+| `25% of the hole length only if the subdrill is 1 m else 35%` | `fx:subdrillLength == 1 ? holeLength * 0.25 : holeLength * 0.35` |
+| `25% of hole length rounded to 0.1` | `fx:Math.round((holeLength * 0.25) * 10) / 10` |
+
+**Conditional words** it knows: `if`, `when`, `while`, `then`, `else`/`otherwise`; comparators
+`more than` / `over` / `greater than` (→ `>`), `less than` / `under` / `below` (→ `<`),
+`at least` / `at most`, and `is` / `equal to` for equality. You can stack bands ("25% if … and
+40% if … and 75% if …") and the condition variable can differ from the branch variable (test the
+subdrill, scale the hole length). **Rounding** — add "round to 0.1", "round up", or "round down" to
+wrap any of the above.
+
+**PPV / vibration limits.** Phrases like *"the biggest charge that keeps all monitors under
+10 mm/s"* are recognised. Kirra reads the **PPV monitors you have placed on the plan** and builds a
+formula that takes the smallest allowed charge across every monitor, using each monitor's own
+coordinates and site constants (K, b):
+
+```
+fx:massLength(Math.min(ppvKG(1000, 2000, 10, 1140, 1.6), ppvKG(1500, 2200, 10, 1200, 1.7)), "ANFO")
+```
+
+If you haven't placed any PPV monitors yet, the readback asks you to add them first — it will not
+invent monitor coordinates.
+
+**What it refuses (on purpose).** A charge formula can only see the hole's geometry and its deck
+depths, so the box declines requests built on quantities it has no variable for, and explains why
+instead of returning a wrong-but-plausible formula: **powder factor**, **burden** / **spacing**,
+**volume** / **area**, **VED (vertical energy distribution)**, and **fragmentation / P80 / X50**.
+Those belong to the solver or pattern tools, not a deck formula.
+
+**Typos.** If a word is close to one it knows ("lenght" → "length"), it suggests the correction and
+asks you to confirm — it never silently auto-corrects.
+
+> The Describe-it box is a starting point. Always sanity-check the readback and the placeholder
+> values (density, monitor constants) before applying the formula to your holes.
+
 ### Custom Functions
 
 The Formula Builder includes function chips that you can click or drag into the formula bar. These functions use the hole's properties (diameter, length, position) automatically.
