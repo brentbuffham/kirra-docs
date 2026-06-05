@@ -165,6 +165,9 @@ fields).
 | `hole length minus 3.5` | `fx:holeLength - 3.5` |
 | `stem to SDoB 1.5 but never under 1.6 m` | `fx:Math.max(1.6, sdobStem(1.5, "ANFO"))` |
 | `mass of ANFO for SDoB 1.4` | `fx:sdobKg(1.4, "ANFO")` |
+| `put the primer at grade level` | `fx:holeLength - subdrillLength` |
+| `primer 0.3 m above grade` | `fx:(holeLength - subdrillLength) - 0.3` |
+| `primer at the toe` | `fx:holeLength - 0.3` |
 | `primer 0.3 m above deck 4` | `fx:deckBase[4] - 0.3` |
 | `if hole over 5 m then 25% of length else 40% of length` | `fx:holeLength > 5 ? holeLength * 0.25 : holeLength * 0.4` |
 | `25% if hole > 5 m, 40% if 5 to 3 m, 75% if 3 to 1.5 m` | nested ternary on `holeLength` |
