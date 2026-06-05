@@ -7,7 +7,7 @@ The Holes toolbar provides tools for placing blast holes, generating patterns, r
 ## Toolbar Overview
 
 ![Labelled Holes toolbar](../screenshots/LabledHoleToolbar.png)
-*The Holes toolbar with all twelve tool buttons labelled.*
+*The Holes toolbar with all tool buttons labelled.*
 
 The Holes toolbar contains the following tools:
 
@@ -17,6 +17,7 @@ The Holes toolbar contains the following tools:
 | **Holes Along Line Tool** | Interactive | Place holes along a straight line between two points |
 | **Holes Along Polyline Tool** | Interactive | Place holes along a multi-segment polyline path |
 | **Single or Multiple Hole Tool** | Interactive | Place individual holes by clicking on the canvas |
+| **Insert Holes Tool** | Interactive | Insert one or more holes into an existing row, before or after a clicked hole, at the row spacing or a custom distance |
 | **Add Pattern Block Tool** | Dialog | Generate a rectangular grid of holes with uniform burden and spacing |
 | **Pattern Template Dialog** | Dialog | Open the template picker to apply a saved pattern configuration |
 | **Renumber Holes Tool** | Dialog | Renumber the IDs of selected holes by a chosen sort order |
@@ -104,6 +105,28 @@ Places individual blast holes on the canvas by clicking. Each click places one h
 > **Tip:** Hold `Shift` while clicking to snap to the active grid. *[VERIFY: snap behaviour]*
 
 See [Adding Blast Holes](adding-holes.md) for the full default-property reference.
+
+---
+
+## Insert Holes Tool
+
+Inserts one or more holes **into an existing row**, before or after a hole you click — at the row spacing or a custom distance. Unlike the Single Hole tool (which drops standalone holes), Insert Holes works on the clicked hole's row: the new holes take their place in the row and the existing holes shift their position numbers outward (a gap that fits three holes takes three, pushing the rest along the row). New holes inherit the clicked hole's properties (diameter, length, type, bench, angle, bearing, colour) and the row is auto-renumbered.
+
+The dialog is **persistent** — it stays open so you can click hole after hole.
+
+### How to Use
+
+1. Click the **Insert Holes** button on the Holes toolbar. The select pointer and hole mode are turned on automatically, and a small dialog opens.
+2. Set:
+   - **Number of holes** — how many to insert per click.
+   - **Insert** — *After* or *Before* the clicked hole.
+   - **Distance** — *Use the row spacing* (the clicked hole's spacing), or *Custom distance* in metres.
+3. Click a hole on the canvas. The new holes are inserted along the row in the chosen direction.
+4. Click another hole to repeat. Click **Close** (or toggle the button off) when finished.
+
+### Duplicate protection
+
+If an inserted hole would land on top of another hole **in the same blast**, Kirra shows a coincidence warning before committing — you can **Ignore** (insert anyway), **Skip** (insert only the non-clashing holes), or **Cancel**. This is the same same-blast XY check every hole tool uses (see [Editing Holes → Hole coincidence](editing-holes.md)).
 
 ---
 

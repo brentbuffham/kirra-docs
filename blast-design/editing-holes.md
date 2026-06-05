@@ -55,6 +55,8 @@ Right-click a hole to access its properties and context menu:
 
 > **Tip:** Hold `Shift` while dragging to constrain movement to horizontal or vertical only.
 
+> **Dropping on another hole:** if a moved hole lands on top of another hole **in the same blast**, Kirra shows a coincidence warning on drop and lets you **Keep** the move or **Revert** (snap the moved hole(s) back to where they started). See [Hole coincidence](#hole-coincidence) below.
+
 ### Move by Offset
 
 1. Select the holes you want to move
@@ -171,9 +173,21 @@ All editing operations support undo and redo:
 
 ---
 
+## Hole coincidence
+
+Two holes in the **same blast** must never share an XY position — a duplicate on top of another causes double-charging, breaks the timing network, and corrupts volume/powder-factor calculations. Every tool that creates or moves a hole checks for this and warns you before it happens:
+
+- **Adding / inserting / pattern tools** — if a new hole would land on an existing hole in the same blast, a proximity warning appears with **Ignore** (place anyway), **Skip** (place only the non-clashing holes), **Skip All**, or **Cancel**.
+- **Move tool** — if a dragged hole is dropped on another hole in the same blast, the drop is flagged with **Keep** (allow) or **Revert** (snap the moved hole(s) back to their original positions).
+
+Coincidence is only flagged **within a blast** (same entity). Holes from *different* blasts may overlap in plan view by design — they sit on different benches at different elevations. To find coincident holes across blasts, use the Coincident Hole Detector.
+
+---
+
 ## Related Topics
 
 - [Adding Holes](adding-holes.md) — place individual holes manually
+- [Holes Toolbar → Insert Holes Tool](holes-toolbar.md#insert-holes-tool) — insert into a row before/after a hole
 - [Hole Properties Reference](../reference/hole-properties.md) — every field explained
 - [Pattern Generation](pattern-generation.md) — generate patterns automatically
 - [Timing Sequences](timing-sequences.md) — assign initiation delays
