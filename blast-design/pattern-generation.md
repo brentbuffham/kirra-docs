@@ -70,6 +70,8 @@ Rows (Burden direction)
 
 Generated holes are numbered sequentially: `H001`, `H002`, `H003`, etc. Row-based naming is also available: `R1-H01`, `R1-H02`, `R2-H01`, etc.
 
+The **Starting Hole ID** field accepts both numbers and alphanumeric seeds. Type `500` to start at 500, or `A1` to start an alphabetical series (`A1, A2, A3 …`) — the letter prefix is preserved and the trailing number increments. If the blast already has holes in the same series, new holes continue from the highest existing ID + 1; switching to a new prefix starts a fresh series.
+
 ---
 
 ## Polygon Pattern
@@ -204,7 +206,7 @@ All pattern types share these hole-level settings:
 | **Default Bearing** | Drill azimuth (degrees) |
 | **Default Hole Type** | Production, Presplit, Buffer, etc. |
 | **ID Prefix** | Prefix for generated Hole IDs |
-| **Start Number** | First number in the auto-generated ID sequence |
+| **Starting Hole ID** | First ID in the sequence — number (`500`) or alphanumeric seed (`A1`); auto-continues from existing same-series holes |
 
 ---
 
