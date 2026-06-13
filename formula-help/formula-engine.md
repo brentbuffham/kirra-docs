@@ -44,7 +44,7 @@ Used in the [Deck Builder](../charging/deck-builder.md), charge rule templates, 
 
 **Typical fields:** deck top, base, length, mass (`m:` or `fx:` mass expression), primer depth, swap predicates (boolean).
 
-**Power functions:** `massLength`, `sdobStem`, `sdobKg`, `ppvKG`, indexed deck/charge depths (`deckBase[2]`, `chargeDensity[N]`, etc.).
+**Power functions:** `massLength`, `sdobStem`, `sdobKg`, `ppvKG` (+ optional charge exponent `e`, default 0.5), `ppvKG3D` (3D slant distance), `ppvKGPoE` / `ppvKGPoE3D` (probability-of-exceedance charge limit, Blair 2011 site σ), indexed deck/charge depths (`deckBase[2]`, `chargeDensity[N]`, etc.).
 
 **Don't want to write it yourself?** The Deck Builder's **"Describe it…"** box turns plain English ("stem to SDoB 1.5 but never under 1.6 m", "biggest charge under 10 mm/s at the monitors") into the `fx:` formula. It's deterministic and refuses out-of-scope requests rather than guessing — see [Deck Builder → Describe it in plain English](../charging/deck-builder.md#describe-it-in-plain-english).
 

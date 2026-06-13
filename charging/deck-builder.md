@@ -193,6 +193,21 @@ fx:massLength(Math.min(ppvKG(1000, 2000, 10, 1140, 1.6), ppvKG(1500, 2200, 10, 1
 If you haven't placed any PPV monitors yet, the readback asks you to add them first — it will not
 invent monitor coordinates.
 
+The PPV flow understands several refinements:
+
+- **Both a PPV and an SDoB limit at once** — *"…40 mm/s at the monitors **or SDoB 1.5**"* folds
+  `sdobKg(1.5, …)` into the same `Math.min`, so the tighter of the regulatory limit and the
+  confinement limit wins.
+- **3D distance** — say *"3D"* or *"slant"* and Kirra uses each monitor's elevation
+  (`ppvKG3D(...)`) instead of the horizontal distance.
+- **One named monitor** — *`monitor "FMG_A1_M01"`* restricts the formula to that single monitor
+  (an unknown name returns a clear error).
+- **Probability of exceedance** — *"1% probability of exceedance"* or *"1 in 100 blasts may
+  exceed"* designs to a confidence buffer using each monitor's **site σ** (`ppvKGPoE(...)`); the
+  read-back states the PoE %. Smaller σ allows a bigger charge, so set each monitor's σ from your
+  own site-law regression rather than relying on the 0.22 default. See the
+  [Probability of Exceedance](../analysis/) analytics for the underlying maths.
+
 **What it refuses (on purpose).** A charge formula can only see the hole's geometry and its deck
 depths, so the box declines requests built on quantities it has no variable for, and explains why
 instead of returning a wrong-but-plausible formula: **powder factor**, **burden** / **spacing**,
