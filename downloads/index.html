@@ -134,48 +134,6 @@
       color: var(--muted);
       text-align: center;
     }
-
-    .security { margin: 20px 0; font-size: 13px; line-height: 1.55; }
-    .security h2 { font-size: 18px; margin: 0 0 8px; }
-    .security h3 { font-size: 14px; margin: 16px 0 4px; }
-    .security p { margin: 6px 0; }
-    .sec-banner {
-      border-left: 3px solid var(--btn-hover);
-      background: rgba(255, 0, 0, 0.06);
-      padding: 10px 12px;
-      border-radius: 4px;
-      margin: 10px 0;
-    }
-    body.dark-mode .sec-banner { background: rgba(255, 107, 107, 0.08); }
-    .sec-good, .sec-watch { list-style: none; padding-left: 0; margin: 6px 0; }
-    .sec-good li, .sec-watch li {
-      position: relative;
-      padding-left: 22px;
-      margin: 5px 0;
-    }
-    .sec-good li::before {
-      content: "\2713";
-      position: absolute; left: 0;
-      color: #2e7d32; font-weight: bold;
-    }
-    body.dark-mode .sec-good li::before { color: #66bb6a; }
-    .sec-watch li::before {
-      content: "\26A0";
-      position: absolute; left: 0;
-    }
-    .security details {
-      margin: 6px 0;
-      border: 1px solid var(--btn);
-      border-radius: 4px;
-      padding: 6px 10px;
-    }
-    .security summary { cursor: pointer; font-weight: bold; }
-    .security code {
-      background: var(--btn);
-      padding: 1px 5px;
-      border-radius: 3px;
-      font-size: 12px;
-    }
   </style>
 </head>
 <body>
@@ -199,74 +157,6 @@
       <noscript>
         <p>Enable JavaScript or check the files in this directory for the latest installers.</p>
       </noscript>
-    </div>
-
-    <hr>
-
-    <div class="security">
-      <h2>Security &amp; safe installation</h2>
-
-      <div class="sec-banner">
-        <strong>These installers are not code-signed.</strong> Kirra is free, and a
-        code-signing certificate is a recurring yearly cost that isn't justified for a
-        free, frequently-updated tool. Because the installer is unsigned, Windows and
-        macOS will warn you the first time you run it. This means "unknown publisher,"
-        <em>not</em> "malware." Safe install steps are below.
-      </div>
-
-      <h3>What protects you</h3>
-      <ul class="sec-good">
-        <li><strong>No data leaves your machine.</strong> Kirra makes no outbound
-          network connections — no telemetry, tracking, or "phone-home." You can
-          confirm this yourself with any network monitor.</li>
-        <li><strong>Your work stays local.</strong> All projects and files are stored
-          on your own computer; nothing is uploaded to a server.</li>
-        <li><strong>No auto-updater.</strong> Kirra never downloads or runs code in the
-          background. You decide when to update by downloading a new installer here.</li>
-        <li><strong>Limited system access.</strong> The desktop app's native
-          permissions are restricted to reading and writing the files you open and save.</li>
-        <li><strong>Scannable before you install.</strong> You're welcome to run the
-          installer through your antivirus or a service like VirusTotal first.</li>
-      </ul>
-
-      <h3>Good to know</h3>
-      <ul class="sec-watch">
-        <li><strong>Checksums:</strong> SHA-256 checksums are <em>not</em> available for
-          v1.1.0. We will publish checksums alongside the installers in future releases
-          so you can verify a download hasn't been altered in transit.</li>
-        <li>Like all software, Kirra uses third-party open-source libraries. We monitor
-          them for security advisories and update them over time.</li>
-      </ul>
-
-      <h3>Installing safely</h3>
-
-      <details>
-        <summary>Windows 10 / 11</summary>
-        <p>When you run the <code>.exe</code>, SmartScreen may say "Windows protected
-        your PC." Click <strong>More info</strong>, then <strong>Run anyway</strong>.
-        If your browser flags the download, choose <strong>Keep</strong>.</p>
-      </details>
-
-      <details>
-        <summary>macOS (Intel &amp; Apple Silicon)</summary>
-        <p>If macOS says the app "cannot be opened" or is from an "unidentified
-        developer," <strong>right-click (or Control-click) the app and choose
-        Open</strong>, then confirm. You only need to do this once. If it reports the
-        app is "damaged," open Terminal and run
-        <code>xattr -dr com.apple.quarantine /Applications/Kirra.app</code>.</p>
-      </details>
-
-      <details>
-        <summary>Linux (Debian / Ubuntu)</summary>
-        <p>Install the <code>.deb</code> with
-        <code>sudo dpkg -i Linux-Kirra-*.deb</code> (then run
-        <code>sudo apt-get install -f</code> if any dependencies are missing).</p>
-      </details>
-
-      <p class="note" style="text-align:left;">Prefer not to install? Kirra runs fully
-      in your browser at
-      <a href="https://kirra-design.com" style="color:inherit;">kirra-design.com</a> —
-      no installation required.</p>
     </div>
 
     <hr>
@@ -302,7 +192,7 @@
 
     // Step 2) Build download buttons from the RELEASE_DATA injected by CI
     // CI replaces this line with: var RELEASE_DATA = { version: "1.0.40", files: [...] };
-        var RELEASE_DATA = { version: "1.1.0", files: [{"platform":"Linux-deb","name":"Linux-Kirra-v1.1.0.deb"},{"platform":"Mac-Universal","name":"Mac-Universal-Kirra-v1.1.0.dmg"},{"platform":"Windows","name":"Windows-Kirra-v1.1.0-Setup.exe"}] };
+        var RELEASE_DATA = { version: "1.1.10", files: [{"platform":"Linux-deb","name":"Linux-Kirra-v1.1.10.deb"},{"platform":"Mac-Universal","name":"Mac-Universal-Kirra-v1.1.10.dmg"},{"platform":"Windows","name":"Windows-Kirra-v1.1.10-Setup.exe"}] };
 
     if (typeof RELEASE_DATA !== "undefined") {
       var badge = document.getElementById("version-badge");
