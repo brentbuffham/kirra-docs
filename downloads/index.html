@@ -323,7 +323,7 @@
 
     // Step 2) Build download buttons from the RELEASE_DATA injected by CI
     // CI replaces this line with: var RELEASE_DATA = { version: "1.0.40", files: [...] };
-        var RELEASE_DATA = { version: "1.1.20", files: [{"platform":"Linux-deb","name":"Linux-Kirra-v1.1.20.deb","sha256":"93787549e6b01d302fa86127a8629a66b8af09a0a149680788a484194b653b2e"},{"platform":"Mac-Universal","name":"Mac-Universal-Kirra-v1.1.20.dmg","sha256":"a12dc8885a4641faadceaf3a207626335c5c740e280a07ac39865ac9bf4b9541"},{"platform":"Windows","name":"Windows-Kirra-v1.1.20-Setup.exe","sha256":"7c455e806c04219e0dbe670d9fa91577db225e8d906a6d64843ec5b15631aa44"}] };
+        var RELEASE_DATA = { version: "1.1.20", files: [{"platform":"Linux-deb","name":"Linux-Kirra-v1.1.20.deb","sha256":"4444f539065600f0e98c73d42655eae9690a345baefbebc1b0b9cac6a28d5b29"},{"platform":"Mac-Universal","name":"Mac-Universal-Kirra-v1.1.20.dmg","sha256":"79dac77f6e5d5363bb97b8a7c8bed17ca91290793373975fbe93fcb85e561abd"},{"platform":"Windows","name":"Windows-Kirra-v1.1.20-Setup.exe","sha256":"cb7e653b5f32b63c014359c1cf8e081d778fd3a6ad575a559733c23dcafca2be"}] };
 
     if (typeof RELEASE_DATA !== "undefined") {
       var badge = document.getElementById("version-badge");
