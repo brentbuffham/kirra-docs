@@ -24,6 +24,7 @@ The KAD toolbar contains the following controls:
 | **Draw Text (formulas as well)** | Tool | Place a text label; supports `fx:` formulas |
 | **Draw Circle** | Tool | Place a circle entity at the click point |
 | **Circle Radius** | Input | Radius (m) for the next circle drawn |
+| **Roads and Ramps** | Tool | Digitise a graded road / ramp centreline and generate ramp strings *(work in progress)* |
 
 ---
 
@@ -168,6 +169,23 @@ The radius (in metres) used by the next circle drawn. The screenshot shows **10.
 - Click the **Circle Radius** input
 - Enter the radius in metres
 - The next click of **Draw Circle** uses this radius
+
+---
+
+## Roads and Ramps
+
+Digitises a graded **road or ramp centreline** and generates ramp strings (crest / toe / batter lines) from it — the start of a haul-ramp design workflow.
+
+> **Work in progress:** this tool is marked as work-in-progress in the current version. Expect its behaviour and options to change.
+
+> *[SCREENSHOT NEEDED: Roads and Ramps tool / dialog]*
+
+### How to use
+
+1. Click the **Roads and Ramps** button on the KAD toolbar
+2. Digitise the ramp centreline by clicking points along the intended route
+3. Set the grade and ramp parameters *[VERIFY: exact ramp inputs]*
+4. Generate the ramp strings
 
 ---
 

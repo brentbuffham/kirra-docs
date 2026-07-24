@@ -16,10 +16,10 @@ walkthroughs of individual formats, see the per-format pages under
 
 ## At a glance
 
-- **24 importers** active (parsers)
+- **25 importers** active (parsers)
 - **30 exporters** active (writers — CSV variants count separately)
-- **Disabled / not registered:** Deswik DUF (`.duf`), Orica SPF writer,
-  DetNet `.vs3` binary
+- **Read-only (import only) — vendor write withheld by policy:** Deswik DUF (`.duf`)
+- **Disabled / not registered:** Orica SPF writer, DetNet `.vs3` binary
 
 > **Status legend used in the tables below**
 >
@@ -119,7 +119,7 @@ See: [3D Mesh Import](../importing/3d-mesh.md) ·
 | Epiroc Surface Manager | `.geofence`, `.hazard`, `.sockets`, `.txt` | Yes | Yes | Y, X coordinate files. |
 | Epiroc IREDES XML | `.xml` | Yes | Yes | Drill plan exchange. |
 | CBLAST | `.csv` | Yes | Yes | 4 records per hole: HOLE, PRODUCT, DETONATOR, STRATA. |
-| Deswik DUF | `.duf` | — | — | Currently disabled in the registry — not yet verified against real `.duf` files. |
+| Deswik DUF | `.duf` | Yes (read-only) | — | Linework import, verified 2026-06-24 against a matching `.str` / `.dtm` pair (100% of STR points found byte-exact in the DUF). Export is intentionally withheld — DUF is a paid-software (Deswik) format. |
 
 See: [Surpac DTM / STR](../importing/surpac-dtm-str.md) ·
 [Other Import Formats](../importing/other-formats.md) ·
@@ -175,7 +175,7 @@ in the FileManager, so they will not appear in any registry-driven UI:
 
 | Format | Status |
 |---|---|
-| Deswik DUF (`.duf`) | Reader/writer incomplete — untested against real `.duf` files. UI buttons hidden in `index.html`. |
+| Deswik DUF **writer** (`.duf`) | DUF **import** is active (read-only). The **writer** is intentionally not registered — DUF is a paid-software (Deswik) format. |
 | Orica ShotPlus SPF writer | SPF read works; write is not implemented. |
 | DetNet `.vs3` binary | Binary layout is not fully reverse-engineered and ViewShot rejects round-tripped exports. Use `.vxt` instead. |
 

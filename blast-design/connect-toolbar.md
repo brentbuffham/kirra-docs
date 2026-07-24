@@ -15,6 +15,7 @@ The Connect toolbar contains the following controls:
 |---------|------|---------|
 | **Display the Temporal Mesh** | Toggle | Show / hide the universal temporal mesh (time as Z) |
 | **Temporal Mesh Options** | Dialog | Configure temporal-mesh appearance and behaviour |
+| **Gradient** | Tool | Create gradient-style timing connections that vary delay across a pattern |
 | **Single Connect Holes** | Tool | Draw one source → target connector at a time |
 | **Connect Multiple Holes** | Tool | Cascade a chain of connectors in one operation |
 | **Continuous Connect Holes (HW)** | Tool | Click-by-click chain that stays active for the next chain (v1.0.230) |
@@ -53,6 +54,20 @@ Opens the temporal mesh configuration dialog — controls for appearance and beh
 2. Adjust mesh display (wireframe / filled / contour-only)
 3. Adjust time-to-elevation scale
 4. Close the dialog
+
+---
+
+## Gradient
+
+Creates **gradient-style timing connections** that vary the delay across a pattern — instead of a fixed per-connector delay, the delay ramps smoothly in a direction you set, so the firing time flows across the blast like a gradient.
+
+> *[SCREENSHOT NEEDED: Gradient timing tool / dialog]*
+
+### How to use
+
+1. Click the **Gradient** button on the Connect toolbar
+2. Define the gradient direction and delay range across the pattern *[VERIFY: exact inputs — direction pick, ms range]*
+3. Apply — connectors are created with delays that vary along the gradient
 
 ---
 

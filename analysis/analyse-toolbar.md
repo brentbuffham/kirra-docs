@@ -7,7 +7,7 @@ The **Analyse** toolbar groups the controls for blast analytics, vibration predi
 ## Toolbar Overview
 
 ![Labelled Analyse toolbar](../screenshots/AnalyseToolbar.png)
-*The Analyse toolbar with all eight controls labelled.*
+*The Analyse toolbar with its controls labelled.*
 
 The Analyse toolbar contains the following controls:
 
@@ -20,6 +20,8 @@ The Analyse toolbar contains the following controls:
 | **Log-Log Transient Regression** | Dialog | Fit site-law constants (K, B) from measured PPV vs scaled-distance pairs |
 | **Blast Animation Simple** | Dialog | Time-stepped animation of the firing sequence |
 | **Time Window, FFT, Spectrum, Seed, Forward Array, Detune and Constrain** | Dialog | Open the Time Window analysis dialog (seven tabs) |
+| **Adjust Block Model Loaded** | Dialog | Load or adjust the geological block model currently loaded into the project |
+| **Adjust Block Model Schema Colour** | Dialog | Customise the colour schema used to render block-model attributes |
 
 ---
 
@@ -149,6 +151,35 @@ Opens the **Time Window** dialog — Kirra's master timing-and-vibration analysi
 | **Constrain** | Enforce a max-events-per-rolling-window rule |
 
 See [Time Window Dialog](time-window.md) for the full per-tab reference.
+
+---
+
+## Adjust Block Model Loaded
+
+Loads or adjusts the geological **block model** currently loaded into the project — the gridded model of ore/waste and rock attributes used to inform blast design and analysis.
+
+> *[SCREENSHOT NEEDED: Adjust Block Model dialog]*
+
+### How to use
+
+1. Click the **Adjust Block Model Loaded** button on the Analyse toolbar
+2. Load a block model, or adjust the display of the one already loaded *[VERIFY: exact load vs adjust controls]*
+3. Apply
+
+---
+
+## Adjust Block Model Schema Colour
+
+Customises the **colour schema** used to render block-model attributes — mapping attribute values (rock type, grade, density, etc.) to display colours.
+
+> *[SCREENSHOT NEEDED: Block Model Schema Colour dialog]*
+
+### How to use
+
+1. Click the **Adjust Block Model Schema Colour** button on the Analyse toolbar
+2. Choose the attribute to colour by
+3. Set the colour mapping for its values *[VERIFY: exact schema-editing controls]*
+4. Apply — the block model re-renders with the new colours
 
 ---
 

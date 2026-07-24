@@ -9,7 +9,7 @@ Despite the name, this toolbar is not only about selection — undo/redo, zoom, 
 ## Toolbar Overview
 
 ![Labelled Select toolbar](../screenshots/LabledSelectToolbar.png)
-*The Select toolbar with all thirteen controls labelled.*
+*The Select toolbar with its controls labelled.*
 
 The Select toolbar contains the following controls:
 
@@ -26,6 +26,7 @@ The Select toolbar contains the following controls:
 | **Zoom Out** | View | Zoom the viewport out by one step |
 | **Reset View** | View | Reset the camera to a default view (three modes) |
 | **Section View Tool** | View | Slice the 3D scene with a section plane |
+| **Find Select Zoom** | Dialog | Search holes / KAD by criteria (ID, type, colour, length, bearing, mass, delay…), combine criteria, then zoom to the result |
 | **Orbit Focus 3D Tool** | View | Click a point in the 3D scene to set it as the new orbit centre |
 | **3D World Settings** | Dialog | Open renderer configuration — renderer mode, instanced rendering, LOD overrides, simplification thresholds |
 
@@ -215,6 +216,23 @@ Slices the 3D scene with a section plane so you can see inside surfaces or cut t
 6. Set the two width fields to define how much of the scene stays visible either side of the plane
 7. Use **Rotation** to tilt the plane as needed
 8. Click **Close** to leave the dialog (the plane stays active), or **Reset** to return to defaults
+
+---
+
+## Find Select Zoom
+
+Opens the **Find / Select / Zoom** dialog — search for holes or KAD objects by one or more criteria, select the matches, and zoom the viewport to them. Handy for isolating a subset of a large blast (for example, all presplit holes, or every hole with a delay over a threshold).
+
+You can search by criteria such as colour, hole type, ID, length, diameter, angle, bearing, bench, blast name, mass, and delay, and **combine multiple match criteria** to narrow the result.
+
+> *[SCREENSHOT NEEDED: Find / Select / Zoom dialog]*
+
+### How to Use
+
+1. Click the **Find Select Zoom** button on the Select toolbar
+2. Add one or more match criteria (e.g. hole type = Presplit, delay > 100 ms)
+3. Run the search to select the matching entities
+4. Zoom to the result
 
 ---
 

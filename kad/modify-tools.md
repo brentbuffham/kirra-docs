@@ -17,10 +17,15 @@ The Modify toolbar contains the following tools:
 | **Transform KAD** | Dialog | Translate and rotate KAD entities by offset and bearing/pitch/roll |
 | **Offset KAD** | Dialog | Offset lines and polygons inward or outward |
 | **Radii** | Dialog | Create circular polygons around selected holes or KAD points |
+| **Router-Chamfer** | Interactive | Create routed or chamfered edge transitions on selected geometry |
+| **Clip-KAD** | Interactive | Clip selected KAD objects against a boundary polygon |
 | **Reorder KAD Points** | Dialog | Change the start vertex and winding direction of lines/polygons |
 | **KAD Boolean** | Dialog | 2D boolean operations (union, difference, intersection, XOR) on polygons |
 | **Join KAD Lines** | Dialog | Join two lines end-to-end into a single entity |
 | **Split KAD Lines** | Dialog | Split a line or polygon at one or more vertices |
+| **Extend Line to Boundary** | Interactive | Extend the end of a line until it reaches a chosen boundary entity |
+| **Grade Line** | Interactive | Set a constant slope (grade) along a selected line |
+| **Simplify RDP** | Interactive | Reduce a line/polygon's vertex count with the Ramer–Douglas–Peucker algorithm |
 
 ---
 
@@ -195,6 +200,32 @@ Creates circular polygons around selected blast holes or KAD points.
 
 ---
 
+## Router-Chamfer
+
+Creates routed (rounded) or chamfered (bevelled) edge transitions on selected KAD geometry — softening sharp corners on a polygon or line.
+
+### How to Use
+
+1. Select the KAD line or polygon to modify
+2. Click the **Router-Chamfer** button in the Modify toolbar
+3. Choose the transition style and size *[VERIFY: exact dialog options]*
+4. Apply the result
+
+---
+
+## Clip-KAD
+
+Clips selected KAD objects against a boundary polygon, keeping the portion inside (or outside) the boundary. The 2D drawing counterpart to the surface **Clip Surface** tool.
+
+### How to Use
+
+1. Select the KAD entities to clip
+2. Click the **Clip-KAD** button in the Modify toolbar
+3. Pick the boundary polygon
+4. Choose which side to keep and apply *[VERIFY: exact keep-inside/outside control]*
+
+---
+
 ## Reorder KAD Points
 
 Changes the start vertex and winding direction of KAD line and polygon entities. Useful for controlling the direction of offset operations and ensuring consistent polygon winding.
@@ -311,6 +342,47 @@ Splits a KAD line or polygon at one or more selected vertices, creating separate
 - The status banner shows the selected entity name, vertex count, split point count, and expected result
 - The dialog remembers the Delete Original checkbox state between executions
 - Multi-point split support allows splitting at several vertices in a single operation
+
+---
+
+## Extend Line to Boundary
+
+Extends the end of a selected line until it reaches a chosen boundary entity (another line or a polygon edge), so two strings meet cleanly at an intersection.
+
+### How to Use
+
+1. Click the **Extend Line to Boundary** button in the Modify toolbar
+2. Click the line you want to extend, near the end to extend
+3. Click the boundary entity to extend to
+4. The line is lengthened to the intersection point
+
+---
+
+## Grade Line
+
+Sets a **constant slope (grade)** along a selected line — each vertex's elevation is placed on a straight gradient between the line's ends, giving a uniform grade (useful for drains, batters, and haul-grade strings).
+
+### How to Use
+
+1. Click the **Grade Line** button in the Modify toolbar
+2. Select the line to grade
+3. Set the target slope (or start/end elevations) *[VERIFY: exact dialog inputs]*
+4. Apply — vertex Z values are recomputed to follow the constant grade
+
+---
+
+## Simplify RDP
+
+Reduces the vertex count of a line or polygon using the **Ramer–Douglas–Peucker** algorithm, removing points that don't materially change the shape — handy for cleaning up dense survey strings or digitised boundaries.
+
+### How to Use
+
+1. Click the **Simplify RDP** button in the Modify toolbar — an active-mode banner appears
+2. Click a line or polygon to simplify it
+3. Repeat on other entities as needed
+4. **Right-click** to exit the tool
+
+> Tune the simplification tolerance to trade fidelity against vertex count. *[VERIFY: where the tolerance is set]*
 
 ---
 

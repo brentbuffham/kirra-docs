@@ -21,7 +21,9 @@ The Holes toolbar contains the following tools:
 | **Add Pattern Block Tool** | Dialog | Generate a rectangular grid of holes with uniform burden and spacing |
 | **Pattern Template Dialog** | Dialog | Open the template picker to apply a saved pattern configuration |
 | **Renumber Holes Tool** | Dialog | Renumber the IDs of selected holes by a chosen sort order |
-| **Renumber Rows Tool** | Dialog | Renumber holes by row |
+| **Reorder Rows** | Dialog | Reorder the drilling rows of a pattern |
+| **Coincident Holes Check** | Dialog | Detect holes that are coincident / overlapping so duplicates can be reviewed and resolved |
+| **Convert Holes to KAD Points** | Dialog | Convert hole collar, grade, or toe positions into standalone KAD point objects |
 | **Product Database** | Dialog | Open the explosive products database used by charging |
 | **Deck Builder Tool** | Dialog | Open the deck builder to configure charge decks for selected holes |
 | **Reapply Selected Holes Charging** | Action | Re-apply the current charge template to the selected holes |
@@ -180,18 +182,49 @@ Renumbers the IDs of selected holes by a chosen sort order. Timing connections a
 
 ---
 
-## Renumber Rows Tool
+## Reorder Rows
 
-Renumbers holes by row. Useful when automatic row clustering has been applied but the row numbering order needs to change (for example, reversing the direction of firing).
+Reorders the drilling rows of a pattern — changing which row is treated as first, second, and so on. Useful when automatic row clustering has assigned an order you want to change (for example, reversing the direction of firing).
 
-> *[SCREENSHOT NEEDED: Renumber Rows dialog]*
+> *[SCREENSHOT NEEDED: Reorder Rows dialog]*
 
 ### How to Use
 
-1. Select the holes to renumber
-2. Click the **Renumber Rows** button on the Holes toolbar
-3. Configure the row numbering order *[VERIFY: available options]*
-4. Click **Apply** *[VERIFY: button label]*
+1. Select the holes (or the pattern) to reorder
+2. Click the **Reorder Rows** button on the Holes toolbar
+3. Configure the new row order *[VERIFY: available options]*
+4. Apply *[VERIFY: button label]*
+
+---
+
+## Coincident Holes Check
+
+Detects holes that are **coincident or overlapping** in the design so duplicates can be reviewed and resolved. This is the on-demand version of the same-blast XY check that hole tools run automatically when placing or moving holes.
+
+> *[SCREENSHOT NEEDED: Coincident Hole Detector dialog]*
+
+### How to Use
+
+1. Click the **Coincident Holes Check** button on the Holes toolbar
+2. Review the list of coincident / overlapping holes it reports
+3. Resolve duplicates — the checker can also relocate clashing holes *[VERIFY: exact resolve / relocate options]*
+
+See [Editing Holes → Hole coincidence](editing-holes.md) for the automatic placement-time check.
+
+---
+
+## Convert Holes to KAD Points
+
+Converts hole **collar**, **grade**, or **toe** positions into standalone KAD point objects — useful for exporting hole positions as drawing geometry, or for reusing collar/toe points as inputs to other tools (triangulation, offsets, radii).
+
+> *[SCREENSHOT NEEDED: Convert Holes to KAD Points dialog]*
+
+### How to Use
+
+1. Select the holes to convert
+2. Click the **Convert Holes to KAD Points** button on the Holes toolbar
+3. Choose which position to use — **collar**, **grade**, or **toe**
+4. Apply — a KAD point is created at the chosen position of each selected hole
 
 ---
 
