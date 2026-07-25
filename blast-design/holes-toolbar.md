@@ -1,6 +1,6 @@
 # Holes Toolbar
 
-The Holes toolbar provides tools for placing blast holes, generating patterns, renumbering, and managing charging on selected holes. It is one of the six floating toolbars on the right side of the Kirra workspace.
+The Holes toolbar provides tools for placing blast holes, generating patterns, renumbering, and managing charging on selected holes. It is one of the seven floating toolbars on the right side of the Kirra workspace.
 
 ---
 

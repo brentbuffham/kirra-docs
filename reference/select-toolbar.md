@@ -1,6 +1,6 @@
 # Select Toolbar
 
-The Select toolbar groups the workspace-wide tools for selecting entities, measuring distances and angles, controlling the view, and setting the selection mode. It is the first of the six floating toolbars on the right side of the Kirra workspace.
+The Select toolbar groups the workspace-wide tools for selecting entities, measuring distances and angles, controlling the view, and setting the selection mode. It is the first of the seven floating toolbars on the right side of the Kirra workspace.
 
 Despite the name, this toolbar is not only about selection — undo/redo, zoom, reset view, section view, orbit focus, and 3D world settings all live here because they apply across every other tool.
 

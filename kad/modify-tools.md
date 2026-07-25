@@ -1,6 +1,6 @@
 # Modify Toolbar
 
-The Modify toolbar provides tools for transforming, editing, and manipulating blast holes and KAD entities. It is one of the six floating toolbars available on the right side of the Kirra workspace.
+The Modify toolbar provides tools for transforming, editing, and manipulating blast holes and KAD entities. It is one of the seven floating toolbars available on the right side of the Kirra workspace.
 
 ---
 
