@@ -77,6 +77,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 ### Printing
 - [Print to PDF](printing/pdf-print.md)
 - [Print from Template (XLSX)](printing/xlsx-templates.md)
+- [Claude Print Template Skill — Install & Use](printing/print-skill.md) — optional AI helper for building templates; [download](printing/KirraDesign-USER-Print-Skill.zip)
 - [Formula Engine](formula-help/formula-engine.md) — print vs charging `fx:` (see also [Print Formula Reference](printing/pdf-print.md))
 
 ### Formula Engine
@@ -85,6 +86,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Print Formula Reference](printing/pdf-print.md) — print template engine: cells, aggregation, maps, legends
 - [Blast Group Formulas](formula-help/blast-group-formulas.md) — Assign Group predicates (boolean)
 - [Claude Formula Skill — Install & Use](formula-help/formula-skill.md) — optional AI helper; [download zip](formula-help/kirra-formula.zip)
+- [Claude Print Template Skill — Install & Use](printing/print-skill.md) — builds print templates; ships its own generated formula reference
 
 ### Charging
 - [Charging Overview](charging/overview.md)
