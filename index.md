@@ -108,6 +108,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Drawing Points, Lines, and Polygons](kad/drawing-tools.md)
 - [Extrude, Boolean, and Section Plane](kad/advanced-tools.md)
 - [Modify Toolbar](kad/modify-tools.md)
+- [Layer Organisation](kad/layer-organisation.md) — where generated output lands and how it is named
 
 ### Reference
 - [Formula Engine Overview](formula-help/formula-engine.md) — hub for all `fx:` formula documentation

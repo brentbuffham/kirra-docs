@@ -14,9 +14,23 @@ Kirra generates elevation contour lines (isolines) at regular intervals on loade
    - **Contour interval** -- spacing between contour lines (e.g., 2m, 5m, 10m)
    - **Colour** -- colour for the contour polylines
    - **Line width** -- thickness of the contour lines
-   - **Target layer** -- KAD layer for the output entities
+   - **Sub-layer Name** -- folder under `Analysis` for the output (default `Contours`)
 4. Click **Generate**
 5. Contour polylines appear as KAD entities in the TreeView and on both 2D/3D views
+
+---
+
+## Where the Contours Land
+
+Contours are filed in `Analysis → Contours` and named
+`<surface>_Contour_RL<elevation>_<seq>_<uid>` -- for example `Pit_Contour_RL640_001_a4zz`.
+Every ring at the same elevation shares the `RL` value, so sorting the folder by name
+groups each elevation together.
+
+Type a different **Sub-layer Name** to split a run out -- `PitShell` files the output in
+`Analysis → PitShell` instead. The top-level layer stays `Analysis` either way.
+
+See [Layer Organisation](../kad/layer-organisation.md).
 
 ---
 
@@ -33,4 +47,5 @@ Kirra generates elevation contour lines (isolines) at regular intervals on loade
 
 - [Importing Surfaces](importing-surfaces.md)
 - [Surface Gradients](gradients.md)
+- [Layer Organisation](../kad/layer-organisation.md)
 - [DXF Export](../exporting/dxf-export.md)

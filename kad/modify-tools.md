@@ -156,6 +156,11 @@ Offsets KAD lines and polygons inward or outward by a specified distance, creati
 - A cyan dot marks the original start point; green dots mark offset start points
 - The dialog remembers the last used parameters between executions
 
+### Where the output lands
+
+`Design → Offsets`, named `<source>_Offset_<distance>m_<uid>` — for example
+`Crest_Offset_5m_p7q1`. See [Layer Organisation](layer-organisation.md).
+
 ### How to Use
 
 1. Select a line or polygon entity
@@ -190,6 +195,19 @@ Creates circular polygons around selected blast holes or KAD points.
 - Starburst example: 5m radius + 50% starburst = odd points at 5m, even points at 2.5m
 - Line width is inherited from the first selected entity
 - The dialog shows the count of selected KAD points
+
+### Where the output lands
+
+`Boundaries → Radii → Polygons`, named `<blast>_Radii_<radius>m_<uid>` — for example
+`Blast01_Radii_300m_k3f9`.
+
+- Rotation and starburst are appended when they are not at their defaults:
+  `Blast01_Radii_300m_R45_S50_k3f9`
+- Using the toe instead of the collar names it `RadiiToe`
+- Selecting holes from more than one blast names the source `Selection`
+- Running the tool again adds to the *same* `Boundaries → Radii` folder
+
+See [Layer Organisation](layer-organisation.md).
 
 ### How to Use
 
@@ -263,7 +281,7 @@ Performs 2D boolean operations on KAD polygon entities. Supports Union, Intersec
 | **Operation** | Union (A + B), Intersect, Difference (A - B), or XOR |
 | **Output Colour** | Colour for the result polygon *[VERIFY: UI label spelling]* |
 | **Line Width** | Width of the result polygon outline |
-| **Layer Name** | Target layer for the output |
+| **Sub-layer Name** | Sub-layer under `Analysis` for the output (default `Booleans`) |
 
 ### Operations
 
@@ -271,6 +289,12 @@ Performs 2D boolean operations on KAD polygon entities. Supports Union, Intersec
 - **Intersect** -- keep only the overlapping region
 - **Difference** -- subtract B from A
 - **XOR** -- keep everything except the overlap
+
+### Where the output lands
+
+`Analysis → Booleans`, named `<subject>_<Operation>_<uid>` — for example
+`Poly01_Union_f5g7`. Type a different **Sub-layer Name** to file it under
+`Analysis → <your name>` instead. See [Layer Organisation](layer-organisation.md).
 
 ### How to Use
 
@@ -395,10 +419,17 @@ The following improvements were made to the Modify toolbar tools in recent updat
 - **Join KAD Lines**: The dialog now remembers checkbox states (Close as Poly, Delete Originals) between executions
 - **KAD Drawing**: Point ID labels and drawing are now restricted to the selected KAD entity, improving clarity and performance when working with large datasets
 
+## Recent Changes (August 2026)
+
+- **Generated output is now organised by discipline.** Radii, Offset, KAD Boolean and the other generating tools file their results into `Boundaries`, `Design`, or `Analysis` with a sub-layer per tool, instead of dropping everything into the active drawing layer. See [Layer Organisation](layer-organisation.md)
+- **Generated entities are named `Source_Kind_parameter_uid`** — `Blast01_Radii_300m_k3f9` instead of `RAD-SRTk3f9`
+- **KAD Boolean's "Layer Name" is now "Sub-layer Name"** — it names the folder under `Analysis` rather than a top-level layer
+
 ---
 
 ## Related Topics
 
+- [Layer Organisation](layer-organisation.md) -- where generated output lands and how it is named
 - [Drawing Points, Lines, and Polygons](drawing-tools.md)
 - [Extrude, Boolean, and Section Plane](advanced-tools.md)
 - [Interface Tour](../getting-started/interface-tour.md)

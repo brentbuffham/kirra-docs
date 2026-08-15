@@ -76,6 +76,12 @@ Computes the intersection lines where two surfaces meet, producing KAD polyline 
 | Close Polygons | true | Create closed polylines |
 | Colour | Yellow | Colour of result polylines |
 | Line Width | 3 | Thickness of output lines |
+| Sub-layer Name | `Intersections` | Folder under `Analysis` for the output |
+
+### Where the output lands
+
+`Analysis → Intersections`, named `<surfaceA>_<surfaceB>_Intersect_<uid>`. See
+[Layer Organisation](../kad/layer-organisation.md).
 
 ### Access
 
@@ -118,3 +124,4 @@ Click the **Section Plane** button in the Surface toolbar. Requires at least 1 l
 - [Importing Surfaces](importing-surfaces.md)
 - [Mesh Editing & Clean Mesh](mesh-editing.md)
 - [Surface Gradients](gradients.md)
+- [Layer Organisation](../kad/layer-organisation.md) — where generated surfaces and KAD land
