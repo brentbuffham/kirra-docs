@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.20.465
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Release notes link now opens the published page
+
+## Release v1.1.20.464
+
+_2026-08-22_
+
+**Feature**
+
+- Release notes now cover every version from 1.1.20
+
 ## Release v1.1.20.463
 
 _2026-08-22_
@@ -28,7 +44,7 @@ _2026-08-22_
 
 **Bug Fix**
 
-- 2D and 3D finally agree what a label size means
+- Hole text is now the same size in 2D and 3D
 
 ## Release v1.1.20.460
 
@@ -36,7 +52,7 @@ _2026-08-22_
 
 **Bug Fix**
 
-- 3D hole labels join the world-size system, and cull with it
+- 3D hole text now scales with zoom like 2D
 
 ## Release v1.1.20.459
 
@@ -112,9 +128,9 @@ History not available at the moment.
 
 _2026-08-20_
 
-**Bug Fix**
+**Feature**
 
-- The print path can finally call the canvas instead of copying it
+- Raster prints now draw trunk lines and connectors
 
 ## Release v1.1.20.449
 
@@ -128,9 +144,10 @@ _2026-08-20_
 
 _2026-08-20_
 
-**Feature**
+**Bug Fix**
 
-- One connector between two holes, and a tie the solver can recognise
+- Only one connector can now exist between two holes
+- Directional connectors now correctly stop signal travelling backwards
 
 ## Release v1.1.20.447
 
@@ -138,7 +155,7 @@ _2026-08-20_
 
 **Bug Fix**
 
-- Lighting a hole no longer deletes the cord that fed it
+- Initiation Point of hole no longer deletes the cord that fed it
 
 ## Release v1.1.20.446
 
@@ -158,7 +175,8 @@ _2026-08-20_
 
 **Feature**
 
-- The cord nobody could order, given a product and a unit
+- Surface bill of materials added for cord, wire and connectors
+- Cord and wire reported in metres, connectors counted each
 
 ## Release v1.1.20.443
 
@@ -172,9 +190,10 @@ _2026-08-20_
 
 _2026-08-20_
 
-**Feature**
+**Bug Fix**
 
-- The columns nobody counted, and the Z that ate a northing
+- Maptek Vulcan export now writes coordinates in the correct columns
+- Vulcan line colours and patterns now export correctly
 
 ## Release v1.1.20.441
 
@@ -182,7 +201,7 @@ _2026-08-19_
 
 **Feature**
 
-- The self-connect nobody could read, given a name and a dialog
+- Initiation Point tool added for marking where a blast starts
 
 ## Release v1.1.20.440
 
@@ -232,7 +251,7 @@ _2026-08-18_
 
 **Bug Fix**
 
-- A 3D drag you can actually see
+- Dragging a hole in 3D now shows what is being moved
 
 ## Release v1.1.20.433
 
@@ -254,9 +273,9 @@ _2026-08-18_
 
 _2026-08-17_
 
-**Bug Fix**
+**Feature**
 
-- The active layer actually wins, and it has a sub-layer
+- Active layer now honoured, with sub-layer support
 
 ## Release v1.1.20.430
 
@@ -264,7 +283,7 @@ _2026-08-17_
 
 **Feature**
 
-- The active layer, where you can actually see it
+- Active layer is now shown in the interface
 
 ## Release v1.1.20.429
 
@@ -368,7 +387,7 @@ _2026-08-15_
 
 **Bug Fix**
 
-- The status messages nobody was seeing
+- Status messages are now visible again
 
 ## Release v1.1.20.416
 
@@ -478,7 +497,7 @@ _2026-08-14_
 
 **Bug Fix**
 
-- The turntable tumbles past the pole, as Vulcan actually does
+- 3D turntable rotation now matches Maptek Vulcan behaviour
 
 ## Release v1.1.20.402
 
@@ -930,7 +949,7 @@ _2026-08-11_
 
 **Bug Fix**
 
-- Deleting a trunk is a clean slate again
+- Deleting a trunk now removes all of its connections
 
 ## Release v1.1.20.343
 
@@ -1287,9 +1306,9 @@ _2026-08-08_
 
 _2026-08-08_
 
-**Feature**
+**Bug Fix**
 
-- Reset Connections now actually resets the connection
+- Reset Connections now clears every connection
 
 ## Release v1.1.20.296
 
