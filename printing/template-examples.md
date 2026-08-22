@@ -249,6 +249,8 @@ See [Print Formula Reference](pdf-print.md#display-codes-for-mapview-and-legend)
 | B8 | `fx:fixed(powderFactor, 2) & " kg/m\u00B3"` | Overall powder factor |
 | B10 | `fx:productList("\n")` | All products with total mass (newline-separated) |
 | B12 | `fx:connectorList("\n")` | All connector delays with counts |
+| B13 | `fx:surfaceProductList("\n")` | Surface BOM — cord in metres, connectors each |
+| B14 | `fx:cordLength("+10%")` | Cord metres plus a 10% allowance |
 
 ### Sheet 1 — Grouped Statistics
 
@@ -280,7 +282,11 @@ Header row (not formulas): Hole ID, Length (m), Mass (kg), Charge (m), Stem (m),
 | `fx:blastSummary()` | Pre-built multi-line geometry summary |
 | `fx:chargeSummary()` | Pre-built multi-line charging summary |
 | `fx:productList("\n")` | Product mass breakdown |
-| `fx:connectorList("\n")` | Connector delay breakdown |
+| `fx:connectorList("\n")` | Connector delay breakdown (by DELAY — not a BOM) |
+| `fx:surfaceProductList("\n")` | Surface bill of materials, by product and with units |
+| `fx:cordLength("+10%")` | Detonating-cord metres plus a 10% waste allowance |
+| `fx:harnessLength("+10%")` | Surface-wire metres plus a 10% waste allowance |
+| `fx:harnessLength("+10d")` | Surface-wire metres plus a flat 10 m |
 | `fx:groupTable(...)` | Grouped statistics with inline format tokens |
 | `fx:totalMass[++]` | Per-hole charging field in auto-increment table |
 | `fx:productName[++]` | Per-hole product name in auto-increment table |

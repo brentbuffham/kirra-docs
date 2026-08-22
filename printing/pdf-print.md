@@ -470,6 +470,68 @@ fx:ignore(holeID[++])
 | `connectorCount()` | Total number of connectors | `fx:connectorCount()` | `92` |
 | `connectorCount(delay)` | Count of connectors with a specific delay (ms) | `fx:connectorCount(25)` | `42` |
 
+### Surface bill of materials
+
+`connectorList()` groups by **delay value**, walks each hole's single `fromHoleID`, and has
+no unit — so on a detonating-cord shot it cannot produce an orderable list. These functions
+group by **product**, count the extra cord feeds and every trunk run, and carry units.
+
+| Function | Description | Example | Result |
+|----------|-------------|---------|--------|
+| `surfaceProductList(sep)` | Surface BOM by product, with units | `fx:surfaceProductList(", ")` | `5g Detcord: 1240.5m, DRC: 18ea, MSC 25ms: 42ea` |
+| `surfaceProductQty(name)` | Quantity of one product (no name = total metres) | `fx:surfaceProductQty("DRC")` | `18` |
+| `surfaceProductQty(name, allow)` | …plus an allowance | `fx:surfaceProductQty("5g Detcord", "+10%")` | `1364.6` |
+| `surfaceProductUnit(name)` | `m` or `ea` for a product | `fx:surfaceProductUnit("DRC")` | `ea` |
+| `cordLength()` | Total detonating-cord metres | `fx:cordLength()` | `1240.5` |
+| `cordLength(allow)` | …plus a waste allowance | `fx:cordLength("+10%")` | `1364.6` |
+| `harnessLength()` | Total surface-wire metres | `fx:harnessLength()` | `860.0` |
+| `harnessLength(allow)` | …plus a waste allowance | `fx:harnessLength("+10%")` | `946.0` |
+
+**The waste allowance works on every length** — `cordLength`, `harnessLength` and
+`surfaceProductQty` all take the same two forms:
+
+| form | meaning | example |
+|---|---|---|
+| `"+10%"` | add ten **percent** | `fx:harnessLength("+10%")` → `946.0` |
+| `"+10d"` | add ten **metres** | `fx:harnessLength("+10d")` → `870.0` |
+
+A negative allowance is honoured too (`"-5%"`), and the leading `+` is optional.
+
+It applies only to lengths; asking for a percentage of a connector count would be inventing
+connectors, so it is ignored for anything counted `ea`. An allowance Kirra cannot read
+returns the raw figure and logs a warning rather than silently ignoring it — a report that
+quietly drops your `"+10%"` is worse than one that refuses it, because the number still
+looks right.
+
+**Units.** Cord and wire are measured in **metres**; connectors, downhole detonators,
+boosters and spacers are counted **each**; explosives are reported in **kilograms**. A
+connector has a tube, but you buy the connector, so it is counted rather than measured.
+
+**Whole metres, and whole reels.** Metres come back rounded to three decimals at most.
+Anything coarser is yours to choose, with functions the engine already has:
+
+```
+fx:floor(cordLength())                whole metres, down
+fx:ceil(cordLength())                 whole metres, up
+fx:roundup(cordLength() / 5, 0) * 5   whole 5 m REELS
+```
+
+Cord is bought on a reel — you cannot order 43.2 m — so the last line is the one most plans
+want. Change the `5` to your reel length. Kirra deliberately does not round to reels for
+you, because reel length varies by supplier and by product.
+
+**Trunk runs include the closing leg.** A cord loop summed as drawn segments is short by
+exactly the leg that makes it a loop.
+
+**A hole that taps a trunk adds no surface cord.** That lead is a *downline* — a different
+product family, measured by the depth of its hole.
+
+**Metres are raw geometry.** Tube is sold on a reel and rounded up to a whole one in practice;
+apply your own allowance.
+
+Product that Kirra cannot identify is reported under `Unassigned` rather than dropped — an
+absent line would read as "not used". Set the product on the run in Trunk Properties.
+
 ---
 
 ## Product and Charging Functions

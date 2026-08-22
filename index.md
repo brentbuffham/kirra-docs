@@ -35,6 +35,12 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 
 ---
 
+## Release Notes
+
+- [Release Notes](release-notes.md) — what changed in each version, newest first
+
+---
+
 ## Kirra Design
 
 ### Getting Started
