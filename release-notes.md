@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.5
+
+_2026-08-25_
+
+**Feature**
+
+- Clean Mesh now re-cuts coplanar folds instead of deleting them
+- Fold repair reports open edges and folds before and after
+
 ## Release v1.1.31.4
 
 _2026-08-25_
