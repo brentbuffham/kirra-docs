@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.4
+
+_2026-08-25_
+
+**Bug Fix**
+
+- Delete the CSV dialog stubs that held the globals
+
 ## Release v1.1.31.3
 
 _2026-08-25_
