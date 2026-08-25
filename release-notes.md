@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.3
+
+_2026-08-25_
+
+**Bug Fix**
+
+- Timing dialog now states one consistent assigned-hole count
+- Timing dialog explains holes listed but missing from the file
+
 ## Release v1.1.31.2
 
 _2026-08-25_
