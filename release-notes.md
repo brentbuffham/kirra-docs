@@ -2,6 +2,16 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.2
+
+_2026-08-25_
+
+**Bug Fix**
+
+- Release notes page now updates with every version
+- Release Notes button matches the other dialog buttons
+- Release Notes button opens the published page
+
 ## Release v1.1.31.1
 
 _2026-08-25_
