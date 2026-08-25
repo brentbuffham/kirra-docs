@@ -2,6 +2,549 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.1
+
+_2026-08-25_
+
+**Bug Fix**
+
+- Timing mesh now updates as you tie the blast, no reload needed
+- Timing mesh follows charging delay edits
+
+## Release v1.1.30
+
+_2026-08-24_
+
+**Feature**
+
+- Desktop installers published for Windows, Mac and Linux
+
+## Release v1.1.20.523
+
+_2026-08-24_
+
+**Bug Fix**
+
+- Section view controls now fit in two tidy columns instead of wrapping
+- Section view input boxes are the size they were meant to be
+
+## Release v1.1.20.522
+
+_2026-08-24_
+
+**Feature**
+
+- The section view can look along any bearing, not just the hole's
+
+## Release v1.1.20.521
+
+_2026-08-24_
+
+History not available at the moment.
+
+## Release v1.1.20.520
+
+_2026-08-24_
+
+History not available at the moment.
+
+## Release v1.1.20.519
+
+_2026-08-24_
+
+**Bug Fix**
+
+- Printed sections now match the screen when measuring from telemetry
+- Printed sections honour the wide search angle instead of ignoring it
+- Exported burden lines follow the measurement shown in the panel
+
+## Release v1.1.20.518
+
+_2026-08-24_
+
+**Feature**
+
+- The hole section panel now remembers your settings between sessions
+
+**Bug Fix**
+
+- Section view opens framed on the hole instead of mostly empty ground
+
+## Release v1.1.20.517
+
+_2026-08-24_
+
+**Feature**
+
+- Section view can show the surveyed hole beside the designed one
+- Burden can be measured from the drilled hole instead of the design
+
+**Bug Fix**
+
+- Telemetry import dialog now fits its form without scrolling
+
+## Release v1.1.20.516
+
+_2026-08-24_
+
+History not available at the moment.
+
+## Release v1.1.20.515
+
+_2026-08-24_
+
+**Feature**
+
+- Import downhole surveys and see the real drilled hole path
+- Surveyed paths land on their own Telemetry layer, one line per hole
+
+## Release v1.1.20.514
+
+_2026-08-24_
+
+**Bug Fix**
+
+- The plan to ingest surveyed hole paths
+
+## Release v1.1.20.513
+
+_2026-08-24_
+
+**Feature**
+
+- Hidden runs of a burden path draw dashed, so depth is readable
+
+## Release v1.1.20.512
+
+_2026-08-24_
+
+**Feature**
+
+- Widen the 3D search to 120 degrees for corner holes
+- Export KADs moved to the footer
+
+## Release v1.1.20.511
+
+_2026-08-24_
+
+**Bug Fix**
+
+- Burden paths are now visible in the 3D view
+
+## Release v1.1.20.510
+
+_2026-08-24_
+
+**Feature**
+
+- Burden paths show their warning colours on the plan
+
+**Bug Fix**
+
+- Burden paths now appear immediately on the hole you select
+
+## Release v1.1.20.509
+
+_2026-08-24_
+
+**Feature**
+
+- Burden paths draw on the 2D plan and in 3D
+
+**Bug Fix**
+
+- Turning on 3D Dist now takes effect immediately
+- A ray striking the collar's own ground is no longer a burden
+
+## Release v1.1.20.508
+
+_2026-08-24_
+
+**Feature**
+
+- Export burden and 3D distance paths to KAD
+
+**Bug Fix**
+
+- The collar no longer reports a meaningless zero 3D distance
+
+## Release v1.1.20.507
+
+_2026-08-24_
+
+**Feature**
+
+- Print a hole section and its Burden Table to PDF
+- Printing several selected holes gives a page each
+
+**Bug Fix**
+
+- The Burden Table no longer lags a change behind
+
+## Release v1.1.20.506
+
+_2026-08-23_
+
+**Bug Fix**
+
+- The burden numbers panel is now called the Burden Table
+
+## Release v1.1.20.505
+
+_2026-08-23_
+
+**Feature**
+
+- Minimum 3D distance to the face, in any forward direction
+- Burden ladder shown as a table beside the section
+- Every burden marker is labelled with its distance
+
+**Bug Fix**
+
+- The Hole Section button warns when no hole is selected
+
+## Release v1.1.20.504
+
+_2026-08-23_
+
+**Feature**
+
+- The RL sample origin is now settable
+
+## Release v1.1.20.503
+
+_2026-08-23_
+
+**Bug Fix**
+
+- Hole Section Tool is wide enough for all its controls
+
+## Release v1.1.20.502
+
+_2026-08-23_
+
+**Bug Fix**
+
+- Section tool spinners now step by sensible round amounts
+
+## Release v1.1.20.501
+
+_2026-08-23_
+
+History not available at the moment.
+
+## Release v1.1.20.500
+
+_2026-08-23_
+
+**Bug Fix**
+
+- Burden is now measured perpendicular to the hole, not level
+
+## Release v1.1.20.499
+
+_2026-08-23_
+
+**Feature**
+
+- Hole section measures burden to the face down the hole
+- Burden coloured against an adjustable minimum
+- Sample interval anchored to collar, toe or round elevations
+
+## Release v1.1.20.498
+
+_2026-08-23_
+
+**Feature**
+
+- Charges rescale as the hole geometry changes
+
+**Bug Fix**
+
+- Undoing a hole edit now restores its charging too
+
+## Release v1.1.20.497
+
+_2026-08-23_
+
+**Feature**
+
+- Hole section shows decks, stemming and primers in the hole
+
+## Release v1.1.20.496
+
+_2026-08-23_
+
+**Feature**
+
+- Hole section draws the hole at its real diameter
+- Choose how many decimal places the hole section shows
+
+**Bug Fix**
+
+- Hole section now follows dark and light mode
+
+## Release v1.1.20.495
+
+_2026-08-23_
+
+**Bug Fix**
+
+- Hole section edits now follow the same rules as Edit Hole
+
+## Release v1.1.20.494
+
+_2026-08-23_
+
+**Feature**
+
+- Hole section now shows grade and toe levels
+- Angling a hole keeps its floor and deepens the hole
+- Subdrill length shown alongside subdrill depth
+
+## Release v1.1.20.493
+
+_2026-08-23_
+
+**Feature**
+
+- Section view reaches further in front of the hole than behind
+
+## Release v1.1.20.492
+
+_2026-08-23_
+
+**Feature**
+
+- Hole Section Tool now lives in the Analyse toolbar
+
+## Release v1.1.20.491
+
+_2026-08-23_
+
+**Feature**
+
+- Hole section now shows the ground surface profile
+- Choose which surface the section is cut against
+- Section length either side of the hole is adjustable
+
+## Release v1.1.20.490
+
+_2026-08-23_
+
+**Feature**
+
+- New Hole Section Tool shows one hole and its properties
+- Edit hole angle, dip, collar and length with live preview
+- Step through holes by row, number or name
+
+**Bug Fix**
+
+- Applying a hole angle change now moves the toe with it
+- Imported charging data no longer overwritten by a queued save
+
+## Release v1.1.20.489
+
+_2026-08-23_
+
+**Feature**
+
+- Plans now open in a preview before you save them
+
+**Bug Fix**
+
+- Saving a plan reliably asks where to put it
+
+## Release v1.1.20.488
+
+_2026-08-23_
+
+**Bug Fix**
+
+- Plans now centre on the print frame you positioned, not the screen
+
+## Release v1.1.20.487
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Background images now print correctly on rotated plans
+
+## Release v1.1.20.486
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Vector plans no longer drop text near the edge of the frame
+
+## Release v1.1.20.485
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Raster plans now print text rotated as it appears on screen
+- Drawing text on rotated vector plans is now the correct size
+
+## Release v1.1.20.484
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Vector plans no longer draw a wireframe over surfaces
+
+## Release v1.1.20.483
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Surface elevation limits are kept when the project is reopened
+
+## Release v1.1.20.482
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Loading a project no longer risks a half-saved previous project
+
+## Release v1.1.20.481
+
+_2026-08-22_
+
+**Feature**
+
+- Surface gradient limits and transparency are saved with the project
+
+**Bug Fix**
+
+- A surface set fully transparent no longer reloads solid
+
+## Release v1.1.20.480
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Printed surfaces now use the gradient and elevation limits you chose
+- Transparent surfaces no longer print solid
+
+## Release v1.1.20.479
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Relief and slope colour changes are now kept when applied
+
+## Release v1.1.20.478
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Relief maps now print the same values and colours as the screen
+
+## Release v1.1.20.477
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Relief and slope colours now match between raster and vector plans
+- Printed legends now follow the Slope and Relief colour settings
+
+## Release v1.1.20.476
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Plans no longer print text spilling outside the map frame
+
+## Release v1.1.20.475
+
+_2026-08-22_
+
+History not available at the moment.
+
+## Release v1.1.20.474
+
+_2026-08-22_
+
+History not available at the moment.
+
+## Release v1.1.20.473
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Template plans now print hole text rotated as it appears on screen
+- Template plans now print Row and Position labels
+
+## Release v1.1.20.472
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Printed hole text is now sized in real world units
+- Raster and vector plans now print text at the same size
+- Drawing text keeps its font when printed
+- Drawing points now print in their own colour
+
+## Release v1.1.20.471
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Hole label position and rotation settings now apply to printed plans
+
+## Release v1.1.20.470
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Slope and relief maps no longer print outside the map frame
+- Filled polygons now print filled on the raster plot
+
+## Release v1.1.20.469
+
+_2026-08-22_
+
+History not available at the moment.
+
+## Release v1.1.20.468
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Row and Position labels now print on both plot types
+
+## Release v1.1.20.467
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Downhole timing now prints on both vector PDF layouts
+
+## Release v1.1.20.466
+
+_2026-08-22_
+
+**Bug Fix**
+
+- Release notes now read as plain factual statements
+
 ## Release v1.1.20.465
 
 _2026-08-22_
