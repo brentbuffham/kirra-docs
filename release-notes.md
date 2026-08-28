@@ -2,6 +2,128 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.19
+
+_2026-08-28_
+
+**Bug Fix**
+
+- Despike now finds pyramids and tents by height above their surroundings
+- The spike threshold is set in metres instead of a statistical score
+- Repaired points land on the local slope, not a flat average
+
+## Release v1.1.31.18
+
+_2026-08-28_
+
+History not available at the moment.
+
+## Release v1.1.31.17
+
+_2026-08-28_
+
+**Bug Fix**
+
+- The Despike tab opens again
+
+## Release v1.1.31.16
+
+_2026-08-28_
+
+**Bug Fix**
+
+- Despike now behaves predictably — more removal always removes more
+- Despike removes spikes while touching only a few percent of the surface
+- Despike no longer flattens crests and benches along with the spikes
+
+## Release v1.1.31.15
+
+_2026-08-28_
+
+**Bug Fix**
+
+- Despike now shows how many spikes it will remove before you commit
+- Despike controls read in plain words and metres instead of ring counts
+
+## Release v1.1.31.14
+
+_2026-08-28_
+
+**Feature**
+
+- Regularise now lives in a Smoothing dialog alongside a new Despike tool
+- Detect reports how many spikes would move before you commit
+
+## Release v1.1.31.13
+
+_2026-08-28_
+
+**Bug Fix**
+
+- The despike engine, and the 1-ring test that could never have worked
+
+## Release v1.1.31.12
+
+_2026-08-28_
+
+**Bug Fix**
+
+- Rotated multi-line text now exports to DXF without the lines stacking
+
+## Release v1.1.31.11
+
+_2026-08-28_
+
+History not available at the moment.
+
+## Release v1.1.31.10
+
+_2026-08-28_
+
+History not available at the moment.
+
+## Release v1.1.31.9
+
+_2026-08-28_
+
+**Feature**
+
+- A formula group warns in amber when it matches no holes
+- Clicking a group's warning opens Edit Group
+
+## Release v1.1.31.8
+
+_2026-08-28_
+
+**Feature**
+
+- Right-click a group and choose Edit Group to change everything about it
+- Groups can be renamed, and switched between manual and formula-driven
+- The formula shows how many holes it matches as you type
+
+## Release v1.1.31.7
+
+_2026-08-28_
+
+**Feature**
+
+- Formula blast groups now update themselves as holes change
+
+**Bug Fix**
+
+- A broken group formula no longer empties the group
+- Holes can no longer be hand-added to a formula-driven group
+
+## Release v1.1.31.6
+
+_2026-08-28_
+
+**Bug Fix**
+
+- Regularise now uses Australian spelling throughout
+- An existing Regularized folder is renamed, not duplicated
+- Regularise is now visibly disabled on a closed solid, with the reason
+
 ## Release v1.1.31.5
 
 _2026-08-25_
