@@ -2,6 +2,90 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.29
+
+_2026-08-30_
+
+**Feature**
+
+- Compare a survey surface against a design as a deviation heat map
+- Deviation shows in plan view and in 3D alike
+- Choose the colour ramp and a fixed target range for a comparison
+- A comparison is remembered and reopens with the project
+
+**Bug Fix**
+
+- Hiding one image no longer leaves its eye showing visible
+- The Images folder now shows when only some images are hidden
+
+## Release v1.1.31.28
+
+_2026-08-29_
+
+**Bug Fix**
+
+- The KAD draw buttons now turn their tool off, not just dark
+
+## Release v1.1.31.27
+
+_2026-08-29_
+
+**Feature**
+
+- Draw buttons are colour-coded by placement mode
+
+## Release v1.1.31.26
+
+_2026-08-29_
+
+History not available at the moment.
+
+## Release v1.1.31.25
+
+_2026-08-29_
+
+History not available at the moment.
+
+## Release v1.1.31.24
+
+_2026-08-29_
+
+**Feature**
+
+- A new line keeps the mode; the button resets it
+
+## Release v1.1.31.23
+
+_2026-08-29_
+
+**Bug Fix**
+
+- Placement mode is per activation, and resets to standard
+
+## Release v1.1.31.22
+
+_2026-08-29_
+
+**Bug Fix**
+
+- The placement-mode maths, ahead of the osline tool
+
+## Release v1.1.31.21
+
+_2026-08-29_
+
+**Bug Fix**
+
+- Text imported from DXF and DWG now keeps its rotation
+
+## Release v1.1.31.20
+
+_2026-08-29_
+
+**Feature**
+
+- Reorder KAD now works on points objects, not just lines and polygons
+
 ## Release v1.1.31.19
 
 _2026-08-28_
