@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.32
+
+_2026-08-30_
+
+**Bug Fix**
+
+- Despike no longer creates a spike far below the surface
+
 ## Release v1.1.31.31
 
 _2026-08-30_
