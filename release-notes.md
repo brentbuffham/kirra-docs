@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.30
+
+_2026-08-30_
+
+**Feature**
+
+- The legend names the design a survey was compared against
+
+**Bug Fix**
+
+- The legend now reports deviation in metres, not elevations
+- The legend bar matches the colour ramp the comparison used
+
 ## Release v1.1.31.29
 
 _2026-08-30_
