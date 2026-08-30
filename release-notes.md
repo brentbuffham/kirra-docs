@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.31
+
+_2026-08-30_
+
+**Feature**
+
+- Despike can target spikes between a minimum and maximum height
+- The spike height is set with a two-handle range slider, in metres
+
+**Bug Fix**
+
+- Despike no longer creates a huge spike above an upper limit
+
 ## Release v1.1.31.30
 
 _2026-08-30_
