@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.33
+
+_2026-08-31_
+
+**Feature**
+
+- Text to Poly now offers stroke centrelines or true letter outlines
+- Converted text is grouped into a folder per line
+- Each converted stroke is named for its line, position and letter
+
+**Bug Fix**
+
+- Multi-line text now converts as separate lines, not one run
+- Converted text now keeps the label's rotation
+- World-sized labels convert at their real height in metres
+
 ## Release v1.1.31.32
 
 _2026-08-30_
