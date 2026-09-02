@@ -2,6 +2,28 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.34
+
+_2026-09-02_
+
+**Feature**
+
+- Imported geometry colouring takes upper and lower limits
+- Value-coloured geometry now shows a colour scale
+
+**Bug Fix**
+
+- Imported charging now saves and survives a reload
+- An empty project can no longer erase saved charging
+- Starting fresh now clears charging properly
+- Timing contours return correctly when reopening a project
+- Timing contours no longer sweep between separate blasts
+- Editing one blast no longer recalculates every other blast
+- Analysis legend disappears when the analysis is deleted
+- Analysis legend follows the legend button
+- Analysis shading no longer hides the surfaces beneath it
+- Large Vulcan design databases now import instead of failing
+
 ## Release v1.1.31.33
 
 _2026-08-31_
