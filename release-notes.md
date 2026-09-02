@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.35
+
+_2026-09-03_
+
+**Feature**
+
+- Vector plan coordinate precision is now adjustable in Settings
+
+**Bug Fix**
+
+- Vector plans are far smaller and open much faster
+- Hidden drawing layers no longer appear on printed plans
+
 ## Release v1.1.31.34
 
 _2026-09-02_
