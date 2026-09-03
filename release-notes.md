@@ -2,6 +2,21 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.36
+
+_2026-09-03_
+
+**Feature**
+
+- Choose exactly which charge decks and primers to import
+- Map charge columns from a flat file with any column names
+- Split one packed column into depth, detonator and booster
+
+**Bug Fix**
+
+- A warning now appears when skipping a deck leaves a gap
+- Button icons appear instantly instead of loading in
+
 ## Release v1.1.31.35
 
 _2026-09-03_
