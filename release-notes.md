@@ -2,6 +2,26 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.39
+
+_2026-09-04_
+
+**Feature**
+
+- Pattern template charging: model and applier (groundwork)
+
+## Release v1.1.31.38
+
+_2026-09-04_
+
+**Feature**
+
+- Analysis can now be run on only the visible holes
+
+**Bug Fix**
+
+- Replacing a project now replaces its pattern templates too
+
 ## Release v1.1.31.37
 
 _2026-09-04_
