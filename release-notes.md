@@ -2,6 +2,29 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.37
+
+_2026-09-04_
+
+**Feature**
+
+- Renumber Holes previews the numbering as you type
+
+**Bug Fix**
+
+- Alphanumeric row names now work in Pattern in Polygon
+- Inserting a hole no longer renames the rows behind it
+- Serpentine patterns number from the end the row starts at
+- Row Reorder now follows the serpentine setting
+- Holes along a line keep one row letter
+- Charging and hole label settings follow renumbered holes
+- Inserting holes can now be undone in one step
+- Grade elevation no longer grows extra zeros when edited
+- Pattern direction arrow stays correct on a rotated view
+- A zero subdrill is kept instead of becoming one metre
+- Renumber now explains and checks the starting value
+- Warning messages no longer show corrupted characters
+
 ## Release v1.1.31.36
 
 _2026-09-03_
@@ -4344,6 +4367,4453 @@ _2026-07-05_
 **Feature**
 
 - Tauri desktop build (2D GPU surface pipeline)
+
+## Release v1.1.14.46
+
+_2026-07-01_
+
+History not available at the moment.
+
+## Release v1.1.14.45
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.44
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.43
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.42
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.41
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.40
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.39
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.38
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.37
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.36
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.35
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.34
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.33
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.32
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.31
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.30
+
+_2026-06-30_
+
+History not available at the moment.
+
+## Release v1.1.14.29
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.28
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.27
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.26
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.25
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.24
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.23
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.22
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.21
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.20
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.19
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.18
+
+_2026-06-29_
+
+History not available at the moment.
+
+## Release v1.1.14.17
+
+_2026-06-28_
+
+History not available at the moment.
+
+## Release v1.1.14.16
+
+_2026-06-28_
+
+History not available at the moment.
+
+## Release v1.1.14.15
+
+_2026-06-28_
+
+History not available at the moment.
+
+## Release v1.1.14.14
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.13
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.12
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.11
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.10
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.9
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.8
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.7
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.6
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.5
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.4
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.3
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.2
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14.1
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.14
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.13
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.12
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.11
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.10
+
+_2026-06-27_
+
+**Feature**
+
+- Tauri desktop build
+
+## Release v1.1.3
+
+_2026-06-27_
+
+History not available at the moment.
+
+## Release v1.1.2
+
+_2026-06-26_
+
+History not available at the moment.
+
+## Release v1.1.1
+
+_2026-06-26_
+
+History not available at the moment.
+
+## Release v1.1.0
+
+_2026-06-26_
+
+**Bug Fix**
+
+- Milestone desktop release (Tauri build)
+
+## Release v1.0.300
+
+_2026-06-25_
+
+History not available at the moment.
+
+## Release v1.0.295.97
+
+_2026-06-25_
+
+History not available at the moment.
+
+## Release v1.0.295.96
+
+_2026-06-25_
+
+**Bug Fix**
+
+- DUF: revert invented layer/colour work; no-colour → gray
+
+## Release v1.0.295.95
+
+_2026-06-25_
+
+**Bug Fix**
+
+- DUF: by-layer entities get a colour, not white
+
+## Release v1.0.295.94
+
+_2026-06-25_
+
+**Feature**
+
+- DUF: layer-aware import (step 1)
+
+## Release v1.0.295.93
+
+_2026-06-25_
+
+**Bug Fix**
+
+- DUF: detect closed rings whose closed-field isn't at -9
+
+## Release v1.0.295.92
+
+_2026-06-25_
+
+**Feature**
+
+- Import/Export: DUF in CAD, gis → Miscellaneous
+
+## Release v1.0.295.91
+
+_2026-06-25_
+
+**Feature**
+
+- Import/Export dialog: compact 2-line format cards
+
+## Release v1.0.295.90
+
+_2026-06-24_
+
+**Bug Fix**
+
+- DUF: fix closed polygons that closed onto the 2nd vertex
+
+## Release v1.0.295.89
+
+_2026-06-24_
+
+**Bug Fix**
+
+- DUF: closed rings (gap fix) + per-entity colour
+
+## Release v1.0.295.88
+
+_2026-06-24_
+
+**Bug Fix**
+
+- DUF: drop origin symbol/glyph definitions (clutter fix)
+
+## Release v1.0.295.87
+
+_2026-06-24_
+
+**Feature**
+
+- Lone .str drag-drop: ask holes vs geometry
+
+**Bug Fix**
+
+- Move-tool 2D snap parity + bearing tool progressive rotation & independence
+
+## Release v1.0.295.86
+
+_2026-06-24_
+
+**Feature**
+
+- Deswik DUF: large-file scratch-disk + worker import path
+
+## Release v1.0.295.85
+
+_2026-06-24_
+
+**Feature**
+
+- Deswik DUF parser: working marker-based linework import
+
+## Release v1.0.295.84
+
+_2026-06-24_
+
+**Feature**
+
+- Block-model colourise icon + design plans
+
+## Release v1.0.295.83
+
+_2026-06-24_
+
+**Feature**
+
+- Hole label-override list mirrors the display toggle buttons
+
+## Release v1.0.295.82
+
+_2026-06-24_
+
+**Feature**
+
+- 3D support for the hole bearing/rotate tool
+
+## Release v1.0.295.81
+
+_2026-06-24_
+
+**Bug Fix**
+
+- Fix: Surpac/Deswik DTM connections wrong on multi-string STR
+
+## Release v1.0.295.80
+
+_2026-06-24_
+
+**Feature**
+
+- Selection: plain-click clears/swaps + shift seeds multi from single
+
+## Release v1.0.295.79
+
+_2026-06-23_
+
+**Bug Fix**
+
+- Fix: dev block-model persist crashed on huge models
+
+## Release v1.0.295.78
+
+_2026-06-23_
+
+**Feature**
+
+- Snap KAD to block cell corners/edges (3D draw path)
+
+## Release v1.0.295.77
+
+_2026-06-23_
+
+**Bug Fix**
+
+- Fix: Wire-only block style vanished with bench slice off
+
+## Release v1.0.295.76
+
+_2026-06-23_
+
+**Feature**
+
+- Block model load: null-driver empty-cell skip + sectioned select dialog
+
+## Release v1.0.295.75
+
+_2026-06-23_
+
+**Bug Fix**
+
+- Block-model schema builder: fix falsy-zero, allow negative bands
+
+## Release v1.0.295.74
+
+_2026-06-23_
+
+**Feature**
+
+- Datamine .dm: support single-precision (Surpac) files
+
+## Release v1.0.295.73
+
+_2026-06-23_
+
+**Bug Fix**
+
+- Block model dialog: Display/Limits tabs, Remove fix, Kirra-red accents
+
+## Release v1.0.295.72
+
+_2026-06-23_
+
+**Feature**
+
+- Block model transparent render: exposed-shell wireframe
+
+## Release v1.0.295.71
+
+_2026-06-22_
+
+**Bug Fix**
+
+- Discrete/Categories panel chips refresh on schema change
+
+## Release v1.0.295.70
+
+_2026-06-22_
+
+**Bug Fix**
+
+- Fix colour swatches not sticking (jscolor fires no dom events)
+
+## Release v1.0.295.69
+
+_2026-06-22_
+
+**Bug Fix**
+
+- Live-refresh Modify on schema edits + lowercase hex rule
+
+## Release v1.0.295.68
+
+_2026-06-22_
+
+**Feature**
+
+- Colour schemas: named parent → per-attribute children
+
+## Release v1.0.295.67
+
+_2026-06-22_
+
+**Feature**
+
+- Discrete intervals show/hide panel in block-model Modify
+
+## Release v1.0.295.66
+
+_2026-06-22_
+
+History not available at the moment.
+
+## Release v1.0.295.65
+
+_2026-06-22_
+
+**Feature**
+
+- Load dialog: Colour-by Gradient/Schema toggle + scheme legend
+
+## Release v1.0.295.64
+
+_2026-06-22_
+
+**Feature**
+
+- Schema editor: 3 type modes (Ranges / Discrete / Categorical)
+
+## Release v1.0.295.63
+
+_2026-06-22_
+
+**Feature**
+
+- Block-model schemes: 'discrete' kind (integers as categories)
+
+## Release v1.0.295.62
+
+_2026-06-22_
+
+**Bug Fix**
+
+- Fix colour swatch read (rgb value → grey) in scheme editor
+
+## Release v1.0.295.61
+
+_2026-06-22_
+
+**Feature**
+
+- Block Model Schema Colours dialog (create/save/assign/import/export)
+
+## Release v1.0.295.60
+
+_2026-06-22_
+
+**Feature**
+
+- Block-model colour schemes: numeric bands/interval support
+
+## Release v1.0.295.59
+
+_2026-06-22_
+
+**Feature**
+
+- Dev-only block-model session persistence (test aid)
+
+## Release v1.0.295.58
+
+_2026-06-22_
+
+**Feature**
+
+- Block-model colour schemes Step 1 (engine + scheme model)
+
+## Release v1.0.295.57
+
+_2026-06-21_
+
+**Bug Fix**
+
+- Honest Performance Monitor fps / frame-time
+
+## Release v1.0.295.56
+
+_2026-06-21_
+
+**Feature**
+
+- Find / Select / Zoom tool (chip query builder)
+
+## Release v1.0.295.55
+
+_2026-06-21_
+
+**Bug Fix**
+
+- Remove BMF decode code (bloat); keep "not supported" + findings
+
+## Release v1.0.295.54
+
+_2026-06-21_
+
+**Feature**
+
+- Park BMF import (work in progress); mark 00T wip too
+
+## Release v1.0.295.53
+
+_2026-06-20_
+
+**Feature**
+
+- BMF : grades in the app via attribute-picker
+
+## Release v1.0.295.52
+
+_2026-06-20_
+
+**Feature**
+
+- BMF : paged-data decoder (grades)
+
+## Release v1.0.295.51
+
+_2026-06-20_
+
+**Feature**
+
+- Vulcan BMF (TBMS2.0) block-model import (: geometry)
+
+## Release v1.0.295.50
+
+_2026-06-20_
+
+**Feature**
+
+- Block model: spatial limit (inside a closed solid)
+
+## Release v1.0.295.49
+
+_2026-06-20_
+
+**Feature**
+
+- Block model: spatial limit (below/above a surface)
+
+## Release v1.0.295.48
+
+_2026-06-20_
+
+**Feature**
+
+- Block model: spatial limit (box range)
+
+## Release v1.0.295.47
+
+_2026-06-20_
+
+History not available at the moment.
+
+## Release v1.0.295.46
+
+_2026-06-19_
+
+**Feature**
+
+- Orbit focus: allow landing on Trimesh Boolean split previews
+
+## Release v1.0.295.45
+
+_2026-06-19_
+
+**Feature**
+
+- Use published trimesh-boolean 0.5.9
+
+## Release v1.0.295.44
+
+_2026-06-19_
+
+**Feature**
+
+- Trimesh reclassify: edge-distance sliver pick + highlight-as-guard
+
+## Release v1.0.295.43
+
+_2026-06-19_
+
+**Feature**
+
+- Trimesh reclassify: screen-space fallback to select thin slivers
+
+## Release v1.0.295.42
+
+_2026-06-19_
+
+**Bug Fix**
+
+- Trimesh boolean dialog: ghost opacity + reclassify-hidden render fix
+
+## Release v1.0.295.41
+
+_2026-06-19_
+
+**Feature**
+
+- Trimesh boolean: worker watchdog (no infinite freeze)
+
+## Release v1.0.295.40
+
+_2026-06-19_
+
+History not available at the moment.
+
+## Release v1.0.295.39
+
+_2026-06-19_
+
+History not available at the moment.
+
+## Release v1.0.295.38
+
+_2026-06-19_
+
+**Feature**
+
+- Transform tool: add Scale (X/Y/Z + Uniform)
+
+## Release v1.0.295.37
+
+_2026-06-19_
+
+**Feature**
+
+- Text → Poly: vectorise KAD text to polylines (context menu)
+
+## Release v1.0.295.36
+
+_2026-06-18_
+
+**Feature**
+
+- Footprint Edge: guard closed solids with an info popup
+
+## Release v1.0.295.35
+
+_2026-06-18_
+
+**Feature**
+
+- Footprint Ceiling/Floor = true orthographic shadow (clipper union)
+
+## Release v1.0.295.34
+
+_2026-06-18_
+
+**Feature**
+
+- Footprint: clean outline (boundary-first + rdp), no staircase
+
+## Release v1.0.295.33
+
+_2026-06-18_
+
+**Feature**
+
+- Footprint Ceiling/Floor: true plan-view silhouette
+
+## Release v1.0.295.32
+
+_2026-06-18_
+
+History not available at the moment.
+
+## Release v1.0.295.31
+
+_2026-06-18_
+
+History not available at the moment.
+
+## Release v1.0.295.30
+
+_2026-06-18_
+
+**Feature**
+
+- Clean dialog: visible markers for Zero Area + Unwelded
+
+## Release v1.0.295.29
+
+_2026-06-18_
+
+**Feature**
+
+- Clean dialog: Unwelded Verts cluster drawer
+
+## Release v1.0.295.28
+
+_2026-06-18_
+
+**Feature**
+
+- Clean dialog: zoom drawers for Crossing + xy Overlapping
+
+## Release v1.0.295.27
+
+_2026-06-18_
+
+**Feature**
+
+- Clean dialog: per-defect zoom drawers
+
+## Release v1.0.295.26
+
+_2026-06-17_
+
+**Feature**
+
+- Identify .gmdlb as Deswik geomodel-block; rename parser
+
+## Release v1.0.295.25
+
+_2026-06-17_
+
+**Feature**
+
+- .gmdlb block-model decode (read-only)
+
+## Release v1.0.295.24
+
+_2026-06-17_
+
+**Feature**
+
+- Cblast: guard Int64-min no-value sentinel
+
+**Bug Fix**
+
+- Block model category panel: fix row font size + height
+
+## Release v1.0.295.23
+
+_2026-06-17_
+
+**Feature**
+
+- Block model: multi-select category filter panel
+
+## Release v1.0.295.22
+
+_2026-06-17_
+
+**Feature**
+
+- Block model: category cut-off for categorical attributes
+
+## Release v1.0.295.21
+
+_2026-06-17_
+
+**Feature**
+
+- Block model hover datatip (opt-in)
+
+## Release v1.0.295.20
+
+_2026-06-17_
+
+**Feature**
+
+- Block model select: untick all attributes by default
+
+## Release v1.0.295.19
+
+_2026-06-17_
+
+**Feature**
+
+- Block model: cut-off above (two-sided cut-off band)
+
+## Release v1.0.295.18
+
+_2026-06-17_
+
+**Feature**
+
+- Block-model icons: cube (Geology) + cube-wireframe
+
+## Release v1.0.295.17
+
+_2026-06-17_
+
+**Bug Fix**
+
+- Dropped CSVs always ask (never auto-route to block model)
+
+## Release v1.0.295.16
+
+_2026-06-17_
+
+**Feature**
+
+- Geology tab in Import/Export panels
+
+## Release v1.0.295.15
+
+_2026-06-17_
+
+**Feature**
+
+- Large CSV block models stream like .dm (OPFS + worker)
+
+## Release v1.0.295.14
+
+_2026-06-17_
+
+History not available at the moment.
+
+## Release v1.0.295.13
+
+_2026-06-17_
+
+**Feature**
+
+- [Block] button in the unrecognised-CSV chooser
+
+## Release v1.0.295.12
+
+_2026-06-17_
+
+**Feature**
+
+- Route Vulcan block-model CSV to the geology viewer
+
+## Release v1.0.295.11
+
+_2026-06-17_
+
+History not available at the moment.
+
+## Release v1.0.295.10
+
+_2026-06-17_
+
+**Feature**
+
+- Raise block render cap + section clipping for blocks
+
+## Release v1.0.295.9
+
+_2026-06-16_
+
+**Bug Fix**
+
+- Block outlines as a subtle occluded border
+
+## Release v1.0.295.8
+
+_2026-06-16_
+
+**Feature**
+
+- Block Model viewer (geology)
+
+## Release v1.0.295.7
+
+_2026-06-16_
+
+**Bug Fix**
+
+- DWG import: fix text decode, null-Z sentinel, KAD-only centroid
+
+## Release v1.0.295.6
+
+_2026-06-15_
+
+**Feature**
+
+- Phase B/B3+B4: large Geometry CSV streams via OPFS + worker
+
+## Release v1.0.295.5
+
+_2026-06-15_
+
+**Feature**
+
+- Phase B/B2: worker-safe CSV byte-to-rows reader
+
+## Release v1.0.295.4
+
+_2026-06-15_
+
+**Feature**
+
+- Geometry CSV point cloud: fixed colour or per-point rgba
+
+## Release v1.0.295.3
+
+_2026-06-15_
+
+**Feature**
+
+- Geometry CSV: footer-rows skip + head/tail preview
+
+## Release v1.0.295.2
+
+_2026-06-15_
+
+**Feature**
+
+- Geometry CSV tables: reusable css + report-section support
+
+## Release v1.0.295.1
+
+_2026-06-15_
+
+**Bug Fix**
+
+- Geometry CSV preview tables react to light/dark toggle
+
+## Release v1.0.295
+
+_2026-06-15_
+
+**Bug Fix**
+
+- Geometry CSV circles: radius only, ghosted fixed input
+
+## Release v1.0.294
+
+_2026-06-15_
+
+**Feature**
+
+- Geometry CSV in File Management + readable previews
+
+## Release v1.0.293
+
+_2026-06-15_
+
+**Feature**
+
+- Custom Geometry CSV import: dialog + drop routing
+
+## Release v1.0.292
+
+_2026-06-15_
+
+**Feature**
+
+- Custom Geometry CSV parser + writer (core)
+
+## Release v1.0.290
+
+_2026-06-14_
+
+History not available at the moment.
+
+## Release v1.0.283
+
+_2026-06-14_
+
+**Feature**
+
+- Row Reorder alphanumeric numbering (square + staggered)
+
+## Release v1.0.282
+
+_2026-06-13_
+
+**Bug Fix**
+
+- Pattern/hole reference points + grid-aligned alphanumeric numbering
+
+## Release v1.0.281
+
+_2026-06-13_
+
+**Bug Fix**
+
+- Pattern Starting Hole ID accepts alphanumeric (regression fix)
+
+## Release v1.0.280
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.15
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.14
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.13
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.12
+
+_2026-06-13_
+
+**Bug Fix**
+
+- PPV target is a ceiling: round-down + 0.5% safety margin
+
+## Release v1.0.275.11
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.10
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.9
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.8
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.7
+
+_2026-06-13_
+
+History not available at the moment.
+
+## Release v1.0.275.6
+
+_2026-06-12_
+
+**Bug Fix**
+
+- Remove pre-repair checkbox (auto census handles it)
+
+## Release v1.0.275.5
+
+_2026-06-12_
+
+History not available at the moment.
+
+## Release v1.0.275.4
+
+_2026-06-12_
+
+History not available at the moment.
+
+## Release v1.0.275.3
+
+_2026-06-10_
+
+History not available at the moment.
+
+## Release v1.0.275.2
+
+_2026-06-10_
+
+**Bug Fix**
+
+- DXF text object-name round-trip via kirra xdata (split ⇄ rejoin)
+
+## Release v1.0.275.1
+
+_2026-06-10_
+
+**Bug Fix**
+
+- DXF multi-line text exports as stacked text entities (no \P)
+
+## Release v1.0.275.0
+
+_2026-06-10_
+
+**Feature**
+
+- DXF text export escapes newlines to \P (valid for Vulcan et al.)
+
+## Release v1.0.274.99
+
+_2026-06-10_
+
+**Feature**
+
+- Surfaces group visibility: cascade + legend/export inheritance
+
+## Release v1.0.274.98
+
+_2026-06-10_
+
+History not available at the moment.
+
+## Release v1.0.274.97
+
+_2026-06-10_
+
+**Bug Fix**
+
+- DXF import: preemptive multi-line repair; export: hidden Surfaces-group leak
+
+## Release v1.0.274.96
+
+_2026-06-10_
+
+**Feature**
+
+- Export visibility: parent cascade + DXF/shp/surface guards
+
+## Release v1.0.274.95
+
+_2026-06-10_
+
+History not available at the moment.
+
+## Release v1.0.274.94
+
+_2026-06-09_
+
+**Bug Fix**
+
+- 3D vertex Move: exclude-self snap + global radius (wip); gate per-move logs
+
+## Release v1.0.274.93
+
+_2026-06-09_
+
+**Bug Fix**
+
+- Vertex highlight shows in the Move tool too (2D + 3D parity)
+
+## Release v1.0.274.92
+
+_2026-06-09_
+
+**Bug Fix**
+
+- Move tool vertex parity: plain-click replaces, 3D segment-grab
+
+## Release v1.0.274.91
+
+_2026-06-09_
+
+**Bug Fix**
+
+- 3D vertex segment-click nearest endpoint (clean, reuses existing code)
+
+## Release v1.0.274.90
+
+_2026-06-09_
+
+**Bug Fix**
+
+- 3D vertex mode: segment-click picks nearest vertex (2D/3D parity)
+
+## Release v1.0.274.89
+
+_2026-06-09_
+
+**Feature**
+
+- Vertex mode: show parent entity (2D+3D), segment-click picks nearest vertex
+
+## Release v1.0.274.88
+
+_2026-06-09_
+
+**Feature**
+
+- KAD highlight spec: 30% red verts, multi = lime only; Text→Poly backlog
+
+## Release v1.0.274.87
+
+_2026-06-09_
+
+**Bug Fix**
+
+- Interaction Contract : canvas→tree reverse-select highlight
+
+## Release v1.0.274.86
+
+_2026-06-09_
+
+History not available at the moment.
+
+## Release v1.0.274.85
+
+_2026-06-09_
+
+**Bug Fix**
+
+- Fix convert-circles-to-polygons for drawn circles
+
+## Release v1.0.274.84
+
+_2026-06-09_
+
+**Bug Fix**
+
+- Contour origin (Start From: Min/Max/Zero/Custom) + form tooltips
+
+## Release v1.0.274.83
+
+_2026-06-08_
+
+**Feature**
+
+- Blast group show/hide with tri-state eyes + reload-persistent visibility
+
+## Release v1.0.274.82
+
+_2026-06-08_
+
+**Bug Fix**
+
+- 2D labels render on top of ties/arrows/contours
+
+## Release v1.0.274.81
+
+_2026-06-08_
+
+**Bug Fix**
+
+- Fix Enable-Compressible confirm dialog (wide, amber, Cancel/Apply)
+
+## Release v1.0.274.80
+
+_2026-06-08_
+
+**Bug Fix**
+
+- Compressible explosives opt-in; imports honour fixed-density mass
+
+## Release v1.0.274.79
+
+_2026-06-08_
+
+**Feature**
+
+- Stacked primer labels in charge section view
+
+## Release v1.0.274.78
+
+_2026-06-08_
+
+**Bug Fix**
+
+- SPF import links downhole detonators (rid-first product resolution)
+
+## Release v1.0.274.77
+
+_2026-06-07_
+
+**Feature**
+
+- Downhole trace line follows detonator product colour
+
+## Release v1.0.274.76
+
+_2026-06-07_
+
+**Feature**
+
+- Detonator markers coloured by product (parity with boosters)
+
+## Release v1.0.274.75
+
+_2026-06-07_
+
+**Feature**
+
+- Booster markers coloured by product (charge cross-section)
+
+## Release v1.0.274.74
+
+_2026-06-07_
+
+**Bug Fix**
+
+- Scope product delete-guard to live holes (stale-charging false positive)
+
+## Release v1.0.274.73
+
+_2026-06-07_
+
+**Feature**
+
+- Product Manager delete guard for in-use products
+
+## Release v1.0.274.72
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Text tab Cancel reverts live-preview edits
+
+## Release v1.0.274.71
+
+_2026-06-06_
+
+History not available at the moment.
+
+## Release v1.0.274.70
+
+_2026-06-06_
+
+**Feature**
+
+- Harness Path label + Product Manager bulk delete
+
+## Release v1.0.274.69
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Undo of delete+renumber no longer duplicates hole IDs
+
+## Release v1.0.274.68
+
+_2026-06-06_
+
+**Feature**
+
+- Hole pick: closest-match, not first-in-array
+
+## Release v1.0.274.67
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Fix 2D↔3D single-select highlight loss
+
+## Release v1.0.274.66
+
+_2026-06-06_
+
+**Bug Fix**
+
+- 3D highlight ring: 5px stroke for exact 2D parity [local]
+
+## Release v1.0.274.65
+
+_2026-06-06_
+
+**Bug Fix**
+
+- 3D highlight ring: thicker (~6px) stroke on the outside [local]
+
+## Release v1.0.274.64
+
+_2026-06-06_
+
+History not available at the moment.
+
+## Release v1.0.274.63
+
+_2026-06-06_
+
+**Bug Fix**
+
+- 3D highlight: visual parity with 2D ring (exact pixel formula) [local]
+
+## Release v1.0.274.62
+
+_2026-06-06_
+
+**Bug Fix**
+
+- 3D selection highlight: screen-constant + low-poly [local]
+
+## Release v1.0.274.61
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Per-hole text : 3D labels use the world-bearing model (match 2D) [local]
+
+## Release v1.0.274.60
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Per-hole text: glyph rotates with the Shift+Alt scene affine [local]
+
+## Release v1.0.274.59
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Per-hole text: defaults = Brent's captured layout [local
+
+## Release v1.0.274.58
+
+_2026-06-06_
+
+**Feature**
+
+- Per-hole text: rename Preview → Refresh (live preview is now automatic) [local]
+
+## Release v1.0.274.57
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Per-hole text: live preview on field change [local
+
+## Release v1.0.274.56
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Per-hole text (2D): world-bearing positioning + centre rotation [local
+
+## Release v1.0.274.55
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Per-hole text: world-bearing default table (, foundation)
+
+## Release v1.0.274.54
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Fix double delete/renumber prompt (two keydown handlers fired)
+
+## Release v1.0.274.53
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Delete blast: refresh immediately + skip renumber prompt for whole-pattern deletes
+
+## Release v1.0.274.52
+
+_2026-06-06_
+
+History not available at the moment.
+
+## Release v1.0.274.51
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Duplicate: same-blast xy coincidence gate on the target entity
+
+## Release v1.0.274.50
+
+_2026-06-06_
+
+**Bug Fix**
+
+- Fix 12d Archive import button + track insert-holes icon
+
+## Release v1.0.274.49
+
+_2026-06-06_
+
+History not available at the moment.
+
+## Release v1.0.274.48
+
+_2026-06-05_
+
+**Feature**
+
+- Move tool: same-blast xy coincidence gate (Keep/Revert)
+
+## Release v1.0.274.47
+
+_2026-06-05_
+
+**Feature**
+
+- Insert Holes tool forces select pointer + hole mode
+
+## Release v1.0.274.46
+
+_2026-06-05_
+
+**Bug Fix**
+
+- Insert Holes tool: duplicate (same-blast xy) detection
+
+## Release v1.0.274.45
+
+_2026-06-05_
+
+**Feature**
+
+- Insert Holes tool (interactive, persistent, multi-hole)
+
+## Release v1.0.274.44
+
+_2026-06-05_
+
+**Feature**
+
+- Deleted-solid notice (assigned volume solid missing)
+
+## Release v1.0.274.43
+
+_2026-06-05_
+
+**Bug Fix**
+
+- Matcher: rounding number no longer corrupts tiers / grade landmark
+
+## Release v1.0.274.42
+
+_2026-06-05_
+
+**Bug Fix**
+
+- Deck Builder formula bar now shows the fx: prefix
+
+## Release v1.0.274.41
+
+_2026-06-05_
+
+**Feature**
+
+- Matcher: primer placement at grade / toe landmarks
+
+## Release v1.0.274.40
+
+_2026-06-05_
+
+**Bug Fix**
+
+- Matcher: "stemming length of N%" no longer self-references
+
+## Release v1.0.274.39
+
+_2026-06-05_
+
+**Feature**
+
+- Deck Builder layout: 50/50 chips↔section, taller resizable formula boxes
+
+## Release v1.0.274.38
+
+_2026-06-05_
+
+**Feature**
+
+- Matcher: multi-monitor PPV expanded from project monitors
+
+## Release v1.0.274.37
+
+_2026-06-05_
+
+**Feature**
+
+- Matcher: spelling "did you mean" suggestions (no auto-correct)
+
+## Release v1.0.274.36
+
+_2026-06-05_
+
+**Bug Fix**
+
+- Matcher honesty gate: ved/fragmentation + multi-monitor refuse
+
+## Release v1.0.274.35
+
+_2026-06-05_
+
+**Feature**
+
+- Matcher: "only if … is N" equality conditional
+
+## Release v1.0.274.34
+
+_2026-06-05_
+
+**Feature**
+
+- Matcher: explicit conditionals (if/when/then/else) + rounding
+
+## Release v1.0.274.33
+
+_2026-06-05_
+
+**Feature**
+
+- Matcher: tiered "% by hole-length band" + "length" synonym
+
+## Release v1.0.274.32
+
+_2026-06-05_
+
+**Bug Fix**
+
+- Matcher: "% of variable" shape + resizable Describe-it box
+
+## Release v1.0.274.31
+
+_2026-06-05_
+
+**Feature**
+
+- Natural-language → fx: matcher in the Deck Builder
+
+## Release v1.0.274.30
+
+_2026-06-05_
+
+**Bug Fix**
+
+- Text tab spinner steps (Rotation/Bearing 5°, Size 0.5)
+
+## Release v1.0.274.29
+
+_2026-06-05_
+
+**Feature**
+
+- Per-hole text modifiers: per-label (2D + 3D + vector print)
+
+## Release v1.0.274.28
+
+_2026-06-05_
+
+**Feature**
+
+- Per-hole text modifiers: 3D parity (offset + size)
+
+## Release v1.0.274.27
+
+_2026-06-05_
+
+**Bug Fix**
+
+- Per-hole text: tab-aware footer + Apply commits text
+
+## Release v1.0.274.26
+
+_2026-06-05_
+
+**Feature**
+
+- Per-hole text modifiers, (store + Text tab + 2D offset/size)
+
+## Release v1.0.274.25
+
+_2026-06-05_
+
+**Feature**
+
+- Toe-size slider on the Length right-click
+
+## Release v1.0.274.24
+
+_2026-06-04_
+
+**Feature**
+
+- Formula Builder upgrade (deck builder + formula chips)
+
+## Release v1.0.274.23
+
+_2026-06-04_
+
+**Bug Fix**
+
+- Slope/Relief editor: fix band-cross scramble + Reset stays open
+
+## Release v1.0.274.22
+
+_2026-06-04_
+
+**Feature**
+
+- Slope/Relief colour editor : legends read active bands
+
+## Release v1.0.274.21
+
+_2026-06-04_
+
+**Bug Fix**
+
+- Slope/Relief dialog: shared band boundaries + flex layout
+
+## Release v1.0.274.20
+
+_2026-06-04_
+
+**Bug Fix**
+
+- Slope/Relief dialog: fix oversized radio fonts
+
+## Release v1.0.274.19
+
+_2026-06-04_
+
+**Feature**
+
+- Slope/Relief colour editor (persistence + dialog conventions)
+
+## Release v1.0.274.18
+
+_2026-06-04_
+
+**Feature**
+
+- Slope/Relief colour editor, (the dialog)
+
+## Release v1.0.274.17
+
+_2026-06-04_
+
+**Feature**
+
+- Slope/Relief colour editor, (single colour source)
+
+## Release v1.0.274.16
+
+_2026-06-04_
+
+**Feature**
+
+- Pattern templates travel with the KAP project file
+
+## Release v1.0.274.15
+
+_2026-06-04_
+
+**Bug Fix**
+
+- Dead-code cleanup + reconcile tooltip/CSV powder factor
+
+## Release v1.0.274.14
+
+_2026-06-04_
+
+**Feature**
+
+- Pf-driven charging resolves in every formula context (Tier-2)
+
+## Release v1.0.274.13
+
+_2026-06-04_
+
+**Feature**
+
+- Charging feasibility safety-net for Apply to Selected (Tier-2)
+
+## Release v1.0.274.12
+
+_2026-06-04_
+
+**Bug Fix**
+
+- Edit Deck dialog polish
+
+## Release v1.0.274.11
+
+_2026-06-04_
+
+**Feature**
+
+- Charging: confirm deck scaling mode + soft advisory (Tier-2)
+
+## Release v1.0.274.10
+
+_2026-06-04_
+
+**Bug Fix**
+
+- Trimesh Boolean: hidden split stays hidden when reclassifying into it
+
+## Release v1.0.274.9
+
+_2026-06-04_
+
+**Bug Fix**
+
+- Trimesh Boolean: hidden regions stay hidden across reclassify
+
+## Release v1.0.274.8
+
+_2026-06-04_
+
+**Bug Fix**
+
+- Trimesh Boolean reclassify respects region visibility
+
+## Release v1.0.274.7
+
+_2026-06-04_
+
+History not available at the moment.
+
+## Release v1.0.274.6
+
+_2026-06-04_
+
+History not available at the moment.
+
+## Release v1.0.274.5
+
+_2026-06-04_
+
+History not available at the moment.
+
+## Release v1.0.274.4
+
+_2026-06-03_
+
+History not available at the moment.
+
+## Release v1.0.274.3
+
+_2026-06-03_
+
+History not available at the moment.
+
+## Release v1.0.274.2
+
+_2026-06-03_
+
+History not available at the moment.
+
+## Release v1.0.274.1
+
+_2026-06-03_
+
+History not available at the moment.
+
+## Release v1.0.274
+
+_2026-06-03_
+
+History not available at the moment.
+
+## Release v1.0.273.76
+
+_2026-06-03_
+
+History not available at the moment.
+
+## Release v1.0.273.75
+
+_2026-06-02_
+
+History not available at the moment.
+
+## Release v1.0.273.74
+
+_2026-06-02_
+
+History not available at the moment.
+
+## Release v1.0.273.73
+
+_2026-06-02_
+
+**Feature**
+
+- Voronoi: Stemming Length metric
+
+## Release v1.0.273.72
+
+_2026-06-02_
+
+**Bug Fix**
+
+- Voronoi pf: geometric volume (cell area × bench height)
+
+## Release v1.0.273.71
+
+_2026-06-02_
+
+**Bug Fix**
+
+- Display quick-adjust: multi-slider popovers + fixes
+
+## Release v1.0.273.69
+
+_2026-06-01_
+
+**Feature**
+
+- Import/Export: tappable rows + wider buttons
+
+## Release v1.0.273.68
+
+_2026-06-01_
+
+**Bug Fix**
+
+- Mobile: hide stats overlay so it clears the toolbar
+
+## Release v1.0.273.67
+
+_2026-06-01_
+
+**Feature**
+
+- Mvar plan: archive Phase-5 byte-delta notes
+
+## Release v1.0.273.66
+
+_2026-06-01_
+
+**Bug Fix**
+
+- Vulcan ARCH_D writer: fixed-column txthed/polhed widths
+
+## Release v1.0.273.65
+
+_2026-05-31_
+
+**Bug Fix**
+
+- 2D view settings: remember state, apply on load, live redraw
+
+## Release v1.0.273.64
+
+_2026-05-31_
+
+History not available at the moment.
+
+## Release v1.0.273.63
+
+_2026-06-01_
+
+**Bug Fix**
+
+- IOS: let .kap/.kad be picked in the Files browser
+
+## Release v1.0.273.62
+
+_2026-06-01_
+
+**Bug Fix**
+
+- Mobile: responsive dialogs + installable pwa
+
+## Release v1.0.273.61
+
+_2026-06-01_
+
+**Bug Fix**
+
+- Vulcan mvar: manage fixed-length stream + default to v3564
+
+## Release v1.0.273.60
+
+_2026-06-01_
+
+**Feature**
+
+- Vulcan ARCH_D export: add v3564 mvar template
+
+## Release v1.0.273.59
+
+_2026-06-01_
+
+**Feature**
+
+- Vulcan ARCH_D export: synthesise mvar blast holes
+
+## Release v1.0.273.58
+
+_2026-05-31_
+
+**Bug Fix**
+
+- Edit Hole [Multiple]: progress dialog on bulk apply
+
+## Release v1.0.273.57
+
+_2026-05-31_
+
+History not available at the moment.
+
+## Release v1.0.273.56
+
+_2026-05-31_
+
+**Bug Fix**
+
+- Surface snap performance (spatial index)
+
+## Release v1.0.273.55
+
+_2026-05-31_
+
+**Bug Fix**
+
+- Hole bulk-edit performance (UI-freeze fix)
+
+## Release v1.0.273.54
+
+_2026-05-31_
+
+History not available at the moment.
+
+## Release v1.0.273.53
+
+_2026-05-31_
+
+**Bug Fix**
+
+- 2D surfaces: close anti-aliasing seams in tiled render
+
+## Release v1.0.273.52
+
+_2026-05-31_
+
+**Feature**
+
+- Exports: progress dialog + eta, pick-destination-first save
+
+## Release v1.0.273.51
+
+_2026-05-31_
+
+**Feature**
+
+- 12d Archive: manifest selective-load + per-surface regrid
+
+## Release v1.0.273.50
+
+_2026-05-30_
+
+History not available at the moment.
+
+## Release v1.0.273.49
+
+_2026-05-30_
+
+History not available at the moment.
+
+## Release v1.0.273.48
+
+_2026-05-30_
+
+History not available at the moment.
+
+## Release v1.0.273.47
+
+_2026-05-30_
+
+History not available at the moment.
+
+## Release v1.0.273.46
+
+_2026-05-30_
+
+History not available at the moment.
+
+## Release v1.0.273.45
+
+_2026-05-29_
+
+**Feature**
+
+- 12d Archive worker + progress dialog + .12daz support
+
+## Release v1.0.273.44
+
+_2026-05-29_
+
+**Feature**
+
+- 12d Archive byte-mode tokeniser (no more 1 gb string wall)
+
+## Release v1.0.273.43
+
+_2026-05-29_
+
+**Feature**
+
+- Add engineering geology + rock engineering reference PDF
+
+## Release v1.0.273.42
+
+_2026-05-29_
+
+**Feature**
+
+- Surface tile cache: crisp TINs at deep zoom (2D)
+
+## Release v1.0.273.41
+
+_2026-05-29_
+
+**Feature**
+
+- 12d Archive : Trimesh / primitive_3d decoder
+
+## Release v1.0.273.40
+
+_2026-05-29_
+
+**Feature**
+
+- 12d Archive : TIN decoder + C99 hex-float parser
+
+## Release v1.0.273.39
+
+_2026-05-29_
+
+**Bug Fix**
+
+- 12d Archive parser detects utf-16-le / utf-16-be / utf-8 BOM encoding
+
+## Release v1.0.273.38
+
+_2026-05-29_
+
+**Bug Fix**
+
+- Retain baked timing checkbox: explicit font-sizes, matching styling on both dialogs
+
+## Release v1.0.273.37
+
+_2026-05-29_
+
+History not available at the moment.
+
+## Release v1.0.273.36
+
+_2026-05-29_
+
+**Bug Fix**
+
+- Deck Builder Apply paths: progress dialog + chunked async loop
+
+## Release v1.0.273.35
+
+_2026-05-29_
+
+History not available at the moment.
+
+## Release v1.0.273.34
+
+_2026-05-29_
+
+History not available at the moment.
+
+## Release v1.0.273.33
+
+_2026-05-29_
+
+**Bug Fix**
+
+- Startup welcome popup: no X button, modal backdrop
+
+## Release v1.0.273.32
+
+_2026-05-29_
+
+History not available at the moment.
+
+## Release v1.0.273.31
+
+_2026-05-28_
+
+History not available at the moment.
+
+## Release v1.0.273.30
+
+_2026-05-27_
+
+**Bug Fix**
+
+- Voronoi Mode A: Superpose rms no longer ghosted on mode switch
+
+## Release v1.0.273.29
+
+_2026-05-27_
+
+**Bug Fix**
+
+- Voronoi canvas-blit cache invalidates on visibility flip (2D)
+
+## Release v1.0.273.28
+
+_2026-05-27_
+
+**Bug Fix**
+
+- Voronoi honours Data Explorer visibility
+
+## Release v1.0.273.27
+
+_2026-05-26_
+
+**Feature**
+
+- Add 8 blast-vibration reference papers (private repo)
+
+## Release v1.0.273.26
+
+_2026-05-26_
+
+**Feature**
+
+- Extract button to footer + live theme switching
+
+## Release v1.0.273.25
+
+_2026-05-26_
+
+History not available at the moment.
+
+## Release v1.0.273.24
+
+_2026-05-26_
+
+**Feature**
+
+- Spectral-division signature extraction (Li & Silva-Castro 2017)
+
+## Release v1.0.273.23
+
+_2026-05-26_
+
+**Feature**
+
+- Texcel waveform CSV parser
+
+## Release v1.0.273.22
+
+_2026-05-26_
+
+**Feature**
+
+- Gao 2015 near-field P-S correction
+
+## Release v1.0.273.20
+
+_2026-05-26_
+
+History not available at the moment.
+
+## Release v1.0.273.19
+
+_2026-05-26_
+
+**Bug Fix**
+
+- Bump Pages actions to current majors
+
+## Release v1.0.273.18
+
+_2026-05-26_
+
+**Bug Fix**
+
+- Fix Pages deploy workflow (configure-pages@v5)
+
+## Release v1.0.273.17
+
+_2026-05-26_
+
+**Feature**
+
+- Seed tab + Synth control ghosting
+
+## Release v1.0.273.15
+
+_2026-05-25_
+
+History not available at the moment.
+
+## Release v1.0.273.14
+
+_2026-05-25_
+
+**Feature**
+
+- Contract parity test + docs (steps 5 & 6 of plan)
+
+## Release v1.0.273.13
+
+_2026-05-25_
+
+History not available at the moment.
+
+## Release v1.0.273.12
+
+_2026-05-25_
+
+**Bug Fix**
+
+- Points use the text mechanism (no size-changing overlay)
+
+## Release v1.0.273.11
+
+_2026-05-25_
+
+**Bug Fix**
+
+- Circles use the text mechanism verbatim
+
+## Release v1.0.273.10
+
+_2026-05-25_
+
+**Bug Fix**
+
+- Circles now use text's pattern: base-draw colour-shift, no overlay
+
+## Release v1.0.273.9
+
+_2026-05-25_
+
+History not available at the moment.
+
+## Release v1.0.273.8
+
+_2026-05-25_
+
+**Bug Fix**
+
+- 3D circle vert marker + bright green parity fixes
+
+## Release v1.0.273.7
+
+_2026-05-25_
+
+**Bug Fix**
+
+- Circle parity: all selected paint green, no primary/sibling distinction
+
+## Release v1.0.273.6
+
+_2026-05-25_
+
+**Bug Fix**
+
+- Restore thin 3D circle overlay + segment endpoint parity
+
+## Release v1.0.273.5
+
+_2026-05-25_
+
+**Bug Fix**
+
+- 3D circle parity + text vertex marker visibility
+
+## Release v1.0.273.4
+
+_2026-05-25_
+
+History not available at the moment.
+
+## Release v1.0.273.3
+
+_2026-05-25_
+
+History not available at the moment.
+
+## Release v1.0.273.2
+
+_2026-05-25_
+
+History not available at the moment.
+
+## Release v1.0.273.1
+
+_2026-05-25_
+
+**Feature**
+
+- Selection-highlight contract scaffold (no callers)
+
+## Release v1.0.273
+
+_2026-05-25_
+
+**Feature**
+
+- Rule engine mass slot accepts fx: formulas
+
+## Release v1.0.272
+
+_2026-05-25_
+
+History not available at the moment.
+
+## Release v1.0.271
+
+_2026-05-24_
+
+**Feature**
+
+- Custom CSV charging round-trip + Mass field formulas
+
+## Release v1.0.270
+
+_2026-05-24_
+
+**Bug Fix**
+
+- Tauri desktop build (buries the failed 1.0.260 dispatch)
+
+## Release v1.0.260.1
+
+_2026-05-24_
+
+**Bug Fix**
+
+- Vitest fixes for the 1.0.258.1 resolver contract change (ci was failing)
+
+## Release v1.0.260
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Tauri desktop build (Ripple Tank shader complete + KAD selection parity)
+
+## Release v1.0.259.6
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Ripple Tank ring overlays clear unconditionally on shader removal
+
+## Release v1.0.259.5
+
+_2026-05-23_
+
+**Feature**
+
+- Blast Analysis Shader button auto-switches to 3D mode
+
+## Release v1.0.259.4
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Ring overlays adapt to any colour ramp via double-stroke / dark contrast
+
+## Release v1.0.259.3
+
+_2026-05-23_
+
+History not available at the moment.
+
+## Release v1.0.259.2
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Ripple Tank S-wave dash pattern dialled to the middle ground
+
+## Release v1.0.259.1
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Ripple Tank S-wave ring uses tighter dash pattern
+
+## Release v1.0.259
+
+_2026-05-23_
+
+**Feature**
+
+- Ripple Tank wave-front ring overlays + paired-highlight plan
+
+## Release v1.0.258.4
+
+_2026-05-23_
+
+History not available at the moment.
+
+## Release v1.0.258.3
+
+_2026-05-23_
+
+History not available at the moment.
+
+## Release v1.0.258.2
+
+_2026-05-23_
+
+**Bug Fix**
+
+- 2D KAD selection colour parity with 3D (green, not magenta)
+
+## Release v1.0.258.1
+
+_2026-05-23_
+
+History not available at the moment.
+
+## Release v1.0.258
+
+_2026-05-23_
+
+**Feature**
+
+- Ripple Tank two-term P/S + display-component split + educational tooltips
+
+## Release v1.0.257
+
+_2026-05-23_
+
+**Feature**
+
+- Ripple Tank Berlage wavelet
+
+## Release v1.0.256
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Ripple Tank measured wavelet polish: math fix + param ghosting
+
+## Release v1.0.255
+
+_2026-05-23_
+
+**Feature**
+
+- Ripple Tank measured-seed wavelet
+
+## Release v1.0.254
+
+_2026-05-23_
+
+History not available at the moment.
+
+## Release v1.0.253
+
+_2026-05-23_
+
+**Feature**
+
+- Ripple Tank shader (commit 2/7): live time-control panel + animation loop
+
+## Release v1.0.252
+
+_2026-05-23_
+
+**Feature**
+
+- Ripple Tank shader (commit 1/7): scalar Ricker wave field + diverging ramp
+
+## Release v1.0.251
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Pattern Templates + Print Settings + PDF Print: enable dockable + popout
+
+## Release v1.0.249
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Deck Builder mismatch validation runs on every hole selection
+
+## Release v1.0.248
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Section Plane dialog: fix Plane select collapsing to first character
+
+## Release v1.0.247
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Data Explorer popout: hide the frame not the moved content
+
+## Release v1.0.246
+
+_2026-05-23_
+
+**Feature**
+
+- Data Explorer docks right by default + popout robustness for web
+
+## Release v1.0.245
+
+_2026-05-23_
+
+**Feature**
+
+- Deck Builder intent-log audit pass + larger mismatch warning dialog
+
+## Release v1.0.244
+
+_2026-05-23_
+
+**Feature**
+
+- Deck Builder fires product/deck-type mismatch warning on open
+
+## Release v1.0.243
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Apply Changes captures deck-type and deck-product edits (multi-hole replay fix)
+
+## Release v1.0.242
+
+_2026-05-23_
+
+History not available at the moment.
+
+## Release v1.0.241
+
+_2026-05-23_
+
+**Bug Fix**
+
+- Fa + Synthesis unified, contour update + bake-gate fixes, panel listener stacking
+
+## Release v1.0.240
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Tauri desktop build (buries the partial 1.0.230 dispatches)
+
+## Release v1.0.230
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Tauri build version bump
+
+## Release v1.0.122.106
+
+_2026-05-21_
+
+**Bug Fix**
+
+- 2D stadium preview for Continuous Connector
+
+## Release v1.0.122.105
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Stadium zone preview for Continuous Connector (3D + 2D parity)
+
+## Release v1.0.122.104
+
+_2026-05-21_
+
+**Feature**
+
+- Continuous Connector tool
+
+## Release v1.0.122.103
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Surface-only timing banner adopts the PPV pill style
+
+## Release v1.0.122.102
+
+_2026-05-21_
+
+History not available at the moment.
+
+## Release v1.0.122.101
+
+_2026-05-21_
+
+**Feature**
+
+- Right-click Row/Pos display button → swap to Burden/Spacing
+
+## Release v1.0.122.100
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Burden via nearest-out-of-row neighbour (kills pca approach)
+
+## Release v1.0.122.99
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Row orientation from largest row, not whole-pattern pca (V1 burden bug)
+
+## Release v1.0.122.98
+
+_2026-05-21_
+
+**Feature**
+
+- SPF row detection: 3 improvements + missing icon
+
+## Release v1.0.122.97
+
+_2026-05-21_
+
+History not available at the moment.
+
+## Release v1.0.122.96
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Review Imported Products: chip layout switched to inline-block
+
+## Release v1.0.122.95
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Review Imported Products dialog: button sizing fixes
+
+## Release v1.0.122.94
+
+_2026-05-21_
+
+**Feature**
+
+- Review Imported Products: confirm classifier guess on every newly-created product
+
+## Release v1.0.122.93
+
+_2026-05-21_
+
+**Bug Fix**
+
+- SPF tie-product fix: distinct delays no longer conflate to one product
+
+## Release v1.0.122.92
+
+_2026-05-21_
+
+**Feature**
+
+- SPF/vxt: batched unrecognised-products classification dialog
+
+## Release v1.0.122.91
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Dark-mode icon pixellation root cause: image-rendering crisp-edges
+
+## Release v1.0.122.90
+
+_2026-05-21_
+
+**Bug Fix**
+
+- Dark-mode icon pixellation: full inversion instead of partial
+
+## Release v1.0.122.89
+
+_2026-05-21_
+
+History not available at the moment.
+
+## Release v1.0.122.88
+
+_2026-05-21_
+
+History not available at the moment.
+
+## Release v1.0.122.87
+
+_2026-05-21_
+
+**Feature**
+
+- Monitor Export: 'Include linked seeds?' prompt + zip bundle support on import
+
+## Release v1.0.122.86
+
+_2026-05-21_
+
+**Feature**
+
+- Seed Library: Export / Export Selected / Import + per-row checkbox
+
+## Release v1.0.122.85
+
+_2026-05-21_
+
+**Feature**
+
+- Monitor Points: Export Selected button
+
+## Release v1.0.122.84
+
+_2026-05-21_
+
+**Feature**
+
+- Clear db buttons for Monitors and Seed Library tabs
+
+## Release v1.0.122.83
+
+_2026-05-20_
+
+**Bug Fix**
+
+- Bump package + lock (Mode E first-paint fix)
+- Mode E first-paint: stop wiping cells + suppress false no-data banner
+
+## Release v1.0.122.82
+
+_2026-05-20_
+
+**Feature**
+
+- Mode E async chunked precompute with progress dialog
+
+## Release v1.0.122.81
+
+_2026-05-20_
+
+History not available at the moment.
+
+## Release v1.0.122.77
+
+_2026-05-20_
+
+History not available at the moment.
+
+## Release v1.0.122.76
+
+_2026-05-20_
+
+**Bug Fix**
+
+- Mode F + Mode C amber deepened for yellow contrast
+
+## Release v1.0.122.75
+
+_2026-05-20_
+
+History not available at the moment.
+
+## Release v1.0.122.74
+
+_2026-05-19_
+
+History not available at the moment.
+
+## Release v1.0.122.73
+
+_2026-05-19_
+
+History not available at the moment.
+
+## Release v1.0.122.72
+
+_2026-05-19_
+
+History not available at the moment.
+
+## Release v1.0.122.71
+
+_2026-05-19_
+
+History not available at the moment.
+
+## Release v1.0.122.70
+
+_2026-05-19_
+
+History not available at the moment.
+
+## Release v1.0.122.69
+
+_2026-05-19_
+
+**Bug Fix**
+
+- Mode E: refresh dialog summary on mode change
+
+## Release v1.0.122.68
+
+_2026-05-19_
+
+**Bug Fix**
+
+- Mode E: fix no-data banner, badge cutoff, monitor tielines
+
+## Release v1.0.122.67
+
+_2026-05-19_
+
+**Feature**
+
+- Mode E: independent input-hash cache + cache-routed legend
+
+## Release v1.0.122.66
+
+_2026-05-19_
+
+**Feature**
+
+- Mode E: near-field clamp + monitor markers
+
+## Release v1.0.122.65
+
+_2026-05-19_
+
+**Feature**
+
+- Mode E multi-monitor + perf
+
+## Release v1.0.122.64
+
+_2026-05-19_
+
+**Bug Fix**
+
+- Mode E emergency perf fix
+
+## Release v1.0.122.63
+
+_2026-05-19_
+
+**Feature**
+
+- Mode E scaffold (single monitor)
+
+## Release v1.0.122.62
+
+_2026-05-19_
+
+**Feature**
+
+- Mode E : kill the Love-Factor fudge
+
+## Release v1.0.122.61
+
+_2026-05-19_
+
+**Feature**
+
+- Spinner steps + chart palette tweaks
+
+## Release v1.0.122.60
+
+_2026-05-18_
+
+**Feature**
+
+- + (opt 2) Love-wave per monitor
+
+## Release v1.0.122.57
+
+_2026-05-18_
+
+**Bug Fix**
+
+- Forward Array ↔ Synthesis pvs parity + peak markers
+
+## Release v1.0.122.56
+
+_2026-05-18_
+
+**Feature**
+
+- Forward Array reads monitor; Synthesis combines L/T/V
+
+## Release v1.0.122.55
+
+_2026-05-18_
+
+**Feature**
+
+- .2: Forward Array tab UI wired
+
+## Release v1.0.122.54
+
+_2026-05-18_
+
+**Feature**
+
+- Forward Array Synthesis math kernel
+
+## Release v1.0.122.53
+
+_2026-05-18_
+
+**Bug Fix**
+
+- Vxt String 1/2 order fix + Synthesis tab scaffold
+
+## Release v1.0.122.52
+
+_2026-05-17_
+
+**Feature**
+
+- Bake tri-mode + own chain walker + Temporal Mesh export
+
+## Release v1.0.122.51
+
+_2026-05-17_
+
+History not available at the moment.
+
+## Release v1.0.122.50
+
+_2026-05-17_
+
+**Bug Fix**
+
+- Stemming label renders in print raster + vector
+
+## Release v1.0.122.49
+
+_2026-05-17_
+
+**Bug Fix**
+
+- Track hole-stemming.png icon (rename .png.png → .png)
+
+## Release v1.0.122.48
+
+_2026-05-17_
+
+History not available at the moment.
+
+## Release v1.0.122.47
+
+_2026-05-17_
+
+**Bug Fix**
+
+- Stemming label at diameter's screen position
+
+## Release v1.0.122.46
+
+_2026-05-17_
+
+**Feature**
+
+- Stats overlay click-through + stemming btn id + menus upward
+
+## Release v1.0.122.45
+
+_2026-05-17_
+
+**Feature**
+
+- Stemming display 2D + right-click chooser menus
+
+## Release v1.0.122.44
+
+_2026-05-16_
+
+**Feature**
+
+- Stemming length display button + blst diagnostics
+
+## Release v1.0.122.43
+
+_2026-05-16_
+
+**Feature**
+
+- Vxt import: per-diameter booster selection
+
+## Release v1.0.122.42
+
+_2026-05-16_
+
+History not available at the moment.
+
+## Release v1.0.122.41
+
+_2026-05-16_
+
+**Feature**
+
+- Vxt import: match VSDeck to product by name, not ID
+
+## Release v1.0.122.40
+
+_2026-05-16_
+
+History not available at the moment.
+
+## Release v1.0.122.39
+
+_2026-05-16_
+
+History not available at the moment.
+
+## Release v1.0.122.38
+
+_2026-05-16_
+
+History not available at the moment.
+
+## Release v1.0.122.37
+
+_2026-05-16_
+
+History not available at the moment.
+
+## Release v1.0.122.36
+
+_2026-05-16_
+
+**Feature**
+
+- Vxt export: row-grouped harness chains + product category
+
+## Release v1.0.122.35
+
+_2026-05-16_
+
+**Feature**
+
+- Paradigm primer at 50mm above toe (cast-bottom anchor)
+
+## Release v1.0.122.34
+
+_2026-05-16_
+
+**Bug Fix**
+
+- Clamp Paradigm primer inside bulk deck (short-bulk fix)
+
+## Release v1.0.122.33
+
+_2026-05-16_
+
+History not available at the moment.
+
+## Release v1.0.122.32
+
+_2026-05-16_
+
+History not available at the moment.
+
+## Release v1.0.122.31
+
+_2026-05-15_
+
+**Feature**
+
+- Bake Delay Connect button uses microwave icon
+
+## Release v1.0.122.30
+
+_2026-05-15_
+
+**Feature**
+
+- Bake Delay everywhere + precision audit + phantom guards
+
+## Release v1.0.122.29
+
+_2026-05-15_
+
+**Feature**
+
+- Detune/Constrain/Bake use round-to-nearest, not floor
+
+## Release v1.0.122.28
+
+_2026-05-15_
+
+**Feature**
+
+- Detune/Constrain warning rework + Bake Delay button
+
+## Release v1.0.122.27
+
+_2026-05-15_
+
+History not available at the moment.
+
+## Release v1.0.122.26
+
+_2026-05-15_
+
+History not available at the moment.
+
+## Release v1.0.122.25
+
+_2026-05-15_
+
+**Feature**
+
+- Global timing precision cap with ceil/floor
+
+## Release v1.0.122.24
+
+_2026-05-15_
+
+History not available at the moment.
+
+## Release v1.0.122.23
+
+_2026-05-15_
+
+History not available at the moment.
+
+## Release v1.0.122.22
+
+_2026-05-14_
+
+**Feature**
+
+- Vxt export: real charges + firing-chain order
+
+## Release v1.0.122.21
+
+_2026-05-14_
+
+**Bug Fix**
+
+- Fix vxt export: strings now connected, charges sized correctly
+
+## Release v1.0.122.20
+
+_2026-05-14_
+
+**Bug Fix**
+
+- Uniform docked title bar (container bg = tab bg)
+
+## Release v1.0.122.19
+
+_2026-05-14_
+
+**Bug Fix**
+
+- !important on dockview css-var assignments + kill tab-bar bottom border
+
+## Release v1.0.122.18
+
+_2026-05-14_
+
+**Bug Fix**
+
+- Fix dockview chrome in prod (!important + missing css vars)
+
+## Release v1.0.122.17
+
+_2026-05-14_
+
+**Bug Fix**
+
+- Revert Abyss theme, keep Replit base + gap:0
+
+## Release v1.0.122.16
+
+_2026-05-14_
+
+**Feature**
+
+- Reset Toolbars + non-spaced Abyss dockview theme
+
+## Release v1.0.122.15
+
+_2026-05-13_
+
+**Feature**
+
+- Kill dockview chrome residue after lazy init
+
+## Release v1.0.122.14
+
+_2026-05-13_
+
+**Feature**
+
+- DXF polyface meshes + Data Explorer Escape/overlap
+
+## Release v1.0.122.13
+
+_2026-05-13_
+
+**Bug Fix**
+
+- North arrow sign fix also in print pipeline
+
+## Release v1.0.122.12
+
+_2026-05-13_
+
+**Bug Fix**
+
+- North arrow rotation sign + bearing readout
+
+## Release v1.0.122.11
+
+_2026-05-13_
+
+**Bug Fix**
+
+- Tif drag-drop import
+
+## Release v1.0.122.10
+
+_2026-05-12_
+
+**Feature**
+
+- KAD selection via colour-shift, not overlay
+
+## Release v1.0.122.9
+
+_2026-05-12_
+
+**Feature**
+
+- Shp + LAS migrations + final sweep (/5)
+
+## Release v1.0.122.8
+
+_2026-05-12_
+
+History not available at the moment.
+
+## Release v1.0.122.7
+
+_2026-05-12_
+
+History not available at the moment.
+
+## Release v1.0.122.6
+
+_2026-05-12_
+
+**Bug Fix**
+
+- Dark-mode toolbar input text fix
+
+## Release v1.0.122.5
+
+_2026-05-12_
+
+History not available at the moment.
+
+## Release v1.0.122.4
+
+_2026-05-12_
+
+**Bug Fix**
+
+- Point highlight parity + 3D multi-select fix
+
+## Release v1.0.122.3
+
+_2026-05-12_
+
+**Feature**
+
+- KML parser uses widget (/5)
+
+## Release v1.0.122.2
+
+_2026-05-12_
+
+History not available at the moment.
+
+## Release v1.0.122.1
+
+_2026-05-12_
+
+History not available at the moment.
+
+## Release v1.0.122
+
+_2026-05-12_
+
+**Feature**
+
+- KML/KMZ multi-geometry parse, progress, dark dropdown
+
+## Release v1.0.121
+
+_2026-05-12_
+
+History not available at the moment.
+
+## Release v1.0.120
+
+_2026-05-11_
+
+**Feature**
+
+- Voronoi PPV no-data gate split + diagnosis dialog
+
+## Release v1.0.110
+
+_2026-05-10_
+
+**Bug Fix**
+
+- Release cut
+
+## Release v1.0.109.24
+
+_2026-05-10_
+
+**Bug Fix**
+
+- Tree right-click Properties + canvas right-click selection preservation
+
+## Release v1.0.109.15
+
+_2026-05-10_
+
+History not available at the moment.
+
+## Release v1.0.109.14
+
+_2026-05-10_
+
+**Feature**
+
+- Product edit cascade to live charging + import disclosure
+
+## Release v1.0.109.13
+
+_2026-05-10_
+
+History not available at the moment.
+
+## Release v1.0.109.12
+
+_2026-05-10_
+
+**Bug Fix**
+
+- Refresh Connect toolbar after every electronic-blast import
+
+## Release v1.0.109.11
+
+_2026-05-10_
+
+**Bug Fix**
+
+- Name-delay fallback for inventory trunkline colours
+
+## Release v1.0.109.10
+
+_2026-05-10_
+
+**Bug Fix**
+
+- SPF leadin promotion through blis dummy firing-unit node
+
+## Release v1.0.109.9
+
+_2026-05-10_
+
+History not available at the moment.
+
+## Release v1.0.109.8
+
+_2026-05-10_
+
+**Feature**
+
+- SPF connector ↔ Product link (closes the loop both ways)
+
+## Release v1.0.109.7
+
+_2026-05-10_
+
+**Feature**
+
+- SPF product polish: density, colour, system, blend classify
+
+## Release v1.0.109.6
+
+_2026-05-10_
+
+**Bug Fix**
+
+- SPF product classifier fixes (Drill skip, harness as Initiator)
+
+## Release v1.0.109.5
+
+_2026-05-10_
+
+History not available at the moment.
+
+## Release v1.0.109.4
+
+_2026-05-10_
+
+**Feature**
+
+- SPF primer placement
+
+## Release v1.0.109.3
+
+_2026-05-10_
+
+**Feature**
+
+- SPF deck builder
+
+## Release v1.0.109.2
+
+_2026-05-10_
+
+**Feature**
+
+- SPF product import + test scaffolding
+
+## Release v1.0.109.1
+
+_2026-05-10_
+
+**Feature**
+
+- SPF parser surfacing
+
+## Release v1.0.108.30
+
+_2026-05-10_
+
+**Feature**
+
+- Move Tool: V/K mode split for KAD entities
+
+## Release v1.0.108.29
+
+_2026-05-09_
+
+**Bug Fix**
+
+- Kill redundant dockview chrome scrollbars
+
+## Release v1.0.108.28
+
+_2026-05-09_
+
+**Bug Fix**
+
+- Make tool dialogs dockable
+
+## Release v1.0.108.27
+
+_2026-05-09_
+
+**Bug Fix**
+
+- Fix collapsed dialog content (display: block → flex)
+
+## Release v1.0.108.26
+
+_2026-05-09_
+
+History not available at the moment.
+
+## Release v1.0.108.25
+
+_2026-05-09_
+
+History not available at the moment.
+
+## Release v1.0.108.24
+
+_2026-05-09_
+
+History not available at the moment.
+
+## Release v1.0.108.23
+
+_2026-05-09_
+
+History not available at the moment.
+
+## Release v1.0.108.22
+
+_2026-05-09_
+
+**Bug Fix**
+
+- Fix flex min-height bug breaking tall-content dialogs
+
+## Release v1.0.108.21
+
+_2026-05-09_
+
+History not available at the moment.
+
+## Release v1.0.108.20
+
+_2026-05-09_
+
+History not available at the moment.
+
+## Release v1.0.108.19
+
+_2026-05-09_
+
+History not available at the moment.
+
+## Release v1.0.108.18
+
+_2026-05-09_
+
+History not available at the moment.
+
+## Release v1.0.108.17
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Fix Vulcan-arch case mismatch breaking Linux ci
+
+## Release v1.0.108.16
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Vulcan ARCH_D angled-hole import fix + diameter dialog rebuild
+
+## Release v1.0.108.15
+
+_2026-05-08_
+
+**Feature**
+
+- Mvar chunk detection works for any hole-name length
+
+## Release v1.0.108.14
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Mvar rig→diameter decoder + parser fixes
+
+## Release v1.0.108.13
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Cloudflare Web Analytics beacon
+
+## Release v1.0.108.12
+
+_2026-05-08_
+
+History not available at the moment.
+
+## Release v1.0.108.11
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Quiet picker-extension warn + propagate save cancel
+
+## Release v1.0.108.10
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Save-As picker survives extensions Chrome rejects (.arch_d)
+
+## Release v1.0.108.9
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Start mvar Link decoding (plan + diff tool, no prod change)
+
+## Release v1.0.108.8
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Revert Kirra-authored Link template (would lie about design metadata)
+
+## Release v1.0.108.7
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Vulcan ARCH_D writer emits blast-hole Link template
+
+## Release v1.0.108.6
+
+_2026-05-08_
+
+**Bug Fix**
+
+- Vulcan ARCH_D round-trip preserves "hole-lyness
+
+## Release v1.0.108.5
+
+_2026-05-07_
+
+**Bug Fix**
+
+- Stale-chunk safety net for dynamic imports
+
+## Release v1.0.108.4
+
+_2026-05-07_
+
+**Feature**
+
+- Vulcan import + writer + STR redraw + triangulation clip
+
+## Release v1.0.108.3
+
+_2026-05-07_
+
+**Bug Fix**
+
+- DWG R2018 large-file diagnostics enhancement
+
+## Release v1.0.108.2
+
+_2026-05-07_
+
+**Bug Fix**
+
+- DWG R2018 large-file: clean failure + preserved diagnostics
+
+## Release v1.0.108.1
+
+_2026-05-07_
+
+History not available at the moment.
+
+## Release v1.0.108
+
+_2026-05-06_
+
+**Bug Fix**
+
+- Edge-docking primitive (drag dialogs onto each other)
+
+## Release v1.0.107
+
+_2026-05-06_
+
+History not available at the moment.
+
+## Release v1.0.106
+
+_2026-05-06_
+
+**Bug Fix**
+
+- Edge-docking Step 5: canvas-no-scroll guard
+
+## Release v1.0.105
+
+_2026-05-06_
+
+**Bug Fix**
+
+- Toolbar off-screen redock + forget bad position
+
+## Release v1.0.104
+
+_2026-05-06_
+
+**Bug Fix**
+
+- Toolbar off-screen recovery + plan trim
+
+## Release v1.0.103
+
+_2026-05-06_
+
+**Feature**
+
+- Data Explorer memory + GPU footer
+
+## Release v1.0.102
+
+_2026-05-06_
+
+**Feature**
+
+- Bump for [zoom] diagnostic-trace build
+
+## Release v1.0.101
+
+_2026-05-06_
+
+**Feature**
+
+- Paradigm import: drop placeholder constructs, persist metadata
+- Paradigm blst import + Electronic Timing Relief mode
+
+## Release v1.0.100
+
+_2026-05-02_
+
+**Bug Fix**
+
+- Release alignment with kirra-tauri
+- Release alignment with kirra-tauri
+
+## Release v1.0.99.35
+
+_2026-05-02_
+
+History not available at the moment.
+
+## Release v1.0.99.34
+
+_2026-05-02_
+
+**Bug Fix**
+
+- Surpac STR+DTM drop fix: dropdown value was wrong
+
+## Release v1.0.99.33
+
+_2026-05-02_
+
+**Feature**
+
+- CSV dialog button fit + Surpac/OBJ multi-file companion drops
+
+## Release v1.0.99.32
+
+_2026-05-02_
+
+**Bug Fix**
+
+- IREDES checksum: restore Epiroc Surface Manager compatibility
+
+## Release v1.0.99.31
+
+_2026-05-02_
+
+History not available at the moment.
+
+## Release v1.0.99.30
+
+_2026-05-02_
+
+History not available at the moment.
+
+## Release v1.0.99.29
+
+_2026-05-02_
+
+History not available at the moment.
+
+## Release v1.0.99.28
+
+_2026-05-02_
+
+History not available at the moment.
+
+## Release v1.0.99.27
+
+_2026-05-02_
+
+**Bug Fix**
+
+- Project Explorer: supported-icon for .nav .spf .vxt .bpd
+
+## Release v1.0.99.26
+
+_2026-05-02_
+
+**Bug Fix**
+
+- LAS / nav / SPF drop via file-input click simulation
+
+## Release v1.0.99.25
+
+_2026-05-02_
+
+**Bug Fix**
+
+- DWG drop: friendly error modal for unsupported versions
+
+## Release v1.0.99.24
+
+_2026-05-02_
+
+History not available at the moment.
+
+## Release v1.0.99.23
+
+_2026-05-02_
+
+History not available at the moment.
+
+## Release v1.0.99.22
+
+_2026-05-02_
+
+**Feature**
+
+- Drop dispatcher per-extension routing + KAP programmatic entry
+
+## Release v1.0.99.21
+
+_2026-05-02_
+
+**Bug Fix**
+
+- Drop opens Import dialog; popout reverts to friendly decline
+
+## Release v1.0.99.20
+
+_2026-05-01_
+
+**Bug Fix**
+
+- Tauri 1.0.100 smoke-test fixes (4 of 5
+
+## Release v1.0.99.19
+
+_2026-05-01_
+
+**Feature**
+
+- Temporal Mesh icon recoloured to black
+
+## Release v1.0.99.18
+
+_2026-05-01_
+
+History not available at the moment.
+
+## Release v1.0.99.17
+
+_2026-05-01_
+
+History not available at the moment.
+
+## Release v1.0.99.16
+
+_2026-05-01_
+
+History not available at the moment.
+
+## Release v1.0.99.15
+
+_2026-05-01_
+
+History not available at the moment.
+
+## Release v1.0.99.14
+
+_2026-05-01_
+
+History not available at the moment.
+
+## Release v1.0.99.13
+
+_2026-05-01_
+
+History not available at the moment.
+
+## Release v1.0.99.12
+
+_2026-05-01_
+
+**Feature**
+
+- Popout Refactor part 3: visibility events + plan close
+
+## Release v1.0.99.11
+
+_2026-05-01_
+
+History not available at the moment.
+
+## Release v1.0.99.10
+
+_2026-05-01_
+
+**Feature**
+
+- Popout Refactor part 1: boot dispatcher + body-class hide
+
+## Release v1.0.99.9
+
+_2026-05-01_
+
+**Feature**
+
+- DWG 3DFACE encoding visibility (TF5a-followup closed)
+
+## Release v1.0.99.8
+
+_2026-05-01_
+
+**Feature**
+
+- DWG ellipse (0x23) decoder as KADPoly polyline
+
+## Release v1.0.99.7
+
+_2026-05-01_
+
+**Feature**
+
+- DWG arc (0x11) decoder as KADLine polyline
+
+## Release v1.0.99.6
+
+_2026-05-01_
+
+**Feature**
+
+- DWG single-line text (0x01) decoder
+
+## Release v1.0.99.5
+
+_2026-05-01_
+
+**Feature**
+
+- TF2: KAD entity visibility immediately rebuilds 3D
+
+## Release v1.0.99.4
+
+_2026-05-01_
+
+**Bug Fix**
+
+- Coincident Hole Detector polish: terminology + collapsible Tips
+
+## Release v1.0.99.3
+
+_2026-05-01_
+
+**Bug Fix**
+
+- Coincident Hole Detector enhancements: blast-points + radii
+
+## Release v1.0.99.2
+
+_2026-05-01_
+
+**Feature**
+
+- Coincident Hole Detector step 2/3: dialog UI + button wired
+
+## Release v1.0.99.1
+
+_2026-05-01_
+
+**Feature**
+
+- Coincident Hole Detector step 1/4: pure-logic helper + unit tests
+
+## Release v1.0.99
+
+_2026-05-01_
+
+History not available at the moment.
+
+## Release v1.0.98
+
+_2026-05-01_
+
+**Bug Fix**
+
+- KAD line width drift fix (toolbar = source of truth)
+
+## Release v1.0.97
+
+_2026-05-01_
+
+**Feature**
+
+- Insert Before/After same-entity proximity check
+
+## Release v1.0.96
+
+_2026-05-01_
+
+**Feature**
+
+- Hole proximity helper extracted + same-entity scoping option
+
+## Release v1.0.95
+
+_2026-05-01_
+
+**Feature**
+
+- Holes CSV round-trip alignment + inline column bubble
+
+## Release v1.0.94
+
+_2026-04-30_
+
+History not available at the moment.
+
+## Release v1.0.93
+
+_2026-04-30_
+
+History not available at the moment.
+
+## Release v1.0.91
+
+_2026-04-28_
+
+**Feature**
+
+- Project Explorer + DWG decoder coverage + GPU verification
+
+## Release v1.0.90
+
+_2026-04-27_
+
+**Feature**
+
+- DWG parser end-to-end (R2010+)
+
+## Release v1.0.89
+
+_2026-04-26_
+
+History not available at the moment.
+
+## Release v1.0.88
+
+_2026-04-26_
+
+**Feature**
+
+- Seed Wave library picker + per-monitor seed honor
+
+## Release v1.0.87
+
+_2026-04-26_
+
+**Feature**
+
+- DWG parser foundation (, console-only)
+
+## Release v1.0.86
+
+_2026-04-25_
+
+**Bug Fix**
+
+- Modify-tool fixes + Temporal Mesh universal/perf + grouping fallout
+
+## Release v1.0.85
+
+_2026-04-25_
+
+**Bug Fix**
+
+- Line Extension 2D Z preservation + 3D parity
+
+## Release v1.0.84
+
+_2026-04-25_
+
+**Feature**
+
+- Idi redesign + Seed Wave Blair-Minchinton + axis polish
+
+## Release v1.0.83
+
+_2026-04-24_
+
+**Bug Fix**
+
+- Gradient stop swatch polish
+
+## Release v1.0.82
+
+_2026-04-24_
+
+**Feature**
+
+- Unified Temporal Mesh + shared gradient editor
+
+## Release v1.0.81
+
+_2026-04-24_
+
+**Feature**
+
+- Time Window refresh + universal Temporal Mesh
+
+## Release v1.0.80
+
+_2026-04-22_
+
+**Feature**
+
+- Enhance File Management and Import Functionality
 
 ## Citations & References
 
