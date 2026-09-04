@@ -2,6 +2,24 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.41
+
+_2026-09-04_
+
+**Feature**
+
+- Pattern templates can now charge the holes they create
+- Build and save a charge rule from the pattern template
+- Add Hole can now use a pattern template
+
+**Bug Fix**
+
+- Template text settings now reach the holes a pattern creates
+- Every hole in a polygon pattern is charged, not just one
+- Charging no longer reports a difference that is not there
+- Buttons in the charging tab are readable again
+- Active tabs are highlighted the same way everywhere
+
 ## Release v1.1.31.40
 
 _2026-09-04_
