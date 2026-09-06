@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.52
+
+_2026-09-06_
+
+**Bug Fix**
+
+- Hole shapes now read at the same size as the circle
+- The diamond hole shape no longer looks like a tilted square
+
 ## Release v1.1.31.51
 
 _2026-09-06_

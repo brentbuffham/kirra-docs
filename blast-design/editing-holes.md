@@ -138,8 +138,10 @@ Circle (the default), Triangle, Square, Cross or Diamond.
   turn with the plan when you rotate the view.
 - The cross is drawn as an **×** across the bearing, so it is not confused with
   the × already used to mark a hole with no length.
-- Shapes other than the circle are drawn slightly larger, so they read at the
-  same visual weight.
+- Shapes other than the circle are drawn a little larger, each by the amount
+  needed to carry the same visual weight — a triangle needs more than a square.
+- The diamond is slightly narrow across the bearing, so it reads as a diamond
+  rather than a square turned on its corner.
 
 ### Editing several holes at once
 
