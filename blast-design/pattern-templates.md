@@ -40,6 +40,16 @@ Each template stores the following parameters:
 | **Row Direction** | Direction for row numbering (return, forward, reverse) | return |
 | **Collar Elevation** | Default collar Z value (optional) | (none) |
 | **Grade Elevation** | Default grade Z value (optional) | (none) |
+| **Hole Colour** | Colour for the holes this template creates | App default |
+| **Hole Shape** | Circle, Triangle, Square, Cross or Diamond | App default |
+
+Leaving **Hole Colour** and **Hole Shape** on *App default* means the holes are
+drawn the usual way — contrasting with the background, as circles. See
+[Hole Colour and Shape](editing-holes.md#hole-colour-and-shape).
+
+A template's colour and shape are applied only to the holes it **creates**.
+Adding a second pattern to an existing blast will not restyle the holes that
+were already there.
 
 ---
 

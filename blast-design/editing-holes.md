@@ -100,6 +100,68 @@ Common bulk-edit operations:
 
 ---
 
+## Hole Colour and Shape
+
+Holes are normally drawn to contrast with the background — white on a dark
+canvas, black on a light one. You can instead give a hole a colour of its own,
+and a shape.
+
+### Setting them
+
+1. Right-click a hole (or a selection) and choose **Properties**
+2. Open the **Additional** tab
+3. Set **Hole Colour**, and **Hole Shape**
+4. Click **Apply**
+
+The Additional tab also holds the Surface Product, Delay, Delay Colour and
+Connector Curve controls.
+
+### Hole Colour
+
+| Setting | What you get |
+|---|---|
+| **Auto** | White on a dark background, black on a light one |
+| **Fixed colour** | The colour you pick, on any background |
+
+Switching back to Auto remembers your colour, so you can toggle between them
+without losing the pick.
+
+> **Hole Colour is not Delay Colour.** Delay Colour is the colour of the timing
+> connectors between holes. Hole Colour is the hole marker itself. They sit
+> next to each other on the Additional tab and do different jobs.
+
+### Hole Shape
+
+Circle (the default), Triangle, Square, Cross or Diamond.
+
+- Triangle, square, cross and diamond **point along the hole's bearing**, and
+  turn with the plan when you rotate the view.
+- The cross is drawn as an **×** across the bearing, so it is not confused with
+  the × already used to mark a hole with no length.
+- Shapes other than the circle are drawn slightly larger, so they read at the
+  same visual weight.
+
+### Editing several holes at once
+
+Select the holes first. Both controls offer **-- No Change --**, which is what
+they show when the selection is mixed — so changing the shape of a selection
+will not overwrite everyone's colour, and vice versa.
+
+### On the printed plan
+
+Colours and shapes print exactly as they appear on screen. A hole set to **Auto**
+prints **black**, because the page is white.
+
+The red grade circle and subdrill line always stay red — red means *below
+grade*.
+
+### Setting them for a whole new pattern
+
+A [Pattern Template](pattern-templates.md) can carry a colour and a shape, and
+applies them to the holes it creates.
+
+---
+
 ## Deleting Holes
 
 1. Select the holes to remove
