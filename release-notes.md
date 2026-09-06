@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.54
+
+_2026-09-06_
+
+**Bug Fix**
+
+- Triangle and diamond trimmed again
+
+## Release v1.1.31.53
+
+_2026-09-06_
+
+**Bug Fix**
+
+- Triangle trimmed 5% from strict area parity
+
 ## Release v1.1.31.52
 
 _2026-09-06_
