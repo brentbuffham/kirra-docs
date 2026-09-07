@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.60
+
+_2026-09-07_
+
+**Bug Fix**
+
+- Documentation published for the hole numbering work
+
 ## Release v1.1.31.59
 
 _2026-09-07_
