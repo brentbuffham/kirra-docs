@@ -2,6 +2,76 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.79
+
+_2026-09-07_
+
+History not available at the moment.
+
+## Release v1.1.31.78
+
+_2026-09-07_
+
+**Feature**
+
+- Flyrock warns when the chosen free face inflates the shroud
+
+**Bug Fix**
+
+- The flyrock completion report stays open long enough to read
+
+## Release v1.1.31.77
+
+_2026-09-07_
+
+**Feature**
+
+- Measured face burden is used only where it tightens the design burden
+
+## Release v1.1.31.76
+
+_2026-09-07_
+
+History not available at the moment.
+
+## Release v1.1.31.75
+
+_2026-09-07_
+
+History not available at the moment.
+
+## Release v1.1.31.74
+
+_2026-09-07_
+
+**Feature**
+
+- Flyrock can measure each hole's real burden to a chosen free face
+
+## Release v1.1.31.73
+
+_2026-09-07_
+
+**Feature**
+
+- Flyrock models now carry a warning about differences between them
+
+## Release v1.1.31.72
+
+_2026-09-07_
+
+**Feature**
+
+- Each flyrock model states what it is, and is not
+
+## Release v1.1.31.71
+
+_2026-09-07_
+
+**Bug Fix**
+
+- Flyrock shrouds record whether Lundborg used the bench or crater equation
+
 ## Release v1.1.31.70
 
 _2026-09-07_
