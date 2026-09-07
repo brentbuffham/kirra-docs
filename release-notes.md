@@ -2,6 +2,51 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.59
+
+_2026-09-07_
+
+**Bug Fix**
+
+- Selected dialog tabs use the red accent without a blue tint
+
+## Release v1.1.31.58
+
+_2026-09-07_
+
+**Bug Fix**
+
+- Inserting a hole no longer duplicates or loses hole numbers
+
+## Release v1.1.31.57
+
+_2026-09-07_
+
+**Bug Fix**
+
+- Deleting holes and renumbering keeps the row direction
+
+## Release v1.1.31.56
+
+_2026-09-07_
+
+**Bug Fix**
+
+- Hole numbering survives loading and editing a blast
+- Deleting a hole closes the gap in the numbering
+
+## Release v1.1.31.55
+
+_2026-09-07_
+
+**Feature**
+
+- Renumber keeps your row direction, or set it explicitly
+
+**Bug Fix**
+
+- Alphanumeric renumbering now advances the row letter each row
+
 ## Release v1.1.31.54
 
 _2026-09-06_

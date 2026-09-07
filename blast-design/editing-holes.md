@@ -168,7 +168,21 @@ applies them to the holes it creates.
 
 1. Select the holes to remove
 2. Press `Delete` or `Backspace` (or right-click and choose **Delete**)
-3. Undo with `Ctrl+Z` if needed
+3. Kirra asks what to do with the numbering of the holes that remain:
+
+| Choice | What happens |
+|---|---|
+| **Delete** | The holes go and the numbering is left alone, so there is a gap where they were — 179, 183, 184 … |
+| **Renumber** | The holes go and the gap is closed up, so the numbering stays continuous |
+| **Cancel** | Nothing is deleted |
+
+4. Undo with `Ctrl+Z` if needed
+
+Choosing **Renumber** asks for a starting value first, and renumbers the whole blast from
+there.
+
+> **Note:** If you are deleting every hole in a pattern there is nothing left to renumber, so
+> Kirra deletes without asking.
 
 ---
 
@@ -206,10 +220,54 @@ This is useful for adjusting burden and spacing across an entire pattern.
 
 ## Renumbering Holes
 
-1. Select the holes to renumber (or press `Ctrl+A` for all) *[VERIFY: Ctrl+A select-all]*
-2. Click **Renumber Holes** on the [Holes toolbar](holes-toolbar.md)
-3. Set the prefix, start number, and sort order (by row, by easting, by northing, or by current number) *[VERIFY: exact sort options]*
-4. Click **Apply** — Hole IDs update throughout the project, including any timing and charge references
+1. Click **Renumber Holes** on the [Holes toolbar](holes-toolbar.md)
+2. Set the options, then click **Start Selection**:
+
+| Option | What it does |
+|---|---|
+| **Renumber Mode** | *Renumber Row from #* renumbers only the holes you pick. *Renumber All from #* moves those holes into the row you name, then renumbers the whole blast. |
+| **Row Direction** | *Keep current* reads the direction from your existing hole names and preserves it. *Serpentine* alternates each row; *Forward & Return* starts every row at the same end. |
+| **Start Renumbering #** | Also chooses the naming scheme — see below |
+| **Zone Width** | How wide the selection band is, in metres |
+| **Row ID to assign** | The row number the selected holes are given |
+
+3. Click the first hole, then the last hole in the run you want
+4. Hole IDs update throughout the project, including timing links and charge assignments
+
+### The start value chooses the naming scheme
+
+| You type | You get |
+|---|---|
+| `1` or `500` | **Numbers** — one running count across the blast: 500, 501, 502 … |
+| `A1` or `BH1` | **Row names** — the letter is the row and advances each row: A1…A20, then B1…B18 |
+
+The dialog previews what you will get as you type, and refuses a value it cannot read rather
+than quietly renumbering from 1.
+
+---
+
+## How hole numbers change when you edit
+
+Numbered holes carry **one continuous count across the blast**, so an edit in the middle
+moves everything after it:
+
+| Action | Effect on the numbering |
+|---|---|
+| Insert a hole **before** 179 | The new hole becomes 179; the old 179 and everything after move up one |
+| Insert a hole **after** 179 | The new hole becomes 180; the old 180 and everything after move up one |
+| Delete 180, choosing **Renumber** | 181 becomes 180, and so on — the gap closes |
+| Delete 180, choosing **Delete** | The gap stays |
+
+**Row-named holes work differently.** There the number is the hole's column, and a gap in it
+is meaningful — it keeps A13 sitting under D13 across the pattern. So inserting into a
+row-named blast renumbers **only that row**, and deleting leaves the column gap in place.
+
+Holes you have named yourself keep their names through all of this, and nothing else is given
+their number.
+
+Serpentine patterns are preserved throughout. Inserting, deleting and renumbering all read
+the direction from your existing hole names, so a blast that snakes back and forth still
+snakes after the edit.
 
 ---
 
