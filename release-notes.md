@@ -2,6 +2,77 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.31.87
+
+_2026-09-08_
+
+**Feature**
+
+- The section view is framed to the line you drew
+- A pick button lets you choose new section points at any time
+
+**Bug Fix**
+
+- Section slab widths no longer make the whole scene vanish
+
+## Release v1.1.31.86
+
+_2026-09-08_
+
+**Feature**
+
+- Draw a line in plan and it becomes the section plane
+- Defining a section switches to 3D and turns the view onto it
+
+## Release v1.1.31.85
+
+_2026-09-08_
+
+History not available at the moment.
+
+## Release v1.1.31.84
+
+_2026-09-08_
+
+**Bug Fix**
+
+- Section plane fields are compact and no longer run off the dialog
+
+## Release v1.1.31.83
+
+_2026-09-08_
+
+**Bug Fix**
+
+- The section plane dialog lays out cleanly instead of clipping its fields
+
+## Release v1.1.31.82
+
+_2026-09-08_
+
+**Bug Fix**
+
+- The section plane dialog no longer scrolls sideways or clip its fields
+
+## Release v1.1.31.81
+
+_2026-09-08_
+
+**Feature**
+
+- Section plane steps forward and back with Page Up and Page Down
+- Section plane step size is now settable, and defaults to 0.1
+
+## Release v1.1.31.80
+
+_2026-09-07_
+
+**Bug Fix**
+
+- Vulcan 3D text labels now import instead of disappearing
+- Rotated Vulcan text keeps its angle on import
+- Vulcan exports no longer warn about missing object attributes
+
 ## Release v1.1.31.79
 
 _2026-09-07_
