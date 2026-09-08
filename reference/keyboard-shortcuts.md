@@ -48,6 +48,24 @@ Quick reference for keyboard shortcuts and mouse controls in Kirra Design.
 
 ---
 
+## Section Plane
+
+Available while a section plane is enabled.
+
+| Action | Result |
+|--------|--------|
+| **Page Up** | Step the slice forward |
+| **Page Down** | Step the slice back |
+| **Shift + Page Up** | Step forward to an exact multiple of the step |
+| **Shift + Page Down** | Step back to an exact multiple of the step |
+| **Esc** | Cancel a section point pick |
+| **Right-click** | Cancel a section point pick |
+
+Step multiples are measured from the position the section was created at, so a
+stepped traverse keeps landing on the same grid.
+
+---
+
 ## Related Topics
 
 - [Interface Tour](../getting-started/interface-tour.md)

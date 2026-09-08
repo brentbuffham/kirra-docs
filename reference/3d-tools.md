@@ -59,14 +59,94 @@ The **3D Settings** button opens a dialog for configuring Three.js rendering opt
 
 ## Section Plane
 
-The Section Plane tool slices all 3D geometry along a user-defined plane, revealing internal structure.
+A section is a **slice** through your design, not just a cut. You choose where the
+slice sits, how thick it is, and then step it through the pattern to read the holes,
+the bench and the surfaces it passes through.
 
-### How to Use
+Click **Section Plane** in the **Select** toolbar to open the dialog.
 
-1. Click **Section Plane** in the Surface toolbar
-2. Position the section plane by entering coordinates or dragging the handles
-3. Adjust the orientation (horizontal, vertical, or angled)
-4. Geometry on one side of the plane is hidden, showing the cross-section
+Turning **Enable** on switches the view to 3D. A section is a 3D construct, so in 2D
+the controls would appear to do nothing.
+
+### Choosing the plane
+
+The **Plane** list offers five ways to define the slice:
+
+| Option | What it does |
+|---|---|
+| **Two Points** | You click two points; the slice runs vertically through them |
+| **Segment** | You click an existing line; the slice runs vertically along it |
+| **XY (Elevation)** | A horizontal slice, stepping up and down |
+| **YZ (East-West)** | A vertical slice, stepping east and west |
+| **XZ (North-South)** | A vertical slice, stepping north and south |
+
+### Sectioning along two points
+
+1. Choose **Two Points**. The dialog prompts **Select start point of plane**.
+2. Click the start point. The prompt changes to **Select end point of plane**.
+3. Click the end point.
+
+The view switches to 3D, turns to look along the section, and frames it to the line
+you drew. Press **Esc** or right-click to cancel a pick.
+
+### Sectioning along a line you have drawn
+
+If you want the section in a particular place, draw a guideline there first, then
+section along it:
+
+1. Draw a line where you want the section.
+2. Choose **Segment**.
+3. Click that line.
+
+The direction you drew the line in sets which way the view faces.
+
+To pick again at any time, use the **pick** button beside the Plane list. Choosing the
+same entry in the list again will not restart a pick.
+
+### Slice thickness — Look Forward and See Behind
+
+These two distances set how thick the slice is, measured from the section line:
+
+- **Look Forward** — how far ahead of the line stays visible, in the direction you are looking.
+- **See Behind** — how far behind the line stays visible.
+
+Both are positive distances, and both default to **1**, giving a 2 metre slice.
+Anything outside those two edges is hidden.
+
+Setting **See Behind** to 0 makes the section line itself the back edge.
+
+### Stepping the slice through the pattern
+
+- **Position** is the offset of the slice from the section line. 0 sits on the line.
+- **Step** is how far each step moves it. It also sets the spinner increment.
+- The **«** and **»** buttons either side of Position step the slice back and forward.
+- **Page Down** and **Page Up** do the same from the keyboard.
+- Hold **Shift** with Page Up or Page Down to land on exact multiples of the step,
+  measured from where the section was created.
+
+Slice thickness and step are remembered between sessions.
+
+### Other controls
+
+- **Reverse** (beside the pick button) looks the other way along the section. This
+  swaps which side is forward and which is behind.
+- **Rotation** tilts the slice away from vertical.
+- **Clip** chooses which categories the section applies to: Blasts, KAD, Surfaces,
+  Images and Blocks.
+- **Reset** returns the settings to their defaults without closing the dialog.
+
+### Working inside a section
+
+While a section is enabled, moving a hole keeps it **on the section plane**. The screen
+is the plane, so a move has one degree of freedom in plan — along the line. Dragging up
+or down will not push a hole sideways out of the slice.
+
+### Notes
+
+- **Surfaces read as a line.** A surface is a sheet. Slicing a near-horizontal sheet and
+  viewing it end-on shows its cross-section, which has no thickness. This is expected:
+  what you see is the profile where the surface crosses the section.
+- The section line itself is a working aid. It is not saved with your design.
 
 ---
 
