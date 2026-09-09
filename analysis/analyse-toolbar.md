@@ -13,7 +13,7 @@ The Analyse toolbar contains the following controls:
 
 | Control | Type | Purpose |
 |---------|------|---------|
-| **Fly Rock Shroud (3 versions)** | Dialog | Generate a 3D flyrock shroud using Richards & Moore, Lundborg, or McKenzie |
+| **Fly Rock Shroud** | Dialog | Generate a 3D flyrock shroud using Richards & Moore, Lundborg, McKenzie or Roth |
 | **Blast Shader Tools WebGPU** | Dialog | Open the GPU shader analytics suite — 11 PPV / damage / pressure / powder-factor models |
 | **Voronoi Options and Mode Selection** | Dialog | Configure per-cell Voronoi PPV (Modes A / B / C / E / F), monitors, site-law constants, Love-wave settings |
 | **Monitor and Seed Library** | Dialog | Bulk export / import of monitors and seed traces — CSV + ZIP bundles |
@@ -189,5 +189,5 @@ Customises the **colour schema** used to render block-model attributes — mappi
 - [Analytics Overview](overview.md) — shader-model background
 - [PPV & Vibration Models](ppv-models.md) — site-law and waveform models
 - [PPV Voronoi Modes](ppv-voronoi-modes.md) — per-cell receptor-aware PPV
-- [Flyrock Modelling](flyrock.md) — Richards & Moore, Lundborg, McKenzie
+- [Flyrock Modelling](flyrock.md) — Richards & Moore, Lundborg, McKenzie, Roth
 - [Interface Tour](../getting-started/interface-tour.md) — workspace overview
