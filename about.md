@@ -30,7 +30,7 @@ The core blast design application, covering:
 - **Surface management** with gradient colouring, boolean operations, mesh editing, contour generation, and textured OBJ support
 - **Charging system** with typed decks, formula-driven positioning, and mass-based calculations
 - **Blast analytics** with 10 GPU/CPU shader models (PPV, Heelan, Blair Heavy, Damage, Pressure, Powder Factor, and more)
-- **Flyrock modelling** with Richards & Moore, Lundborg, and McKenzie algorithms and 3D shroud visualisation
+- **Flyrock modelling** with Richards & Moore, Lundborg, McKenzie and Roth models, burden measured to a chosen free face, and 3D shroud visualisation
 - **Print system** with vector PDF, raster PDF, and custom XLSX templates
 - **DXF batch upload** for importing multiple DXF files simultaneously
 - **Dockview panels** for resizable, dockable workspace layout
