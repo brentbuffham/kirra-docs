@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.2
+
+_2026-09-10_
+
+**Feature**
+
+- Vulcan ARCH_D imports can take the site rig library for real bores
+
 ## Release v1.1.32.1
 
 _2026-09-10_
