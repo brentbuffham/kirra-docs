@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.3
+
+_2026-09-11_
+
+**Feature**
+
+- New Blast Quality report on the Analyse toolbar
+- Chart the distribution of sixteen hole attributes
+- Nearest neighbour distance shows drilling quality independently of rows
+- Blast Quality names holes filed in the wrong row
+- Click a chart bar to highlight those holes
+- Compare actual influence area against design burden and spacing
+
+**Bug Fix**
+
+- Printed burden no longer measures between unrelated rows
+
 ## Release v1.1.32.2
 
 _2026-09-10_
