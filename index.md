@@ -106,6 +106,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [PPV & Vibration Models (shader suite)](analysis/ppv-models.md)
 - [PPV Voronoi Modes (A/B/C/E/F) — per-cell, receptor-aware](analysis/ppv-voronoi-modes.md) *(Mode F added v1.0.230)*
 - [Time Window Dialog — IDI, Spectrum, Synthesis, Forward Array, Detune, Constrain](analysis/time-window.md) *(new)*
+- [Blast Quality — attribute distributions and row-assignment checks](analysis/blast-quality.md) *(new)*
 - [Flyrock Modelling](analysis/flyrock.md)
 - [Blast Statistics & Voronoi](analysis/statistics-voronoi.md)
 

@@ -189,6 +189,7 @@ When using the **Generate Analysis Plane** render mode, the flat analysis plane 
 
 - [PPV & Vibration Models](ppv-models.md)
 - [PPV Voronoi Modes (A/B/C/E) — per-cell, receptor-aware](ppv-voronoi-modes.md)
+- [Blast Quality](blast-quality.md)
 - [Flyrock Modelling](flyrock.md)
 - [Blast Statistics & Voronoi](statistics-voronoi.md)
 - [Charging Overview](../charging/overview.md)
