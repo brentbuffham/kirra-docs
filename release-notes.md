@@ -2,6 +2,21 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.7
+
+_2026-09-12_
+
+**Feature**
+
+- Each blast exports as its own Vulcan archive, zipped together
+- Row numbers now reach Vulcan, so holes edit by row
+
+**Bug Fix**
+
+- Vulcan blast exports no longer fail with a memory error
+- Presplit blasts now load in Vulcan as blasts
+- Drawings missing an elevation no longer corrupt a Vulcan export
+
 ## Release v1.1.32.6
 
 _2026-09-12_
