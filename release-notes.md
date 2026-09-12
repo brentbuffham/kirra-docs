@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.4
+
+_2026-09-12_
+
+**Bug Fix**
+
+- Dialog labels show degree signs and bullets, not question marks
+
 ## Release v1.1.32.3
 
 _2026-09-11_
