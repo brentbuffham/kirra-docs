@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.5
+
+_2026-09-12_
+
+**Feature**
+
+- Right-click Polygon Select to choose Polygon, Rectangle or Ellipse
+- Rectangle and Ellipse selection draw from two clicks
+
 ## Release v1.1.32.4
 
 _2026-09-12_
