@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.6
+
+_2026-09-12_
+
+**Bug Fix**
+
+- Rectangle and Ellipse selection stay upright on a rotated view
+
 ## Release v1.1.32.5
 
 _2026-09-12_
