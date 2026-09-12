@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.8
+
+_2026-09-12_
+
+**Bug Fix**
+
+- Thick lines and circles no longer show white gaps at joins
+
 ## Release v1.1.32.7
 
 _2026-09-12_
