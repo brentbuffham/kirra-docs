@@ -2,12 +2,21 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.10
+
+_2026-09-13_
+
+**Bug Fix**
+
+- Release notes no longer drop lines that are barely over the limit
+
 ## Release v1.1.32.9
 
 _2026-09-13_
 
 **Feature**
 
+- Lock a layer or entity so it stays visible but cannot be selected
 - Locked items are safe from marquee, snapping, dragging and delete
 - A padlock beside the eye shows locked, partly locked or unlocked
 
@@ -132,6 +141,10 @@ _2026-09-10_
 **Feature**
 
 - Exported Vulcan holes arrive labelled with their id and depth
+
+**Bug Fix**
+
+- Exported blast holes no longer claim a drill rig the site may not have
 
 ## Release v1.1.31.115
 
@@ -274,6 +287,7 @@ _2026-09-10_
 **Bug Fix**
 
 - Vulcan no longer runs out of memory checking an exported blast
+- Holes that stop short of grade now export the right shape to Vulcan
 - Exported blast holes no longer reference an unrelated site file
 
 ## Release v1.1.31.98
@@ -974,18 +988,23 @@ _2026-08-29_
 **Feature**
 
 - Draw buttons are colour-coded by placement mode
+- A ghost marker shows where an offset click will land before you click
 
 ## Release v1.1.31.26
 
 _2026-08-29_
 
-History not available at the moment.
+**Bug Fix**
+
+- Choosing a draw placement mode now turns the tool on and keeps the mode
 
 ## Release v1.1.31.25
 
 _2026-08-29_
 
-History not available at the moment.
+**Feature**
+
+- Right-click a KAD draw button to place points by offset, midpoint or bearing
 
 ## Release v1.1.31.24
 
@@ -1036,12 +1055,16 @@ _2026-08-28_
 - Despike now finds pyramids and tents by height above their surroundings
 - The spike threshold is set in metres instead of a statistical score
 - Repaired points land on the local slope, not a flat average
+- The spike circles now show in 3D as well as on the plan
 
 ## Release v1.1.31.18
 
 _2026-08-28_
 
-History not available at the moment.
+**Feature**
+
+- Despike now circles the spikes it found, on the plan and in 3D
+- Keep the circles as a drawing to compare two settings side by side
 
 ## Release v1.1.31.17
 
@@ -1069,6 +1092,7 @@ _2026-08-28_
 
 - Despike now shows how many spikes it will remove before you commit
 - Despike controls read in plain words and metres instead of ring counts
+- Despike defaults now remove spikes on a typical survey rather than a handful
 
 ## Release v1.1.31.14
 
@@ -1077,6 +1101,7 @@ _2026-08-28_
 **Feature**
 
 - Regularise now lives in a Smoothing dialog alongside a new Despike tool
+- Despike removes isolated noise spikes into a new surface, leaving the original untouched
 - Detect reports how many spikes would move before you commit
 
 ## Release v1.1.31.13
@@ -1099,13 +1124,17 @@ _2026-08-28_
 
 _2026-08-28_
 
-History not available at the moment.
+**Bug Fix**
+
+- A group formula that matches no holes now creates the group instead of refusing
 
 ## Release v1.1.31.10
 
 _2026-08-28_
 
-History not available at the moment.
+**Feature**
+
+- A duplicate import killed the tree, and the tests could not see it
 
 ## Release v1.1.31.9
 
@@ -1114,6 +1143,7 @@ _2026-08-28_
 **Feature**
 
 - A formula group warns in amber when it matches no holes
+- A formula that cannot be evaluated warns in red and keeps its holes
 - Clicking a group's warning opens Edit Group
 
 ## Release v1.1.31.8
@@ -1218,6 +1248,11 @@ _2026-08-24_
 **Feature**
 
 - The section view can look along any bearing, not just the hole's
+- Rotate the section by a settable step, or flip it in one press
+
+**Bug Fix**
+
+- The panel now explains when no face lies ahead instead of showing nothing
 
 ## Release v1.1.20.521
 
@@ -1229,7 +1264,9 @@ History not available at the moment.
 
 _2026-08-24_
 
-History not available at the moment.
+**Bug Fix**
+
+- The hole section view now opens when a group of holes is selected
 
 ## Release v1.1.20.519
 
@@ -1280,6 +1317,7 @@ _2026-08-24_
 
 - Import downhole surveys and see the real drilled hole path
 - Surveyed paths land on their own Telemetry layer, one line per hole
+- Hole collars can come from your design holes, a points layer, or the file
 
 ## Release v1.1.20.514
 
@@ -1296,6 +1334,10 @@ _2026-08-24_
 **Feature**
 
 - Hidden runs of a burden path draw dashed, so depth is readable
+
+**Bug Fix**
+
+- Burden paths in 3D now hide behind terrain instead of floating on top
 
 ## Release v1.1.20.512
 
@@ -1414,7 +1456,9 @@ _2026-08-23_
 
 _2026-08-23_
 
-History not available at the moment.
+**Feature**
+
+- Nudge a hole toward or away from the face by a set increment
 
 ## Release v1.1.20.500
 
@@ -1653,13 +1697,17 @@ _2026-08-22_
 
 _2026-08-22_
 
-History not available at the moment.
+**Bug Fix**
+
+- Multi-line drawing text now prints with the same line spacing as on screen
 
 ## Release v1.1.20.474
 
 _2026-08-22_
 
-History not available at the moment.
+**Bug Fix**
+
+- Vector plans now place hole text at the same height as raster plans
 
 ## Release v1.1.20.473
 
@@ -1710,6 +1758,7 @@ _2026-08-22_
 
 **Bug Fix**
 
+- Hole labels now print in the same position as they appear on screen
 - Row and Position labels now print on both plot types
 
 ## Release v1.1.20.467
@@ -1848,7 +1897,9 @@ _2026-08-21_
 
 _2026-08-20_
 
-History not available at the moment.
+**Bug Fix**
+
+- Downhole times on the page, and KAD text that scales with the plot
 
 ## Release v1.1.20.450
 
@@ -1887,7 +1938,9 @@ _2026-08-20_
 
 _2026-08-20_
 
-History not available at the moment.
+**Bug Fix**
+
+- The print audit, and a rule so a tool is not done until it prints
 
 ## Release v1.1.20.445
 
@@ -1939,7 +1992,9 @@ History not available at the moment.
 
 _2026-08-19_
 
-History not available at the moment.
+**Bug Fix**
+
+- A centre of rotation you can pick, and the setting that saved itself wrong
 
 ## Release v1.1.20.438
 
@@ -2237,7 +2292,9 @@ _2026-08-14_
 
 _2026-08-14_
 
-History not available at the moment.
+**Bug Fix**
+
+- The turntable stops at the poles again, and the reason is written down
 
 ## Release v1.1.20.400
 
@@ -2275,19 +2332,25 @@ _2026-08-14_
 
 _2026-08-14_
 
-History not available at the moment.
+**Bug Fix**
+
+- The folder that will not delete: root cause, and a way around it
 
 ## Release v1.1.20.395
 
 _2026-08-14_
 
-History not available at the moment.
+**Feature**
+
+- Finish the save the browser abandoned, using the file already on the server
 
 ## Release v1.1.20.394
 
 _2026-08-14_
 
-History not available at the moment.
+**Bug Fix**
+
+- Stop waiting on a rename that never returns, and offer the zip only then
 
 ## Release v1.1.20.393
 
@@ -2373,7 +2436,9 @@ _2026-08-13_
 
 _2026-08-13_
 
-History not available at the moment.
+**Feature**
+
+- Ask where to save before building, so batch exports reach the file browser
 
 ## Release v1.1.20.382
 
@@ -2395,13 +2460,17 @@ _2026-08-13_
 
 _2026-08-13_
 
-History not available at the moment.
+**Feature**
+
+- Judge a knot by the geometry, re-tie lost joins, hollow diamond for a disconnected knot
 
 ## Release v1.1.20.379
 
 _2026-08-13_
 
-History not available at the moment.
+**Feature**
+
+- A knot that is not touching carries no signal, and is now visible
 
 ## Release v1.1.20.378
 
@@ -2415,7 +2484,9 @@ _2026-08-13_
 
 _2026-08-13_
 
-History not available at the moment.
+**Feature**
+
+- Bake reads a cord-fed hole's time from the circuit, and says it is destructive
 
 ## Release v1.1.20.376
 
@@ -2621,7 +2692,9 @@ _2026-08-11_
 
 _2026-08-11_
 
-History not available at the moment.
+**Bug Fix**
+
+- 3D nodes and houses match 2D; a node takes its knot with it
 
 ## Release v1.1.20.350
 
@@ -2635,7 +2708,9 @@ _2026-08-11_
 
 _2026-08-11_
 
-History not available at the moment.
+**Bug Fix**
+
+- A knot is a node, and the cord between two knots is real
 
 ## Release v1.1.20.348
 
@@ -2689,7 +2764,9 @@ _2026-08-11_
 
 _2026-08-11_
 
-History not available at the moment.
+**Feature**
+
+- A one-way relay knows which way it faces, and you can flip it
 
 ## Release v1.1.20.341
 
@@ -3184,7 +3261,9 @@ _2026-08-04_
 
 _2026-08-04_
 
-History not available at the moment.
+**Feature**
+
+- Load the bundled fonts at boot instead of on the user's first pan
 
 ## Release v1.1.20.277
 
@@ -3582,7 +3661,9 @@ _2026-07-28_
 
 _2026-07-28_
 
-History not available at the moment.
+**Feature**
+
+- Inserted holes inherit charge + timing from their source, warned once per operation
 
 ## Release v1.1.20.224
 
@@ -3594,7 +3675,9 @@ History not available at the moment.
 
 _2026-07-27_
 
-History not available at the moment.
+**Feature**
+
+- Row positions stay unique: no more two holes at "row 3, pos 4
 
 ## Release v1.1.20.222
 
@@ -3766,7 +3849,9 @@ _2026-07-25_
 
 _2026-07-25_
 
-History not available at the moment.
+**Bug Fix**
+
+- BMF: escalating tail read so a very large model still finds its root
 
 ## Release v1.1.20.199
 
@@ -3858,7 +3943,9 @@ _2026-07-25_
 
 _2026-07-25_
 
-History not available at the moment.
+**Feature**
+
+- Orbit: keep north up on the first mouse move out of plan view
 
 ## Release v1.1.20.187
 
@@ -4330,7 +4417,9 @@ _2026-07-18_
 
 _2026-07-18_
 
-History not available at the moment.
+**Feature**
+
+- Confirm dialog text to house-style 12px; Clip by Fold keeps the mesh name
 
 ## Release v1.1.20.121
 
@@ -4382,7 +4471,9 @@ _2026-07-17_
 
 _2026-07-17_
 
-History not available at the moment.
+**Feature**
+
+- Clip Solid runs off-thread with a real progress clock (was an 82s spinner)
 
 ## Release v1.1.20.114
 
@@ -4396,7 +4487,9 @@ _2026-07-17_
 
 _2026-07-17_
 
-History not available at the moment.
+**Feature**
+
+- Clip Solid: cut steep walls on the ring's real segments (an upstream fold source)
 
 ## Release v1.1.20.112
 
@@ -4536,7 +4629,9 @@ _2026-07-15_
 
 _2026-07-15_
 
-History not available at the moment.
+**Feature**
+
+- Localise the basic view (toolbars + left nav) + persist language on reload
 
 ## Release v1.1.20.93
 
@@ -4772,13 +4867,17 @@ _2026-07-14_
 
 _2026-07-14_
 
-History not available at the moment.
+**Bug Fix**
+
+- DUF parser real-file fixes + mesh wire-in; clip near-vertical + DUF plans; Dell-session handoff
 
 ## Release v1.1.20.54
 
 _2026-07-14_
 
-History not available at the moment.
+**Bug Fix**
+
+- Consolidate to main: close-repair checkbox + piece colours + KAD tool selection/first-entry fixes
 
 ## Release v1.1.20.53
 
@@ -5060,6 +5159,7 @@ _2026-07-07_
 
 **Feature**
 
+- Ramp wall benches tie into the ramp at their daylight (+ no missed benches)
 - Ramp wall benches tie back into the ramp at daylight
 
 ## Release v1.1.20.15
@@ -5144,7 +5244,9 @@ History not available at the moment.
 
 _2026-07-05_
 
-History not available at the moment.
+**Feature**
+
+- Render textured OBJ surfaces in the 2D GPU top-down pass (2D == 3D)
 
 ## Release v1.1.20.4
 
