@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.9
+
+_2026-09-13_
+
+**Feature**
+
+- Locked items are safe from marquee, snapping, dragging and delete
+- A padlock beside the eye shows locked, partly locked or unlocked
+
+**Bug Fix**
+
+- Hidden drawings can no longer be deleted by a click in 2D
+
 ## Release v1.1.32.8
 
 _2026-09-12_
