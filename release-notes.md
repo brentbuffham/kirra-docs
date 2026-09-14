@@ -2,6 +2,26 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.11
+
+_2026-09-14_
+
+**Feature**
+
+- Lock icons added to file and type folders in the data explorer
+- A locked layer offers to unlock itself before you make it active
+- Send any surface to an image at a resolution you choose
+- Sort menu icons now show in the data explorer
+
+**Bug Fix**
+
+- Locked holes and drawings no longer picked up by box, ellipse or polygon select
+- Locked items cannot be deleted, moved, renamed, transformed or edited
+- Locking a layer now locks the layer row itself, not just its contents
+- Locking something that is selected now drops it from the selection
+- Importing a textured model no longer creates an unwanted image
+- Textured models no longer show a blank image after reloading a project
+
 ## Release v1.1.32.10
 
 _2026-09-13_
