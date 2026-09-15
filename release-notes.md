@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.13
+
+_2026-09-15_
+
+**Bug Fix**
+
+- Imported textured OBJ surfaces appear again in both 2D and 3D
+
 ## Release v1.1.32.12
 
 _2026-09-15_
