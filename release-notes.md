@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.14
+
+_2026-09-15_
+
+**Bug Fix**
+
+- Textured OBJ files load their texture when the material file has a different name
+
 ## Release v1.1.32.13
 
 _2026-09-15_
