@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.16
+
+_2026-09-15_
+
+**Bug Fix**
+
+- Blast holes exported to Vulcan carry the correct area of influence
+
 ## Release v1.1.32.15
 
 _2026-09-15_
