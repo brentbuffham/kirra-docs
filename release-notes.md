@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.15
+
+_2026-09-15_
+
+**Bug Fix**
+
+- Dragging a textured model in now keeps its material file
+
 ## Release v1.1.32.14
 
 _2026-09-15_
