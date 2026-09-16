@@ -40,7 +40,7 @@ _2026-09-16_
 
 **Bug Fix**
 
-- Alphanumeric row names are now carried correctly into Vulcan exports
+- Alphanumeric row names load correctly in Vulcan, though renumbering there may rewrite them
 
 ## Release v1.1.32.21
 
