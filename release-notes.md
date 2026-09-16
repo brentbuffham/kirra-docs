@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.19
+
+_2026-09-16_
+
+**Bug Fix**
+
+- Blasts exported to Vulcan keep their row letters when Vulcan renumbers
+
 ## Release v1.1.32.18
 
 _2026-09-16_
