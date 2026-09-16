@@ -26,7 +26,7 @@ The Select toolbar contains the following controls:
 | **Zoom Out** | View | Zoom the viewport out by one step |
 | **Reset View** | View | Reset the camera to a default view (three modes) |
 | **Section View Tool** | View | Slice the 3D scene with a section plane |
-| **Find Select Zoom** | Dialog | Search holes / KAD by criteria (ID, type, colour, length, bearing, mass, delay…), combine criteria, then zoom to the result |
+| **Find Select Zoom** | Dialog | Search holes / KAD by criteria (colour, shape, ID, type, length, bearing, mass, delay…), combine criteria, then zoom to the result |
 | **Orbit Focus 3D Tool** | View | Click a point in the 3D scene to set it as the new orbit centre |
 | **3D World Settings** | Dialog | Open renderer configuration — renderer mode, instanced rendering, LOD overrides, simplification thresholds |
 
@@ -221,18 +221,66 @@ Slices the 3D scene with a section plane so you can see inside surfaces or cut t
 
 ## Find Select Zoom
 
-Opens the **Find / Select / Zoom** dialog — search for holes or KAD objects by one or more criteria, select the matches, and zoom the viewport to them. Handy for isolating a subset of a large blast (for example, all presplit holes, or every hole with a delay over a threshold).
+Opens the **Find / Select / Zoom** dialog — search for holes or KAD objects by one or more criteria, select the matches, and zoom the viewport to them. Handy for isolating a subset of a large blast (for example, every triangle-shaped hole, or every hole with a delay over a threshold).
 
-You can search by criteria such as colour, hole type, ID, length, diameter, angle, bearing, bench, blast name, mass, and delay, and **combine multiple match criteria** to narrow the result.
+Criteria are **chips**: click (or drag) one from the palette into the **Match ALL of** box, then set its comparison. Add as many as you need — a hole must satisfy **all** of them to be found.
 
-> *[SCREENSHOT NEEDED: Find / Select / Zoom dialog]*
+![Find / Select / Zoom finding every triangle-shaped hole](../screenshots/FindHoleShape.png)
+*Hole Shape **is** triangle — hole 1 is the only triangle in the pattern, and it is the only one selected.*
+
+### Criteria for Holes
+
+| Chip | Compares | Notes |
+|--------|----------|-------|
+| **Hole Colour** | The colour the hole is **drawn** in | Colour well, or sample one off the pattern with the target-arrow button. Also **is auto** / **is not auto** — see below |
+| **Delay Colour** | The delay / connector swatch | A different thing from Hole Colour. This is the colour the ties and delay text take |
+| **Hole Type** | Production, Batter, Buffer, Presplit… | Lists only the types present |
+| **Hole Shape** | circle, triangle, square, cross, diamond | Lists only the shapes present. A hole that was never given a shape is a circle, and is found as one |
+| **Hole ID** | Hole name, as text or as a number | **text** matches `A1` exactly; **number** compares the trailing digits, so `> 10` finds `B11` |
+| **Length**, **Diameter**, **Angle**, **Bearing**, **Bench** | Numeric | Angle is degrees from vertical; bearing is degrees from north |
+| **Blast name** | The blast the hole belongs to | is / is not / contains |
+| **Mass** | Explosive kilograms from the charging system | `0` finds uncharged holes |
+| **Delay** | Hole delay, milliseconds | `0` finds holes with no delay set |
+
+### Criteria for KAD objects
+
+Switch **Find** to **KAD objects** for a different palette: **Object type** (point, line, poly, circle, text), **Colour**, **Point count**, **Name**, **Closed**, and **Line width**.
+
+### Hole Colour, Delay Colour, and "is auto"
+
+A hole carries **two** colours and they are not interchangeable:
+
+- **Hole Colour** is the collar glyph — what you see on the canvas.
+- **Delay Colour** is the connector and delay-text swatch, set by the **Delay Colour** control on the hole's Additional tab.
+
+Searching one will not find the other, so pick the chip that matches what you are looking at.
+
+A hole does not have to carry a colour of its own. Left on **auto** it takes the theme's contrast colour — white on a dark background, black on a light one — and there is no colour you could type that would name that set. The **is auto** comparison finds them:
+
+![Find / Select / Zoom finding every hole left on auto colour](../screenshots/FindHoleColourAuto.png)
+*Hole Colour **is auto** — holes 1, 2 and 3 were each given a colour, so only hole 4 is still taking the theme's black.*
+
+Sampling an auto hole with the target-arrow button switches the chip to **is auto** for you, rather than picking up the black or white it happens to be showing.
+
+### Advanced (fx: formula)
+
+Expand **Advanced (fx: formula)** to see the predicate the chips compiled, and to edit it by hand. It is the same language as a live [blast group formula](../formula-help/blast-group-formulas.md) — for example:
+
+```
+fx:holeShape == "triangle" && holeLength > 10
+```
 
 ### How to Use
 
 1. Click the **Find Select Zoom** button on the Select toolbar
-2. Add one or more match criteria (e.g. hole type = Presplit, delay > 100 ms)
-3. Run the search to select the matching entities
-4. Zoom to the result
+2. Choose **Holes** or **KAD objects**
+3. Click a criterion chip to drop it into the **Match ALL of** box
+4. Set its comparison and value — repeat for as many criteria as you need
+5. Choose **Replace selection** or **Add to selection**
+6. Tick **Zoom to selection after Find** if you want the view to follow
+7. Click **Find**
+
+Use **Clear** to empty the criteria box and start again.
 
 ---
 

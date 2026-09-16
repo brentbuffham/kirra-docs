@@ -34,6 +34,28 @@ Each hole is evaluated with its own properties. You can use **formal** names or 
 | `timingDelayMilliseconds` | Hole delay (ms) |
 | `measuredLength`, `measuredMass` | Measured values |
 
+### Appearance — colour and shape
+
+| Variable | Meaning |
+| --- | --- |
+| `holeColour` | The colour the hole is **drawn** in, lower-case `#rrggbb`. Empty when the hole is on auto |
+| `holeColourMode` | `"fixed"` when the hole has a colour of its own, `"auto"` when it takes the theme colour |
+| `delayColour` | The **delay / connector** colour — a different thing from `holeColour` |
+| `holeShape` | `"circle"`, `"triangle"`, `"square"`, `"cross"` or `"diamond"` |
+
+A hole carries **two** colours. `holeColour` is the collar glyph you see on the canvas; `delayColour` is the swatch the ties and delay text take, set by the **Delay Colour** control. Searching one will not find the other.
+
+A hole left on **auto** takes the theme's contrast colour — white on a dark background, black on a light one — so it has no colour of its own and `holeColour` is empty. Ask for those by mode, not by colour:
+
+```
+fx:holeColourMode == "auto"
+fx:holeColourMode == "fixed" && holeColour == "#ff0000"
+```
+
+`holeShape` always answers what the hole is **drawn** as. A hole that has never been given a shape stores nothing and is drawn as a circle, so `fx:holeShape == "circle"` finds it.
+
+> **Australian spelling.** The chips write `colour`. The American `color`, `holeColor`, `holeColorMode` and `delayColor` still evaluate, so formulas saved in older projects keep working.
+
 ### Short aliases
 
 | Alias | Maps to |
@@ -43,6 +65,8 @@ Each hole is evaluated with its own properties. You can use **formal** names or 
 | `type` | `holeType` |
 | `angle`, `bearing` | `holeAngle`, `holeBearing` |
 | `bench`, `subdrill` | `benchHeight`, `subdrillAmount` |
+| `shape` | `holeShape` |
+| `colour` | `holeColour` |
 | `delay` | `timingDelayMilliseconds` |
 | `rowID`, `posID` | Row / position IDs |
 
@@ -73,6 +97,9 @@ fx:burden >= 4 && (spacing >= 5 || spacing < 10)
 fx:(type == "Production" || type == "Presplit") && depth < 3
 fx:holeType == "Production" && burden >= 4.5
 fx:depth < 3
+fx:holeShape == "triangle"
+fx:holeColour == "#ff0000" && holeType == "Production"
+fx:holeColourMode == "auto"
 ```
 
 ---
