@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.23
+
+_2026-09-16_
+
+**Bug Fix**
+
+- Vulcan export now explains that drill rig and diameter are set in Vulcan
+
 ## Release v1.1.32.22
 
 _2026-09-16_
