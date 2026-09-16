@@ -6,13 +6,22 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 
 ## Documentation freshness
 
-These guides were **reviewed against the Kirra Design source tree** at:
+These guides were **checked against the Kirra Design source tree** at:
 
 | Field | Value |
 |--------|--------|
-| **Kirra app version** | **1.0.240** (`package.json` / `package-lock.json`) |
-| **Git commit** | `8372cd581d630941483ec8db7f9f1e724d0011e4` (short: `8372cd58`) |
-| **Commit date** | 2026-05-21 (author timezone +0800) |
+| **Kirra app version** | **1.1.32.26** (`package.json` / `package-lock.json`) |
+| **Git commit** | `ea0cafea4ff68e0edf8731a3ca8eb1308eba1a11` (short: `ea0cafea`) |
+| **Commit date** | 2026-09-16 (author timezone +0800) |
+| **Coverage** | **48 of 49** import/export formats · **66 of 81** toolbar tools |
+
+The coverage figures come from an automated check that builds its checklist **from the
+source itself** — every registered file format and every toolbar button — and then looks
+for each one by name across these pages.
+
+Read it for what it is: a **presence** check. It tells you whether a feature is
+documented *at all*. It does not promise that a page which exists has kept up with the
+latest behaviour, and a handful of newer tools are not yet written up.
 
 Use this block to judge whether the docs may be ahead of or behind your installed build. For the live app version in use, check **Help → About** (or your deployment’s `package.json`).
 
