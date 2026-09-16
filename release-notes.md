@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.17
+
+_2026-09-16_
+
+**Feature**
+
+- Find and Assign Group can now search by the hole's own colour
+- Find and Assign Group can now search by hole shape
+- Find can select holes that take their colour from the theme
+- Delay colour is now searchable separately from hole colour
+
+**Bug Fix**
+
+- Searching by colour no longer returns every hole in the blast
+- Colour values offered in a group formula are the ones you can see
+
 ## Release v1.1.32.16
 
 _2026-09-15_
