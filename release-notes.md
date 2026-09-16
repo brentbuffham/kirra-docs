@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.26
+
+_2026-09-16_
+
+**Bug Fix**
+
+- Importing monitors no longer accepts a site-law slope that predicts vibration rising with distance
+
+## Release v1.1.32.25
+
+_2026-09-16_
+
+**Bug Fix**
+
+- Vibration results are left blank rather than guessed when a monitor's site law is invalid
+
+## Release v1.1.32.24
+
+_2026-09-16_
+
+**Bug Fix**
+
+- A site law predicting more vibration further away is now refused, not applied
+
 ## Release v1.1.32.23
 
 _2026-09-16_
@@ -16,31 +40,25 @@ _2026-09-16_
 
 **Bug Fix**
 
-- Blasts exported to Vulcan keep their row letters when Vulcan renumbers
+- Alphanumeric row names are now carried correctly into Vulcan exports
 
 ## Release v1.1.32.21
 
 _2026-09-16_
 
-**Bug Fix**
-
-- Blasts exported to Vulcan keep their row letters when Vulcan renumbers
+History not available at the moment.
 
 ## Release v1.1.32.20
 
 _2026-09-16_
 
-**Bug Fix**
-
-- Blasts exported to Vulcan keep their row letters when Vulcan renumbers
+History not available at the moment.
 
 ## Release v1.1.32.19
 
 _2026-09-16_
 
-**Bug Fix**
-
-- Blasts exported to Vulcan keep their row letters when Vulcan renumbers
+History not available at the moment.
 
 ## Release v1.1.32.18
 

@@ -22,6 +22,25 @@ The simplest model. Computes Peak Particle Velocity using the empirical scaled-d
 | Cutoff Distance | 1.0 m | Minimum distance to avoid singularity |
 | Target PPV | 0 mm/s | Black contour line at this value (0 = disabled) |
 
+> **b must be greater than zero.** The attenuation slope describes vibration getting
+> *weaker* with distance. A value of zero or below describes vibration getting
+> **stronger** with distance, which no site law does.
+>
+> This happens more easily than it sounds. If every record you fit was taken at a
+> similar distance from a similar charge size — the same pattern, fired at the same
+> standoff, which is a very normal monitoring record — the fit has almost no spread to
+> work with and can return a negative slope.
+>
+> Kirra will not let such a fit be used. **Site Law Regression** shows the slope in red,
+> explains why, and refuses to apply it to a monitor. Importing monitors from a CSV drops
+> the bad value and uses the default instead. On the map, results that depend on it are
+> left **blank** rather than filled with a confident wrong number, and any maximum
+> allowable charge comes back as zero — meaning "this cannot be calculated", not "no
+> limit".
+>
+> **The fix is more spread, not more records.** Add monitoring from a range of distances
+> and charge masses, then fit again.
+
 **MIC Bin Mode:** When the Time Window parameter is set to a value greater than 0, the model switches to Maximum Instantaneous Charge bin mode. Fixed-width bins group holes by firing time, and each bin's combined charge mass is used instead of individual hole masses. Essential for accurate near-field PPV prediction.
 
 ---
