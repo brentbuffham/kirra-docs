@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.18
+
+_2026-09-16_
+
+**Bug Fix**
+
+- The Zoom tick on Find now decides whether the view moves
+- Adding a hole with Use Custom Hole ID unticked no longer uses the custom name
+
 ## Release v1.1.32.17
 
 _2026-09-16_
