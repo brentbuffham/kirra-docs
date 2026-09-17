@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.31
+
+_2026-09-18_
+
+**Feature**
+
+- Firing groups and timing constructs are named when you create them
+
+## Release v1.1.32.30
+
+_2026-09-17_
+
+**Feature**
+
+- Timing constructs are now grouped into firing groups — the shot they belong to
+
 ## Release v1.1.32.29
 
 _2026-09-17_
