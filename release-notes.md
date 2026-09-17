@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.28
+
+_2026-09-17_
+
+**Bug Fix**
+
+- Kirra now warns when a timing construct is missing from a project or file
+
 ## Release v1.1.32.27
 
 _2026-09-17_
