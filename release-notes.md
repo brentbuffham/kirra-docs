@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.29
+
+_2026-09-17_
+
+**Bug Fix**
+
+- Contours and first movement arrows are no longer blanked by holes belonging to another blast
+
 ## Release v1.1.32.28
 
 _2026-09-17_
