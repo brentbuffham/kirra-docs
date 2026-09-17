@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.27
+
+_2026-09-17_
+
+**Bug Fix**
+
+- Hidden blasts no longer blank the timing contours and first movement arrows of visible ones
+
 ## Release v1.1.32.26
 
 _2026-09-16_
