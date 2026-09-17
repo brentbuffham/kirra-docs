@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.32
+
+_2026-09-18_
+
+**Bug Fix**
+
+- Timing contours now flow through two blasts that fire together
+- Relief and slope no longer gap at the join between linked blasts
+
 ## Release v1.1.32.31
 
 _2026-09-18_

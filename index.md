@@ -10,9 +10,9 @@ These guides were **checked against the Kirra Design source tree** at:
 
 | Field | Value |
 |--------|--------|
-| **Kirra app version** | **1.1.32.26** (`package.json` / `package-lock.json`) |
-| **Git commit** | `ea0cafea4ff68e0edf8731a3ca8eb1308eba1a11` (short: `ea0cafea`) |
-| **Commit date** | 2026-09-16 (author timezone +0800) |
+| **Kirra app version** | **1.1.32.32** (`package.json` / `package-lock.json`) |
+| **Git commit** | `04524c6aad7550850635fc432584a6309f9c99ef` (short: `04524c6a`) |
+| **Commit date** | 2026-09-18 (author timezone +0800) |
 | **Coverage** | **48 of 49** import/export formats · **66 of 81** toolbar tools |
 
 The coverage figures come from an automated check that builds its checklist **from the
