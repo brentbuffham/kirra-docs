@@ -74,6 +74,14 @@ Each column works the same way:
 - **🗑 (delete)** — removes it. A firing group that still has constructs in it
   **will not delete** — Kirra tells you which constructs are blocking it, so you
   never orphan a construct by deleting its parent.
+- Deleting a **timing construct** asks what to do with the holes it timed
+  *(v1.1.32.45)*:
+  - **Delete & Release** *(the default)* — deletes the construct and releases its
+    holes. They keep their fire times and are free to be timed by another construct.
+  - **Delete, keep link** — deletes the construct but leaves the holes linked to it,
+    so re-importing a project that still contains it reattaches them. Until then
+    Kirra reports it as missing (see below).
+  - Deleting the construct cannot be undone. The release can (**Ctrl+Z**).
 
 ### What a Firing Group is
 
@@ -144,6 +152,55 @@ Colour stops define how **time** maps to colours on the canvas for construct vis
 
 - **Regenerate** — Re-runs surface generation from current geometry (useful after manual fixes or parameter tweaks).
 - Status text shows triangle and vertex counts when a surface exists.
+
+---
+
+## Missing constructs and releasing holes
+
+*(v1.1.32.45)*
+
+Every hole a construct times remembers **which** construct timed it. If that
+construct is no longer in the project — deleted, or not included in a file you
+imported — Kirra shows **Timing construct missing** when the project loads or the
+file is imported.
+
+Nothing is lost when this happens:
+
+- The holes' **fire times are intact.** The plan, exports and analysis all use them.
+- The holes **can still be re-timed.** Assign them to any construct and apply it.
+- Only the missing construct's own design is gone: its polyline, start time and relief.
+
+The warning offers three choices:
+
+| Button | What it does |
+|---|---|
+| **Release All** | Releases the holes from every missing construct, after one confirmation. |
+| **Release from List** | Opens the list below so you can release one construct at a time. |
+| **Close** | Leaves the links. Importing a project that still contains the construct reattaches its holes automatically. |
+
+### Release from List
+
+The list shows every construct your holes are timed by, and says which are missing:
+
+| Column | Meaning |
+|---|---|
+| **Construct** | The construct's name, or its id if it is missing. |
+| **Status** | **Orphan** — the construct is gone. **Valid** — it still exists. |
+| **Holes** | How many holes it timed. |
+| **Blast List** | The blasts those holes belong to. |
+| **Release** | Releases that construct's holes. Only **Orphan** rows can be released. |
+
+Valid constructs are listed so you can see they are safe. Their **Release** button is
+greyed out, and a construct that still exists is never released.
+
+### What a release changes
+
+- It removes the holes' link to the missing construct. **Fire times do not change.**
+- Once released, re-importing that construct will **not** reattach those holes.
+  Only release a construct you deleted on purpose.
+- Blasts that were joined **only** by the released construct become separate
+  firing events, so their [timing contours](timing-contours.md) are drawn separately.
+- Each release is one step on the undo stack: **Ctrl+Z** puts the links back.
 
 ---
 
