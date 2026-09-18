@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.38
+
+_2026-09-18_
+
+**Bug Fix**
+
+- Deck-limit warnings now use each analysis model's real shader limit
+- The charged-deck count in the shader dialog no longer reads zero
+
 ## Release v1.1.32.37
 
 _2026-09-18_
