@@ -2,6 +2,37 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.48
+
+_2026-09-19_
+
+**Bug Fix**
+
+- Pattern templates now set hole depth correctly from their grade
+- Pattern dialogs re-read the selected template when opened
+
+## Release v1.1.32.47
+
+_2026-09-19_
+
+**Bug Fix**
+
+- A duplicated blast now appears in the tree immediately
+
+## Release v1.1.32.46
+
+_2026-09-19_
+
+**Feature**
+
+- Duplicate a whole blast as a new version for comparison
+- Duplicate a KAD layer or sub-layer folder in one step
+- Insert Holes shows inherited values in a banner, not a popup
+
+**Bug Fix**
+
+- Send to Image is no longer offered on blasts
+
 ## Release v1.1.32.45
 
 _2026-09-18_
