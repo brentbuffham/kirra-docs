@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.43
+
+_2026-09-18_
+
+**Feature**
+
+- Powder Factor and Ripple Tank now handle up to 2048 decks or holes
+
 ## Release v1.1.32.42
 
 _2026-09-18_
