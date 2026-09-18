@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.39
+
+_2026-09-18_
+
+**Bug Fix**
+
+- Point PPV and Ripple Tank warn again when a blast exceeds their hole limit
+- Shader limit warnings count only the holes the chosen scope will use
+
 ## Release v1.1.32.38
 
 _2026-09-18_
