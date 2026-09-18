@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.45
+
+_2026-09-18_
+
+**Feature**
+
+- Holes can be released from a deleted timing construct
+- Deleting a timing construct can release its holes in one step
+
+**Bug Fix**
+
+- Electronic detonator exports no longer double baked or released delays
+
 ## Release v1.1.32.44
 
 _2026-09-18_
@@ -1356,6 +1369,7 @@ _2026-08-29_
 **Feature**
 
 - Reorder KAD now works on points objects, not just lines and polygons
+- Reorder KAD shows point numbers while in use
 
 ## Release v1.1.31.19
 
@@ -2257,7 +2271,9 @@ _2026-08-20_
 
 _2026-08-20_
 
-History not available at the moment.
+**Feature**
+
+- Formula reference shows the waste allowance option for harness length
 
 ## Release v1.1.20.444
 
@@ -2297,7 +2313,11 @@ _2026-08-19_
 
 _2026-08-19_
 
-History not available at the moment.
+**Bug Fix**
+
+- Product form now requires its mandatory fields before saving
+- New products no longer default to an electronic initiator
+- Product type now lists product families, not roles
 
 ## Release v1.1.20.439
 
@@ -2311,7 +2331,10 @@ _2026-08-19_
 
 _2026-08-19_
 
-History not available at the moment.
+**Bug Fix**
+
+- Positive KAD offsets now always expand polygons, negative always shrink
+- Hidden blasts no longer shape Voronoi results
 
 ## Release v1.1.20.437
 
@@ -2573,7 +2596,9 @@ _2026-08-14_
 
 _2026-08-14_
 
-History not available at the moment.
+**Bug Fix**
+
+- Convert to hole ties uses the new planner again
 
 ## Release v1.1.20.404
 
@@ -3452,7 +3477,9 @@ _2026-08-06_
 
 _2026-08-06_
 
-History not available at the moment.
+**Bug Fix**
+
+- Tree view builds faster by skipping rows that are off screen
 
 ## Release v1.1.20.292
 
@@ -3474,7 +3501,10 @@ _2026-08-06_
 
 _2026-08-06_
 
-History not available at the moment.
+**Bug Fix**
+
+- Template map prints no longer go blank when no holes are visible
+- Background images and surfaces now print from templates
 
 ## Release v1.1.20.289
 
@@ -3690,7 +3720,13 @@ _2026-08-04_
 
 _2026-08-04_
 
-History not available at the moment.
+**Feature**
+
+- Vulcan archive import reads each hole's drill type and diameter
+
+**Bug Fix**
+
+- DXF exports now open in strict readers such as Wenco
 
 ## Release v1.1.20.260
 
@@ -3808,7 +3844,9 @@ _2026-08-01_
 
 _2026-08-01_
 
-History not available at the moment.
+**Bug Fix**
+
+- Hole fire times are recalculated when a project or file loads
 
 ## Release v1.1.20.245
 
@@ -3846,7 +3884,9 @@ _2026-08-01_
 
 _2026-08-01_
 
-History not available at the moment.
+**Feature**
+
+- Print product lists can filter by product category and hole
 
 ## Release v1.1.20.240
 
@@ -3980,7 +4020,10 @@ _2026-07-28_
 
 _2026-07-28_
 
-History not available at the moment.
+**Bug Fix**
+
+- Renumber and reorder can no longer create duplicate hole names
+- Bulk delete closes gaps in row positions
 
 ## Release v1.1.20.223
 
@@ -3994,19 +4037,25 @@ _2026-07-27_
 
 _2026-07-27_
 
-History not available at the moment.
+**Bug Fix**
+
+- Inserted holes always get full attributes and a unique name
 
 ## Release v1.1.20.221
 
 _2026-07-27_
 
-History not available at the moment.
+**Bug Fix**
+
+- Inserting a hole no longer raises a false coordinate range alert
 
 ## Release v1.1.20.220
 
 _2026-07-27_
 
-History not available at the moment.
+**Bug Fix**
+
+- A single hole in a new blast no longer raises a coordinate range alert
 
 ## Release v1.1.20.219
 
@@ -4090,7 +4139,9 @@ _2026-07-25_
 
 _2026-07-25_
 
-History not available at the moment.
+**Bug Fix**
+
+- Tree view first build is much faster on large projects
 
 ## Release v1.1.20.208
 
@@ -4184,7 +4235,9 @@ _2026-07-25_
 
 _2026-07-25_
 
-History not available at the moment.
+**Feature**
+
+- Very large block models stream in without running out of memory
 
 ## Release v1.1.20.196
 
@@ -4278,7 +4331,9 @@ _2026-07-25_
 
 _2026-07-25_
 
-History not available at the moment.
+**Bug Fix**
+
+- 3D orbit no longer flips upside down past vertical
 
 ## Release v1.1.20.184
 
@@ -4404,7 +4459,9 @@ _2026-07-24_
 
 _2026-07-24_
 
-History not available at the moment.
+**Bug Fix**
+
+- Extend Line now ignores hidden entities
 
 ## Release v1.1.20.168
 
@@ -4458,7 +4515,9 @@ _2026-07-23_
 
 _2026-07-23_
 
-History not available at the moment.
+**Bug Fix**
+
+- Boolean solids no longer leave the Slice fields blank
 
 ## Release v1.1.20.161
 
@@ -4488,7 +4547,9 @@ _2026-07-23_
 
 _2026-07-21_
 
-History not available at the moment.
+**Bug Fix**
+
+- Tree view no longer flashes the busy indicator on quick refreshes
 
 ## Release v1.1.20.157
 
@@ -4558,7 +4619,9 @@ _2026-07-21_
 
 _2026-07-21_
 
-History not available at the moment.
+**Feature**
+
+- Clean Mesh optional scans run in the background
 
 ## Release v1.1.20.144
 
@@ -4620,19 +4683,25 @@ _2026-07-19_
 
 _2026-07-19_
 
-History not available at the moment.
+**Feature**
+
+- Tree view surface swatches show the gradient colours
 
 ## Release v1.1.20.136
 
 _2026-07-19_
 
-History not available at the moment.
+**Feature**
+
+- Tree view surface rows get a quick colour swatch
 
 ## Release v1.1.20.135
 
 _2026-07-19_
 
-History not available at the moment.
+**Feature**
+
+- Tree view shows a busy indicator during long rebuilds
 
 ## Release v1.1.20.134
 
@@ -4684,7 +4753,9 @@ _2026-07-18_
 
 _2026-07-18_
 
-History not available at the moment.
+**Feature**
+
+- Solid slicing shows a progress clock
 
 ## Release v1.1.20.127
 
@@ -4752,7 +4823,9 @@ _2026-07-18_
 
 _2026-07-18_
 
-History not available at the moment.
+**Feature**
+
+- Mesh Edit dialog is more compact
 
 ## Release v1.1.20.118
 
@@ -4806,7 +4879,9 @@ _2026-07-17_
 
 _2026-07-17_
 
-History not available at the moment.
+**Bug Fix**
+
+- Clean Mesh weld tolerance default now catches near-duplicate points
 
 ## Release v1.1.20.111
 
@@ -4882,7 +4957,9 @@ _2026-07-16_
 
 _2026-07-16_
 
-History not available at the moment.
+**Feature**
+
+- Surface footprint progress shows an elapsed-time clock
 
 ## Release v1.1.20.101
 
@@ -4896,13 +4973,17 @@ _2026-07-16_
 
 _2026-07-16_
 
-History not available at the moment.
+**Feature**
+
+- Surface footprint and convert to KAD show a busy indicator
 
 ## Release v1.1.20.99
 
 _2026-07-16_
 
-History not available at the moment.
+**Feature**
+
+- Deswik DUF import brings in text labels
 
 ## Release v1.1.20.98
 
@@ -4980,7 +5061,9 @@ _2026-07-15_
 
 _2026-07-15_
 
-History not available at the moment.
+**Feature**
+
+- Tree view sort preferences are remembered between sessions
 
 ## Release v1.1.20.82
 
@@ -5018,7 +5101,9 @@ _2026-07-15_
 
 _2026-07-15_
 
-History not available at the moment.
+**Feature**
+
+- Tree view can sort surfaces and images
 
 ## Release v1.1.20.77
 
@@ -5032,7 +5117,9 @@ _2026-07-15_
 
 _2026-07-15_
 
-History not available at the moment.
+**Bug Fix**
+
+- Solid booleans check their inputs first and no longer freeze the app
 
 ## Release v1.1.20.75
 
@@ -5044,19 +5131,25 @@ History not available at the moment.
 
 _2026-07-15_
 
-History not available at the moment.
+**Bug Fix**
+
+- Large regularised surfaces render and save faster
 
 ## Release v1.1.20.73
 
 _2026-07-15_
 
-History not available at the moment.
+**Bug Fix**
+
+- Extruded KAD solids are saved with consistent outward faces
 
 ## Release v1.1.20.72
 
 _2026-07-15_
 
-History not available at the moment.
+**Bug Fix**
+
+- Solid slice warns before processing very large meshes
 
 ## Release v1.1.20.71
 
@@ -5070,13 +5163,17 @@ _2026-07-15_
 
 _2026-07-15_
 
-History not available at the moment.
+**Feature**
+
+- Clean Mesh repair buttons show a busy indicator
 
 ## Release v1.1.20.69
 
 _2026-07-15_
 
-History not available at the moment.
+**Bug Fix**
+
+- Contours warn on oversized surfaces and show a busy indicator
 
 ## Release v1.1.20.68
 
@@ -5106,7 +5203,9 @@ _2026-07-14_
 
 _2026-07-14_
 
-History not available at the moment.
+**Feature**
+
+- Vulcan surface export writes one file, or several zipped together
 
 ## Release v1.1.20.64
 
@@ -5144,13 +5243,17 @@ _2026-07-14_
 
 _2026-07-14_
 
-History not available at the moment.
+**Bug Fix**
+
+- Vulcan now shows the surface colour from exported files
 
 ## Release v1.1.20.59
 
 _2026-07-14_
 
-History not available at the moment.
+**Feature**
+
+- Vulcan surface export includes the surface colour
 
 ## Release v1.1.20.58
 
@@ -5164,7 +5267,9 @@ _2026-07-14_
 
 _2026-07-14_
 
-History not available at the moment.
+**Feature**
+
+- Vulcan surface export writes files Vulcan can open
 
 ## Release v1.1.20.56
 
@@ -5194,7 +5299,9 @@ _2026-07-14_
 
 _2026-07-14_
 
-History not available at the moment.
+**Feature**
+
+- Clip Surface or Solid now cuts solids as well as surfaces
 
 ## Release v1.1.20.52
 
@@ -5366,7 +5473,9 @@ _2026-07-09_
 
 _2026-07-08_
 
-History not available at the moment.
+**Feature**
+
+- DXF 3D face export splits solids by layer
 
 ## Release v1.1.20.28
 
@@ -5549,7 +5658,9 @@ _2026-07-06_
 
 _2026-07-05_
 
-History not available at the moment.
+**Feature**
+
+- 3D view shows world coordinate readouts
 
 ## Release v1.1.20.5
 
