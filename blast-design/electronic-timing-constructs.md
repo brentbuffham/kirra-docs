@@ -55,15 +55,47 @@ Closing the dialog deactivates drawing mode and removes draw-complete listeners.
 
 ## Dialog sections (what each control does)
 
-### Construct list
+### Firing Group and Timing Construct (the dialog header)
 
-- **Dropdown** — Select an existing construct or **-- Select --** to clear the form.
-- **New** — Creates a construct with the current name (made unique if needed), tool mode, curve type, colour, and initial parameter fields.
-- **Delete** — Removes the construct from the project and database.
+*(Updated v1.1.32.31 — the header is now two matching columns, and there is no
+longer a separate "Name" field.)*
 
-### Name, colour, visibility
+```
+Firing Group  [ 406-407-BLAST  ▾ ]     Timing Construct  [ CAMMEY  ▾ ]
+              [ + ] [ ✎ ] [ 🗑 ]                          [ + ] [ ✎ ] [ 🗑 ]
+```
 
-- **Name** — Unique construct name; renaming runs when the field changes on an active selection.
+Each column works the same way:
+
+- **Dropdown** — pick an existing item, or **-- Select or New --** to clear the form.
+- **+ (new)** — prompts for a **name**, then creates the item. You name it when you
+  make it; there is no blank item to fill in afterwards.
+- **✎ (rename)** — renames the selected item.
+- **🗑 (delete)** — removes it. A firing group that still has constructs in it
+  **will not delete** — Kirra tells you which constructs are blocking it, so you
+  never orphan a construct by deleting its parent.
+
+### What a Firing Group is
+
+A **firing group** is the shot: the set of timing constructs that fire together.
+A construct belongs to exactly one firing group; a group can hold many constructs.
+
+> **You must create a firing group before you can create a timing construct.** The
+> **+** on the construct column is disabled until a group is selected. This is
+> deliberate — a construct with no parent cannot be told which shot it belongs to,
+> and that is how constructs used to go missing from a KAP file.
+
+Why it matters beyond tidiness: **two blasts that fire together are drawn as one
+field.** See [Timing Contours](timing-contours.md) — contours, first movement,
+relief and slope all stop splitting at the join once the blasts share a construct
+or a firing group.
+
+> Projects made before v1.1.32.30 have no groups. On first load Kirra creates one
+> and adopts any parentless constructs into it, so nothing is lost. This runs once,
+> not once per load.
+
+### Colour and visibility
+
 - **Colour** — Contour / display colour (`#RRGGBB`).
 - **Temporal Mesh** — Show or hide the shaded triangulated surface.
 - **Contour Line** — Show or hide contour polylines and direction cues drawn with the construct.

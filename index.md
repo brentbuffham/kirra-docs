@@ -10,8 +10,8 @@ These guides were **checked against the Kirra Design source tree** at:
 
 | Field | Value |
 |--------|--------|
-| **Kirra app version** | **1.1.32.32** (`package.json` / `package-lock.json`) |
-| **Git commit** | `04524c6aad7550850635fc432584a6309f9c99ef` (short: `04524c6a`) |
+| **Kirra app version** | **1.1.32.36** (`package.json` / `package-lock.json`) |
+| **Git commit** | `dc3585a4899f16359656a8581efc81feb96d506e` (short: `dc3585a4`) |
 | **Commit date** | 2026-09-18 (author timezone +0800) |
 | **Coverage** | **48 of 49** import/export formats · **66 of 81** toolbar tools |
 
@@ -65,7 +65,8 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Pattern Generation](blast-design/pattern-generation.md)
 - [Pattern Templates](blast-design/pattern-templates.md)
 - [Timing Sequences](blast-design/timing-sequences.md)
-- [Electronic Timing Constructs](blast-design/electronic-timing-constructs.md)
+- [Electronic Timing Constructs](blast-design/electronic-timing-constructs.md) — timing surfaces and **firing groups**
+- [Timing Contours, First Movement and Relief](blast-design/timing-contours.md) — isochrones, what counts as one shot, colours and labels *(new)*
 
 ### Surfaces
 - [Surfaces Toolbar](surfaces/surfaces-toolbar.md) — button-by-button reference
