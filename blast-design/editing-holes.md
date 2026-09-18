@@ -306,6 +306,40 @@ Coincidence is only flagged **within a blast** (same entity). Holes from *differ
 
 ---
 
+## Duplicating a whole blast
+
+*(v1.1.32.46)*
+
+Right-click a blast in the Data Explorer and choose **Duplicate** to make a second,
+separate copy of it — a **Version 2**, or a copy to try a different charge or timing
+against the original.
+
+Holes are never duplicated **into** a blast (see [Hole coincidence](#hole-coincidence)
+above). The copy is always a **new blast**, sitting on the same ground as the original.
+
+1. Right-click the blast → **Duplicate**.
+2. Enter the **New blast name**. Kirra suggests `<name>_V2`; copying a `_V2` suggests `_V3`.
+   A name already used by another blast is refused.
+3. Leave **Hide the original** ticked unless you want both on screen — they occupy the
+   same positions, so both visible will overprint.
+4. Click **Duplicate**. The copy appears in the tree straight away.
+
+**What is copied:** every hole's design, the charging, surface ties, cord links and
+trunklines, blast groups, label layout, and the volume method.
+
+**What is not:**
+
+- **The link to the timing construct.** Fire times are kept exactly, but the copy is
+  not part of the original's construct, so you can re-time it on its own without
+  touching the original. It is also treated as its own firing event.
+- **Links that leave the blast.** A hole tied from another blast becomes self-tied, and
+  cord links or trunk knots into another blast are left out. Kirra tells you how many.
+- **The trunk network name.** The copy's trunklines form their own network.
+
+A duplicate cannot be undone with **Ctrl+Z** — delete the copy to remove it.
+
+---
+
 ## Related Topics
 
 - [Adding Holes](adding-holes.md) — place individual holes manually

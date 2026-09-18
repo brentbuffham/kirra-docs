@@ -275,7 +275,10 @@ Node IDs use a Braille separator (⣿):
 ### TreeView features
 
 - **Visibility toggle** — show or hide individual entities via the row checkbox
-- **Duplicate** — right-click an entity to create a copy
+- **Duplicate** — right-click to create a copy of an entity, a surface, a **KAD layer**
+  (makes `<layer>_copy`) or a **KAD sub-layer folder** (makes `<folder>_copy` in the same
+  layer), or a **whole blast** — see
+  [Duplicating a whole blast](../blast-design/editing-holes.md#duplicating-a-whole-blast)
 - **Context menu** — right-click for statistics, move-to-layer, split/join lines, delete, and more
 - **Dock / popout** — the TreeView can be docked to the side, popped out, or collapsed
 

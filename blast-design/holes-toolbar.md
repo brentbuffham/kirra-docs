@@ -126,6 +126,18 @@ The dialog is **persistent** — it stays open so you can click hole after hole.
 3. Click a hole on the canvas. The new holes are inserted along the row in the chosen direction.
 4. Click another hole to repeat. Click **Close** (or toggle the button off) when finished.
 
+### Inherited charge and timing
+
+An inserted hole also inherits the clicked hole's **charge** (decks, products and
+primers) and **timing delay**. That is a best guess, not a measurement, so the tool
+says so in an **amber banner** at the bottom of its dialog *(v1.1.32.46)*:
+
+> Hole 1483 inherits hole 1482's Design, Charge & Timing. Complete checks before issuing.
+
+The banner stays up while you keep clicking and counts the holes inserted since the
+dialog opened. Check the charge and timing of those holes before the blast is issued.
+(Right-click → **Insert Hole** on a single hole shows the same notice as a pop-up.)
+
 ### Duplicate protection
 
 If an inserted hole would land on top of another hole **in the same blast**, Kirra shows a coincidence warning before committing — you can **Ignore** (insert anyway), **Skip** (insert only the non-clashing holes), or **Cancel**. This is the same same-blast XY check every hole tool uses (see [Editing Holes → Hole coincidence](editing-holes.md)).

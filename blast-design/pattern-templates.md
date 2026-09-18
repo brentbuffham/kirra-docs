@@ -79,6 +79,18 @@ Select a template and click **Delete**. A confirmation dialog appears before the
 
 When you open a pattern generation dialog (Add Pattern, Polygon Pattern, etc.), a template dropdown appears at the top. Select a template to populate all the dialog fields with the template values. You can then adjust individual values before generating the pattern.
 
+*(v1.1.32.48)*
+
+- **The selected template is re-read every time the dialog opens.** The dialog
+  remembers which template you used last, and fills the fields from that template
+  rather than from your last run — so it never shows one template's name with
+  another bench's collar, grade and length.
+- **A template with a grade elevation designs to that grade.** Choosing it ticks
+  **Use Grade Z**, and the hole length is worked out from the template's collar,
+  grade and subdrill.
+- If the template you used last has since been deleted, the dropdown resets to
+  **-- None --** instead of showing a name that no longer exists.
+
 ---
 
 ## CSV Import / Export
