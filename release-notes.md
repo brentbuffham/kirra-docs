@@ -2,6 +2,26 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.36
+
+_2026-09-18_
+
+**Bug Fix**
+
+- The contour interval slider now updates 3D and every printed plan
+
+## Release v1.1.32.35
+
+_2026-09-18_
+
+**Feature**
+
+- Colour pickers have a Close button and follow light and dark mode
+
+**Bug Fix**
+
+- The colour picker no longer opens behind the dialog that raised it
+
 ## Release v1.1.32.34
 
 _2026-09-18_
