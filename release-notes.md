@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.37
+
+_2026-09-18_
+
+**Feature**
+
+- Electronic Timing warns when assigned holes have no electronic detonator
+
+**Bug Fix**
+
+- Import warnings no longer appear as red errors
+- Status messages in the clip and shader dialogs now show their colour
+
 ## Release v1.1.32.36
 
 _2026-09-18_
