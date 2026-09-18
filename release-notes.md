@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.34
+
+_2026-09-18_
+
+**Feature**
+
+- Set contour label size and how many labels each line carries
+
+**Bug Fix**
+
+- Contour labels on printed plans now follow the line, as on screen
+
 ## Release v1.1.32.33
 
 _2026-09-18_
