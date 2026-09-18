@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.40
+
+_2026-09-18_
+
+**Feature**
+
+- Point PPV and per-deck PPV now handle up to 2048 holes or decks
+
+**Bug Fix**
+
+- Analysis warns before running when a selection exceeds the model limit
+- The Time Interaction dialog no longer cuts off its warning
+
 ## Release v1.1.32.39
 
 _2026-09-18_
