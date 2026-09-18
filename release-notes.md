@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.42
+
+_2026-09-18_
+
+**Feature**
+
+- Blast analysis now defaults to only the visible holes
+
 ## Release v1.1.32.41
 
 _2026-09-18_
