@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.41
+
+_2026-09-18_
+
+**Bug Fix**
+
+- The live analysis no longer draws a flat copy of itself under the 3D view
+
 ## Release v1.1.32.40
 
 _2026-09-18_
