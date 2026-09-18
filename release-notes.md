@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.33
+
+_2026-09-18_
+
+**Feature**
+
+- Choose the colours of timing contour lines and first movement arrows
+
+**Bug Fix**
+
+- First movement arrows are now the same colour in 2D and 3D
+
 ## Release v1.1.32.32
 
 _2026-09-18_
