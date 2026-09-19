@@ -2,6 +2,21 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.49
+
+_2026-09-19_
+
+**Bug Fix**
+
+- Holmberg-Persson damage now matches the published method and reports PPV
+- Blair and Minchinton now runs on Only Visible Holes
+- Saved analyses keep showing after a page reload
+- A zero typed into an analysis setting is now kept
+- Saved analyses update after holes or charges change
+- The 2D view now shows the analysis painted on the surface
+- Fallback VOD and density settings now take effect
+- Ripple Tank and Temporal Lifecycle show their own legend range
+
 ## Release v1.1.32.48
 
 _2026-09-19_
