@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.59
+
+_2026-09-20_
+
+**Bug Fix**
+
+- Dropping a GLB file onto Kirra imports it
+- Imported GLB meshes keep their textures and appear in the tree
+
 ## Release v1.1.32.58
 
 _2026-09-19_
