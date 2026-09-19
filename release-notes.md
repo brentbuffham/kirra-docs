@@ -2,6 +2,28 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.58
+
+_2026-09-19_
+
+**Bug Fix**
+
+- Imported OBJs with spaces in texture names show their texture
+- Imported OBJs with a transparency map no longer vanish
+
+## Release v1.1.32.57
+
+_2026-09-19_
+
+**Feature**
+
+- Baked OBJ exports every visible surface in one zip, a folder each
+
+**Bug Fix**
+
+- Textured OBJs export with their original texture instead of black
+- Baked exports keep full survey coordinate precision
+
 ## Release v1.1.32.56
 
 _2026-09-19_
