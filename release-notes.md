@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.55
+
+_2026-09-19_
+
+**Feature**
+
+- Compared surfaces export with their deviation colours as a texture
+
+## Release v1.1.32.54
+
+_2026-09-19_
+
+**Bug Fix**
+
+- Running an analysis no longer adds an extra image layer
+
 ## Release v1.1.32.53
 
 _2026-09-19_
