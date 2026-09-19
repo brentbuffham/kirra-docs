@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.56
+
+_2026-09-19_
+
+**Bug Fix**
+
+- Baked exports of gradient surfaces show their colours instead of black
+- Send to Image uses the correct colours when only 3D is showing
+
 ## Release v1.1.32.55
 
 _2026-09-19_
