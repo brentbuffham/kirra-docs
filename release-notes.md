@@ -2,6 +2,20 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.52
+
+_2026-09-19_
+
+**Feature**
+
+- Blast analyses are sharper, baked only near the blast holes
+
+**Bug Fix**
+
+- Interact stays live while analyses re-bake in the background
+- Baked analyses hide while Interact's live view is open
+- Applying an analysis is about twice as fast
+
 ## Release v1.1.32.51
 
 _2026-09-19_
