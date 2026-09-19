@@ -2,6 +2,16 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.51
+
+_2026-09-19_
+
+**Bug Fix**
+
+- Analysis surfaces no longer slow the cursor, rotation and tree view
+- Hiding an image now hides it in 3D straight away
+- Baked mesh exports now include their colour texture
+
 ## Release v1.1.32.50
 
 _2026-09-19_
