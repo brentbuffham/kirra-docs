@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.53
+
+_2026-09-19_
+
+**Bug Fix**
+
+- Exported analysis meshes show correct colours on steep pit walls
+- Areas below the analysis scale stay transparent in exported meshes
+
 ## Release v1.1.32.52
 
 _2026-09-19_
