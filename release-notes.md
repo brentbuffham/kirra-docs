@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.50
+
+_2026-09-19_
+
+**Feature**
+
+- Set the colour scale minimum and maximum for any analysis
+- Vibration legends mark compliance, new cracks and broken rock levels
+
+**Bug Fix**
+
+- Vibration models now use the published radiation patterns and attenuation
+- Scaled Heelan no longer under-reports vibration away from the hole
+- An analysis target above the scale maximum now widens the scale
+- Analysis surfaces no longer appear in the elevation legend
+
 ## Release v1.1.32.49
 
 _2026-09-19_
