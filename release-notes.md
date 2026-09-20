@@ -2,6 +2,77 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.69
+
+_2026-09-20_
+
+**Bug Fix**
+
+- The boolean close mode you pick is now applied on large indexed results too
+
+## Release v1.1.32.68
+
+_2026-09-20_
+
+**Feature**
+
+- After applying a boolean you can keep the regions for another operation
+
+**Bug Fix**
+
+- Region controls work again after applying without closing the dialog
+
+## Release v1.1.32.67
+
+_2026-09-20_
+
+**Bug Fix**
+
+- Applying a boolean now shows which step is running and how far along
+- The boolean dialog no longer accepts clicks while it is building a surface
+
+## Release v1.1.32.66
+
+_2026-09-20_
+
+**Feature**
+
+- Resizing the boolean Pick Regions dialog now shows more regions
+
+**Bug Fix**
+
+- The boolean Pick Regions progress bar stays visible while a merge runs
+
+## Release v1.1.32.65
+
+_2026-09-20_
+
+**Bug Fix**
+
+- Region colour swatches keep their colour when you hide and show regions
+
+## Release v1.1.32.64
+
+_2026-09-20_
+
+**Bug Fix**
+
+- Retired a legacy stitch option that could undo an open-surface cut
+
+## Release v1.1.32.63
+
+_2026-09-20_
+
+**Bug Fix**
+
+- The weld tolerance you set is now the one the boolean merge applies
+
+## Release v1.1.32.62
+
+_2026-09-20_
+
+History not available at the moment.
+
 ## Release v1.1.32.61
 
 _2026-09-20_
