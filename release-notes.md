@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.70
+
+_2026-09-20_
+
+**Feature**
+
+- Split regions now use colours chosen to be told apart at a glance
+
+**Bug Fix**
+
+- The leftovers region keeps one consistent colour on every split
+
 ## Release v1.1.32.69
 
 _2026-09-20_
