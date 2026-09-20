@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.61
+
+_2026-09-20_
+
+**Feature**
+
+- Exported analyses and comparisons include their legend and scale
+
+**Bug Fix**
+
+- Exported GLB meshes use the colours and textures shown on screen
+
 ## Release v1.1.32.60
 
 _2026-09-20_
