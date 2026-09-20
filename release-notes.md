@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.60
+
+_2026-09-20_
+
+**Feature**
+
+- Textured surfaces have Specular and Shininess settings
+
+**Bug Fix**
+
+- Imported GLB meshes no longer look glossy
+
 ## Release v1.1.32.59
 
 _2026-09-20_
