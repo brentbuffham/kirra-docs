@@ -2,6 +2,87 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.79
+
+_2026-09-22_
+
+**Bug Fix**
+
+- Compare Surfaces now points floors at the vertical metric instead of minimum distance
+
+## Release v1.1.32.78
+
+_2026-09-22_
+
+**Bug Fix**
+
+- Zooming in 3D no longer rebuilds the entire scene, which could crash the 3D view
+- A lost 3D context now recovers by itself instead of requiring a reload
+- The 3D error message now reports what it measured instead of blaming GPU memory
+
+## Release v1.1.32.77
+
+_2026-09-22_
+
+**Bug Fix**
+
+- Unresolvable T-junctions now measure themselves and offer the weld that clears them
+- Mesh repair no longer suggests a smaller tolerance for duplicate vertices needing a larger one
+
+## Release v1.1.32.76
+
+_2026-09-21_
+
+**Feature**
+
+- Unresolved T-junctions now explain why they could not be split
+
+**Bug Fix**
+
+- Clean Mesh no longer reports success when a repair changed nothing
+- Clean Mesh names the method it used instead of showing a question mark
+
+## Release v1.1.32.75
+
+_2026-09-21_
+
+**Bug Fix**
+
+- The Clean Mesh dialog no longer cuts off its mesh statistics
+
+## Release v1.1.32.74
+
+_2026-09-21_
+
+**Bug Fix**
+
+- Mesh repair warnings no longer report zero problems while listing damage
+
+## Release v1.1.32.73
+
+_2026-09-21_
+
+**Bug Fix**
+
+- Mesh repair no longer flips triangle winding when resolving T-junctions
+- Repair warnings now count duplicate and degenerate triangles, winding and T-junctions
+
+## Release v1.1.32.72
+
+_2026-09-21_
+
+**Feature**
+
+- Compare Surfaces can now measure deviation vertically, for floors and benches
+
+## Release v1.1.32.71
+
+_2026-09-21_
+
+**Feature**
+
+- Pin the assigned-hole contract before closing it
+
 ## Release v1.1.32.70
 
 _2026-09-20_
