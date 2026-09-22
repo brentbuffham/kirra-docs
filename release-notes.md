@@ -2,6 +2,20 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.82
+
+_2026-09-22_
+
+**Bug Fix**
+
+- Tick and arrow symbols no longer show as garbled characters in Edge
+
+## Release v1.1.32.81
+
+_2026-09-22_
+
+History not available at the moment.
+
 ## Release v1.1.32.80
 
 _2026-09-22_
