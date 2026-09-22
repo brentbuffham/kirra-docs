@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.80
+
+_2026-09-22_
+
+**Bug Fix**
+
+- Firing groups now travel with a project file, so shared timing constructs keep their shot
+
 ## Release v1.1.32.79
 
 _2026-09-22_
