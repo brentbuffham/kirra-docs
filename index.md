@@ -74,6 +74,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Surface Gradients](surfaces/gradients.md)
 - [Surface Boolean & CSG](surfaces/boolean-csg.md)
 - [Mesh Editing & Clean Mesh](surfaces/mesh-editing.md)
+- [Compare Surfaces](surfaces/compare-surfaces.md) — design vs survey deviation heat map
 - [Surface Contours](surfaces/contours.md)
 
 ### Importing Data

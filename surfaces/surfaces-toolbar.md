@@ -199,6 +199,29 @@ Slices a **closed solid** into horizontal bands at a chosen interval or band cou
 
 ---
 
+## Compare Surfaces
+
+Colours one surface by its **signed distance** to another — the design-versus-survey question. Cool = **fat / underdug** (rock left standing), the ramp midpoint = **on design**, red = **overdug**. Only the *measured* surface is recoloured; the reference is left alone.
+
+*[SCREENSHOT NEEDED: capture the Compare Surfaces dialog]*
+
+### How to use
+
+1. Click the **Compare Surfaces** button on the Surface toolbar
+2. Pick the **Reference** surface — the design
+3. Pick the **Measured** surface — the survey
+4. Choose the direction: **Horizontal (walls)**, **Vertical (floors)** or **Minimum distance**
+5. Set **Compare within (m)** so surrounding topography is excluded
+6. Click **Apply**
+
+> Pick the direction that suits the ground you care about. On a near-vertical wall a vertical drop is meaningless — two surfaces a metre apart horizontally can share an elevation. On a flat bench the reverse is true. Each falls back to minimum distance where it does not apply, so the map stays complete either way.
+
+> **Compare within (m)** matters more than it looks. On a real pair only ~21% of the survey lay within 5 m of the design — without a cutoff the colour range stretches to fit the surrounding topography and the wall detail washes out.
+
+Full reference: [Compare Surfaces](compare-surfaces.md).
+
+---
+
 ## Why two boolean engines?
 
 > Mesh booleans are a very difficult space to work in — even after all this time they still don't always play nicely. The two engines are complementary: sometimes one works better than the other. Make your meshes as nice, pretty, and manifold as possible and you will have better results.
