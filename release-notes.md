@@ -2,6 +2,57 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.109
+
+_2026-09-24_
+
+**Feature**
+
+- A failed project move can now be set aside and retried later
+
+## Release v1.1.32.108
+
+_2026-09-23_
+
+**Bug Fix**
+
+- A test bed for the upgrade, and verification so it cannot lie
+
+## Release v1.1.32.107
+
+_2026-09-23_
+
+**Bug Fix**
+
+- The project move now appears after the welcome screen, not over it
+
+## Release v1.1.32.106
+
+_2026-09-23_
+
+**Bug Fix**
+
+- Projects from earlier versions are moved into Workspace 0 on update
+
+## Release v1.1.32.105
+
+_2026-09-23_
+
+**Feature**
+
+- Workspace chips show at a glance which ones hold data
+- Empty workspaces are dimmed, the active one outlined in red
+
+## Release v1.1.32.104
+
+_2026-09-23_
+
+**Feature**
+
+- Ten separate workspaces, each its own project in its own window
+- Clear any workspace from the toolbar without touching the others
+- The window title now names the workspace you are working in
+
 ## Release v1.1.32.103
 
 _2026-09-23_
