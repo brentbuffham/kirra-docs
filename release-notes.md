@@ -2,6 +2,44 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.93
+
+_2026-09-23_
+
+**Feature**
+
+- Pattern dialogs size themselves; no field is hidden
+
+## Release v1.1.32.92
+
+_2026-09-23_
+
+**Bug Fix**
+
+- Checkbox reads "Pivot set at KAD Elevation
+
+## Release v1.1.32.91
+
+_2026-09-23_
+
+History not available at the moment.
+
+## Release v1.1.32.90
+
+_2026-09-23_
+
+**Feature**
+
+- Holes along a string can take their RL from the string
+
+## Release v1.1.32.89
+
+_2026-09-23_
+
+**Bug Fix**
+
+- Pattern in Polygon honours Hole Pivot Location
+
 ## Release v1.1.32.88
 
 _2026-09-23_
