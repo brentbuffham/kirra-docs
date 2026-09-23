@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.95
+
+_2026-09-23_
+
+**Feature**
+
+- Bearing pivot moves to the toolbar button, off the canvas
+
+## Release v1.1.32.94
+
+_2026-09-23_
+
+**Bug Fix**
+
+- Fix subdrill blowing out when the RL follows the string
+
 ## Release v1.1.32.93
 
 _2026-09-23_
