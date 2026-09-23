@@ -2,6 +2,42 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.100
+
+_2026-09-23_
+
+**Feature**
+
+- KAP import offers four modes, and the summary reports everything
+
+## Release v1.1.32.99
+
+_2026-09-23_
+
+History not available at the moment.
+
+## Release v1.1.32.98
+
+_2026-09-23_
+
+History not available at the moment.
+
+## Release v1.1.32.97
+
+_2026-09-23_
+
+**Feature**
+
+- Print templates and the seed library travel in the KAP
+
+## Release v1.1.32.96
+
+_2026-09-23_
+
+**Feature**
+
+- Stage C: print templates, seeds and monitors join the project db
+
 ## Release v1.1.32.95
 
 _2026-09-23_
