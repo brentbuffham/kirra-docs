@@ -2,6 +2,54 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.88
+
+_2026-09-23_
+
+**Bug Fix**
+
+- Pattern Template dialog fits its Pattern tab again
+
+## Release v1.1.32.87
+
+_2026-09-23_
+
+**Feature**
+
+- Pattern templates and generators carry Hole Pivot Location
+
+## Release v1.1.32.86
+
+_2026-09-23_
+
+**Feature**
+
+- Bearing Tool right-click: Pivot on Collar, Grade or Toe
+
+## Release v1.1.32.85
+
+_2026-09-23_
+
+**Feature**
+
+- Edit Hole offers Hole Pivot Location
+
+## Release v1.1.32.84
+
+_2026-09-23_
+
+**Feature**
+
+- Both geometry engines honour the hole pivot
+
+## Release v1.1.32.83
+
+_2026-09-23_
+
+**Feature**
+
+- Hole pivot helper: hold the collar, the grade or the toe
+
 ## Release v1.1.32.82
 
 _2026-09-22_
