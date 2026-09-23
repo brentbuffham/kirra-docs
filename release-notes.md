@@ -2,6 +2,32 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.103
+
+_2026-09-23_
+
+**Bug Fix**
+
+- Exported site templates now report the correct filename
+
+## Release v1.1.32.102
+
+_2026-09-23_
+
+**Bug Fix**
+
+- Site templates no longer carry hole groups from the blast they were made in
+
+## Release v1.1.32.101
+
+_2026-09-23_
+
+**Feature**
+
+- Export a site template carrying products, plots, seeds and schemas without any blast
+- Import a template to set up a new site or machine
+- Template import can merge libraries or replace them, never touching your holes
+
 ## Release v1.1.32.100
 
 _2026-09-23_
