@@ -2,6 +2,16 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.110
+
+_2026-09-24_
+
+**Bug Fix**
+
+- Pattern templates in a shared project file now stay after reloading
+- Moving a hole in 3D works again
+- Import summary no longer claims settings were restored
+
 ## Release v1.1.32.109
 
 _2026-09-24_
