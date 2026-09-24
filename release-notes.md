@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.112
+
+_2026-09-24_
+
+**Bug Fix**
+
+- Print templates now travel inside project files
+- An empty print template no longer replaces a working one on import
+
 ## Release v1.1.32.111
 
 _2026-09-24_
