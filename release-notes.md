@@ -2,6 +2,20 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.111
+
+_2026-09-24_
+
+**Feature**
+
+- Edit, save over or delete a single charge rule
+- Charge rules can give every hole the same explosive mass
+
+**Bug Fix**
+
+- Saving a charge rule no longer drops fixed deck masses
+- Product Manager buttons are more compact
+
 ## Release v1.1.32.110
 
 _2026-09-24_
