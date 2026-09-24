@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.113
+
+_2026-09-24_
+
+**Feature**
+
+- Project and template files now bring the sender's settings
+
+**Bug Fix**
+
+- Importing a template file no longer clears your hole label edits
+
 ## Release v1.1.32.112
 
 _2026-09-24_
