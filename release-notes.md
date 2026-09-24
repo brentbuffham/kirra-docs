@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.114
+
+_2026-09-24_
+
+**Bug Fix**
+
+- Workspace buttons update in every open window straight away
+
 ## Release v1.1.32.113
 
 _2026-09-24_
