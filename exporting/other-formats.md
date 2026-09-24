@@ -100,7 +100,27 @@ Export point data to ASPRS LAS format.
 
 ## KAP (Kirra App Project)
 
-Save a complete Kirra project as a `.kap` file (ZIP archive containing all blast holes, surfaces, drawings, images, charging, products, and settings). Use this for full project backup and sharing.
+Save a complete Kirra project as a `.kap` file. A KAP carries **everything**: the blast
+(holes, groups, trunks, timing, charging), drawings, surfaces and imagery, every library
+(explosive products, charge rules, pattern and print templates, measured seeds, PPV
+monitors, block-model colour schemas) and your work settings. Use it for full project
+backup and for sharing — the person who opens it can work exactly as you did.
+
+Settings that belong to your computer — theme, language, toolbar and panel layout — are
+not included.
+
+---
+
+## KAT (Kirra App Template)
+
+Save your **site setup** as a `.kat` file: everything a KAP carries **except the blast**.
+It holds your explosive products, charge rules, pattern and print templates, measured
+seeds, PPV monitors and parameters, colour settings and work settings — no holes,
+drawings, surfaces, images, groups, trunks or timing.
+
+Use a KAT to set up a new machine or a new site with the same catalogue and layouts, to
+hand a contractor your products and charge rules without a blast, or to keep your site
+standard separate from any one shot.
 
 ---
 

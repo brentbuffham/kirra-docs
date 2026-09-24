@@ -124,7 +124,8 @@ The dialog is tabbed by file family. The counts in parentheses are the format co
 
 | Format | Extensions | Notes |
 |--------|------------|-------|
-| **Kirra Application Project** | `.kap` | Full project (holes, drawings, surfaces, charging) |
+| **Kirra Application Project** | `.kap` | Everything — the blast, drawings, surfaces, libraries and work settings |
+| **Kirra App Template** | `.kat` | A site's setup — everything except the blast |
 | **Kirra App Drawing** | `.kad` / `.txt` | KAD points / lines / polygons / text |
 | **Holes CSV / TXT (preset columns)** | `.csv` / `.txt` | Standard Kirra column-count CSV — **4 / 7 / 9 / 12 / 14 / 30 / 32 / 35** columns (pick from dropdown). 14-column is the default round-trip format: `{entityName, entityType, holeID, startX, startY, startZ, endX, endY, endZ, holeDiameter, holeType, fromHoleID, delay, color}` |
 | **Measured Data** | `.csv` | Measured mass, length, comment for existing holes |

@@ -52,6 +52,8 @@ See: [CSV Formats](../importing/csv-formats.md) ·
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
 | Kirra KAD | `.kad`, `.txt` | Yes | Yes | Native Kirra format — point, line, poly, circle, text. |
+| Kirra KAP | `.kap` | Yes | Yes | Complete project — the blast, drawings, surfaces, imagery, every library and your work settings. |
+| Kirra KAT | `.kat` | Yes | Yes | Site template — everything in a KAP except the blast (libraries and work settings). |
 | DXF (ASCII) | `.dxf` | Yes | — | Reads POINT, LINE, POLYLINE, CIRCLE, ELLIPSE, TEXT, 3DFACE. |
 | DXF (Binary) | `.dxf` | Yes | Yes | About 25% smaller and 5x faster than ASCII. |
 | DXF Holes | `.dxf` | — | Yes | Compact 2-layer format for blast holes. |

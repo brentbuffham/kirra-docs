@@ -94,21 +94,56 @@ Imported images appear as draped layers in both the 2D and 3D views.
 ![KAP file compatibility warning](../screenshots/KAPwarning.png)
 *Kirra may display a warning if the KAP file was created with a different version.*
 
-Import a complete Kirra project from a `.kap` file. KAP is a ZIP archive containing:
+Import a complete Kirra project from a `.kap` file. A KAP carries **everything**, so the
+person you share it with can work exactly as you did:
 
-| File | Contents |
+| What | Includes |
 |------|----------|
-| `manifest.json` | Version, creation date, metadata |
-| `holes.json` | All blast hole data |
-| `drawings.json` | KAD drawing entities |
-| `surfaces.json` | Surface points, triangles, and properties |
-| `images.json` | GeoTIFF/imagery metadata |
-| `products.json` | Explosive product definitions |
-| `charging.json` | Charge configurations and deck data |
-| `configs.json` | Application settings |
-| `layers.json` | Layer definitions and visibility |
-| `textures/` | Texture images for OBJ surfaces |
-| `images/` | Imported GeoTIFF imagery |
+| **The blast** | Holes, blast groups, trunks and connections, timing constructs and firing groups, charged holes |
+| **Drawings and surfaces** | KAD drawings and layers, surfaces (including textured and analysis surfaces), imagery |
+| **Libraries** | Explosive products, charge rules, pattern templates, print templates, measured seeds, PPV monitors, block-model colour schemas |
+| **Settings** | Your work settings — hole and text sizes, colours, snapping, CSV column order and export preferences, dialog presets and similar |
+
+Settings that belong to **your computer** never travel: theme, language, and your
+toolbar and panel layout stay as they are.
+
+### How the import is applied
+
+If you already have a project open, Kirra asks how to bring the file in:
+
+| Choice | Blast | Libraries | Settings |
+|--------|-------|-----------|----------|
+| **Merge** | Added to yours | Added to yours | Theirs |
+| **Replace data, merge libraries** | Theirs | Added to yours | Theirs |
+| **Replace data, keep my libraries** | Theirs | Yours, unchanged | Yours, unchanged |
+| **Replace everything** | Theirs | Theirs — yours are removed | Theirs |
+
+When the import finishes, a summary lists everything that arrived. If the file brought
+settings, the summary says so and **Kirra reloads when you click OK** so the settings
+take effect — your project is already saved; choose **Continue Previous** to carry on.
+
+> **Note:** Project files saved by Kirra before version 1.1.32.112 carry print templates
+> **without their spreadsheet**. Kirra skips those and keeps any template of the same name
+> you already have. Ask the sender to save the project again, or load the template's
+> `.xlsx` in the print dialog and **Save to Library**.
+
+---
+
+## KAT (Kirra App Template)
+
+Import a **site template** from a `.kat` file. A KAT is everything a KAP carries
+**except the blast** — no holes, drawings, surfaces, images, blast groups, trunks,
+timing or firing groups. It brings a site's setup: explosive products, charge rules,
+pattern and print templates, measured seeds, PPV monitors and parameters, colour
+settings and work settings.
+
+A template never replaces your blast. Kirra offers two choices:
+
+- **Merge** — add the template's libraries to yours; nothing of yours is lost.
+- **Replace my libraries** — the template's products, rules and templates replace yours.
+
+Your own blast, including any edits to hole labels, is never touched by a template. As
+with a KAP, Kirra reloads after the import when the template brings settings.
 
 ---
 
