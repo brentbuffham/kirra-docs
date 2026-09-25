@@ -2,6 +2,47 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.119
+
+_2026-09-26_
+
+**Feature**
+
+- One Elevation search; add it twice for an elevation band
+
+## Release v1.1.32.118
+
+_2026-09-26_
+
+**Feature**
+
+- Find KAD objects by elevation, layer, length, area and text
+
+## Release v1.1.32.117
+
+_2026-09-26_
+
+**Feature**
+
+- Images in the tree show pixel size, ground resolution and memory
+
+## Release v1.1.32.116
+
+_2026-09-26_
+
+**Bug Fix**
+
+- Send to Image now appears only where it works, on surfaces
+
+## Release v1.1.32.115
+
+_2026-09-26_
+
+**Bug Fix**
+
+- Images made with Send to Image are now saved with the project
+- Showing or hiding the Images folder is now remembered
+
 ## Release v1.1.32.114
 
 _2026-09-24_
