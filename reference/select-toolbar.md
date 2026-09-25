@@ -244,7 +244,43 @@ Criteria are **chips**: click (or drag) one from the palette into the **Match AL
 
 ### Criteria for KAD objects
 
-Switch **Find** to **KAD objects** for a different palette: **Object type** (point, line, poly, circle, text), **Colour**, **Point count**, **Name**, **Closed**, and **Line width**.
+Switch **Find** to **KAD objects** for a different palette:
+
+| Chip | Compares | Notes |
+|--------|----------|-------|
+| **Object type** | point, line, poly, circle, text | |
+| **Colour** | The object's colour | Colour well, or sample one with the target-arrow button |
+| **Point count** | Number of vertices | `= 2` finds two-point lines |
+| **Name** | The object's name | is / is not / contains |
+| **Closed** | Closed or open | |
+| **Line width** | Numeric | |
+| **Elevation** | Every point of the object | See below |
+| **Layer** | The KAD layer it sits on | Lists only layers that hold something. Unlayered objects are **Ungrouped** |
+| **Length** | Plan length, metres | A closed polygon's length is its perimeter; a circle's is its circumference |
+| **Area** | Plan area, square metres | Closed polygons and circles only; open lines are `0` |
+| **Text** | A text object's words | is / is not / contains |
+| **Font height** | A text object's font height | |
+
+Length and Area are measured in plan, the same as the **L=** and **A=** figures in the tree.
+
+### Elevation
+
+**Elevation** looks at every point of the object, not just the first:
+
+| Comparison | Finds |
+|------------|-------|
+| **>** / **>=** | Objects lying entirely above that RL |
+| **<** / **<=** | Objects lying entirely below that RL |
+| **=** | Objects flat at exactly that RL — contours, bench lines |
+| **≠** | Everything not flat at that RL |
+
+Add **Elevation** twice for a band: **> 400** and **< 500** finds everything lying between RL 400 and RL 500. An RL of `0` is a real elevation and is found like any other.
+
+To find strings that **cross** an RL — some points above, some below — use Advanced:
+
+```
+fx:minZ < 300 && maxZ > 300
+```
 
 ### Hole Colour, Delay Colour, and "is auto"
 
@@ -269,6 +305,8 @@ Expand **Advanced (fx: formula)** to see the predicate the chips compiled, and t
 ```
 fx:holeShape == "triangle" && holeLength > 10
 ```
+
+For KAD objects, Advanced can use `minZ` and `maxZ` (lowest and highest point), `layer`, `length`, `area`, `text` and `fontHeight`, alongside the original `entityType`, `colour`, `pointCount`, `name`, `closed` and `lineWidth`.
 
 ### How to Use
 

@@ -64,6 +64,32 @@ Transparency can be adjusted at any time, including after applying blast analyti
 
 ---
 
+## Send to Image
+
+**Send to Image** turns a surface into a picture of how it looks right now — gradient, limits, hillshade, texture, or analysis colours — and adds it to the **Images** folder. The image is saved with the project and is still there when you reopen it.
+
+It appears only on surfaces. Right-click a surface, a surface layer, or the **Surfaces** folder; a layer or folder makes one image per surface.
+
+### How to use
+
+1. Right-click a surface in the tree and choose **Send to Image…**
+2. Choose **Resolution by** — **Pixels per metre**, or **DPI** at a nominal 1:1000 plot
+3. Enter the **Value**, and a **Max dimension (px)** for the longest side
+4. Check the live readout: ground resolution, image size and memory
+5. Click **Create Image**
+
+A render larger than **Max dimension** is scaled down to fit rather than refused.
+
+### Image sizes in the tree
+
+Each image row in the **Images** folder shows its size, for example **4093×3681 px, 0.22 m/px, 57.5 MB**:
+
+- **px** — width × height in pixels
+- **m/px** — ground resolution: how many metres one pixel covers
+- **MB** — the memory the image takes while open
+
+---
+
 ## Related Topics
 
 - [Importing Surfaces](importing-surfaces.md)
