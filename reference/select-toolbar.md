@@ -276,6 +276,9 @@ Length and Area are measured in plan, the same as the **L=** and **A=** figures 
 
 Add **Elevation** twice for a band: **> 400** and **< 500** finds everything lying between RL 400 and RL 500. An RL of `0` is a real elevation and is found like any other.
 
+![Find / Select / Zoom finding every KAD string between RL 400 and RL 500](../screenshots/FindKADElevationBand.png)
+*Elevation **>** 400 and Elevation **<** 500 — the strings lying wholly inside that band are selected (green). Advanced shows the formula the two chips compiled.*
+
 To find strings that **cross** an RL — some points above, some below — use Advanced:
 
 ```
