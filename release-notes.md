@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.136
+
+_2026-09-29_
+
+**Bug Fix**
+
+- The selected vertex marker now follows the mouse when dragging in 3D
+
 ## Release v1.1.32.135
 
 _2026-09-29_
