@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.140
+
+_2026-09-30_
+
+**Feature**
+
+- Send to Image lets you choose the image elevation
+
+## Release v1.1.32.139
+
+_2026-09-30_
+
+**Bug Fix**
+
+- Send to Image places the image at the drawing elevation
+
+## Release v1.1.32.138
+
+_2026-09-30_
+
+**Bug Fix**
+
+- Send to Image now captures blast analysis shading at the right elevation
+
 ## Release v1.1.32.137
 
 _2026-09-30_
