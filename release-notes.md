@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.137
+
+_2026-09-30_
+
+**Bug Fix**
+
+- Blast Quality offers every chart attribute again with one blast loaded
+
 ## Release v1.1.32.136
 
 _2026-09-29_
