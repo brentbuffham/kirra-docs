@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.133
+
+_2026-09-29_
+
+**Bug Fix**
+
+- In 3D, a moved vertex can snap to its own shape's corners
+
+## Release v1.1.32.132
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Vertices moved in 3D now land exactly on the snapped point
+
 ## Release v1.1.32.131
 
 _2026-09-29_
