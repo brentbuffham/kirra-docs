@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.135
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Splitting a solid with an open surface now gives clean pieces
+
+## Release v1.1.32.134
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Dragging a vertex in 3D no longer leaves ghost lines behind
+
 ## Release v1.1.32.133
 
 _2026-09-29_
