@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.130
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Trimesh-boolean 0.7.4
+
 ## Release v1.1.32.129
 
 _2026-09-29_
