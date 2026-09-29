@@ -2,6 +2,25 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.121
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Bearing tool now shows holes turning live in 3D
+- Selected hole track highlight in 3D is now clearly visible
+
+## Release v1.1.32.120
+
+_2026-09-28_
+
+**Bug Fix**
+
+- Surfaces no longer ask for a missing deviation heat map
+- Clipped or edited compared surfaces keep sensible colours
+- A comparison that cannot be saved now tells you
+
 ## Release v1.1.32.119
 
 _2026-09-26_
