@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.131
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Filled polygons in 3D now follow their vertices when moved
+
 ## Release v1.1.32.130
 
 _2026-09-29_
