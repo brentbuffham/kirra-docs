@@ -2,6 +2,43 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.129
+
+_2026-09-29_
+
+**Feature**
+
+- Micromine STR export tells you when text is left out
+
+## Release v1.1.32.128
+
+_2026-09-29_
+
+**Feature**
+
+- The Data Explorer title shows which workspace it is in
+
+## Release v1.1.32.127
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Imported drawing layers keep their names after the page is reloaded
+
+## Release v1.1.32.126
+
+_2026-09-29_
+
+**Feature**
+
+- Import Micromine STR string files by dropping them on the canvas
+- Export drawings as Micromine STR string files
+
+**Bug Fix**
+
+- Micromine STR files no longer report that no data was found
+
 ## Release v1.1.32.125
 
 _2026-09-29_
