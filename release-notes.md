@@ -2,6 +2,44 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.125
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Selection boxes now pick KAD lines they cross, in 2D and 3D
+
+## Release v1.1.32.124
+
+_2026-09-29_
+
+**Feature**
+
+- Hold Ctrl (Cmd on Mac) to remove from a selection
+- Ctrl with Rectangle, Polygon or Ellipse removes enclosed objects
+
+## Release v1.1.32.123
+
+_2026-09-29_
+
+**Bug Fix**
+
+- Switching between selection tools no longer clears your selection
+
+## Release v1.1.32.122
+
+_2026-09-29_
+
+**Feature**
+
+- Turning a tool off returns you to the Select Pointer
+- Press Escape twice to leave any tool
+
+**Bug Fix**
+
+- Kirra is never left with no selection tool active
+
 ## Release v1.1.32.121
 
 _2026-09-29_
