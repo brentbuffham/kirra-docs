@@ -2,6 +2,26 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.146
+
+_2026-09-30_
+
+**Bug Fix**
+
+- Burden and spacing now update when holes are moved, added or deleted
+
+## Release v1.1.32.145
+
+_2026-09-30_
+
+**Feature**
+
+- Find holes by subdrill, burden, spacing, collar and grade level
+
+**Bug Fix**
+
+- Group rules on subdrill length now match edited holes
+
 ## Release v1.1.32.144
 
 _2026-09-30_
