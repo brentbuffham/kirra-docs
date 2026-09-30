@@ -2,6 +2,38 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.144
+
+_2026-09-30_
+
+**Feature**
+
+- Installed web app shows the Kirra icon on project files
+
+## Release v1.1.32.143
+
+_2026-09-30_
+
+**Bug Fix**
+
+- Damaged Deswik files no longer leave large temporary files behind
+
+## Release v1.1.32.142
+
+_2026-09-30_
+
+**Feature**
+
+- Clear leftover import files from the Reset Workspace dialog
+
+## Release v1.1.32.141
+
+_2026-09-30_
+
+**Bug Fix**
+
+- Leftover import files no longer fill browser storage
+
 ## Release v1.1.32.140
 
 _2026-09-30_
