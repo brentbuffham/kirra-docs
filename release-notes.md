@@ -2,6 +2,62 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.153
+
+_2026-10-01_
+
+**Bug Fix**
+
+- Selected points now show as selected in 3D on large projects
+
+## Release v1.1.32.152
+
+_2026-10-01_
+
+**Bug Fix**
+
+- Scaling or rotating large KAD objects no longer lags
+
+## Release v1.1.32.151
+
+_2026-10-01_
+
+**Bug Fix**
+
+- 2D pan no longer runs the wrong way after using 3D
+
+## Release v1.1.32.150
+
+_2026-09-30_
+
+**Feature**
+
+- Select everything fully inside a polygon from the Data Explorer
+
+## Release v1.1.32.149
+
+_2026-09-30_
+
+**Feature**
+
+- Snap lines, points and text onto a surface
+
+## Release v1.1.32.148
+
+_2026-09-30_
+
+**Bug Fix**
+
+- Assign Surface now asks you to select holes first
+
+## Release v1.1.32.147
+
+_2026-09-30_
+
+**Bug Fix**
+
+- Charging, exports and volumes use the correct subdrill after edits
+
 ## Release v1.1.32.146
 
 _2026-09-30_
