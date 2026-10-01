@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.160
+
+_2026-10-01_
+
+**Bug Fix**
+
+- Hide the "+ or - Holes" sidenav accordion
+
 ## Release v1.1.32.159
 
 _2026-10-01_
