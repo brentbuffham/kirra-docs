@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.157
+
+_2026-10-01_
+
+**Bug Fix**
+
+- KML imports keep hole angle, bearing, bench and diameter
+
 ## Release v1.1.32.156
 
 _2026-10-01_
