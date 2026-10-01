@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.159
+
+_2026-10-01_
+
+**Bug Fix**
+
+- Shift-click now keeps the hole you had already selected
+
+## Release v1.1.32.158
+
+_2026-10-01_
+
+**Feature**
+
+- Removed the old Edit Holes sliders; use Edit Hole or the Hole Section tool
+
 ## Release v1.1.32.157
 
 _2026-10-01_
