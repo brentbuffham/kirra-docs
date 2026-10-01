@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.156
+
+_2026-10-01_
+
+**Bug Fix**
+
+- Vulcan imports record the along-hole subdrill length on angled holes
+
 ## Release v1.1.32.155
 
 _2026-10-01_
