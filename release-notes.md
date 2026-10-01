@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.155
+
+_2026-10-01_
+
+**Bug Fix**
+
+- Dev server no longer crashes on a locked reference file
+
+## Release v1.1.32.154
+
+_2026-10-01_
+
+**Bug Fix**
+
+- New holes and patterns put the grade above the toe by the subdrill
+
 ## Release v1.1.32.153
 
 _2026-10-01_
