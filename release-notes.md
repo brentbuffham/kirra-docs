@@ -2,6 +2,36 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.163
+
+_2026-10-02_
+
+**Feature**
+
+- Importing a site template no longer reloads Kirra
+- Template import offers Merge or Start Fresh when the workspace has data
+
+**Bug Fix**
+
+- Template import no longer replaces your product catalogue when merging
+
+## Release v1.1.32.162
+
+_2026-10-02_
+
+**Bug Fix**
+
+- Products, charge rules and pattern templates now show after Start Fresh
+
+## Release v1.1.32.161
+
+_2026-10-02_
+
+**Bug Fix**
+
+- Message boxes no longer show an empty extra button
+- Long confirmation messages now fit and scroll, never cut off
+
 ## Release v1.1.32.160
 
 _2026-10-01_
