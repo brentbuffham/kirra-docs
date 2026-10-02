@@ -19,9 +19,9 @@ Kirra imports 3D mesh files for surface visualisation, including textured models
 
 ## How to Import
 
-1. Click **File > Import**
-2. Select your mesh file (`.obj`, `.ply`, `.gltf`, or `.glb`)
-3. For OBJ files with textures, Kirra prompts for the MTL file and texture images
+1. Click the **Import Export Print** button (file icon) in the menu bar and choose **Import** — or open the left sidenav (☰) and click **Import** under **File Management**
+2. In the **Import** dialog, open the **Surfaces / Mesh** tab and click **Open** on the **OBJ / GLTF** row
+3. Kirra reminds you to select all related files at once. Select your mesh file (`.obj`, `.ply`, `.gltf`, or `.glb`) — for a textured OBJ, also select its `.mtl` file and texture images (Ctrl+click, or Cmd+click on Mac)
 4. The mesh appears in the TreeView and 3D view
 
 ---
@@ -30,10 +30,9 @@ Kirra imports 3D mesh files for surface visualisation, including textured models
 
 To import a textured OBJ mesh (e.g., from drone photogrammetry):
 
-1. Select the `.obj` file
-2. Kirra prompts for the `.mtl` material file
-3. Kirra prompts for texture images (JPG/PNG) referenced by the MTL
-4. The mesh loads with textures applied
+1. Open the **OBJ / GLTF** import as above
+2. In the file picker, select the `.obj` file, the `.mtl` material file and the texture images (JPG/PNG) referenced by the MTL — all together
+3. The mesh loads with textures applied
 
 **What gets stored:**
 - OBJ geometry as text

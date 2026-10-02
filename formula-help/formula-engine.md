@@ -56,7 +56,7 @@ Related: [Charging Overview](../charging/overview.md), [Products CSV](../chargin
 
 ## Print template engine
 
-Used in **File → Print → Print from Template** and custom XLSX layouts.
+Used by the **PDF Print** dialog (menu bar **Import Export Print** button → **Print**) with custom XLSX templates.
 
 **Typical uses:** blast metadata (`fx:holeCount`), per-hole tables (`fx:holeID[++]`), aggregations (`fx:sum(holeLength[i])`), grouping (`fx:groupTable(...)`), graphics (`fx:mapView`, `fx:legend`, `fx:northArrow`).
 

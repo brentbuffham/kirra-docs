@@ -366,7 +366,7 @@ Only Production holes appear. The footer aggregations automatically reflect the 
 2. Design your layout — use merged cells for map views, borders for tables, standard formatting for headers
 3. Type `fx:` formulas into cells where you want dynamic data
 4. Save as `.xlsx`
-5. In Kirra: **File > Print > Print from Template** > Import your XLSX
+5. In Kirra, open the **PDF Print** dialog (menu bar **Import Export Print** button → **Print**) and click **Import Template (.xlsx)**
 6. Generate PDF or populated XLSX output
 
 ### Tips

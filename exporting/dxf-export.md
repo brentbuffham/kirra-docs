@@ -6,41 +6,51 @@ Kirra exports blast designs and drawings to AutoCAD DXF format for use in CAD pa
 
 ---
 
-## Export Options
-
-Kirra provides several DXF export variants:
-
-| Export Type | Description |
-|-------------|-------------|
-| **DXF Holes** | Compact 2-layer format with COLLAR (point entities) and TRACK (3D polyline from collar to toe) layers |
-| **DXF KAD** | KAD drawing entities exported with entity-per-layer naming. Points become POINT, lines become POLYLINE, polygons become closed POLYLINE, circles become CIRCLE, text becomes TEXT |
-| **DXF Vulcan** | 3D POLYLINE with Vulcan XData tags (hole diameter, hole ID) for direct import into Vulcan mine planning software |
-| **DXF 3DFACE** | Surface triangles exported as 3DFACE entities -- one entity per triangle |
-| **Binary DXF** | Binary encoding of any of the above -- 25% smaller file size, 5x faster to process |
-
----
-
 ## How to Export
 
-1. Click **File > Export**
-2. Select the DXF export variant you need
-3. Choose a save location and filename
-4. The DXF file is downloaded
+1. Click the **Import Export Print** button (file icon) in the menu bar and choose **Export** — or open the left sidenav (☰) and click **Export** under **File Management**
+2. In the **Export** dialog, open the **Drawings / CAD** tab and click **Save** on the **DXF** row
+3. In the **Export DXF** dialog, choose what to include and the hole format (see below)
+4. Check the **Filename** and click **Export**
+
+Only visible holes, drawings and surfaces are exported. The dialog remembers your last choices.
 
 ---
 
-## DXF Holes Layers
+## Export DXF Options
+
+One DXF file can carry any mix of holes, drawings and surfaces.
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| **Hole Format** | Standard | **Standard (2-layer: HOLES + HOLE_TEXT)** or **Vulcan-tagged (3D POLYLINE with XData)** |
+| **Include Blast Holes** | On | Export the visible blast holes |
+| **Include KAD Drawings (points / lines / polys / circles / text)** | On | Export the visible KAD drawings |
+| **Include Surfaces (3DFACE triangles)** | Off | Export visible surface triangles as 3DFACE entities, one layer per surface |
+| **Filename** | `KIRRA_<content>_<date>_<time>.dxf` | Updated automatically as you change the options |
+
+To export each visible surface to its own DXF file, use the **DXF Surface (3DFACE)** row on the **Surfaces / Mesh** tab of the Export dialog instead.
+
+---
+
+## Standard Hole Layers
 
 | Layer | Content |
 |-------|---------|
-| `COLLAR` | POINT entities at collar positions |
-| `TRACK` | 3D POLYLINE from collar to toe |
+| `HOLES` | A circle at the collar (sized to the hole diameter), a line from collar to toe, and small circles at the grade and toe |
+| `HOLE_TEXT` | The hole ID as text at the collar |
 
 ---
 
-## DXF KAD Layers
+## Vulcan-tagged Holes
 
-Each KAD entity creates its own layer named after the entity. DXF colour codes are converted from Kirra hex colours.
+Each hole is written as a 3D POLYLINE through collar, grade and toe, with Vulcan XData tags (including the hole name). Holes are placed on a layer named after their blast.
+
+---
+
+## KAD Drawing Layers
+
+Each drawing keeps the layer it was imported on. Otherwise it goes on its Kirra drawing layer, or DXF layer `0` if it is on the default layer. Points become POINT, lines and polygons become polylines, circles become CIRCLE and text becomes TEXT. Kirra colours are converted to DXF colours.
 
 ---
 

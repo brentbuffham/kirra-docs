@@ -8,10 +8,11 @@ Kirra imports Surpac surface files as triangulated 3D surfaces. The Surpac forma
 
 ## How to Import
 
-1. Click **File > Import**
-2. Select **both** your `.dtm` and `.str` files together
-3. Both files must share the same base filename (e.g., `terrain.dtm` + `terrain.str`)
-4. The surface appears in the TreeView and is visible in both 2D and 3D views
+1. Click the **Import Export Print** button (file icon) in the menu bar and choose **Import** — or open the left sidenav (☰) and click **Import** under **File Management**
+2. In the **Import** dialog, open the **Drawings / CAD** tab. On the **Surpac** row, choose **DTM & STR** from the dropdown and click **Open**
+3. Select **both** your `.dtm` and `.str` files together
+4. Both files must share the same base filename (e.g., `terrain.dtm` + `terrain.str`)
+5. The surface appears in the TreeView and is visible in both 2D and 3D views
 
 ---
 
@@ -85,7 +86,7 @@ Once imported, the surface is available for:
 
 ## Exporting Back to Surpac
 
-You can export surfaces back to Surpac format via **File > Export > Surpac DTM (Surfaces)**. Kirra generates both `.dtm` and `.str` files with vertex deduplication and proper 1-based indexing.
+You can export surfaces back to Surpac format from the **Export** dialog: on the **Surfaces / Mesh** tab, click **Save** on the **Surpac Surface (STR + DTM)** row. One `.str` + `.dtm` pair is written for each visible surface. Kirra generates both `.dtm` and `.str` files with vertex deduplication and proper 1-based indexing.
 
 ---
 

@@ -8,10 +8,11 @@ Kirra imports AutoCAD DXF files (both ASCII and binary formats) and converts the
 
 ## How to Import
 
-1. Click **File > Import** in the DXF section
-2. Select one or more `.dxf` files -- Kirra supports **batch upload** of multiple DXF files at once
-3. Kirra auto-detects whether each file is ASCII or binary DXF
-4. Entities are imported and appear in the TreeView
+1. Click the **Import Export Print** button (file icon) in the menu bar and choose **Import** — or open the left sidenav (☰) and click **Import** under **File Management**
+2. In the **Import** dialog, open the **Drawings / CAD** tab and click **Open** on the **DXF** row
+3. Select one or more `.dxf` files -- Kirra supports **batch upload** of multiple DXF files at once
+4. Kirra auto-detects whether each file is ASCII or binary DXF
+5. Entities are imported and appear in the TreeView
 
 ### Batch Upload
 

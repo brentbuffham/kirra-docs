@@ -8,10 +8,15 @@ Kirra exports surfaces and analysis results to GLB (binary GLTF) format for use 
 
 ## How to Export
 
-1. Click **File > Export**
-2. Select **GLB** from the format list
-3. Choose the surface(s) to export
-4. The `.glb` file is downloaded
+1. Make sure only the surfaces you want are visible — every visible surface is exported
+2. Click the **Import Export Print** button (file icon) in the menu bar and choose **Export** — or open the left sidenav (☰) and click **Export** under **File Management**
+3. In the **Export** dialog, open the **Surfaces / Mesh** tab. On the **OBJ / GLTF** row, choose a format from the dropdown and click **Save**:
+   - **GLTF** — one `.glb` per visible surface, with elevation-based vertex colours
+   - **Baked GLB** / **Baked OBJ** — opens the **Export Baked Mesh** dialog, which keeps textures and materials (use this for analysis surfaces). Its **Format** is **GLB (recommended)** or **OBJ + MTL + images (zip)**
+   - **OBJ** — one `.obj` per visible surface (geometry only)
+4. Several surfaces are bundled into one `.zip` (for GLTF, `exportedGLBs.zip`) behind a single save
+
+**PLY** appears in the dropdown but is import-only; choosing it shows a warning.
 
 ---
 

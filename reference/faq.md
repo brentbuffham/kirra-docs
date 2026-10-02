@@ -26,7 +26,7 @@ Kirra uses UTM-style real-world coordinates (X=East, Y=North, Z=Elevation). See 
 
 ### How do I import from Surpac?
 
-File > Import, select your .dtm and .str file pair. Note Surpac uses Y,X (Northing, Easting) ordering.
+Open the **Import** dialog (menu bar **Import Export Print** button → **Import**), go to the **Drawings / CAD** tab, choose **DTM & STR** on the **Surpac** row and click **Open**. Select your .dtm and .str file pair together. See [Surpac DTM / STR Import](../importing/surpac-dtm-str.md). Note Surpac uses Y,X (Northing, Easting) ordering.
 
 ### What file formats does Kirra support?
 

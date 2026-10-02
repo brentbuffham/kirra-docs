@@ -9,10 +9,11 @@ Export surfaces as georeferenced raster images for use in GIS software such as Q
 ## How to Export
 
 1. Load a surface with a gradient applied
-2. Click **File > Export > Export Images as GeoTIFF**
-3. Configure the export settings (see below)
-4. Click **Export**
-5. The GeoTIFF file is downloaded
+2. Click the **Import Export Print** button (file icon) in the menu bar and choose **Export** — or open the left sidenav (☰) and click **Export** under **File Management**
+3. In the **Export** dialog, open the **Surfaces / Mesh** tab. On the **GeoTIFF / Image** row, choose **GeoTIFF** (coloured image) or **Elev.GeoTIFF** (elevation raster) and click **Save**
+4. For a coloured GeoTIFF, configure the **GeoTIFF Export Settings** dialog (see below)
+5. Click **Export**
+6. Select a directory for the exports, then enter a filename for each surface. A `.tif` and a `.prj` file are saved for each one
 
 ---
 
@@ -20,17 +21,17 @@ Export surfaces as georeferenced raster images for use in GIS software such as Q
 
 | Setting | Description |
 |---------|-------------|
-| **EPSG Code** | Coordinate reference system for the output file (e.g., EPSG:32755 for UTM Zone 55S) |
-| **Resolution Mode** | Controls the output pixel density (see table below) |
+| **Export Resolution** | Controls the output pixel density (see table below) |
+| **Coordinate Reference System (Required)** | Coordinate reference system for the output file (e.g., EPSG:32755 for UTM Zone 55S) |
 
 ### Resolution Modes
 
 | Mode | Description | Typical Use |
 |------|-------------|-------------|
-| **Screen** | Uses the cached 2D canvas resolution | Quick preview |
-| **DPI** | User-specified dots per inch (e.g., 300 DPI for print) | Print-quality reports |
-| **Pixels-per-metre** | Direct specification (e.g., 10 px/m) | Engineering precision |
-| **Full** | Maximum resolution export | Maximum detail |
+| **Screen Zoom Resolution (current view)** (default) | Uses the current 2D view resolution | Quick preview |
+| **DPI** | Dots per inch, 72–600 (default 300) | Print-quality reports |
+| **Resolution** | Pixels per metre, 1–1000 (default 10) | Engineering precision |
+| **Full Resolution (1 pixel = 0.1 meters)** | 10 pixels per metre | Maximum detail |
 
 > **Tip:** Higher resolution produces larger files and takes longer to export. Choose based on your final use -- screen display, printing, or archival.
 

@@ -6,9 +6,11 @@ Kirra can generate formatted reports using custom XLSX spreadsheet templates. Th
 
 ## How to Access
 
-**File > Print > Print from Template**
+Click the **Import Export Print** button (file icon) in the menu bar and choose **Print** — or open the left sidenav (☰) and click **Print** under **Print Management**. Both open the **PDF Print** dialog.
 
-> *Screenshot: Print from Template menu location and dialog*
+<!-- SCREENSHOT NEEDED: PDF Print dialog -->
+
+The dialog's main fields are **Saved Template**, **Paper Size** and **Orientation** (**From Sheet** uses the custom template's own setting), **Print Preview**, **Blast Name**, **Designer**, **Title**, **Comment**, **Entity Filter** and **Output Format**. Footer buttons: **Save to Library**, **Formulas**, **Reference Pack**, **Delete**, **Help**, and **Print**.
 
 ---
 
@@ -16,12 +18,12 @@ Kirra can generate formatted reports using custom XLSX spreadsheet templates. Th
 
 ### Kirra Inbuilt
 
-The **Kirra Inbuilt** template is a built-in report format that requires no setup. It uses the same layout as Print to PDF (title block, map zone, footer with north arrow, legend, and statistics) and supports:
+The **Kirra Inbuilt** template is a built-in report format that requires no setup. It provides a title block, map zone, and a footer with north arrow, legend, and statistics, and supports:
 
 - 2D and 3D views
 - Voronoi overlays
 - Surface clipping to the print boundary
-- Paper size and orientation synced with the main Kirra controls
+- Paper size and orientation chosen in the dialog (XLSX output is not available)
 
 Choose Kirra Inbuilt when you want a quick, standard report without creating a custom template.
 
@@ -43,7 +45,7 @@ Kirra print cells use the **`fx:`** print-template engine (not Deck Builder char
 
 ## Template Workflow
 
-1. **Import** an XLSX template file (or select from your saved library)
+1. Choose **-- Select or Import --** in **Saved Template**, then click **Import Template (.xlsx)** (or pick a template you saved earlier)
 2. Kirra reads cells, merged regions, styles, and images
 3. **Evaluate** — Cells with the `fx:` prefix are evaluated against your blast data
 4. **Output** — Choose PDF (raster or vector) or a populated XLSX spreadsheet
@@ -54,7 +56,7 @@ For large templates, Kirra uses a background process to parse the file. A progre
 
 ## Reference Template
 
-Download the **Kirra Template Reference** from the Print from Template dialog (Option 3: "Reference XLSX") to get a starter template with examples of:
+Click **Reference Pack** in the PDF Print dialog to download `Kirra-DesignPRINTReferenceTemplate.zip` — a starter template, the formula reference and the print skill — with examples of:
 
 - Scalar variables (blast name, designer, date, hole count, drill metres, etc.)
 - Iterated fields (hole length, diameter, coordinates per hole)
@@ -83,9 +85,9 @@ See [Template Examples](template-examples.md) for detailed walkthroughs of each 
 
 | Format | Description |
 |--------|-------------|
-| **PDF Raster** | Pixel-based rendering; matches complex visuals exactly |
-| **PDF Vector** | Scalable lines and text; smaller file size |
-| **XLSX** | Populated spreadsheet; edit further in Excel (custom templates only) |
+| **PDF Raster (High-Res Image)** | Pixel-based rendering; matches complex visuals exactly |
+| **PDF Vector (Scalable)** | Scalable lines and text; smaller file size |
+| **XLSX (Populated Spreadsheet)** | Populated spreadsheet; edit further in Excel (custom templates only) |
 
 The XLSX output option is available only when using a custom template. Use it when you need to export data to Excel for further editing or reporting.
 
