@@ -1,8 +1,8 @@
 # Select Toolbar
 
-The Select toolbar groups the workspace-wide tools for selecting entities, measuring distances and angles, controlling the view, and setting the selection mode. It is the first of the seven floating toolbars on the right side of the Kirra workspace.
+The Select toolbar groups the workspace-wide tools for selecting entities, measuring distances and angles, controlling the view, and setting the selection mode. It is one of the eight floating toolbars in the Kirra workspace.
 
-Despite the name, this toolbar is not only about selection — undo/redo, zoom, reset view, section view, orbit focus, and 3D world settings all live here because they apply across every other tool.
+Despite the name, this toolbar is not only about selection — undo/redo, zoom, reset view, section plane, orbit focus, and the Settings dialog all live here because they apply across every other tool.
 
 ---
 
@@ -17,28 +17,28 @@ The Select toolbar contains the following controls:
 |---------|------|---------|
 | **Undo** | Action | Reverse the last action |
 | **Redo** | Action | Re-apply the last undone action |
-| **Select (single / Shift multi)** | Mode | Standard click-to-select; Shift+click to add to the selection |
-| **Polygon Selection Tool** | Mode | Lasso-select entities by drawing a polygon on the canvas |
-| **Mode Selection (H / K / V)** | Toggle | Constrain selection to **H**oles, **K**AD entities, or **V**ertices |
-| **Ruler (Distance) Tool** | Measurement | Measure the distance between two points on the canvas |
-| **Protractor (Angles) Tool** | Measurement | Measure the angle formed by three points |
+| **Pointer Select** | Mode | Click to select; Shift+click to add, Ctrl+click to remove. This is Kirra's home tool |
+| **Polygon Select** | Mode | Select everything inside a shape you draw — a polygon, rectangle or ellipse (right-click the button to choose) |
+| **Mode Selection (H / K / V)** | Toggle | Constrain selection to **H**oles, **K**AD entities, or KAD **V**ertices |
+| **Ruler** | Measurement | Measure the distance between points on the canvas |
+| **Protractor** | Measurement | Measure the angle formed by three points |
 | **Zoom In** | View | Zoom the viewport in by one step |
 | **Zoom Out** | View | Zoom the viewport out by one step |
-| **Reset View** | View | Reset the camera to a default view (three modes) |
-| **Section View Tool** | View | Slice the 3D scene with a section plane |
+| **Reset View** | View | Reset the camera — click repeatedly to step through three modes |
+| **Section Plane** | View | Slice the scene with a section plane |
 | **Find Select Zoom** | Dialog | Search holes / KAD by criteria (colour, shape, ID, type, length, bearing, mass, delay…), combine criteria, then zoom to the result |
-| **Orbit Focus 3D Tool** | View | Click a point in the 3D scene to set it as the new orbit centre |
-| **3D World Settings** | Dialog | Open renderer configuration — renderer mode, instanced rendering, LOD overrides, simplification thresholds |
+| **Orbit Focus** | View | Click a point in the 3D scene to set it as the new orbit centre |
+| **3D Settings** | Dialog | Open the **Settings** dialog — 2D view sizes and snap tolerance, 3D camera and lighting, and performance limits |
 
 ---
 
 ## Undo
 
-Reverses the last editing action. Undo covers hole placement, hole edits, pattern generation, deletions, transforms, charging changes, and KAD edits. *[VERIFY: full list of undoable actions]*
+Reverses the last editing action. Undo covers adding, deleting, moving and editing holes; inserting holes; adding, deleting, moving and editing KAD entities and their vertices; KAD transforms; trunk changes; and adding, editing or deleting surfaces. Kirra keeps the last 20 actions.
 
 ### How to Use
 
-- Click the **undo** button on the Select toolbar, or press `Ctrl+Z`
+- Click the **undo** button on the Select toolbar, or press `Ctrl+Z` (`Cmd+Z` on a Mac)
 
 See [Keyboard Shortcuts](keyboard-shortcuts.md) for all undo/redo shortcuts.
 
@@ -54,16 +54,19 @@ Re-applies the last action that was undone.
 
 ---
 
-## Select (Single / Shift Multi)
+## Pointer Select
 
-The default selection mode. Click entities on the canvas to select them; hold `Shift` to add or remove entities from the current selection.
+The default selection tool. Kirra always returns to Pointer Select when another tool finishes or is cancelled, so it is never left with no tool active.
 
 ### How to Use
 
-1. Click the **Select** button on the Select toolbar
+1. Click the **Pointer Select** button on the Select toolbar
 2. Click any entity on the canvas to select it
-3. Hold `Shift` and click additional entities to add them to the selection
-4. Click on empty canvas to clear the selection *[VERIFY: click-to-deselect behaviour]*
+3. Hold `Shift` and click more entities to add them to the selection — Shift+click on an entity that is already selected removes it
+4. Hold `Ctrl` (`Cmd` on a Mac) and click an entity to remove it from the selection
+5. Click on empty canvas to clear the selection
+
+Switching from Polygon Select to Pointer Select keeps the current selection.
 
 ### Selection Mode Interaction
 
@@ -71,16 +74,25 @@ The **Mode Selection** toggle (H / K / V) determines which entity types this too
 
 ---
 
-## Polygon Selection Tool
+## Polygon Select
 
-Lasso-selects entities by drawing a polygon on the canvas. Every entity whose position falls inside the polygon is selected.
+Selects every entity inside a shape you draw on the canvas. **Right-click** the button to choose the shape:
+
+| Shape | How to draw it |
+|-------|----------------|
+| **Polygon** | Click each vertex, then double-click to close |
+| **Rectangle** | Click one corner, then the opposite corner |
+| **Ellipse** | Click one corner, then the opposite corner of its bounding box |
+
+The button's icon and tooltip change to show the chosen shape, and the choice is remembered. Picking a shape from the right-click menu also turns the tool on.
 
 ### How to Use
 
-1. Click the **Polygon Selection** button on the Select toolbar
-2. Click points on the canvas to trace the polygon outline
-3. Double-click to close the polygon and commit the selection
-4. All entities inside the polygon are selected, subject to the active H/K/V mode
+1. Click the **Polygon Select** button on the Select toolbar (right-click it first to change the shape)
+2. Draw the shape on the canvas
+3. Everything inside it is selected, subject to the active H / K / V mode
+
+Hold `Shift` while you finish the shape to add to the current selection, or `Ctrl` (`Cmd` on a Mac) to remove from it.
 
 ---
 
@@ -104,20 +116,22 @@ A three-way toggle that constrains which entity types selection tools pick up. T
 
 ---
 
-## Ruler (Distance) Tool
+## Ruler
 
-Measures the straight-line distance between two points on the canvas.
+Measures the distance between two points on the canvas.
 
 ### How to Use
 
 1. Click the **Ruler** button on the Select toolbar
 2. Click the first point
 3. Click the second point
-4. The distance is displayed in a floating overlay panel that follows the mouse
+4. A floating panel beside the cursor shows the two elevations (**Z1**, **Z2**), the **Plan** and **Total** distance, **ΔZ**, **Dip** and **Slope**
+
+Click again to start a new measurement.
 
 ---
 
-## Protractor (Angles) Tool
+## Protractor
 
 Measures the angle formed by three points — vertex in the middle, arms to either side.
 
@@ -127,7 +141,7 @@ Measures the angle formed by three points — vertex in the middle, arms to eith
 2. Click the first arm point
 3. Click the vertex (the corner of the angle)
 4. Click the second arm point
-5. The angle is displayed in a floating overlay panel that follows the mouse
+5. The angle is displayed in a floating panel beside the cursor
 
 ---
 
@@ -139,7 +153,7 @@ Zooms the viewport in by one step, centred on the current view.
 
 - Click the **Zoom In** button on the Select toolbar, or use the mouse wheel
 
-> **Note:** Mouse-wheel direction is controlled by the **Scroll wheel forward will** setting in [3D World Settings](#3d-world-settings). The **Cursor Zoom** setting in the same dialog determines whether the wheel zooms towards the cursor or the screen centre.
+> **Note:** Mouse-wheel direction is controlled by the **Scroll wheel forward will** setting on the **3D** tab of the [Settings](#settings) dialog. The **Cursor Zoom** setting on the same tab decides whether the wheel zooms towards the cursor or the screen centre.
 
 ---
 
@@ -155,13 +169,13 @@ Zooms the viewport out by one step.
 
 ## Reset View (Three Modes)
 
-Resets the camera. Behaviour depends on the active viewport (2D or 3D) and on how many times you click the button in succession.
+Resets the camera. Each click in quick succession moves to the next mode; after a pause of about a second and a half the next click starts again at the first mode. The button's tooltip names the mode the next click will apply.
 
 ### 3D View
 
 | Click | Result |
 |-------|--------|
-| **1st click** | Top-down view, keeps the current zoom |
+| **1st click** | Plan view — looks straight down, keeps the current zoom |
 | **2nd click** | Extents of the visible data |
 | **3rd click** | Extents of all data (visible or not) |
 
@@ -169,53 +183,30 @@ Resets the camera. Behaviour depends on the active viewport (2D or 3D) and on ho
 
 | Click | Result |
 |-------|--------|
-| **1st click** | North up, extents of the visible data |
-| **2nd click** | Extents of all data (visible or not) |
+| **1st click** | North up (rotation cleared) |
+| **2nd click** | Extents of the visible data |
+| **3rd click** | Extents of all data (visible or not) |
 
-### How to Use
-
-- Click the **Reset View** button once for the first mode
-- Click again to progress through the remaining modes
+Reset View also clears any orbit centre set with [Orbit Focus](#orbit-focus).
 
 ---
 
-## Section View Tool
+## Section Plane
 
-Slices the 3D scene with a section plane so you can see inside surfaces or cut through a pattern. Useful for inspecting hole depths against terrain, deck configurations inside a bench, and multi-level pit designs.
+Slices the scene with a section plane so you can see inside surfaces or cut through a pattern. Useful for inspecting hole depths against terrain, deck configurations inside a bench, and multi-level pit designs.
 
 ![Section Plane dialog with an XZ clip applied](../screenshots/SectionViewTool.png)
-*The Section Plane dialog — in this example an XZ plane is active at Y = -7.2 with +Y = -4 and -Y = -0.4, rotated by 23°. Holes either side of the clip are hidden.*
-
-### Dialog Options
-
-| Option | Purpose |
-|--------|---------|
-| **Enable** | Turns the section plane on or off |
-| **Plane** | Chooses the clip plane: **XY** (horizontal slab), **YZ** (vertical, normal along X), or **XZ** (vertical, normal along Y) |
-| **Position** | Distance of the plane along its normal axis. Text input plus a slider. The world-coordinate value and range are shown beneath the slider (e.g. *World Y: 155556.45 [155556.9 – 155552.5]*) |
-| **+/- axis widths** | Two fields that set the slab thickness either side of the plane. Labels change with the plane: **+Z / -Z** for XY, **+X / -X** for YZ, **+Y / -Y** for XZ |
-| **Rotation** | Rotates the clip plane by the entered angle (degrees). Text input plus a slider |
-| **Close** | Closes the dialog. The plane stays active if **Enable** is still ticked |
-| **Reset** | Returns the plane to its default position, widths, and rotation |
-
-### Clip Planes
-
-| Plane | Orientation | Typical Use |
-|-------|------------|-------------|
-| **XY** | Horizontal slab | Elevation slice — set Position (Z), then +Z and -Z widths to define slab thickness |
-| **YZ** | Vertical, normal along X | Cross-section facing east–west |
-| **XZ** | Vertical, normal along Y | Cross-section facing north–south |
+*The Section Plane dialog.*
 
 ### How to Use
 
-1. Click the **Section View** button on the Select toolbar
-2. The Section Plane dialog opens
-3. Tick **Enable**
-4. Choose the **Plane** (XY, YZ, or XZ)
-5. Set **Position** to place the plane along its normal axis
-6. Set the two width fields to define how much of the scene stays visible either side of the plane
-7. Use **Rotation** to tilt the plane as needed
-8. Click **Close** to leave the dialog (the plane stays active), or **Reset** to return to defaults
+1. Click the **Section Plane** button on the Select toolbar
+2. Tick **Enable** (the view switches to 3D)
+3. Choose the **Plane** — **Two Points**, **Segment**, **XY (Elevation)**, **YZ (East-West)** or **XZ (North-South)**
+4. Set the slice thickness either side of the plane, then step it with **Position**
+5. Click **Close** to leave the dialog (the section stays on while **Enable** is ticked), or **Reset** to return to the defaults
+
+See [3D View — Section Plane](3d-tools.md#section-plane) for every option.
 
 ---
 
@@ -325,7 +316,7 @@ Use **Clear** to empty the criteria box and start again.
 
 ---
 
-## Orbit Focus 3D Tool
+## Orbit Focus
 
 Click any point in the 3D scene to set it as the new orbit centre. This is the most effective way to inspect specific blast holes or surface features up close — the camera rotates around your chosen focus point instead of the scene origin.
 
@@ -340,42 +331,77 @@ See [3D View & Orbit Focus](3d-tools.md) for the full 3D navigation reference.
 
 ---
 
-## 3D World Settings
+## Settings
 
-Opens the **3D Scene, Camera and Lighting Settings** dialog — the configuration for camera behaviour, lighting, gizmos, and 3D display preferences.
+The **3D Settings** button (globe-and-cog icon, at the bottom of the Select toolbar) opens the **Settings** dialog. It has three tabs — **2D**, **3D** and **Performance** — and opens on the **3D** tab.
 
-![3D Scene, Camera and Lighting Settings dialog](../screenshots/3DViewOptions.png)
-*The 3D World Settings dialog groups camera, lighting, and display options.*
+![Settings dialog](../screenshots/3DViewOptions.png)
+*The Settings dialog.*
+<!-- SCREENSHOT NEEDED: refresh 3DViewOptions.png — the dialog is now titled Settings, with 2D / 3D / Performance tabs. -->
 
-### Dialog Options
+### 2D tab
 
-| Option | Purpose |
-|--------|---------|
-| **Damping Factor** | Camera motion damping — e.g. *No Spin (0)* disables inertial spin after an orbit drag |
-| **Cursor Zoom** | When **On**, the mouse wheel zooms towards the cursor position instead of the screen centre |
-| **Scroll wheel forward will** | Direction of wheel-forward — **Push (zoom out)** or the opposite. Flip this if the wheel direction feels inverted |
-| **Display Plumb Line to Drawing Z** | Draws a plumb line from each entity down to the drawing Z elevation when **On** |
-| **Light Bearing (deg)** | Compass bearing of the directional light (0 = North, clockwise) |
-| **Light Elevation (deg)** | Elevation angle of the directional light above the horizon |
-| **Ambient Light Intensity** | Strength of the ambient (fill) light |
-| **Directional Light Intensity** | Strength of the directional (sun) light |
-| **Shadow Intensity** | Strength of cast shadows |
-| **Axis Lock (Orbit Constraint)** | Constrains orbit motion to a specific axis — **None** leaves orbit fully free |
-| **Gizmo Display** | When to show the XYZ axis gizmo — e.g. **Always** |
-| **Text Billboarding** | When **On**, text labels always face the camera |
+Changes on this tab take effect straight away.
+
+| Option | Default | Purpose |
+|--------|---------|---------|
+| **Font Size (pt)** | 16 | Size of labels on the canvas |
+| **Font Size Locked** | On | Keeps the font size fixed |
+| **Tie Size (units)** | 3 | Size of tie / connector arrows |
+| **Toe Size (m)** | 0 | Radius of the toe circle |
+| **Hole Adjust (units)** | 2 | Size adjustment for hole symbols |
+| **Interval (ms)** | 100 | Time step for the timing animation |
+| **First Movement Size (units)** | 2 | Size of first-movement arrows |
+| **Snap Tolerance (px)** | 15 | How close, in screen pixels, the cursor must be to snap |
+| **Drawing Detail (px, 0 = full)** | 1 | Simplifies drawing lines in 2D. Lower is more faithful; 0 draws every vertex |
+| **Drag distance (px)** | 5 | How far a press must move before it counts as a drag rather than a click |
+| **Drag hold (ms)** | 300 | How long a press that has moved must be held before it counts as a drag |
+| **Hillshade Light Bearing (deg)** | 135 | Bearing of the light for hillshade surfaces |
+| **Hillshade Light Elevation (deg)** | 15 | Height of the light above the horizon for hillshade surfaces |
+| **Surface Colour Gradient Style** | Radial | **Radial**, **Default** or **Baycentric** |
+
+### 3D tab
+
+Changes on this tab apply when you click **Save**.
+
+| Option | Default | Purpose |
+|--------|---------|---------|
+| **Damping Factor** | No Spin (0) | How long the view keeps moving after an orbit drag — **No Spin (0)**, **Low (0.3)**, **Medium (0.5)**, **High (0.7)**, **Max Spin (1)** |
+| **Cursor Zoom** | On | When **On**, the mouse wheel zooms towards the cursor instead of the screen centre |
+| **Scroll wheel forward will** | Push (zoom in) | Direction of the wheel — **Push (zoom in)** or **Push (zoom out)** |
+| **Display Plumb Line to Drawing Z** | Off | Draws a plumb line from the cursor to the drawing elevation |
+| **Light Bearing (deg)** | 135 | Compass bearing of the directional light (0 = North, clockwise) |
+| **Light Elevation (deg)** | 15 | Height of the directional light above the horizon |
+| **Ambient Light Intensity** | 0.8 | Strength of the ambient (fill) light. 0 turns it off |
+| **Directional Light Intensity** | 2.5 | Strength of the directional (sun) light |
+| **Shadow Intensity** | 0.5 | Strength of shading. 0 turns it off |
+| **Orbit Rotation** | Turntable (Z-up, no roll) | **Turntable (Z-up, no roll)** keeps the horizon level; **Trackball (grab point)** rotates about the point you grab; **Legacy (mouse delta)** is the older model |
+| **Rotation Speed** | 1.0 | How fast a drag orbits. A negative value reverses the drag direction |
+| **Axis Lock (Orbit Constraint)** | None | Limits orbiting to one motion — **None**, **Pitch (tilt up/down)**, **Bearing (swing around)** or **Spin (about view axis)** |
+| **Gizmo Display** | Only When Orbit or Rotate | When to show the axis gizmo — **Always**, **Only When Orbit or Rotate**, **Never** |
+| **Text Billboarding** | Off | Makes text face the camera — **Off**, **On (Holes)**, **On (KAD)**, **On (All)** |
+
+### Performance tab
+
+Changes on this tab apply when you click **Save**.
+
+| Option | Default | Purpose |
+|--------|---------|---------|
+| **12d import heap budget (GB)** | 1.5 | Memory budget for importing large 12d Archive files |
+| **Max triangles per surface (3D)** | 2,000,000 | A surface with more triangles than this is not drawn in 3D. It still shows in 2D and can be decimated on import |
+| **Max total triangles (3D scene)** | 4,000,000 | Limit for all surfaces drawn in 3D together |
+| **Boolean mesh split path** | Narrow-band | **Narrow-band — large surfaces (avoids OOM)** or **Legacy — full mesh (proven; small surfaces)** |
+| **Narrow-band scoped triangle threshold** | 200,000 | Booleans whose two surfaces together have fewer triangles than this always use the legacy path |
+| **Vector PDF decimal places** | 3 | Decimals of a millimetre on the page for vector PDF plots. Raise it for wide-scale plots that will be measured; higher values make larger files |
+
+Higher triangle limits need a capable graphics card.
 
 ### Buttons
 
 | Button | Action |
 |--------|--------|
-| **Save** | Applies the settings and closes the dialog |
-| **Cancel** | Discards any changes and closes the dialog |
-
-### How to Use
-
-1. Click the **3D World Settings** button on the Select toolbar
-2. Adjust any of the options above
-3. Click **Save** to apply, or **Cancel** to discard
+| **Save** | Applies the 3D and Performance settings and closes the dialog |
+| **Cancel** | Closes the dialog without saving the 3D and Performance settings |
 
 ---
 
