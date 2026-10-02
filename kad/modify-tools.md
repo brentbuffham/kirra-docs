@@ -6,6 +6,8 @@ The Modify toolbar provides tools for transforming, editing, and manipulating bl
 
 ## Toolbar Overview
 
+![Modify toolbar](../screenshots/ModifyToolbar.png)
+
 The Modify toolbar contains the following tools:
 
 | Tool | Type | Description |

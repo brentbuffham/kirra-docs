@@ -10,7 +10,6 @@ The bar across the top of the window holds the global navigation controls — a 
 
 ![App navigation bar](../screenshots/AppNavBar-Full.png)
 *Full-width App Navigation Bar — left cluster holds app and view controls; right cluster toggles the Data Explorer and Project Explorer panels.*
-<!-- SCREENSHOT NEEDED: refresh AppNavBar-Full.png — the bar now includes the Import / Export / Print menu and the Snap toggle. -->
 
 ### Left cluster (left to right)
 
@@ -42,8 +41,7 @@ The bar across the top of the window holds the global navigation controls — a 
 Opened from the **☰ Hamburger** button and closed with the **×** at its top. The panel is a vertical stack of collapsible groups — click a red header to expand or collapse it.
 
 ![App navigation panel](../screenshots/filemanager.png)
-*The side navigation panel.*
-<!-- SCREENSHOT NEEDED: refresh filemanager.png — the panel now holds only File Management, Print Management, Record Actuals, Language and About. -->
+*The side navigation panel, with File Management and Print Management expanded.*
 
 ### File Management
 
@@ -232,8 +230,7 @@ See [Print to PDF](../printing/pdf-print.md) and [Print from Template (XLSX)](..
 Kirra has eight floating toolbars. Drag a toolbar by its title bar to move it. The **−** button in a toolbar's header docks it as a vertical tab on the right edge of the viewport; click the tab to bring the toolbar back. **Toggle Toolbars** in the top bar fans them all out or docks them all at once.
 
 ![Floating toolbars](../screenshots/toolbarsfloating.png)
-*The floating toolbars.*
-<!-- SCREENSHOT NEEDED: refresh toolbarsfloating.png — it shows seven toolbars; the Workspace toolbar is now the eighth. -->
+*Seven of the eight floating toolbars. The Connect toolbar is docked here, as a tab on the right edge of the viewport.*
 
 | Toolbar | Purpose |
 |---------|---------|
@@ -251,6 +248,9 @@ Kirra has eight floating toolbars. Drag a toolbar by its title bar to move it. T
 ## Workspace Toolbar
 
 Kirra keeps ten separate workspaces, numbered **0** to **9**. Each is its own store of holes, drawings, surfaces, charging, timing and libraries, so you can keep different jobs apart. A new workspace opens empty — import a KAP or KAT file, or start building.
+
+![Workspace toolbar](../screenshots/WorkspaceToolbar.png)
+*The Workspace toolbar — Workspace 0 (red border) is the one this window is using.*
 
 | Control | Purpose |
 |---------|---------|
