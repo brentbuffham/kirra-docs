@@ -2,6 +2,99 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.174
+
+_2026-10-02_
+
+**Feature**
+
+- Pattern in Polygon marks inserted and extra holes with their own shape and colour
+- Choose the inserted and extra hole looks from the right-click menu
+
+## Release v1.1.32.173
+
+_2026-10-02_
+
+**Feature**
+
+- Along Polyline keeps row spacing within a min/max range at every bend
+
+## Release v1.1.32.172
+
+_2026-10-02_
+
+**Bug Fix**
+
+- Snap Objects to Surface button is translated in every language
+
+## Release v1.1.32.171
+
+_2026-10-02_
+
+**Feature**
+
+- Extra and dropped holes are set as a ratio of the spacing
+
+## Release v1.1.32.170
+
+_2026-10-02_
+
+**Feature**
+
+- Along Polyline keeps the stagger exact on every straight
+
+## Release v1.1.32.169
+
+_2026-10-02_
+
+**Feature**
+
+- Right-click Pattern in Polygon to set extra and dropped holes
+
+**Bug Fix**
+
+- Only one toolbar right-click menu opens at a time
+
+## Release v1.1.32.168
+
+_2026-10-02_
+
+**Feature**
+
+- Pattern in Polygon can add an extra hole at the end of short rows
+
+## Release v1.1.32.167
+
+_2026-10-02_
+
+**Bug Fix**
+
+- Pattern in Polygon numbers holes along the direction arrow in every direction
+
+## Release v1.1.32.166
+
+_2026-10-02_
+
+**Bug Fix**
+
+- Pattern dialogs remember the Numerical Names setting
+- Ticked options in dialogs stay ticked next time
+
+## Release v1.1.32.165
+
+_2026-10-02_
+
+**Feature**
+
+- Pattern in Polygon can bend its rows along a reference line
+- Right-click Pattern in Polygon to choose straight or bending rows
+
+## Release v1.1.32.164
+
+_2026-10-02_
+
+History not available at the moment.
+
 ## Release v1.1.32.163
 
 _2026-10-02_
