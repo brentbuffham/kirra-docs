@@ -321,7 +321,7 @@ Invalid coordinates **do not abort** the import:
 
 ### Charging columns (v1.0.270+)
 
-When the parser sees any header matching `^(deck|primer)([A-Z][A-Za-z]*)\[(\d+)\]$` (e.g. `deckType[1]`, `primerDepth[2]`) in the first row, it switches on a charging-reconstruction pass — no manual mapping needed. Each hole gets a `HoleCharging` rebuilt from the deck and primer cells, including verbatim `fx:` formula strings.
+When the first row has any `deck…[N]` or `primer…[N]` header (e.g. `deckType[1]`, `primerDepth[2]`), Kirra reconstructs the charging — no manual mapping needed. Each hole's charging is rebuilt from the deck and primer cells, including verbatim `fx:` formula strings.
 
 Round-trip is full for design, formulas, and primer assignments — but live formula re-evaluation does not happen on import. The imported numeric values are the source of truth until a charge rule is next applied to the holes.
 
