@@ -39,12 +39,16 @@ Fills a polygon boundary with blast holes at a specified burden and spacing. Hol
 
 ### How to Use
 
+The button has two modes — right-click it to choose **Straight Rows** (red) or **Along Polyline** (amber).
+
 1. Click the **Add Pattern in Polygon** button on the Holes toolbar
-2. Define the polygon boundary by clicking points on the canvas, or select an existing KAD polygon *[VERIFY: exact boundary-picking workflow]*
-3. Enter burden and spacing
-4. Set collar elevation, bench height, subdrill, angle, bearing, diameter, and hole type
-5. Optionally enable stagger to offset every second row by half the spacing
-6. Click **Generate** *[VERIFY: button label]*
+2. Click an existing polygon to fill
+3. **Straight Rows:** click the start point, the end point (row direction), then the reference point
+4. **Along Polyline:** click the reference line, then its start point and end point
+5. Enter burden, spacing, collar elevation, subdrill, angle, diameter and hole type
+6. Click **Confirm**
+
+Holes added to fit the polygon are marked with their own shape and colour — set these in the right-click menu.
 
 See [Pattern Generation → Polygon Pattern](pattern-generation.md#polygon-pattern) for parameter detail.
 

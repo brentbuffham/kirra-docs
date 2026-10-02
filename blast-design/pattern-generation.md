@@ -76,31 +76,72 @@ The **Starting Hole ID** field accepts both numbers and alphanumeric seeds. Type
 
 ## Polygon Pattern
 
-Fills an irregular polygon boundary with holes at the specified burden and spacing. Holes that fall outside the boundary are automatically excluded.
+Fills a polygon boundary with holes at the specified burden and spacing. Holes that fall outside the boundary are automatically excluded.
 
 **Tool:** Holes toolbar → Add Pattern in Polygon
 
-### Steps
+### Two modes — right-click the button
+
+Right-click **Add Pattern in Polygon** to choose how the rows run. Choosing a mode also switches the tool on.
+
+| Mode | Button colour | Rows |
+|---|---|---|
+| **Straight Rows** | Red | A straight grid at the bearing you set, trimmed to the polygon |
+| **Along Polyline** | Amber | Every row follows a reference line — a crest, a toe, or the polygon's own edge — stepped out by the burden |
+
+Hover the button to see which mode is set.
+
+### Steps — Straight Rows
 
 1. Click **Add Pattern in Polygon** on the [Holes toolbar](holes-toolbar.md)
-2. Define the boundary by clicking points on the canvas to trace the polygon outline, then double-click to close it. Alternatively, select an existing polygon from a DXF import.
-3. Enter burden and spacing
-4. Set collar elevation and hole properties (bench height, subdrill, angle, bearing, diameter)
-5. Optionally enable stagger (offsets every second row by half the spacing)
-6. Click **Preview** to review before committing
-7. Click **Generate** — holes fill the polygon
+2. Click the polygon to fill
+3. Click the pattern start point, then the end point — this sets the row direction
+4. Click the reference point
+5. Enter the burden, spacing and hole properties, then click **Confirm**
+
+### Steps — Along Polyline
+
+1. Right-click **Add Pattern in Polygon** and choose **Along Polyline** — the button turns amber
+2. Click the polygon to fill
+3. Click the reference line — a drawn line, or the polygon's own edge
+4. Click the start point on that line, then the end point. The chosen stretch is highlighted in amber, and its direction sets the hole numbering order
+5. Enter the burden, spacing and hole properties, then click **Confirm**
+
+Rows are placed on both sides of the reference line until the polygon is filled. Each hole's bearing is set square to its own row, so the bearing field is greyed out in this mode.
+
+### Settings in the right-click menu
+
+| Setting | Mode | Default | What it does |
+|---|---|---|---|
+| **Min ratio / Max ratio** | Along Polyline | 0.8 / 1.2 | Keeps every step along a row between these multiples of the spacing. Holes that are too close are removed, and long steps get evenly placed extra holes. A gap where a row leaves the polygon is never filled. 0 turns it off |
+| **Extra ratio** | Both | 0 | At each end of a row, tries one more hole this multiple of the spacing past the last hole. It is kept only if it falls inside the polygon. 0 turns it off |
+| **Stagger round bends** | Along Polyline | Per segment | **Per segment** keeps spacing and stagger exact on every straight, and the min/max range tidies each bend. **Along row** keeps spacing exact along every row, but the stagger drifts round bends |
+| **Inserted** | Along Polyline | Amber triangle | How holes added by the min/max range are marked |
+| **Extra** | Both | Cyan diamond | How the extra row-end holes are marked |
+
+The same values appear in the pattern dialog, so changing one changes both.
+
+### Marked holes
+
+Holes that Kirra adds or moves to fit the polygon are marked so you can review them:
+
+- **Inserted** holes come from the min/max spacing range
+- **Extra** holes are the additional holes at the row ends
+
+For each, pick a **shape**, a **colour**, or both. Choose **Unchanged** for the shape, or untick the colour, to leave that part alone. The mark is saved with the hole, appears on screen and in prints, and can be changed afterwards like any other hole colour or shape.
 
 ### Edge Handling
 
 - Holes are included if their collar position falls inside the polygon
-- Fractional rows and columns at the edges are handled automatically
+- A concave polygon can split a row into pieces; the pieces stay in the same row
+- Round an inside bend, rows close up — the min ratio thins them out
 - Perimeter holes can be detected for presplit applications
 
 ### Use Cases
 
 - Irregular blast boundaries following pit design
+- Curved benches and ramps, with rows following the crest (Along Polyline)
 - Selective blast areas within a larger pattern
-- Complex shapes that a simple grid cannot fill
 
 > *Screenshot coming soon*
 
