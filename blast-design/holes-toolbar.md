@@ -35,7 +35,7 @@ The Holes toolbar contains the following tools:
 
 Fills a polygon boundary with blast holes at a specified burden and spacing. Holes whose collar positions fall outside the polygon are automatically excluded. Use this tool for irregular blast boundaries, pit-edge shapes, and selective areas inside a larger bench.
 
-> *[SCREENSHOT NEEDED: Add Pattern in Polygon dialog]*
+![Generate Pattern in Polygon dialog](../screenshots/PatternInPolygonDialog.png)
 
 ### How to Use
 

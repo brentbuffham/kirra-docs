@@ -91,6 +91,8 @@ Right-click **Add Pattern in Polygon** to choose how the rows run. Choosing a mo
 
 Hover the button to see which mode is set.
 
+![Pattern in Polygon right-click menu](../screenshots/PatternInPolygonMenu.png)
+
 ### Steps — Straight Rows
 
 1. Click **Add Pattern in Polygon** on the [Holes toolbar](holes-toolbar.md)
@@ -108,6 +110,10 @@ Hover the button to see which mode is set.
 5. Enter the burden, spacing and hole properties, then click **Confirm**
 
 Rows are placed on both sides of the reference line until the polygon is filled. Each hole's bearing is set square to its own row, so the bearing field is greyed out in this mode.
+
+![Generate Pattern in Polygon — Along Polyline dialog](../screenshots/PatternInPolygonDialog.png)
+
+![Along Polyline pattern — rows follow the red reference line round the bend](../screenshots/PatternInPolygonAlongPolyline.png)
 
 ### Settings in the right-click menu
 
@@ -130,6 +136,8 @@ Holes that Kirra adds or moves to fit the polygon are marked so you can review t
 
 For each, pick a **shape**, a **colour**, or both. Choose **Unchanged** for the shape, or untick the colour, to leave that part alone. The mark is saved with the hole, appears on screen and in prints, and can be changed afterwards like any other hole colour or shape.
 
+![Marked holes — amber triangles were inserted by the spacing range, cyan diamonds are extra row-end holes](../screenshots/PatternInPolygonMarkedHoles.png)
+
 ### Edge Handling
 
 - Holes are included if their collar position falls inside the polygon
@@ -142,8 +150,6 @@ For each, pick a **shape**, a **colour**, or both. Choose **Unchanged** for the 
 - Irregular blast boundaries following pit design
 - Curved benches and ramps, with rows following the crest (Along Polyline)
 - Selective blast areas within a larger pattern
-
-> *Screenshot coming soon*
 
 ---
 
