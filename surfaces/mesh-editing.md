@@ -9,26 +9,24 @@ Kirra provides interactive mesh editing and automated mesh repair tools for load
 
 ## Mesh Edit Tool (Edit Mesh)
 
-The **Mesh Edit** workflow edits **triangulated surfaces** you already have in Kirra (DTM/STR, OBJ without live texture-only path, generated meshes, etc.). It runs **only in the 3D view** and opens a dockable **FloatingDialog** titled **Mesh Edit** with a compact toolbar (~700×170 px) plus an inline progress strip while the mesh is indexed.
-
-**Implementation:** `src/tools/MeshEditTool.js` — exposes `window.startMeshEditMode(surfaceId)` and `window.cancelMeshEditMode()`.
+The **Mesh Edit** workflow edits **triangulated surfaces** you already have in Kirra (DTM/STR, OBJ without live texture-only path, generated meshes, etc.). It runs **only in the 3D view** and opens a dockable dialog titled **Mesh Edit** with a compact toolbar, plus an inline progress strip while the mesh is indexed.
 
 ### Requirements and limits
 
 | Rule | Detail |
 |------|--------|
-| **3D view** | If Three.js is not initialised, Kirra prompts you to switch to **3D**. |
+| **3D view** | If the 3D view is not running, Kirra prompts you to switch to **3D**. |
 | **Surface must have triangles** | Empty surfaces cannot be opened in mesh edit. |
-| **Textured OBJ workflow** | **Textured OBJ meshes** (`isTexturedMesh` with `threeJSMesh`) are **not supported** for mesh edit — use non-textured triangulated surfaces or convert workflow accordingly. |
+| **Textured OBJ workflow** | **Textured OBJ meshes** are **not supported** for mesh edit — use non-textured triangulated surfaces. |
 | **One surface at a time** | Starting mesh edit on another surface **cancels** the previous session. |
-| **Persistence** | Structural edits trigger **`saveSurfaceToDB`** and surface cache invalidation; the TreeView refreshes after heavy operations. |
+| **Persistence** | Structural edits are saved automatically; the Data Explorer refreshes after heavy operations. |
 
 ### How to start
 
-1. **Surface toolbar** — Use the **Mesh Edit** tool (`ToolManager` id `meshEditTool` / element `meshEditTool`), **or**
-2. **Clean Mesh dialog** — Click **Edit Mesh** to jump straight into mesh edit for that surface (`CleanMeshDialog.js`).
+1. Open the **Clean Mesh** dialog for the surface (the **Clean Mesh** button on the Surface toolbar, or right-click the surface and click **Clean**)
+2. Click **Edit Mesh** to start mesh edit for that surface
 
-On start, Kirra builds a **triangle soup**, maps Three.js faces ↔ surface triangle indices, optional **wireframe**, **vertex→triangle** spatial index, and **hover/selection** overlays. Large meshes show a short **loading** progress (building index map, wireframe, overlays).
+On start, Kirra indexes the mesh and builds the wireframe and hover/selection overlays. Large meshes show a short **loading** progress while this happens.
 
 ### Selection modes
 
@@ -46,17 +44,17 @@ On start, Kirra builds a **triangle soup**, maps Three.js faces ↔ surface tria
 | Control | What it does |
 |---------|----------------|
 | **Face / Vertex** | Switches between triangle picking and vertex picking (see shortcuts **F** / **V**). |
-| **Delete** | **Face mode:** removes selected triangles (and prunes orphaned `points` so 2D snap does not see ghosts). **Vertex mode:** deletes **every triangle that uses any selected vertex**. Uses **UndoManager** for undo/redo. |
+| **Delete** | **Face mode:** removes selected triangles (and removes orphaned points so 2D snapping does not see them). **Vertex mode:** deletes **every triangle that uses any selected vertex**. Can be undone and redone. |
 | **Invert** | Swaps two corners of each selected triangle (**winding / normal flip**) for those faces only. |
 | **Weld** | **Vertex mode only**, **2+** vertices — merges selected positions to their **centroid** and rewires triangles (**W**). |
 | **Move** | **Vertex mode** — **M** toggles **move sub-mode**: pick a vertex, then **drag**; motion is constrained to an **adjacent plane** derived from neighbour triangles. |
 | **Insert** | **I** — **Insert sub-mode:** pick **three** positions in the 3D view (raycast on mesh); **Enter** commits a **new triangle** when three picks are stored. |
 | **Polygon select** | **P** — Draw a **2D screen-space polygon** over the viewport; on completion, selects all triangles whose centres fall inside the polygon (**face mode**) or vertices inside (**vertex mode**). **Shift+double-click** to **add** to the existing selection. |
-| **Clean orphan vertices** | Removes `points` entries not referenced by any triangle (scissors icon). |
+| **Clean orphan vertices** | Removes points not used by any triangle (scissors icon). |
 | **Selection count** | Shows `N face(s)` or `N vert(s)`. |
 | **Clear** | Clears the current selection (faces or vertices). |
-| **Auto-repair** | Checkbox — after **delete**, optionally runs **boundary capping** (`capBoundaryLoopsSequential` from mesh repair helpers) to seal open loops. |
-| **Normals** | Checkbox — toggles **normal arrows** overlay (MeshLine) for inspection. |
+| **Auto-repair** | Checkbox — after **delete**, optionally runs **boundary capping** to seal open loops. |
+| **Normals** | Checkbox — toggles **normal arrows** overlay for inspection. |
 | **Open Edges** | Checkbox — toggles **pink fat-line** overlay of boundary edges. |
 
 ### Keyboard summary
@@ -75,8 +73,8 @@ On start, Kirra builds a **triangle soup**, maps Three.js faces ↔ surface tria
 
 ### After editing
 
-- **Undo / Redo** — Destructive edits are pushed to the global **UndoManager** (`DeleteTrianglesAction`, `InvertTrianglesAction`, `InsertTrianglesAction`, etc.).
-- **Close** — The dialog **Close** button calls **`cancelMeshEditMode()`**, which tears down overlays, listeners, and the floating toolbar.
+- **Undo / Redo** — Destructive edits (delete, invert, insert and so on) can be undone and redone.
+- **Close** — The dialog **Close** button ends mesh edit and removes its overlays.
 
 For automated repair (degenerate tris, weld all, self-intersection removal), continue with **Clean Mesh** below.
 
@@ -88,7 +86,7 @@ The Clean Mesh tool provides automated diagnostics and one-click repair for comm
 
 ### How to Access
 
-Right-click a surface in the TreeView and select **Clean Mesh**.
+Click the **Clean Mesh** button on the Surface toolbar, or right-click a surface (in the Data Explorer or the 3D view) and click **Clean** in its properties dialog.
 
 ### Diagnostics
 
@@ -120,7 +118,7 @@ The dialog displays real-time statistics before and after each operation:
 | **Flip** | Reverses winding order of all triangles |
 | **Align** | Propagates consistent winding from a seed triangle across the mesh |
 
-Normal controls are also available from the TreeView context menu (right-click a surface).
+Normal controls are also available from the surface right-click menu.
 
 ### Individual Repair Operations
 
@@ -139,7 +137,7 @@ Normal controls are also available from the TreeView context menu (right-click a
 ## Typical Mesh Repair Workflow
 
 1. Import a surface
-2. Right-click in TreeView > **Clean Mesh**
+2. Open **Clean Mesh** (Surface toolbar, or right-click the surface and click **Clean**)
 3. Review the diagnostics (open edges, non-manifold, degenerate, etc.)
 4. Click **Fix All** for automated repair, or address issues individually
 5. Use **Align** normals if lighting looks wrong

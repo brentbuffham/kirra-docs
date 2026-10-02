@@ -4,7 +4,7 @@
 
 It is the equivalent of a cloud-to-mesh distance, built for pit reconciliation rather than general inspection.
 
-Open it from the **Surface** toolbar.
+Open it with the **Compare Surfaces** button on the **Analyse** toolbar.
 
 ---
 

@@ -8,15 +8,19 @@ Kirra generates elevation contour lines (isolines) at regular intervals on loade
 
 ## How to Generate Contours
 
-1. Right-click a surface in the TreeView
-2. Select **Generate Contours**
+1. Click the **Contour Surface** button on the Surface toolbar — the **Surface Contours** dialog opens
+2. Choose the **Surface**, or click the pick button and click it on the canvas
 3. Configure the contour settings:
-   - **Contour interval** -- spacing between contour lines (e.g., 2m, 5m, 10m)
-   - **Colour** -- colour for the contour polylines
-   - **Line width** -- thickness of the contour lines
+   - **Contour Interval (m)** -- vertical spacing between contour lines (default 5)
+   - **Start From** -- **Min (up)**, **Max (down)**, **Zero** or **Custom**; levels are the **Starting Origin (m)** plus whole multiples of the interval (for example 617, 619, 621 …)
+   - **Min Elevation (m)** / **Max Elevation (m)** -- the range to contour
+   - **Vertex Spacing (m)** -- simplification tolerance; 0 keeps every vertex (default 0)
+   - **Close Polylines** -- close the contours into polygons (default off)
+   - **Color** -- colour for the contour polylines
+   - **Line Width** -- thickness of the contour lines in pixels (default 2)
    - **Sub-layer Name** -- folder under `Analysis` for the output (default `Contours`)
 4. Click **Generate**
-5. Contour polylines appear as KAD entities in the TreeView and on both 2D/3D views
+5. Contour polylines appear as KAD entities in the Data Explorer and in both the 2D and 3D views
 
 ---
 

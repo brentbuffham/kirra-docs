@@ -23,7 +23,7 @@ Kirra supports multiple gradient visualisation modes for surfaces, applied in bo
 
 ## How to Change the Gradient
 
-1. Right-click the surface in the TreeView or 3D view
+1. Right-click the surface in the Data Explorer or 3D view
 2. Select **Surface Properties**
 3. Choose a gradient from the dropdown
 4. Click **Apply**
