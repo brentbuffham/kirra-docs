@@ -10,10 +10,10 @@ These guides were **checked against the Kirra Design source tree** at:
 
 | Field | Value |
 |--------|--------|
-| **Kirra app version** | **1.1.32.36** (`package.json` / `package-lock.json`) |
-| **Git commit** | `dc3585a4899f16359656a8581efc81feb96d506e` (short: `dc3585a4`) |
-| **Commit date** | 2026-09-18 (author timezone +0800) |
-| **Coverage** | **48 of 49** import/export formats · **66 of 81** toolbar tools |
+| **Kirra app version** | **1.1.32.178** |
+| **Git commit** | `00ba4869` |
+| **Commit date** | 2026-10-03 (author timezone +0800) |
+| **Coverage** | **50 of 50** import/export formats · **82 of 83** toolbar tools |
 
 The coverage figures come from an automated check that builds its checklist **from the
 source itself** — every registered file format and every toolbar button — and then looks
@@ -23,7 +23,7 @@ Read it for what it is: a **presence** check. It tells you whether a feature is
 documented *at all*. It does not promise that a page which exists has kept up with the
 latest behaviour, and a handful of newer tools are not yet written up.
 
-Use this block to judge whether the docs may be ahead of or behind your installed build. For the live app version in use, check **Help → About** (or your deployment’s `package.json`).
+Use this block to judge whether the docs may be ahead of or behind your installed build. The version you are running is shown in the title of the welcome dialog that opens when Kirra starts (for example **Kirra - v1.1.32.178**).
 
 ---
 
@@ -72,7 +72,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Surfaces Toolbar](surfaces/surfaces-toolbar.md) — button-by-button reference
 - [Importing Surfaces](surfaces/importing-surfaces.md)
 - [Surface Gradients](surfaces/gradients.md)
-- [Surface Boolean & CSG](surfaces/boolean-csg.md)
+- [Trimesh Boolean & Solid Boolean](surfaces/boolean-csg.md)
 - [Mesh Editing & Clean Mesh](surfaces/mesh-editing.md)
 - [Compare Surfaces](surfaces/compare-surfaces.md) — design vs survey deviation heat map
 - [Surface Contours](surfaces/contours.md)
@@ -94,12 +94,14 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 ### Printing
 - [Print to PDF](printing/pdf-print.md)
 - [Print from Template (XLSX)](printing/xlsx-templates.md)
+- [Template Examples](printing/template-examples.md) — worked XLSX templates for advanced print formulas
+- [Example Template Downloads](printing/examples/README.md) — the downloadable XLSX example files
 - [Claude Print Template Skill — Install & Use](printing/print-skill.md) — optional AI helper for building templates; [download](printing/KirraDesign-USER-Print-Skill.zip)
 - [Formula Engine](formula-help/formula-engine.md) — print vs charging `fx:` (see also [Print Formula Reference](printing/pdf-print.md))
 
 ### Formula Engine
 - [Formula Engine Overview](formula-help/formula-engine.md) — three `fx:` engines (charging, print, blast group); when to use which
-- [Deck Builder Formula Guide & Examples](charging/Deck%20Builder%20Formula%20Guide%20Examples.html) — charging engine: variables, functions, PPV/SDoB examples
+- [Deck Builder Formula Guide & Examples](charging/Deck%20Builder%20Formula%20Guide%20Examples.md) — charging engine: variables, functions, PPV/SDoB examples
 - [Print Formula Reference](printing/pdf-print.md) — print template engine: cells, aggregation, maps, legends
 - [Blast Group Formulas](formula-help/blast-group-formulas.md) — Assign Group predicates (boolean)
 - [Claude Formula Skill — Install & Use](formula-help/formula-skill.md) — optional AI helper; [download zip](formula-help/kirra-formula.zip)
