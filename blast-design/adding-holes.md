@@ -6,39 +6,41 @@ Kirra gives you several ways to add blast holes to your design — from placing 
 
 ## Activating the Add Hole Tool
 
-1. Click the **Add Hole** button in the toolbar, or press `A`
-2. The cursor changes to a crosshair with a hole symbol
-3. The left panel switches to the **Hole Defaults** form
+1. Click the **Add Hole** button on the [Holes toolbar](holes-toolbar.md)
+2. Click on the canvas where the hole should go. The click snaps to nearby objects — the status bar shows what it snapped to
+3. The **Add a hole to the Pattern?** dialog opens with the clicked position filled in
 
 ---
 
-## Setting Hole Defaults
+## The Add Hole Dialog
 
-Before placing holes, configure the default properties that every new hole will inherit. These defaults save you from re-entering the same values for each hole.
+The dialog sets the properties of the new hole. It remembers the values you last used, so they become your defaults for the next hole.
 
-| Property | Description | Typical Value |
-|----------|-------------|---------------|
-| **Hole ID prefix** | Text prefix for auto-generated IDs (e.g. `H`, `BH`, `R1-`) | `H` |
-| **Diameter** | Hole diameter in millimetres | 115 mm *[VERIFY: built-in default]* |
-| **Bench Height** | Vertical distance from collar to grade (metres) | 10.0 m *[VERIFY]* |
-| **Subdrill** | Vertical distance below grade (metres, positive = downhole) | 1.5 m *[VERIFY]* |
-| **Bearing** | Drill azimuth in degrees (0 = North, clockwise) | 0 |
-| **Angle** | Drill angle from vertical in degrees (0 = vertical, 90 = horizontal) | 0 |
-| **Collar Elevation** | Default collar Z elevation; override per-hole as needed | 150.0 m *[VERIFY]* |
-| **Hole Type** | Classification of the hole | Production |
-
-Typical values above are illustrative — confirm the built-in defaults against the live Hole Defaults panel. The defaults are saved with the project and persist between sessions.
+| Field | Description | First-use value |
+|-------|-------------|-----------------|
+| **Template** | Fill the form from a saved [pattern template](pattern-templates.md) | — |
+| **Blast Name** | The blast (entity) the hole is added to | — |
+| **Use Custom Hole ID** / **Hole ID** | Type your own hole ID instead of the next number | Off |
+| **Location X** / **Location Y** | Collar position, from your click | Click position |
+| **Collar Z RL (m)** | Collar elevation | Snapped Z, or 0 |
+| **Delay** / **Delay Colour** / **Connector Curve (°)** | Timing delay and how its connector is drawn | 0 / red / 0 |
+| **Hole Type** | Free text classification | Production |
+| **Diameter (mm)** | Hole diameter | 115 |
+| **Bearing (°)** | Drill azimuth (0 = North, clockwise) | 0 |
+| **Dip/Angle (°)** | Drill angle from vertical (0 = vertical) | 0 |
+| **Subdrill (m)** | Vertical distance below grade (positive = downhole) | 0 |
+| **Use Grade Z** / **Grade Z RL (m)** / **Length (m)** | Set the hole by grade elevation, or by length | Length |
+| **Burden (m)** / **Spacing (m)** | Stored on the hole for analysis | 3.0 / 3.5 |
 
 ---
 
 ## Placing Holes on the Canvas
 
-1. With the Add Hole tool active, click anywhere on the canvas to place a hole at that position
-2. Each click places one hole and auto-increments the Hole ID
-3. The hole immediately appears with the default properties set above
-4. Continue clicking to place more holes
+1. Fill in the dialog, then click **Single** to place this one hole, or **Multiple** to place it and keep the settings
+2. In **Multiple** mode, each further click on the canvas places another hole with the same settings — no dialog
+3. Click the **Add Hole** button again to finish
 
-> **Tip:** Hold `Shift` while clicking to snap holes to the active grid.
+Every tool that adds holes checks for a hole already at the same position in the same blast and warns you before placing a duplicate.
 
 > *Screenshot coming soon*
 
@@ -79,7 +81,7 @@ For angled holes, the Grade point is automatically interpolated along the hole v
 
 | Property | Description |
 |----------|-------------|
-| **Hole Diameter** | Diameter in millimetres *[VERIFY: default value]* |
+| **Hole Diameter** | Diameter in millimetres (115 mm on first use of the Add Hole dialog) |
 | **Hole Length** | Calculated 3D distance from collar to toe (metres) |
 | **Subdrill Length** | Vector distance along the hole from grade to toe (metres) |
 
@@ -125,10 +127,9 @@ Custom hole types are also supported. You can enter any name you like.
 
 ## Editing a Hole After Placement
 
-- **Single click** a placed hole to select it and display its properties in the right panel
-- Edit any field directly in the right panel; changes apply instantly
-- **Right-click** a hole to open the context menu with options like Properties, Delete, and Select Row
-- **Double-click** a hole to open the full Hole Properties dialog for detailed editing
+- **Click** a placed hole (with **Pointer Select** on) to select it
+- **Right-click** a hole to open the **Edit Hole** dialog — edit its properties and click **Apply**, or use the **Hide**, **Delete**, **Insert** and **Assign Blast** buttons
+- See [Editing Holes](editing-holes.md) for moving, bulk editing and deleting
 
 > *Screenshot coming soon*
 
@@ -136,7 +137,7 @@ Custom hole types are also supported. You can enter any name you like.
 
 ## Hole ID Numbering
 
-Kirra auto-increments the numeric portion of the Hole ID. For example, with prefix `H`, holes are numbered `H001`, `H002`, `H003`, and so on. You can manually override any ID in the Hole Properties dialog or in the right panel.
+Kirra gives each new hole the next number in its blast. To use your own ID instead, tick **Use Custom Hole ID** in the Add Hole dialog and type it in **Hole ID**.
 
 To renumber an entire selection, use **Renumber Holes** on the [Holes toolbar](holes-toolbar.md).
 
@@ -144,7 +145,7 @@ To renumber an entire selection, use **Renumber Holes** on the [Holes toolbar](h
 
 ## Switching Back to Selection Mode
 
-Press `S` or click the **Select** tool in the toolbar to exit hole placement mode. Accidentally placed holes can be removed by selecting them and pressing `Delete` or `Backspace`.
+Click the **Add Hole** button again, or click **Pointer Select** on the Select toolbar, to stop placing holes. Accidentally placed holes can be removed by selecting them and pressing `Delete` or `Backspace`.
 
 ---
 
@@ -164,15 +165,14 @@ Kirra uses UTM-style real-world coordinates:
 
 ## Display Options
 
-You can control which hole labels appear on the canvas via the **View** menu:
+You can control which hole labels appear on the canvas with the display toggle buttons along the bottom of the workspace. Hover over a button to see its name. They include:
 
-- Hole ID
-- Hole Type
-- Diameter
-- Length
-- Angle and Bearing
-- Timing Delay
-- Row and Position numbers
+- Hole ID, Hole Type
+- Hole Length, Hole Diameter, Hole Subdrill
+- Hole Angle, Hole Dip, Hole Bearing
+- Delay Value, Hole Time, Ties
+- Row and Position
+- Hole X / Y / Z Location
 
 Toggle these on and off as needed to keep the canvas readable.
 
