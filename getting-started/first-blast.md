@@ -524,9 +524,9 @@ You now have a complete blast: pattern from template, charged holes, timing casc
 | **Run vibration / PPV analysis** | [Analyse Toolbar](../analysis/analyse-toolbar.md) → Blast Shader Tools, Voronoi Options |
 | **Frequency-domain / detune analysis** | [Time Window Dialog](../analysis/time-window.md) (IDI, Spectrum, Forward Array, Detune, Constrain) |
 | **Flyrock shroud** | [Flyrock Modelling](../analysis/flyrock.md) |
-| **Save the project** | App Navigation panel → **File Management → Export** → KAP |
-| **Generate a print sheet** | App Navigation panel → **Print Management → Print Dialog** — see [Print to PDF](../printing/pdf-print.md) and [XLSX Templates](../printing/xlsx-templates.md) |
-| **Export to CSV / DXF / IREDES** | App Navigation panel → **File Management → Export** — see [CSV Export](../exporting/csv-export.md), [DXF Export](../exporting/dxf-export.md), [Other Formats](../exporting/other-formats.md) |
+| **Save the project** | **Import Export Print** menu (top bar) → **Export**, or App Navigation panel → **File Management → Export** → **Kirra Application Project** (.kap) |
+| **Generate a print sheet** | **Import Export Print** menu → **Print**, or App Navigation panel → **Print Management → PDF Print** — see [Print to PDF](../printing/pdf-print.md) and [XLSX Templates](../printing/xlsx-templates.md) |
+| **Export to CSV / DXF / IREDES** | **Import Export Print** menu → **Export**, or App Navigation panel → **File Management → Export** — see [CSV Export](../exporting/csv-export.md), [DXF Export](../exporting/dxf-export.md), [Other Formats](../exporting/other-formats.md) |
 
 ---
 
