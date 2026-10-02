@@ -8,10 +8,10 @@ Kirra can automatically generate blast patterns in several geometric configurati
 
 | Method | Best For | Tool |
 |--------|----------|------|
-| **Rectangular Grid** | Standard bench blasting with uniform rows and columns | Holes toolbar → Add Pattern Block |
-| **Polygon Pattern** | Irregular blast boundaries, pit edges, complex shapes | Holes toolbar → Add Pattern in Polygon |
-| **Line Pattern** | Single-row presplit, buffer, or production lines | Holes toolbar → Holes Along Line |
-| **Polyline Pattern** | Curved or multi-segment rows following contours | Holes toolbar → Holes Along Polyline |
+| **Rectangular Grid** | Standard bench blasting with uniform rows | Holes toolbar → **Add Pattern** |
+| **Polygon Pattern** | Irregular blast boundaries, pit edges, complex shapes | Holes toolbar → **Pattern in Polygon** |
+| **Line Pattern** | Single-row presplit, buffer, or production lines | Holes toolbar → **Holes Along Line** |
+| **Polyline Pattern** | Curved or multi-segment rows following an existing line | Holes toolbar → **Holes Along PolyLine** |
 
 See the [Holes Toolbar](holes-toolbar.md) reference for each button.
 
@@ -23,25 +23,32 @@ See the [Holes Toolbar](holes-toolbar.md) reference for each button.
 
 Creates a regular grid of blast holes with uniform burden and spacing. This is the most common pattern type for bench blasting.
 
-**Tool:** Holes toolbar → Add Pattern Block
+**Tool:** Holes toolbar → **Add Pattern** (dialog: **Add a Pattern?**)
 
 ### Parameters
 
-| Parameter | Description | Typical Value |
-|-----------|-------------|---------------|
-| **Pattern Name** | Name for this group of holes | `Bench_150_North` |
-| **Number of Rows** | Rows perpendicular to the free face | 5 to 10 |
-| **Number of Columns** | Holes per row, parallel to the free face | 10 to 20 |
-| **Burden** | Distance between rows (metres) | 5.0 m |
-| **Spacing** | Distance between holes within a row (metres) | 6.0 m |
-| **Collar Elevation** | Starting Z elevation for all holes (metres) | 150.0 m |
-| **Bench Height** | Vertical distance from collar to grade (metres) | 10.0 m |
-| **Subdrill** | Vertical distance below grade (metres, positive = downhole) | 1.5 m |
-| **Hole Angle** | Angle from vertical (0 = vertical) | 0 degrees |
-| **Hole Bearing** | Direction of hole angle (0 = North, clockwise) | 0 degrees |
-| **Hole Diameter** | Diameter in millimetres | 115 mm *[VERIFY: typical value]* |
-| **Hole Type** | Classification | Production |
-| **First Hole Position** | Easting and Northing of the pattern origin | Site coordinates |
+| Parameter | Description |
+|-----------|-------------|
+| **Template** | Fill the form from a saved [pattern template](pattern-templates.md) |
+| **Blast Name** | Name of the blast (entity) the holes are created in |
+| **Numerical Names** | Ticked: holes are numbered 1, 2, 3 … Unticked: row-letter names (A1, A2 … B1, B2 …) |
+| **Orientation** | Pattern orientation in degrees |
+| **Start X** / **Start Y** / **Start Z** | Pattern origin — X and Y come from your click |
+| **Use Grade Z** / **Grade Elevation (m)** / **Length (m)** | Set holes by grade elevation, or by length |
+| **Diameter (mm)** | Hole diameter |
+| **Type** | Hole type (free text, e.g. Production) |
+| **Angle (°)** | Angle from vertical (0 = vertical) |
+| **Hole Pivot Location** | Whether the clicked point is the collar, the grade or the toe |
+| **Bearing (°)** | Direction of the hole angle (0 = North, clockwise) |
+| **Subdrill (m)** | Vertical distance below grade (positive = downhole) |
+| **Offset** | Row stagger — Staggered = -0.5 or 0.5, Square = -1, 0, 1 |
+| **Burden (m)** | Distance between rows |
+| **Spacing (m)** | Distance between holes within a row |
+| **Rows** | Number of rows |
+| **Holes Per Row** | Holes in each row |
+| **Row Direction** | **Return (Forward Only)** or **Serpentine (Forward & Back)** |
+
+The dialog remembers the values you last used.
 
 ### Pattern Layout
 
@@ -57,18 +64,15 @@ Rows (Burden direction)
 
 ### Steps
 
-1. Click **Add Pattern Block** on the [Holes toolbar](holes-toolbar.md)
-2. Enter the pattern name (e.g. `Bench_150`)
-3. Set the starting position (Easting, Northing, Elevation)
-4. Configure the number of rows and columns
-5. Set burden and spacing distances
-6. Enter hole specifications (bench height, subdrill, angle, bearing, diameter)
-7. Click **Generate**
-8. Holes appear immediately on the canvas
+1. Click **Add Pattern** on the [Holes toolbar](holes-toolbar.md)
+2. Click on the canvas to place the pattern start point (the click snaps to nearby objects)
+3. In the **Add a Pattern?** dialog, enter the blast name, rows, holes per row, burden and spacing
+4. Enter the hole specifications (grade or length, subdrill, angle, bearing, diameter, type)
+5. Click **Confirm** — holes appear immediately on the canvas
 
 ### Hole Naming
 
-Generated holes are numbered sequentially: `H001`, `H002`, `H003`, etc. Row-based naming is also available: `R1-H01`, `R1-H02`, `R2-H01`, etc.
+With **Numerical Names** ticked, holes are numbered sequentially (1, 2, 3 …). Unticked, they take row-letter names — the letter is the row and the number the position (A1, A2 … B1, B2 …).
 
 The **Starting Hole ID** field accepts both numbers and alphanumeric seeds. Type `500` to start at 500, or `A1` to start an alphabetical series (`A1, A2, A3 …`) — the letter prefix is preserved and the trailing number increments. If the blast already has holes in the same series, new holes continue from the highest existing ID + 1; switching to a new prefix starts a fresh series.
 
@@ -78,11 +82,11 @@ The **Starting Hole ID** field accepts both numbers and alphanumeric seeds. Type
 
 Fills a polygon boundary with holes at the specified burden and spacing. Holes that fall outside the boundary are automatically excluded.
 
-**Tool:** Holes toolbar → Add Pattern in Polygon
+**Tool:** Holes toolbar → **Pattern in Polygon**
 
 ### Two modes — right-click the button
 
-Right-click **Add Pattern in Polygon** to choose how the rows run. Choosing a mode also switches the tool on.
+Right-click **Pattern in Polygon** to choose how the rows run. Choosing a mode also switches the tool on.
 
 | Mode | Button colour | Rows |
 |---|---|---|
@@ -95,7 +99,7 @@ Hover the button to see which mode is set.
 
 ### Steps — Straight Rows
 
-1. Click **Add Pattern in Polygon** on the [Holes toolbar](holes-toolbar.md)
+1. Click **Pattern in Polygon** on the [Holes toolbar](holes-toolbar.md)
 2. Click the polygon to fill
 3. Click the pattern start point, then the end point — this sets the row direction
 4. Click the reference point
@@ -103,7 +107,7 @@ Hover the button to see which mode is set.
 
 ### Steps — Along Polyline
 
-1. Right-click **Add Pattern in Polygon** and choose **Along Polyline** — the button turns amber
+1. Right-click **Pattern in Polygon** and choose **Along Polyline** — the button turns amber
 2. Click the polygon to fill
 3. Click the reference line — a drawn line, or the polygon's own edge
 4. Click the start point on that line, then the end point. The chosen stretch is highlighted in amber, and its direction sets the hole numbering order
@@ -162,12 +166,11 @@ Creates a single straight row of holes between two points.
 ### Steps
 
 1. Click **Holes Along Line** on the [Holes toolbar](holes-toolbar.md)
-2. Define the start point and end point by clicking on the canvas or entering coordinates
-3. Enter the number of holes or the spacing between holes:
-   - If you specify hole count, spacing is calculated automatically
-   - If you specify spacing, hole count is calculated automatically
-4. Set hole properties (collar elevation, bench height, subdrill, angle, bearing, diameter, type)
-5. Click **Generate**
+2. Click the start point, then the end point on the canvas — the **Generate Holes Along Line** dialog opens
+3. Enter the **Spacing (m)** between holes — the number of holes follows from the line length
+4. Set hole properties (collar elevation, grade or length, subdrill, angle, diameter, type)
+5. Tick **Bearings are 90° to Row**, or untick it and enter a **Hole Bearing (°)**
+6. Click **OK**
 
 ### Pattern Layout
 
@@ -189,15 +192,15 @@ Start --> *  *  *  *  *  *  * <-- End
 
 Creates a curved or multi-segment row of holes following a polyline path. This is ideal for contour-following patterns.
 
-**Tool:** Holes toolbar → Holes Along Polyline
+**Tool:** Holes toolbar → **Holes Along PolyLine**
 
 ### Steps
 
-1. Click **Holes Along Polyline** on the [Holes toolbar](holes-toolbar.md)
-2. Click multiple points on the canvas to define the path, or select an existing polyline
-3. Enter the hole spacing along the path (metres)
-4. Set hole properties (collar elevation, bench height, subdrill, angle, bearing, diameter, type)
-5. Click **Generate**
+1. Draw the path first as a KAD line or polyline (or use a polygon edge)
+2. Click **Holes Along PolyLine** on the [Holes toolbar](holes-toolbar.md)
+3. Click the line to select it, then click a vertex or point along it for the start, and another for the end — the **Generate Holes Along Polyline** dialog opens
+4. Enter the hole spacing along the path (metres) and the hole properties
+5. Click **OK**
 
 ### Pattern Layout
 
@@ -213,8 +216,9 @@ Creates a curved or multi-segment row of holes following a polyline path. This i
 
 | Option | Description |
 |--------|-------------|
-| **Follow Path** | Each hole is angled perpendicular to its local path segment |
-| **Fixed Bearing** | All holes use the same bearing regardless of path direction |
+| **Bearings are 90° to Segment** (ticked) | Each hole is set square to its local segment of the path |
+| **Hole Bearing (°)** (checkbox unticked) | All holes use the bearing you type |
+| **Reverse Direction** | Places the holes in the opposite direction along the path |
 
 ### Use Cases
 
@@ -226,33 +230,26 @@ Creates a curved or multi-segment row of holes following a polyline path. This i
 
 ---
 
-## Collar Elevation Options
+## Collar and Grade Elevation
 
-When generating any pattern type, you can set collar elevations in several ways:
+Every pattern dialog sets elevations the same way:
 
-| Mode | Description |
-|------|-------------|
-| **Constant Elevation** | All holes use the same Z value that you enter |
-| **From Surface** | Collar Z is interpolated from a loaded terrain surface at each hole's Easting/Northing position |
-| **From Grade + Bench** | Collar Z is calculated as Grade Elevation + Bench Height |
+| Field | Description |
+|-------|-------------|
+| **Collar Elevation (m)** (or **Start Z** in Add Pattern) | Collar Z for every hole |
+| **Use Grade Z** ticked | Enter **Grade Elevation (m)** — each hole runs from the collar to that floor, plus subdrill |
+| **Use Grade Z** unticked | Enter **Length (m)** instead |
 
-Using the **From Surface** mode enables adaptive patterns that follow terrain topography.
+To drape collars onto a terrain surface after generating, use **Assign Surface (Collar)** on the [Modify toolbar](../kad/modify-tools.md#assign-surface-collar).
 
 ---
 
 ## Common Settings for All Patterns
 
-All pattern types share these hole-level settings:
+All pattern dialogs share these hole-level settings: **Template**, **Blast Name**, **Numerical Names**, the starting hole ID, **Burden (m)**, **Spacing (m)**, **Subdrill (m)**, the hole angle, **Hole Pivot Location** (except the line tools), the bearing, **Diameter (mm)**, the hole type, and **Row Direction** (pattern tools).
 
 | Setting | Description |
 |---------|-------------|
-| **Default Depth / Bench Height** | Vertical bench height (metres) |
-| **Default Subdrill** | Subdrill below grade (metres) |
-| **Default Diameter** | Hole diameter (mm) |
-| **Default Angle** | Drill angle from vertical (degrees) |
-| **Default Bearing** | Drill azimuth (degrees) |
-| **Default Hole Type** | Production, Presplit, Buffer, etc. |
-| **ID Prefix** | Prefix for generated Hole IDs |
 | **Starting Hole ID** | First ID in the sequence — number (`500`) or alphanumeric seed (`A1`); auto-continues from existing same-series holes |
 
 ---
@@ -261,35 +258,24 @@ All pattern types share these hole-level settings:
 
 After generation, holes behave like any manually placed hole. You can:
 
-- Select and drag individual holes to adjust positions
-- Bulk-edit properties via the right panel
+- Move holes with the **Move** tool on the [Modify toolbar](../kad/modify-tools.md#move)
+- Bulk-edit properties by right-clicking a selection (the **Edit Hole** dialog)
 - Add or delete holes
-- Rotate the entire pattern *[VERIFY: tool location — may be via right-click Rotate Selection or the Modify toolbar]*
-- Mirror the pattern *[VERIFY: tool location]*
-- Renumber IDs with **Renumber Holes** on the [Holes toolbar](holes-toolbar.md)
+- Renumber IDs with **Renumber Holes**, or reassign rows with **Reorder Rows**, on the [Holes toolbar](holes-toolbar.md)
+
+See [Editing Holes](editing-holes.md).
 
 ---
 
 ## Duplicate Detection
 
-When creating or importing patterns with names that already exist:
-
-1. Kirra checks for duplicate Hole IDs
-2. It detects overlapping hole positions (within tolerance)
-3. A warning is displayed listing the conflicts
-4. You can choose to: Skip duplicates, Rename automatically, or Overwrite
+Naming a blast the same as an existing one adds the new holes to it, and Kirra checks them for duplicate and overlapping holes. If a new hole would land on an existing hole in the same blast, a warning lets you **Ignore** (place anyway), **Skip** (place only the non-clashing holes), **Skip All**, or **Cancel**. See [Editing Holes → Hole coincidence](editing-holes.md#hole-coincidence).
 
 ---
 
 ## Pattern Statistics
 
-After pattern creation, view statistics via **View > Pattern Statistics** *[VERIFY: menu path]* or by selecting the entity in the TreeView:
-
-- Total hole count
-- Total drilled length (sum of all hole lengths)
-- Average burden and spacing
-- Burden and spacing range (min, max, mean)
-- Total rock volume
+After pattern creation, the Data Explorer shows a summary beside each blast — the hole count, total drilled length and blast volume, for example `(330, 1900.0m, 13951.8m³)`.
 
 ---
 
