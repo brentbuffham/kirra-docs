@@ -9,126 +9,113 @@ This page walks through the Kirra workspace — the top app navigation bar, the 
 The bar across the top of the window holds the global navigation controls — a left-side cluster of app buttons and a right-side cluster of panel toggles.
 
 ![App navigation bar](../screenshots/AppNavBar-Full.png)
-*Full-width App Navigation Bar — left cluster holds app and view controls; right cluster toggles the Data Explorer and File Manager panels.*
+*Full-width App Navigation Bar — left cluster holds app and view controls; right cluster toggles the Data Explorer and Project Explorer panels.*
+<!-- SCREENSHOT NEEDED: refresh AppNavBar-Full.png — the bar now includes the Import / Export / Print menu and the Snap toggle. -->
 
 ### Left cluster (left to right)
 
 | Button | Purpose |
 |--------|---------|
-| **☰ Hamburger** | Opens the **Left Sidenav** — File Management, Print, +/- Holes, Edit Holes, Record Actuals, View Controls & Snap, About |
-| **🐕 Kirra** | App identity (no action on click) |
-| **📖 Book** | **Language select** — pick the UI language |
-| **? Help** | Open help |
-| **↻ Reset / Reload** | Reset or reload the current project state |
-| **↩ Back** | Navigate back to **blastingapps.com** (external) |
-| **▦ Toolbar Reset** | Reset every floating toolbar to its default dock position. Use this if a toolbar has been dragged off-screen or you want a clean layout |
-| **2D / 3D** | Toggle between 2D plan view and 3D viewport. The button is highlighted blue when 2D is active |
-| **☀ Day / Night** | Toggle day (light) / night (dark) theme. The button is highlighted red/orange when active |
+| **☰ Hamburger** | Opens the **side navigation panel** — File Management, Print Management, Record Actuals, Language, About |
+| **Kirra** | App icon and name (no action on click) |
+| **Import Export Print** (file icon) | Drop-down menu with **Import**, **Export** and **Print**. Each entry opens the same dialog as the matching button in the side panel |
+| **Select Language** | Drop-down list of interface languages — English, Chinese, French, Mongolian, Russian, Spanish |
+| **Help** | Opens this help site in a new browser tab |
+| **Reload** | Reloads the page. Your work is kept — it is stored in the browser as you go |
+| **Go Back** | Asks **Leave Kirra?** (with a reminder to save first). **Leave** goes to blastingapps.com; **Stay** cancels |
+| **Toggle Toolbars** | Click to fan every floating toolbar out to its default position; click again to dock them all back to the right edge. Use this if a toolbar has been dragged off-screen or two toolbars are stacked on top of each other |
+| **2D / 3D** | Switches between the 2D plan view and the 3D view. The button has a blue tint in 2D and a red tint in 3D |
+| **Snap** | Turns snapping on or off. A red tint means snapping is on (it is on by default) |
+| **☀ Day / Night** | Switches between the dark and light theme. The button has a blue tint in the dark theme and a red tint in the light theme |
 
 ### Right cluster (left to right)
 
 | Button | Purpose |
 |--------|---------|
-| **📑 Data Explorer** | Toggle the Data Explorer (TreeView) panel |
-| **📁 File Explorer** | Open the OS file explorer at the project location — **Tauri desktop build only** (not available in the browser build) |
-
-> *[SCREENSHOT NEEDED: hamburger menu expanded so the side-panel sections can be confirmed.]*
+| **Data Explorer** | Shows or hides the Data Explorer (TreeView) panel |
+| **Project Explorer** | Opens the **Project Explorer**, which browses a project folder on your computer. **Desktop app only** — in the browser the button is greyed out |
 
 ---
 
-## Side App Navigation Panel
+## Side Navigation Panel
 
-Opened from the **☰ Hamburger** button. The panel is a vertical stack of collapsible groups — each red header expands / collapses with the **−** / **+** indicator.
+Opened from the **☰ Hamburger** button and closed with the **×** at its top. The panel is a vertical stack of collapsible groups — click a red header to expand or collapse it.
 
 ![App navigation panel](../screenshots/filemanager.png)
-*The App Navigation panel — File Management, Print Management, hole tools, View Controls & Snap (expanded), and About.*
+*The side navigation panel.*
+<!-- SCREENSHOT NEEDED: refresh filemanager.png — the panel now holds only File Management, Print Management, Record Actuals, Language and About. -->
 
 ### File Management
 
 | Control | Purpose |
 |---------|---------|
-| **Import** (icon button) | Open the Import dialog (see [File Manager — Import Dialog](#file-manager--import-dialog) below) |
-| **Export** (icon button) | Open the Export dialog *[VERIFY: identical layout to Import?]* |
+| **Import** (icon button) | Opens the **Import** dialog (see [Import Dialog](#import-dialog) below) |
+| **Export** (icon button) | Opens the **Export** dialog — the same layout as Import, but each row has a **Save** button and lists the formats Kirra can write |
 
 ### Print Management
 
 | Control | Purpose |
 |---------|---------|
-| **Print Files** | Listed under the section header |
-| **Print Dialog: Show or Hide** (icon button) | Toggle the PDF Print dialog (see [Print Dialog](#print-dialog) below) |
-
-### + or - Holes
-
-Collapsible group for placing and removing holes. Expand to reveal the hole-placement controls. *[VERIFY: full list when expanded]*
-
-### Edit Holes
-
-Collapsible group for editing properties of existing holes. *[VERIFY: full list when expanded]*
+| **Print** (icon button) | Opens the **PDF Print** dialog (see [Print Dialog](#print-dialog) below) |
 
 ### Record Actuals
 
-Collapsible group for recording as-drilled / as-built actuals against the design holes. *[VERIFY: full controls when expanded]*
+Switches for recording as-drilled / as-charged values against your design holes. Turn one on, then click holes on the canvas to enter the value in a dialog. Only one switch can be on at a time.
 
-### View Controls & Snap
+| Switch | Records |
+|--------|---------|
+| **Record Length with dialog** | Measured hole length. Turning it on also shows the Hole ID and Measured Length labels |
+| **Record Mass with dialog** | Measured explosive mass |
+| **Record Comment with dialog** | A free-text comment |
 
-The largest group — global display and snap settings. The screenshot shows it expanded with sliders for every control.
+### Language
 
-| Control | Default shown | Purpose |
-|---------|---------------|---------|
-| **Font Size** | 16.0px | Size of labels rendered in the viewport |
-| **Font Size Locked?** | checked | When ticked, font size does not auto-scale with zoom |
-| **Tie Size (units)** | 3.0 | Size of tie/connector glyphs *[VERIFY: unit meaning]* |
-| **Toe Size (m)** | 0.0m | Toe marker size in metres |
-| **Hole Adjust (units)** | 2.0 | Hole-marker visual adjustment *[VERIFY]* |
-| **Interval (ms)** | 100ms | Time interval used for the simple blast animation playback step |
-| **First Movement Size (units)** | 2.0 | First-movement arrow size |
-| **Snap Tolerance** | 10px | Pixel radius for snap-to-vertex / snap-to-hole |
-| **Hillshade Light Bearing (deg)** | 135° | Compass bearing of the hillshade light (0 = N, clockwise) |
-| **Hillshade Light Elevation (deg)** | 15° | Elevation of the hillshade light above the horizon |
-| **Surface Colour Gradient Style** | Radial | Gradient style for surface elevation colouring (dropdown) |
+The same six languages as the **Select Language** menu in the top bar.
 
 ### About
 
-Collapsible group at the bottom — opens the About card with version, build, and licence information.
+Shows the author credit. It also contains a **Developer** sub-section with diagnostic and fall-back options (Developer Mode, Performance Monitor, Vector Text (Hershey), Snake Row Angle, Screen Space Snapping, 3D renderer and level-of-detail overrides, Free CAD GPU Memory). You do not normally need to change these.
+
+> **Where did View Controls & Snap go?** The font size, tie size, toe size, snap tolerance and hillshade controls now live on the **2D** tab of the **Settings** dialog — see [Select Toolbar — Settings](../reference/select-toolbar.md#settings). Snapping itself is switched on and off with the **Snap** button in the top bar.
 
 ---
 
-## File Manager — Import Dialog
+## Import Dialog
 
-Opened from the **Import** button in the side panel's File Management group.
+Opened from **Import** in the side panel's File Management group, or from **Import** in the top bar's **Import Export Print** menu.
 
 ![Import dialog — Kirra tab](../screenshots/filemanager1.png)
-*Import dialog, Kirra tab — KAP, KAD, Holes CSV/TXT (with column-count dropdown), Measured Data.*
+*Import dialog, Kirra tab.*
 
-The dialog is tabbed by file family. The counts in parentheses are the format counts on each tab.
+The dialog is tabbed by file family. Each tab shows how many formats it holds, e.g. **Kirra (5)**.
 
-| Tab | Counts | Formats |
-|-----|--------|---------|
-| **Kirra** | 4 | KAP project, KAD drawing, Holes CSV/TXT, Measured Data |
-| **Blasts** | 7 | Custom CSV, CBLAST, Orica ShotPlus (.spf), Davey BPD, DetNet ViewShot (.vxt), DetNet DigiShot/ParVS3, Paradigm Terra |
-| **Drawings / CAD** | 6 | DXF, DWG (experimental), Vulcan ARCH_D, Surpac (STR/DTM), KML/KMZ, ESRI Shapefile |
-| **Surfaces / Mesh** | 4 | GeoTIFF/Image, OBJ/GLTF, Point Cloud (XYZ/CSV/PTS/PTX), LAS Point Cloud |
-| **Operations** | 2 | Epiroc Surface Manager, Wenco NAV |
+| Tab | Formats |
+|-----|---------|
+| **Kirra** | Kirra Application Project, Kirra App Template, Kirra App Drawing, Holes CSV / TXT (preset columns), Measured Data |
+| **Blasts** | Custom CSV, CBLAST, Orica ShotPlus, Davey BPD, DetNet ViewShot, DetNet DigiShot / ParVS3, Paradigm Terra |
+| **Drawings / CAD** | Geometry CSV, DXF, DWG (experimental), Vulcan ARCH_D, Vulcan Design Database, Surpac, Micromine STR, Deswik DUF, 12d Archive |
+| **Surfaces / Mesh** | GeoTIFF / Image, OBJ / GLTF, Point Cloud, LAS Point Cloud, Vulcan .00t Triangulation, Datamine Surface |
+| **Geology** | Block Model — Datamine, Block Model — Vulcan CSV, Block Model — Vulcan BMF |
+| **Miscellaneous** | Borehole Telemetry, Epiroc Surface Manager, Wenco NAV, KML / KMZ, ESRI Shapefile |
 
 ### Shared controls
 
 | Control | Purpose |
 |---------|---------|
-| **Search formats or extensions…** | Filter the list across all tabs by name or extension |
-| **Open** (per row) | Pick a file of that format |
+| **Search formats or extensions…** | Filter the list across all tabs by name, description or extension. Tabs with no match are hidden |
+| **Standard** / **Transform (reproject CRS)** | **Standard** lists the normal formats. **Transform** lists only the formats that can convert coordinates from one coordinate system to another as they import |
+| **Open** (per row) | Pick a file of that format. Clicking anywhere on the row does the same |
 | **Close** (footer) | Close the dialog |
 
 ### Kirra tab
 
-![Import dialog — Kirra tab](../screenshots/filemanager1.png)
-
 | Format | Extensions | Notes |
 |--------|------------|-------|
 | **Kirra Application Project** | `.kap` | Everything — the blast, drawings, surfaces, libraries and work settings |
-| **Kirra App Template** | `.kat` | A site's setup — everything except the blast |
+| **Kirra App Template** | `.kat` | A site's setup only — products, charge rules, pattern and print templates, seeds, monitors, schemas. Everything except the blast |
 | **Kirra App Drawing** | `.kad` / `.txt` | KAD points / lines / polygons / text |
-| **Holes CSV / TXT (preset columns)** | `.csv` / `.txt` | Standard Kirra column-count CSV — **4 / 7 / 9 / 12 / 14 / 30 / 32 / 35** columns (pick from dropdown). 14-column is the default round-trip format: `{entityName, entityType, holeID, startX, startY, startZ, endX, endY, endZ, holeDiameter, holeType, fromHoleID, delay, color}` |
-| **Measured Data** | `.csv` | Measured mass, length, comment for existing holes |
+| **Holes CSV / TXT (preset columns)** | `.csv` / `.txt` | Kirra's standard column-count CSV. The importer recognises files with **4, 7, 9, 12, 14, 29, 30, 31, 32 or 35** columns. The row's drop-down lists the 4 / 7 / 9 / 12 / 14 / 30 / 32 / 35-column layouts, and a note under it shows the columns of the selected layout. 14 columns is the default: `{entityName, entityType, holeID, startX, startY, startZ, endX, endY, endZ, holeDiameter, holeType, fromHoleID, delay, color}` |
+| **Measured Data** | `.csv` | Measured mass, length and comment for existing holes |
 
 ### Blasts tab
 
@@ -139,43 +126,62 @@ The dialog is tabbed by file family. The counts in parentheses are the format co
 | **Custom CSV** | `.csv` / `.txt` | Pick your own column order, units, and custom fields |
 | **CBLAST** | `.csv` | Carlson / CBLAST blast design CSV |
 | **Orica ShotPlus** | `.spf` | Orica ShotPlus blast design (import only) |
-| **Davey BPD** | `.bpd` | Davey Bickford blast plan — lat/lon coords need projection on import |
-| **DetNet ViewShot** | `.vxt` | DetNet ViewShot blast project — `.vxt` only (the `.vs3` binary is not reverse-engineered; save as `.vxt` in ViewShot first) |
-| **DetNet DigiShot / ParVS3** | `.parvs3` | Row-per-deck with absolute delays on explosive decks; primer rows land on the deck containing the primer. Reads and writes `.parvs3` (ParVS3) |
-| **Paradigm Terra** | `.blst` | Paradigm Terra `.blst` (ASCII scene graph, Format 21+) — holes, monitors, annotations. Charging/timing conversion is a follow-up |
+| **Davey BPD** | `.bpd` | Davey Bickford blast plan — latitude / longitude coordinates need projecting on import |
+| **DetNet ViewShot** | `.vxt` | DetNet ViewShot blast project — `.vxt` only (save as `.vxt` in ViewShot first) |
+| **DetNet DigiShot / ParVS3** | `.parvs3` | One row per deck with absolute delays on explosive decks; primer rows land on the deck containing the primer |
+| **Paradigm Terra** | `.blst` | Paradigm Terra `.blst` (Format 21+) — holes, monitors, annotations |
 
 ### Drawings / CAD tab
 
 ![Import dialog — Drawings / CAD tab](../screenshots/filemanager3.png)
+<!-- SCREENSHOT NEEDED: refresh filemanager3.png — the tab now also lists Geometry CSV, Vulcan Design Database, Micromine STR, Deswik DUF and 12d Archive; KML / KMZ and ESRI Shapefile moved to Miscellaneous. -->
 
 | Format | Extensions | Notes |
 |--------|------------|-------|
+| **Geometry CSV** | `.csv` / `.txt` | Your own x,y,z or id,x,y,z CSV — points, lines, polygons, circles, text (boretrack, MWD, survey strings) |
 | **DXF** | `.dxf` | AutoCAD DXF — holes, drawings, Vulcan-tagged, 3DFACE |
-| **DWG (experimental)** | `.dwg` | AutoCAD DWG binary — R2010 / R2013 / R2018; drawings + 3DFACE meshes + MTEXT |
+| **DWG (experimental)** | `.dwg` | AutoCAD DWG — R2010 / R2013 / R2018; drawings, 3DFACE meshes and MTEXT |
 | **Vulcan ARCH_D** | `.arch_d` | Maptek Vulcan design file (blast holes + drawings) |
-| **Surpac** | `.str` / `.dtm` | Maptek Surpac strings / DTM surfaces / holes — STR holes mode is selected via the dropdown |
-| **KML / KMZ** | `.kml` / `.kmz` | Google Earth placemarks / geometry |
-| **ESRI Shapefile** | `.shp` / `.zip` | GIS shapefile (`.shp + .shx + .dbf + .prj`) |
+| **Vulcan Design Database** | `.dgd.isis` | Maptek Vulcan design database — pick layers; blasts import with their attributes (read only) |
+| **Surpac** | `.str` / `.dtm` | Maptek Surpac strings, DTM surfaces or holes. Pick **STR holes**, **STR** or **DTM & STR** from the row's drop-down |
+| **Micromine STR** | `.str` | Micromine Extended Data strings — polylines, rings, points |
+| **Deswik DUF** | `.duf` | Deswik design file — polylines and rings (import only) |
+| **12d Archive** | `.12da` / `.12daz` | 12d text interchange — TINs, trimeshes, strings, polylines |
 
 ### Surfaces / Mesh tab
 
 ![Import dialog — Surfaces / Mesh tab](../screenshots/filemanager4.png)
+<!-- SCREENSHOT NEEDED: refresh filemanager4.png — the tab now also lists Vulcan .00t Triangulation and Datamine Surface. -->
 
 | Format | Extensions | Notes |
 |--------|------------|-------|
-| **GeoTIFF / Image** | `.tif` / `.tiff` | Georeferenced raster imagery or elevation. The row shows a **GeoTIFF** mode dropdown |
-| **OBJ / GLTF** | `.obj` / `.gltf` / `.glb` | 3D mesh — OBJ + MTL + textures, or binary GLB |
+| **GeoTIFF / Image** | `.tif` / `.tiff` | Georeferenced raster imagery or elevation. Pick **GeoTIFF** or **Elev.GeoTIFF** from the row's drop-down |
+| **OBJ / GLTF** | `.obj` / `.gltf` / `.glb` | 3D mesh — OBJ with MTL and textures, or GLTF / GLB |
 | **Point Cloud** | `.xyz` / `.csv` / `.pts` / `.ptx` | Plain-text point cloud |
 | **LAS Point Cloud** | `.las` / `.laz` | ASPRS LAS LiDAR point cloud |
+| **Vulcan .00t Triangulation** | `.00t` | Maptek Vulcan triangulated surface (single file) |
+| **Datamine Surface** | `.dm` (pt + tr) | Datamine wireframe — select **both** the points and triangles `.dm` files |
 
-### Operations tab
-
-![Import dialog — Operations tab](../screenshots/filemanager5.png)
+### Geology tab
 
 | Format | Extensions | Notes |
 |--------|------------|-------|
-| **Epiroc Surface Manager** | `.geofence` / `.hazard` / `.sockets` / `.xml` | Geofence / hazard / sockets / IREDES drill plan — row shows an **IREDES Drill Plan** mode dropdown |
+| **Block Model — Datamine** | `.dm` | Datamine block model. Large files are streamed |
+| **Block Model — Vulcan CSV** | `.csv` / `.txt` | Vulcan CSV block model. Large files are streamed |
+| **Block Model — Vulcan BMF** | `.bmf` | Vulcan `.bmf` block model (read only) |
+
+### Miscellaneous tab
+
+![Import dialog — Miscellaneous tab](../screenshots/filemanager5.png)
+<!-- SCREENSHOT NEEDED: refresh filemanager5.png — this tab was renamed from Operations to Miscellaneous and now also lists Borehole Telemetry, KML / KMZ and ESRI Shapefile. -->
+
+| Format | Extensions | Notes |
+|--------|------------|-------|
+| **Borehole Telemetry** | `.csv` / `.txt` | Downhole survey (depth / heading / inclination) turned into hole paths |
+| **Epiroc Surface Manager** | `.geofence` / `.hazard` / `.sockets` / `.xml` | Pick **IREDES Drill Plan**, **Geofence**, **Hazard** or **Socket** from the row's drop-down |
 | **Wenco NAV** | `.nav` | Wenco FMS NAV ASCII export |
+| **KML / KMZ** | `.kml` / `.kmz` | Google Earth placemarks / geometry |
+| **ESRI Shapefile** | `.shp` / `.zip` | GIS shapefile (`.shp + .shx + .dbf + .prj`) |
 
 See [Supported File Formats](../reference/supported-formats.md) for the full import / export matrix and round-trip notes.
 
@@ -183,41 +189,39 @@ See [Supported File Formats](../reference/supported-formats.md) for the full imp
 
 ## Print Dialog
 
-Opened from **Print Dialog: Show or Hide** in the side panel's Print Management group.
+Opened from the **Print** button in the side panel's Print Management group, or from **Print** in the top bar's **Import Export Print** menu. The dialog is titled **PDF Print**.
 
-![PDF Print dialog with Template Formulas Reference](../screenshots/printdialog.png)
-*PDF Print dialog (right) over the 2D viewport (left). The lower right panel shows the Template Formulas Reference.*
+![PDF Print dialog with Template Formula Reference](../screenshots/printdialog.png)
+*PDF Print dialog (right) over the 2D viewport (left). The lower right panel shows the Template Formula Reference.*
 
-### PDF Print controls
+### Controls
 
 | Control | Purpose |
 |---------|---------|
-| **Saved Templates** | Dropdown of templates saved to the library |
-| **Import Template** | Load a template file (XLSX) — file picker labelled *Choose File* |
-| **Paper Size** | Paper size dropdown — selection from the loaded template *[VERIFY: dropdown options]* |
-| **Orientation** | From sheet (or override) *[VERIFY]* |
-| **Print Preview** | Toggle preview rendering |
-| **Sheet Name** | Free-text field for the printed sheet name |
-| **Designer** | Free-text field for the designer's name |
-| **Output Format** | **PDF Vector** (default) or other output formats *[VERIFY: full list]* |
+| **Saved Template** | Choose **Kirra Inbuilt** (the default) or a template saved to your library |
+| **Import Template (.xlsx)** | Load an XLSX template file |
+| **Paper Size** | **From Sheet** (the template's own size), or A4, A3, A2, A1, A0, Letter, Legal, Tabloid |
+| **Orientation** | **From Sheet**, **Landscape** or **Portrait** |
+| **Print Preview** | Turns the print preview on the canvas on or off. It switches on when the dialog opens |
+| **Blast Name**, **Designer**, **Title**, **Comment** | Free text for the title block |
+| **Entity Filter** | **All Entities**, or one blast |
+| **Output Format** | **PDF Raster (High-Res Image)**, **PDF Vector (Scalable)** or **XLSX (Populated Spreadsheet)** |
 
 ### Footer buttons
 
 | Button | Action |
 |--------|--------|
-| **Help** | Open help / documentation for the print system |
-| **Reset** | Reset all fields to template defaults |
-| **Reference** | Toggle the Template Formulas Reference panel |
-| **Formulas** | Insert formula at cursor *[VERIFY: button behaviour]* |
-| **Save to Library** | Save current settings as a new template |
-| **Print** | Generate the PDF |
+| **Save to Library** | Save the loaded template to your library under a name you choose |
+| **Formulas** | Open the **Template Formula Reference** |
+| **Reference Pack** | Download a ZIP containing a reference template, the print skill and the formula reference |
+| **Delete** | Delete the selected saved template (asks first) |
+| **Help** | Open the [Template Examples](../printing/template-examples.md) help page |
+| **Cancel** | Close the dialog |
+| **Print** | Generate the output |
 
-### Template Formulas Reference
+### Template Formula Reference
 
-A panel listing every formula variable available in XLSX templates. Two sections:
-
-- **Scalar variables** — single-value fields like `blastName`, `designer`, `date`, `time`, `scaleFromUI`, `paperSize`, `paperOrientation`, plus geometric scalars
-- **Iterated fields** — per-hole / per-deck fields (e.g. `holeLength`, `holeAngle`, etc.) that iterate when used inside a repeating template region
+A panel listing every variable and function available in XLSX templates, grouped as **Scalar Variables**, **Iterated Fields (use [i])**, **Functions**, **Operators** and **Render Functions (Graphics)**.
 
 See [Print to PDF](../printing/pdf-print.md) and [Print from Template (XLSX)](../printing/xlsx-templates.md) for the full workflow and formula list.
 
@@ -225,22 +229,43 @@ See [Print to PDF](../printing/pdf-print.md) and [Print from Template (XLSX)](..
 
 ## Floating Toolbars
 
-Floating toolbars appear on the **right side** of the workspace. Each toolbar can be docked, collapsed, or dragged into a different position.
+Kirra has eight floating toolbars. Drag a toolbar by its title bar to move it. The **−** button in a toolbar's header docks it as a vertical tab on the right edge of the viewport; click the tab to bring the toolbar back. **Toggle Toolbars** in the top bar fans them all out or docks them all at once.
 
 ![Floating toolbars](../screenshots/toolbarsfloating.png)
-*The seven floating toolbars — Select, Holes, Surface, KAD, Modify, Connect, and Analyse.*
+*The floating toolbars.*
+<!-- SCREENSHOT NEEDED: refresh toolbarsfloating.png — it shows seven toolbars; the Workspace toolbar is now the eighth. -->
 
 | Toolbar | Purpose |
 |---------|---------|
-| **Select** | [Undo/redo, selection tools, H/K/V mode, ruler, protractor, zoom, reset view, section view, orbit focus, 3D settings](../reference/select-toolbar.md) |
-| **Holes** | [Place holes, generate patterns, renumber, manage charging, electronic timing](../blast-design/holes-toolbar.md) |
-| **Surface** | [Triangulate, intersect, boolean (CSG / Original / Trimesh), extrude, contour, mesh repair](../surfaces/surfaces-toolbar.md) |
-| **KAD** | [Drawing level / colour / width, points, lines, polygons, text (with formulas), circles](../kad/kad-toolbar.md) |
-| **Modify** | [Assign Surface/Grade, Transform, Offset, Radii, Reorder, Boolean, Join, Split](../kad/modify-tools.md) |
-| **Connect** | [Surface connectors, continuous connect, bake to electronic, harness wire path/channel](../blast-design/connect-toolbar.md) |
-| **Analyse** | [Flyrock shroud, blast shader, Voronoi options, monitor library, log-log regression, blast animation, Time Window dialog](../analysis/analyse-toolbar.md) |
+| **Select** | [Undo / redo, pointer and shape selection, H / K / V mode, ruler, protractor, zoom, reset view, section plane, find, orbit focus, Settings](../reference/select-toolbar.md) |
+| **Holes** | [Place holes and patterns, pattern templates, renumber, reorder rows, insert holes, charging, radii from holes](../blast-design/holes-toolbar.md) |
+| **Surface** | [Triangulate, surface intersection, Solid Boolean, Trimesh Boolean, extrude, contour, clean mesh, clip, horizon slice](../surfaces/surfaces-toolbar.md) |
+| **Workspace** | [Switch between ten separate workspaces, or clear one](#workspace-toolbar) |
+| **Analyse** | [Flyrock shroud, blast analysis shader, Voronoi options, monitor points, site law regression, hole section, compare surfaces, blast animation, time window, block models, blast quality](../analysis/analyse-toolbar.md) |
+| **KAD** | [Drawing elevation / colour / size, points, lines, polygons, text, circles, roads and ramps](../kad/kad-toolbar.md) |
+| **Modify** | [Assign surface / grade, hole bearing, move, transform, offset, radii, boolean, join, split, extend, grade line, simplify, snap to surface](../kad/modify-tools.md) |
+| **Connect** | [Temporal mesh, tie connect tools, trunk branch, connector removal, electronic timing, harness wire, bake delay](../blast-design/connect-toolbar.md) |
 
-Each toolbar minimises to its title bar via the **−** button in its header.
+---
+
+## Workspace Toolbar
+
+Kirra keeps ten separate workspaces, numbered **0** to **9**. Each is its own store of holes, drawings, surfaces, charging, timing and libraries, so you can keep different jobs apart. A new workspace opens empty — import a KAP or KAT file, or start building.
+
+| Control | Purpose |
+|---------|---------|
+| **Workspace 0** … **Workspace 9** | Open that workspace. In a browser it opens in its own window (clicking the chip again brings that window forward). In the desktop app, this window switches to the chosen workspace after you confirm — unsaved changes are lost |
+| **Reset or clear a workspace** | Opens **Reset a Workspace**: choose which workspace to clear, then click **Clear…** and confirm **Delete**. Everything in it is removed and this cannot be undone. If it is the workspace you are in, Kirra reloads once it is cleared. When leftover import files are taking up space, a **Clear Scratch** button also appears |
+
+**Reading the chips:**
+
+- A **red** border marks the workspace this window is using.
+- A **green** border marks a workspace that holds data.
+- A dimmed chip is empty.
+- Hover over a chip for the same information in words.
+- **Right-click** a chip to give it a name. The name shows in the window title and the chip's tooltip; leave it blank to clear it.
+
+Some browsers cannot report which workspaces hold data. In that case no chip is marked and the reset dialog says so.
 
 ---
 
@@ -262,16 +287,7 @@ You can resize panels by dragging their edges, dock them in different positions,
 ![Data Explorer TreeView showing loaded entities](../screenshots/dataexplorer-treeview.png)
 *The TreeView in the Explorer panel lists all loaded entities — holes, surfaces, KAD drawings, and layers.*
 
-The TreeView is toggled by the **📑 Data Explorer** button in the [App Navigation Bar](#app-navigation-bar).
-
-### Node naming
-
-Node IDs use a Braille separator (⣿):
-
-| Entity type | Node ID example |
-|-------------|----------------|
-| Hole | `hole⣿Pattern_01⣿holeID` |
-| KAD vertex | `entityType⣿entityName⣿element⣿pointID` |
+The TreeView is toggled by the **Data Explorer** button in the [App Navigation Bar](#app-navigation-bar).
 
 ### TreeView features
 
@@ -296,10 +312,11 @@ A persistent text overlay reports counts, cursor position, scene centroid, and b
 |------|---------|
 | `Blasts[N] Holes[M]` | Number of blasts and total holes loaded |
 | `Point[N] Line[N] Poly[N] Circle[N] Text[N]` | KAD entity counts by type |
-| `Mouse 2D [X, Y, Scale]` | Cursor position in 2D paper-space units and current scale |
-| `World 3D [X, Y, Z]` | Cursor position in world coordinates (m) |
+| `Mouse 2D [X, Y] Scale[…]` | Cursor position in 2D and the current map scale |
+| `World 3D [X, Y, Z]` | Cursor position in world coordinates (m). Reads `Snapped 3D` while the cursor is snapped to something |
 | `Centroid [X, Y, Z]` | Scene centroid in world coordinates |
-| `Ver: VERSION ...` | App version, build date, build time |
+| `L1[…]` / `P1->P2[…]` | Ruler lengths and protractor angles, while those tools are in use |
+| `Ver: …` | App version and build |
 
 The overlay is rendered as plain text and stays visible while you work.
 
@@ -311,11 +328,13 @@ The main 2D viewport shows your blast pattern in plan view.
 
 | Action | How |
 |--------|-----|
-| **Pan** | Default mode — click and drag (or middle-mouse drag) |
-| **Zoom** | Scroll wheel (direction set in 3D World Settings) |
-| **Select holes** | Left-click on a hole (active H/K/V mode applies) |
-| **Multi-select** | Shift+click to add or remove from selection |
-| **Polygon select** | Activate the Polygon Selection tool in the [Select Toolbar](../reference/select-toolbar.md) |
+| **Pan** | Click and drag |
+| **Zoom** | Scroll wheel (direction set on the **3D** tab of the Settings dialog) |
+| **Rotate the plan view** | Shift + Alt + drag |
+| **Select** | Left-click (the active H / K / V mode applies). A click on empty canvas clears the selection |
+| **Add to selection** | Shift + click (Shift + click on a selected item removes it) |
+| **Remove from selection** | Ctrl + click (Cmd + click on a Mac) |
+| **Shape select** | Use the Polygon / Rectangle / Ellipse select tool in the [Select Toolbar](../reference/select-toolbar.md) |
 
 ---
 
@@ -325,10 +344,10 @@ Switch to 3D with the **2D / 3D** toggle in the App Navigation Bar.
 
 | Action | How |
 |--------|-----|
-| **Pan** | Click and drag (default mode) |
+| **Pan** | Click and drag |
 | **Orbit** | Alt + drag |
-| **Camera roll** | Alt + Shift + drag |
-| **Zoom** | Scroll wheel (zooms towards cursor when Cursor Zoom is on) |
+| **Camera roll** | Shift + Alt + drag |
+| **Zoom** | Scroll wheel (zooms towards the cursor when Cursor Zoom is on) |
 | **Context menu** | Right-click |
 
 The 3D view uses the same coordinate space as 2D — no Z scaling or elevation transform.
@@ -337,16 +356,16 @@ The 3D view uses the same coordinate space as 2D — no Z scaling or elevation t
 
 The **Orbit Focus** tool (in the [Select Toolbar](../reference/select-toolbar.md)) lets you click any point in the 3D scene to set it as the new orbit centre. See [3D View & Orbit Focus](../reference/3d-tools.md) for full details.
 
-### 3D World Settings
+### Settings
 
-The **3D World Settings** button (in the Select Toolbar) opens renderer configuration — camera damping, cursor zoom, scroll-wheel direction, plumb-line display, lighting, axis lock, gizmo display, and text billboarding. See [Select Toolbar — 3D World Settings](../reference/select-toolbar.md#3d-world-settings).
+The **3D Settings** button (globe-and-cog icon, at the bottom of the Select toolbar) opens the **Settings** dialog. Its **2D** tab holds the view sizes, snap tolerance and hillshade; its **3D** tab holds camera, scroll-wheel, lighting, orbit, axis lock, gizmo and text billboarding settings; its **Performance** tab holds import and triangle limits. See [Select Toolbar — Settings](../reference/select-toolbar.md#settings).
 
 ---
 
 ## Theme and Language
 
-- **Theme toggle** — Switch between dark and light mode (App Navigation Bar, far right)
-- **Language selector** — Choose from English, Chinese, French, Mongolian, Russian, Spanish, and more *[VERIFY: where in the UI — App Navigation panel or hamburger menu]*
+- **Theme** — the **Day / Night** button at the end of the left cluster switches between the dark and light theme
+- **Language** — choose English, Chinese, French, Mongolian, Russian or Spanish from the **Select Language** menu in the top bar, or from the **Language** group in the side panel
 
 ---
 
