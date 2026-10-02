@@ -37,7 +37,7 @@ Each template stores the following parameters:
 | **Subdrill (m)** | Vertical distance below grade | 1.0 |
 | **Hole Angle (deg)** | Angle from vertical (0 = vertical) | 0 |
 | **Offset (m)** | Stagger offset for alternating rows | 0 |
-| **Row Direction** | Direction for row numbering (return, forward, reverse) | return |
+| **Row Direction** | **Return (Forward Only)** or **Serpentine (Forward & Back)** | Return |
 | **Collar Elevation** | Default collar Z value (optional) | (none) |
 | **Grade Elevation** | Default grade Z value (optional) | (none) |
 | **Hole Colour** | Colour for the holes this template creates | App default |
@@ -127,7 +127,7 @@ Click **Import CSV** to load templates from a CSV file. The importer:
 | `subdrillM` | Number | Subdrill in metres |
 | `holeAngleDeg` | Number | Angle from vertical in degrees |
 | `offsetM` | Number | Row offset in metres |
-| `rowDirection` | Text | Row direction (return, forward, reverse) |
+| `rowDirection` | Text | `return` (forward only) or `serpentine` (forward & back) |
 | `collarElevation` | Number | Collar Z (optional, leave blank for none) |
 | `gradeElevation` | Number | Grade Z (optional, leave blank for none) |
 
