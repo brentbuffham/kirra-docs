@@ -11,19 +11,15 @@ Once holes are on the canvas — whether manually placed, imported from a file, 
 
 ### Single Selection
 
-- Click any hole symbol on the canvas
-- The hole highlights in the selection colour (default: orange)
-- Properties appear in the right panel
+- With **Pointer Select** on (Select toolbar), click any hole on the canvas
+- A plain click replaces the current selection with that hole
 
 ### Multi-Selection
 
 | Method | How |
 |--------|-----|
 | **Shift+Click** | Add individual holes to the current selection one at a time |
-| **Box select** | Click and drag a rectangle on the canvas — all holes inside are selected |
-| **Ctrl+Click** | Toggle individual holes in or out of the current selection |
-| **Ctrl+A** | Select every hole in the project |
-| **Select Row** | Right-click a hole and choose **Select Row** to select all holes sharing the same row |
+| **Polygon Select** | Use the Select toolbar's polygon / shape selection to select every hole inside an area — see [Select Toolbar](../reference/select-toolbar.md) |
 
 ### TreeView Selection
 
@@ -31,13 +27,12 @@ The TreeView panel on the left shows all entities (patterns) and their holes in 
 
 - Click an **entity name** to select all holes in that pattern
 - Click an **individual hole node** to select just that hole
-- Hole nodes in the TreeView use the ID format: the entity name and hole ID separated by a special delimiter
 
 > **Tip:** Use the TreeView to quickly find and select holes by name, especially in large patterns with many overlapping holes.
 
 ### Viewing Hole Properties
 
-Right-click a hole to access its properties and context menu:
+Right-click a hole to open the **Edit Hole** dialog for it (or for the whole selection, if the hole is part of one):
 
 ![Hole properties context menu](../screenshots/hole-properties-context.png)
 *Right-click a hole to view and edit properties, charge details, timing, and more.*
@@ -49,26 +44,11 @@ Right-click a hole to access its properties and context menu:
 ### Drag to Move
 
 1. Select one or more holes
-2. Click and hold on a selected hole, then drag it to a new position
-3. Release to drop at the new location
-4. All coordinates (collar, toe, grade) update automatically
-
-> **Tip:** Hold `Shift` while dragging to constrain movement to horizontal or vertical only.
+2. Click the **Move** button on the [Modify toolbar](../kad/modify-tools.md#move)
+3. Click and drag on the canvas to move the selection
+4. Release to drop at the new location — collar, grade and toe move together
 
 > **Dropping on another hole:** if a moved hole lands on top of another hole **in the same blast**, Kirra shows a coincidence warning on drop and lets you **Keep** the move or **Revert** (snap the moved hole(s) back to where they started). See [Hole coincidence](#hole-coincidence) below.
-
-### Move by Offset
-
-1. Select the holes you want to move
-2. Right-click and choose **Move by Offset** (or press `M`)
-3. Enter delta Easting (dE) and delta Northing (dN) values
-4. Click **Apply** — holes shift by exactly that amount
-
-### Enter Coordinates Directly
-
-1. Select a single hole
-2. In the right panel, edit the **Easting** and **Northing** fields directly
-3. Press `Enter` or `Tab` — the hole jumps to the new position
 
 ---
 
@@ -76,20 +56,19 @@ Right-click a hole to access its properties and context menu:
 
 ### Individual Hole
 
-1. Select the hole
-2. Edit any field in the right panel: ID, Depth, Diameter, Bearing, Angle, Subdrill, Elevation, Hole Type, or other attributes
-3. Changes apply immediately
-4. Dependent values (hole length, grade position, etc.) are recalculated automatically
+1. Right-click the hole — the **Edit Hole** dialog opens
+2. On the **Properties** tab, edit fields such as **Hole Type**, **Diameter (mm)**, **Hole Pivot Location**, **Bearing (°)**, **Dip/Angle (°)**, **Subdrill (m)**, **Collar Z RL (m)**, **Grade Z RL (m)**, **Burden (m)** and **Spacing (m)**
+3. Click **Apply** — dependent values (hole length, grade and toe position) are recalculated
 
-Alternatively, **right-click** the hole and choose **Properties** to open the full Hole Properties dialog.
+The dialog also has **Additional**, **Loading** and **Text** tabs, and footer buttons **Hide**, **Delete**, **Insert** and **Assign Blast**.
 
 ### Bulk Edit
 
 1. Select two or more holes
-2. The right panel shows a **bulk-edit form**
-3. Fields that differ across the selection show `(mixed)` — type a new value to apply it to all selected holes
-4. Fields left blank remain unchanged
-5. Press `Enter` or click **Apply**
+2. Right-click one of the selected holes — the **Edit Hole** dialog opens for the whole selection (with **Properties**, **Additional** and **Text** tabs)
+3. Fields that differ across the selection are left empty with a hint such as *varies (avg: 115)*; list fields are marked **(multiple)**. Type or pick a new value to apply it to all selected holes
+4. Fields left unchanged stay as they are on each hole
+5. Click **Apply**
 
 Common bulk-edit operations:
 
@@ -108,7 +87,7 @@ and a shape.
 
 ### Setting them
 
-1. Right-click a hole (or a selection) and choose **Properties**
+1. Right-click a hole (or a selection) to open **Edit Hole**
 2. Open the **Additional** tab
 3. Set **Hole Colour**, and **Hole Shape**
 4. Click **Apply**
@@ -167,7 +146,7 @@ applies them to the holes it creates.
 ## Deleting Holes
 
 1. Select the holes to remove
-2. Press `Delete` or `Backspace` (or right-click and choose **Delete**)
+2. Press `Delete` or `Backspace` (or right-click and click **Delete** in the Edit Hole dialog)
 3. Kirra asks what to do with the numbering of the holes that remain:
 
 | Choice | What happens |
@@ -183,38 +162,6 @@ there.
 
 > **Note:** If you are deleting every hole in a pattern there is nothing left to renumber, so
 > Kirra deletes without asking.
-
----
-
-## Rotating a Selection
-
-1. Select the holes to rotate
-2. Right-click and choose **Rotate Selection** *[VERIFY: exact context-menu label]*
-3. Enter the rotation angle in degrees (positive = clockwise)
-4. Choose the **pivot point**: centroid of the selection, or click a custom point on the canvas
-5. Click **Apply**
-
-> **Note:** Rotation adjusts the X and Y coordinates of each hole. Z elevations and hole orientations (angle, bearing) are preserved.
-
----
-
-## Mirroring a Selection
-
-1. Select the holes to mirror
-2. Right-click and choose **Mirror Selection** *[VERIFY: exact context-menu label]*
-3. Choose axis: **Horizontal** (flip North/South) or **Vertical** (flip East/West)
-4. Click **Apply**
-
----
-
-## Scaling a Selection
-
-1. Select all holes in the pattern
-2. Open the Scale dialog *[VERIFY: exact tool location — likely the right-click context menu or a future Modify toolbar entry]*
-3. Enter scale factors for X and Y
-4. Click **Apply**
-
-This is useful for adjusting burden and spacing across an entire pattern.
 
 ---
 
@@ -282,7 +229,7 @@ Kirra uses HDBScan clustering to automatically determine pattern structure for y
 | **Burden** | Distance to the next row |
 | **Spacing** | Distance to the next hole in the same row |
 
-These values are calculated automatically and can be viewed in the right panel or exported with your data. They enable row-based operations, pattern statistics, and burden/spacing analysis.
+These values are calculated automatically and can be viewed in the Edit Hole dialog or exported with your data. They enable row-based operations, pattern statistics, and burden/spacing analysis.
 
 ---
 
@@ -302,7 +249,7 @@ Two holes in the **same blast** must never share an XY position — a duplicate 
 - **Adding / inserting / pattern tools** — if a new hole would land on an existing hole in the same blast, a proximity warning appears with **Ignore** (place anyway), **Skip** (place only the non-clashing holes), **Skip All**, or **Cancel**.
 - **Move tool** — if a dragged hole is dropped on another hole in the same blast, the drop is flagged with **Keep** (allow) or **Revert** (snap the moved hole(s) back to their original positions).
 
-Coincidence is only flagged **within a blast** (same entity). Holes from *different* blasts may overlap in plan view by design — they sit on different benches at different elevations. To find coincident holes across blasts, use the Coincident Hole Detector.
+Coincidence is only flagged **within a blast** (same entity). Holes from *different* blasts may overlap in plan view by design — they sit on different benches at different elevations. To find coincident holes across blasts, use **Coincident Holes Check** on the [Holes toolbar](holes-toolbar.md#coincident-holes-check).
 
 ---
 
