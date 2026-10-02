@@ -1,6 +1,6 @@
 # Modify Toolbar
 
-The Modify toolbar provides tools for transforming, editing, and manipulating blast holes and KAD entities. It is one of the seven floating toolbars available on the right side of the Kirra workspace.
+The Modify toolbar provides tools for transforming, editing, and manipulating blast holes and KAD entities. It is one of Kirra's eight floating toolbars.
 
 ---
 
@@ -26,6 +26,7 @@ The Modify toolbar contains the following tools:
 | **Extend Line to Boundary** | Interactive | Extend the end of a line until it reaches a chosen boundary entity |
 | **Grade Line** | Interactive | Set a constant slope (grade) along a selected line |
 | **Simplify RDP** | Interactive | Reduce a line/polygon's vertex count with the Ramer–Douglas–Peucker algorithm |
+| **Snap Objects to Surface** | Dialog | Drape KAD objects onto a surface so their elevations follow the ground |
 
 ---
 
@@ -142,7 +143,7 @@ Offsets KAD lines and polygons inward or outward by a specified distance, creati
 | **Projection (°)** | Slope angle for offset. 0° = horizontal, positive = up slope, negative = down slope |
 | **Number of Offsets** | How many parallel offsets to create (1 or more) |
 | **Priority Mode** | Distance Priority (total distance) or other modes |
-| **Offset Colour** | Colour for the new offset entities *[VERIFY: UI label spelling]* |
+| **Offset Color** | Colour for the new offset entities |
 | **Handle Crossovers** | Automatically resolve self-intersections in the offset result |
 | **Keep Elevations** | Interpolate Z values from the original entity |
 | **Limit to Elevation** | Constrain the offset to a fixed elevation |
@@ -186,7 +187,7 @@ Creates circular polygons around selected blast holes or KAD points.
 | **Starburst Offset (%)** | 100% = circle, 50% = even points at half radius, 0% = star shape |
 | **Point Location** | Which hole point to use: Start/Collar Location or other options |
 | **Line Width** | Width of the polygon outline |
-| **Polygon Colour** | Colour for the generated polygons *[VERIFY: UI label spelling]* |
+| **Polygon Color** | Colour for the generated polygons |
 | **Union Circles** | Combine overlapping circles into a single polygon |
 
 ### Notes
@@ -222,25 +223,49 @@ See [Layer Organisation](layer-organisation.md).
 
 Creates routed (rounded) or chamfered (bevelled) edge transitions on selected KAD geometry — softening sharp corners on a polygon or line.
 
+### Parameters
+
+The **Router / Chamfer** palette stays open while you pick corners.
+
+| Parameter | Description |
+|-----------|-------------|
+| **Corner Style** | **Round (arc / router)** or **Chamfer (straight bevel)** |
+| **Radius (m)** | Size of the rounding or bevel (default 2) |
+| **Arc Segments** | Number of segments in each rounded corner, 1–64 (default 8). Disabled for chamfers |
+
 ### How to Use
 
-1. Select the KAD line or polygon to modify
-2. Click the **Router-Chamfer** button in the Modify toolbar
-3. Choose the transition style and size *[VERIFY: exact dialog options]*
-4. Apply the result
+1. Click the **Router-Chamfer** button in the Modify toolbar — the **Router / Chamfer** palette opens
+2. Click corner vertices of a line or polygon on the canvas (click again to deselect) — the palette shows the **Selected corners** count and a cyan preview
+3. Set the corner style, radius and arc segments
+4. Click **Apply** — each selected corner is replaced by rounded (or chamfered) vertices
+5. Select more corners, or right-click twice quickly to exit (a single right-click clears the current selection)
+
+### Notes
+
+- The end points of open lines cannot be rounded — pick interior corners
+- If the radius is too large to fit a corner, it is reduced to fit and the status bar reports the corners affected
+- **Close** closes the palette
 
 ---
 
 ## Clip-KAD
 
-Clips selected KAD objects against a boundary polygon, keeping the portion inside (or outside) the boundary. The 2D drawing counterpart to the surface **Clip Surface** tool.
+Clips selected KAD objects against a boundary polygon in plan view, keeping the portion inside or outside the boundary, or splitting at it. The 2D drawing counterpart to the surface **Clip Surface** tool.
 
 ### How to Use
 
-1. Select the KAD entities to clip
-2. Click the **Clip-KAD** button in the Modify toolbar
-3. Pick the boundary polygon
-4. Choose which side to keep and apply *[VERIFY: exact keep-inside/outside control]*
+1. Select the KAD entities to clip using the Select toolbar (Pointer or Polygon select, with KAD selection on)
+2. Click the **Clip-KAD** button in the Modify toolbar — the **Clip KAD** dialog opens and shows a live count of the selected objects
+3. Choose the **Clip polygon** from the list, or click the target button beside it and then click a closed polygon on the canvas
+4. Choose the **Mode**: **Keep inside**, **Keep outside** or **Dissect (split, keep both)**
+5. Click **Execute** — the dialog stays open for further clips; **Close** closes it
+
+### Notes
+
+- The selected objects are replaced in place, and the clip can be undone
+- Lines and polygons are split at the boundary; points and text are kept, dropped or split per vertex; circles are kept or dropped whole, based on their centre
+- Clipped pieces stay on the same layer as the object they were cut from
 
 ---
 
@@ -279,7 +304,7 @@ Performs 2D boolean operations on KAD polygon entities. Supports Union, Intersec
 | **Subject (A)** | The primary polygon (pick from canvas or dropdown) |
 | **Clip (B)** | The clipping polygon (pick from canvas or dropdown) |
 | **Operation** | Union (A + B), Intersect, Difference (A - B), or XOR |
-| **Output Colour** | Colour for the result polygon *[VERIFY: UI label spelling]* |
+| **Output Color** | Colour for the result polygon |
 | **Line Width** | Width of the result polygon outline |
 | **Sub-layer Name** | Sub-layer under `Analysis` for the output (default `Booleans`) |
 
@@ -384,14 +409,25 @@ Extends the end of a selected line until it reaches a chosen boundary entity (an
 
 ## Grade Line
 
-Sets a **constant slope (grade)** along a selected line — each vertex's elevation is placed on a straight gradient between the line's ends, giving a uniform grade (useful for drains, batters, and haul-grade strings).
+Sets a **constant slope (grade)** along a span of a line between two points you pick — useful for drains, batters and haul-grade strings. Points outside the span are not changed. Closed polygons are not supported.
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| **Mode** | **Grade from start (apply slope)** — the start point keeps its Z and the span tilts towards the end at the grade you type. **Interpolate start → end** — the start and end keep their Z and the span is straightened between them |
+| **Span** | Read-only: the picked points and how many points the span covers |
+| **Grade (+ve = up, -ve = dn)** | The slope to apply (default 10). In Interpolate mode it shows the computed grade instead |
+| **Grade Unit** | **Degrees (°)**, **Slope (%)** or **Ratio (1:N)** (default %). Switching unit converts the value |
 
 ### How to Use
 
-1. Click the **Grade Line** button in the Modify toolbar
-2. Select the line to grade
-3. Set the target slope (or start/end elevations) *[VERIFY: exact dialog inputs]*
-4. Apply — vertex Z values are recomputed to follow the constant grade
+1. Click the **Grade Line (set constant slope)** button in the Modify toolbar
+2. Click the start point on a line
+3. Click the end point on the same line — the **Grade LINE** dialog opens, with a live preview labelling the new Z values
+4. Choose the mode and grade
+5. Click **Apply Grade**
+6. Pick another span, or right-click to exit
 
 ---
 
@@ -406,18 +442,47 @@ Reduces the vertex count of a line or polygon using the **Ramer–Douglas–Peuc
 3. Repeat on other entities as needed
 4. **Right-click** to exit the tool
 
-> Tune the simplification tolerance to trade fidelity against vertex count. *[VERIFY: where the tolerance is set]*
+Clicking a line or polygon opens the **Simplify** dialog for it:
+
+| Parameter | Description |
+|-----------|-------------|
+| **Tolerance (m)** | Maximum distance a point may sit from the simplified line before it is kept (default 0.5, steps of 0.01). Larger tolerance = fewer points |
+| **3D-aware simplification** | On: keeps points that deviate in X, Y and Z, preserving crests, toes and grade breaks. Off (default): simplifies in plan view only |
+| **Z value for kept points** | **Nearest original point's Z (exact)** or **Weighted-distance average Z (smoother)** |
+| **Preview colour** | Colour of the live preview |
+
+Click **Apply** to simplify the entity. The dialog remembers your last settings.
 
 ---
 
-## Recent Changes (March 2026)
+## Snap Objects to Surface
 
-The following improvements were made to the Modify toolbar tools in recent updates:
+Drapes KAD objects onto a surface — each point is moved up or down to the surface elevation at its XY position. Points that fall off the surface keep their elevation.
 
-- **Offset KAD**: The dialog now remembers the last used parameter values (offset amount, projection angle, number of offsets, colour, etc.) across executions
-- **Split KAD Lines**: Major refactor with multi-point split support -- select multiple vertices before splitting. The dialog remembers checkbox states and provides improved status feedback
-- **Join KAD Lines**: The dialog now remembers checkbox states (Close as Poly, Delete Originals) between executions
-- **KAD Drawing**: Point ID labels and drawing are now restricted to the selected KAD entity, improving clarity and performance when working with large datasets
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| **Surface** | The surface to snap to — choose from the visible surfaces, or click the target button and pick it on the canvas |
+| **Objects** | **Selected objects** or **All visible objects**. The target button adds an object picked on the canvas to the list |
+| **Method** | **Intersect and add points** — lines and polygons gain a vertex wherever they cross a surface triangle edge, so they follow the ground between their own points. **Use existing points only** — only the points already there move |
+
+Points, text and circles always move their own point, whichever method is chosen.
+
+### How to Use
+
+1. Make sure the surface is visible
+2. Select the KAD objects to snap (recommended) — or choose **All visible objects** in the dialog
+3. Click the **Snap Objects to Surface** button in the Modify toolbar
+4. Choose the surface and method; remove any object from the list with its bin button
+5. Click **Apply** — a message reports how many objects and points were snapped and added
+
+### Notes
+
+- Only visible objects and visible surfaces are used
+- Objects change in place, and the whole snap can be undone in one step
+
+---
 
 ## Recent Changes (August 2026)
 
