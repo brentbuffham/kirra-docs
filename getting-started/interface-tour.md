@@ -189,8 +189,8 @@ See [Supported File Formats](../reference/supported-formats.md) for the full imp
 
 Opened from the **Print** button in the side panel's Print Management group, or from **Print** in the top bar's **Import Export Print** menu. The dialog is titled **PDF Print**.
 
-![PDF Print dialog with Template Formula Reference](../screenshots/printdialog.png)
-*PDF Print dialog (right) over the 2D viewport (left). The lower right panel shows the Template Formula Reference.*
+![PDF Print dialog](../screenshots/PDFPrintDialog.png)
+*The PDF Print dialog. Opening it switches on Print Preview, which outlines the page area on the canvas.*
 
 ### Controls
 

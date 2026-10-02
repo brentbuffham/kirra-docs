@@ -177,7 +177,8 @@ See [Pattern Generation → Rectangular Grid](pattern-generation.md#rectangular-
 
 Opens the **Pattern Templates** manager. Templates save burden, spacing, hole properties, text and charging so you can reuse a familiar pattern configuration.
 
-> *[SCREENSHOT NEEDED: Pattern Templates dialog]*
+![Pattern Templates dialog](../screenshots/PatternTemplatesDialog.png)
+*The Pattern Templates dialog lists saved templates with their type, diameter, burden × spacing, subdrill, angle and direction.*
 
 ### How to Use
 
@@ -195,7 +196,8 @@ See [Pattern Templates](pattern-templates.md) for creating, saving, and managing
 
 Renumbers holes along a run you pick on the canvas. Timing connections and charging references are updated to match the new IDs.
 
-> *[SCREENSHOT NEEDED: Renumber Holes - Setup dialog]*
+![Renumber Holes - Setup dialog](../screenshots/RenumberHolesDialog.png)
+*Renumber Holes - Setup. Click Start Selection, then pick the holes to renumber.*
 
 ### How to Use
 
@@ -212,7 +214,8 @@ See [Editing Holes → Renumbering Holes](editing-holes.md#renumbering-holes) fo
 
 Reassigns the row and position numbers of a pattern from a row direction you pick. Useful when the automatic row detection has assigned an order you want to change.
 
-> *[SCREENSHOT NEEDED: Reorder Rows - Setup dialog]*
+![Reorder Rows - Setup dialog](../screenshots/ReorderRowsDialog.png)
+*Reorder Rows - Setup.*
 
 ### How to Use
 
@@ -232,7 +235,8 @@ Reassigns the row and position numbers of a pattern from a row direction you pic
 
 Finds holes that sit too close to another blast's holes or to a drawing, and can move them clear. This is the on-demand version of the same-blast XY check that hole tools run automatically when placing or moving holes.
 
-> *[SCREENSHOT NEEDED: Coincident Hole Detector dialog]*
+![Coincident Hole Detector dialog](../screenshots/CoincidentHoleDetectorDialog.png)
+*The Coincident Hole Detector. Check reports conflicts; Check + Relocate also moves the holes.*
 
 ### How to Use
 
@@ -255,7 +259,8 @@ See [Editing Holes → Hole coincidence](editing-holes.md#hole-coincidence) for 
 
 Converts hole **collar**, **grade**, or **toe** positions into standalone KAD point objects — useful for exporting hole positions as drawing geometry, or for reusing collar/toe points as inputs to other tools (triangulation, offsets, radii).
 
-> *[SCREENSHOT NEEDED: Convert Holes to KAD Points dialog]*
+![Convert Holes to KAD Points dialog](../screenshots/HolesToPointsDialog.png)
+*Convert Holes to KAD Points, with one hole selected.*
 
 ### How to Use
 
@@ -271,7 +276,8 @@ Converts hole **collar**, **grade**, or **toe** positions into standalone KAD po
 
 Opens the **Product Manager** dialog — the explosive products list. This is the source of the products available in the Deck Builder, in CSV charging imports, and of the connector chips on the [Connect toolbar](connect-toolbar.md#connector-product-chips).
 
-> *[SCREENSHOT NEEDED: Product Manager dialog]*
+![Product Manager dialog](../screenshots/ProductManagerDialog.png)
+*The Product Manager.*
 
 See [Product Database CSV](../charging/products-csv.md) for the data format and import/export workflow.
 
@@ -281,7 +287,8 @@ See [Product Database CSV](../charging/products-csv.md) for the data format and 
 
 Opens the **Deck Builder** dialog to configure charge decks — stemming, explosives, spacers, and primers.
 
-> *[SCREENSHOT NEEDED: Deck Builder dialog]*
+![Deck Builder dialog](../screenshots/DeckBuilderDialog.png)
+*The Deck Builder, opened from Charge Rule Builder: products on the left, the deck column in the centre, the Formula Builder on the right.*
 
 See [Deck Builder](../charging/deck-builder.md) for the full workflow, including applying a configuration to holes.
 

@@ -76,7 +76,8 @@ At least two surfaces must be loaded.
 
 The dialog remembers your last settings.
 
-> *[SCREENSHOT NEEDED: Surface Intersection dialog]*
+![Surface Intersection dialog](../screenshots/SurfaceIntersectionDialog.png)
+*The Surface Intersection dialog.*
 
 ---
 
@@ -189,7 +190,8 @@ See [Mesh Editing](mesh-editing.md) for the full reference.
 
 Clips a surface or solid against a **clip polygon**, keeping either the inside or the outside portion. The tool auto-detects whether the target is an open surface or a closed solid and caps the cut accordingly. It runs in **Single** mode (one target against one polygon) or **Batch** mode (apply the same clip across multiple targets).
 
-<!-- SCREENSHOT NEEDED: Clip Surface or Solid dialog (Single tab), from the Clip Surface button on the Surface toolbar -->
+![Clip Surface or Solid dialog](../screenshots/ClipSurfaceDialog.png)
+*Clip Surface or Solid, Single tab.*
 
 ### How to use
 
@@ -210,7 +212,8 @@ The **Batch** tab clips one closed **Solid** by many cutters (polygons or lines)
 
 Slices a **closed solid** into horizontal bands at a chosen interval or band count, capping each band and saving it as its own named layer (for example, by RL range). Think of it as an egg-slicer for bench / horizon extraction.
 
-<!-- SCREENSHOT NEEDED: Solid Slice dialog, from the Solid Horizon Slice button on the Surface toolbar -->
+![Solid Slice dialog](../screenshots/SolidSliceDialog.png)
+*The Solid Slice dialog.*
 
 ### How to use
 
@@ -229,7 +232,8 @@ Slices a **closed solid** into horizontal bands at a chosen interval or band cou
 
 Colours one surface by its **signed distance** to another — the design-versus-survey question. Cool = **fat / underdug** (rock left standing), the ramp midpoint = **on design**, red = **overdug**. Only the *measured* surface is recoloured; the reference is left alone.
 
-*[SCREENSHOT NEEDED: capture the Compare Surfaces dialog]*
+![Compare Surfaces dialog](../screenshots/CompareSurfacesDialog.png)
+*The Compare Surfaces dialog.*
 
 ### How to use
 

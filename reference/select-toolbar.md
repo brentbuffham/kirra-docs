@@ -337,7 +337,6 @@ The **3D Settings** button (globe-and-cog icon, at the bottom of the Select tool
 
 ![Settings dialog](../screenshots/3DViewOptions.png)
 *The Settings dialog.*
-<!-- SCREENSHOT NEEDED: refresh 3DViewOptions.png — the dialog is now titled Settings, with 2D / 3D / Performance tabs. -->
 
 ### 2D tab
 

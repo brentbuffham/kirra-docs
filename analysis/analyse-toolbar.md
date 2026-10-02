@@ -72,6 +72,9 @@ See [PPV & Vibration Models](ppv-models.md) for the full model reference.
 
 Opens the **Voronoi Options** dialog — the per-cell, receptor-aware PPV system. Configure monitors, site-law constants, Love-wave parameters, and pick the mode from the **Voronoi Display** dropdown. You can also open it by right-clicking the **Voronoi** display toggle.
 
+![Voronoi Options dialog](../screenshots/VoronoiOptionsDialog.png)
+*Voronoi Options, showing the blast scope, the Voronoi Display mode, area basis and legend.*
+
 ### Available modes
 
 | Mode | Output |
@@ -123,7 +126,8 @@ The footer also has **Clear**, **Export** and **Close**. A collapsible **Tips & 
 
 > K50 is exceeded by half of real shots — use it for investigation, not compliance. K95 is the usual choice for compliance prediction.
 
-> *[SCREENSHOT NEEDED: Site Law Regression dialog]*
+![Blast Vibration Regression dialog](../screenshots/SiteLawRegressionDialog.png)
+*The Site Law Regression dialog (titled Blast Vibration Regression), before any observations are loaded.*
 
 ---
 
@@ -147,7 +151,8 @@ Opens the **Hole Section View** for the selected hole — a section through one 
 - **Burden** reports burden in front of the hole on its own bearing; **3D Dist** reports the shortest distance to the face in any forward direction
 - **Print** builds a PDF of the section; **Export KADs** saves the burden paths as KAD entities
 
-> *[SCREENSHOT NEEDED: Hole Section View dialog]*
+![Hole Section View dialog](../screenshots/HoleSectionViewDialog.png)
+*The Hole Section View for one hole, before a surface is picked.*
 
 ---
 
@@ -177,7 +182,8 @@ Plays the firing sequence back in time — holes are shown as they fire.
 
 The current time is shown as *Time: current / total ms*.
 
-> *[SCREENSHOT NEEDED: Blast Animation transport bar]*
+![Blast Animation transport bar](../screenshots/BlastAnimationDialog.png)
+*The Blast Animation transport bar.*
 
 ---
 

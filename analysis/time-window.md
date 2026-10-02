@@ -231,9 +231,8 @@ After preview the dialog reports *Previewed N detonators on M holes • mean |Δ
 
 Event-rate enforcement — flag events that fall inside a rolling window (preview, with **Before** and **After** counts in the legend). The controls are **Scope**, **Unit**, **Window (ms)**, **Max events**, **Max move (ms)** and **Decimals**.
 
-![Constrain tab](../screenshots/Constrain.png)
-
-> *[SCREENSHOT NEEDED: high-resolution Constrain tab so each control and its tooltip are legible]*
+![Time Window Constrain tab](../screenshots/TimeWindowConstrain.png)
+*The Time Window dialog on the Constrain tab.*
 
 ### What this tab does
 

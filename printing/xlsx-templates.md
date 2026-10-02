@@ -8,7 +8,8 @@ Kirra can generate formatted reports using custom XLSX spreadsheet templates. Th
 
 Click the **Import Export Print** button (file icon) in the menu bar and choose **Print** — or open the left sidenav (☰) and click **Print** under **Print Management**. Both open the **PDF Print** dialog.
 
-<!-- SCREENSHOT NEEDED: PDF Print dialog -->
+![PDF Print dialog](../screenshots/PDFPrintDialog.png)
+*The PDF Print dialog.*
 
 The dialog's main fields are **Saved Template**, **Paper Size** and **Orientation** (**From Sheet** uses the custom template's own setting), **Print Preview**, **Blast Name**, **Designer**, **Title**, **Comment**, **Entity Filter** and **Output Format**. Footer buttons: **Save to Library**, **Formulas**, **Reference Pack**, **Delete**, **Help**, and **Print**.
 
