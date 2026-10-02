@@ -1,4 +1,4 @@
-# Surface Boolean & CSG Operations
+# Trimesh Boolean & Solid Boolean
 
 Kirra provides tools for combining, subtracting, and intersecting surfaces and solids. These operations enable pit shell manipulation, surface clipping, and design surface combination directly within the application.
 
