@@ -110,13 +110,13 @@ fx:holeColourMode == "auto"
 | --- | --- | --- |
 | Error dialog, group not saved | Syntax error or unknown variable | Check parentheses and variable names |
 | No holes selected | Wrong type comparison (number vs string) | Quote `holeType` and similar strings |
-| Used `sum()` or `ppvKG()` | Wrong engine | Use [Print Formula Reference](../printing/pdf-print.md) or [Deck Builder Formula Guide](../charging/Deck%20Builder%20Formula%20Guide%20Examples.html) |
+| Used `sum()` or `ppvKG()` | Wrong engine | Use [Print Formula Reference](../printing/pdf-print.md) or [Deck Builder Formula Guide](../charging/Deck%20Builder%20Formula%20Guide%20Examples.md) |
 
 ---
 
 ## Related topics
 
 - [Formula Engine](formula-engine.md)
-- [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.html)
+- [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.md)
 - [Print Formula Reference](../printing/pdf-print.md)
 - [Formula Skill — Install & Use](formula-skill.md)

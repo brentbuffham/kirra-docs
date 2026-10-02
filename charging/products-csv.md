@@ -229,7 +229,7 @@ These only work for coupled and decoupled (explosive) decks:
 
 > **Indexed densities are order-independent.** `deckDensity[N]` and `chargeDensity[N]` are populated for every deck *before* the position-resolution loop runs, so a formula on Deck 1 can safely reference `deckDensity[2]`. Position-indexed variables (`deckBase[N]`, etc.) still resolve sequentially.
 
-> **Why this matters for product swaps.** A swap rule (e.g. `swap:w{Emulsion}`) can change the product on a deck mid-layout. Formulas that hard-code a product name break when the swap fires; formulas that reference `deckDensity[N]` adapt automatically. See [Deck Builder Formula Guide & Examples — Pattern 11](Deck%20Builder%20Formula%20Guide%20Examples.html#pattern-11) for worked examples. Engine overview: [Formula Engine](../formula-help/formula-engine.md).
+> **Why this matters for product swaps.** A swap rule (e.g. `swap:w{Emulsion}`) can change the product on a deck mid-layout. Formulas that hard-code a product name break when the swap fires; formulas that reference `deckDensity[N]` adapt automatically. See [Deck Builder Formula Guide & Examples — Pattern 11](Deck%20Builder%20Formula%20Guide%20Examples.md#pattern-11--adaptive-density-via-deckdensityn-v10272) for worked examples. Engine overview: [Formula Engine](../formula-help/formula-engine.md).
 
 ### Math Functions
 
@@ -406,4 +406,3 @@ For decoupled (cartridge) decks where the number of packages varies along the co
 
 - [Charging Overview](overview.md) — introduction to the charging system
 - [Deck Builder](deck-builder.md) — visual charge column designer
-- [Charge Rules](charge-rules.md) — automatic charge assignment

@@ -10,7 +10,7 @@ This page is the hub: which engine to use, where to find the full reference for 
 
 | Engine | Where the formula lives | Returns | Full reference |
 | --- | --- | --- | --- |
-| **Charging** | Deck Builder — deck top/base/length/mass, primer depth, swap predicates | Number (or boolean for swaps) | [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.html) |
+| **Charging** | Deck Builder — deck top/base/length/mass, primer depth, swap predicates | Number (or boolean for swaps) | [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.md) |
 | **Print template** | Cells in an XLSX print template (reports, maps, tables) | Text, number, or render token | [Print Formula Reference](../printing/pdf-print.md) |
 | **Blast group** | **Assign Group** dialog — Formula field (hole selection) | Boolean (true = include hole) | [Blast Group Formulas](blast-group-formulas.md) |
 
@@ -48,7 +48,7 @@ Used in the [Deck Builder](../charging/deck-builder.md), charge rule templates, 
 
 **Don't want to write it yourself?** The Deck Builder's **"Describe it…"** box turns plain English ("stem to SDoB 1.5 but never under 1.6 m", "biggest charge under 10 mm/s at the monitors") into the `fx:` formula. It's deterministic and refuses out-of-scope requests rather than guessing — see [Deck Builder → Describe it in plain English](../charging/deck-builder.md#describe-it-in-plain-english).
 
-**Start here:** [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.html) — variables, functions, PPV/SDoB patterns, CSV round-trip notes.
+**Start here:** [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.md) — variables, functions, PPV/SDoB patterns, CSV round-trip notes.
 
 Related: [Charging Overview](../charging/overview.md), [Products CSV](../charging/products-csv.md).
 
@@ -89,8 +89,8 @@ The skill covers all three engines. It does not replace these reference pages �
 
 ## Related topics
 
-- [Deck Builder](charging/deck-builder.md)
-- [Charging Overview](charging/overview.md)
+- [Deck Builder](../charging/deck-builder.md)
+- [Charging Overview](../charging/overview.md)
 - [Print from Template (XLSX)](../printing/xlsx-templates.md)
 - [FAQ](../reference/faq.md)
 

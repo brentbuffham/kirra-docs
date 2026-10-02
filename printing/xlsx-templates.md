@@ -96,6 +96,6 @@ The XLSX output option is available only when using a custom template. Use it wh
 - [Formula Engine](../formula-help/formula-engine.md) — three engines; print vs charging vs blast group
 - [Print Formula Reference](pdf-print.md) — Complete list of all variables, functions, display codes, and render tokens
 - [Template Examples](template-examples.md) — Downloadable example templates with detailed walkthroughs
-- [Blast Statistics](../analysis/blast-statistics.md)
+- [Statistics & Voronoi](../analysis/statistics-voronoi.md)
 - [Charging Overview](../charging/overview.md)
 - [Interface Tour](../getting-started/interface-tour.md)

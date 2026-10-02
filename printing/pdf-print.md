@@ -925,9 +925,7 @@ Fills left-to-right, top-to-bottom: cell A1 = hole 1, B1 = hole 2, C1 = hole 3, 
 ## Related Topics
 
 - [Formula Engine](../formula-help/formula-engine.md) — print vs charging vs blast group
-
 - [Template Examples](template-examples.md) — Downloadable example templates with detailed walkthroughs
 - [Print from Template (XLSX)](xlsx-templates.md) — Template workflow and output formats
-- [Blast Statistics](../analysis/blast-statistics.md)
+- [Statistics & Voronoi](../analysis/statistics-voronoi.md)
 - [Charging Overview](../charging/overview.md)
-- [Voronoi Analysis](../analysis/voronoi.md)

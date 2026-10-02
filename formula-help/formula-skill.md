@@ -9,7 +9,7 @@ This page covers what the skill does, how to install it on each Claude surface, 
 it loaded.
 
 > **Human-readable references (no Claude required):** [Formula Engine](formula-engine.md) hub,
-> [Deck Builder Formula Guide](../charging/Deck%20Builder%20Formula%20Guide%20Examples.html),
+> [Deck Builder Formula Guide](../charging/Deck%20Builder%20Formula%20Guide%20Examples.md),
 > [Print Formula Reference](../printing/pdf-print.md),
 > [Blast Group Formulas](blast-group-formulas.md).
 
@@ -34,7 +34,7 @@ so a PF-driven deck formula isn't possible today. The skill says so plainly inst
 one.
 
 > See also: [Formula Engine](formula-engine.md) and
-> [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.html)
+> [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.md)
 > for the full variable and function reference the skill is built from.
 
 ---
