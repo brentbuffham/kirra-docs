@@ -137,13 +137,20 @@ timing or firing groups. It brings a site's setup: explosive products, charge ru
 pattern and print templates, measured seeds, PPV monitors and parameters, colour
 settings and work settings.
 
-A template never replaces your blast. Kirra offers two choices:
+**Into an empty workspace**, the template simply loads. Nothing is asked.
 
-- **Merge** — add the template's libraries to yours; nothing of yours is lost.
-- **Replace my libraries** — the template's products, rules and templates replace yours.
+**If the workspace already has anything in it** — a blast, drawings, surfaces, or
+libraries such as products and templates — Kirra offers two choices:
 
-Your own blast, including any edits to hole labels, is never touched by a template. As
-with a KAP, Kirra reloads after the import when the template brings settings.
+- **Merge** — add the template's libraries to yours. Nothing of yours is lost, and your
+  blast, drawings and hole-label edits are left alone.
+- **Start Fresh** — clear the workspace completely, then load the template. This removes
+  **everything** in the workspace first: holes, drawings, surfaces, products, charge
+  rules, pattern and print templates, and colour schemas. Use it to set a workspace up
+  from scratch for a site.
+
+A template never reloads Kirra. Its settings take effect straight away, and a summary
+lists everything that arrived.
 
 ---
 
