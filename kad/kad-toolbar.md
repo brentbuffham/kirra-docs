@@ -15,34 +15,34 @@ The KAD toolbar contains the following controls:
 
 | Control | Type | Purpose |
 |---------|------|---------|
-| **Drawing Level (m)** | Input | Z elevation (RL) used when placing new KAD entities |
-| **Drawing Colour** | Picker | Colour applied to new KAD entities |
-| **Drawing Width or Size** | Input | Line width or point/text size for new entities |
-| **Draw Points** | Tool | Place point entities by clicking |
-| **Draw a Line (polyline)** | Tool | Draw an open polyline |
-| **Draw Polygon** | Tool | Draw a closed polygon |
-| **Draw Text (formulas as well)** | Tool | Place a text label; supports `fx:` formulas |
-| **Draw Circle** | Tool | Place a circle entity at the click point |
-| **Circle Radius** | Input | Radius (m) for the next circle drawn |
+| **Elevation Z** | Input | Z elevation (RL) used when placing new KAD entities |
+| **KAD Color** | Picker | Colour applied to new KAD entities |
+| **Point and Line Size** | Input | Line width or point size for new entities |
+| **Add KAD Points** | Tool | Place point entities by clicking |
+| **Add KAD Line** | Tool | Draw an open polyline |
+| **Add KAD Polygon** | Tool | Draw a closed polygon |
+| **Add KAD Text** | Tool | Place a text label; supports `fx:` formulas |
+| **Add KAD Circle** | Tool | Place a circle entity at the click point |
+| **Circle Radius (m)** | Input | Radius (m) for the next circle drawn |
 | **Roads and Ramps** | Tool | Digitise a graded road / ramp centreline and generate ramp strings *(work in progress)* |
 
 ---
 
-## Drawing Level (m)
+## Elevation Z
 
 The Z elevation (reduced level) assigned to new KAD entities. The screenshot shows **532**. All vertices placed by the drawing tools take this Z unless overridden by snap-to-surface or 3D pick.
 
 ### How to use
 
-- Click the **Drawing Level** input
+- Click the **Elevation Z** input
 - Enter the elevation in metres
 - New entities are placed at this Z until you change it
 
-> **Note:** Existing entities are not affected when you change the Drawing Level. Only newly placed vertices use the new value.
+> **Note:** Existing entities are not affected when you change the Elevation Z. Only newly placed vertices use the new value.
 
 ---
 
-## Drawing Colour
+## KAD Color
 
 The colour applied to new KAD entities. The picker swatch shows the current colour.
 
@@ -54,9 +54,9 @@ The colour applied to new KAD entities. The picker swatch shows the current colo
 
 ---
 
-## Drawing Width or Size
+## Point and Line Size
 
-A single field that controls the **line width** for lines and polygons, and the **size** for points and text. The screenshot shows **1**.
+A single field that controls the **line width** for lines, polygons and circles, and the **size** for points. The screenshot shows **1**.
 
 ### How to use
 
@@ -67,26 +67,26 @@ A single field that controls the **line width** for lines and polygons, and the 
 
 ---
 
-## Draw Points
+## Add KAD Points
 
 Places individual point entities at click positions.
 
 ### How to use
 
-1. Click the **Draw Points** button on the KAD toolbar
+1. Click the **Add KAD Points** button on the KAD toolbar
 2. Click on the canvas to place a point
-3. Each click creates a new point entity at the current **Drawing Level**
+3. Each click creates a new point entity at the current **Elevation Z**
 4. Press `Escape` or change tool to finish
 
 ---
 
-## Draw a Line (polyline)
+## Add KAD Line
 
 Draws an open polyline — a chain of connected vertices.
 
 ### How to use
 
-1. Click the **Draw a Line (polyline)** button on the KAD toolbar
+1. Click the **Add KAD Line** button on the KAD toolbar
 2. Click to place vertices in sequence
 3. Press `Backspace` (or `Delete`) to undo the last vertex
 4. Press `Escape` (or double-click) to finish the line
@@ -94,18 +94,18 @@ Draws an open polyline — a chain of connected vertices.
 ### Notes
 
 - Lines are *open* — they do not close back to the first vertex
-- Use **Draw Polygon** if you need a closed boundary
+- Use **Add KAD Polygon** if you need a closed boundary
 - Existing lines can be joined with the [Join KAD Lines](modify-tools.md#join-kad-lines) tool in the Modify toolbar
 
 ---
 
-## Draw Polygon
+## Add KAD Polygon
 
 Draws a closed polygon — like a line, but the last vertex connects back to the first.
 
 ### How to use
 
-1. Click the **Draw Polygon** button on the KAD toolbar
+1. Click the **Add KAD Polygon** button on the KAD toolbar
 2. Click to place vertices
 3. Press `Backspace` (or `Delete`) to undo the last vertex
 4. Press `Escape` (or double-click) to close the polygon
@@ -117,13 +117,13 @@ Draws a closed polygon — like a line, but the last vertex connects back to the
 
 ---
 
-## Draw Text (formulas as well)
+## Add KAD Text
 
 Places a text label at a click point. Text accepts plain strings **and** `fx:` formulas evaluated against hole / pattern data.
 
 ### How to use
 
-1. Click the **Draw Text (formulas as well)** button on the KAD toolbar
+1. Click the **Add KAD Text** button on the KAD toolbar
 2. Click on the canvas to place the text anchor
 3. Enter the text in the input that appears
 4. Press `Enter` to commit
@@ -148,14 +148,14 @@ See the [Print Formula Reference](../printing/pdf-print.md) for the full list of
 
 ---
 
-## Draw Circle
+## Add KAD Circle
 
 Places a circle entity centred on the click point, with radius set by the **Circle Radius** input.
 
 ### How to use
 
 1. Set the radius in **Circle Radius** (see below)
-2. Click the **Draw Circle** button on the KAD toolbar
+2. Click the **Add KAD Circle** button on the KAD toolbar
 3. Click on the canvas to place the circle centre
 4. Each click creates a new circle at the current radius
 
@@ -166,7 +166,7 @@ Places a circle entity centred on the click point, with radius set by the **Circ
 
 ---
 
-## Circle Radius
+## Circle Radius (m)
 
 The radius (in metres) used by the next circle drawn. The screenshot shows **10.0**.
 
@@ -174,7 +174,7 @@ The radius (in metres) used by the next circle drawn. The screenshot shows **10.
 
 - Click the **Circle Radius** input
 - Enter the radius in metres
-- The next click of **Draw Circle** uses this radius
+- The next click of **Add KAD Circle** uses this radius
 
 ---
 
