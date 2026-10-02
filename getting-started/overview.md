@@ -20,7 +20,7 @@
 
 - **Combined 2D and 3D visualisation** — 2D canvas for plan view plus Three.js 3D view for elevation and terrain context
 - **20+ file formats** — Import and export CSV, DXF, DTM/STR, OBJ, PLY, GLTF/GLB, IREDES, KML, SHP, LAS, GeoTIFF, and more
-- **Surface management** — Import surfaces, run boolean operations, surface intersection, solid CSG, and section planes
+- **Surface management** — Import surfaces, run boolean operations, surface intersection, solid booleans, and section planes
 - **Blast analytics** — 10 GPU/CPU models for vibration prediction, Voronoi rock distribution, and blast statistics
 - **Flyrock modelling** — Flyrock shroud visualisation for safety planning
 - **Charging system** — Build deck-loaded charge designs with stemming, boosters, and explosive products
@@ -62,7 +62,7 @@ Data is typically in UTM or custom mine grid. The canvas uses Y-up for North (+v
 
 Kirra stores your data in **IndexedDB** — your browser’s local storage. Holes, surfaces, KAD drawings, and layer settings are saved automatically. No server upload is required; your data stays on your device.
 
-> **Tip:** Clear your browser data or use a different browser profile if you need a fresh workspace.
+> **Tip:** Need a fresh start without losing your work? Kirra keeps ten separate workspaces — pick an empty one from the **Workspace** toolbar. See [Interface Tour — Workspace Toolbar](interface-tour.md#workspace-toolbar).
 
 ---
 

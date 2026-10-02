@@ -16,8 +16,8 @@ Click the **2D/3D toggle** button in the top bar to switch views. The 3D view us
 |--------|---------|
 | **Pan** | Click and drag (default mode) |
 | **Orbit** | Alt + drag |
-| **Camera roll** | Alt + Shift + drag |
-| **Zoom** | Scroll wheel -- zooms towards the mouse cursor position at the data Z centroid |
+| **Camera roll** | Shift + Alt + drag |
+| **Zoom** | Scroll wheel -- zooms towards the mouse cursor position (when **Cursor Zoom** is on in Settings) |
 | **Context menu** | Right-click |
 
 ---
@@ -28,7 +28,7 @@ The **Orbit Focus** tool changes the orbit centre to any point you click in the 
 
 ### How to Use
 
-1. Click the **Orbit Focus** button in the toolbar (or use the keyboard shortcut)
+1. Click the **Orbit Focus** button on the Select toolbar
 2. Click on any 3D object or position in the scene
 3. The orbit centre moves to the clicked position
 4. Orbiting now rotates around this new centre point
@@ -40,20 +40,17 @@ The **Orbit Focus** tool changes the orbit centre to any point you click in the 
 - Viewing a single hole from multiple angles
 - Examining the intersection of surfaces at a specific location
 
-The orbit centre persists until you click a new position or reset the view.
+The orbit centre persists until you click a new position or use **Reset View**.
 
 ---
 
-## 3D Settings Dialog
+## Settings Dialog
 
-The **3D Settings** button opens a dialog for configuring Three.js rendering options. Available settings include:
+The **3D Settings** button on the Select toolbar opens the **Settings** dialog, with **2D**, **3D** and **Performance** tabs. The **3D** tab controls camera damping, cursor zoom, scroll-wheel direction, the plumb line, lighting, the orbit rotation model and speed, axis lock, the axis gizmo and text billboarding. The **Performance** tab sets the triangle limits for drawing surfaces in 3D.
 
-| Setting | Description |
-|---------|-------------|
-| **Renderer** | Choose between different Three.js renderer modes (V1, V2, Performance) |
-| **LOD Override** | Override the level-of-detail system for surface rendering |
-| **Instanced Holes** | Use GPU instancing for blast hole rendering (better performance with large patterns) |
-| **Simplification** | 3D mesh simplification threshold |
+See [Select Toolbar — Settings](select-toolbar.md#settings) for every option and its default.
+
+> The 3D renderer choice, level-of-detail override, instanced holes and 3D simplification are developer fall-back options. They live in the side panel under **About ▸ Developer**, not in the Settings dialog, and you do not normally need to change them.
 
 ---
 
@@ -159,13 +156,13 @@ or down will not push a hole sideways out of the slice.
 - Priority determines which target is selected: Collar > Grade > Toe for holes
 - The cursor snaps to the selected target including its Z depth
 
-### Polygon Selection
+### Shape Selection
 
-In 3D, polygon selection works in screen space:
+In 3D, the Polygon Select tool works in screen space:
 
-1. Activate the polygon selection tool
-2. Click points to define a selection boundary on screen
-3. All objects whose screen projections fall inside the polygon are selected
+1. Activate **Polygon Select** on the Select toolbar (right-click it to choose **Polygon**, **Rectangle** or **Ellipse**)
+2. Draw the shape on screen — click each vertex and double-click to close a polygon, or click two opposite corners for a rectangle or ellipse
+3. All objects whose screen projections fall inside the shape are selected
 
 ---
 
@@ -183,10 +180,8 @@ Large UTM coordinates are shifted by subtracting the data centroid to maintain f
 
 ## Performance Tips
 
-- Enable **Instanced Holes** for patterns with more than 500 holes
-- Use the **Performance** renderer for large datasets
-- Surfaces with many triangles benefit from the LOD system
-- The 3D scene only renders when visible -- switching to 2D pauses the 3D render loop
+- A surface with more triangles than **Max triangles per surface (3D)** is not drawn in 3D, but still shows in 2D. Raise the limit on the **Performance** tab of the Settings dialog if your graphics card can cope, or decimate the surface on import
+- **Max total triangles (3D scene)** limits all surfaces drawn in 3D together
 
 ---
 
