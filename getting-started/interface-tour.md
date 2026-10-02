@@ -132,7 +132,6 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 ### Drawings / CAD tab
 
 ![Import dialog — Drawings / CAD tab](../screenshots/filemanager3.png)
-<!-- SCREENSHOT NEEDED: refresh filemanager3.png — the tab now also lists Geometry CSV, Vulcan Design Database, Micromine STR, Deswik DUF and 12d Archive; KML / KMZ and ESRI Shapefile moved to Miscellaneous. -->
 
 | Format | Extensions | Notes |
 |--------|------------|-------|
@@ -149,7 +148,6 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 ### Surfaces / Mesh tab
 
 ![Import dialog — Surfaces / Mesh tab](../screenshots/filemanager4.png)
-<!-- SCREENSHOT NEEDED: refresh filemanager4.png — the tab now also lists Vulcan .00t Triangulation and Datamine Surface. -->
 
 | Format | Extensions | Notes |
 |--------|------------|-------|
@@ -162,6 +160,8 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 
 ### Geology tab
 
+![Import dialog — Geology tab](../screenshots/filemanager-geology.png)
+
 | Format | Extensions | Notes |
 |--------|------------|-------|
 | **Block Model — Datamine** | `.dm` | Datamine block model. Large files are streamed |
@@ -171,7 +171,6 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 ### Miscellaneous tab
 
 ![Import dialog — Miscellaneous tab](../screenshots/filemanager5.png)
-<!-- SCREENSHOT NEEDED: refresh filemanager5.png — this tab was renamed from Operations to Miscellaneous and now also lists Borehole Telemetry, KML / KMZ and ESRI Shapefile. -->
 
 | Format | Extensions | Notes |
 |--------|------------|-------|
