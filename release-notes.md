@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.177
+
+_2026-10-02_
+
+**Bug Fix**
+
+- Surface inner glow no longer streaks along thin triangles
+
+## Release v1.1.32.176
+
+_2026-10-02_
+
+**Feature**
+
+- Surface overlay outline shows only edges where the surface changes angle
+
+## Release v1.1.32.175
+
+_2026-10-02_
+
+**Feature**
+
+- Surfaces can show a cartoon, wireframe or inner glow edge overlay
+
 ## Release v1.1.32.174
 
 _2026-10-02_
