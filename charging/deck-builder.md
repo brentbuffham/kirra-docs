@@ -8,9 +8,11 @@ The Deck Builder is Kirra's visual tool for designing charge columns. It provide
 
 There are several ways to open the Deck Builder:
 
-- In the **Charging tab**, click **Deck Builder**
-- Select a hole, then right-click and choose **Edit Charge**
-- Go to **Charging tab > New Rule** to create a reusable design
+- Click **Charge Rule Builder** in the **Holes** toolbar
+- Right-click a hole to open **Edit Hole**, go to the **Loading** tab and click **Edit Loading**
+- In the **Product Manager** (Holes toolbar), click **Edit Rules** to load, edit, save or delete individual charge rules
+
+When opened from **Edit Rules**, the Deck Builder works in rule mode: the buttons read **Load Rule...**, **Save As Rule** and **Save over Rule**, and nothing is applied to holes.
 
 > *Screenshot coming soon*
 
@@ -394,10 +396,10 @@ Position numbers do not need to be sequential — gaps are allowed. The engine s
 ## Saving as a Rule
 
 1. After designing your charge column, click **Save as Rule**
-2. Enter a rule name and description
-3. Set the scaling mode for each deck (Proportional, Fixed Length, Fixed Mass)
-4. Review and edit primer depth formulas if needed (indexed formulas are auto-generated based on deck positions)
-5. Click **Save** — the rule appears in the charge configuration list
+2. Enter a **Config Code**, **Rule Name** and **Description**. Pattern templates link to a rule by its name.
+3. Review each deck's **Top**, **Base**, **Mass** and **Swap** values. Each accepts a number or an `fx:` formula. Leave Top or Base blank with a Mass set and the mass decides the missing end.
+4. Review the primer depth formulas if needed (indexed formulas are auto-generated based on deck positions)
+5. Click **Save** — the rule is added to the rule list
 
 Saved rules can be applied to any selection of holes and are included when you export charge configurations.
 
@@ -407,15 +409,17 @@ Saved rules can be applied to any selection of holes and are included when you e
 
 ### To the Current Hole
 
-Click **Apply** in the Deck Builder to save the charge design to the currently selected hole.
+Click **Apply to Selected** in the Deck Builder to write the charge design to the selected hole. **Apply Changes** applies only the edits you made in this session, leaving the rest of each target hole's charging intact.
 
 ### To Multiple Holes
 
-1. Close the Deck Builder
-2. Select the holes you want to charge
-3. In the Charging tab, choose the saved rule from the dropdown
+1. Select the holes you want to charge
+2. Click **Charge Rule Builder** in the **Holes** toolbar
+3. Click **Apply Rule...** and choose the saved rule
 4. Click **Apply to Selected**
 5. Kirra evaluates all formulas for each hole and generates the charge columns
+
+To re-fit existing charging after hole lengths change, select the holes and click **Reapply Charging** in the **Holes** toolbar. **Remove Charges** clears charging from the selected holes.
 
 ---
 

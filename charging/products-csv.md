@@ -19,17 +19,17 @@ kirra-charging-config.zip
 
 ## How to Import a Charge Configuration
 
-1. Go to **File > Import Charging Config** (or use the Charging tab > Import Config)
+1. Click **Product Manager** in the **Holes** toolbar, then click **Import**
 2. Select the ZIP file
 3. Kirra reads the products and charge rules into memory
 4. Products appear in the Deck Builder's Product Palette
-5. Charge rules appear in the Charging tab dropdown
+5. Charge rules appear in the Deck Builder's **Apply Rule...** list
 
 ---
 
 ## How to Export a Charge Configuration
 
-1. Go to **File > Export Charging Config** (or Charging tab > Export Config)
+1. Click **Product Manager** in the **Holes** toolbar, then click **Export**
 2. Kirra downloads a ZIP file named `kirra-charging-config.zip`
 3. Open the CSV files in Excel, LibreOffice Calc, or a text editor to review and modify
 4. To re-import after editing, re-ZIP all files and import the ZIP
@@ -101,7 +101,7 @@ The first three columns (`Type`, `Description`, `Field`) are metadata — do not
 | Field | Type | Description |
 |-------|------|-------------|
 | `configCode` | code | Short identifier for the rule (e.g. `STNDFS`) |
-| `configName` | text | Human-readable name shown in the Charging tab |
+| `configName` | text | Human-readable name shown in the rule list |
 | `description` | text | Free-text description |
 | `primerInterval` | number | Interval between primers in long charges (metres) |
 | `inertDeck` | deck | Inert (stemming) deck entries |
@@ -378,14 +378,14 @@ For decoupled (cartridge) decks where the number of packages varies along the co
 
 ## Round-Trip Editing Workflow
 
-1. **Export** your charge configuration as a ZIP (Charging tab > Export Config)
+1. **Export** your charge configuration as a ZIP (**Product Manager** → **Export**)
 2. **Open** `chargeConfigs.csv` in Excel or a text editor
 3. **Edit** formulas, add new configurations (new columns), or change products
 4. **Save** the CSV and re-ZIP all files
 5. **Import** the updated ZIP back into Kirra
 6. **Apply** the rules to your holes and verify in the Section View
 
-> **Tip:** To add a new charge rule, simply copy an existing column in `chargeConfigs.csv` and modify the values. The new rule will appear in the Charging tab after import.
+> **Tip:** To add a new charge rule, simply copy an existing column in `chargeConfigs.csv` and modify the values. The new rule will appear in the rule list after import.
 
 ---
 

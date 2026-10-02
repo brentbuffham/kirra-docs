@@ -126,7 +126,7 @@ Here is the typical workflow for applying charges to a blast design:
 
 ### 1. Import or Build Your Charge Configuration
 
-- **Import a charge config ZIP** containing your products and charge rules (File > Import Charging Config)
+- **Import a charge config ZIP** containing your products and charge rules (**Product Manager** in the **Holes** toolbar → **Import**)
 - Or **build a new configuration** in the Deck Builder
 
 ### 2. Select Holes
@@ -135,7 +135,7 @@ Select the holes you want to charge — individually, by entity, or by drawing a
 
 ### 3. Apply the Configuration
 
-Choose a charge rule from the Charging tab dropdown and click **Apply to Selected**. Kirra evaluates all formulas, calculates deck lengths and masses, and renders the charge columns.
+Open the **Charge Rule Builder** from the **Holes** toolbar, click **Apply Rule...** to choose a charge rule, then click **Apply to Selected**. Kirra evaluates all formulas, calculates deck lengths and masses, and renders the charge columns.
 
 ### 4. Review
 

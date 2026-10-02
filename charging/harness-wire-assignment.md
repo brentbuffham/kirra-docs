@@ -1,34 +1,26 @@
 # Harness wire assignment
 
-Kirra can model **electronic initiation** products that use **surface / harness wire** (product type **HarnessWire**, initiator type **SurfaceWire** in the product database). The **Harness Wire Assignment** tool lets you assign **path/channel** and **commander / programming unit / blaster** identifiers to holes that act as **chain anchors** (self-connected timing), using labels that adapt to the selected **electronic system** specification.
-
-> **Availability:** **Harness Wire Assignment** shares the same **`experimental-electronics`** visibility rule as **Electronic Timing** (from **v1.0.46**): the control is **shown** when any loaded hole has an **Electronic** detonator in charging, and **hidden** otherwise. See `index.html` (`harnessAssignBtn`) and `_updateElectronicTimingVisibility` in `kirra.js`.
+Kirra can model **electronic initiation** products that use **surface / harness wire** (initiator type **SurfaceWire** in the product database). The **Harness Wire Assignment** tool lets you give each chain of holes a **path / channel** number, a **commander** (or equivalent firing-unit) number, a channel colour and a primer order. Field labels adapt to the electronic system named on your harness wire product.
 
 ---
 
 ## Prerequisites
 
-1. **Product database** — Load products that include **SurfaceWire** entries with an **`electronicSystemId`** pointing at a known harness specification (see `HarnessElectronicSystemSpecs.js` in the Kirra source).
-2. **Chain anchor holes** — The tool only operates on **self-connected** holes (holes that are the start of a surface-wire / connector chain). If you click a hole that is not a chain anchor, Kirra shows a warning toast.
+1. **Product database** — Load products that include a **SurfaceWire** product linked to an electronic system. Without one, the dialog falls back to generic labels (**Channel** and **Commander**).
+2. **Chain anchor holes** — The tool only works on **self-connected** holes: the hole a surface-wire or connector chain starts from. If you click any other hole, Kirra shows the warning *"Select a self-connected hole (chain anchor)"*.
 
 ---
 
 ## Using the tool
 
-1. Enable **Harness Wire Assignment** on the floating toolbar (visible when electronic detonators exist in charging — see **Availability**).
-2. Click a valid **self-connected** hole in **2D** or **3D**.
-3. A **FloatingDialog** opens with fields built from `createEnhancedFormContent`:
-   - **Path / channel** — Numeric **or** letter input (e.g. **A, B, C** for systems that use letter paths such as some Davey Bickford specs).
-   - **Commander / PU / Blaster** — Shown when the electronic system defines a firing-unit term; labels come from the spec (`pathChannelTerm`, `firingUnitTerm`).
-4. Confirm to store **`systemPathNumber`** / letter mapping and **`systemUnitNumber`** on the hole (and related validation hooks).
-
-Colours for channel visualisation use **`ChannelColorHelper`**. Bulk validation can use **`HarnessValidationHelper`** (validate assignments against the same spec matrix).
-
----
-
-## Reference data
-
-Vendor limits (max detonators per path, delay ranges, export formats such as BPD, etc.) live in **`HarnessElectronicSystemSpecs.js`**. Example product rows for import can be generated via **`buildHarnessWireSystemExampleProducts()`** (see unit tests in `HarnessElectronicSystemSpecs.test.js`).
+1. Click **Harness Wire Assignment (Channel / Commander)** in the **Connect** toolbar.
+2. Click a **self-connected** hole in **2D** or **3D**. In 2D you can also click the first vertex of a trunk; Kirra uses the first hole on that trunk's chain.
+3. The **Harness Wire Assignment** dialog shows the hole ID and the electronic system, with these fields:
+   - **Path / channel** — a number, or a letter (A, B, C …) for systems that identify paths by letter. The label comes from the system (for example **Channel #**).
+   - **Commander #** (or the system's firing-unit term) — shown when the system has a firing unit.
+   - **Channel Colour** — the colour used to draw that channel.
+   - **Primer Order** — **Top to Bottom** or **Bottom to Top**: the order detonators are numbered along the harness.
+4. Click **Assign**. Kirra stores the values on the hole and checks them against the system's limits; any problems are shown as a validation warning.
 
 ---
 
@@ -36,5 +28,4 @@ Vendor limits (max detonators per path, delay ranges, export formats such as BPD
 
 - [Charging Overview](overview.md)
 - [Products CSV Reference](products-csv.md)
-- Kirra wiki: [Harness Wire Assignment](https://github.com/brentbuffham/Kirra/wiki/Harness-Wire-Assignment) (implementation map)
 - [Electronic Timing Constructs](../blast-design/electronic-timing-constructs.md) — separate from harness paths; both relate to electronic initiation

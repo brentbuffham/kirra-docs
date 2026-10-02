@@ -554,7 +554,7 @@ This differs from position-indexed vars (`deckBase[N]`, `deckTop[N]`, `chargeBas
 
 ## About Kirra-Design
 
-Kirra is an open-source blasting pattern design application built by Brent Buffham as a gift to the open-cut blasting industry. The Deck Builder formula engine described here is one of several systems — alongside surface meshing, timing analysis, and harness-wire bake — that aim to put genuinely capable design tools into engineers' hands without six-figure license fees.
+Kirra is a free-to-use (closed-source) blasting pattern design application built by Brent Buffham as a gift to the open-cut blasting industry. The Deck Builder formula engine described here is one of several systems — alongside surface meshing, timing analysis, and harness-wire bake — that aim to put genuinely capable design tools into engineers' hands without six-figure license fees.
 
 If this guide saved you time, consider supporting development at [buymeacoffee.com/kirradesign](https://buymeacoffee.com/kirradesign).
 
