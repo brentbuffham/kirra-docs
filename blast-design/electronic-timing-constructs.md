@@ -2,9 +2,9 @@
 
 **Electronic Timing** builds a **temporal mesh**: a triangulated surface in plan view where **Z represents firing time in milliseconds**, not ground elevation. You draw one or two **timing contours** (polylines or sampled Bézier curves), set timing parameters, then assign **electronic detonators** in the charging design so their fire times follow that surface.
 
-This workflow is separate from **connector timing** (`fromHoleID`, `timingDelayMilliseconds`, visible arrows between collars). Electronic timing writes **primer detonator** fields for initiators marked **Electronic** in the charge design.
+This workflow is separate from **connector timing** (each hole's **From Hole** and **Delay**, shown as tie arrows between collars). Electronic timing writes **primer detonator** fields for initiators marked **Electronic** in the charge design.
 
-> **Availability:** The **Electronic Timing** toolbar control is part of the `experimental-electronics` UI group. From **v1.0.46**, that group is **shown automatically** when loaded charging data includes at least one **Electronic** detonator on any hole (`hasAnyElectronicCharging` in `kirra.js`); it stays **hidden** when no electronic detonators are present. There is no separate global “enable experimental electronics” toggle. Visibility is refreshed when charging is loaded with the project.
+> **Availability:** Open the dialog with the **Electronic Timing Panel** button on the [Connect toolbar](connect-toolbar.md#electronic-timing-panel). The button is always shown; it does not depend on the charging design containing electronic detonators.
 
 ---
 
@@ -26,11 +26,11 @@ This workflow is separate from **connector timing** (`fromHoleID`, `timingDelayM
 | **Quad strip** | Corresponding points on two adjacent strips form quads, split into two triangles each. |
 | **Self-intersection** | Offset polylines can fold back on themselves at large offsets or sharp corners. |
 | **Smooth temporal mesh** | When enabled, the generator **subdivides** the triangulated temporal mesh (two midpoint passes) then applies **Laplacian smoothing** in **X, Y, and Z** (time). **Smoothing strength** is controlled by a numeric field (fractional passes supported, e.g. `1` = one full pass blend toward neighbours). |
-| **Bézier handle** | Per-knot `cpIn` / `cpOut` control points; handles are collinear with independent lengths when editing. |
+| **Bézier handle** | Each knot has an in and an out control point; the two handles stay in line, with independent lengths, when editing. |
 | **Timing Relief tool** | One contour plus explicit **start time** and **relief (ms/m)** → offset strips in both time directions. |
 | **Time Range tool** | Two contours plus **Line 1** and **Line 2** times → stitched mesh; effective relief is derived between the boundaries. |
-| **Manual offset (`timeOffsetMs`)** | Extra milliseconds added in the **Electronic Timing** dialog with **+** / **−** (per selected holes’ **Electronic** detonators). Cleared by **Apply & Reset Offsets** (on re-apply) or **Reset Selected Hole Offsets**. |
-| **Loading-stage offset (`offsetDelayMs`)** | Set in **Deck Builder** for the detonator; **always kept** when you apply timing or reset manual offsets — it is not the same field as `timeOffsetMs`. |
+| **Manual offset** | Extra milliseconds added in the **Electronic Timing** dialog with **+** / **−** (per selected holes’ **Electronic** detonators). Cleared by **Apply & Reset Offsets** (on re-apply) or **Reset Selected Hole Offsets**. |
+| **Loading-stage offset** | The **Offset Delay (ms)** set in **Deck Builder** for the detonator; **always kept** when you apply timing or reset manual offsets — it is separate from the manual offset. |
 
 ---
 
@@ -113,11 +113,11 @@ or a firing group.
 - **Timing Relief** — Single contour workflow; parameters are **Start Time (ms)** and **Relief (ms/m)** on the main parameter form.
 - **Time Range** — Two contours; **Range Parameters** expose **Line 1 Time**, **Line 2 Time**, and optional **Extra Pts** (Steiner-style density) per line.
 - **Bezier** — When checked, relief mode uses Bézier knots and handles; the mesh generator samples the curve to a polyline before strip offset.
-- **Smooth** — Enables post-processing on the generated mesh: **triangle subdivision** plus **Laplacian smooth** of vertex positions (including time as **Z**). Use the adjacent numeric field for **smoothing strength** (`smoothPasses` on the construct). Changing either triggers surface regeneration.
+- **Smooth** — Enables post-processing on the generated mesh: **triangle subdivision** plus **Laplacian smooth** of vertex positions (including time as **Z**). Use the adjacent numeric field for **smoothing strength** (saved with the construct). Changing either triggers surface regeneration.
 
 ### Edit on canvas (dialog open)
 
-With the **Electronic Timing** dialog open (and the draw tool idle), **hover and drag** contour **knots** and Bézier **handles** in 2D or 3D. The **ElectronicTimingEditTool** uses capture-phase mouse events so drags do not start a canvas pan; **C1 continuity** is enforced when moving one side of a handle pair.
+With the **Electronic Timing** dialog open (and the draw tool idle), **hover and drag** contour **knots** and Bézier **handles** in 2D or 3D. Dragging a knot or handle does not pan the canvas, and moving one side of a handle pair keeps the curve smooth through the knot.
 
 ### Drawing
 
@@ -125,7 +125,7 @@ With the **Electronic Timing** dialog open (and the draw tool idle), **hover and
 - **Range:** **Draw Line 1** / **Draw Line 2** — Same interaction; the mesh regenerates after **both** lines are complete.
 - **Clear** — Removes the relief polyline **or** both range lines, depending on mode.
 
-While drawing, canvas panning is suspended (`window.isElectronicTimingDrawActive`).
+While drawing, canvas panning is suspended.
 
 ### Segments (Relief / sampled Bézier)
 
@@ -136,17 +136,17 @@ For each polyline segment between consecutive vertices:
 
 ### Holes
 
-- **Assign selected** — Adds current selection to `assignedHoles` (combined id `entityName:::holeID`). Holes already on another construct are moved. Also runs interpolation immediately for feedback.
+- **Assign selected** — Adds the current selection to this construct. Holes already on another construct are moved. Also runs interpolation immediately for feedback.
 - **Remove selected** / **Clear all** — Unassign holes from this construct only.
 - **Apply Timing** — Requires a generated surface; writes electronic detonator times for assigned holes and persists charging data to IndexedDB when available.
 
 ### Offset (ms)
 
-With holes selected, **+** / **−** adjust `timeOffsetMs` on **Electronic** detonators (step from the numeric field, default 5 ms). `delayMs` is updated from interpolated time plus offset. Charging data is saved when the database handle exists.
+With holes selected, **+** / **−** adjust the manual offset on **Electronic** detonators (step from the numeric field, default 5 ms). The detonator delay is updated to the interpolated time plus the offset. Charging data is saved when the database handle exists.
 
 ### Time gradient
 
-Colour stops define how **time** maps to colours on the canvas for construct visualisation (see `getTimingGradientStops()` export used by 2D/3D draw helpers). They do not change numerical firing times.
+Colour stops define how **time** maps to colours on the canvas for construct visualisation, in 2D and 3D. They do not change numerical firing times.
 
 ### Surface
 
@@ -206,9 +206,9 @@ greyed out, and a construct that still exists is never released.
 
 ## Persistence
 
-Constructs are stored in IndexedDB under the **`TIMING_CONSTRUCTS`** object store and held in memory in `window.loadedTimingConstructs` (a `Map`). See the wiki [IndexedDB Schema](https://github.com/brentbuffham/Kirra/wiki/IndexedDB-Schema) for the store description.
+Timing constructs are saved automatically in the browser's local database for the current workspace, so they survive a page reload.
 
-**KAP project files (v1.0.47+):** Exporting a **.kap** (ZIP) includes **`timingConstructs.json`** — an array of `[id, constructJSON]` pairs. Importing a KAP restores constructs into memory and saves them back to IndexedDB (`KAPParser.js` / `KAPWriter.js`). Use KAP for full project round-trips that include electronic timing geometry.
+**KAP project files (v1.0.47+):** Exporting a **.kap** project includes the timing constructs, and importing it restores them. Use KAP for full project round-trips that include electronic timing geometry.
 
 ---
 
@@ -217,4 +217,4 @@ Constructs are stored in IndexedDB under the **`TIMING_CONSTRUCTS`** object stor
 - [Timing Sequences](timing-sequences.md) — Connector-based firing order, auto-timing, and validation.
 - [Charging Overview](../charging/overview.md) — Deck builder and electronic initiators.
 - [Harness Wire Assignment](../charging/harness-wire-assignment.md) — SurfaceWire path/commander tool (separate from mesh timing).
-- Kirra wiki: [Electronic Timing Constructs](https://github.com/brentbuffham/Kirra/wiki/Electronic-Timing-Constructs) — Source file map and implementation notes.
+- [Connect Toolbar](connect-toolbar.md) — Electronic Timing Panel, Temporal Mesh and Bake Delay buttons.
