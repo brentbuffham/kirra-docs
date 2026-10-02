@@ -1,8 +1,8 @@
 # Time Window Dialog
 
-The **Time Window** dialog is Kirra's timing-and-vibration analysis surface. It groups seven tabs over a shared blast-pattern scope so you can move between event histograms, frequency content, waveform synthesis, and detune actions without losing the selection you're analysing.
+The **Time Window** dialog is Kirra's timing-and-vibration analysis surface. It groups eight tabs over a shared blast-pattern scope so you can move between event histograms, frequency content, waveform synthesis, and detune actions without losing the selection you're analysing.
 
-The dialog is opened from the **Analyse** toolbar (the **Time Window, FFT, Spectrum, Seed, Forward Array, Detune and Constrain** button — see [Analyse Toolbar](analyse-toolbar.md)).
+The dialog is opened from the **Time Window** button on the **Analyse** toolbar — see [Analyse Toolbar](analyse-toolbar.md).
 
 ![Time Window dialog, Time Window tab](../screenshots/TimeWindow.png)
 *The Time Window tab — histogram of detonation events with chart-mode selector, Time Window slider, Time Offset slider, and the in-app Tips panel.*
@@ -17,10 +17,10 @@ Every tab shares the same wrapper:
 |--------|---------|
 | **Title bar** | Always reads **Time Window**. Dock, pin, minimise, and close controls on the right |
 | **Blast Patterns (Time Window scope)** | Per-entity checkboxes — picks which blast patterns feed every tab in the dialog. The header notes *Scopes every Time Window tab (Time Window, IDI, Spectrum, Synthesis, Forward Array, Detune pool). Independent of the Voronoi filter.* |
-| **Tabs** | Time Window, IDI, Spectrum, Synthesis, Forward Array, Detune, Constrain |
+| **Tabs** | Time Window, IDI, Spectrum, Seed, Synthesis, Forward Array, Detune, Constrain |
 | **Tab body** | Chart + tab-specific controls |
 | **Tips panel** | Collapsible help text written into the app, specific to the active tab |
-| **Footer buttons** | **Bake Delay**, **Refresh**, **Close**, **Apply** (the Apply button is renamed **Apply Detune** on the Detune tab) |
+| **Footer buttons** | **Refresh**, **Bake Delay**, **Export Synth**, **Close**, **Apply**. Apply commits the Detune or Constrain result and is disabled on the read-only tabs. **Export Synth** saves the synthesised trace (time, L, T, V) as a CSV from the Synthesis and Forward Array tabs |
 
 The scope panel is independent of the Voronoi monitor filter — what you tick here is what every chart in the dialog operates on.
 
@@ -116,6 +116,15 @@ The peak readout at the bottom (e.g. *peaks: 91.8 Hz, 2.9 Hz, 183.6 Hz*) lists t
 
 ---
 
+## Seed tab
+
+A read-only viewer of the raw seed wavelet that Synthesis and Forward Array stamp at each charged deck. A summary line shows the current source and its parameters. To change the source or its parameters, use the Synthesis tab — this chart re-paints to match.
+
+- **Two-term P+S** plots two traces, P (red) and S (blue), using the P and S parameters of the monitor chosen on the Synthesis tab
+- **Measured** plots the loaded geophone trace at its own sample rate
+
+---
+
 ## Synthesis tab
 
 Two stacked panels: top shows the single seed wavelet (the shape stamped at each deck); bottom shows the superposition of that seed at every deck's fire time — the trace a monitor would record. Peak of the bottom panel estimates predicted PPV.
@@ -126,7 +135,7 @@ Two stacked panels: top shows the single seed wavelet (the shape stamped at each
 
 | Control | Purpose |
 |---------|---------|
-| **Seed** | Source wavelet shape. Options include **Two-term P+S (monitor path)**, **Ricker (acausal)**, **Damped sinusoid (causal)**, **Berlage (causal)**, plus loaded seed files. The three buttons next to the dropdown are seed-library actions *[VERIFY: button labels for the three icons next to the Seed dropdown]* |
+| **Seed** | Source wavelet shape. Options include **Two-term P+S (monitor path)**, **Ricker (acausal)**, **Damped sinusoid (causal)**, **Berlage (causal)**, plus a measured seed. The three buttons next to the dropdown are **Add seed** (load a raw Instantel CSV, which opens the clipper, or a processed time / velocity CSV), **Clear measured seed** (revert to Ricker) and **Load seed from library** |
 | **fDom (Hz)** | Dominant frequency of the seed |
 | **Dur (ms)** | Duration of the seed window |
 | **ξ** | Damping parameter (active for damped seeds) |
@@ -203,9 +212,9 @@ Apply a small random offset to detonator timings to spread frequency-domain ener
 
 1. **Scope** — pick All visible / Selected / one Entity. The preview histogram shows the staged dither for that scope only.
 2. **Preview** — stages the change in memory; nothing is written. The chart shows the distribution of Δt dithers and the Spectrum/IDI tabs will update to reflect the proposed detune.
-3. **Commit** — writes the staged changes into `primer.timeOffsetMs` (electronic) or `hole.timingDelayMilliseconds` (nonel). Tracked in the UndoManager — `Ctrl+Z` reverts the whole batch.
+3. **Commit** — writes the staged changes into the electronic primers' time offsets (electronic) or the holes' surface delays (nonel). `Ctrl+Z` reverts the whole batch.
 
-**Reset offsets** — zeroes all electronic `timeOffsetMs` on scope. Also a single undoable action.
+**Reset offsets** (the icon button) — zeroes all electronic time offsets in scope. Also a single undoable action.
 
 ### Electronic vs Nonel
 
@@ -220,38 +229,53 @@ After preview the dialog reports *Previewed N detonators on M holes • mean |Δ
 
 ## Constrain tab
 
-Event-rate enforcement — flag events that fall inside a rolling window (preview, with **Before** and **After** counts in the legend). The current screenshot is small; the controls visible are **Scope**, **Level**, **Window (ms)**, **Max events**, and **Max move (ms)**.
+Event-rate enforcement — flag events that fall inside a rolling window (preview, with **Before** and **After** counts in the legend). The controls are **Scope**, **Unit**, **Window (ms)**, **Max events**, **Max move (ms)** and **Decimals**.
 
 ![Constrain tab](../screenshots/Constrain.png)
 
 > *[SCREENSHOT NEEDED: high-resolution Constrain tab so each control and its tooltip are legible]*
 
-### What this tab does *[VERIFY: full Constrain workflow and what "constrain" writes]*
+### What this tab does
 
-From the in-app Tips visible in the screenshot:
+From the in-app Tips:
 
-> Electronic detonators only. Nonel (shock-tube) connectors cannot be freely detuned below their palette values — their delays come in discrete product steps (9/17/25/42/etc) so a >50 ms mechanical solder, so the tool simply ignores non-electronic primers.
+> Electronic detonators only. Nonel (shock-tube) connectors cannot be freely retimed below their palette values — their delays come in discrete product steps (9/17/25/42 ms etc.) with ±3-5% mechanical scatter, so this tool simply ignores non-electronic primers.
 
-The constrain operation appears to detect and reduce window violations by rescheduling electronic detonators within an allowable jitter (**Max move (ms)**) so that no rolling-window slot exceeds **Max events**. The chart shows the rolling-window event count before and after, and tall green stems are violations.
+Constrain enforces a cap on how many events can fire inside any rolling time window. Unlike a global "optimise timing" pass, it only moves events that are already too close together, so row-to-row relief stays intact.
 
-### Suggested workflow *[VERIFY: against current build]*
+| Control | Meaning |
+|---------|---------|
+| **Window (ms)** | The rolling time slice being policed. 8 ms is the classic coherence window; 10-15 ms is common for stricter residential cases |
+| **Max events** | The most detonations allowed inside any window. 1 = fully sequential; 2 is a practical compromise |
+| **Unit** | **Holes** counts one event per hole (first primer only); **Decks** counts every charged primer — stricter and more accurate for multi-deck holes |
+| **Max move (ms)** | The most any single event may shift. Low values (3-5 ms) protect relief; high values (15+ ms) work harder but may blur inter-row spacing |
+| **Decimals** | Detonator timebase resolution — 0 = whole milliseconds |
 
-1. Set **Scope** and **Level** (Hole / Deck)
-2. Set the **Window (ms)** — the rolling time window inside which events are counted
-3. Set **Max events** — the cap per window
-4. Set **Max move (ms)** — the maximum jitter the constrainer is allowed to introduce
-5. Preview reports *N violations* and *visualised before/after*
-6. Click **Apply** to commit (the change is written into electronic `timeOffsetMs` and is undoable as one batch)
+### Reading the chart
+
+- **Red bars** — 1 ms bins with more than the allowed events (violations)
+- **Green bars** — bins at or below the limit
+- **Dashed line** — the limit the tool is resolving towards
+- **After** series — appears after a preview; any remaining red bars cannot be resolved within the **Max move** budget
+
+### Workflow
+
+1. Set the **Scope** — All visible / Selected / one Entity (same as Detune)
+2. Set **Unit**, **Window (ms)**, **Max events**, **Max move (ms)** and **Decimals**
+3. The preview runs automatically, in memory, whenever a setting changes; the status reports hot windows before and after, events moved, the largest shift, and any events it gave up on
+4. Click **Apply** to commit — the shifts are written into the electronic primers' time offsets as one undoable action (`Ctrl+Z` reverts the whole batch)
+
+Always re-check the Spectrum and Synthesis tabs after committing — reducing superposition can shift energy into the residential 5-15 Hz band.
 
 ---
 
 ## Bake Delay
 
-The **Bake Delay** button at the bottom of the dialog folds any active electronic offsets (`timeOffsetMs`) and detune/constrain results into the underlying timing field so the staged values become the new baseline.
+The **Bake Delay** button at the bottom of the dialog converts the holes' fire times — surface delays and nonel cascade times — into absolute delays on their electronic primers.
 
-This is the same Bake-onto-Electronic action used in the [Connect Toolbar](../blast-design/connect-toolbar.md).
+It is the same bake used by the **Bake Delay** button on the [Connect Toolbar](../blast-design/connect-toolbar.md). The difference is the scope: from the Time Window dialog it bakes the holes in the active tab's scope — the Detune or Constrain scope picker on those tabs, otherwise the **Blast Patterns** filter at the top of the dialog.
 
-> *[VERIFY: exact behaviour of Bake Delay button when triggered from the Time Window dialog footer vs the Connect toolbar]*
+A **Bake fire time onto primers?** confirmation summarises what will change before you click **Bake**. The bake can be undone. If nothing in scope can be baked, a **Nothing to bake** message explains why.
 
 ---
 
@@ -261,5 +285,5 @@ This is the same Bake-onto-Electronic action used in the [Connect Toolbar](../bl
 - [Analytics Overview](overview.md) — GPU shader models and Voronoi PPV
 - [PPV & Vibration Models](ppv-models.md) — the underlying site law and waveform models
 - [PPV Voronoi Modes](ppv-voronoi-modes.md) — per-cell receptor-aware PPV
-- [Electronic Timing Constructs](../blast-design/electronic-timing-constructs.md) — where `timeOffsetMs` is written
+- [Electronic Timing Constructs](../blast-design/electronic-timing-constructs.md) — where electronic time offsets are set
 - [Connect Toolbar](../blast-design/connect-toolbar.md) — Bake onto Electronic Detonators

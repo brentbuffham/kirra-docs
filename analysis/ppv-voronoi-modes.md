@@ -23,7 +23,7 @@ This is **not** the same tool as the [Blast Analytics shaders](overview.md). The
 
 The Voronoi PPV controls live in the **Voronoi Options** dialog.
 
-1. In the display toolbar, **right-click** the Voronoi display toggle label. `[VERIFY: toolbar button tooltip]`
+1. Click the **Voronoi Options** button on the Analyse toolbar, or **right-click** the **Voronoi** display toggle (the hexagon V button).
 2. In the **Voronoi Display** dropdown at the top, choose one of the four PPV modes listed above.
 
 When a PPV mode is selected the dialog expands to reveal **Global Blast-Side Settings**, **Monitor Points**, and a collapsible **How to read this legend** guide. Switching back to a non-PPV mode (Powder Factor, Mass, Volume, etc.) hides those sections.
@@ -161,7 +161,7 @@ If the pattern has no charging data yet, the card shows "No charging data" inste
 
 ### Persistence
 
-Monitors and global settings are persisted to `localStorage` (`kirra_ppvMonitors`, `kirra_ppvParams`) and survive a page reload. When the first monitor is added after an upgrade, older per-blast K/B/e defaults are migrated into the new per-monitor defaults automatically.
+Monitors and global settings are saved in your browser and survive a page reload. When the first monitor is added after an upgrade, older per-blast K/B/e defaults are migrated into the new per-monitor defaults automatically.
 
 ---
 

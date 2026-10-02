@@ -117,9 +117,9 @@ Same energy summation approach as Scaled Heelan but uses Blair's (2015) improved
 
 GPU model that treats detonation as a **continuous ramp** propagating from the **primer** along the charge column at **VOD**, rather than firing each deck as a simultaneous point source. At an observation point, P-wave arrivals from positions along the charge occur at different times (Mach-cone style behaviour when VOD exceeds rock P-wave speed).
 
-**Per-primer data:** The shader uses a **primer texture** (`uPrimerData`) together with the deck texture. Each primer row carries **deck index**, **primer fraction** along that deck (top toward base), **delay**, and **VOD**, so multiple primers per hole can drive separate burn fronts. Deck row 2 packs `primerFrac` in the fractional part of the auxiliary channel for primer-aware ordering (see `TemporalLifeCycleModel.js` in the Kirra source).
+**Per-primer data:** Each primer carries its **deck**, its **position** along that deck (top toward base), its **delay**, and the **VOD**, so multiple primers per hole can drive separate burn fronts.
 
-**Superposition:** Contributions are still combined with **incoherent (RMS) energy summation** — same limitation as Scaled Heelan family on GPU: **no** coherent interference fringes. The model shows **when** energy arrives from the moving detonation front under **`uDisplayTime`** filtering, not wave cancellation.
+**Superposition:** Contributions are still combined with **incoherent (RMS) energy summation** — same limitation as Scaled Heelan family on GPU: **no** coherent interference fringes. The model shows **when** energy arrives from the moving detonation front under **display time** filtering, not wave cancellation.
 
 **Time Interaction:** Supported — use **Interact** to animate firing time and watch the sequence evolve.
 
@@ -127,7 +127,7 @@ GPU model that treats detonation as a **continuous ramp** propagating from the *
 
 ## 7. Blair Heavy (Time-Domain)
 
-Full **coherent** time-domain waveform superposition model — the **only** analytics path that superposes waveforms with **phase** so that **constructive and destructive interference** can appear in the result. **Runs on CPU via Web Workers** (not GPU), computing PPV on a 3D voxel grid for truly volumetric output. Uses multiple workers based on your computer's processor count.
+Full **coherent** time-domain waveform superposition model — the **only** analytics path that superposes waveforms with **phase** so that **constructive and destructive interference** can appear in the result. **Runs on the CPU in the background** (not GPU), computing PPV on a 3D voxel grid for truly volumetric output. Uses multiple workers based on your computer's processor count.
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -147,7 +147,7 @@ Full **coherent** time-domain waveform superposition model — the **only** anal
 - Coherent superposition — phases can cancel or reinforce (unlike GPU RMS models)
 - Time-domain waveform synthesis with P/S arrival times
 - Primer location controls detonation front direction and cumulative mass ordering
-- Results are exported to GLB for safe persistence in IndexedDB
+- Results are exported to GLB and saved in your browser
 - Does not support time interaction or real-time updates
 
 ---

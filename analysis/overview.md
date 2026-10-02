@@ -37,7 +37,7 @@ Kirra provides **11 analytics models** in the Blast Analysis dialog:
 | **PPV**, **PPV Per-Deck** | Scaled distance — no waveform synthesis | No |
 | **Heelan**, **Scaled Heelan** | Incoherent (RMS) sum of energies | No — RMS cannot cancel |
 | **Blair Lite** (Scaled Heelan 90%), **+COH** path family | Incoherent (RMS) with directional radiation | No |
-| **Temporal Lifecycle** | Incoherent (RMS) with **VOD ramp** from **primer**, time filtering (`uDisplayTime`) | No — shows **burn-front timing** and primer-relative ordering, **not** interference |
+| **Temporal Lifecycle** | Incoherent (RMS) with **VOD ramp** from **primer**, time filtering (display time) | No — shows **burn-front timing** and primer-relative ordering, **not** interference |
 | **Blair Heavy** (Blair & Minchinton) | Full **time-domain** waveform synthesis | **Yes** — coherent superposition; phases can constructively or destructively combine |
 
 For a deeper model-by-model read, see [PPV & Vibration Models](ppv-models.md).
@@ -94,7 +94,7 @@ Each model has an expandable **Model Parameters** section for tuning site consta
 5. Click **Apply Analysis** to render the overlay
 6. Drag holes or modify charges to see the shader update in real-time (GPU models)
 
-> **Note:** Blair Heavy runs as a one-shot CPU computation via Web Workers. A progress dialog shows completion status. It does not support real-time hole-drag updates.
+> **Note:** Blair Heavy runs as a one-shot CPU computation in the background. A progress dialog shows completion status. It does not support real-time hole-drag updates.
 
 ---
 
@@ -105,13 +105,13 @@ Each model has an expandable **Model Parameters** section for tuning site consta
 | **Analysis Plane** | Flat rectangle covering the blast extent with configurable padding. Uses the drawing RL elevation. Good for quick overview. |
 | **Surface Overlay** | Applies the shader directly to an existing loaded surface. The original is hidden. |
 | **Duplicate Surface** | Creates a copy of the surface with the shader applied. Original remains untouched. |
-| **Baked Texture** | Renders to a persistent UV-mapped texture saved to IndexedDB. Visible in 2D and 3D without the shader running. |
+| **Baked Texture** | Renders to a persistent texture saved with the project in your browser. Visible in 2D and 3D without the shader running. |
 
 ---
 
 ## Time Interaction
 
-Timing-capable models (including **Temporal Lifecycle**) support animated playback via the **Interact** button — the shader advances **`uDisplayTime`** so you see which decks/holes have fired by that instant. This is **not** the same as displaying wave interference; for coherent superposition use **Blair Heavy** (one-shot CPU run, no Interact slider).
+Timing-capable models (including **Temporal Lifecycle**) support animated playback via the **Interact** button — the shader advances the **display time** so you see which decks/holes have fired by that instant. This is **not** the same as displaying wave interference; for coherent superposition use **Blair Heavy** (one-shot CPU run, no Interact slider).
 
 Controls:
 
@@ -164,9 +164,9 @@ You can adjust the transparency of an analysis mesh after it has been generated 
 
 ## GLB Export and Persistence
 
-Analysis surfaces can be exported to GLB format for archiving or use in external 3D viewers. Blair Heavy results are automatically exported to GLB and persisted to IndexedDB, so they survive page reloads without needing to recompute the CPU model.
+Analysis surfaces can be exported to GLB format for archiving or use in external 3D viewers. Blair Heavy results are automatically exported to GLB and saved in your browser, so they survive page reloads without needing to recompute the CPU model.
 
-When reloading a project, analysis meshes from previous sessions are automatically restored from their GLB representation in IndexedDB.
+When reloading a project, analysis meshes from previous sessions are automatically restored from their saved GLB representation.
 
 ---
 
