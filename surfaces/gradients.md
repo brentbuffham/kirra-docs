@@ -64,6 +64,42 @@ Transparency can be adjusted at any time, including after applying blast analyti
 
 ---
 
+## Edge Overlay
+
+Draw lines over a surface to show its shape. Tick **Overlay** in **Surface Properties**, then pick a style:
+
+| Style | What it draws |
+|---|---|
+| **Outline** | Black lines only where the surface changes angle — crests, toes and the outer edge. Flat areas stay clean. |
+| **Wireframe** | Every triangle edge, 30% darker than the surface. |
+| **Inner glow** | A soft light glow along the same lines as Outline. |
+
+![Surface Properties with the Overlay tickbox and Overlay style](../screenshots/SurfaceOverlayDialog.png)
+
+![Outline — lines only at crests, toes and edges](../screenshots/SurfaceOverlayOutline.png)
+
+![Wireframe — every triangle edge](../screenshots/SurfaceOverlayWireframe.png)
+
+![Inner glow — a soft glow along the outline](../screenshots/SurfaceOverlayInnerGlow.png)
+
+### How to use
+
+1. Right-click the surface and choose **Surface Properties**
+2. Tick **Overlay** — **Overlay style** becomes available
+3. Choose **Outline**, **Wireframe** or **Inner glow**
+4. Click **Ok** — the overlay shows in both 2D and 3D
+
+### Good to know
+
+- Lines are 1 pixel wide at any zoom.
+- In 3D, lines on the far side of a ridge are hidden.
+- The overlay follows the surface's transparency.
+- The setting is saved with the surface and travels in project files.
+- Inner glow works best on surfaces with evenly sized triangles. Very thin triangles can make it slightly uneven.
+- The overlay is not printed, and is not included in **Send to Image**.
+
+---
+
 ## Send to Image
 
 **Send to Image** turns a surface into a picture of how it looks right now — gradient, limits, hillshade, texture, or analysis colours — and adds it to the **Images** folder. The image is saved with the project and is still there when you reopen it.
