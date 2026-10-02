@@ -8,8 +8,6 @@ Kirra writes blast holes to CSV in three flavours:
 | **Measured Data CSV** | Kirra tab → *Measured Data* | Sending as-built / as-loaded data back to a corporate system or back into another Kirra project |
 | **Custom CSV** | Blasts tab → *Custom CSV* | Matching any downstream system's column layout — pick fields, units, order, custom headers, custom text columns; supports **charging round-trip** (v1.0.270+) |
 
-> *Source of truth: `src/fileIO/TextIO/BlastHoleCSVWriter.js`, `CustomBlastHoleTextWriter.js`, and the Kirra wiki page [Custom CSV Format](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format).*
-
 ---
 
 ## How to Open the Export Dialog
@@ -34,7 +32,7 @@ The Export dialog is tabbed by file family — identical layout to the Import di
 
 ## Holes CSV / TXT (preset columns)
 
-The Kirra tab shows a **single row** for `Holes CSV / TXT (preset columns)` with a **column-count dropdown** — picking the preset is how you choose between the eight variants (4 / 7 / 9 / 12 / 14 / 30 / 32 / 35).
+The Kirra tab shows a **single row** for `Holes CSV / TXT (preset columns)` with a **column-count dropdown** — picking the preset is how you choose between the eight presets (4 / 7 / 9 / 12 / 14 / 30 / 32 / 35).
 
 When you select a preset in the dropdown, an orange info bubble shows the column list and a description of what that preset produces. The descriptions visible in the screenshot:
 
@@ -49,9 +47,9 @@ When you select a preset in the dropdown, an orange info bubble shows the column
 | **32** | 30-column + `rowID` + `posID` for full row/position bookkeeping. |
 | **35** | **Complete** — every blast hole property the parser reads back (design + measured + row/pos + burden / spacing / connector). |
 
-For the full column-by-column order of each preset, see [CSV Import — preset variants](../importing/csv-formats.md#blasthole-csv--eight-preset-variants). The writer and parser share the same column order — round-trip is lossless when both ends use the same preset.
+For the full column-by-column order, see [CSV Import — accepted column counts](../importing/csv-formats.md#blasthole-csv--accepted-column-counts). The 4, 7, 9, 12, 14 and 35 presets re-import in the same column order. The **30** and **32** presets write measured fields from column 25, which the importer does not expect for those counts — use **14** or **35** for Kirra-to-Kirra round trips.
 
-> **`safeToFixed`** writes `0.0000` for any `NaN` numeric value so the file stays parseable in non-tolerant CSV readers.
+> Missing numeric values are written as `0.0000` so the file stays parseable in strict CSV readers. A hole with no delay is written as `NA`.
 
 > **Visible holes only.** Hidden holes are filtered out at export — toggle visibility in the Data Explorer to control what gets written.
 
@@ -174,11 +172,11 @@ The Name becomes the column header; the Value is written into every data row.
 
 The **Charging Summary**, **Deck[N]**, and **Primer[N]** groups on pages 2-4 only appear when at least one visible hole has **charging applied**. The exporter scans the visible holes, finds the maximum deck and primer count, and emits exactly that many groups (capped at 20 each for dialog scannability).
 
-When a CSV with `deck*[N]` or `primer*[N]` headers is re-imported through Custom CSV, the parser auto-detects the charging columns (no manual mapping needed) and reconstructs each hole's `HoleCharging` — decks, primers, and verbatim `fx:` formula strings.
+When a CSV with `deck*[N]` or `primer*[N]` headers is re-imported through Custom CSV, the parser auto-detects the charging columns (no manual mapping needed) and reconstructs each hole's charging — decks, primers, and verbatim `fx:` formula strings.
 
-For the underlying column names (`deckType[N]`, `deckBaseFormula[N]`, `primerDetonatorDelayMs[N]`, etc.) and worked round-trip examples, see the Kirra wiki: [Custom CSV Format → Charging columns](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format#charging-columns-v10270).
+Charging columns are written as `deck…[N]` and `primer…[N]` headers (for example `deckType[1]`, `primerDepth[2]`). See [CSV Import → Custom CSV](../importing/csv-formats.md) for the import side.
 
-> **Round-trip limit:** Formula strings ride along as text but only re-evaluate when the next **Apply Charge Rule** runs. The imported numeric values are the source of truth until then.
+> **Round-trip limit:** Formula strings ride along as text but only re-evaluate when a charge rule is next applied to the holes. The imported numeric values are the source of truth until then.
 
 ### Footer
 
@@ -252,8 +250,6 @@ For the most faithful Kirra-to-Kirra round-trip, prefer **KAP** — it carries e
 ## Related topics
 
 - [CSV Import](../importing/csv-formats.md) — preset variants and Custom CSV import side
-- [Kirra wiki: Custom CSV Format](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format) — authoritative parser/writer reference
-- [Kirra wiki: BlastHole CSV Format](https://github.com/brentbuffham/Kirra/wiki/BlastHole-CSV-Format) — authoritative preset reference
 - [DXF Export](dxf-export.md)
 - [Other Formats (IREDES, AQM, KML)](other-formats.md)
 - [Charging Overview](../charging/overview.md)

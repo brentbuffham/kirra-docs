@@ -16,7 +16,7 @@ JavaScript treats **`0` as falsy**. Patterns such as `value || fallback` are uns
 - Nullish coalescing where supported: `value ?? fallback` (only replaces `null`/`undefined`, not `0`).
 - Avoid `value || fallback` for numbers unless both sides are intentionally non-negative and `0` cannot occur, or the fallback is also `0` (e.g. `x || 0` when `0` means “same as zero”).
 
-Kirra’s in-repo developer guide (`CLAUDE.md` in the Kirra repository) documents this under **CRITICAL: No Falsy-Zero for Numeric Values**. Releases **1.0.58+** tightened handling in several hot paths (including 3D selection and DXF-related Z handling); **this class of bug is not “finished”** — new code must stay vigilant whenever numeric defaults use `||`.
+Releases **1.0.58+** tightened handling in several hot paths (including 3D selection and DXF-related Z handling); **this class of bug is not “finished”** — new code must stay vigilant whenever numeric defaults use `||`.
 
 ---
 

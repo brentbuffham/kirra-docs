@@ -2,8 +2,6 @@
 
 Kirra reads blast holes from CSV files using its **BlastHole CSV** family — a set of preset column layouts dispatched on column count. Choose your preset in the Import dialog or use **Custom CSV** if your file does not match a preset.
 
-> *Source of truth: the Kirra wiki [BlastHole CSV Format](https://github.com/brentbuffham/Kirra/wiki/BlastHole-CSV-Format) page is generated from the parser in `src/fileIO/TextIO/BlastHoleCSVParser.js`.*
-
 ---
 
 ## How to Import a CSV
@@ -21,9 +19,9 @@ If your file does not match any preset, switch to **Custom CSV** on the **Blasts
 
 ---
 
-## BlastHole CSV — eight preset variants
+## BlastHole CSV — accepted column counts
 
-The parser dispatches strictly on column count. Pick the preset that matches your file exactly.
+The parser dispatches strictly on column count. It accepts files with **4, 7, 9, 12, 14, 29, 30, 31, 32 or 35** columns; any other count is skipped with a warning (unless the file has a header row — see [Header rows](#header-rows)).
 
 | Cols | Layout | Carries |
 |------|--------|---------|
@@ -32,11 +30,11 @@ The parser dispatches strictly on column count. Pick the preset that matches you
 | **9** | + `holeDiameter, holeType` | Diameter (mm) and hole type |
 | **12** | + `fromHoleID, delay, color` | Tying / delay / colour (single entity) |
 | **14** | `entityName, entityType, …` (rest as 12-col) | Multi-entity grouping — **recommended round-trip format** |
-| **30** | Own column order — see below | Full design + as-drilled data (grade, subdrill, bench, angle, bearing, timing, measured-*) |
-| **32** | 30-col + `rowID, posID` | Row / position bookkeeping |
-| **35** | 32-col + `burden, spacing, connectorCurve` | **Complete** — every parsed field |
+| **29 / 30** | Full design columns 1-24, then row / position / burden / spacing / curve | Full design without measured data |
+| **31 / 32** | Columns 1-24, then measured length and mass, then row / position / burden / spacing | Design + measured length and mass |
+| **35** | Columns 1-24, measured fields with timestamps, then row / position / burden / spacing / curve | **Complete** — every parsed field |
 
-> **30-col is not "14 + extras".** Cols 1-9 match the 14-col layout, but from col 10 onward the order diverges — grade, subdrill, and bench come **before** `holeDiameter`. See the [30-Column section](#30-column-full-design--as-drilled) for the exact order.
+> **29- to 35-column files are not "14 + extras".** Cols 1-9 match the 14-col layout, but from col 10 onward the order diverges — grade, subdrill, and bench come **before** `holeDiameter`. See [29- to 35-Column Files](#29--to-35-column-files) for the exact order.
 
 ---
 
@@ -131,65 +129,54 @@ Pattern_A,hole,H002,477755.5,6771850.2,335.0,477756.2,6771849.8,320.0,115,Produc
 
 ---
 
-## 30-Column (Full Design + As-Drilled)
+## 29- to 35-Column Files
 
-The 30-column layout is **not** "14-col + extras". It has its own column order — grade, subdrill, and bench come **before** `holeDiameter`, and the measured / as-drilled fields fill the tail.
+### Columns 1-24 (shared)
+
+These files share the same first 24 columns. Grade, bench, length, angle, bearing and fire time are **recalculated** on import, so their columns can hold any value.
 
 | Column | Field | Notes |
 |--------|-------|-------|
 | 1 | `entityName` | Blast pattern name |
-| 2 | `entityType` | `hole` for blast holes |
+| 2 | `entityType` | `hole` for blast holes (not read) |
 | 3 | `holeID` | |
 | 4-6 | `startX, startY, startZ` | Collar |
 | 7-9 | `endX, endY, endZ` | Toe |
-| 10-12 | `gradeX, gradeY, gradeZ` | Grade point — computed from subdrill on read, re-derived on write |
+| 10-12 | `gradeX, gradeY, gradeZ` | Grade point — recalculated from subdrill |
 | 13 | `subdrillAmount` | **Vertical** delta-Z (m), not along-hole |
-| 14 | `subdrillLength` | Along-hole subdrill (m) |
-| 15 | `benchHeight` | Bench height (m) |
+| 14 | `subdrillLength` | Along-hole subdrill (m) (not read) |
+| 15 | `benchHeight` | Bench height (m) (recalculated) |
 | 16 | `holeDiameter` | mm |
 | 17 | `holeType` | e.g. `Production` |
 | 18 | `fromHoleID` | Upstream tying hole (use `entityName:::holeID`) |
-| 19 | `delay` | **Relative** milliseconds. Accepts `na` / `n/a` / `null` / `nan` (case-insensitive) → stored as `NaN` for the harness-wire / null-connector convention |
+| 19 | `delay` | **Relative** milliseconds. Accepts `na` / `n/a` / `null` / `nan` (case-insensitive) → stored as no delay, for the harness-wire / null-connector convention |
 | 20 | `color` | `#RRGGBB` or named colour |
-| 21 | `holeLength` | Calculated (m) |
-| 22 | `holeAngle` | Angle from vertical (`0` = vertical) |
-| 23 | `holeBearing` | Azimuth clockwise from North |
-| 24 | `holeTime` | Hole fire time |
-| 25 | `measuredLength` | As-drilled length (m) |
-| 26 | `measuredLengthTimeStamp` | When the length was measured |
-| 27 | `measuredMass` | As-loaded mass (kg) |
-| 28 | `measuredMassTimeStamp` | When the mass was measured |
-| 29 | `measuredComment` | Free-text comment |
-| 30 | `measuredCommentTimeStamp` | When the comment was recorded |
+| 21 | `holeLength` | Calculated (m) (recalculated) |
+| 22 | `holeAngle` | Angle from vertical (`0` = vertical) (recalculated) |
+| 23 | `holeBearing` | Azimuth clockwise from North (recalculated) |
+| 24 | `holeTime` | Hole fire time (recalculated) |
 
-> **Two subdrill fields:** `subdrillAmount` is the **vertical** drop below grade (Δz). `subdrillLength` is the same value projected along the hole vector. Both are written on export so importers can use whichever convention they prefer.
+> **Two subdrill fields:** `subdrillAmount` is the **vertical** drop below grade (Δz). `subdrillLength` is the same value projected along the hole vector. Both are written on export so other software can use whichever convention it prefers.
 
-> **Measured timestamps:** Each measured field has a paired `…TimeStamp` column. Empty timestamps are allowed.
+### Columns 25 onward
 
----
-
-## 32-Column (+ Row / Position)
-
-30-column layout plus row and position bookkeeping.
-
-| Column | Field |
-|--------|-------|
-| 31 | `rowID` |
-| 32 | `posID` |
+| Column | 29 / 30 columns | 31 / 32 columns | 35 columns |
+|--------|-----------------|-----------------|------------|
+| 25 | `rowID` | `measuredLength` | `measuredLength` |
+| 26 | `posID` | `measuredMass` | `measuredLengthTimeStamp` |
+| 27 | `burden` | `rowID` | `measuredMass` |
+| 28 | `spacing` | `posID` | `measuredMassTimeStamp` |
+| 29 | `connectorCurve` | `burden` | `measuredComment` |
+| 30 | (ignored) | `spacing` | `measuredCommentTimeStamp` |
+| 31 | — | `connectorCurve` (32-column files only) | `rowID` |
+| 32 | — | (ignored) | `posID` |
+| 33 | — | — | `burden` (m) |
+| 34 | — | — | `spacing` (m) |
+| 35 | — | — | `connectorCurve` |
 
 Empty `rowID` / `posID` parse as `null`. Holes with `null` or `0` row/pos are treated as unassigned and may be processed by smart row detection.
 
----
-
-## 35-Column (Complete)
-
-Full lossless export — every field the parser recognises.
-
-| Column | Field |
-|--------|-------|
-| 33 | `burden` (m) |
-| 34 | `spacing` (m) |
-| 35 | `connectorCurve` |
+> **Caution — 30 and 32 Column exports:** Kirra's **30 Column** and **32 Column** exports write the measured fields (with timestamps) from column 25, which is the 35-column order, not the order the importer reads for 30- and 32-column files. Use **14 Column** or **35 Column** for Kirra-to-Kirra round trips.
 
 For a full project save, prefer **KAP** — it carries every project state (charging, timing constructs, drawings, surfaces, layers) instead of just the holes.
 
@@ -197,7 +184,9 @@ For a full project save, prefer **KAP** — it carries every project state (char
 
 ## Header rows
 
-A header row is **detected only when all of columns 3-5 (collar X/Y/Z) on the first row are non-numeric**. If your file has a header that doesn't match this rule, the parser may treat it as a data row.
+A header row is detected when any of columns 4-6 (collar X/Y/Z) in one of the first three lines is non-numeric, and the line has at least 6 columns. If your file has a header that doesn't match this rule, the parser may treat it as a data row.
+
+When a header row is present and the column count is **not** one of the accepted counts, Kirra maps the columns by their header names instead (the names Kirra itself writes, such as `holeID`, `startXLocation`, `holeDiameter`). With an accepted count, the column positions above still apply.
 
 If you have an unusual header layout, use **Custom CSV** instead — it does header-driven field mapping.
 
@@ -334,9 +323,9 @@ Invalid coordinates **do not abort** the import:
 
 When the parser sees any header matching `^(deck|primer)([A-Z][A-Za-z]*)\[(\d+)\]$` (e.g. `deckType[1]`, `primerDepth[2]`) in the first row, it switches on a charging-reconstruction pass — no manual mapping needed. Each hole gets a `HoleCharging` rebuilt from the deck and primer cells, including verbatim `fx:` formula strings.
 
-Round-trip is full for design, formulas, and primer assignments — but live formula re-evaluation does not happen on import. The imported numeric values are the source of truth until the next **Apply Charge Rule** runs.
+Round-trip is full for design, formulas, and primer assignments — but live formula re-evaluation does not happen on import. The imported numeric values are the source of truth until a charge rule is next applied to the holes.
 
-For the full Custom CSV reference (every recognised header, every charging column, worked examples), see the Kirra wiki: [Custom CSV Format](https://github.com/brentbuffham/Kirra/wiki/Custom-CSV-Format).
+To see the exact charging columns Kirra writes, export a charged blast with **Custom CSV** — see [CSV Export](../exporting/csv-export.md).
 
 ---
 
@@ -356,9 +345,9 @@ For lossless round-trip across Kirra sessions, prefer **35-col** export — or [
 ## Edge cases and parser quirks
 
 - **Strict column count.** A 9-col file is unambiguous, but a hand-crafted file with the wrong count will parse as the wrong variant. Stick to the documented variants.
-- **Embedded commas in quoted strings.** The parser uses `String.split(",")` — not an RFC-4180 tokeniser. Embedded commas inside quoted strings are not safe. If you need that, use Custom CSV.
-- **BOM.** UTF-8 BOM is stripped by the browser's `FileReader`.
-- **Locale numbers.** `parseFloat()` only — comma-decimal locales (`12,5`) are **not** supported. Use period as the decimal separator.
+- **Embedded commas in quoted strings.** The parser splits on every comma — quoted fields are not recognised. Embedded commas inside quoted strings are not safe. If you need that, use Custom CSV.
+- **BOM.** A UTF-8 byte-order mark is stripped by the browser when the file is read.
+- **Locale numbers.** Comma-decimal locales (`12,5`) are **not** supported. Use period as the decimal separator.
 - **Missing fields.** Sensible defaults: `holeDiameter = 0`, `holeType = "Undefined"`, `delay = 0`, `color = "red"`.
 
 ---
