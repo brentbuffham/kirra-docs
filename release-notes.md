@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.214
+
+_2026-10-03_
+
+**Feature**
+
+- Import summaries and status messages with counts or names now translate
+
+**Bug Fix**
+
+- Chinese messages no longer mix in English around numbers and names
+
 ## Release v1.1.32.213
 
 _2026-10-03_
