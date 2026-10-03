@@ -4,7 +4,8 @@ New in **v1.0.75**. Per-hole Voronoi PPV analysis with receptor-aware monitor po
 
 This is **not** the same tool as the [Blast Analytics shaders](overview.md). The shader suite paints a per-pixel physics model (Heelan, Blair, Temporal Lifecycle, Blair Heavy). This tool paints the **Voronoi cell of each hole** using the empirical scaled-distance site law evaluated against one or more **monitor points** (receptors). It's designed for on-the-fly compliance review against multiple receivers, and it runs in real time as you move holes or edit charging.
 
-> `[SCREENSHOT NEEDED: Voronoi Options dialog open on mode A (PPV — Max), showing the Global Blast-Side Settings section and one Monitor Points card]`
+![Voronoi Options on mode A](../screenshots/VoronoiOptionsModeA.png)
+*Voronoi Options on **PPV — Max / Coherent Seed (mode A)**, showing the Global Blast-Side Settings and the Monitor Points summary.*
 
 ---
 
@@ -108,7 +109,8 @@ Monitors are the receptors. Every enabled monitor contributes to every PPV mode.
 
 Each monitor is its own card with its own site law, because **the geology between the blast and each receptor is usually different** (e.g. west monitor through shale ≠ east monitor through basalt).
 
-> `[SCREENSHOT NEEDED: Monitor Points list with two cards — one PASS (green), one FAIL (red) — collapsed single-line status]`
+![Monitor Points & Seed Library](../screenshots/MonitorPointsDialog.png)
+*The Monitors tab of **Monitor Points & Seed Library**. Card #1 is expanded to show its own site law (K, B, charge exponent, distance mode, target).*
 
 ### Card fields
 
@@ -251,7 +253,8 @@ When any PPV mode is active, 3D adds the following for each enabled monitor:
 
 Status colours match the 2D monitor cards: green on PASS, red on FAIL, amber when there is no data yet.
 
-> `[SCREENSHOT NEEDED: 3D view showing a PPV-coloured Voronoi cell layer with two monitors — one PASS tieline in green, one FAIL tieline in red, crosshair rings visible]`
+![PPV monitors in 3D](../screenshots/PPVMonitors3D.png)
+*Mode A in the 3D view: each monitor has a tieline to its dominant hole, a distance chip and a status chip — green on PASS, red on FAIL.*
 
 Toggling charging edits, timing edits, or monitor changes updates both the 2D and 3D overlays in lock-step.
 
