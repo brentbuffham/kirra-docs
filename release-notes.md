@@ -2,6 +2,25 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.218
+
+_2026-10-03_
+
+**Feature**
+
+- French, Spanish, Russian and Mongolian now cover the whole app
+
+**Bug Fix**
+
+- Surface Properties statistics no longer clip in longer languages
+- Voronoi "All Blast Holes" filter now translates
+
+## Release v1.1.32.217
+
+_2026-10-03_
+
+History not available at the moment.
+
 ## Release v1.1.32.216
 
 _2026-10-03_
