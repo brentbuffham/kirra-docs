@@ -2,6 +2,26 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.210
+
+_2026-10-03_
+
+**Feature**
+
+- Clip and Trimesh Boolean dialogs, busy messages now in Chinese
+
+**Bug Fix**
+
+- Chinese labels in Trimesh Boolean no longer wrap mid-word
+
+## Release v1.1.32.209
+
+_2026-10-03_
+
+**Feature**
+
+- Update notice and top-bar tooltips now in Chinese
+
 ## Release v1.1.32.208
 
 _2026-10-03_
