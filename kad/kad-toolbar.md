@@ -184,7 +184,11 @@ Digitises a graded **road or ramp centreline** and generates ramp strings (crest
 
 > **Work in progress:** this tool is marked as work-in-progress in the current version. Expect its behaviour and options to change.
 
-> *[SCREENSHOT NEEDED: Roads and Ramps tool / dialog]*
+![Road & Ramp dialog, Ramp-Road tab](../screenshots/RoadRampDialog.png)
+*The Road & Ramp dialog, Ramp-Road tab.*
+
+![Road & Ramp dialog, Low-High Wall tab](../screenshots/RoadRampWallsDialog.png)
+*The Low-High Wall tab: per-side cut and fill walls, benches and berms.*
 
 ### How to use
 

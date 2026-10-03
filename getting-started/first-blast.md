@@ -292,7 +292,6 @@ Click **Add**.
 ### Step 6D — Add an initiator (downhole detonator)
 
 ![Step 6D — Add DH-400MS initiator](../screenshots/firstBlast06D-AddDET.png)
-<!-- SCREENSHOT NEEDED: re-capture Add Product for DH-400MS. This image predates the Initiator Type list being limited by Type; it shows "Electronic" and delay-range fields that no longer appear for a shock tube. -->
 
 | Field | Value |
 |-------|-------|

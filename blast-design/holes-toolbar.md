@@ -60,7 +60,8 @@ See [Pattern Generation → Polygon Pattern](pattern-generation.md#polygon-patte
 
 Places a single straight row of blast holes between two points. Useful for presplit lines, buffer rows, and single-row production blasts.
 
-> *[SCREENSHOT NEEDED: Generate Holes Along Line dialog]*
+![Generate Holes Along Line dialog](../screenshots/HolesAlongLineDialog.png)
+*Generate Holes Along Line, after clicking the start and end points.*
 
 ### How to Use
 
@@ -81,7 +82,8 @@ See [Pattern Generation → Line Pattern](pattern-generation.md#line-pattern) fo
 
 Places holes along an existing line, polyline or polygon edge. Ideal for curved presplit lines, contour-following rows, and perimeter patterns that follow pit contours.
 
-> *[SCREENSHOT NEEDED: Generate Holes Along Polyline dialog]*
+![Generate Holes Along Polyline dialog](../screenshots/HolesAlongPolylineDialog.png)
+*Generate Holes Along Polyline. The footer reports how many points were selected.*
 
 ### How to Use
 
@@ -158,7 +160,8 @@ If an inserted hole would land on top of another hole **in the same blast**, Kir
 
 Generates a rectangular grid of blast holes with uniform burden and spacing. This is the most common pattern type for bench blasting.
 
-> *[SCREENSHOT NEEDED: Add a Pattern? dialog]*
+![Add a Pattern? dialog](../screenshots/AddPatternDialog.png)
+*The Add a Pattern? dialog, after clicking the pattern start point.*
 
 ### How to Use
 
