@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.213
+
+_2026-10-03_
+
+**Feature**
+
+- Main-app dialogs and messages now largely in Chinese
+
+## Release v1.1.32.212
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Radii large-dataset warnings now match Kirra's own dialogs
+
 ## Release v1.1.32.211
 
 _2026-10-03_
