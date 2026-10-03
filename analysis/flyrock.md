@@ -16,6 +16,12 @@ Every model here produces an **indicative envelope with a stated factor of safet
 
 ---
 
+![Flyrock Shroud Generator dialog](../screenshots/FlyrockShroudDialog.png)
+*The Flyrock Shroud Generator, opened from the Analyse toolbar. Inputs the chosen model does not use are greyed out.*
+
+![Flyrock shroud in 3D](../screenshots/FlyrockShroud3D.png)
+*A Richards & Moore shroud over a blast in the 3D view, coloured by elevation.*
+
 ## Available Models
 
 Each model uses a different subset of your blast data. **Inputs a model has no equation for are greyed out in the dialog**, so if a field is live, that model uses it.
