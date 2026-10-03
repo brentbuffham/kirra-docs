@@ -2,6 +2,258 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.208
+
+_2026-10-03_
+
+**Feature**
+
+- Clean Mesh, Mesh Edit and Pattern Templates now in Chinese
+
+## Release v1.1.32.207
+
+_2026-10-03_
+
+**Feature**
+
+- Data Explorer folders, counts and layer names now in Chinese
+
+**Bug Fix**
+
+- Data Explorer keeps its Geology folder when reopened
+
+## Release v1.1.32.206
+
+_2026-10-03_
+
+**Feature**
+
+- "Reloading Data" progress dialog now in Chinese
+
+## Release v1.1.32.205
+
+_2026-10-03_
+
+**Feature**
+
+- Startup "Welcome back" prompt now in Chinese
+
+## Release v1.1.32.204
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Ruler and protractor point labels now in Chinese
+
+## Release v1.1.32.203
+
+_2026-10-03_
+
+**Feature**
+
+- Ruler, protractor and selection menu now in Chinese
+
+## Release v1.1.32.202
+
+_2026-10-03_
+
+**Feature**
+
+- Surface properties list Max Z above Min Z
+- Surface properties dialog now available in Chinese
+
+## Release v1.1.32.201
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Chinese vibration analysis names the predicted waveform clearly
+
+## Release v1.1.32.200
+
+_2026-10-03_
+
+**Feature**
+
+- Block model, ramp and Surpac mapping dialogs now in Chinese
+
+## Release v1.1.32.199
+
+_2026-10-03_
+
+**Feature**
+
+- Blast vibration and timing analysis dialogs now in Chinese
+
+## Release v1.1.32.198
+
+_2026-10-03_
+
+**Feature**
+
+- Surface modelling tools now available in Chinese
+
+## Release v1.1.32.197
+
+_2026-10-03_
+
+**Feature**
+
+- Voronoi, coincident-hole, layer and monitor dialogs now in Chinese
+
+## Release v1.1.32.196
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Geometry CSV import shows its result and error messages again
+
+## Release v1.1.32.195
+
+_2026-10-03_
+
+**Feature**
+
+- Data Explorer and Electronic Timing now available in Chinese
+
+## Release v1.1.32.194
+
+_2026-10-03_
+
+**Feature**
+
+- KAD drawing dialogs now available in Chinese
+
+## Release v1.1.32.193
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Chinese blasting terms now follow the national T/CSEB 0007-2019 standard
+
+## Release v1.1.32.192
+
+_2026-10-03_
+
+**Feature**
+
+- Settings dialog now follows the chosen language
+
+## Release v1.1.32.191
+
+_2026-10-03_
+
+**Feature**
+
+- PDF Print dialog now follows the chosen language
+
+## Release v1.1.32.190
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Mongolian no longer shows "undefined" tooltips
+- Names containing a dollar sign now display correctly in messages
+
+## Release v1.1.32.189
+
+_2026-10-03_
+
+**Feature**
+
+- Import and export dialogs now follow the chosen language
+
+## Release v1.1.32.188
+
+_2026-10-03_
+
+**Feature**
+
+- Deck Builder and Product Manager now follow the chosen language
+
+## Release v1.1.32.187
+
+_2026-10-03_
+
+History not available at the moment.
+
+## Release v1.1.32.186
+
+_2026-10-03_
+
+**Feature**
+
+- Hole property and Add Hole dialogs now follow the chosen language
+
+## Release v1.1.32.185
+
+_2026-10-03_
+
+**Feature**
+
+- Pattern dialogs now follow the chosen language
+
+## Release v1.1.32.184
+
+_2026-10-03_
+
+**Feature**
+
+- Edit Hole dialog now follows the chosen language
+
+## Release v1.1.32.183
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Chinese and other languages now use correct blasting terms for grade and relief
+
+## Release v1.1.32.182
+
+_2026-10-03_
+
+**Feature**
+
+- Dialog buttons (OK, Cancel, Confirm, Close) now follow the chosen language
+
+## Release v1.1.32.181
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Zoom In and Zoom Out buttons no longer blow up hole text
+
+## Release v1.1.32.180
+
+_2026-10-03_
+
+**Feature**
+
+- Docs tooling: toolbar callout screenshot generator
+
+## Release v1.1.32.179
+
+_2026-10-03_
+
+**Bug Fix**
+
+- Skills: correct stale facts and anchors against source
+
+## Release v1.1.32.178
+
+_2026-10-03_
+
+**Feature**
+
+- Chinese translations for Hole Section, Telemetry, Workspace and preset dialogs
+
 ## Release v1.1.32.177
 
 _2026-10-02_
