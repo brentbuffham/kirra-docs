@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.215
+
+_2026-10-03_
+
+**Feature**
+
+- Group formula templates and display quick-adjust popovers now translate
+
 ## Release v1.1.32.214
 
 _2026-10-03_
