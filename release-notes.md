@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.216
+
+_2026-10-03_
+
+**Feature**
+
+- French (Québec) and Spanish (Latin America) added to the language menu
+
+**Bug Fix**
+
+- French, Spanish, Russian and Mongolian blasting terms corrected to industry usage
+- Formula help no longer shows "\n" in translated languages
+
 ## Release v1.1.32.215
 
 _2026-10-03_
