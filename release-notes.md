@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.211
+
+_2026-10-03_
+
+**Feature**
+
+- KAD drawing tools and Transform dialog now fully in Chinese
+
 ## Release v1.1.32.210
 
 _2026-10-03_
