@@ -2,6 +2,68 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.225
+
+_2026-10-04_
+
+**Bug Fix**
+
+- Chinese labels use one consistent term for hole length
+
+## Release v1.1.32.224
+
+_2026-10-04_
+
+**Bug Fix**
+
+- Electronic Timing confirmations, warnings and status messages now translate
+
+## Release v1.1.32.223
+
+_2026-10-04_
+
+**Bug Fix**
+
+- Raster and vector prints now draw the map at the same scale
+
+## Release v1.1.32.222
+
+_2026-10-04_
+
+**Bug Fix**
+
+- Chinese, Mongolian, Russian and French use pit-wall and hole-row mining terms
+- Print error messages appear in the app language
+
+## Release v1.1.32.221
+
+_2026-10-04_
+
+**Bug Fix**
+
+- Kirra icon in the print footer is centred and larger
+- Raster prints show the real map scale instead of 1:1000
+
+## Release v1.1.32.220
+
+_2026-10-04_
+
+**Feature**
+
+- Kirra Inbuilt prints use the app language, including Chinese and Russian
+
+**Bug Fix**
+
+- Print footer shows the Kirra icon and kirra-design.com instead of an outdated QR code
+
+## Release v1.1.32.219
+
+_2026-10-04_
+
+**Feature**
+
+- Blast Analysis Shader, Blast Quality, Find and import dialogs translate
+
 ## Release v1.1.32.218
 
 _2026-10-03_
