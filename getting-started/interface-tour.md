@@ -18,7 +18,7 @@ The bar across the top of the window holds the global navigation controls — a 
 | **☰ Hamburger** | Opens the **side navigation panel** — File Management, Print Management, Record Actuals, Language, About |
 | **Kirra** | App icon and name (no action on click) |
 | **Import Export Print** (file icon) | Drop-down menu with **Import**, **Export** and **Print**. Each entry opens the same dialog as the matching button in the side panel |
-| **Select Language** | Drop-down list of interface languages — English, Chinese, French, Mongolian, Russian, Spanish |
+| **Select Language** | Drop-down list of interface languages — English, Chinese, French (France), French (Québec), Mongolian, Russian, Spanish (Spain), Spanish (Latin America). See the [Blasting Glossary](../reference/blasting-glossary.md) |
 | **Help** | Opens this help site in a new browser tab |
 | **Reload** | Reloads the page. Your work is kept — it is stored in the browser as you go |
 | **Go Back** | Asks **Leave Kirra?** (with a reminder to save first). **Leave** goes to blastingapps.com; **Stay** cancels |
@@ -68,7 +68,7 @@ Switches for recording as-drilled / as-charged values against your design holes.
 
 ### Language
 
-The same six languages as the **Select Language** menu in the top bar.
+The same eight language editions as the **Select Language** menu in the top bar.
 
 ### About
 
@@ -364,7 +364,7 @@ The **3D Settings** button (globe-and-cog icon, at the bottom of the Select tool
 ## Theme and Language
 
 - **Theme** — the **Day / Night** button at the end of the left cluster switches between the dark and light theme
-- **Language** — choose English, Chinese, French, Mongolian, Russian or Spanish from the **Select Language** menu in the top bar, or from the **Language** group in the side panel
+- **Language** — choose English, Chinese, French (France or Québec), Mongolian, Russian, or Spanish (Spain or Latin America) from the **Select Language** menu in the top bar, or from the **Language** group in the side panel. Kirra switches straight away, including on-screen legends and the Kirra Inbuilt printed plan. The [Blasting Glossary](../reference/blasting-glossary.md) lists the blasting terms used in each language
 
 ---
 

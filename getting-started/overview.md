@@ -29,7 +29,7 @@
 - **Dockview panels** -- Resizable, dockable, and pop-out panels for Viewport and Explorer
 - **Pattern Templates** -- Save and reuse standard pattern configurations (burden, spacing, diameter, hole type) as named templates
 - **Dark and light themes** -- Toggle between themes for comfortable viewing
-- **Internationalisation** -- English, Chinese, French, Mongolian, Russian, and Spanish language support
+- **Internationalisation** -- English, Simplified Chinese, French (France and Québec), Mongolian, Russian, and Spanish (Spain and Latin America), using the blasting terms engineers use in each language -- see the [Blasting Glossary](../reference/blasting-glossary.md)
 
 ---
 

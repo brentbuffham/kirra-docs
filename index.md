@@ -138,6 +138,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Coordinate System](reference/coordinate-system.md)
 - [3D View & Orbit Focus](reference/3d-tools.md)
 - [Keyboard Shortcuts & Mouse Controls](reference/keyboard-shortcuts.md)
+- [Blasting Glossary — Kirra in Every Language](reference/blasting-glossary.md) — the blasting terms in all eight language editions
 - [JavaScript pitfalls — zero vs falsy & import zoom](reference/javascript-pitfalls.md) *(contributors)*
 - [FAQ](reference/faq.md)
 
