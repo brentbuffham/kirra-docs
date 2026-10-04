@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.226
+
+_2026-10-04_
+
+**Bug Fix**
+
+- The on-screen statistics, legends and tooltips now follow the app language
+
 ## Release v1.1.32.225
 
 _2026-10-04_
