@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.252
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Deck Builder totals now update straight after drops, primers and rule loads
+
+## Release v1.1.32.251
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Apply to Selected now confirms success instead of reporting a failure
+
 ## Release v1.1.32.250
 
 _2026-10-05_
