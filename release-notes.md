@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.242
+
+_2026-10-05_
+
+**Feature**
+
+- Large 2D drawings redraw much faster when zoomed in
+
 ## Release v1.1.32.241
 
 _2026-10-05_
