@@ -2,6 +2,60 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.249
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Deck Builder drops now land on the selected hole after switching holes
+
+## Release v1.1.32.248
+
+_2026-10-05_
+
+History not available at the moment.
+
+## Release v1.1.32.247
+
+_2026-10-05_
+
+**Feature**
+
+- : Deck Builder apply-to-holes to own module
+
+## Release v1.1.32.246
+
+_2026-10-05_
+
+**Feature**
+
+- : Deck Builder editing actions to own module
+
+## Release v1.1.32.245
+
+_2026-10-05_
+
+**Feature**
+
+- : Deck Builder formula panel to own module
+
+## Release v1.1.32.244
+
+_2026-10-05_
+
+**Feature**
+
+- : Deck Builder helpers to own module
+
+## Release v1.1.32.243
+
+_2026-10-05_
+
+**Feature**
+
+- : Deck Builder characterisation tests
+
 ## Release v1.1.32.242
 
 _2026-10-05_
