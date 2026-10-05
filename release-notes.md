@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.250
+
+_2026-10-05_
+
+**Feature**
+
+- Pattern templates edit their charge rule in place on the Charging tab
+
 ## Release v1.1.32.249
 
 _2026-10-05_
