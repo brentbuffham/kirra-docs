@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.253
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Charge formulas naming a missing product now report an error instead of using zero
+
 ## Release v1.1.32.252
 
 _2026-10-05_
