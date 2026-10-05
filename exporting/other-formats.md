@@ -140,7 +140,7 @@ Export to Wenco NAV ASCII format for fleet management integration.
 
 > **Legacy format.** SHOTPlan v3.0 is no longer in use. The export exists so a plan can be handed back to someone still running it.
 
-**Export ▸ Miscellaneous ▸ ShotPlan 3** writes the **visible** blast holes and their ties to one `.xel` file.
+**Export ▸ Legacy ▸ ShotPlan 3** writes the **visible** blast holes and their ties to one `.xel` file.
 
 - **Written:** collar, length, angle, bearing, diameter, dummy holes (0 m holes), and each hole-to-hole tie.
 - **Not written:** charging, drawings, downhole delays, and the hole names (ShotPlan numbers holes by their order in the file).

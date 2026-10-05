@@ -166,11 +166,45 @@ Import Wenco NAV ASCII files (`.nav`) containing TEXT, POINT, and LINE entities 
 
 ---
 
+## Datavis DBS (legacy)
+
+> **Legacy format.** Datavis Drill & Blast Software `.sgf` files are no longer in use. Kirra reads them so that historic blasts can still be viewed. The Import dialog marks the row with an amber **LEGACY** note.
+
+**Import ▸ Legacy ▸ Datavis DBS**, or drag a `.sgf` file onto the canvas. Import only.
+
+| What is in the file | What Kirra makes of it |
+|---|---|
+| Blast holes | Blast holes in one blast named after the file. Hole ID, collar, toe, length, angle, bearing, diameter, burden, spacing and subdrill come straight across. The first word of the hole's design rule (for example **BUS** or **MPSS**) becomes its hole type |
+| Decks | The hole's charging, collar to toe: stemming, air and explosive decks with their products and lengths |
+| Primers | Each primer at its depth, with its booster and its downhole detonator and delay |
+| Products | Added to the **Product Manager** with the density the file gives them, and the delay of each detonator. A product you already have with the same name is reused |
+| Drill designs | A blast that was never charged imports its holes only, with hole type **Undefined** |
+
+The import summary lists how many holes were charged and how many primers came in.
+
+### Primers the file places wrongly
+
+Some files place the primers of holes with an air deck far below the hole, sometimes hundreds or thousands of metres down. This is an error in the file, not in the design. Kirra works out where each of those primers was designed to sit from the hole's decks, and puts it there.
+
+A primer always ends up in an explosive deck. If the file places one just outside the charge (on a short toe charge, for example), Kirra moves it 5 mm inside the charge. The import summary counts the primers moved in either way.
+
+### No surface ties
+
+The files hold no surface ties and no firing times. Each hole has its downhole detonator delay only, so the holes all fire on that delay. Tie the blast up in Kirra to time it.
+
+### Not imported
+
+- Surface ties and firing times — the files hold none.
+- Booster mass. Set it on the booster in the **Product Manager**.
+- Surfaces and other drawing objects in the file.
+
+---
+
 ## ShotPlan 3 (legacy)
 
 > **Legacy format.** SHOTPlan v3.0 `.xel` files are no longer in use. Kirra reads them so that historic blast plans can still be viewed. The Import dialog marks the row with an amber **LEGACY** note.
 
-**Import ▸ Miscellaneous ▸ ShotPlan 3**, or drag a `.xel` file onto the canvas.
+**Import ▸ Legacy ▸ ShotPlan 3**, or drag a `.xel` file onto the canvas.
 
 | What is in the file | What Kirra makes of it |
 |---|---|

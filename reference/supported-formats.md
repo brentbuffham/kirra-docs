@@ -5,7 +5,7 @@ A complete reference of every file format Kirra can read (import) and write
 button (file icon) in the menu bar and choose **Import** or **Export** — or use
 **File Management** in the left sidenav. The Import and Export dialogs group
 formats into the tabs **Kirra**, **Blasts**, **Drawings / CAD**,
-**Surfaces / Mesh**, **Geology** and **Miscellaneous**.
+**Surfaces / Mesh**, **Geology**, **Miscellaneous** and **Legacy**.
 
 This page is the canonical "what does Kirra support?" cheat-sheet. For
 walkthroughs of individual formats, see the per-format pages under
@@ -127,6 +127,7 @@ See: [3D Mesh Import](../importing/3d-mesh.md) ·
 | Epiroc Surface Manager | `.geofence`, `.hazard`, `.sockets`, `.txt` | Yes | Yes | Y, X coordinate files. |
 | Epiroc IREDES XML | `.xml` | Yes | Yes | Drill plan exchange. |
 | CBLAST | `.csv` | Yes | Yes | 4 records per hole: HOLE, PRODUCT, DETONATOR, STRATA. |
+| Datavis DBS *(legacy)* | `.sgf` | Yes | — | Datavis Drill & Blast Software blast, a format no longer in use — supplied to view historic files. Imports holes with their subdrill, decks, primers, boosters and downhole detonators; the products go to the Product Manager. The files hold no surface ties. On the **Legacy** tab. See [Other Import Formats](../importing/other-formats.md#datavis-dbs-legacy). |
 | ShotPlan 3 *(legacy)* | `.xel` | Yes | Yes | SHOTPlan v3.0 blast plan, a DOS-era format no longer in use — supplied to view historic files. Imports holes, dummy holes, surface ties with their delays, benches, boundary and text. Export writes holes and ties only. See [Other Import Formats](../importing/other-formats.md#shotplan-3-legacy). |
 | Deswik DUF | `.duf` | Yes (read-only) | — | Linework import, verified 2026-06-24 against a matching `.str` / `.dtm` pair (100% of STR points found byte-exact in the DUF). Export is intentionally withheld — DUF is a paid-software (Deswik) format. |
 
