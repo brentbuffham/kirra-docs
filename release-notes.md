@@ -6,19 +6,26 @@ Generated from the Kirra source history. Newest first.
 
 _2026-10-05_
 
-History not available at the moment.
+**Bug Fix**
+
+- Imported SHOTPlan 3 ties now show connector colours
 
 ## Release v1.1.32.228
 
 _2026-10-05_
 
-History not available at the moment.
+**Feature**
+
+- SHOTPlan 3 import is marked legacy, for viewing historic files
 
 ## Release v1.1.32.227
 
 _2026-10-05_
 
-History not available at the moment.
+**Feature**
+
+- Import SHOTPlan 3 blast plans with holes, ties, benches, boundary and text
+- Export blast holes and ties to SHOTPlan 3
 
 ## Release v1.1.32.226
 
