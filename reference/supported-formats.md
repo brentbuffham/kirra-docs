@@ -127,6 +127,7 @@ See: [3D Mesh Import](../importing/3d-mesh.md) ·
 | Epiroc Surface Manager | `.geofence`, `.hazard`, `.sockets`, `.txt` | Yes | Yes | Y, X coordinate files. |
 | Epiroc IREDES XML | `.xml` | Yes | Yes | Drill plan exchange. |
 | CBLAST | `.csv` | Yes | Yes | 4 records per hole: HOLE, PRODUCT, DETONATOR, STRATA. |
+| ShotPlan 3 *(legacy)* | `.xel` | Yes | Yes | SHOTPlan v3.0 blast plan, a DOS-era format no longer in use — supplied to view historic files. Imports holes, dummy holes, surface ties with their delays, benches, boundary and text. Export writes holes and ties only. See [Other Import Formats](../importing/other-formats.md#shotplan-3-legacy). |
 | Deswik DUF | `.duf` | Yes (read-only) | — | Linework import, verified 2026-06-24 against a matching `.str` / `.dtm` pair (100% of STR points found byte-exact in the DUF). Export is intentionally withheld — DUF is a paid-software (Deswik) format. |
 
 See: [Surpac DTM / STR](../importing/surpac-dtm-str.md) ·

@@ -166,6 +166,47 @@ Import Wenco NAV ASCII files (`.nav`) containing TEXT, POINT, and LINE entities 
 
 ---
 
+## ShotPlan 3 (legacy)
+
+> **Legacy format.** SHOTPlan v3.0 `.xel` files are no longer in use. Kirra reads them so that historic blast plans can still be viewed. The Import dialog marks the row with an amber **LEGACY** note.
+
+**Import ▸ Miscellaneous ▸ ShotPlan 3**, or drag a `.xel` file onto the canvas.
+
+| What is in the file | What Kirra makes of it |
+|---|---|
+| Blast holes | Blast holes in one blast named after the plan's title (or the file name). Collar, diameter, length, angle from vertical and bearing come straight across. Hole numbers are kept, so ties still line up |
+| Dummy holes | 0 m holes of type **Dummy** — a position with no hole drilled |
+| Deleted holes | Skipped |
+| Surface ties | Hole-to-hole ties, each with its delay. Where several ties reach one hole, the one whose signal arrives first is kept |
+| Benches | A crest line and a toe line per bench, as drawings |
+| Boundary | A closed polygon, as a drawing |
+| Text | Text drawings, all in one entity |
+
+Rows, positions, burden and spacing are worked out by Kirra after the holes arrive, the same as for any other imported blast.
+
+### Tie delays and colours
+
+A ShotPlan plan names its surface connectors (`TLD 42`, `CD 17`, `MSC 175`) rather than storing their delays, so Kirra reads the delay from the name. A tie whose connector name carries no delay — detonating cord, or a millisecond downhole delay used on the surface — is imported at **0 ms** and listed in the import summary, so you can set it yourself.
+
+Each tie is coloured:
+
+1. **From your product library** — if a surface connector in your library has the same delay, the tie takes that product: its colour and its link to the product.
+2. **Otherwise by delay** — 0 ms MediumVioletRed, 9 ForestGreen, 17 Gold, 25 Crimson, 33 DarkGrey, 42 LightSlateGrey, 50 RosyBrown, 65 RoyalBlue, 100 Orange, 125 Wheat, 150 Khaki, any other delay Indigo.
+
+A 0 ms tie is never matched to a library product: 0 ms only comes from a connector whose delay could not be read.
+
+### Elevations
+
+Many ShotPlan plans have no collar elevations. Those collars come in at **0 m**, and the import summary says how many. Set them afterwards, for example with **Assign Collar Elevation**.
+
+### Not imported
+
+- Charging. The plan's decking table is not read.
+- Downhole (in-hole) delays.
+- Pattern definitions — the holes they made are imported; the pattern record is not.
+
+---
+
 ## Epiroc Surface Manager
 
 Import Epiroc Surface Manager coordinate files (`.geofence`, `.hazard`, `.sockets`, `.txt`). These use Y,X (Northing, Easting) coordinate ordering.

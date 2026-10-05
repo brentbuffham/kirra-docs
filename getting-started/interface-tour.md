@@ -94,7 +94,7 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 | **Drawings / CAD** | Geometry CSV, DXF, DWG (experimental), Vulcan ARCH_D, Vulcan Design Database, Surpac, Micromine STR, Deswik DUF, 12d Archive |
 | **Surfaces / Mesh** | GeoTIFF / Image, OBJ / GLTF, Point Cloud, LAS Point Cloud, Vulcan .00t Triangulation, Datamine Surface |
 | **Geology** | Block Model — Datamine, Block Model — Vulcan CSV, Block Model — Vulcan BMF |
-| **Miscellaneous** | Borehole Telemetry, Epiroc Surface Manager, Wenco NAV, KML / KMZ, ESRI Shapefile |
+| **Miscellaneous** | Borehole Telemetry, ShotPlan 3, Epiroc Surface Manager, Wenco NAV, KML / KMZ, ESRI Shapefile |
 
 ### Shared controls
 
@@ -175,6 +175,7 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 | Format | Extensions | Notes |
 |--------|------------|-------|
 | **Borehole Telemetry** | `.csv` / `.txt` | Downhole survey (depth / heading / inclination) turned into hole paths |
+| **ShotPlan 3** | `.xel` | SHOTPlan v3.0 blast plans — holes, ties, benches, boundary and text. **Legacy:** shown with an amber note; the format is no longer in use and is supplied to view historic files |
 | **Epiroc Surface Manager** | `.geofence` / `.hazard` / `.sockets` / `.xml` | Pick **IREDES Drill Plan**, **Geofence**, **Hazard** or **Socket** from the row's drop-down |
 | **Wenco NAV** | `.nav` | Wenco FMS NAV ASCII export |
 | **KML / KMZ** | `.kml` / `.kmz` | Google Earth placemarks / geometry |

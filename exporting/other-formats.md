@@ -136,6 +136,20 @@ Export to Wenco NAV ASCII format for fleet management integration.
 
 ---
 
+## ShotPlan 3 (legacy)
+
+> **Legacy format.** SHOTPlan v3.0 is no longer in use. The export exists so a plan can be handed back to someone still running it.
+
+**Export ▸ Miscellaneous ▸ ShotPlan 3** writes the **visible** blast holes and their ties to one `.xel` file.
+
+- **Written:** collar, length, angle, bearing, diameter, dummy holes (0 m holes), and each hole-to-hole tie.
+- **Not written:** charging, drawings, downhole delays, and the hole names (ShotPlan numbers holes by their order in the file).
+- **File name:** SHOTPlan is a DOS program, so the suggested name is 8 characters (`BLAST123.XEL`). Keep it that way.
+- **Tie delays:** ShotPlan picks a tie delay from a fixed list of surface connectors (9, 17, 25, 42, 65, 100, 125, 150, 175 and 200 ms). A delay that is not on the list is written as the nearest one, and the export summary counts them.
+- **Coordinates:** ShotPlan keeps 8 significant figures. Coordinates over 1,000,000 (most UTM northings) lose precision, down to about 0.1 m, and the export summary counts the holes affected.
+
+---
+
 ## Epiroc Surface Manager
 
 Export coordinate files in Epiroc Surface Manager format (`.geofence`, `.hazard`, `.sockets`).
