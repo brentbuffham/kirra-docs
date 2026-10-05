@@ -14,6 +14,8 @@ There are several ways to open the Deck Builder:
 
 When opened from **Edit Rules**, the Deck Builder works in rule mode: the buttons read **Load Rule...**, **Save As Rule** and **Save over Rule**, and nothing is applied to holes.
 
+The same editor also appears on the **Charging** tab of a pattern template, so you can build or change a template's charge rule without leaving the template. See [Pattern Templates](../blast-design/pattern-templates.md#charging-tab).
+
 > *Screenshot coming soon*
 
 ---

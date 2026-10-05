@@ -53,6 +53,24 @@ were already there.
 
 ---
 
+## Charging Tab
+
+The **Charging** tab charges the holes a template creates, automatically.
+
+1. Tick **Charge Holes**.
+2. Pick a rule from **Charge Config**. The rule's decks and primers appear in the editor below, on a hole the size of the ones this template makes.
+3. Change the rule if you need to. The editor is the [Deck Builder](../charging/deck-builder.md): drag products onto the hole, add primers, edit or remove decks.
+4. Click **Save As Rule** to keep your version as a new rule, or **Save over Rule** to update the rule you picked. The template then uses the saved rule.
+5. Click **Save** to save the template.
+
+The dialog widens while the Charging tab is open, to make room for the editor, and returns to its normal size on the other tabs.
+
+If you change a rule and click **Save** without saving the rule, Kirra asks what to do with the changes: **Save over Rule**, **Save as New Rule** or **Discard**. Picking a different rule while you have unsaved changes asks the same way, so nothing is thrown away without asking you.
+
+A copy of the chosen rule is stored in the template, so the template still works on a computer that does not have that rule. The products the rule uses must be in that computer's product list.
+
+---
+
 ## Managing Templates
 
 The template manager dialog shows a table of all saved templates with columns for Name, Type, Diameter, Burden x Spacing, Subdrill, Angle, and Row Direction.
