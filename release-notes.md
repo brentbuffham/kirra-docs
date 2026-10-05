@@ -2,6 +2,103 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.241
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Datavis DBS format listing now mentions charging
+
+## Release v1.1.32.240
+
+_2026-10-05_
+
+**Feature**
+
+- Import and Export have a Legacy tab for historic file formats
+
+## Release v1.1.32.239
+
+_2026-10-05_
+
+**Bug Fix**
+
+- SHOTPlan 3 now sits after Datavis DBS in the File Manager
+
+## Release v1.1.32.238
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Datavis DBS drill designs with no charging rule now import
+
+## Release v1.1.32.237
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Datavis DBS primers land where the design put them
+- Datavis DBS holes no longer pick up the previous hole's decks
+
+## Release v1.1.32.236
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Datavis DBS air-deck holes no longer import without a primer
+
+## Release v1.1.32.235
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Datavis DBS primers always sit inside an explosive charge
+
+## Release v1.1.32.234
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Datavis DBS primers on short toe charges now import
+
+## Release v1.1.32.233
+
+_2026-10-05_
+
+**Bug Fix**
+
+- Datavis DBS primers on air-topped holes are no longer missing
+
+## Release v1.1.32.232
+
+_2026-10-05_
+
+**Feature**
+
+- Datavis DBS import brings in decks, primers, boosters and detonators
+
+## Release v1.1.32.231
+
+_2026-10-05_
+
+**Feature**
+
+- Datavis DBS holes import with their subdrill and floor grade
+
+## Release v1.1.32.230
+
+_2026-10-05_
+
+**Feature**
+
+- Import blast holes from Datavis DBS SGF files, marked legacy
+
 ## Release v1.1.32.229
 
 _2026-10-05_
