@@ -2,6 +2,46 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.271
+
+_2026-10-07_
+
+**Feature**
+
+- Blast and charge summaries now show blast volume and blast powder factor
+
+## Release v1.1.32.270
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Up-holes can now be charged and count toward blast volume
+
+## Release v1.1.32.269
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Up-holes now add to drill metres and show charges and toes
+
+## Release v1.1.32.268
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Hole tracks now show in 2D and print for every hole angle
+
+## Release v1.1.32.267
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Section plane two-point pick now works when clicking on holes in 3D
+
 ## Release v1.1.32.266
 
 _2026-10-06_
