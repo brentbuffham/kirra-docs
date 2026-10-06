@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.254
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Escape and the close button no longer discard unapplied Deck Builder changes
+- Closing the statistics tables no longer exports a spreadsheet
+
 ## Release v1.1.32.253
 
 _2026-10-05_
