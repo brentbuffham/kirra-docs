@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.258
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Tests: two test files that never ran now run, and a guard
+
+## Release v1.1.32.257
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Applying a charge rule now warns when a formula cannot be calculated
+
+## Release v1.1.32.256
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Templates now flag missing products named inside charge formulas before charging
+
 ## Release v1.1.32.255
 
 _2026-10-06_
