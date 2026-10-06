@@ -2,6 +2,70 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.266
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Multi-connect no longer ties holes of other blasts stacked on the same collars
+
+## Release v1.1.32.265
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Timing contours stay clean when tied blasts share the same collars
+
+## Release v1.1.32.264
+
+_2026-10-06_
+
+**Feature**
+
+- Kirra now warns when visible blasts overlap and offers to show just one
+
+## Release v1.1.32.263
+
+_2026-10-06_
+
+**Bug Fix**
+
+- In 3D, slope, relief and Voronoi sit on their own blast's collars
+
+## Release v1.1.32.262
+
+_2026-10-06_
+
+**Bug Fix**
+
+- In 3D, timing contours sit on their own blast's collars
+
+## Release v1.1.32.261
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Timing contours now update straight away when a blast is shown or hidden
+
+## Release v1.1.32.260
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Timing contours no longer include hidden blasts tied into the visible one
+
+## Release v1.1.32.259
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Multi-connect no longer ties or overwrites holes in hidden blasts
+
 ## Release v1.1.32.258
 
 _2026-10-06_
