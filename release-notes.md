@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.255
+
+_2026-10-06_
+
+**Bug Fix**
+
+- Apply Changes now carries deck depths, scaling, formulas and rules to selected holes
+
 ## Release v1.1.32.254
 
 _2026-10-06_
