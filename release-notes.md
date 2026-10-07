@@ -2,6 +2,44 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.278
+
+_2026-10-07_
+
+**Bug Fix**
+
+- Holes set out up a drive wall are no longer flagged as duplicates
+
+## Release v1.1.32.277
+
+_2026-10-07_
+
+History not available at the moment.
+
+## Release v1.1.32.276
+
+_2026-10-07_
+
+**Bug Fix**
+
+- Ignore in the hole proximity warning now adds every flagged hole
+
+## Release v1.1.32.275
+
+_2026-10-07_
+
+**Bug Fix**
+
+- The hole proximity warning now explains when to choose Ignore
+
+## Release v1.1.32.274
+
+_2026-10-07_
+
+**Feature**
+
+- Holes Along Polyline now sets out holes on a vertical face
+
 ## Release v1.1.32.273
 
 _2026-10-07_
