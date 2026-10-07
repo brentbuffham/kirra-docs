@@ -2,6 +2,88 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.287
+
+_2026-10-07_
+
+**Feature**
+
+- Hole size setting is now in multiples of true size; 1 is real
+
+## Release v1.1.32.286
+
+_2026-10-07_
+
+**Bug Fix**
+
+- Assigning a Design Plane from the section works from either side of the face
+
+## Release v1.1.32.285
+
+_2026-10-07_
+
+**Bug Fix**
+
+- Plane bearing and angle entered together now both apply on face holes
+- Changing the dip of a level hole no longer turns it into a dummy
+
+## Release v1.1.32.284
+
+_2026-10-07_
+
+**Feature**
+
+- Holes on a section show plane bearing, angle, subdrill and bench
+
+**Bug Fix**
+
+- Edit Hole labels are wider and no longer cut off
+
+## Release v1.1.32.283
+
+_2026-10-07_
+
+**Feature**
+
+- Hole Properties now has a Hole Length field
+- Holes set out on a section are measured from their own Design Plane
+
+**Bug Fix**
+
+- Changing the dip of a hole on a face no longer collapses it
+
+## Release v1.1.32.282
+
+_2026-10-07_
+
+**Bug Fix**
+
+- Non X-Y holes (phase a): hole edits run in the hole's Design Plane
+
+## Release v1.1.32.281
+
+_2026-10-07_
+
+**Bug Fix**
+
+- Open-cut safeguard: bench hole edits and pattern tools locked to 1.1.32.268 results
+
+## Release v1.1.32.280
+
+_2026-10-07_
+
+**Bug Fix**
+
+- Changing the bearing of a level face hole no longer moves its grade
+
+## Release v1.1.32.279
+
+_2026-10-07_
+
+**Feature**
+
+- Hole markers and text can sit square to the hole in 3D
+
 ## Release v1.1.32.278
 
 _2026-10-07_
