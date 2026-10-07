@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.273
+
+_2026-10-07_
+
+**Bug Fix**
+
+- Polygon offset now expands on a positive amount however the polygon was drawn
+
+## Release v1.1.32.272
+
+_2026-10-07_
+
+**Feature**
+
+- Offset and Extend now work on the section plane, not just in plan
+
 ## Release v1.1.32.271
 
 _2026-10-07_
