@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.298
+
+_2026-10-08_
+
+**Feature**
+
+- Relief, slope and Voronoi now work on Non X-Y blasts in their Design Plane
+
 ## Release v1.1.32.297
 
 _2026-10-08_
