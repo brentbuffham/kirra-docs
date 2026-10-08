@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.297
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Renumbering after a delete keeps each row's own serpentine or return direction
+
+## Release v1.1.32.296
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Edge holes now show the correct designed powder factor in Voronoi
+
 ## Release v1.1.32.295
 
 _2026-10-08_
