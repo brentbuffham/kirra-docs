@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.299
+
+_2026-10-08_
+
+**Feature**
+
+- Burden, spacing and row numbering now measure across Non X-Y faces
+
 ## Release v1.1.32.298
 
 _2026-10-08_
