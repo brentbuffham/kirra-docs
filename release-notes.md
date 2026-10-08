@@ -2,6 +2,78 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.295
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Vulcan exports no longer give loose linework the blast's own layer name
+
+## Release v1.1.32.294
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Voronoi designed powder factor now shows for holes charged from pattern templates
+
+## Release v1.1.32.293
+
+_2026-10-08_
+
+**Feature**
+
+- Blast Animation says when every hole fires at the same time
+
+## Release v1.1.32.292
+
+_2026-10-08_
+
+**Feature**
+
+- Blast Animation warns when electronic detonators still need their delays baked
+
+## Release v1.1.32.291
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Blast Animation ignores hidden blasts in its timeline and playback
+
+## Release v1.1.32.290
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Firing-sequence and selection rings now show on face blasts
+- Initiation points on face blasts now face the viewer
+
+## Release v1.1.32.289
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Holes directly above one another can now be tied, and show the tie arrow
+- Tie arrows, curves and bow ties lie on the face for face blasts
+- 3D hole picking chooses the hole nearest the cursor
+
+## Release v1.1.32.288
+
+_2026-10-08_
+
+**Feature**
+
+- Timing contours and first movement now draw on face blasts
+- Section plane shows a red warning while tools work in its plane
+
+**Bug Fix**
+
+- One face blast no longer stops every blast's contours from drawing
+
 ## Release v1.1.32.287
 
 _2026-10-07_
