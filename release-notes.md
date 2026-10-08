@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.301
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Continuous connector now ties holes up and across a Non X-Y face
+
+## Release v1.1.32.300
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Multi-connect now ties holes up and across a Non X-Y face
+
 ## Release v1.1.32.299
 
 _2026-10-08_
