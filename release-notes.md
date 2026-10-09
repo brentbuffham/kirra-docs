@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.305
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Section Plane Reset restores the default slice and confirms it
+
+## Release v1.1.32.304
+
+_2026-10-09_
+
+**Feature**
+
+- Triangulate a face or wall on the section plane in 3D
+
 ## Release v1.1.32.303
 
 _2026-10-08_
