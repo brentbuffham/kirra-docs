@@ -2,6 +2,99 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.319
+
+_2026-10-09_
+
+**Bug Fix**
+
+- KAT template files can be dragged and dropped into Kirra
+
+## Release v1.1.32.318
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Pre-push: translate the Micromine import title; es_419 test no longer times out
+
+## Release v1.1.32.317
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Removing a block model now frees its memory for the next import
+
+## Release v1.1.32.316
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Insert Holes tool now works in the 3D view
+
+## Release v1.1.32.315
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Insert Hole and Insert Holes continue face rows on the face
+
+## Release v1.1.32.314
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Add Hole and pattern clicks land on the section when drawing on plane
+- Design Plane refusal now shows a message instead of doing nothing
+
+## Release v1.1.32.313
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Rotated Micromine block models are confirmed to land in the right place
+
+## Release v1.1.32.312
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Rotated block models now draw their blocks rotated, with no gaps
+
+## Release v1.1.32.311
+
+_2026-10-09_
+
+**Feature**
+
+- Micromine block models (.dat) now import, including rotated and sub-blocked models
+
+**Bug Fix**
+
+- Micromine files with long field names now open
+
+## Release v1.1.32.310
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Vulcan sub-blocked block models now import with all their attributes
+
+## Release v1.1.32.309
+
+_2026-10-09_
+
+**Feature**
+
+- Face holes assign collar, grade and toe to surfaces along the hole
+
 ## Release v1.1.32.308
 
 _2026-10-09_
