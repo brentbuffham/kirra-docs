@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.303
+
+_2026-10-08_
+
+**Bug Fix**
+
+- Dragging a face hole in 3D now shows the hole following the cursor
+
+## Release v1.1.32.302
+
+_2026-10-08_
+
+**Feature**
+
+- Move and bearing drags work on Non X-Y faces in 3D
+
 ## Release v1.1.32.301
 
 _2026-10-08_
