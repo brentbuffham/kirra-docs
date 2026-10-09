@@ -2,6 +2,35 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.308
+
+_2026-10-09_
+
+**Bug Fix**
+
+- Drawing on the section plane puts lines on the section, not the drawing elevation
+
+## Release v1.1.32.307
+
+_2026-10-09_
+
+**Feature**
+
+- Section Plane can show a grid on the section
+
+**Bug Fix**
+
+- Section Plane switches sit together in one row
+
+## Release v1.1.32.306
+
+_2026-10-09_
+
+**Feature**
+
+- Section Plane has a Draw on plane tick, separate from Enable
+- The 3D grid lies on the section while drawing on it
+
 ## Release v1.1.32.305
 
 _2026-10-09_
