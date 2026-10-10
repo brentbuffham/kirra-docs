@@ -74,7 +74,7 @@ The same eight language editions as the **Select Language** menu in the top bar.
 
 Shows the author credit. It also contains a **Developer** sub-section with diagnostic and fall-back options (Developer Mode, Performance Monitor, Vector Text (Hershey), Snake Row Angle, Screen Space Snapping, 3D renderer and level-of-detail overrides, Free CAD GPU Memory). You do not normally need to change these.
 
-> **Where did View Controls & Snap go?** The font size, tie size, toe size, snap tolerance and hillshade controls now live on the **2D** tab of the **Settings** dialog — see [Select Toolbar — Settings](../reference/select-toolbar.md#settings). Snapping itself is switched on and off with the **Snap** button in the top bar.
+> **Where did View Controls & Snap go?** The font size, tie size, toe size, snap tolerance and hillshade controls now live on the **2D** tab of the **Settings** dialog — see [Settings](../working-in-kirra/settings.md). Snapping itself is switched on and off with the **Snap** button in the top bar.
 
 ---
 
@@ -264,6 +264,8 @@ Kirra has eight floating toolbars. Drag a toolbar by its title bar to move it. T
 
 ## Workspace Toolbar
 
+Full guide: [Workspaces](../working-in-kirra/workspaces.md).
+
 Kirra keeps ten separate workspaces, numbered **0** to **9**. Each is its own store of holes, drawings, surfaces, charging, timing and libraries, so you can keep different jobs apart. A new workspace opens empty — import a KAP or KAT file, or start building.
 
 ![Workspace toolbar](../screenshots/WorkspaceToolbar.png)
@@ -308,13 +310,15 @@ The TreeView is toggled by the **Data Explorer** button in the [App Navigation B
 
 ### TreeView features
 
-- **Visibility toggle** — show or hide individual entities via the row checkbox
+- **Show / hide and lock** — the eye and lock icons on each row
 - **Duplicate** — right-click to create a copy of an entity, a surface, a **KAD layer**
   (makes `<layer>_copy`) or a **KAD sub-layer folder** (makes `<folder>_copy` in the same
   layer), or a **whole blast** — see
   [Duplicating a whole blast](../blast-design/editing-holes.md#duplicating-a-whole-blast)
-- **Context menu** — right-click for statistics, move-to-layer, split/join lines, delete, and more
+- **Context menu** — right-click for rename, duplicate, move to layer, statistics, delete, and more
 - **Dock / popout** — the TreeView can be docked to the side, popped out, or collapsed
+
+Every row icon and right-click item is described in [Data Explorer](../working-in-kirra/data-explorer.md).
 
 ---
 
@@ -375,7 +379,7 @@ The **Orbit Focus** tool (in the [Select Toolbar](../reference/select-toolbar.md
 
 ### Settings
 
-The **3D Settings** button (globe-and-cog icon, at the bottom of the Select toolbar) opens the **Settings** dialog. Its **2D** tab holds the view sizes, snap tolerance and hillshade; its **3D** tab holds camera, scroll-wheel, lighting, orbit, axis lock, gizmo and text billboarding settings; its **Performance** tab holds import and triangle limits. See [Select Toolbar — Settings](../reference/select-toolbar.md#settings).
+The **3D Settings** button (globe-and-cog icon, at the bottom of the Select toolbar) opens the **Settings** dialog. Its **2D** tab holds the view sizes, snap tolerance and hillshade; its **3D** tab holds camera, scroll-wheel, lighting, orbit, axis lock, gizmo and text billboarding settings; its **Performance** tab holds import and triangle limits. See [Settings](../working-in-kirra/settings.md).
 
 ---
 

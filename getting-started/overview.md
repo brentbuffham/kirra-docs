@@ -60,7 +60,7 @@ Data is typically in UTM or custom mine grid. The canvas uses Y-up for North (+v
 
 ## Data Persistence
 
-Kirra stores your data in **IndexedDB** — your browser’s local storage. Holes, surfaces, KAD drawings, and layer settings are saved automatically. No server upload is required; your data stays on your device.
+Kirra stores your data in **IndexedDB** — your browser’s local storage. Holes, surfaces, KAD drawings, and layer settings are saved automatically. No server upload is required; your data stays on your device. See [Starting, Saving & Projects](../working-in-kirra/starting-and-saving.md).
 
 > **Tip:** Need a fresh start without losing your work? Kirra keeps ten separate workspaces — pick an empty one from the **Workspace** toolbar. See [Interface Tour — Workspace Toolbar](interface-tour.md#workspace-toolbar).
 

@@ -48,7 +48,7 @@ The orbit centre persists until you click a new position or use **Reset View**.
 
 The **3D Settings** button on the Select toolbar opens the **Settings** dialog, with **2D**, **3D** and **Performance** tabs. The **3D** tab controls camera damping, cursor zoom, scroll-wheel direction, the plumb line, lighting, the orbit rotation model and speed, axis lock, the axis gizmo and text billboarding. The **Performance** tab sets the triangle limits for drawing surfaces in 3D.
 
-See [Select Toolbar — Settings](select-toolbar.md#settings) for every option and its default.
+See [Settings](../working-in-kirra/settings.md) for every option and its default.
 
 > The 3D renderer choice, level-of-detail override, instanced holes and 3D simplification are developer fall-back options. They live in the side panel under **About ▸ Developer**, not in the Settings dialog, and you do not normally need to change them.
 

@@ -57,6 +57,15 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Interface Tour — Menus, Toolbars, and Panels](getting-started/interface-tour.md)
 - [Your First Blast — Step-by-Step Walkthrough](getting-started/first-blast.md)
 
+### Working in Kirra
+- [Starting, Saving & Projects](working-in-kirra/starting-and-saving.md) — the start-up prompts, how work is saved, KAP / KAT projects, Record Actuals
+- [Workspaces](working-in-kirra/workspaces.md) — ten separate stores; open, name and clear them
+- [Data Explorer](working-in-kirra/data-explorer.md) — the tree: show, hide, lock, select, and every right-click item
+- [Display Options](working-in-kirra/display-options.md) — the 31 label buttons and their right-click settings
+- [Selection & Snapping](working-in-kirra/selection-and-snapping.md) — H / K / V, shapes, modifier keys, snap targets
+- [Views & Navigation](working-in-kirra/views-and-navigation.md) — 2D and 3D, mouse controls, toolbars
+- [Settings](working-in-kirra/settings.md) — theme, language, and every Settings field with its default
+
 ### Blast Hole Design
 - [Holes Toolbar](blast-design/holes-toolbar.md) — button-by-button reference
 - [Connect Toolbar](blast-design/connect-toolbar.md) — button-by-button reference *(updated with Continuous Connect)*

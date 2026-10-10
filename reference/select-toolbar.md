@@ -334,74 +334,9 @@ See [3D View & Orbit Focus](3d-tools.md) for the full 3D navigation reference.
 
 ## Settings
 
-The **3D Settings** button (globe-and-cog icon, at the bottom of the Select toolbar) opens the **Settings** dialog. It has three tabs — **2D**, **3D** and **Performance** — and opens on the **3D** tab.
-
-![Settings dialog](../screenshots/3DViewOptions.png)
-*The Settings dialog.*
-
-### 2D tab
-
-Changes on this tab take effect straight away.
-
-| Option | Default | Purpose |
-|--------|---------|---------|
-| **Font Size (pt)** | 16 | Size of labels on the canvas |
-| **Font Size Locked** | On | Keeps the font size fixed |
-| **Tie Size (units)** | 3 | Size of tie / connector arrows |
-| **Toe Size (m)** | 0 | Radius of the toe circle |
-| **Hole Adjust (units)** | 2 | Size adjustment for hole symbols |
-| **Interval (ms)** | 100 | Time step for the timing animation |
-| **First Movement Size (units)** | 2 | Size of first-movement arrows |
-| **Snap Tolerance (px)** | 15 | How close, in screen pixels, the cursor must be to snap |
-| **Drawing Detail (px, 0 = full)** | 1 | Simplifies drawing lines in 2D. Lower is more faithful; 0 draws every vertex |
-| **Drag distance (px)** | 5 | How far a press must move before it counts as a drag rather than a click |
-| **Drag hold (ms)** | 300 | How long a press that has moved must be held before it counts as a drag |
-| **Hillshade Light Bearing (deg)** | 135 | Bearing of the light for hillshade surfaces |
-| **Hillshade Light Elevation (deg)** | 15 | Height of the light above the horizon for hillshade surfaces |
-| **Surface Colour Gradient Style** | Radial | **Radial**, **Default** or **Baycentric** |
-
-### 3D tab
-
-Changes on this tab apply when you click **Save**.
-
-| Option | Default | Purpose |
-|--------|---------|---------|
-| **Damping Factor** | No Spin (0) | How long the view keeps moving after an orbit drag — **No Spin (0)**, **Low (0.3)**, **Medium (0.5)**, **High (0.7)**, **Max Spin (1)** |
-| **Cursor Zoom** | On | When **On**, the mouse wheel zooms towards the cursor instead of the screen centre |
-| **Scroll wheel forward will** | Push (zoom in) | Direction of the wheel — **Push (zoom in)** or **Push (zoom out)** |
-| **Display Plumb Line to Drawing Z** | Off | Draws a plumb line from the cursor to the drawing elevation |
-| **Light Bearing (deg)** | 135 | Compass bearing of the directional light (0 = North, clockwise) |
-| **Light Elevation (deg)** | 15 | Height of the directional light above the horizon |
-| **Ambient Light Intensity** | 0.8 | Strength of the ambient (fill) light. 0 turns it off |
-| **Directional Light Intensity** | 2.5 | Strength of the directional (sun) light |
-| **Shadow Intensity** | 0.5 | Strength of shading. 0 turns it off |
-| **Orbit Rotation** | Turntable (Z-up, no roll) | **Turntable (Z-up, no roll)** keeps the horizon level; **Trackball (grab point)** rotates about the point you grab; **Legacy (mouse delta)** is the older model |
-| **Rotation Speed** | 1.0 | How fast a drag orbits. A negative value reverses the drag direction |
-| **Axis Lock (Orbit Constraint)** | None | Limits orbiting to one motion — **None**, **Pitch (tilt up/down)**, **Bearing (swing around)** or **Spin (about view axis)** |
-| **Gizmo Display** | Only When Orbit or Rotate | When to show the axis gizmo — **Always**, **Only When Orbit or Rotate**, **Never** |
-| **Text Billboarding** | Off | Makes text face the camera — **Off**, **On (Holes)**, **On (KAD)**, **On (All)** |
-
-### Performance tab
-
-Changes on this tab apply when you click **Save**.
-
-| Option | Default | Purpose |
-|--------|---------|---------|
-| **12d import heap budget (GB)** | 1.5 | Memory budget for importing large 12d Archive files |
-| **Max triangles per surface (3D)** | 2,000,000 | A surface with more triangles than this is not drawn in 3D. It still shows in 2D and can be decimated on import |
-| **Max total triangles (3D scene)** | 4,000,000 | Limit for all surfaces drawn in 3D together |
-| **Boolean mesh split path** | Narrow-band | **Narrow-band — large surfaces (avoids OOM)** or **Legacy — full mesh (proven; small surfaces)** |
-| **Narrow-band scoped triangle threshold** | 200,000 | Booleans whose two surfaces together have fewer triangles than this always use the legacy path |
-| **Vector PDF decimal places** | 3 | Decimals of a millimetre on the page for vector PDF plots. Raise it for wide-scale plots that will be measured; higher values make larger files |
-
-Higher triangle limits need a capable graphics card.
-
-### Buttons
-
-| Button | Action |
-|--------|--------|
-| **Save** | Applies the 3D and Performance settings and closes the dialog |
-| **Cancel** | Closes the dialog without saving the 3D and Performance settings |
+The **3D Settings** button (globe-and-cog icon, at the bottom of the Select toolbar) opens the
+**Settings** dialog — **2D**, **3D** and **Performance** tabs. Every field, its default and
+when it applies are in [Settings](../working-in-kirra/settings.md).
 
 ---
 

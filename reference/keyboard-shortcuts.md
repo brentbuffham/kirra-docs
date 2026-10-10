@@ -21,7 +21,8 @@ These keys work only while you hold them down. Release the key to return to norm
 | Shortcut | Action |
 |----------|--------|
 | **Ctrl+Z** (Cmd+Z on Mac) | Undo |
-| **Ctrl+Y** (Cmd+Y on Mac) | Redo |
+| **Ctrl+Y** or **Ctrl+Shift+Z** (Cmd on Mac) | Redo |
+| **Ctrl+F5** (Cmd+Shift+R on Mac) | Reload Kirra — your work is kept |
 | **Escape** (first press) | Cancel the current step and clear the selection |
 | **Escape** (second press) | Exit the active tool and return to **Pointer Select** |
 | **Backspace** / **Delete** | Delete the selected KAD objects, vertices or holes (asks you to confirm; deleting holes offers **Renumber**) |
@@ -57,7 +58,10 @@ For mesh editing keys, see [Mesh Editing & Clean Mesh](../surfaces/mesh-editing.
 | **Alt + Shift + drag** | Rotate the 2D view |
 | **Alt + Shift + double-click** | Reset the 2D rotation to north-up |
 | **Click** | Select single entity |
-| **Shift + click** | Add to selection |
+| **Shift + click** | Add to selection (or remove an item already selected) |
+| **Ctrl + click** (Cmd + click on Mac) | Remove from selection |
+
+See [Selection & Snapping](../working-in-kirra/selection-and-snapping.md).
 
 ---
 
