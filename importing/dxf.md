@@ -57,8 +57,7 @@ text label at their first point.
   file with the same name again creates `name_2`, `name_3` and so on.
 - Each 3DFACE layer becomes a surface named after its DXF layer.
 - Entity colours come from the DXF colour index or true colour. Entities coloured
-  **ByLayer** or **ByBlock** come in **white** — set explicit colours in your CAD package
-  if they matter.
+  **ByLayer** take their layer's colour. Entities coloured **ByBlock** come in white.
 - Lines and polygons longer than 10,000 points are split into parts, named `_chunk1of3`
   and so on, so they stay quick to draw and edit.
 
