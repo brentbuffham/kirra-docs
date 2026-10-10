@@ -32,12 +32,9 @@ toolbar and panel layout stay as they are.
 
 #### How the import is applied
 
-1. Kirra first asks you to confirm the import. The message says the project will replace
-   your data; if you already have data, the next step lets you merge instead:
-
-   ![Import Project confirmation](../screenshots/KAPImportConfirm.png)
-
-   Click **Import**, or **Cancel** to stop.
+1. **Import Project** asks you to confirm. It reminds you that, if you already have data,
+   the next step lets you choose between merging and replacing. Click **Import**, or
+   **Cancel** to stop.
 2. If the project is more than 100 km from the data you already have, Kirra warns that the
    two may be in different coordinate systems — see
    [Checks on import](import-dialog.md#checks-on-import).
@@ -174,13 +171,13 @@ Hole details can be carried in a placemark's description as `{key:value}` pairs.
 ### ESRI Shapefile
 
 Reads shapefiles: select the `.shp` together with its `.shx`, `.dbf`, `.prj` (and
-`.cpg`) files. Points, multipoints, polylines and polygons are read, with their Z and M
+`.cpg`) files, or a `.zip` holding them. Dropping the files — or the `.zip` — onto the
+canvas works too. Points, multipoints, polylines and polygons are read, with their Z and M
 variants; multipatch shapes are skipped.
 
 **Import ESRI Shapefile** offers a projection for latitude / longitude files and a
 **Master RL Offset (Optional)** to raise or lower everything by a fixed elevation.
 
-Use the **Open** button — select the files rather than a `.zip`, and don't drop them.
 
 ---
 

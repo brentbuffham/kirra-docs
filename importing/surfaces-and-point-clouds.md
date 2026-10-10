@@ -10,7 +10,7 @@ surfaces from Vulcan and Datamine.
 |---|---|---|
 | [**GeoTIFF / Image**](#geotiff--image) | `.tif` / `.tiff` | An image, or an elevation surface |
 | [**OBJ / GLTF**](3d-mesh.md) | `.obj` / `.gltf` / `.glb` | A surface (see [3D Mesh Import](3d-mesh.md)) |
-| [**Point Cloud**](#point-cloud) | `.xyz` / `.csv` / `.pts` | Points, or a surface built from them |
+| [**Point Cloud**](#point-cloud) | `.xyz` / `.csv` / `.pts` / `.ptx` | Points, or a surface built from them |
 | [**LAS Point Cloud**](#las-point-cloud) | `.las` | Points by classification, or a surface |
 | [**Vulcan .00t Triangulation**](#vulcan-00t-triangulation) | `.00t` | A surface |
 | [**Datamine Surface**](#datamine-surface) | `.dm` (pt + tr) | A surface |
@@ -51,10 +51,8 @@ Imports a text point cloud: one point per line, X Y Z, optionally followed by co
 | `.xyz` / `.txt` | X Y Z separated by spaces, optional R G B |
 | `.csv` | X,Y,Z, optional R,G,B |
 | `.pts` | A count line, then X Y Z intensity R G B |
+| `.ptx` | A Leica scan, with its scanner position applied |
 | `.ply` (text) | The vertices only |
-
-Leica `.ptx` scans import through **Point Cloud — Transform (reproject CRS)** — see
-[Transform Import](transform-import.md).
 
 After you pick the file, the **Import Point Cloud** dialog asks how to bring it in:
 

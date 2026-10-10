@@ -185,7 +185,7 @@ See [Importing Block Models](../block-models/importing-block-models.md).
 | **Epiroc Surface Manager** | `.geofence` / `.hazard` / `.sockets` / `.xml` | Pick **IREDES Drill Plan**, **Geofence**, **Hazard** or **Socket** from the row's drop-down |
 | **Wenco NAV** | `.nav` | Wenco FMS NAV ASCII export |
 | **KML / KMZ** | `.kml` / `.kmz` | Google Earth placemarks / geometry |
-| **ESRI Shapefile** | `.shp` (+ `.shx`, `.dbf`, `.prj`) | GIS shapefile — select all its files together |
+| **ESRI Shapefile** | `.shp` / `.zip` | GIS shapefile — select all its files together, or a `.zip` of them |
 
 ### Legacy tab
 

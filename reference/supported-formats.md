@@ -73,7 +73,7 @@ See: [DXF Import](../importing/dxf.md) ·
 
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
-| ESRI Shapefile | `.shp` (in/out), `.zip` (out) | Yes | Yes | Point, MultiPoint, PolyLine, Polygon, including Z and M variants. Import: select the `.shp` with its `.shx`, `.dbf` and `.prj`. Export bundles `.shp / .shx / .dbf / .prj` as a ZIP. |
+| ESRI Shapefile | `.shp` (in/out), `.zip` (out) | Yes | Yes | Point, MultiPoint, PolyLine, Polygon, including Z and M variants. Import: select the `.shp` with its `.shx`, `.dbf` and `.prj`, or a `.zip` of them. Export bundles `.shp / .shx / .dbf / .prj` as a ZIP. |
 | GeoTIFF (raster) | `.tif`, `.tiff` | Yes | — | Elevation rasters and RGB / RGBA imagery. |
 | GeoTIFF export | `.tif` + `.prj` | — | Yes | Coloured image of each visible surface, as shown in Kirra. |
 | Elevation GeoTIFF export | `.tif` + `.prj` | — | Yes | Single-band elevation raster of each visible surface. |
@@ -89,7 +89,7 @@ See: [GeoTIFF Export](../exporting/geotiff-export.md) ·
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
 | ASPRS LAS | `.las` | Yes | Yes | LAS versions 1.2, 1.3, 1.4. Compressed `.laz` is not supported. |
-| Point Cloud (generic) | `.csv`, `.xyz`, `.txt`, `.pts` (`.ptx` via Transform) | Yes | — | Auto-detects optional RGB / intensity columns. Import as points or a triangulated surface. |
+| Point Cloud (generic) | `.csv`, `.xyz`, `.txt`, `.pts`, `.ptx` | Yes | — | Auto-detects optional RGB / intensity columns. Import as points or a triangulated surface. |
 | Point Cloud XYZ export | `.xyz`, `.txt` | — | Yes | `X Y Z` or `X Y Z R G B`. |
 | Point Cloud CSV export | `.csv` | — | Yes | `X,Y,Z` or `X,Y,Z,R,G,B`. |
 | Point Cloud PTS export | `.pts` | — | Yes | Count header, `X Y Z I R G B`. |

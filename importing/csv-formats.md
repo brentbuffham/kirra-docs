@@ -185,7 +185,7 @@ These files share the same first 24 columns. Grade, bench, length, angle, bearin
 
 Empty `rowID` / `posID` parse as `null`. Holes with `null` or `0` row/pos are treated as unassigned and may be processed by smart row detection.
 
-> **Caution — 30 and 32 Column exports:** Kirra's **30 Column** and **32 Column** exports write the measured fields (with timestamps) from column 25, which is the 35-column order, not the order the importer reads for 30- and 32-column files. Use **14 Column** or **35 Column** for Kirra-to-Kirra round trips.
+> **30 and 32 Column files:** Kirra's own **30 Column** and **32 Column** exports write the measured fields (with timestamps) from column 25 and carry a header row of Kirra field names. A 29-32 column file with that header is read **by name**, so Kirra's exports round-trip. A headerless 29-32 column file is read in the older positional layout shown in the table.
 
 For a full project save, prefer **KAP** — it carries every project state (charging, timing constructs, drawings, surfaces, layers) instead of just the holes.
 
@@ -316,7 +316,7 @@ Configurable per import:
 |------|-----------|
 | `update-blast-hole` | Match on `entityName + holeID`, overwrite existing |
 | `update-location` | Match on collar proximity (0.01 m tolerance), overwrite existing |
-| `skip` | Intended to keep the existing hole and drop the incoming duplicate. **Currently duplicates are imported anyway** — use **Update by Blast+ID** until this is fixed |
+| `skip` | Match on `entityName + holeID`, keep the existing hole and drop the incoming row (also the second of two same-ID rows in one file) |
 
 ### Time → delay back-calculation
 

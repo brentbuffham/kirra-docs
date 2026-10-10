@@ -20,9 +20,9 @@ Depending on the format, Kirra checks for data in another coordinate system, for
 that has already been imported, and for holes landing on top of existing ones before the
 holes are added — see [Checks on import](import-dialog.md#checks-on-import).
 
-ShotPlus, ViewShot, DigiShot and Terra files can also be dropped onto the canvas. A dropped
-`.csv` asks what it holds — **Holes** opens the Custom CSV import. Use the **Open** button
-for CBLAST and Davey BPD files.
+ShotPlus, Davey BPD, ViewShot, DigiShot and Terra files can also be dropped onto the canvas.
+A dropped `.csv` asks what it holds — **Holes** opens the Custom CSV import, so use the
+**Open** button for CBLAST files.
 
 ---
 
