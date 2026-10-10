@@ -79,8 +79,9 @@ out the format from the file.
   ![The Unrecognised file format dialog](../screenshots/UnrecognisedCSVBlockChoice.png)
 
   **Holes** opens the [Custom CSV](csv-formats.md#custom-csv-import) column mapping,
-  **Geometry** the [Geometry CSV](cad-formats.md#geometry-csv) mapping, and **Block** the
-  [block model](../block-models/importing-block-models.md) import.
+  **Geometry** the [Geometry CSV](cad-formats.md#geometry-csv) mapping, **Block** the
+  [block model](../block-models/importing-block-models.md) import, and **Telemetry** the
+  [Borehole Telemetry](other-formats.md#borehole-telemetry) import.
 - **A file Kirra does not recognise** is ignored, and the status bar says so.
 - **Dropped files are never reprojected.** Use the Transform view of the dialog for that.
 

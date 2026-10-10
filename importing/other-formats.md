@@ -131,8 +131,8 @@ with a sub-layer per blast. A report lists any holes whose collar could not be f
 paths can then be used to measure burden on the drilled hole in the
 [Hole Section View](../reference/section-views.md#hole-section-view).
 
-Use the **Open** button — a dropped CSV asks what it holds, and telemetry is not one of the
-choices.
+You can also drop the survey file onto the canvas: Kirra asks what it holds — choose
+**Telemetry**.
 
 ### Epiroc Surface Manager
 
