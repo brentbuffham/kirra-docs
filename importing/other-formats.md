@@ -166,7 +166,10 @@ Reads Google Earth files. **Import KML/KMZ** asks:
 | **Target Coordinate System:** | For latitude / longitude files: keep them, or project to an EPSG grid |
 | **Default Values:** | The elevation to use where the file has none, and the blast name |
 
-Hole details can be carried in a placemark's description as `{key:value}` pairs.
+Hole details are read from a placemark's description as `{key:value}` pairs, and from its
+**ExtendedData** fields (both Google Earth's `Data` and QGIS's `SimpleData`). The field
+names are Kirra's: `diameter`, `calculatedHoleLength`, `subdrillAmount`, `holeType`. Where
+a field is in both, the description wins.
 
 ### ESRI Shapefile
 

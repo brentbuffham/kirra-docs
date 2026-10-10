@@ -69,7 +69,8 @@ Export surfaces to Surpac format (paired `.dtm` and `.str` files). Kirra automat
 
 ## KML / KMZ (Google Earth)
 
-Export blast patterns and geometry to Google Earth format. Holes are exported as Placemarks with ExtendedData, along with polylines and polygons.
+Export blast patterns and geometry to Google Earth format. Holes are exported as placemarks with their details in the description, along with
+polylines and polygons.
 
 ---
 
