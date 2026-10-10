@@ -63,11 +63,11 @@ older drawings in one of those versions first, or export DXF — see [DXF Import
 | Read | Not yet |
 |---|---|
 | Lines, polylines (2D and 3D), circles, arcs, ellipses, points, text and multiline text | Blocks (INSERT) |
-| 3DFACE meshes, as one surface | Layer names — everything comes in on layer 0 |
+| 3DFACE meshes, as one surface | |
+| Layer names, and layer colours for entities coloured ByLayer | |
 
 "Experimental" means it works on the drawings it has been tested with, but is not yet as
-complete as DXF — the DWG's layer names are not read yet, so its drawings are not split by
-layer. Importing the same DWG again adds a second copy, with `_(2)` on the names. If a DWG
+complete as DXF. Each drawing comes in on its DWG layer, as a DXF import does. Importing the same DWG again adds a second copy, with `_(2)` on the names. If a DWG
 does not come in cleanly, export DXF from your CAD package instead.
 
 ---
