@@ -165,8 +165,14 @@ See: [Electronic Timing Constructs](../blast-design/electronic-timing-constructs
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
 | Datamine block model | `.dm` | Yes | — | Large files are streamed. Export shows as **Coming soon**. |
-| Vulcan CSV block model | `.csv`, `.txt` | Yes | — | Vulcan CSV with its Model Origin preamble. Large files are streamed. |
-| Vulcan BMF block model | `.bmf` | Yes (read-only) | — | Vulcan native block model. |
+| Vulcan CSV block model | `.csv`, `.txt` | Yes | Yes | Vulcan CSV with its Model Origin preamble. Large files are streamed. Exported from the Load Block Model dialog — see below. |
+| Vulcan BMF block model | `.bmf` | Yes (read-only) | — | Vulcan native block model, regularised or sub-blocked. |
+| Micromine block model | `.dat` | Yes | — | Micromine Extended Data block model, including rotated and sub-blocked models. Large files are streamed. |
+
+Any loaded block model — whatever its source format — can be saved as a Vulcan CSV with
+the **Export** button in the Load Block Model dialog, either whole or limited to a section.
+The Export dialog's **Geology** tab still shows **Coming soon**. See
+[Export a Section and Build Solids](../block-models/export-and-solids.md).
 
 ---
 

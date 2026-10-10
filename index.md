@@ -77,12 +77,18 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Compare Surfaces](surfaces/compare-surfaces.md) — design vs survey deviation heat map
 - [Surface Contours](surfaces/contours.md)
 
+### Geology — Block Models
+- [Importing Block Models](block-models/importing-block-models.md) — Datamine, Vulcan CSV and BMF, Micromine *(new)*
+- [The Load Block Model Dialog](block-models/load-block-model-dialog.md) — colour, bench slices, cut-offs and limits *(new)*
+- [Export a Section and Build Solids](block-models/export-and-solids.md) — CSV sections and one closed solid per class *(new)*
+
 ### Importing Data
 - [CSV Formats](importing/csv-formats.md)
 - [DXF Import](importing/dxf.md)
 - [Surpac DTM / STR](importing/surpac-dtm-str.md)
 - [OBJ / PLY / GLTF / GLB](importing/3d-mesh.md)
 - [Other Formats (IREDES, KML, LAS, Shapefile)](importing/other-formats.md)
+- [Block Models](block-models/importing-block-models.md)
 
 ### Exporting Data
 - [CSV Export](exporting/csv-export.md)

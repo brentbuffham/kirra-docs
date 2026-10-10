@@ -93,7 +93,7 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 | **Blasts** | Custom CSV, CBLAST, Orica ShotPlus, Davey BPD, DetNet ViewShot, DetNet DigiShot / ParVS3, Paradigm Terra |
 | **Drawings / CAD** | Geometry CSV, DXF, DWG (experimental), Vulcan ARCH_D, Vulcan Design Database, Surpac, Micromine STR, Deswik DUF, 12d Archive |
 | **Surfaces / Mesh** | GeoTIFF / Image, OBJ / GLTF, Point Cloud, LAS Point Cloud, Vulcan .00t Triangulation, Datamine Surface |
-| **Geology** | Block Model — Datamine, Block Model — Vulcan CSV, Block Model — Vulcan BMF |
+| **Geology** | Block Model — Datamine, Block Model — Vulcan CSV, Block Model — Vulcan BMF, Block Model — Micromine |
 | **Miscellaneous** | Borehole Telemetry, Epiroc Surface Manager, Wenco NAV, KML / KMZ, ESRI Shapefile |
 | **Legacy** | Datavis DBS, ShotPlan 3 |
 
@@ -168,6 +168,9 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 | **Block Model — Datamine** | `.dm` | Datamine block model. Large files are streamed |
 | **Block Model — Vulcan CSV** | `.csv` / `.txt` | Vulcan CSV block model. Large files are streamed |
 | **Block Model — Vulcan BMF** | `.bmf` | Vulcan `.bmf` block model (read only) |
+| **Block Model — Micromine** | `.dat` | Micromine block model, including rotated and sub-blocked models. Large files are streamed |
+
+See [Importing Block Models](../block-models/importing-block-models.md).
 
 ### Miscellaneous tab
 

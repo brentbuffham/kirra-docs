@@ -210,7 +210,9 @@ See [Time Window Dialog](time-window.md) for the full per-tab reference.
 
 Adjusts the display of the geological **block model** already loaded into the project — the gridded model of ore/waste and rock attributes used to inform blast design and analysis. Block models are loaded through the **Import** dialog (**Geology** tab) or by dropping the file on the canvas; this button does not load one, and tells you if none is loaded.
 
-> *[SCREENSHOT NEEDED: Load Block Model dialog]*
+![Load Block Model — Display tab](../screenshots/BlockModelLoadDialog-Display.png)
+
+Full reference: [The Load Block Model Dialog](../block-models/load-block-model-dialog.md).
 
 ### How to use
 
@@ -218,6 +220,7 @@ Adjusts the display of the geological **block model** already loaded into the pr
 2. On the **Display** tab, choose the **Variable (colour)**, **Mode** (**Centroids (points)** or **Blocks (solid)**), **Block style**, **Gradient** or schema colouring (**Colour by**), **Point size (px)**, **Transparency**, an optional **Bench slice** (RL and thickness), cut-offs, and the **Hover datatip**
 3. On the **Limits** tab, optionally **Limit display to** a box range, above or below a surface, or inside a closed solid
 4. Changes apply live — the dialog shows how many cells are displayed out of the total. Click **Done** to close
+5. **Solids** builds closed solids from the shown blocks, and **Export** saves them as a block model CSV — see [Export a Section and Build Solids](../block-models/export-and-solids.md). **Remove** unloads the model
 
 ---
 
@@ -225,7 +228,7 @@ Adjusts the display of the geological **block model** already loaded into the pr
 
 Manages named colour **schemas** — site or project colour standards for block-model attributes. A schema holds one colour definition per attribute (rock type, grade, domain, etc.).
 
-> *[SCREENSHOT NEEDED: Block Model Schema Colours dialog]*
+![Block Model Schema Colours dialog](../screenshots/BlockModelSchemaColoursDialog.png)
 
 ### How to use
 
