@@ -2,6 +2,108 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.334
+
+_2026-10-10_
+
+**Bug Fix**
+
+- 16-bit TIFF images now import as a picture instead of white
+
+## Release v1.1.32.333
+
+_2026-10-10_
+
+**Feature**
+
+- DWG drawings now import onto their own layers
+
+**Bug Fix**
+
+- DWG drawings coloured by layer now import in their layer colours
+
+## Release v1.1.32.332
+
+_2026-10-10_
+
+**Bug Fix**
+
+- DXF drawings coloured by layer now import in their layer colours
+- Importing the same DWG twice now brings in its drawings again
+
+## Release v1.1.32.331
+
+_2026-10-10_
+
+**Feature**
+
+- A dropped survey CSV can be imported as borehole telemetry
+
+## Release v1.1.32.330
+
+_2026-10-10_
+
+**Bug Fix**
+
+- More imports warn when a file is far from the data already loaded
+- LAS point clouds and Kirra drawings zoom into view after import
+- Point cloud, Vulcan and Datamine surfaces import onto their own layer
+- Deswik files import the same way from the Import dialog as when dropped
+
+## Release v1.1.32.329
+
+_2026-10-10_
+
+**Bug Fix**
+
+- The Import dialog describes OBJ and GLTF import correctly
+- The Paradigm Terra import row lists the charging and timing it brings in
+
+## Release v1.1.32.328
+
+_2026-10-10_
+
+**Bug Fix**
+
+- Cancelling a LAS or project import no longer reports Import Failed
+- The project import prompt explains the merge or replace choice that follows
+- The DWG import message names the versions Kirra can read
+
+## Release v1.1.32.327
+
+_2026-10-10_
+
+**Bug Fix**
+
+- Epiroc socket files can be picked for import
+- Leica PTX point clouds import from the Point Cloud row
+- The DXF import no longer offers DWG files it cannot read
+
+## Release v1.1.32.326
+
+_2026-10-10_
+
+**Feature**
+
+- Shapefile import accepts a zipped shapefile
+
+**Bug Fix**
+
+- Dropping a Davey BPD file onto Kirra now imports it
+- Dropping a shapefile, or a zip of one, now imports it
+
+## Release v1.1.32.325
+
+_2026-10-10_
+
+**Bug Fix**
+
+- Custom CSV "Skip duplicates" now skips holes that are already loaded
+- Holes CSV import no longer opens the Custom CSV mapper by mistake
+- Measured Data import reports the holes it updated, and saves them
+- Kirra 30 and 32 column hole CSVs re-import with their measured values
+- Importing holes into an existing blast reports the right count
+
 ## Release v1.1.32.324
 
 _2026-10-10_
