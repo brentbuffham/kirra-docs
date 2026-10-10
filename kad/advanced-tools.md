@@ -51,14 +51,12 @@ Performs 2D boolean operations (Union, Difference, Intersection) on KAD polygon 
 
 ## Section Plane
 
-Creates a cross-section cutting plane through loaded surfaces for subsurface visualisation and design verification.
+Slices the 3D scene along a plane so you can see the design side-on — holes, drawings,
+surfaces and block models. It is on the **Select** toolbar. Draw a line where you want
+the section, then choose **Segment** in the Section Plane dialog and click the line; or
+choose **Two Points** and click the two ends.
 
-### How to Use
-
-1. Load one or more surfaces
-2. Click the **Section Plane** button in the Surface toolbar
-3. Define the section line (two points on the canvas)
-4. The cross-section is displayed showing the cut profile through the surfaces
+See [Section Views](../reference/section-views.md#section-plane).
 
 ### Use Cases
 

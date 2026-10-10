@@ -62,7 +62,7 @@ the bench and the surfaces it passes through.
 
 Click **Section Plane** in the **Select** toolbar to open the dialog.
 
-Turning **Enable** on switches the view to 3D. A section is a 3D construct, so in 2D
+Turning **Enable Section Plane** on switches the view to 3D. A section is a 3D construct, so in 2D
 the controls would appear to do nothing.
 
 ### Choosing the plane
@@ -115,7 +115,7 @@ Setting **See Behind** to 0 makes the section line itself the back edge.
 ### Stepping the slice through the pattern
 
 - **Position** is the offset of the slice from the section line. 0 sits on the line.
-- **Step** is how far each step moves it. It also sets the spinner increment.
+- **Step Increment** is how far each step moves it. It also sets the spinner increment.
 - The **«** and **»** buttons either side of Position step the slice back and forward.
 - **Page Down** and **Page Up** do the same from the keyboard.
 - Hold **Shift** with Page Up or Page Down to land on exact multiples of the step,
@@ -131,6 +131,20 @@ Slice thickness and step are remembered between sessions.
 - **Clip** chooses which categories the section applies to: Blasts, KAD, Surfaces,
   Images and Blocks.
 - **Reset** returns the settings to their defaults without closing the dialog.
+
+### Drawing on the section — Draw on plane
+
+A section is for **looking** until you ask otherwise: tools still work in plan. Tick
+**Draw on plane** to make the section the plane the tools work in — offset, extend, hole
+set-out, move, Design Plane tagging and triangulation. It needs **Enable Section Plane**
+and the 3D view, and ticking it also shows the plane.
+
+While it is on, the dialog shows a *WORK PLANE ACTIVE* warning. Untick **Draw on plane**
+to work in plan again. It is never remembered between sessions, so a section opened later
+never changes how the tools behave on its own.
+
+**Show Section Plane** draws a grid on the section so you can see the plane. The grid
+spacing is the **Step Increment**.
 
 ### Working inside a section
 

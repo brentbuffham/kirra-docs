@@ -195,18 +195,19 @@ Reset View also clears any orbit centre set with [Orbit Focus](#orbit-focus).
 
 Slices the scene with a section plane so you can see inside surfaces or cut through a pattern. Useful for inspecting hole depths against terrain, deck configurations inside a bench, and multi-level pit designs.
 
-![Section Plane dialog with an XZ clip applied](../screenshots/SectionViewTool.png)
-*The Section Plane dialog.*
+![Section Plane dialog with a Two Points section across a blast face](../screenshots/SectionViewTool.png)
+*The Section Plane dialog, sectioning across the front of a blast.*
 
 ### How to Use
 
 1. Click the **Section Plane** button on the Select toolbar
-2. Tick **Enable** (the view switches to 3D)
+2. Tick **Enable Section Plane** (the view switches to 3D)
 3. Choose the **Plane** — **Two Points**, **Segment**, **XY (Elevation)**, **YZ (East-West)** or **XZ (North-South)**
 4. Set the slice thickness either side of the plane, then step it with **Position**
-5. Click **Close** to leave the dialog (the section stays on while **Enable** is ticked), or **Reset** to return to the defaults
+5. Click **Close** to leave the dialog (the section stays on while **Enable Section Plane** is ticked), or **Reset** to return to the defaults
 
-See [3D View — Section Plane](3d-tools.md#section-plane) for every option.
+See [3D View — Section Plane](3d-tools.md#section-plane) for every option, and
+[Section Views](section-views.md) for how it compares with the Hole Section View.
 
 ---
 

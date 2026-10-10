@@ -151,6 +151,8 @@ Opens the **Hole Section View** for the selected hole — a section through one 
 - **Burden** reports burden in front of the hole on its own bearing; **3D Dist** reports the shortest distance to the face in any forward direction
 - **Print** builds a PDF of the section; **Export KADs** saves the burden paths as KAD entities
 
+Every control, including telemetry and the sampling options: [Section Views — Hole Section View](../reference/section-views.md#hole-section-view).
+
 ![Hole Section View dialog](../screenshots/HoleSectionViewDialog.png)
 *The Hole Section View for one hole, before a surface is picked.*
 

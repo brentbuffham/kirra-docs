@@ -143,6 +143,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Hole Properties](reference/hole-properties.md)
 - [Coordinate System](reference/coordinate-system.md)
 - [3D View & Orbit Focus](reference/3d-tools.md)
+- [Section Views](reference/section-views.md) — Section Plane, Hole Section View and the Deck Builder section *(new)*
 - [Keyboard Shortcuts & Mouse Controls](reference/keyboard-shortcuts.md)
 - [Blasting Glossary — Kirra in Every Language](reference/blasting-glossary.md) — the blasting terms in all eight language editions
 - [JavaScript pitfalls — zero vs falsy & import zoom](reference/javascript-pitfalls.md) *(contributors)*
