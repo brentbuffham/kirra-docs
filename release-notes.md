@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.320
+
+_2026-10-10_
+
+**Feature**
+
+- KAT template files open in Kirra from File Explorer
+
 ## Release v1.1.32.319
 
 _2026-10-09_
