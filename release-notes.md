@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.324
+
+_2026-10-10_
+
+**Feature**
+
+- Export dialog saves a loaded block model as a Vulcan CSV
+
 ## Release v1.1.32.323
 
 _2026-10-10_
