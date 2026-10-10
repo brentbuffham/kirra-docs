@@ -1,82 +1,101 @@
-# 3D Mesh Import (OBJ / PLY / GLTF / GLB)
+# 3D Mesh Import (OBJ / GLTF / GLB)
 
-Kirra imports 3D mesh files for surface visualisation, including textured models from aerial surveys, photogrammetry, and CAD exports.
-
-> *Screenshot coming soon*
-
----
-
-## Supported Formats
-
-| Format | Extensions | Features |
-|--------|-----------|----------|
-| **Wavefront OBJ** | `.obj` | Vertices, faces, UVs, normals, materials (via MTL file), texture images |
-| **PLY** | `.ply` | ASCII and binary, vertices, faces, normals, per-vertex RGB colours |
-| **GLTF** | `.gltf` | JSON-based GL Transmission Format with indexed geometry and scene hierarchy |
-| **GLB** | `.glb` | Binary variant of GLTF (single file, no external references) |
+Kirra imports 3D mesh files as surfaces, including textured models from drone
+photogrammetry and meshes exported from CAD or 3D software.
 
 ---
 
-## How to Import
+## Supported formats
 
-1. Click the **Import Export Print** button (file icon) in the menu bar and choose **Import** — or open the left sidenav (☰) and click **Import** under **File Management**
-2. In the **Import** dialog, open the **Surfaces / Mesh** tab and click **Open** on the **OBJ / GLTF** row
-3. Kirra reminds you to select all related files at once. Select your mesh file (`.obj`, `.ply`, `.gltf`, or `.glb`) — for a textured OBJ, also select its `.mtl` file and texture images (Ctrl+click, or Cmd+click on Mac)
-4. The mesh appears in the TreeView and 3D view
+| Format | Extensions | What Kirra keeps |
+|--------|-----------|------------------|
+| **Wavefront OBJ** | `.obj` (+ `.mtl` + images) | The mesh, and its texture when the `.mtl` and its images are selected too |
+| **GLB** | `.glb` | The mesh. A textured GLB keeps its texture |
+| **GLTF** | `.gltf` | The mesh, drawn in Kirra's elevation colours |
 
----
-
-## OBJ with Textures
-
-To import a textured OBJ mesh (e.g., from drone photogrammetry):
-
-1. Open the **OBJ / GLTF** import as above
-2. In the file picker, select the `.obj` file, the `.mtl` material file and the texture images (JPG/PNG) referenced by the MTL — all together
-3. The mesh loads with textures applied
-
-**What gets stored:**
-- OBJ geometry as text
-- MTL material definitions
-- Texture images as binary blobs
-- Material properties (ambient, diffuse, specular, shininess, texture mapping)
-
-All data is saved to IndexedDB and the textured mesh is rebuilt when you reload the page.
+> **PLY files** are read as **points**, not as a mesh: Kirra takes the vertices of a
+> text (ASCII) PLY, drops its faces and colours, and builds a new surface from the points
+> in the **Import Point Cloud** dialog. See
+> [Surfaces and Point Clouds](surfaces-and-point-clouds.md#point-cloud). Binary PLY is not
+> read.
 
 ---
 
-## PLY Files
+## How to import
 
-PLY (Stanford Polygon Format) supports both ASCII and binary encoding. Kirra imports vertices, faces, normals, and per-vertex RGB colours. Common source: 3D scanners and photogrammetry software.
+1. Open the **Import** dialog and choose the **Surfaces / Mesh** tab — see
+   [The Import Dialog](import-dialog.md).
+2. Click **Open** on the **OBJ / GLTF** row.
 
----
+   ![Import dialog — Surfaces / Mesh tab](../screenshots/filemanager4.png)
 
-## GLTF / GLB Files
+3. Kirra reminds you, in an **OBJ File Selection** message, to select every related file
+   at once. Click **OK**.
+4. Select the mesh file. For a textured OBJ also select its `.mtl` file and its texture
+   images — hold **Ctrl** (**Cmd** on a Mac) and click each one.
+5. A **Loading OBJ** progress bar runs. The surface then appears in the **Data Explorer**
+   under **Surfaces**, in its own layer, and the view zooms to it. It is drawn in both the
+   2D and 3D views.
 
-GLTF (GL Transmission Format) is the Khronos standard for 3D asset exchange. Kirra imports both the JSON-based `.gltf` and the binary `.glb` variants.
-
-**Import features:**
-- Indexed and non-indexed geometry
-- World transforms from the scene node hierarchy
-- Material properties
-
-**GLB is also used internally** by Kirra to persist blast analysis results (Blair Heavy CPU model) to IndexedDB for safe reload.
-
----
-
-## Viewing Imported Meshes
-
-After import, you can:
-
-- Switch between gradient modes (elevation, hillshade, texture, scientific colour maps)
-- Adjust transparency
-- Set elevation limits for colour mapping
-- Right-click the surface in 3D for properties and gradient options
-- Use the mesh in boolean operations, contour generation, and blast analytics
+You can also drop the files onto the canvas. Drop the `.obj`, `.mtl` and images together
+to keep the texture.
 
 ---
 
-## Related Topics
+## Textured OBJ
 
-- [Importing Surfaces](../surfaces/importing-surfaces.md)
-- [Surface Gradients](../surfaces/gradients.md)
+A drone or photogrammetry model usually comes as three kinds of file:
+
+| File | Holds |
+|---|---|
+| `.obj` | The mesh |
+| `.mtl` | The material, naming the texture image |
+| `.jpg` / `.png` | The texture image |
+
+Kirra finds the `.mtl` by the name the `.obj` gives it, then by the `.obj`'s own name, then
+by taking the only `.mtl` you selected. The texture needs **both** the `.mtl` and its
+image. If the `.mtl` the OBJ names was not selected, the status bar says the material file
+was not selected and the mesh imports without its texture.
+
+A textured mesh opens with the **texture** gradient. It is saved with the project — mesh,
+material and images — and rebuilt with its texture when you reload.
+
+To make a flat image from a textured mesh, right-click the surface and choose
+**Send to Image**.
+
+---
+
+## GLTF and GLB
+
+- A **textured GLB** keeps its texture.
+- Any other GLTF or GLB becomes a plain surface in Kirra's elevation colours, and an
+  **Import Complete** message reports its vertex and triangle counts.
+
+---
+
+## Reprojecting an OBJ
+
+If the mesh is in a different coordinate system from your project, use
+**OBJ — Transform (reproject CRS)** on the Import dialog's **Transform** view. It moves the
+mesh's X and Y from the source system to yours as it imports; Z is not changed. See
+[Transform (Reproject) Import](transform-import.md).
+
+---
+
+## After import
+
+- Change the gradient (elevation, hillshade, texture, scientific colour maps)
+- Adjust transparency, and set elevation limits for the colours
+- Right-click the surface for its properties
+- Use it in boolean operations, contours and blast analytics
+
+See [Importing Surfaces](../surfaces/importing-surfaces.md) and
+[Surface Gradients](../surfaces/gradients.md).
+
+---
+
+## Related topics
+
+- [The Import Dialog](import-dialog.md)
+- [Surfaces and Point Clouds](surfaces-and-point-clouds.md)
 - [GLTF / GLB Export](../exporting/gltf-export.md)

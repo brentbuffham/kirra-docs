@@ -1,21 +1,30 @@
 # CSV Import
 
-Kirra reads blast holes from CSV files using its **BlastHole CSV** family — a set of preset column layouts dispatched on column count. Choose your preset in the Import dialog or use **Custom CSV** if your file does not match a preset.
+Kirra reads blast holes from CSV files using its **BlastHole CSV** family — a set of fixed column layouts, told apart by how many columns the file has. Use **Custom CSV** if your file does not match one of them.
 
 ---
 
 ## How to Import a CSV
 
-1. Open the **Left Sidenav** (☰ in the App Navigation Bar)
-2. Under **File Management**, click **Import**
-3. In the Import dialog, stay on the **Kirra** tab
-4. Choose **Holes CSV / TXT (preset columns)** and pick the column-count preset from the dropdown (default **14 Column**)
-5. Click **Open** and select your `.csv` file
+1. Open the **Import** dialog — see [The Import Dialog](import-dialog.md)
+2. Stay on the **Kirra** tab
+3. Click **Open** on **Holes CSV / TXT (preset columns)** and select your `.csv` or `.txt` file
+
+Kirra works out the layout from the number of columns in each line, so you do not need to
+choose one. The row's drop-down is a reference: pick a column count to see, in the note
+under it, which columns that layout holds.
+
+An **Importing Blast Data** progress bar runs, Kirra checks the holes against what is
+already loaded (see [Checks on import](import-dialog.md#checks-on-import)), and a summary
+reports the holes, rows, average burden and spacing.
 
 ![Import dialog — Kirra tab](../screenshots/filemanager1.png)
-*The Holes CSV / TXT row shows the active column-count preset (14 in this screenshot).*
+*The Holes CSV / TXT row, with the 14-column layout shown in its note.*
 
 If your file does not match any preset, switch to **Custom CSV** on the **Blasts** tab — see [Custom CSV Import](#custom-csv-import) below.
+
+Files with 4, 7, 9 or 12 columns carry no blast name; their holes go into one blast
+named `BLAST_` followed by a short code. Rename it afterwards.
 
 ---
 
@@ -194,14 +203,14 @@ If you have an unusual header layout, use **Custom CSV** instead — it does hea
 
 ## Custom CSV Import
 
-If your CSV does not match a preset (different column order, different field names, extra columns), use **Custom CSV** on the **Blasts** tab of the Import dialog. Custom CSV also handles `.txt` and configurable delimiters (comma, tab, pipe, semicolon).
+If your CSV does not match a preset (different column order, different field names, extra columns), use **Custom CSV** on the **Blasts** tab of the Import dialog. The separator — comma, tab, semicolon and so on — is detected automatically.
 
 ![Import dialog — Blasts tab](../screenshots/filemanager2.png)
 *Custom CSV is the first entry on the Blasts tab — "Pick your own column order, units, and custom fields".*
 
-1. Left Sidenav → **Import**
+1. Open the **Import** dialog
 2. **Blasts** tab → **Custom CSV** → click **Open**
-3. Choose your `.csv` or `.txt` file
+3. Choose your `.csv` file. (For a `.txt`, drop it onto the canvas and choose **Holes**.)
 4. The **Import CSV: Map Columns** dialog opens — review the auto-detected mapping (or override manually) and click **Import**
 
 ### The Map Columns dialog
@@ -215,9 +224,8 @@ The dialog shows the file name and row / column counts at the top, followed by d
 
 | Control | Purpose |
 |---------|---------|
-| **Header rows to skip** | Number of rows to ignore at the top of the file (default detected) |
-| **Column Detection** | Dropdown — defaults to **Auto detect columns** (header-keyword matching); switch to manual to set every mapping yourself |
-| **Auto-detect spatial rows** | When ticked, smart row detection assigns rowID / posID from collar XY when the file does not carry them explicitly |
+| **Header rows to skip** | Number of rows to ignore at the top of the file (default 1) |
+| **Column Detection** | **Auto detect columns** (match the header names — the default), **Use last used column order**, or **Manual - don't detect columns** |
 | **Duplicate Handling** | Radio buttons — **Update by Blast+ID** (default), **Update by location** (0.01 m tolerance), **Skip duplicates** |
 | **Angle Convention** | Dropdown — **Angle (0° = vertical)** for Kirra's native convention, or *Dip (0° = horizontal)* to convert (`90 − value`) |
 | **Diameter Units** | Dropdown — `mm` (default), `m`, `in` — values are converted to mm on import |
@@ -232,9 +240,15 @@ The left side groups Kirra fields by category. Each row has a dropdown — pick 
 | **Hole Location - Collar** | **Start X (mE)** *, **Start Y (mN)** *, **Start Z (mRL)** * (all required) |
 | **Hole Location - End/Toe** | End X (mE), End Y (mN), End Z (mRL) |
 | **Hole Location - Grade** | Grade X (mE), Grade Y (mN), Grade Z (mRL) |
-| **Hole Geometry** | Hole Angle/Dip, Hole Bearing, Hole Length |
+| **Hole Geometry** | Hole Angle/Dip, Hole Bearing, Hole Length, Bench Height (m), Subdrill (m), Diameter |
+| **Timing & Connections** | From Hole ID, Timing Delay (ms), Initiation Time, Tie Color |
+| **Measured Values** | Measured Length, Measured Mass, Measured Comment |
+| **Charging (decks & primers)** | Shown when the file has deck or primer columns — see [Charging columns](#charging-columns-v10270) |
 
 Required fields are marked with **`*`** and shaded pink in the preview until mapped.
+
+A preset bar at the top of the dialog saves a mapping, so a file from the same source
+imports in one click next time.
 
 #### Live preview panels (right side)
 
@@ -263,14 +277,16 @@ Examples of headers Kirra recognises out of the box:
 | Header in your CSV | Maps to |
 |--------------------|---------|
 | `Hole ID`, `HoleID`, `BlastHoleId` | `holeID` |
-| `Easting`, `XEast`, `X` | `startXLocation` |
-| `Northing`, `YNorth`, `Y` | `startYLocation` |
-| `Elev`, `Elevation`, `Z`, `Collar Z` | `startZLocation` |
+| `Easting`, `East`, `Collar X`, `Start X` | `startXLocation` |
+| `Northing`, `North`, `Collar Y`, `Start Y` | `startYLocation` |
+| `Elev`, `Elevation`, `RL`, `Collar Z` | `startZLocation` |
 | `Bearing`, `Azimuth` | `holeBearing` |
 | `Dip` | interpreted via `angle_convention` (dip-from-horizontal converts to Kirra's angle-from-vertical as `90 − value`) |
-| `Diameter`, `BitSize` | `holeDiameter` (with unit conversion) |
+| `Diameter`, `Dia` | `holeDiameter` (with unit conversion) |
 
-If your file uses headers Kirra doesn't recognise, you can override with a manual `columnOrder` mapping in the wizard.
+A bare `X`, `Y` or `Z` header is deliberately **not** matched: it would also match `EndX`,
+`ToeX` and so on. Map those columns by hand. Any header Kirra does not recognise can be
+mapped by hand in the dialog.
 
 ### Geometry priority
 
@@ -286,7 +302,7 @@ Subdrill is always the **vertical Δz**, not along-hole.
 
 ### Smart row detection
 
-For files without explicit `rowID` / `posID`:
+For files without explicit `rowID` / `posID` (this always runs):
 
 - **Alphanumeric IDs** (e.g. `A1, A2, B1`) — letter becomes the row, number becomes the position
 - **Pure numeric** — fits holes to linear sequences using collar XY (tolerance `2 × diameter`)
@@ -300,7 +316,7 @@ Configurable per import:
 |------|-----------|
 | `update-blast-hole` | Match on `entityName + holeID`, overwrite existing |
 | `update-location` | Match on collar proximity (0.01 m tolerance), overwrite existing |
-| `skip` | Keep the first, drop subsequent duplicates |
+| `skip` | Intended to keep the existing hole and drop the incoming duplicate. **Currently duplicates are imported anyway** — use **Update by Blast+ID** until this is fixed |
 
 ### Time → delay back-calculation
 
@@ -316,16 +332,32 @@ If the CSV provides absolute `holeTime` but no `timingDelayMilliseconds`, Kirra 
 Invalid coordinates **do not abort** the import:
 
 - `end ← collar` (zero-length / dummy hole) when the toe is bad
-- `grade ← collar ± 10` when the grade is bad
-- A user-facing report flags every row that fell back to a default
+- `grade ← collar` when the grade is bad
+- The rows that fell back are listed in the browser console
 
 ### Charging columns (v1.0.270+)
 
-When the first row has any `deck…[N]` or `primer…[N]` header (e.g. `deckType[1]`, `primerDepth[2]`), Kirra reconstructs the charging — no manual mapping needed. Each hole's charging is rebuilt from the deck and primer cells, including verbatim `fx:` formula strings.
+When the first row has any `deck…[N]` or `primer…[N]` header (e.g. `deckType[1]`, `primerDepth[2]`), the dialog shows **Import charging (N decks, M primers per hole)**, ticked. Each hole's charging is rebuilt from the deck and primer cells, including verbatim `fx:` formula strings. Untick it to import the holes without charging; the slot list lets you check or change which columns feed each deck and primer.
 
 Round-trip is full for design, formulas, and primer assignments — but live formula re-evaluation does not happen on import. The imported numeric values are the source of truth until a charge rule is next applied to the holes.
 
 To see the exact charging columns Kirra writes, export a charged blast with **Custom CSV** — see [CSV Export](../exporting/csv-export.md).
+
+---
+
+## Measured Data
+
+**Measured Data** on the **Kirra** tab updates holes you already have with what was
+measured in the field: length, explosive mass and a comment, each with its time stamp.
+
+The file has nine columns:
+
+```
+EntityName,EntityType,HoleID,MeasuredLength,LengthTimeStamp,MeasuredMass,MassTimeStamp,Comment,CommentTimeStamp
+```
+
+Each row is matched to an existing hole by blast name and hole ID. Rows with no matching
+hole are ignored. A first line containing `EntityName` is treated as a header.
 
 ---
 

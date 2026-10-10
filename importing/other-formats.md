@@ -1,101 +1,24 @@
 # Other Import Formats
 
-Kirra supports a wide range of additional import formats beyond CSV, DXF, Surpac, and 3D meshes.
+This page covers Kirra's own files, the **Miscellaneous** tab and the **Legacy** tab of the
+Import dialog. Other formats have their own pages — see [The Import Dialog](import-dialog.md)
+for the full list.
+
+| Looking for | See |
+|---|---|
+| ShotPlus, CBLAST, Davey, DetNet, Paradigm | [Blast Design Formats](blast-formats.md) |
+| Vulcan ARCH_D and Design Database, DWG, Micromine, Deswik, 12d | [Other CAD Formats](cad-formats.md) |
+| GeoTIFF, point clouds, LAS | [Surfaces and Point Clouds](surfaces-and-point-clouds.md) |
+| IREDES drill plans | [Epiroc Surface Manager](#epiroc-surface-manager) below |
 
 ---
 
-## IREDES XML (Epiroc)
+## Kirra files
 
-Import drill plans from Epiroc drill rigs using the IREDES (Intelligent Rock Excavation Data Exchange Standard) XML format.
+### KAP (Kirra Application Project)
 
-> **Coordinate Warning:** IREDES XML uses X for Northing and Y for Easting (opposite of standard convention). Kirra automatically swaps these on import.
-
----
-
-## Maptek Vulcan ARCH_D *(new in v1.0.73)*
-
-Import Vulcan design files in the text-based `FMT_4` ARCH_D format (`.arch_d`). The parser reads:
-
-- **POLHED blocks** — either a **blast hole** (2 or 3 points sharing X/Y, with Link MVAR data) or a **KAD polyline** (polylines with `Attr_len` / `Attr_tem` attribute templates are treated as polylines, not holes)
-- **TXTHED blocks** — text annotations, with font name preserved where present
-- **Layer line** — the layer name becomes the imported entity name (falls back to `VULCAN_IMPORT`)
-
-**Blast-hole geometry:** 3-point holes are interpreted as `collar → grade → toe` (sub-drilled); 2-point holes are interpreted as `collar → toe` with no sub-drill. Angle is computed from vertical (Kirra convention: 0° = vertical) and bearing from north clockwise.
-
-**Summary metadata:** Where the file contains a Vulcan-style summary TXTHED (e.g. `Diameter: 0.076m`, `Burden:`, `Spacing:`), those values are extracted and applied to every imported hole. Otherwise the default hole diameter is 115 mm.
-
-**Colours:** A small Vulcan index-palette (1 = red, 2 = green, 3 = blue, 5 = yellow, 23 = white, 220 = orange, 420 = cyan, 720 = magenta) is recognised; all other indices fall back to white.
-
-**Round-trip:** Export is supported via `VulcanArchDWriter` so Kirra-authored files are readable by Vulcan and re-importable here.
-
----
-
-## Orica ShotPlus SPF
-
-Import blast hole data from Orica ShotPlus `.spf` files. The SPF format is a ZIP archive containing XML blast data. Import only -- export is not supported.
-
----
-
-## Orica CBLAST CSV
-
-Import CBLAST CSV files, which use 4 records per hole (HOLE, PRODUCT, DETONATOR, STRATA). Kirra parses the multi-record structure and consolidates it into standard blast hole objects with full charging data (decks, primers).
-
-> **Product Name Matching:** CBLAST files contain product names (e.g. "ANFO 0820", "Stemming") but not product properties like density, VOD, or energy. To get accurate mass calculations, powder factor, SDoB, and other analytics, import a Kirra Charge Config ZIP that contains a `products.csv` with matching product names. **Product names in the CBLAST file must match exactly** (case-sensitive) with names in your charge config products — for example, if your CBLAST uses "ANFO 0820", your products.csv must also have "ANFO 0820", not "ANFO" or "Anfo 0820".
-
----
-
-## KML / KMZ (Google Earth)
-
-Import blast holes and geometry from Google Earth KML or KMZ files. Supports Placemarks with ExtendedData, polylines, polygons, and 3D geometry with altitude.
-
----
-
-## Shapefile (ESRI)
-
-Import ESRI Shapefiles (`.shp` with accompanying `.shx`, `.dbf`, and `.prj` files). Supports Point, PolyLine, and Polygon geometry types with Z variants.
-
----
-
-## LAS / LAZ (LiDAR Point Cloud)
-
-Import ASPRS LAS LiDAR files (versions 1.2, 1.3, 1.4). Supports point classification, intensity, RGB, and GPS time.
-
----
-
-## Point Cloud (XYZ, PTS, PTX, CSV)
-
-Import point cloud files in various text formats:
-
-| Format | Extension | Description |
-|--------|-----------|-------------|
-| XYZ | `.xyz`, `.txt` | Space-separated X Y Z with optional R G B |
-| PTS | `.pts` | Count header + X Y Z Intensity R G B |
-| PTX | `.ptx` | Leica scanner format |
-| CSV | `.csv` | Comma-separated X,Y,Z with optional R,G,B |
-
----
-
-## GeoTIFF Imagery
-
-Import georeferenced raster images (`.tif`, `.tiff`). Supports:
-- Single-band elevation rasters
-- RGB/RGBA imagery (orthophotos, aerial images)
-- Geotransform metadata for coordinate mapping
-
-Imported images appear as draped layers in both the 2D and 3D views.
-
----
-
-## KAP (Kirra App Project)
-
-![Opening a KAP project file](../screenshots/openKAP-KirraApplicationProject.png)
-*Opening a KAP (Kirra App Project) file loads the complete project.*
-
-![KAP file compatibility warning](../screenshots/KAPwarning.png)
-*Kirra may display a warning if the KAP file was created with a different version.*
-
-Import a complete Kirra project from a `.kap` file. A KAP carries **everything**, so the
-person you share it with can work exactly as you did:
+A `.kap` file is a complete Kirra project. It carries **everything**, so the person you
+share it with can work exactly as you did:
 
 | What | Includes |
 |------|----------|
@@ -107,29 +30,47 @@ person you share it with can work exactly as you did:
 Settings that belong to **your computer** never travel: theme, language, and your
 toolbar and panel layout stay as they are.
 
-### How the import is applied
+#### How the import is applied
 
-If you already have a project open, Kirra asks how to bring the file in:
+1. Kirra first asks you to confirm the import. The message says the project will replace
+   your data; if you already have data, the next step lets you merge instead:
 
-| Choice | Blast | Libraries | Settings |
-|--------|-------|-----------|----------|
-| **Merge** | Added to yours | Added to yours | Theirs |
-| **Replace data, merge libraries** | Theirs | Added to yours | Theirs |
-| **Replace data, keep my libraries** | Theirs | Yours, unchanged | Yours, unchanged |
-| **Replace everything** | Theirs | Theirs — yours are removed | Theirs |
+   ![Import Project confirmation](../screenshots/KAPImportConfirm.png)
 
-When the import finishes, a summary lists everything that arrived. If the file brought
-settings, the summary says so and **Kirra reloads when you click OK** so the settings
-take effect — your project is already saved; choose **Continue Previous** to carry on.
+   Click **Import**, or **Cancel** to stop.
+2. If the project is more than 100 km from the data you already have, Kirra warns that the
+   two may be in different coordinate systems — see
+   [Checks on import](import-dialog.md#checks-on-import).
+3. If your workspace already holds anything, **Import KAP File** asks
+   **How should this import proceed?**:
+
+   | Choice | Blast | Libraries | Settings |
+   |--------|-------|-----------|----------|
+   | **Merge** (the default) | Added to yours | Added to yours | Theirs |
+   | **Replace data, merge libraries** | Theirs | Added to yours | Theirs |
+   | **Replace data, keep my libraries** | Theirs | Yours, unchanged | Yours, unchanged |
+   | **Replace everything** | Theirs | Theirs — yours are removed | Theirs |
+
+   Click **Import**, or **Cancel Import**. An empty workspace is not asked; the project
+   simply loads.
+
+In a **Merge**, a hole whose blast name and hole ID you already have is not brought in
+again.
+
+When the import finishes, **Import Complete** lists everything that arrived. If the file
+brought settings, the summary says so and **Kirra reloads when you click OK** so the
+settings take effect — your project is already saved; choose **Continue Previous** to
+carry on.
+
+Settings that belong to **your computer** never travel: theme, language, and your toolbar
+and panel layout stay as they are.
 
 > **Note:** Project files saved by Kirra before version 1.1.32.112 carry print templates
 > **without their spreadsheet**. Kirra skips those and keeps any template of the same name
 > you already have. Ask the sender to save the project again, or load the template's
 > `.xlsx` in the print dialog and **Save to Library**.
 
----
-
-## KAT (Kirra App Template)
+### KAT (Kirra App Template)
 
 Import a **site template** from a `.kat` file. A KAT is everything a KAP carries
 **except the blast** — no holes, drawings, surfaces, images, blast groups, trunks,
@@ -152,21 +93,102 @@ libraries such as products and templates — Kirra offers two choices:
 A template never reloads Kirra. Its settings take effect straight away, and a summary
 lists everything that arrived.
 
+### KAD (Kirra App Drawing)
+
+A `.kad` (or `.txt`) file holds Kirra drawing entities — points, lines, polygons,
+circles and text — with their coordinates and colours.
+
+- The file's drawings go into one drawing layer named after the file; importing a file of
+  the same name again creates `name_2` and so on.
+- If an entity in the file has the same name as one you already have, its points are added
+  to that existing entity.
+- To read a KAD file in another coordinate system, use
+  **Kirra App Drawing — Transform (reproject CRS)** — see [Transform Import](transform-import.md).
+
+A dropped `.kad` imports directly. A dropped `.txt` asks what it holds instead — use the
+**Open** button for a KAD saved as `.txt`.
+
 ---
 
-## KAD (Kirra App Drawing)
+## Miscellaneous
 
-Import Kirra's native drawing format (`.kad`). Contains point, line, polygon, circle, and text entities with coordinates, colours, and layer assignments.
+![Import dialog — Miscellaneous tab](../screenshots/filemanager5.png)
+
+### Borehole Telemetry
+
+Turns a downhole survey — depth, heading and inclination down each hole — into the path the
+hole actually took. **Import Borehole Telemetry** asks:
+
+| Setting | What it does |
+|---|---|
+| Blast / survey name | The name the paths are filed under |
+| Hole ID, Depth, Heading, Angle columns | Which columns hold the survey |
+| Angle convention | **Inclination (0° = vertical)** or **Dip (−90° = vertical)** |
+| Collar position from | **Blast holes, by Hole ID**, **KAD points, by Point ID**, or **Columns in this file** |
+| Path reconstruction | **Tangential (Boretrak)**, **Balanced tangential** or **Minimum curvature** |
+| Heading offset (°) | Correct the survey heading, for example from magnetic to grid north |
+| Line colour, Line width | How the paths are drawn |
+
+Each hole's path becomes a drawing line named `BLAST[HOLE]`, in the **Telemetry** layer
+with a sub-layer per blast. A report lists any holes whose collar could not be found. The
+paths can then be used to measure burden on the drilled hole in the
+[Hole Section View](../reference/section-views.md#hole-section-view).
+
+Use the **Open** button — a dropped CSV asks what it holds, and telemetry is not one of the
+choices.
+
+### Epiroc Surface Manager
+
+Reads Epiroc rig files. Choose the type in the row's drop-down:
+
+| Choice | File | Creates |
+|---|---|---|
+| **IREDES Drill Plan** (default) | `.xml` | Blast holes, in a blast named after the file, with rows worked out automatically |
+| **Geofence** | `.geofence` | Closed polygons |
+| **Hazard** | `.hazard` | Closed polygons |
+| **Socket** | `.sockets` | Points |
+
+For geofences, hazards and sockets Kirra asks for the **Elevation (Z)** to place them at.
+IREDES files store coordinates Y before X; Kirra swaps them.
+
+A dropped `.xml` is read as an IREDES drill plan.
+
+### Wenco NAV
+
+Reads Wenco fleet management NAV files (text format). Text, points and lines become
+drawings named after the file; triangle records become a surface. Binary NAV files are not
+supported — export text NAV from Wenco.
+
+### KML / KMZ
+
+Reads Google Earth files. **Import KML/KMZ** asks:
+
+| Setting | What it does |
+|---|---|
+| **Import As:** | **Blast Holes** or **Geometry (KAD)** |
+| **Target Coordinate System:** | For latitude / longitude files: keep them, or project to an EPSG grid |
+| **Default Values:** | The elevation to use where the file has none, and the blast name |
+
+Hole details can be carried in a placemark's description as `{key:value}` pairs.
+
+### ESRI Shapefile
+
+Reads shapefiles: select the `.shp` together with its `.shx`, `.dbf`, `.prj` (and
+`.cpg`) files. Points, multipoints, polylines and polygons are read, with their Z and M
+variants; multipatch shapes are skipped.
+
+**Import ESRI Shapefile** offers a projection for latitude / longitude files and a
+**Master RL Offset (Optional)** to raise or lower everything by a fixed elevation.
+
+Use the **Open** button — select the files rather than a `.zip`, and don't drop them.
 
 ---
 
-## Wenco NAV
+## Legacy formats
 
-Import Wenco NAV ASCII files (`.nav`) containing TEXT, POINT, and LINE entities for fleet management integration.
+![Import dialog — Legacy tab](../screenshots/ImportDialog-Legacy.png)
 
----
-
-## Datavis DBS (legacy)
+### Datavis DBS (legacy)
 
 > **Legacy format.** Datavis Drill & Blast Software `.sgf` files are no longer in use. Kirra reads them so that historic blasts can still be viewed. The Import dialog marks the row with an amber **LEGACY** note.
 
@@ -182,17 +204,17 @@ Import Wenco NAV ASCII files (`.nav`) containing TEXT, POINT, and LINE entities 
 
 The import summary lists how many holes were charged and how many primers came in.
 
-### Primers the file places wrongly
+#### Primers the file places wrongly
 
 Some files place the primers of holes with an air deck far below the hole, sometimes hundreds or thousands of metres down. This is an error in the file, not in the design. Kirra works out where each of those primers was designed to sit from the hole's decks, and puts it there.
 
 A primer always ends up in an explosive deck. If the file places one just outside the charge (on a short toe charge, for example), Kirra moves it 5 mm inside the charge. The import summary counts the primers moved in either way.
 
-### No surface ties
+#### No surface ties
 
 The files hold no surface ties and no firing times. Each hole has its downhole detonator delay only, so the holes all fire on that delay. Tie the blast up in Kirra to time it.
 
-### Not imported
+#### Not imported
 
 - Surface ties and firing times — the files hold none.
 - Booster mass. Set it on the booster in the **Product Manager**.
@@ -200,7 +222,7 @@ The files hold no surface ties and no firing times. Each hole has its downhole d
 
 ---
 
-## ShotPlan 3 (legacy)
+### ShotPlan 3 (legacy)
 
 > **Legacy format.** SHOTPlan v3.0 `.xel` files are no longer in use. Kirra reads them so that historic blast plans can still be viewed. The Import dialog marks the row with an amber **LEGACY** note.
 
@@ -218,7 +240,7 @@ The files hold no surface ties and no firing times. Each hole has its downhole d
 
 Rows, positions, burden and spacing are worked out by Kirra after the holes arrive, the same as for any other imported blast.
 
-### Tie delays and colours
+#### Tie delays and colours
 
 A ShotPlan plan names its surface connectors (`TLD 42`, `CD 17`, `MSC 175`) rather than storing their delays, so Kirra reads the delay from the name. A tie whose connector name carries no delay — detonating cord, or a millisecond downhole delay used on the surface — is imported at **0 ms** and listed in the import summary, so you can set it yourself.
 
@@ -229,27 +251,21 @@ Each tie is coloured:
 
 A 0 ms tie is never matched to a library product: 0 ms only comes from a connector whose delay could not be read.
 
-### Elevations
+#### Elevations
 
 Many ShotPlan plans have no collar elevations. Those collars come in at **0 m**, and the import summary says how many. Set them afterwards, for example with **Assign Collar Elevation**.
 
-### Not imported
+#### Not imported
 
 - Charging. The plan's decking table is not read.
 - Downhole (in-hole) delays.
 - Pattern definitions — the holes they made are imported; the pattern record is not.
 
----
-
-## Epiroc Surface Manager
-
-Import Epiroc Surface Manager coordinate files (`.geofence`, `.hazard`, `.sockets`, `.txt`). These use Y,X (Northing, Easting) coordinate ordering.
 
 ---
 
-## Related Topics
+## Related topics
 
+- [The Import Dialog](import-dialog.md)
+- [Supported File Formats](../reference/supported-formats.md)
 - [CSV Import](csv-formats.md)
-- [DXF Import](dxf.md)
-- [Surpac DTM/STR](surpac-dtm-str.md)
-- [3D Mesh Import](3d-mesh.md)

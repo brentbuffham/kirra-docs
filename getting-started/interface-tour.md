@@ -80,6 +80,9 @@ Shows the author credit. It also contains a **Developer** sub-section with diagn
 
 ## Import Dialog
 
+> Step-by-step use, drag and drop, and the checks Kirra makes on import:
+> [The Import Dialog](../importing/import-dialog.md).
+
 Opened from **Import** in the side panel's File Management group, or from **Import** in the top bar's **Import Export Print** menu.
 
 ![Import dialog — Kirra tab](../screenshots/filemanager1.png)
@@ -102,7 +105,7 @@ The dialog is tabbed by file family. Each tab shows how many formats it holds, e
 | Control | Purpose |
 |---------|---------|
 | **Search formats or extensions…** | Filter the list across all tabs by name, description or extension. Tabs with no match are hidden |
-| **Standard** / **Transform (reproject CRS)** | **Standard** lists the normal formats. **Transform** lists only the formats that can convert coordinates from one coordinate system to another as they import |
+| **Standard** / **Transform (reproject CRS)** | **Standard** lists the normal formats. **Transform** lists only the formats that can convert coordinates from one coordinate system to another as they import; its tabs and counts change to match — see [Transform Import](../importing/transform-import.md) |
 | **Open** (per row) | Pick a file of that format. Clicking anywhere on the row does the same |
 | **Close** (footer) | Close the dialog |
 
@@ -182,11 +185,13 @@ See [Importing Block Models](../block-models/importing-block-models.md).
 | **Epiroc Surface Manager** | `.geofence` / `.hazard` / `.sockets` / `.xml` | Pick **IREDES Drill Plan**, **Geofence**, **Hazard** or **Socket** from the row's drop-down |
 | **Wenco NAV** | `.nav` | Wenco FMS NAV ASCII export |
 | **KML / KMZ** | `.kml` / `.kmz` | Google Earth placemarks / geometry |
-| **ESRI Shapefile** | `.shp` / `.zip` | GIS shapefile (`.shp + .shx + .dbf + .prj`) |
+| **ESRI Shapefile** | `.shp` (+ `.shx`, `.dbf`, `.prj`) | GIS shapefile — select all its files together |
 
 ### Legacy tab
 
 Formats that are no longer in use, supplied so that historic files can still be viewed. Every row carries an amber **LEGACY** note.
+
+![Import dialog — Legacy tab](../screenshots/ImportDialog-Legacy.png)
 
 | Format | Extensions | Notes |
 |--------|------------|-------|

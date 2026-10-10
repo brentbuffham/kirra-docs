@@ -58,7 +58,7 @@ See: [CSV Formats](../importing/csv-formats.md) ·
 | Kirra KAD | `.kad`, `.txt` | Yes | Yes | Native Kirra format — point, line, poly, circle, text. |
 | Kirra KAP | `.kap` | Yes | Yes | Complete project — the blast, drawings, surfaces, imagery, every library and your work settings. |
 | Kirra KAT | `.kat` | Yes | Yes | Site template — everything in a KAP except the blast (libraries and work settings). |
-| DXF | `.dxf` | Yes | Yes | Import reads POINT, LINE, POLYLINE, CIRCLE, ELLIPSE, TEXT, 3DFACE, and auto-detects ASCII or binary DXF. Export writes one ASCII DXF holding any mix of blast holes (standard 2-layer or Vulcan-tagged), KAD drawings and 3DFACE surfaces. |
+| DXF | `.dxf` | Yes | Yes | Import reads ASCII DXF: POINT, INSERT, LINE, POLYLINE, LWPOLYLINE, ARC, CIRCLE, ELLIPSE, TEXT, MTEXT and 3DFACE / polyface meshes — see [DXF Import](../importing/dxf.md). Export writes one ASCII DXF holding any mix of blast holes (standard 2-layer or Vulcan-tagged), KAD drawings and 3DFACE surfaces. |
 | DXF Surface (3DFACE) | `.dxf` | — | Yes | One `.dxf` per visible surface. On the **Surfaces / Mesh** tab. |
 | Geometry CSV | `.csv`, `.txt` | Yes | Yes | Custom x,y,z or id,x,y,z CSV — points, lines, polygons, circles, text (boretrack, MWD, survey strings). |
 | DWG | `.dwg` | Yes (experimental) | — | R2010 / R2013 / R2018 only — drawings, 3DFACE meshes and MTEXT. R2007 and earlier are not supported. |
@@ -73,7 +73,7 @@ See: [DXF Import](../importing/dxf.md) ·
 
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
-| ESRI Shapefile | `.shp` (in/out), `.zip` (out) | Yes | Yes | Point, PolyLine, Polygon, including Z variants. Export bundles `.shp / .shx / .dbf / .prj` as a ZIP. |
+| ESRI Shapefile | `.shp` (in/out), `.zip` (out) | Yes | Yes | Point, MultiPoint, PolyLine, Polygon, including Z and M variants. Import: select the `.shp` with its `.shx`, `.dbf` and `.prj`. Export bundles `.shp / .shx / .dbf / .prj` as a ZIP. |
 | GeoTIFF (raster) | `.tif`, `.tiff` | Yes | — | Elevation rasters and RGB / RGBA imagery. |
 | GeoTIFF export | `.tif` + `.prj` | — | Yes | Coloured image of each visible surface, as shown in Kirra. |
 | Elevation GeoTIFF export | `.tif` + `.prj` | — | Yes | Single-band elevation raster of each visible surface. |
@@ -88,8 +88,8 @@ See: [GeoTIFF Export](../exporting/geotiff-export.md) ·
 
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
-| ASPRS LAS | `.las`, `.laz` (in) / `.las` (out) | Yes | Yes | LAS versions 1.2, 1.3, 1.4. |
-| Point Cloud (generic) | `.csv`, `.xyz`, `.txt`, `.pts`, `.ptx` | Yes | — | Auto-detects optional RGB / intensity columns. |
+| ASPRS LAS | `.las` | Yes | Yes | LAS versions 1.2, 1.3, 1.4. Compressed `.laz` is not supported. |
+| Point Cloud (generic) | `.csv`, `.xyz`, `.txt`, `.pts` (`.ptx` via Transform) | Yes | — | Auto-detects optional RGB / intensity columns. Import as points or a triangulated surface. |
 | Point Cloud XYZ export | `.xyz`, `.txt` | — | Yes | `X Y Z` or `X Y Z R G B`. |
 | Point Cloud CSV export | `.csv` | — | Yes | `X,Y,Z` or `X,Y,Z,R,G,B`. |
 | Point Cloud PTS export | `.pts` | — | Yes | Count header, `X Y Z I R G B`. |
@@ -102,7 +102,7 @@ See: [GeoTIFF Export](../exporting/geotiff-export.md) ·
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
 | Wavefront OBJ | `.obj` | Yes | Yes | Vertices, faces, UVs, normals, materials. Export writes one `.obj` per visible surface; **Baked OBJ** keeps textures and materials (OBJ + MTL + images). |
-| PLY | `.ply` | Yes | — | ASCII and Binary. Vertices, faces, normals, colours. |
+| PLY | `.ply` | Yes | — | Text (ASCII) PLY only, read as points and re-triangulated. Faces and colours are not kept. |
 | glTF / GLB | `.gltf`, `.glb` (in) / `.glb` (out) | Yes | Yes | Meshes, textures, materials. Export is GLB only — one per visible surface, or **Baked GLB** with textures. |
 | Vulcan Triangulation | `.00t` | Yes | Yes | Maptek Vulcan triangulated surface (single file). One `.00t` per visible surface on export. |
 | Datamine Surface | `.dm` (pt + tr) | Yes | — | Datamine wireframe — select both the points and triangles `.dm` files. |

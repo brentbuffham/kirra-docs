@@ -83,11 +83,16 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Export a Section and Build Solids](block-models/export-and-solids.md) — CSV sections and one closed solid per class *(new)*
 
 ### Importing Data
-- [CSV Formats](importing/csv-formats.md)
+- [The Import Dialog](importing/import-dialog.md) — every format, drag and drop, and the checks on import *(new)*
+- [CSV Import](importing/csv-formats.md) — Kirra's hole CSVs, Custom CSV and Measured Data
+- [Blast Design Formats](importing/blast-formats.md) — CBLAST, ShotPlus, Davey BPD, DetNet, Paradigm Terra *(new)*
 - [DXF Import](importing/dxf.md)
-- [Surpac DTM / STR](importing/surpac-dtm-str.md)
-- [OBJ / PLY / GLTF / GLB](importing/3d-mesh.md)
-- [Other Formats (IREDES, KML, LAS, Shapefile)](importing/other-formats.md)
+- [Surpac STR / DTM](importing/surpac-dtm-str.md) — holes, strings and surfaces
+- [Other CAD Formats](importing/cad-formats.md) — Geometry CSV, DWG, Vulcan, Micromine, Deswik, 12d *(new)*
+- [3D Mesh (OBJ / GLTF / GLB)](importing/3d-mesh.md)
+- [Surfaces and Point Clouds](importing/surfaces-and-point-clouds.md) — GeoTIFF, point clouds, LAS, Vulcan .00t, Datamine *(new)*
+- [Transform (Reproject) Import](importing/transform-import.md) *(new)*
+- [Other Formats](importing/other-formats.md) — Kirra files, telemetry, Epiroc, Wenco, KML, Shapefile, legacy
 - [Block Models](block-models/importing-block-models.md)
 
 ### Exporting Data
