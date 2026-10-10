@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.335
+
+_2026-10-10_
+
+**Bug Fix**
+
+- KML hole details stored as extended data now import
+
 ## Release v1.1.32.334
 
 _2026-10-10_
