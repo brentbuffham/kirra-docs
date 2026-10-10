@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.323
+
+_2026-10-10_
+
+**Feature**
+
+- Build a closed solid for each block model category or grade class
+
+## Release v1.1.32.322
+
+_2026-10-10_
+
+**Bug Fix**
+
+- Block model solid limit finds solids created after the dialog opened
+
+## Release v1.1.32.321
+
+_2026-10-10_
+
+**Feature**
+
+- Export a limited section of a block model as a CSV block model
+
 ## Release v1.1.32.320
 
 _2026-10-10_
