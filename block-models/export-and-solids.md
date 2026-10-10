@@ -28,6 +28,10 @@ so a capped display still exports, or builds solids from, every block that passe
 2. Click **Export**.
 3. Choose where to save the file.
 
+You can also export from the **Export** dialog: open the **Geology** tab and click **Save**
+on the **Block Model — Vulcan CSV** row. It writes the same blocks — those the model's
+Load Block Model limits show. With more than one model loaded, Kirra asks which one.
+
 The file is a Vulcan-style block model CSV, which Kirra reads straight back (see
 [Importing Block Models](importing-block-models.md)). It has no `IJK` column unless the
 original model had one.
