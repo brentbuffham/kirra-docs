@@ -2,6 +2,36 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.339
+
+_2026-10-11_
+
+**Bug Fix**
+
+- Assign Surface and Assign Grade keep subdrill correct on angled holes
+
+## Release v1.1.32.338
+
+_2026-10-11_
+
+**Bug Fix**
+
+- Formula sum, average and count use every value given
+
+## Release v1.1.32.337
+
+_2026-10-11_
+
+**Bug Fix**
+
+- Text placed with the saved bearing after a reload
+- As Text keeps formula text intact
+- Radii outlines named after their blast or drawing
+- Joining lines can no longer lose or overwrite a drawing
+- Assign Surface and Assign Grade can be undone
+- A road or ramp undoes in one step
+- Grade Line exits on one right-click when nothing is picked
+
 ## Release v1.1.32.336
 
 _2026-10-11_
