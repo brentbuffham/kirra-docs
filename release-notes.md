@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.336
+
+_2026-10-11_
+
+**Bug Fix**
+
+- Voronoi prints in the same colours as the screen
+- Voronoi legend colours now match the cells
+
 ## Release v1.1.32.335
 
 _2026-10-10_
