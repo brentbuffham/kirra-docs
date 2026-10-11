@@ -130,4 +130,4 @@ Each image row in the **Images** folder shows its size, for example **4093×3681
 
 - [Importing Surfaces](importing-surfaces.md)
 - [GeoTIFF Export](../exporting/geotiff-export.md)
-- [Blast Analytics](../analysis/overview.md)
+- [Blast Analysis Shader](../analysis/overview.md)

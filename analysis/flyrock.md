@@ -195,11 +195,31 @@ Each hole contributes its own dome and the shroud is their union, so **the worst
 ## How to Use
 
 1. Load blast holes with charging data assigned (Deck Builder)
-2. Click the **Flyrock Shroud** button in the Analyse toolbar
+2. Click **Flyrock Shroud Generator** on the **Analyse** toolbar
 3. Choose an algorithm — greyed-out fields are ones that model cannot use
 4. Optionally pick a **Free Face Surface** to measure real burdens
-5. Click **Generate Shroud**
-6. Read the completion report, which stays open until you close it
+5. Click **Generate Shroud** — or **Cancel** to close without one
+6. Read the completion report, *"Shroud created: … triangles"*. With a free face it stays open
+   until you close it
+
+### What you get
+
+The shroud is a surface named for the model and factor of safety — for example
+**Flyrock Shroud (RM-FoS2)** (RM Richards & Moore, LB Lundborg, MK McKenzie, RO Roth) — on the
+**Flyrock** surface layer. It shows in 2D and 3D and is saved with the workspace.
+
+To remove it, use **Undo** straight away, or delete the surface like any other. The dialog
+remembers your settings, and they travel in KAP projects.
+
+### Holes that are skipped
+
+A hole is left out, and listed in the report, if it has no charging, a diameter of 0 mm, no
+explosive decks, or less than 0.5 m of stemming (treated as unstemmed or presplit). If every
+hole is skipped, no shroud is made and Kirra says why — *"Check the hole design data (diameter,
+charging, stemming) and use the Deck Builder to assign explosives."*
+
+> **Note:** A hole whose stored burden is 1.5 m or less is treated as having a 4.5 m burden,
+> and spacing of 1.5 m or less as burden × 1.15. Check burdens are set on the holes.
 
 **To compare models fairly**, keep Factor of Safety, Extend Below Collar, Grid Resolution and End Angle identical between runs, and use FoS = 1 while comparing — then apply your real factor of safety once at the end.
 
@@ -254,6 +274,6 @@ Shrouds **accumulate** — nothing removes a previous one, and the largest domin
 
 ## Related Topics
 
-- [Analytics Overview](overview.md)
+- [Blast Analysis Shader](overview.md)
 - [PPV & Vibration Models](ppv-models.md)
 - [Charging Overview](../charging/overview.md)

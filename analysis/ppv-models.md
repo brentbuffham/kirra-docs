@@ -1,202 +1,255 @@
 # PPV & Vibration Models
 
-Kirra provides **seven** vibration-focused models in the analytics dialog (plus separate damage/energy models below), from empirical site laws through VOD-ramp **Temporal Lifecycle** to full time-domain **Blair Heavy**. This page summarises each model and its key parameters.
+The twelve models in the [Blast Analysis Shader](overview.md), with every setting under
+**Model Parameters** and its default. Labels are as they appear in the dialog.
 
-For **which models can show wave interference** (constructive/destructive), see the table in [Blast Analytics Overview](overview.md) (section **Wave collision and interference**).
-
-> *Screenshot coming soon -- PPV overlay on blast pattern*
-
----
-
-## 1. PPV Site Law
-
-The simplest model. Computes Peak Particle Velocity using the empirical scaled-distance law.
-
-**Formula:** PPV = K x (D / Q^n)^(-b)
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| K | 1140 | Site constant (calibrated from blast monitoring) |
-| b | 1.6 | Site exponent (attenuation slope, typical 1.5-2.0) |
-| n | 0.5 | Charge weight exponent (0.5 = square-root scaling) |
-| Cutoff Distance | 1.0 m | Minimum distance to avoid singularity |
-| Target PPV | 0 mm/s | Black contour line at this value (0 = disabled) |
-
-> **b must be greater than zero.** The attenuation slope describes vibration getting
-> *weaker* with distance. A value of zero or below describes vibration getting
-> **stronger** with distance, which no site law does.
->
-> This happens more easily than it sounds. If every record you fit was taken at a
-> similar distance from a similar charge size — the same pattern, fired at the same
-> standoff, which is a very normal monitoring record — the fit has almost no spread to
-> work with and can return a negative slope.
->
-> Kirra will not let such a fit be used. **Site Law Regression** shows the slope in red,
-> explains why, and refuses to apply it to a monitor. Importing monitors from a CSV drops
-> the bad value and uses the default instead. On the map, results that depend on it are
-> left **blank** rather than filled with a confident wrong number, and any maximum
-> allowable charge comes back as zero — meaning "this cannot be calculated", not "no
-> limit".
->
-> **The fix is more spread, not more records.** Add monitoring from a range of distances
-> and charge masses, then fit again.
-
-**MIC Bin Mode:** When the Time Window parameter is set to a value greater than 0, the model switches to Maximum Instantaneous Charge bin mode. Fixed-width bins group holes by firing time, and each bin's combined charge mass is used instead of individual hole masses. Essential for accurate near-field PPV prediction.
+For which models can show waves reinforcing or cancelling, see
+[Interference — what the models show](overview.md#interference--what-the-models-show).
 
 ---
 
-## 2. PPV Per-Deck
+## Site-law models
 
-Per-deck variant of the **scaled-distance site law**. Instead of treating each hole as a single point charge, this model evaluates PPV separately for each charged deck using that deck's own mass and position (top / centre / base sampling in the shader).
+### Peak Particle Velocity (PPV)
 
-**Superposition:** Like **PPV Site Law**, this path does **not** synthesise time-domain waveforms. It does **not** display constructive/destructive interference — it is **not** a coherent phase model. For coherent superposition, use **Blair Heavy**.
+The empirical scaled-distance law, one point charge per hole:
 
-**Advantages over PPV Site Law:**
-- Multi-deck holes show per-deck influence zones
-- Air gaps between decks are naturally excluded
-- Each deck uses its own mass, not the total hole mass
+```
+PPV = K × (D / Q^n) ^ −b
+```
 
-**Contrast with Temporal Lifecycle:** **PPV Per-Deck** does **not** propagate a detonation front along the column at VOD from the primer. If you need burn-front timing along the explosive column, use **Temporal Lifecycle** or **Blair Heavy**.
+| Setting | Default | What it does |
+|---|---|---|
+| **Site Constant K** | 1140 | Site constant, from your monitoring |
+| **Site Exponent b** | 1.6 | Attenuation slope, typically 1.5 – 2.0 |
+| **Scaled Weight Exponent n** | 0.5 | Charge exponent (0.5 = square-root scaling) |
+| **P-Wave Velocity (0 = instant)** | 0 m/s | Wave travel time; 0 treats arrival as instant |
+| **Target PPV (0 = off)** | 0 mm/s | A target that splits the colour ramp — values under it use the reversed ramp |
+| **MIC Bin Width (0 = per-hole)** | 0 ms | Above 0, holes firing in the same time bin are added into one charge (maximum instantaneous charge) |
+| **Bin Offset** | 0 ms | Shifts where the bins start |
 
-Same parameters as PPV Site Law, with an additional max display distance setting.
+> **b must be greater than zero.** The slope describes vibration getting *weaker* with
+> distance; zero or below describes it getting stronger, which no site law does. A fit from
+> records taken at similar distances and charge sizes can return a negative slope.
+> [Site Law Regression](site-law-regression.md) flags such a fit and will not apply it. **The
+> fix is more spread, not more records** — add monitoring from a range of distances and
+> charges.
 
----
+### PPV (Per-Deck)
 
-## 3. Heelan Original
+The same law worked out for each charged deck with its own mass and position, so air gaps
+are left out and each deck has its own zone. It does not model the burn along the column —
+use **Temporal Lifecycle** for that.
 
-Physics-based model implementing Heelan's (1953) analytical solution for radiation from a cylindrical charge. Divides each charge column into discrete elements and computes P-wave and SV-wave contributions with directional radiation patterns.
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| Rock Density | 2700 kg/m3 | Rock mass density |
-| P-Wave Velocity | 4500 m/s | From seismic testing |
-| S-Wave Velocity | 2600 m/s | From seismic testing |
-| VOD | 5500 m/s | Fallback when no product VOD assigned |
-| Elements | 20 | Charge discretisation count (max 64) |
-| Q_p | 50 | P-wave attenuation factor (0 = elastic) |
-| Q_s | 30 | S-wave attenuation factor (0 = elastic) |
-
-**Features:**
-- Supports angled holes (uses collar-to-toe axis)
-- Reads actual charge column bounds from charging data
-- Per-hole VOD from assigned explosive products
-- Viscoelastic attenuation
-
----
-
-## 4. Scaled Heelan
-
-Bridges the empirical site law with Heelan's directional radiation patterns. Each element's waveform peak is given by the site law constants K and b, while retaining directional behaviour from the Heelan model. Developed by Blair & Minchinton (2006).
-
-Same parameters as PPV Site Law plus rock velocity parameters from Heelan Original.
-
-**Best for:** Compliance prediction with directional accuracy at sites with calibrated K and b values.
+| Setting | Default |
+|---|---|
+| **Site Constant K**, **Site Exponent b**, **Scaled Weight Exponent n**, **P-Wave Velocity (0 = instant)**, **Target PPV (0 = off)** | As for PPV |
+| **MIC Bin Width (0 = per-deck)** | 0 ms |
+| **Bin Offset** | 0 ms |
+| **Max Display Distance** | 200 m |
+| **Min Distance** | 1.0 m |
 
 ---
 
-## 5. Blair Lite (Scaled Heelan 90%)
+## Heelan family
 
-Same energy summation approach as Scaled Heelan but uses Blair's (2015) improved radiation patterns:
+These divide each charge into elements and give each a directional radiation pattern, so the
+vibration differs along and across the hole. They read the charge positions from the charging
+and the VOD from the explosive products, and follow angled holes.
 
-- P-wave radiation is non-zero on the hole axis (unlike pure Heelan)
-- S-wave velocity is derived from P-wave velocity and Poisson's ratio (instead of separate input)
-- Primer-aware element ordering
-- Near-axial regularisation
+### Heelan Original (Blair & Minchinton 1996)
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| K | 1140 | Site constant |
-| B | 1.6 | Site exponent |
-| P-Wave Velocity | 4500 m/s | |
-| Poisson's Ratio | 0.25 | S-wave velocity derived from this |
-| VOD | 5500 m/s | Fallback |
+Heelan's solution for radiation from a cylindrical charge, with P and SV waves.
+
+| Setting | Default |
+|---|---|
+| **Rock Density** | 2700 kg/m³ |
+| **P-Wave Velocity** | 4500 m/s |
+| **S-Wave Velocity** | 2600 m/s |
+| **Fallback VOD** | 5500 m/s — used when a product has no VOD |
+| **Pulse Bandwidth b** | 10000 1/s |
+| **Charge Elements** | 20 (5 – 32) |
+| **Quality Factor P** | 50 |
+| **Quality Factor S** | 30 |
+| **Target VPPV (0 = off)** | 0 |
+
+### Scaled Heelan Fast (based on Blair & Minchinton)
+
+Heelan's directional pattern, with each element's peak set by your site law. The dialog's
+**Model Information** describes it as Kirra's own implementation.
+
+| Setting | Default |
+|---|---|
+| **Site Constant K** | 1140 |
+| **Site Exponent B** | 1.6 |
+| **Charge Exponent A** | 0.8 |
+| **Charge Elements** | 20 (5 – 32) |
+| **P-Wave Velocity** | 4500 m/s |
+| **S-Wave Velocity** | 2600 m/s |
+| **P-Wave Weight** | 1.0 |
+| **SV-Wave Weight** | 1.0 |
+| **Target VPPV (0 = off)** | 0 |
+
+### Blair Lite — Scaled Heelan 90% (Blair Radiation)
+
+Scaled Heelan with Blair's radiation pattern: P-wave radiation is not zero along the hole, and
+the S-wave speed comes from the P-wave speed and Poisson's ratio.
+
+| Setting | Default |
+|---|---|
+| **Coherent Mode** | Off |
+| **Site Constant K** | 1140 |
+| **Site Exponent B** | 1.6 |
+| **Charge Exponent A** | 0.8 |
+| **Poisson's Ratio** | 0.25 |
+| **Charge Elements** | 20 (5 – 64) |
+| **P-Wave Velocity** | 4500 m/s |
+| **Fallback VOD** | 5500 m/s |
+| **P-Wave Weight** / **SV-Wave Weight** | 1 / 1 |
+| **Min Distance** | 0.5 m |
+| **Target VPPV (0 = off)** | 0 |
+
+### Temporal Lifecycle (VOD Ramp)
+
+Each charge detonates from its primer along the column at the explosive's VOD, instead of all
+at once. Each primer carries its own deck, position and delay, so several primers in a hole
+drive separate burn fronts. Contributions are added as energy — it shows **when** energy
+arrives, not waves cancelling. Use **Interact** to watch it build.
+
+| Setting | Default |
+|---|---|
+| **Site Constant K** | 1140 |
+| **Distance Exponent B** | 1.6 |
+| **Charge Exponent A** | 0.8 |
+| **Integration Points** | 8 |
+| **P-Wave Velocity** | 4500 m/s |
+| **S-Wave Velocity** | 2600 m/s |
+| **Fallback VOD** | 5500 m/s |
+| **P-Wave Weight** / **SV-Wave Weight** | 1 / 1 |
+| **Min Distance** | 0.5 m |
+| **Toe Suppression** | 0.15 |
+| **Subdrill Attenuation** | 0.5 |
+| **Target VPPV (0 = off)** | 0 |
+
+### Scaled Heelan (Blair & Minchinton, Time-Domain)
+
+Full time-domain waveform synthesis — waves are added with their phase, so they can reinforce
+or cancel. It runs in the background on the processor over a 3D grid, has
+no **Interact**, and its result is saved with the surface.
+
+| Setting | Default |
+|---|---|
+| **Site Constant K** | 700 |
+| **Site Exponent B** | 1.5 |
+| **Charge Exponent A** | 0.7 |
+| **Gamma** | 0.0455 |
+| **Poisson's Ratio** | 0.25 |
+| **P-Wave Velocity** | 6000 m/s |
+| **VOD (fallback)** | 5279 m/s |
+| **Explosive Density (fallback)** | 1400 kg/m³ |
+| **Bandwidth (B)** | 10000 |
+| **DT Factor** | 0.125 |
+| **Pulse Order (N)** | 6 |
+| **Charge Elements** | 12 (4 – 27) |
+| **Hole Diameter (fallback)** | 229 mm |
+| **Max Time Steps** | 128 |
+| **Time Stride** | 3 |
+| **Max Display Distance** | 100 m |
+| **Target VPPV (0 = off)** | 0 |
+
+Above the parameters, **Display Time (ms):** picks one moment to show; −1 shows all decks.
+
+### Ripple Tank — Forward Wave Field
+
+Shows the P and S waves spreading from each hole as it fires, adding where they overlap —
+bright where they reinforce, dark where they cancel. Positive is red, zero white, negative
+blue. Use **Interact** to watch the fronts expand.
+
+> **Warning:** The dialog describes it as an *"Educational visualisation — not a quantitative
+> blast-prediction tool"*. It ignores geology, reflections and topography. Use it to build
+> timing intuition, not for compliance or PPV reporting.
+
+| Setting | Default | What it does |
+|---|---|---|
+| **Monitor Binding** | **Manual (use values below)** | Or take the settings from a [monitor](monitor-points.md) |
+| **Wavelet Shape** | Ricker | **Ricker — physical single pulse (sharp)**, **Bell — smooth single wave (middle ground)**, **Damped — multi-crest wave-pool**, **Berlage — gradual onset + decay (seismic)**, **Measured — your bound monitor's recorded seed** |
+| **Display Component** | **Combined P + S** | Or **P-wave only (compression front)**, **S-wave only (shear front)** |
+| Site Constant K / Site Exponent B / **Charge Exponent n** | 1140 / 1.6 / 0.5 | |
+| **P-Wave Velocity (cp)** / **S-Wave Velocity (cs)** | 5000 / 2600 m/s | |
+| **P Visual Frequency (fP)** / **S Visual Frequency (fS)** | 100 / 60 Hz | |
+| **# of Crest Waves** | 3 | |
+| **S/P Amplitude Ratio** | 0.6 | |
+| **Near-Field Cutoff** | 1.0 m | |
+| **Wave-Front Rings** | Off | Draws the fronts as rings in 2D |
+
+Settings that do not apply to the chosen wavelet or monitor are greyed out.
 
 ---
 
-## 6. Temporal Lifecycle (VOD ramp) (`temporal_lifecycle`)
+## Damage and energy models
 
-GPU model that treats detonation as a **continuous ramp** propagating from the **primer** along the charge column at **VOD**, rather than firing each deck as a simultaneous point source. At an observation point, P-wave arrivals from positions along the charge occur at different times (Mach-cone style behaviour when VOD exceeds rock P-wave speed).
+### Holmberg-Persson Damage
 
-**Per-primer data:** Each primer carries its **deck**, its **position** along that deck (top toward base), its **delay**, and the **VOD**, so multiple primers per hole can drive separate burn fronts.
+Near-field PPV summed along each charged deck (Holmberg-Persson), compared with a critical PPV.
+The output is in mm/s.
 
-**Superposition:** Contributions are still combined with **incoherent (RMS) energy summation** — same limitation as Scaled Heelan family on GPU: **no** coherent interference fringes. The model shows **when** energy arrives from the moving detonation front under **display time** filtering, not wave cancellation.
+| Setting | Default |
+|---|---|
+| **H-P Constant K** | 700 |
+| **H-P Alpha (α)** | 0.7 |
+| **H-P Beta (β)** | 1.5 |
+| **Charge Elements** | 20 |
+| **Min Distance** | 0.3 m |
+| **Critical PPV (0 = off)** | 700 mm/s |
 
-**Time Interaction:** Supported — use **Interact** to animate firing time and watch the sequence evolve.
+### Jointed Rock Damage
 
----
+Damage from intact-rock fracture, slip on a joint set (Mohr-Coulomb), or both. The output is a
+damage ratio; above 1 means failure.
 
-## 7. Blair Heavy (Time-Domain)
+| Setting | Default |
+|---|---|
+| **Mechanism** | **Combined (worst of both)**; or **Intact tensile (rock fracture)**, **Joint shear-slip (Mohr-Coulomb)** |
+| **H-P Constant K** / **H-P Alpha (α)** / **H-P Beta (β)** | 700 / 0.7 / 1.5 |
+| **Rock Tensile Strength** | 10 MPa |
+| **Rock Density** | 2700 kg/m³ |
+| **P-Wave Velocity** | 4500 m/s |
+| **Joint Set Angle** | 45° |
+| **Joint Cohesion** | 0.1 MPa |
+| **Joint Friction Angle** | 30° |
+| **Charge Elements** | 20 |
+| **Target Damage Ratio (0 = off)** | 0 |
 
-Full **coherent** time-domain waveform superposition model — the **only** analytics path that superposes waveforms with **phase** so that **constructive and destructive interference** can appear in the result. **Runs on the CPU in the background** (not GPU), computing PPV on a 3D voxel grid for truly volumetric output. Uses multiple workers based on your computer's processor count.
+### Borehole Pressure
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| K | 700 | Site constant (gamma x SITEK) |
-| B | 1.5 | Site exponent |
-| Charge Exponent | 0.7 | |
-| Gamma | 0.0455 | Waveform scaling factor |
-| Poisson's Ratio | 0.25 | |
-| Rock Density | 2500 kg/m3 | |
-| P-Wave Velocity | 6000 m/s | |
-| VOD | 5279 m/s | Fallback |
-| Bandwidth | 10000 | Hz-like waveform parameter |
-| Pulse Order | 6 | Waveform shape parameter |
-| Elements per Deck | 12 | |
+Pressure on the borehole wall from each charged deck, falling with distance:
+P(R) = Pb × (a / R)^α, where Pb = explosive density × VOD² / 8.
 
-**Key differences from other models:**
-- Coherent superposition — phases can cancel or reinforce (unlike GPU RMS models)
-- Time-domain waveform synthesis with P/S arrival times
-- Primer location controls detonation front direction and cumulative mass ordering
-- Results are exported to GLB and saved in your browser
-- Does not support time interaction or real-time updates
+| Setting | Default |
+|---|---|
+| **Attenuation Exponent (α)** | 2.0 |
+| **Fallback Explosive Density** | 1.2 kg/L |
+| **Fallback VOD** | 5000 m/s |
+| **Min Distance** | 0.3 m |
+| **Max Display Distance** | 50 m |
+| **Target Pressure (0 = off)** | 0 MPa |
 
----
+### Volumetric Powder Factor
 
-## Damage and Energy Models
+Explosive mass per volume of rock around each charged deck, on a log scale.
 
-### 8. Non-Linear Damage (Holmberg-Persson)
-
-Computes cumulative damage index based on PPV threshold for crack initiation.
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| Rock UCS | 120 MPa | Unconfined Compressive Strength |
-| Rock Tensile | 12 MPa | Typically UCS/10 |
-| PPV Critical | 700 mm/s | Threshold for new crack initiation |
-| K_hp | 700 | Holmberg-Persson site constant |
-| Alpha | 0.8 | Charge length exponent |
-| Beta | 1.4 | Distance exponent |
-
-**Output:** Damage Index (0-1). Values approaching 1.0 indicate significant damage.
-
-### 9. Jointed Rock Damage
-
-Combines intact rock fracture with joint-controlled failure. Evaluates both dynamic stress against tensile strength and Mohr-Coulomb failure on joints.
-
-Additional parameters: joint set angle, joint cohesion, joint friction angle.
-
-**Output:** Damage Ratio (values > 1.0 = failure).
-
-### 10. Borehole Pressure
-
-Computes borehole wall pressure and its attenuation with distance from each charged deck.
-
-**Formula:** P(R) = Pb x (a / R)^alpha
-
-Where Pb = rho_e x VOD^2 / 8 (borehole wall pressure).
-
-**Output:** MPa. Best for near-field wall damage assessment and presplit design.
-
-### 11. Volumetric Powder Factor
-
-Per-deck powder factor analysis. Each charged deck contributes its mass within a spherical volume at the observation distance.
-
-**Output:** kg/m3 on a log scale.
+| Setting | Default |
+|---|---|
+| **Min Distance** | 0.3 m |
+| **Max Display Distance** | 50 m |
+| **Target PF (0 = off)** | 0 kg/m³ |
 
 ---
 
-## Related Topics
+## Related
 
-- [Analytics Overview](overview.md)
+- [Blast Analysis Shader](overview.md)
+- [PPV Voronoi Modes](ppv-voronoi-modes.md)
+- [Site Law Regression](site-law-regression.md)
 - [Flyrock Modelling](flyrock.md)
 - [Charging Overview](../charging/overview.md)

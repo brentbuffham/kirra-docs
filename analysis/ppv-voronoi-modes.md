@@ -1,293 +1,226 @@
-# PPV Voronoi Modes (A / B / C / E)
+# PPV Voronoi Modes (A – F)
 
-New in **v1.0.75**. Per-hole Voronoi PPV analysis with receptor-aware monitor points, four output modes, and matching 2D + 3D overlays.
+Six of the [Voronoi](voronoi.md) displays predict blast vibration (PPV) hole by hole, measured
+against one or more **monitors** — the places you need to protect. Each hole's cell is coloured
+by its effect, so you can see which holes to change before the blast fires.
 
-This is **not** the same tool as the [Blast Analytics shaders](overview.md). The shader suite paints a per-pixel physics model (Heelan, Blair, Temporal Lifecycle, Blair Heavy). This tool paints the **Voronoi cell of each hole** using the empirical scaled-distance site law evaluated against one or more **monitor points** (receptors). It's designed for on-the-fly compliance review against multiple receivers, and it runs in real time as you move holes or edit charging.
+This is not the same tool as the [Blast Analysis Shader](overview.md), which paints a physics
+model across a whole surface. The Voronoi modes use each monitor's own **site law** and update
+as you move holes or change charging.
 
-![Voronoi Options on mode A](../screenshots/VoronoiOptionsModeA.png)
-*Voronoi Options on **PPV — Max / Coherent Seed (mode A)**, showing the Global Blast-Side Settings and the Monitor Points summary.*
-
----
-
-## When to use which mode
-
-| Mode | Dropdown label | What each cell shows | Use it when... |
-|------|----------------|----------------------|----------------|
-| **A** | **PPV — Max (mode A)** | Peak PPV predicted at the cell centroid from the whole pattern | You want a spatial heatmap of the blast itself (independent of monitor locations) |
-| **B** | **PPV — Dominant Hole (mode B)** | The hole's impact at the **binding monitor** (the enabled monitor that is most stressed), normalised against the worst offender at that monitor | You are trying to identify **which hole to redesign first** |
-| **C** | **PPV — Compliance (mode C)** | The **worst compliance ratio** this single hole produces across all enabled monitors — `max(thisHolePPVatMonitor / monitorTarget)` | You need a go/no-go, hole-by-hole, against every receptor at once |
-| **E** | **PPV — Max Allowable Charge (mode E)** | The largest charge this hole could hold while keeping **every** enabled monitor below its target | You are backsolving a charge budget per hole under multiple constraints |
+![Voronoi cells in Mode C — Compliance](../screenshots/VoronoiCellsCompliance.png)
+*Mode C, Compliance. Green holes are comfortably under every target, amber within 10 %, red
+over a target on their own.*
 
 ---
 
-## Opening the dialog
+## Prerequisites
 
-The Voronoi PPV controls live in the **Voronoi Options** dialog.
+- A blast with charging (or a mass on each hole) and timing.
+- For modes B to F: at least one **enabled** monitor, with its site law set. Add monitors in
+  the [Monitor Points Manager](monitor-points.md).
+- For Mode F: **Site σ** set on each monitor.
 
-1. Click the **Voronoi Options** button on the Analyse toolbar, or **right-click** the **Voronoi** display toggle (the hexagon V button).
-2. In the **Voronoi Display** dropdown at the top, choose one of the four PPV modes listed above.
+---
 
-When a PPV mode is selected the dialog expands to reveal **Global Blast-Side Settings**, **Monitor Points**, and a collapsible **How to read this legend** guide. Switching back to a non-PPV mode (Powder Factor, Mass, Volume, etc.) hides those sections.
+## Which mode to use
+
+| Mode | Voronoi Display | Each cell shows | Use it to |
+|---|---|---|---|
+| **A** | **PPV — Max / Coherent Seed (mode A)** | Peak PPV predicted at the cell from the whole pattern | See where the blast itself shakes hardest. Needs no monitor |
+| **B** | **PPV — Dominant Hole (mode B)** | This hole's effect at the most-stressed monitor, against the worst hole there | Find which hole to redesign first |
+| **C** | **PPV — Compliance (mode C)** | The worst ratio of this hole's PPV to a monitor's target | Get a pass/fail, hole by hole, against every monitor |
+| **D** | **PPV — Max Allowable Charge (mode D)** | The most charge this hole could fire and keep every monitor under target | Work out a charge limit per hole |
+| **E** | **PPV — Full Forward Array (mode E)** | Wave synthesis of the whole pattern at each hole | Find hot zones inside the pattern |
+| **F** | **PPV — Probability of Exceedance (mode F)** | The chance a monitor's target is exceeded, worst monitor | Judge risk, allowing for the scatter in your site law |
+
+---
+
+## Choose a mode
+
+1. Right-click the **Voronoi** display button, or click **Voronoi Options** on the
+   **Analyse** toolbar.
+2. In **Voronoi Display**, choose a **PPV —** mode.
+3. Switch on the **Voronoi** display button if the cells are not showing.
+
+The dialog grows three extra sections: **Global Blast-Side Settings**, **Monitor Points
+(summary)** and **How to read this legend**.
+
+![Voronoi Options in a PPV mode](../screenshots/VoronoiOptionsPPV.png)
 
 ---
 
 ## Global Blast-Side Settings
 
-These settings are **blast-wide**. They affect every enabled monitor equally.
+These apply to the whole blast. *"Site law (K, B, e, distance, target) is per-monitor below."*
 
-> *Path-dependent values (site K, B, charge exponent, distance mode, target PPV) live **per monitor** — see [Monitor Points](#monitor-points) below.*
+| Setting | Default | What it does |
+|---|---|---|
+| **Dominance:** | **Each deck (precise)** | **Each deck (precise)** treats every deck as its own source. **Mass-weighted centroid per time-bin (legacy)** lumps decks that fire in the same time bin into one charge — kept to reproduce older reports; it tends to overstate peak PPV |
+| **Time bin (ms):** | 0 | Only with the legacy option. The bin width; 0 means no binning. 8 ms is the usual legacy value |
+| **Contributor %:** | 20 | Sources below this percentage of the peak are left off the "contributors" lists. Reporting only — it does not change the PPV |
+| **Min scaled distance (m/kg^0.5):** | 1.0 | Closer than this scaled distance the site law over-predicts, so Kirra holds the distance at this floor. For a 100 kg charge with e = 0.5 the floor is 10 m (Yang & Scovira 2007) |
+| **Superpose RMS with timing window (mode A only)** | Off | **Off**: the single biggest deck sets the PPV. **On**: decks arriving close together are combined as the square root of the sum of squares |
+| **Coherence window (ms):** | 8 | With RMS on: how close in time decks must be to combine |
+| **Gate by P-wave arrival time** | On | With RMS on: compare *arrival* times at the monitor (fire time + distance ÷ P-wave velocity), not fire times at the blast |
+| **Use Measured Mass over Design Mass** | Off | **On**: a hole whose measured mass is 0 counts as unloaded |
+| **Use 3D Monitor location** | On | Mode D only. **On** measures slant distance including height; **Off** measures in plan |
 
-### Dominance
+- The P-wave velocity is set **per monitor**, in its P/S wave block.
+- A line under the RMS settings shows the wave shape in use, for example *"Seed source when
+  P-wave gate is on: Two-term (default 30 Hz, 500 ms, ξ=0.05)"*.
+- Settings that do not apply to the current mode are greyed out. RMS is Mode A only. Modes E
+  and F always work deck by deck.
 
-| Radio | Meaning |
-|-------|---------|
-| **Per Deck** *(recommended, default)* | Each deck contributes its own PPV using its own XYZ and Q. The "dominant hole" at any receptor is the one whose single-deck PPV is largest there. Matches the GPU shader, matches intuition ("9 kg at 30 m beats 10 kg at 50 m"), and is the physically correct definition for modern electronic detonators. |
-| **Per Bin (legacy — reports only)** | Each time bin is collapsed into one super-charge at its Q-weighted centroid. Dominant hole = the largest-Q deck in the peak-firing bin. Included to reproduce older reports that pre-date per-deck analysis; **with ms-resolution timing it typically overstates peak PPV**. |
-
-### Time bin (ms) — Per Bin only
-
-Visible only when Dominance is set to **Per Bin**. Groups decks firing inside the same time window into one combined charge at the Q-weighted centroid.
-
-- Default **0** — no binning, every deck stands alone.
-- Typical legacy value **8 ms**.
-- Larger bins inflate peak PPV because multiple decks add linearly inside a bin.
-
-Per Deck mode ignores this setting.
-
-### Contributor %
-
-Sources below this percentage of the peak PPV are ignored when building the "contributors" list on each monitor and in cell tooltips. Default **20%**.
-
-**Applies to both Per Deck and Per Bin.** This is reporting-only — it does not change the PPV calculation.
-
-### Min scaled distance (m/kg^0.5)
-
-Below this scaled distance, `SD = D / Q^chargeExponent`, the linear-superposition site law over-predicts and should not be used. The effective raw distance floor is charge-dependent: `D_min = SD_min * Q^e`. For example a 100 kg charge with `e = 0.5` gives a raw distance floor of 10 m.
-
-Default **1.0 m/kg^0.5**, taken directly from Yang R & Scovira D S, 2007, "A Model for Near-Field Blast Vibration Based on Signal Broadening and Amplitude Attenuation", EXPLO Conference, Wollongong NSW, p 65 (Discussion).
-
-### Superpose RMS with timing window (mode A only)
-
-When ticked, Kirra combines multiple decks that **arrive close in time** at the receptor into a single quadrature (RMS) sum instead of taking the peak single deck.
-
-- **Off (default)**: peak single-deck PPV. Most conservative.
-- **On**: `sqrt(sum of squares)` over decks inside the coherence window.
-
-Applies to **Mode A only**. Modes B, C, E are defined against the peak deck (USBM / ISEE compliance limits are against vector peak, not RMS) so RMS is deliberately not applied to them.
-
-Two nested controls appear below:
-
-**Coherence window (ms)** — only decks within ±(this value) ms of the peak deck's fire time contribute to the RMS sum; everything outside stays on the peak-pick path. Default **8 ms** (ISEE/Dowding classic). `0 ms` = only the peak deck (effectively disables RMS).
-
-**Gate by P-wave arrival time** — when on (default), the coherence window checks **arrival time at the receptor** (`fireMs + D / Vp`) instead of source firing time. This is the physically correct gate: two decks firing 12 ms apart at the source can still arrive within a few ms of each other at a distant monitor whose path lengths differ. OFF matches older builds (source-time gate).
-
-**P-wave velocity Vp (m/s)** — rock-mass P-wave velocity used for the arrival-time gate. Default **5000 m/s**. Typical ranges:
-
-| Vp | Rock type |
-|----|-----------|
-| 1500–2000 m/s | Soft ground / weathered rock |
-| 3000–4000 m/s | Competent sedimentary rock |
-| 5000 m/s | Typical hard rock *(default)* |
-| 5500–6500 m/s | Hard igneous / metamorphic |
-
-Only used when both **Superpose RMS** and **Gate by P-wave arrival time** are on.
-
-### Use Measured Mass over Design Mass
-
-Global gate for the PPV null-cell rule. Applies to **all** PPV modes (A/B/C/E) in 2D and 3D.
-
-- **Off (default)** — the designed charge is always used; cells paint from the charging data. Recommended during pattern design.
-- **On** — a hole with `measuredMass == 0` is treated as having **no explosive loaded**, regardless of its designed charging. Its Voronoi cell renders as a **transparent wireframe** ("no data") and it contributes 0 PPV to every monitor. Recommended during QA/QC after loading, once measured-mass values have been entered.
-
-Toggling this preference invalidates the Voronoi caches and repaints the map.
+> **Note:** In this version **Use Measured Mass over Design Mass** changes the cells in modes
+> A and B. Modes C, D and F still use the designed charge.
 
 ---
 
-## Monitor Points
+## Monitor Points (summary)
 
-Monitors are the receptors. Every enabled monitor contributes to every PPV mode. Modes B, C, and E are defined **against the monitor set** — if you have zero enabled monitors, these modes have nothing to solve against and cells render as "no data".
+One row per monitor: a tick, its number and name, and its result for the current mode, for
+example *✓ PASS COMPLIANT @ 6.4 / target 10 — hole 536 (PoE 19.0% — Warning)*.
 
-Each monitor is its own card with its own site law, because **the geology between the blast and each receptor is usually different** (e.g. west monitor through shale ≠ east monitor through basalt).
+![Monitor summary and the Mode C legend guide](../screenshots/VoronoiOptionsPPVLegend.png)
 
-![Monitor Points & Seed Library](../screenshots/MonitorPointsDialog.png)
-*The Monitors tab of **Monitor Points & Seed Library**. Card #1 is expanded to show its own site law (K, B, charge exponent, distance mode, target).*
-
-### Card fields
-
-**Header row:**
-
-| Control | Purpose |
-|---------|---------|
-| Enable tick | Include this monitor in the evaluation |
-| `#n` badge | Monitor index |
-| Name | Free-text label shown on the 2D/3D overlay |
-| Collapse chevron | Show/hide Location + Site Law body |
-| `✕` | Remove monitor |
-
-**Location** (three-column grid):
-
-| Field | Unit | Notes |
-|-------|------|-------|
-| X (East) | m | |
-| Y (North) | m | |
-| Z (Elev) | m | Used only when **Distance** is 3D |
-
-**Site Law** (five-column grid):
-
-| Field | Default | Description |
-|-------|---------|-------------|
-| Site K | 1140 | Site constant (intercept) |
-| Site B | 1.6 | Site exponent (attenuation slope) |
-| Charge e | 0.5 | Charge weight exponent |
-| Distance | 2D / 3D radio | `2D` ignores Z, `3D` includes Z |
-| Target mm/s | 10 | Compliance target for this receptor |
-
-**Status row** — mode-aware live result:
-
-| Mode | Left-hand text | Badge |
-|------|----------------|-------|
-| A (RMS off) | `12.3 mm/s / target 10 — hole 42` | PASS / FAIL |
-| A (RMS on) | `Peak 12.3 / RMS 14.1 mm/s / target 10 — hole 42 (N decks in 8 ms win)` | PASS / FAIL |
-| B | `Dom: hole 42 @ 35.3 mm/s` | PASS / FAIL |
-| C | `COMPLIANT @ 8.1 / target 10 — hole 42` | PASS / FAIL |
-| E | `Allow Q: 42.0 kg (now 12.3 mm/s) — hole 42` | PASS / FAIL |
-
-If the pattern has no charging data yet, the card shows "No charging data" instead.
-
-### Actions
-
-| Button | Behaviour |
-|--------|-----------|
-| **+ Add Monitor** | Adds a new monitor seeded at the data centroid with default site law |
-| **Pick from KAD points** | Imports every visible KAD point entity as a monitor. Name becomes `entity#pointID`. KAD lines, polygons, and text are skipped. |
-
-### Persistence
-
-Monitors and global settings are saved in your browser and survive a page reload. When the first monitor is added after an upgrade, older per-blast K/B/e defaults are migrated into the new per-monitor defaults automatically.
+- Untick a monitor to leave it out of every mode.
+- Each result ends with that monitor's probability of exceedance and its band (Safe, Good,
+  Caution, Warning, Danger).
+- To add, move or edit monitors, click the button beside **Full editor:** to open the
+  [Monitor Points Manager](monitor-points.md). Each monitor carries its own site law,
+  because the ground between the blast and each monitor is usually different.
 
 ---
 
-## How to read the cell colours
+## Reading each mode
 
-The dialog has a built-in, collapsible **How to read this legend** panel that switches with the mode. The summary below matches that panel.
+The **How to read this legend** panel in the dialog explains the mode you are in. In summary:
 
-### Mode A — Max PPV
+### Mode A — Max / Coherent Seed
 
-Each Voronoi cell is coloured by the peak PPV predicted **at that cell's centroid** from the whole pattern. A spatial PPV heatmap of the blast itself, independent of where the monitors are.
-
-| Swatch | Meaning |
-|--------|---------|
-| Blue | Low PPV (far from high-Q sources) |
-| Green | Moderate PPV |
-| Red | Peak PPV (biggest or closest source) |
-
-**Tip.** "Superpose RMS" turns on timing-aware quadrature summation of decks that arrive within the coherence window. With "Gate by P-wave arrival time" on, decks can fire asynchronously at the source yet still sum coherently if their arrival times at the receptor overlap (path-length correction `D / Vp`).
+Each cell is coloured by the peak PPV predicted at that cell from the whole pattern — a
+vibration heatmap of the blast itself, whatever the monitors. Blue is low, green moderate, red
+the peak. It uses the site law of the first enabled monitor, or K 1140, B 1.6, e 0.5 if there
+is none.
 
 ### Mode B — Dominant Hole
 
-Cells are coloured by **each hole's impact at the binding monitor** (the enabled monitor that is most stressed), normalised against the single worst-offending hole at that same monitor.
+Each cell shows that hole's effect at the **binding monitor** — the enabled monitor under most
+stress — compared with the single worst hole there.
 
-| Swatch | Meaning |
-|--------|---------|
-| Red (1.0) | The worst offender at the binding monitor. Redesign first. |
-| Orange (0.75) | Producing ~75% of the worst hole's impact. Next in line. |
-| Yellow (0.5) | Half the worst hole's impact. |
-| Green (0.35) | Minor contributor. |
-| Blue | Negligible at this monitor. |
+| Colour | Meaning |
+|---|---|
+| Red (1.0) | The worst hole at the binding monitor. Redesign it first |
+| Orange (0.75) | About 75 % of the worst hole's effect |
+| Yellow (0.5) | Half the worst hole's effect |
+| Green (0.35) | A minor contributor |
+| Blue | Negligible at this monitor |
 
-**Workflow.** Fix the red hole, re-run; the new worst offender turns red; fix that; repeat. Toggle monitors on/off to see how the binding monitor (and therefore the red region) migrates.
+Fix the red hole and the next-worst turns red; repeat. Untick monitors to see the binding
+monitor, and the red area, move.
 
 ### Mode C — Compliance
 
-Cells are coloured by the worst compliance ratio this hole alone produces across all enabled monitors:
-
 ```
-ratio = max over monitors (this_hole_PPV_at_monitor / monitor_target)
+ratio = max over monitors ( this_hole_PPV_at_monitor / monitor_target )
 ```
 
-| Swatch | Range | Meaning |
-|--------|-------|---------|
-| Green | `< 0.9` | Comfortably compliant |
-| Amber | `0.9 – 1.0` | Within 10% of a target — warning band |
-| Red | `≥ 1.0` | This single hole exceeds a monitor's target — redesign or relocate |
+| Colour | Ratio | Meaning |
+|---|---|---|
+| Green | under 0.9 | Comfortably compliant |
+| Amber | 0.9 – 1.0 | Within 10 % of a target |
+| Red | 1.0 and over | This hole alone exceeds a target — redesign or relocate |
 
-**Tip.** If every cell is green while a monitor card shows **FAIL**, the failure is driven by the combined effect of many below-threshold holes, not one offender — check the monitor's total PPV on its status row.
+If every cell is green but a monitor shows **FAIL**, many smaller holes are adding up — check
+that monitor's total in the summary.
 
-### Mode E — Max Allowable Charge
+### Mode D — Max Allowable Charge
 
-Cells show the largest charge each hole can load **and still keep every enabled monitor below its target**. Pure inverse site law, per hole.
+Each cell shows the largest charge that hole can load and still keep **every** enabled monitor
+under its target. Blue is tightly limited (usually near a monitor), red has plenty of room.
+With monitors on two sides, the smaller limit wins.
 
-| Swatch | Meaning |
-|--------|---------|
-| Blue / low | Tightly constrained (usually close to a monitor) |
-| Green / mid | Moderate headroom |
-| Red / high | Plenty of headroom (far from all monitors) |
+### Mode E — Full Forward Array
 
-With two monitors on opposite sides, both constrain each hole and the smaller allowable charge wins. With one monitor, charge scales with distance from that monitor, so the heatmap reads as a clear distance-from-monitor permitted-charge map.
+Each cell shows the peak vector sum a virtual geophone at that hole's collar would record from
+all the other holes — where in the pattern the wave energy piles up. Blue is quiet, red a hot
+zone. It is not a compliance measure; for that read the monitor results.
 
-**Zero enabled monitors** → cells render as wireframe "no data" because there's nothing to solve against.
+- It uses each monitor's P/S wave and Love wave settings, and keeps the worst result.
+- It is worked out in the background — a progress window, **Computing Mode E PoE / PVS**,
+  shows while it runs.
+
+### Mode F — Probability of Exceedance
+
+Each cell shows the chance that the worst-stressed monitor records more than its target,
+allowing for the scatter in the site law (Blair 2011).
+
+| Colour | Chance | Meaning |
+|---|---|---|
+| Blue | under 1 % | Safe |
+| Green | 1 – 5 % | Good |
+| Yellow | 5 – 10 % | Caution |
+| Amber | 10 – 25 % | Warning — likely to cause a non-compliance |
+| Red | 25 % and over | Danger — redesign or tighten σ |
+
+Mode F needs **Site σ** on each monitor — the scatter of your site-law fit in log₁₀ units,
+typically 0.15 – 0.30 (default 0.22). Fit it with
+[Site Law Regression](site-law-regression.md).
 
 ---
 
-## No-data cells (wireframe only)
+## Cells with no value
 
-For any PPV mode, a cell renders as a transparent **wireframe only** (no fill colour) whenever the hole fails the charge check. The rule is:
-
-- Hole has no entry in the charging system, **or**
-- The hole's deck list has no COUPLED or DECOUPLED explosive decks, **or**
-- The hole's total explosive mass is zero, **or**
-- **Use Measured Mass over Design Mass** is on **and** `hole.measuredMass == 0`.
-
-This keeps the map honest — uncharged holes don't paint a fake low-PPV colour that could be mistaken for a compliant result.
+A cell shows as a faint dashed outline (an outline only in 3D) when the hole cannot be
+evaluated — for example it has no charging, no primer, an electronic delay that has not been
+set, or, in modes B to F, there is no enabled monitor. Click the *No data* banner on the canvas
+for the reason for each hole — see [Voronoi Cells](voronoi.md#cells-with-no-value).
 
 ---
 
-## 3D overlay
+## Monitors on the canvas
 
-When any PPV mode is active, 3D adds the following for each enabled monitor:
+In any PPV mode each enabled monitor is drawn with:
 
-- A coloured ring at the monitor XYZ (crosshair)
-- A tieline from the monitor to its dominant hole
-- A midpoint distance chip (e.g. `47.3 m`) in Hershey vector text
-- A trailing status chip (e.g. `EU1#1 (A): 12.3 mm/s / target 10 PASS`) in Hershey vector text
+- a marker at the monitor (a ring in 2D, a point in 3D);
+- a line to the hole that governs it, with its distance, for example *47.3 m*;
+- a label with the result, for example *M1 (A): 22.6 mm/s / 10 FAIL*.
 
-Status colours match the 2D monitor cards: green on PASS, red on FAIL, amber when there is no data yet.
+Green means pass, red fail, orange the worst failing monitor, and grey no result yet.
 
 ![PPV monitors in 3D](../screenshots/PPVMonitors3D.png)
-*Mode A in the 3D view: each monitor has a tieline to its dominant hole, a distance chip and a status chip — green on PASS, red on FAIL.*
 
-Toggling charging edits, timing edits, or monitor changes updates both the 2D and 3D overlays in lock-step.
-
----
-
-## Dark / Light theme
-
-The dialog is theme-reactive. Flipping Dark ↔ Light in the main app immediately rebuilds the open dialog in the matching theme, preserving your current mode selection and monitor list.
+Monitors are not printed. The cells print in the same colours as the screen — see
+[Voronoi Cells — In 3D and in print](voronoi.md#in-3d-and-in-print).
 
 ---
 
 ## Troubleshooting
 
 | Symptom | Likely cause | Fix |
-|---------|--------------|-----|
-| Every cell is wireframe on a loaded blast | No charging assigned, or **Use Measured Mass** is on with `measuredMass = 0` across the pattern | Assign charging, or turn off the Measured Mass switch |
-| Modes B / C / E show all wireframe | No enabled monitors | Add a monitor or re-enable one |
-| "Superpose RMS" has no visible effect | Only the peak deck falls inside the coherence window (RMS == peak) | Widen the coherence window, or confirm your inter-hole delays are shorter than the window |
-| Monitor card says `No charging data` | Pattern has no charging entries yet | Assign at least one hole to the charging system |
-| Mode switch leaves the map unchanged | Cached metrics not invalidated | Change any global setting once (e.g. toggle RMS off/on) to force a cache bump |
+|---|---|---|
+| Every cell is a dashed outline | No charging, or **Use Measured Mass** is on and the measured masses are 0 | Add charging, or switch off **Use Measured Mass** |
+| Modes B–F show dashed cells everywhere | No enabled monitor | Tick a monitor, or add one in the Monitor Points Manager |
+| Mode F shows dashed cells | A monitor has no **Site σ** | Set **Site σ** on each monitor |
+| **Superpose RMS** makes no difference | Only the peak deck falls inside the coherence window | Widen the window, or check the delays between holes |
+| A monitor row says *No charging data* | The blast has no charging yet | Assign charging to the holes |
 
 ---
 
-## Related Topics
+## Related
 
-- [Analytics Overview](overview.md)
-- [PPV & Vibration Models (shader suite)](ppv-models.md)
-- [Blast Statistics & Voronoi (area / volume / powder factor)](statistics-voronoi.md)
-- [Charging Overview](../charging/overview.md)
+- [Voronoi Cells](voronoi.md)
+- [Monitor Points & Seed Library](monitor-points.md)
+- [Site Law Regression](site-law-regression.md)
+- [Blast Analysis Shader](overview.md)
+- [Time Window](time-window.md)
 
 ---
 
 ## References
 
-- Yang, R. & Scovira, D.S. (2007). *A Model for Near-Field Blast Vibration Based on Signal Broadening and Amplitude Attenuation*. EXPLO Conference, Wollongong NSW, p 65 (Discussion).
-- ISEE / Dowding — classic 8 ms coherence window convention for quadrature superposition of blast-hole contributions.
+- Yang, R. & Scovira, D.S. (2007). *A Model for Near-Field Blast Vibration Based on Signal
+  Broadening and Amplitude Attenuation*. EXPLO Conference, Wollongong NSW, p 65 (Discussion).
+- Blair, D.P. (2011). EFEE Conference, Lisbon — Eqs (16b), (19a/b).
+- ISEE / Dowding — the 8 ms coherence window convention.

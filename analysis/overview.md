@@ -1,195 +1,180 @@
-# Blast Analytics Overview
+# Blast Analysis Shader
 
-Kirra includes a GPU-accelerated blast analytics system that overlays vibration, damage, and energy predictions directly on your blast pattern. Most models run in real-time on the GPU via WebGL fragment shaders, enabling interactive what-if analysis as you move holes or adjust charges.
+The **Blast Analysis Shader** paints a vibration, damage, pressure or powder-factor model across
+a surface around your blast, so you can see how far an effect reaches and where it is
+strongest. Most models run on the graphics card, so a result appears in seconds; one runs in
+the background on the processor.
 
-**Recent builds (e.g. v1.0.60):** shader code paths were tuned for **heavier multi-deck columns** and **large patterns** (loop limits and per-model iteration in GLSL, plus related dialog/helper updates). Very deep deck counts may still hit GPU static limits on some models — use **PPV Per-Deck**, **Temporal Lifecycle**, or **Blair Heavy** where per-deck fidelity or detonation timing along the column matters most.
+This is a different tool from the [PPV Voronoi modes](ppv-voronoi-modes.md), which colour one
+cell per hole against your monitors. The shader paints a continuous field over the ground.
 
-> *Screenshot coming soon -- analytics dialog with model selection and parameter controls*
-
----
-
-## Available Models
-
-Kirra provides **11 analytics models** in the Blast Analysis dialog:
-
-| # | Model | Output | Best For |
-|---|-------|--------|----------|
-| 1 | **PPV Site Law** | mm/s | Compliance prediction, comparison with monitoring data |
-| 2 | **PPV Per-Deck** | mm/s | Multi-deck configurations, scaled-distance PPV per deck (no VOD burn front) |
-| 3 | **Heelan Original** | mm/s | Physics-based directional vibration (Heelan 1953) |
-| 4 | **Scaled Heelan** | mm/s | Site-calibrated directional vibration (Blair & Minchinton 2006) |
-| 5 | **Blair Lite (Scaled Heelan 90%)** | mm/s | Updated Blair radiation patterns (Blair 2015) |
-| 6 | **Temporal Lifecycle (VOD ramp)** | mm/s | Detonation as a ramp from **primer** along the charge at VOD; time animation of burn fronts (still **incoherent** RMS sum — not wave interference) |
-| 7 | **Blair Heavy (Time-Domain)** | mm/s | Full **coherent** waveform synthesis — only path that can show constructive/destructive interference; runs on CPU |
-| 8 | **Non-Linear Damage** | Damage Index 0-1 | Fragmentation, overbreak, damage zone mapping |
-| 9 | **Jointed Rock Damage** | Damage Ratio | Structural assessment near joints, wall control |
-| 10 | **Borehole Pressure** | MPa | Near-field wall damage, presplit design |
-| 11 | **Volumetric Powder Factor** | kg/m3 | Energy distribution, fragmentation prediction |
+![Blast Analysis Shader dialog](../screenshots/BlastAnalysisShaderDialog.png)
+*The dialog on **Holmberg-Persson Damage**. Values shown are one user's settings.*
 
 ---
 
-## Wave collision and interference (what the shaders actually show)
+## Prerequisites
 
-**None of the GPU fragment shaders visualise classical wave collision** (constructive or destructive interference between overlapping P/S wave trains in the phase-coherent sense). What they implement instead is summarised below. **Blair Heavy (CPU)** is the only model that performs **true coherent superposition with phase**; it can produce cancellation and reinforcement in the time domain. **All GPU models** use **incoherent** summation (RMS / energy-style stacking): contributions **add energy**, they do **not** cancel like coherent interference fringes.
-
-| Model | Superposition method | Shows collision / interference? |
-|-------|----------------------|-------------------------------|
-| **PPV**, **PPV Per-Deck** | Scaled distance — no waveform synthesis | No |
-| **Heelan**, **Scaled Heelan** | Incoherent (RMS) sum of energies | No — RMS cannot cancel |
-| **Blair Lite** (Scaled Heelan 90%), **+COH** path family | Incoherent (RMS) with directional radiation | No |
-| **Temporal Lifecycle** | Incoherent (RMS) with **VOD ramp** from **primer**, time filtering (display time) | No — shows **burn-front timing** and primer-relative ordering, **not** interference |
-| **Blair Heavy** (Blair & Minchinton) | Full **time-domain** waveform synthesis | **Yes** — coherent superposition; phases can constructively or destructively combine |
-
-For a deeper model-by-model read, see [PPV & Vibration Models](ppv-models.md).
+- A blast loaded. Charging on the holes gives the best result; without it, models assume a
+  charge over 70 % of each hole.
+- Timing on the holes, for the time-based models and **Interact**.
+- Optional: a surface to paint on. Without one, Kirra makes a flat plane.
 
 ---
 
-## Per-cell Voronoi PPV (empirical, receptor-aware) — new in v1.0.75
+## How to run an analysis
 
-Alongside the 11 shader models above, Kirra v1.0.75 adds a **per-hole Voronoi PPV** suite with four output modes (A/B/C/E) and user-configurable **monitor points** (receptors). This path is complementary to the shaders:
+1. Click **Blast Analysis Shader** on the **Analyse** toolbar. Kirra switches to the 3D view and
+   opens the dialog.
+2. Choose the **Analytics Model**.
+3. Choose **Render On** — **Generate Analysis Plane**, or a loaded surface.
+4. Choose the **Blast Pattern** to analyse.
+5. Adjust the model's settings under **Model Parameters** if needed.
+6. Click **Apply Analysis**.
 
-| | Shader analytics (this page) | Voronoi PPV modes |
+Kirra shows *Baking analysis…* and adds a new surface named, for example,
+**Analysis Scaled Heelan_ab12**, on the **Analysis** layer, with its own legend. It shows in 2D
+and 3D.
+
+- The surface you painted on is **copied**, not changed.
+- A generated plane sits at the Drawing RL, or at the average collar height if no Drawing RL is
+  set.
+- When you move holes or change timing, the analysis surface updates itself shortly afterwards
+  (all models except the time-domain one).
+
+To remove an analysis, use **Undo** straight away, or delete the surface like any other.
+
+---
+
+## The dialog
+
+| Field | Default | What it does |
 |---|---|---|
-| **Granularity** | Per-pixel over a surface / plane | Per Voronoi cell, one per hole |
-| **Physics** | Site law, Heelan, Blair (Lite / Heavy), Temporal Lifecycle VOD ramp | Empirical scaled-distance law evaluated per deck |
-| **Receptor-aware** | No — paints a spatial field | Yes — every cell is evaluated against every enabled monitor |
-| **Multi-receptor compliance** | Not directly | Mode C collapses to pass/fail per hole across all monitors |
-| **RMS timing window** | Temporal Lifecycle / Blair Heavy | Mode A only (configurable coherence window, optional P-wave arrival-time gate) |
-| **Runs on** | GPU (or CPU Workers for Blair Heavy) | CPU, real-time |
+| **Analytics Model** | Scaled Heelan Fast | The model — see the table below |
+| **Render On** | **Generate Analysis Plane** | A flat plane, or a loaded surface to paint |
+| **Blast Pattern** | **Only Visible Holes** | **Only Visible Holes**, **All Blast Holes**, or one blast |
+| **Analysis Distance from Blast Holes (m)** | 200 | How far from the holes to analyse. A generated plane extends this far; a surface is cropped to this distance. Smaller is sharper and faster |
+| **Colour Ramp** | Set by the model | The colours used |
+| **Log Scale** | Set by the model | Spread the colours on a log scale |
+| **Scale Min** / **Scale Max** | Set by the model | The colour range, in the model's unit. Values below **Scale Min** are not drawn |
+| **Overlay Opacity (%)** | 70 | How solid the result is. Change it later in the surface's properties |
 
-The four Voronoi PPV modes are:
+Changing the model resets the ramp, **Log Scale** and the scale to that model's defaults.
+**Model Parameters** holds the model's own settings, and **Model Information** explains the
+model.
 
-- **Mode A — PPV Max** — cells coloured by peak PPV at the cell centroid from the whole pattern
-- **Mode B — Dominant Hole** — cells coloured by each hole's impact at the binding monitor
-- **Mode C — Compliance** — cells coloured by the worst per-monitor ratio (`thisHolePPV / monitorTarget`)
-- **Mode E — Max Allowable Charge** — cells show the largest charge each hole could hold and still keep every monitor below its target
+### Buttons
 
-Open the Voronoi Options dialog, pick a PPV mode, and add monitors with **+ Add Monitor** or **Pick from KAD points**. Full reference: **[PPV Voronoi Modes](ppv-voronoi-modes.md)**.
+| Button | What it does |
+|---|---|
+| **Apply Analysis** | Runs the model and adds the analysis surface. For the time-domain Blair & Minchinton model it reads **Compute** |
+| **Interact** | Opens **Time Interaction** to step through the firing — see below. Not shown for the time-domain model |
+| **Cancel** | Closes the dialog |
 
----
-
-## How to Use
-
-### Opening the Dialog
-
-Access the Blast Analysis Shader from the Surface toolbar. The dialog presents:
-
-| Field | Description |
-|-------|-------------|
-| **Analytics Model** | Select from the 11 models listed above (including **Temporal Lifecycle**) |
-| **Render On** | Choose a loaded surface or "Generate Analysis Plane" for a flat rectangle |
-| **Blast Pattern** | Filter to a specific entity or "All Blast Holes" |
-| **Apply Mode** | "Overlay on Original" or "Create Duplicate Surface" |
-| **Bake as Texture** | UV-map the result as a persistent texture on the surface |
-| **Analysis Plane Distance** | Padding (m) around blast extent when using the generated plane (default 200m) |
-
-Each model has an expandable **Model Parameters** section for tuning site constants and rock properties.
-
-### Typical Workflow
-
-1. Load blast holes and (optionally) a surface
-2. Assign charging to holes (recommended for accurate results)
-3. Open the Blast Analysis Shader dialog
-4. Select a model and adjust parameters to match your site calibration data
-5. Click **Apply Analysis** to render the overlay
-6. Drag holes or modify charges to see the shader update in real-time (GPU models)
-
-> **Note:** Blair Heavy runs as a one-shot CPU computation in the background. A progress dialog shows completion status. It does not support real-time hole-drag updates.
+If the blast has more holes or decks than the model can draw, Kirra asks first — **Run anyway**
+draws as many as it can; **Let me reduce it** returns to the dialog.
 
 ---
 
-## Render Modes
+## The models
 
-| Mode | Description |
-|------|-------------|
-| **Analysis Plane** | Flat rectangle covering the blast extent with configurable padding. Uses the drawing RL elevation. Good for quick overview. |
-| **Surface Overlay** | Applies the shader directly to an existing loaded surface. The original is hidden. |
-| **Duplicate Surface** | Creates a copy of the surface with the shader applied. Original remains untouched. |
-| **Baked Texture** | Renders to a persistent texture saved with the project in your browser. Visible in 2D and 3D without the shader running. |
+| Analytics Model | Unit | What it shows | Limit |
+|---|---|---|---|
+| **Peak Particle Velocity (PPV)** | mm/s | Site-law PPV from each hole | 2048 holes |
+| **Heelan Original (Blair & Minchinton 1996)** | mm/s | Directional vibration from each charge (Heelan) | 1024 decks |
+| **Scaled Heelan Fast (based on Blair & Minchinton)** | mm/s | Heelan directional pattern scaled to your site law | 1024 decks |
+| **Holmberg-Persson Damage** | mm/s | Near-field PPV along each charge, against a critical PPV | 1024 decks |
+| **Borehole Pressure** | MPa | Pressure from each charge, falling with distance | 512 decks |
+| **Volumetric Powder Factor** | kg/m³ | Explosive energy per volume of rock | 2048 decks |
+| **Jointed Rock Damage** | damage ratio | Damage by intact-rock fracture and/or joint slip | 1024 decks |
+| **PPV (Per-Deck)** | mm/s | Site-law PPV from each deck | 2048 decks |
+| **Blair Lite — Scaled Heelan 90% (Blair Radiation)** | mm/s | Scaled Heelan with Blair's radiation pattern | 1024 decks |
+| **Temporal Lifecycle (VOD Ramp)** | mm/s | Each charge detonating from its primer at the explosive's VOD | 512 decks |
+| **Scaled Heelan (Blair & Minchinton, Time-Domain)** | mm/s | Full waveform synthesis on the processor | — |
+| **Ripple Tank — Forward Wave Field** | mm/s | The travelling P and S wave fronts | 2048 holes |
+
+Each model's settings and defaults are listed in [PPV & Vibration Models](ppv-models.md).
 
 ---
 
 ## Time Interaction
 
-Timing-capable models (including **Temporal Lifecycle**) support animated playback via the **Interact** button — the shader advances the **display time** so you see which decks/holes have fired by that instant. This is **not** the same as displaying wave interference; for coherent superposition use **Blair Heavy** (one-shot CPU run, no Interact slider).
+**Interact** draws a live analysis and opens **Time Interaction**, so you can step through the
+firing and see the effect build up hole by hole.
 
-Controls:
-
-| Control | Description |
-|---------|-------------|
-| **Time Slider** | Drag to set display time -- only holes fired by this time are shown |
-| **Play** | Animate from current position to end at real-time speed |
-| **Pause** | Stop at current position |
-| **Reset** | Return to time 0 |
-| **Generate** | Create a permanent surface at the current time slice |
-
-Double-click Play to cycle through 1x, 2x, and 5x speed.
-
-> **Note:** Blair Heavy does not support time interaction.
+| Control | What it does |
+|---|---|
+| **Rewind to start**, **Step -0.5ms**, **Play** / **Pause**, **Stop**, **Step +0.5ms**, **Forward to end**, **Loop** | Move through time, as in [Blast Animation](blast-animation.md) |
+| **Play Speed** | Playback speed |
+| Time slider | Drag to a moment. It starts at the end, so the full blast shows first |
+| **Generate** | Saves the analysis at the current time as a surface |
+| **Cancel** | Closes it and removes the live analysis |
 
 ---
 
-## Colour Ramps
+## The time-domain model
 
-| Ramp | Colours | Used By |
-|------|---------|---------|
-| PPV | Green-yellow-orange-red | PPV, Scaled Heelan |
-| Jet | Blue-cyan-green-yellow-red | Heelan Original, Blair Heavy |
-| Damage | Blue-green-yellow-red-dark red | Non-Linear Damage, Jointed Rock |
-| Pressure | Blue-green-yellow-orange-red | Borehole Pressure |
-| Spectrum | Blue-cyan-green-yellow-red-magenta | Powder Factor |
-| Viridis | Purple-teal-green-yellow | General scientific |
-| Compliance | Green-yellow-red | Pass/fail assessments |
-| Grey | Black-white | Greyscale output |
+**Scaled Heelan (Blair & Minchinton, Time-Domain)** builds the full vibration waveform. It runs
+in the background with a progress window — expect it to take longer — and has no
+**Interact**. Its result is saved with the surface, so it does not need recomputing after a
+reload.
+
+**Display Time (ms):** chooses one moment to show; **-1** shows all decks.
 
 ---
 
-## Charging Awareness
+## Interference — what the models show
 
-When charging data is assigned to holes, the analytics models use:
-- Actual charge column positions (top and base of explosive decks)
-- Individual deck masses
-- Per-deck VOD (velocity of detonation) from assigned products
-- Stemming length from the top explosive deck depth
+Two models add waves **with their sign**, so waves can reinforce or cancel:
 
-When no charging data exists, models estimate the charged length as 70% of hole depth.
+- **Scaled Heelan (Blair & Minchinton, Time-Domain)** — full waveform synthesis, for
+  prediction.
+- **Ripple Tank — Forward Wave Field** — simple wavelets, for seeing the idea. Its own
+  information panel says it is an *"Educational visualisation — not a quantitative
+  blast-prediction tool"*, and not for compliance.
 
----
-
-## Transparency
-
-You can adjust the transparency of an analysis mesh after it has been generated without re-running the analysis. The mesh is preserved and only the visual opacity changes. This applies to both GPU shader overlays and CPU-generated results (Blair Heavy).
+The other vibration models add up the energy from each charge, which can only grow.
+**Temporal Lifecycle** shows the order and timing of the burn along each charge, not
+interference.
 
 ---
 
-## GLB Export and Persistence
+## Colour ramps
 
-Analysis surfaces can be exported to GLB format for archiving or use in external 3D viewers. Blair Heavy results are automatically exported to GLB and saved in your browser, so they survive page reloads without needing to recompute the CPU model.
-
-When reloading a project, analysis meshes from previous sessions are automatically restored from their saved GLB representation.
-
----
-
-## Analysis Plane Elevation
-
-When using the **Generate Analysis Plane** render mode, the flat analysis plane is placed at the **Drawing RL** (reduced level) elevation. For 2D baked images on existing mesh surfaces, a flat bake plane is created at the Drawing RL to produce a flattened overhead view.
+The ramps are **Ppv**, **Jet**, **Viridis**, **Damage**, **Compliance**, **Grey**, **Sdob**,
+**Pressure**, **Spectrum**, **Thermal**, **Rgb** and **Diverging**. Each model starts with its
+own (for example **Jet** for the Heelan models, **Damage** for Holmberg-Persson, **Diverging**
+for Ripple Tank); change it in **Colour Ramp**.
 
 ---
 
-## Limitations
+## Saving and exporting
 
-- Blair Heavy runs on CPU -- expect 10-60 seconds for typical grids
-- Maximum 512 holes per analysis (GPU texture constraint)
-- Maximum 2048 decks per analysis
-- Maximum 64 charge elements per hole for Heelan/Scaled Heelan models
+- Analysis surfaces are saved with the workspace and travel in KAP projects.
+- To use one outside Kirra, export it as a baked GLB — see
+  [GLTF / GLB export](../exporting/gltf-export.md).
+- The dialog remembers your last settings for the same model.
 
 ---
 
-## Related Topics
+## Troubleshooting
 
-- [PPV & Vibration Models](ppv-models.md)
-- [PPV Voronoi Modes (A/B/C/E) — per-cell, receptor-aware](ppv-voronoi-modes.md)
-- [Blast Quality](blast-quality.md)
+**Nothing appears after Apply Analysis.**
+Check the **Blast Pattern** choice includes visible holes, and that **Scale Min** is not above
+your values.
+
+**"Too many charged decks for this model".**
+The blast has more decks than the model can draw. Choose one blast in **Blast Pattern**, or a
+model with a higher limit.
+
+**The colours are all one end of the ramp.**
+Adjust **Scale Min** and **Scale Max**, or switch **Log Scale**.
+
+---
+
+## Related
+
+- [PPV & Vibration Models](ppv-models.md) — every model's settings
+- [PPV Voronoi Modes](ppv-voronoi-modes.md) — per-hole vibration against monitors
 - [Flyrock Modelling](flyrock.md)
-- [Blast Statistics & Voronoi](statistics-voronoi.md)
 - [Charging Overview](../charging/overview.md)

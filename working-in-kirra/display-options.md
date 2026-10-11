@@ -63,7 +63,7 @@ In order, left to right:
 
 Contours, Slope, Relief and First Movement are explained in
 [Timing Contours, First Movement and Relief](../blast-design/timing-contours.md). Voronoi
-modes are explained in [PPV — Voronoi Modes](../analysis/ppv-voronoi-modes.md).
+cells are explained in [Voronoi Cells](../analysis/voronoi.md).
 
 ---
 

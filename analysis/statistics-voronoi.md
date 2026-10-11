@@ -58,41 +58,19 @@ The Blast Statistics panel displays a live summary of your blast design. It upda
 
 ## Voronoi Analysis
 
-Voronoi diagrams partition space into cells -- one per hole -- where each cell contains all points closer to that hole than any other. This enables per-hole rock volume and powder factor calculations.
+Voronoi cells divide the blast into one patch of ground per hole, and colour each by powder
+factor, mass, volume, area, length, firing time, SDoB, stemming or predicted vibration.
 
-### What Voronoi Shows
-
-- Per-hole area and volume assignments
-- Burden/spacing distribution visualisation
-- Gaps and clustering in the pattern
-- Load balancing across the blast
-
-### How It Works
-
-1. Delaunay triangulation of hole collar positions
-2. Voronoi diagram constructed from the triangulation
-3. Edge cells are clipped to the blast boundary (convex hull, user polygon, or surface outline)
-4. Cell area calculated for each hole
-5. Rock volume = cell area x bench height
-6. Powder factor = explosive mass / rock volume
-
-### How to Access
-
-Open the Voronoi overlay from the Analysis section of the toolbar. All holes must have bench height set for volume calculations to work.
-
----
-
----
-
-## Voronoi PPV Modes
-
-In addition to the area / volume / powder-factor metrics above, the Voronoi dropdown in v1.0.75+ can colour cells by one of four **PPV modes**: Max PPV, Dominant Hole, Compliance, or Max Allowable Charge. These modes evaluate the empirical scaled-distance site law against user-defined monitor points rather than rock-volume geometry. See **[PPV Voronoi Modes](ppv-voronoi-modes.md)** for the full reference.
+The full guide — how to show the cells, every display choice, how cells are built and
+trimmed, the legend ranges and printing — is in **[Voronoi Cells](voronoi.md)**. The six
+vibration displays are covered in **[PPV Voronoi Modes](ppv-voronoi-modes.md)**.
 
 ---
 
 ## Related Topics
 
-- [Analytics Overview](overview.md)
-- [PPV Voronoi Modes (A/B/C/E)](ppv-voronoi-modes.md)
+- [Voronoi Cells](voronoi.md)
+- [PPV Voronoi Modes](ppv-voronoi-modes.md)
+- [Blast Analysis Shader](overview.md)
 - [Charging Overview](../charging/overview.md)
 - [Print to PDF](../printing/pdf-print.md)

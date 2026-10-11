@@ -49,5 +49,5 @@ GLB files exported from Kirra can be opened in:
 ## Related Topics
 
 - [3D Mesh Import](../importing/3d-mesh.md)
-- [Blast Analytics](../analysis/overview.md)
+- [Blast Analysis Shader](../analysis/overview.md)
 - [DXF Export](dxf-export.md)

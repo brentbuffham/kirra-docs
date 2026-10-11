@@ -134,12 +134,16 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Products CSV Reference](charging/products-csv.md)
 
 ### Blast Analytics
-- [Analyse Toolbar](analysis/analyse-toolbar.md) — button-by-button reference
-- [Analytics Overview](analysis/overview.md)
-- [PPV & Vibration Models (shader suite)](analysis/ppv-models.md)
-- [PPV Voronoi Modes (A/B/C/E/F) — per-cell, receptor-aware](analysis/ppv-voronoi-modes.md) *(Mode F added v1.0.230)*
-- [Time Window Dialog — IDI, Spectrum, Synthesis, Forward Array, Detune, Constrain](analysis/time-window.md) *(new)*
-- [Blast Quality — attribute distributions and row-assignment checks](analysis/blast-quality.md) *(new)*
+- [Analyse Toolbar](analysis/analyse-toolbar.md) — every button, and which tool answers which question
+- [Voronoi Cells](analysis/voronoi.md) — powder factor, mass, timing and more, hole by hole
+- [PPV Voronoi Modes (A – F)](analysis/ppv-voronoi-modes.md) — vibration per hole against your monitors
+- [Monitor Points & Seed Library](analysis/monitor-points.md)
+- [Site Law Regression](analysis/site-law-regression.md) — fit K and B from monitoring records
+- [Blast Analysis Shader](analysis/overview.md) — vibration, damage and pressure models over the ground
+- [PPV & Vibration Models](analysis/ppv-models.md) — every shader model's settings
+- [Time Window Dialog — IDI, Spectrum, Synthesis, Forward Array, Detune, Constrain](analysis/time-window.md)
+- [Blast Animation](analysis/blast-animation.md)
+- [Blast Quality — attribute distributions and row-assignment checks](analysis/blast-quality.md)
 - [Flyrock Modelling](analysis/flyrock.md)
 - [Blast Statistics & Voronoi](analysis/statistics-voronoi.md)
 
