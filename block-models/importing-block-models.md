@@ -79,8 +79,7 @@ Click **Load**. The model is decoded in the background with a progress bar.
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| *Exceeds free heap* in the select dialog | The ticked attributes will not fit in browser memory | Untick attributes, use **Ignore where**, or set **Max cells** |
-| A dropped `.dat` file is offered as a Surpac string | The file is not a Micromine Extended Data file | Check it is a block model export, not a string file |
+| *Exceeds free heap* in the select dialog | The ticked attributes will not fit in browser memory | Untick attributes, use **Ignore where**, or set **Max cells**|
 | *Block Model Import Failed* | The file is damaged, or is a variant Kirra does not read yet | Send the error text to support with a description of where the file came from |
 
 ---
