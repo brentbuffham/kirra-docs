@@ -44,7 +44,7 @@ Right-click a hole to open the **Edit Hole** dialog for it (or for the whole sel
 ### Drag to Move
 
 1. Select one or more holes
-2. Click the **Move** button on the [Modify toolbar](../kad/modify-tools.md#move)
+2. Click the **Move** button on the [Modify toolbar](../kad/move.md)
 3. Click and drag on the canvas to move the selection
 4. Release to drop at the new location — collar, grade and toe move together
 

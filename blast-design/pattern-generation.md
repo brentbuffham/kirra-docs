@@ -240,7 +240,7 @@ Every pattern dialog sets elevations the same way:
 | **Use Grade Z** ticked | Enter **Grade Elevation (m)** — each hole runs from the collar to that floor, plus subdrill |
 | **Use Grade Z** unticked | Enter **Length (m)** instead |
 
-To drape collars onto a terrain surface after generating, use **Assign Surface (Collar)** on the [Modify toolbar](../kad/modify-tools.md#assign-surface-collar).
+To drape collars onto a terrain surface after generating, use **Assign Surface (Collar)** on the [Modify toolbar](../kad/assign-surface-grade.md#assign-surface-collar).
 
 ---
 
@@ -258,7 +258,7 @@ All pattern dialogs share these hole-level settings: **Template**, **Blast Name*
 
 After generation, holes behave like any manually placed hole. You can:
 
-- Move holes with the **Move** tool on the [Modify toolbar](../kad/modify-tools.md#move)
+- Move holes with the **Move** tool on the [Modify toolbar](../kad/move.md)
 - Bulk-edit properties by right-clicking a selection (the **Edit Hole** dialog)
 - Add or delete holes
 - Renumber IDs with **Renumber Holes**, or reassign rows with **Reorder Rows**, on the [Holes toolbar](holes-toolbar.md)

@@ -30,22 +30,7 @@ Extrudes a closed KAD polygon vertically to create a 3D solid mesh.
 
 ## KAD Boolean
 
-Performs 2D boolean operations (Union, Difference, Intersection) on KAD polygon entities.
-
-### How to Use
-
-1. Draw or import two or more closed KAD polygons
-2. Click the **KAD Boolean** button in the Surface toolbar
-3. Select the two polygons
-4. Choose the operation (Union, Difference, or Intersection)
-5. Click **Apply**
-6. A new polygon entity is created from the result
-
-### Use Cases
-
-- Combining design boundaries from different sources
-- Subtracting exclusion zones from pattern boundaries
-- Finding the overlap area between two designs
+Union, intersect, difference and XOR of closed polygons, from **KAD Boolean** on the **Modify** toolbar. See [KAD Boolean](boolean.md).
 
 ---
 

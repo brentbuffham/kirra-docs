@@ -10,7 +10,7 @@ These keys work only while you hold them down. Release the key to return to norm
 
 | Key | Action |
 |-----|--------|
-| **S** (hold) | Self-snap — while moving KAD points, let them snap to their own entity (normally the dragged points are excluded from snapping) |
+| **S** (hold) | Self-snap — in the Move tool, let dragged KAD points snap to their own entity (normally they are excluded from snapping) |
 | **F** (hold) | Focus mode for the hole bearing tool — each selected hole points at the cursor, instead of all holes taking the first hole's bearing |
 | **Shift** (hold) | Add to the selection when clicking |
 
@@ -23,7 +23,7 @@ These keys work only while you hold them down. Release the key to return to norm
 | **Ctrl+Z** (Cmd+Z on Mac) | Undo |
 | **Ctrl+Y** or **Ctrl+Shift+Z** (Cmd on Mac) | Redo |
 | **Ctrl+F5** (Cmd+Shift+R on Mac) | Reload Kirra — your work is kept |
-| **Escape** (first press) | Cancel the current step and clear the selection |
+| **Escape** (first press) | Cancel the current step and clear the selection. While drawing KAD it **finishes** the current drawing |
 | **Escape** (second press) | Exit the active tool and return to **Pointer Select** |
 | **Backspace** / **Delete** | Delete the selected KAD objects, vertices or holes (asks you to confirm; deleting holes offers **Renumber**) |
 | **Backspace** / **Delete** | While drawing KAD, remove the last drawn point |
@@ -42,8 +42,25 @@ A dialog that uses the keyboard keeps its own Escape, and Delete / Backspace do 
 | **Connectors Remove** (Connect toolbar) | **Backspace** / **Delete** | Remove the highlighted tie under the cursor |
 | **Roads and Ramps** (KAD toolbar) | **Space** (hold) | Snap the next point to a whole-metre elevation |
 | | **Enter** or **Escape** | Finish the ramp |
-| | **Backspace** / **Delete** | Remove the last segment |
+| | **Backspace** / **Delete** | Remove the last point |
 | | Right-click | Finish the ramp |
+| **KAD draw tools** (KAD toolbar) | Right-click | Finish the drawing; again to end the tool |
+| | **Backspace** / **Delete** | Remove the last point |
+| | **Ctrl+Z** | Undo the last point placed |
+| **Add KAD Points / Line / Polygon** | Right-click the **button** | Placement modes — [details](../kad/points-lines-polygons.md#placement-modes) |
+| **Hole Bearing** (Modify toolbar) | Right-click the **button** | Choose the pivot: collar, grade or toe |
+| | **F** (hold) | Focus mode |
+| **Move** (Modify toolbar) | **Shift** + press | Add to the selection (V mode; K or V in 3D) |
+| | **S** (hold) | Self-snap for KAD points |
+| | **Alt** + drag (3D) | Orbit instead of moving |
+| **Transform KAD** | **Escape** | Cancel and restore the originals |
+| **Offset KAD**, **Simplify RDP** | Right-click | End the tool |
+| **Reorder KAD Points**, **Router-Chamfer** | Right-click | Clear the pick; twice quickly to end the tool |
+| **Extend Line to Boundary** | Right-click | Start the pick again; twice quickly to end the tool |
+| | **Escape** | End the tool |
+| **Grade Line** | Right-click | Step back from the end pick; with nothing picked, end the tool |
+| **KAD Split Lines** | Right-click | Remove the last split point |
+| **KAD Join Lines**, **KAD Split Lines** | **Escape** or click the button again | Cancel the tool |
 
 For mesh editing keys, see [Mesh Editing & Clean Mesh](../surfaces/mesh-editing.md).
 

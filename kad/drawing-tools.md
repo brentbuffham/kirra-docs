@@ -20,36 +20,12 @@ KAD (Kirra App Drawing) entities are the vector drawing objects in Kirra -- poin
 
 ## Drawing Tools
 
-The KAD drawing tools are available in the floating toolbar on the right side of the canvas.
+The drawing tools are on the [KAD toolbar](kad-toolbar.md):
 
-### Adding Points
-
-1. Select the **Point** tool
-2. Click on the canvas to place points
-3. Each click creates a new point entity
-
-### Drawing Lines
-
-1. Select the **Line** tool
-2. Click to place vertices
-3. Each click adds a vertex to the current polyline
-4. Press **Escape** to finish the line
-5. Press **Backspace/Delete** to remove the last placed vertex
-
-### Drawing Polygons
-
-1. Select the **Polygon** tool
-2. Click to place vertices
-3. The polygon preview shows the closing edge back to the first vertex
-4. Press **Escape** to finish and close the polygon
-5. Press **Backspace/Delete** to remove the last placed vertex
-
-### Adding Text
-
-1. Select the **Text** tool
-2. Click on the canvas to place the text anchor point
-3. Enter the text content in the dialog
-4. Text is placed with configurable font height and colour
+- [Drawing Basics](drawing-basics.md) — finishing, undo, layers, height and snapping, common to every tool
+- [Points, Lines, Polygons and Circles](points-lines-polygons.md) — including the right-click placement modes
+- [KAD Text](text.md) — labels and `fx:` formulas
+- [Roads and Ramps](roads-and-ramps.md)
 
 ---
 
@@ -100,10 +76,7 @@ Right-click a KAD entity and select **Show Statistics** to see:
 
 ## Split and Join Lines
 
-Split and Join are available from the **Modify toolbar** as dedicated tools with full dialog support, or from the right-click context menu.
-
-- **Split**: Click the Split button in the Modify toolbar, select a line or polygon, then click on vertices to mark split points. Supports multi-point splitting -- select several vertices before executing the split. See [Modify Toolbar -- Split KAD Lines](modify-tools.md#split-kad-lines) for full details.
-- **Join**: Click the Join button in the Modify toolbar, pick two lines, and they are joined end-to-end. Options include weld tolerance, close as polygon, and delete originals. See [Modify Toolbar -- Join KAD Lines](modify-tools.md#join-kad-lines) for full details.
+Split and Join are on the **Modify** toolbar — see [Join and Split KAD Lines](join-split.md).
 
 ---
 

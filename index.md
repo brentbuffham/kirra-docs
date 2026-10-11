@@ -148,10 +148,17 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Blast Statistics & Voronoi](analysis/statistics-voronoi.md)
 
 ### KAD Drawing Tools
-- [KAD Toolbar](kad/kad-toolbar.md) — button-by-button reference
-- [Drawing Points, Lines, and Polygons](kad/drawing-tools.md)
+- [KAD Toolbar](kad/kad-toolbar.md) — every drawing button and its extra methods
+- [Drawing Basics](kad/drawing-basics.md) — finish, undo, layers, height and snapping
+- [Points, Lines, Polygons and Circles](kad/points-lines-polygons.md) — including placement modes
+- [KAD Text](kad/text.md) · [Roads and Ramps](kad/roads-and-ramps.md)
+- [Modify Toolbar](kad/modify-tools.md) — every editing button and its extra methods
+  - Holes: [Move](kad/move.md) · [Hole Bearing](kad/hole-bearing.md) · [Assign Surface and Assign Grade](kad/assign-surface-grade.md)
+  - Shapes: [Transform](kad/transform.md) · [Offset](kad/offset.md) · [Radii](kad/radii.md) · [Router-Chamfer](kad/router-chamfer.md) · [Reorder Points](kad/reorder-points.md)
+  - Cut and combine: [Clip-KAD](kad/clip-kad.md) · [KAD Boolean](kad/boolean.md) · [Join and Split](kad/join-split.md)
+  - Lines: [Extend Line](kad/extend-line.md) · [Grade Line](kad/grade-line.md) · [Simplify RDP](kad/simplify.md) · [Snap Objects to Surface](kad/snap-to-surface.md)
+- [Drawing Points, Lines, and Polygons](kad/drawing-tools.md) — entity types, properties and statistics
 - [Extrude, Boolean, and Section Plane](kad/advanced-tools.md)
-- [Modify Toolbar](kad/modify-tools.md)
 - [Layer Organisation](kad/layer-organisation.md) — where generated output lands and how it is named
 
 ### Reference
