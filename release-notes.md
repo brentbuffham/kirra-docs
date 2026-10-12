@@ -2,6 +2,31 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.342
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Es_419 drops a line identical to es (ci red since .340)
+
+## Release v1.1.32.341
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Removing every charge in a workspace now survives a reload
+- Removed charges no longer leave mass in PF - Designed
+
+## Release v1.1.32.340
+
+_2026-10-11_
+
+**Bug Fix**
+
+- Assign Grade describes subdrill as the vertical drop
+
 ## Release v1.1.32.339
 
 _2026-10-11_
