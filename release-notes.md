@@ -2,6 +2,50 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.352
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Trimesh Boolean no longer leaves a needle sliver where two corners nearly meet
+
+## Release v1.1.32.351
+
+_2026-10-12_
+
+**Feature**
+
+- Edit Mesh and Trimesh polygon picks can take touching or fully-inside faces
+
+**Bug Fix**
+
+- Polygon select now picks thin triangles that cross the polygon
+
+## Release v1.1.32.350
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Edits made just before closing or reloading Kirra are now saved
+
+## Release v1.1.32.349
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Selecting with a shape in 3D now highlights the Data Explorer
+
+## Release v1.1.32.348
+
+_2026-10-12_
+
+**Feature**
+
+- Right-click several selected drawings to hide them or edit their properties
+
 ## Release v1.1.32.347
 
 _2026-10-12_
