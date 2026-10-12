@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.353
+
+_2026-10-13_
+
+**Feature**
+
+- Kirra warns when the same workspace is open in two windows
+
+**Bug Fix**
+
+- Closing an old tab no longer brings back deleted holes
+
 ## Release v1.1.32.352
 
 _2026-10-12_
