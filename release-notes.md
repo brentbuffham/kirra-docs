@@ -2,6 +2,50 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.347
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Clip Surface no longer shows a polygon you have not chosen
+
+## Release v1.1.32.346
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Extrude KAD to Solid explains when a polygon cannot be extruded
+
+## Release v1.1.32.345
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Solid Boolean stays open when the same surface is chosen twice
+- Solid Boolean warnings now point to tools that exist
+- Solid Boolean normals button can now be undone
+
+## Release v1.1.32.344
+
+_2026-10-12_
+
+**Feature**
+
+- Clean Mesh repairs can now be undone and redone
+
+## Release v1.1.32.343
+
+_2026-10-12_
+
+**Bug Fix**
+
+- Triangulate Search Distance now merges points within that distance
+- Triangulate Parula surface style draws in Parula colours
+- Triangulate keeps its settings when the surface name is rejected
+
 ## Release v1.1.32.342
 
 _2026-10-12_
