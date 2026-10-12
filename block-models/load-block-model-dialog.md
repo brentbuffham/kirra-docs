@@ -34,7 +34,7 @@ The note at the bottom of the dialog counts the blocks being drawn, for example
 
 ### Bench slices
 
-A bench slice shows the geology at one blasting level. Set **Bench RL** to the bench
+A bench slice shows the geology at one reduced level. Set **Bench RL** to the bench
 elevation and **Bench thickness (m)** to the bench height.
 
 ![A 4 m bench slice of the same model, coloured by DENSITY](../screenshots/BlockModelBenchSlice-Density.png)
