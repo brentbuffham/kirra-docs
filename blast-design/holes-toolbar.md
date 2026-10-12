@@ -277,51 +277,32 @@ Converts hole **collar**, **grade**, or **toe** positions into standalone KAD po
 
 ## Product Manager
 
-Opens the **Product Manager** dialog — the explosive products list. This is the source of the products available in the Deck Builder, in CSV charging imports, and of the connector chips on the [Connect toolbar](connect-toolbar.md#connector-product-chips).
+Opens the **Product Manager** — the products list used by the Deck Builder, charge rules, CSV
+charging imports and the [Connect toolbar](connect-toolbar.md#connector-product-chips). Full guide:
+[Product Manager](../charging/product-manager.md).
 
 ![Product Manager dialog](../screenshots/ProductManagerDialog.png)
-*The Product Manager.*
-
-See [Product Database CSV](../charging/products-csv.md) for the data format and import/export workflow.
 
 ---
 
 ## Charge Rule Builder
 
-Opens the **Deck Builder** dialog to configure charge decks — stemming, explosives, spacers, and primers.
-
-![Deck Builder dialog](../screenshots/DeckBuilderDialog.png)
-*The Deck Builder, opened from Charge Rule Builder: products on the left, the deck column in the centre, the Formula Builder on the right.*
-
-See [Deck Builder](../charging/deck-builder.md) for the full workflow, including applying a configuration to holes.
+Opens the **Deck Builder** to build charge decks and rules and apply them to holes. Full guide:
+[Deck Builder](../charging/deck-builder.md).
 
 ---
 
 ## Reapply Charging
 
-Re-fits each selected hole's **existing** charging to the hole's current length. Use this after changing hole geometry (length, bench height, subdrill) so the deck lengths and product masses recalculate.
-
-### How to Use
-
-1. Select the holes
-2. Click the **Reapply Charging** button on the Holes toolbar
-3. Confirm **Apply** in the **Reapply Charging** prompt. Timing constructs are re-assigned at the same time so detonator times are kept.
-
-Holes that have no charging are skipped. If none of the selected holes has charging, Kirra says so and does nothing.
+Re-fits the selected holes' existing charging to their current length. Full guide:
+[Reapply Charging](../charging/reapply-charging.md).
 
 ---
 
 ## Remove Charges
 
-Removes all charging data — decks, products, and primers — from the selected holes.
-
-### How to Use
-
-1. Select the holes to clear
-2. Click the **Remove Charges** button on the Holes toolbar
-3. Confirm **Remove** in the **Remove Charging** prompt
-
-If no holes are selected, Kirra shows *"No holes selected."*
+Clears all charging from the selected holes. Full guide:
+[Remove Charges](../charging/remove-charges.md).
 
 ---
 

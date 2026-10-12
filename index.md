@@ -78,13 +78,13 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Timing Contours, First Movement and Relief](blast-design/timing-contours.md) — isochrones, what counts as one shot, colours and labels *(new)*
 
 ### Surfaces
-- [Surfaces Toolbar](surfaces/surfaces-toolbar.md) — button-by-button reference
+- [Surfaces Toolbar](surfaces/surfaces-toolbar.md) — every surface button and its extra methods
+  - Build: [Triangulate](surfaces/triangulate.md) · [Extrude KAD to Solid](surfaces/extrude-kad-to-solid.md) · [Contour Surface](surfaces/contours.md)
+  - Combine: [Which Boolean?](surfaces/boolean-csg.md) · [Solid Boolean](surfaces/solid-boolean.md) · [Trimesh Boolean](surfaces/trimesh-boolean.md) · [Surface Intersection](surfaces/surface-intersection.md)
+  - Cut and repair: [Clip Surface](surfaces/clip-surface.md) · [Solid Horizon Slice](surfaces/solid-horizon-slice.md) · [Clean Mesh](surfaces/clean-mesh.md) · [Mesh Editing](surfaces/mesh-editing.md)
 - [Importing Surfaces](surfaces/importing-surfaces.md)
 - [Surface Gradients](surfaces/gradients.md)
-- [Trimesh Boolean & Solid Boolean](surfaces/boolean-csg.md)
-- [Mesh Editing & Clean Mesh](surfaces/mesh-editing.md)
 - [Compare Surfaces](surfaces/compare-surfaces.md) — design vs survey deviation heat map
-- [Surface Contours](surfaces/contours.md)
 
 ### Geology — Block Models
 - [Importing Block Models](block-models/importing-block-models.md) — Datamine, Vulcan CSV and BMF, Micromine *(new)*
@@ -130,6 +130,7 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 ### Charging
 - [Charging Overview](charging/overview.md)
 - [Deck Builder](charging/deck-builder.md)
+- Buttons: [Product Manager](charging/product-manager.md) · [Reapply Charging](charging/reapply-charging.md) · [Remove Charges](charging/remove-charges.md)
 - [Harness Wire Assignment](charging/harness-wire-assignment.md)
 - [Products CSV Reference](charging/products-csv.md)
 

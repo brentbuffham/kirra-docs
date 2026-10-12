@@ -1,9 +1,8 @@
-# Mesh Editing & Clean Mesh
+# Mesh Editing
 
-Kirra provides interactive mesh editing and automated mesh repair tools for loaded surfaces.
+Edit Mesh fixes a surface triangle by hand — delete, flip, weld, move and insert triangles — in the 3D view.
 
-![Repair triangles dialog](../screenshots/repair-triangles.png)
-*The Clean Mesh dialog showing diagnostics and repair tools for surface mesh quality.*
+Start it with **Edit Mesh** in the [Clean Mesh](clean-mesh.md) dialog.
 
 ---
 
@@ -76,77 +75,11 @@ On start, Kirra indexes the mesh and builds the wireframe and hover/selection ov
 - **Undo / Redo** — Destructive edits (delete, invert, insert and so on) can be undone and redone.
 - **Close** — The dialog **Close** button ends mesh edit and removes its overlays.
 
-For automated repair (degenerate tris, weld all, self-intersection removal), continue with **Clean Mesh** below.
-
----
-
-## Clean Mesh
-
-The Clean Mesh tool provides automated diagnostics and one-click repair for common mesh quality issues.
-
-### How to Access
-
-Click the **Clean Mesh** button on the Surface toolbar, or right-click a surface (in the Data Explorer or the 3D view) and click **Clean** in its properties dialog.
-
-### Diagnostics
-
-The dialog displays real-time statistics before and after each operation:
-
-| Diagnostic | Description |
-|------------|-------------|
-| **Open Edges** | Boundary edges not shared by two triangles |
-| **Non-Manifold** | Edges shared by more than two triangles |
-| **Degenerate Tris** | Zero-area or near-zero-area triangles |
-| **Crossing Tris** | Triangles that intersect other triangles in the same surface |
-| **Overlapping Tris** | Near-duplicate triangles with opposing normals |
-| **Unwelded Verts** | Vertices within snap tolerance that should be merged |
-
-### Quick Fix Tools
-
-| Tool | Description |
-|------|-------------|
-| **Edit Mesh** | Opens the interactive Mesh Edit tool |
-| **Weld All** | Merges all vertices within snap tolerance |
-| **Fix All** | Runs the full repair pipeline (degenerate removal, weld, crossing cleanup, overlap removal) |
-
-### Normal Controls
-
-| Operation | Description |
-|-----------|-------------|
-| **In** | Set normals to point inward |
-| **Out** | Set normals to point outward |
-| **Flip** | Reverses winding order of all triangles |
-| **Align** | Propagates consistent winding from a seed triangle across the mesh |
-
-Normal controls are also available from the surface right-click menu.
-
-### Individual Repair Operations
-
-| Operation | Description |
-|-----------|-------------|
-| Remove Degenerate Triangles | Deletes zero-area and near-zero-area triangles |
-| Remove Duplicate Triangles | Finds and removes triangles sharing the same vertices |
-| Remove Self-Intersections | Detects and removes crossing triangles |
-| Weld Vertices | Merges vertices within configurable tolerance |
-| Remove Isolated Vertices | Cleans up orphaned vertices |
-| Fix Winding Order | Ensures consistent triangle winding |
-| Remove Sliver Triangles | Removes extremely thin triangles based on aspect ratio |
-
----
-
-## Typical Mesh Repair Workflow
-
-1. Import a surface
-2. Open **Clean Mesh** (Surface toolbar, or right-click the surface and click **Clean**)
-3. Review the diagnostics (open edges, non-manifold, degenerate, etc.)
-4. Click **Fix All** for automated repair, or address issues individually
-5. Use **Align** normals if lighting looks wrong
-6. Verify diagnostics show improved counts
-
----
+For automated repair — open edges, crossing triangles, welding and normals — use [Clean Mesh](clean-mesh.md).
 
 ## Related Topics
 
 - [Importing Surfaces](importing-surfaces.md)
-- [Boolean & CSG](boolean-csg.md)
+- [Clean Mesh](clean-mesh.md)
+- [Which Boolean?](boolean-csg.md)
 - [Surface Gradients](gradients.md)

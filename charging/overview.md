@@ -7,6 +7,19 @@ The Kirra Charging module lets you design explosive charge configurations for ev
 
 ---
 
+## The charging buttons
+
+All four sit on the **Holes** toolbar.
+
+| Button | What it does | Guide |
+|---|---|---|
+| **Product Manager** | The list of products holes are charged with | [Product Manager](product-manager.md) |
+| **Charge Rule Builder** | Opens the Deck Builder to build decks and rules and apply them | [Deck Builder](deck-builder.md) |
+| **Reapply Charging** | Re-fits existing charging to the holes' current length | [Reapply Charging](reapply-charging.md) |
+| **Remove Charges** | Clears all charging from the selected holes | [Remove Charges](remove-charges.md) |
+
+---
+
 ## What the Charging System Does
 
 | Capability | Description |

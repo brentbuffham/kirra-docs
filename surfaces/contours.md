@@ -1,55 +1,89 @@
-# Surface Contours
+# Contour Surface
 
-Kirra generates elevation contour lines (isolines) at regular intervals on loaded surfaces. Contour lines are created as KAD polyline entities that appear in both 2D and 3D views.
+Draws contour lines across a surface at a regular elevation interval. Use them to read a
+pickup at a glance, to check a design floor, or to export bench and toe strings to CAD.
 
-> *Screenshot coming soon -- contour lines on a surface*
-
----
-
-## How to Generate Contours
-
-1. Click the **Contour Surface** button on the Surface toolbar — the **Surface Contours** dialog opens
-2. Choose the **Surface**, or click the pick button and click it on the canvas
-3. Configure the contour settings:
-   - **Contour Interval (m)** -- vertical spacing between contour lines (default 5)
-   - **Start From** -- **Min (up)**, **Max (down)**, **Zero** or **Custom**; levels are the **Starting Origin (m)** plus whole multiples of the interval (for example 617, 619, 621 …)
-   - **Min Elevation (m)** / **Max Elevation (m)** -- the range to contour
-   - **Vertex Spacing (m)** -- simplification tolerance; 0 keeps every vertex (default 0)
-   - **Close Polylines** -- close the contours into polygons (default off)
-   - **Color** -- colour for the contour polylines
-   - **Line Width** -- thickness of the contour lines in pixels (default 2)
-   - **Sub-layer Name** -- folder under `Analysis` for the output (default `Contours`)
-4. Click **Generate**
-5. Contour polylines appear as KAD entities in the Data Explorer and in both the 2D and 3D views
+![Surface Contours dialog](../screenshots/SurfaceContoursDialog.png)
 
 ---
 
-## Where the Contours Land
+## Contour a surface
 
-Contours are filed in `Analysis → Contours` and named
-`<surface>_Contour_RL<elevation>_<seq>_<uid>` -- for example `Pit_Contour_RL640_001_a4zz`.
-Every ring at the same elevation shares the `RL` value, so sorting the folder by name
-groups each elevation together.
+1. Click **Contour Surface** on the **Surface** toolbar. The **Surface Contours** dialog opens.
+2. Choose the **Surface**, or click the target button and click the surface in the 3D view. The
+   picked surface flashes green.
+3. Set **Contour Interval (m)** and where the levels start (below).
+4. Click **Generate**. The contours are added as KAD lines and Kirra reports how many were made.
 
-Type a different **Sub-layer Name** to split a run out -- `PitShell` files the output in
-`Analysis → PitShell` instead. The top-level layer stays `Analysis` either way.
-
-See [Layer Organisation](../kad/layer-organisation.md).
-
----
-
-## Use Cases
-
-- **Design visualisation** -- See elevation changes across the blast area
-- **Volume estimation** -- Use contour spacing to estimate cut/fill volumes
-- **Surface analysis** -- Identify ridges, valleys, and slope changes
-- **Export** -- Contour lines can be exported as DXF polylines for use in CAD software
+With no surfaces loaded, Kirra says *"No surfaces loaded. Import a surface (DTM, STR, OBJ)
+first."* The list includes hidden surfaces.
 
 ---
 
-## Related Topics
+## The fields
 
-- [Importing Surfaces](importing-surfaces.md)
+| Field | Default | What it does |
+|---|---|---|
+| **Contour Interval (m)** | 5 | Vertical distance between contours |
+| **Start From** | **Min (up)** | Where the levels are counted from: **Min (up)**, **Max (down)**, **Zero** or **Custom** |
+| **Starting Origin (m)** | The surface's lowest point | The level the interval is counted from. Editable with **Custom** only |
+| **Min Elevation (m)** | Lowest point, rounded down | No contours below this |
+| **Max Elevation (m)** | Highest point, rounded up | No contours above this |
+| **Vertex Spacing (m)** | 0 | Simplifies the lines: vertices closer than this are dropped. 0 keeps every vertex |
+| **Close Polylines** | Off | Closes each contour into a polygon |
+| **Color** | Yellow | Colour of the contours |
+| **Line Width** | 2 | Line width (1–10) |
+| **Sub-layer Name** | **Contours** | The sub-layer the contours are filed in |
+
+Levels are the **Starting Origin (m)** plus whole multiples of the interval, between the min and
+max. With **Zero** and a 2 m interval, contours fall on even RLs — 616, 618, 620 and so on.
+
+The dialog remembers your settings in this browser. Choosing a different surface refills the min
+and max from that surface.
+
+> **Tip:** To contour your bench RLs exactly, choose **Custom**, type one bench RL as the
+> **Starting Origin (m)** and use the bench height as the interval.
+
+---
+
+## What you get
+
+KAD lines — or polygons, with **Close Polylines** — in the **Analysis** layer under the
+**Sub-layer Name**, or in your active layer if you have chosen one. Each is named after the
+surface and its RL, for example `Pit_Contour_RL640_001_a4zz`, so sorting by name groups each
+level together. The surface itself is not changed. The whole set is one undo step.
+
+The result message lists the count, the elevation range, the interval and the time taken.
+
+---
+
+## Troubleshooting
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| *"Contour interval must be greater than 0."* | Interval is 0 or blank | Enter an interval |
+| *"Too many contour levels (…)"* | Over 5,000 levels in the range | Raise the interval or narrow the range |
+| *"No contour lines generated."* | The range misses the surface | Reselect the surface to refill **Min** and **Max** |
+| Min and max belong to the last surface | The dialog remembers them | Choose the surface again to refill them |
+| A **Large Surface** warning | The surface is over the 3D triangle limit | **Generate** anyway, **Adjust Settings**, or **Cancel** |
+
+---
+
+## Other ways to use it
+
+| Method | Result |
+|---|---|
+| **Start From** → **Custom** | Contours on your own datum, such as bench RLs |
+| **Sub-layer Name** | A separate folder per run — for example `PitShell` |
+| **Close Polylines** | Closed rings, ready for clipping or extruding |
+| **Vertex Spacing (m)** above 0 | Lighter lines for export |
+
+---
+
+## Related
+
+- [Solid Horizon Slice](solid-horizon-slice.md) — cut a solid at the same levels
 - [Surface Gradients](gradients.md)
 - [Layer Organisation](../kad/layer-organisation.md)
 - [DXF Export](../exporting/dxf-export.md)
+- [Surfaces Toolbar](surfaces-toolbar.md)
