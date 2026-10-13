@@ -48,7 +48,7 @@ On start, Kirra indexes the mesh and builds the wireframe and hover/selection ov
 | **Weld** | **Vertex mode only**, **2+** vertices — merges selected positions to their **centroid** and rewires triangles (**W**). |
 | **Move** | **Vertex mode** — **M** toggles **move sub-mode**: pick a vertex, then **drag**; motion is constrained to an **adjacent plane** derived from neighbour triangles. |
 | **Insert** | **I** — **Insert sub-mode:** pick **three** positions in the 3D view (raycast on mesh); **Enter** commits a **new triangle** when three picks are stored. |
-| **Polygon select** | **P** — Draw a **2D screen-space polygon** over the viewport; on completion, selects all triangles whose centres fall inside the polygon (**face mode**) or vertices inside (**vertex mode**). **Shift+double-click** to **add** to the existing selection. |
+| **Polygon select** | **P** — Click the corners of a **2D screen-space polygon** over the viewport and double-click to finish. In **face mode** it selects the triangles touching the polygon — right-click the button and choose **Select fully inside** to take only triangles wholly inside it (**Select Touching Tris** is the default). In **vertex mode** it selects the vertices inside. **Shift+double-click** adds to the selection; **Ctrl+double-click** (**Cmd** on a Mac) removes from it. Polygon Select stays on for the next polygon until you press **P** or click the button again. |
 | **Clean orphan vertices** | Removes points not used by any triangle (scissors icon). |
 | **Selection count** | Shows `N face(s)` or `N vert(s)`. |
 | **Clear** | Clears the current selection (faces or vertices). |
