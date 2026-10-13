@@ -31,8 +31,8 @@ On start, Kirra indexes the mesh and builds the wireframe and hover/selection ov
 
 | Mode | Shortcut | Picking | Multi-select |
 |------|-----------|---------|--------------|
-| **Face** | **F** (when no sub-mode) | **Raycast** on the surface mesh — click a triangle | **Shift+click** toggles faces in the selection set |
-| **Vertex** | **V** | **Screen-space** nearest vertex within ~**20 px** (magenta points) | **Shift+click** toggles vertices |
+| **Face** | **F** (when no sub-mode) | **Raycast** on the surface mesh — click a triangle | **Shift+click** adds a face (or takes out one already selected); **Ctrl+click** (**Cmd** on a Mac) removes it |
+| **Vertex** | **V** | **Screen-space** nearest vertex within ~**20 px** (magenta points) | **Shift+click** adds a vertex (or takes out one already selected); **Ctrl+click** (**Cmd** on a Mac) removes it |
 
 **Escape** — First clears an active **sub-mode**; then clears face or vertex selection; if nothing is selected, **exits Mesh Edit** entirely (same as **Close** on the dialog).
 
