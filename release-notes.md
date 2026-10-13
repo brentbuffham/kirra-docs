@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.359
+
+_2026-10-13_
+
+**Bug Fix**
+
+- The Assign Surface and Assign Grade message now follows your language
+
 ## Release v1.1.32.358
 
 _2026-10-13_
