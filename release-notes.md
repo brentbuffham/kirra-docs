@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.358
+
+_2026-10-13_
+
+**Bug Fix**
+
+- Doc-gap audit reads each tool under its own title
+
+## Release v1.1.32.357
+
+_2026-10-13_
+
+**Bug Fix**
+
+- Assign Surface and Assign Grade are much faster on charged blasts
+
 ## Release v1.1.32.356
 
 _2026-10-13_
