@@ -2,6 +2,28 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.362
+
+_2026-10-13_
+
+**Bug Fix**
+
+- Edit Mesh Ctrl+click now removes a face or vertex from the selection
+
+## Release v1.1.32.361
+
+_2026-10-13_
+
+**Bug Fix**
+
+- Edit Mesh polygon select now removes triangles with Ctrl, as Shift adds
+
+## Release v1.1.32.360
+
+_2026-10-13_
+
+History not available at the moment.
+
 ## Release v1.1.32.359
 
 _2026-10-13_
