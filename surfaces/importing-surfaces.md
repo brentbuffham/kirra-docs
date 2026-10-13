@@ -70,12 +70,11 @@ Once imported, you can:
 |----------|-------------|
 | Name | Filename or user-defined name |
 | Visible | Show/hide toggle |
-| Gradient | Colour scheme (default, hillshade, viridis, texture, etc.) |
-| Transparency | Opacity level (0 = invisible, 1 = solid) |
-| Min Limit | Minimum elevation for colour mapping |
-| Max Limit | Maximum elevation for colour mapping |
+| Color Gradient | Colour scheme — Default, Hillshade, Viridis, Turbo, Parula, Cividis, Terrain, and Texture (Original) for textured meshes |
+| Transparency | 0% = invisible, 100% = solid |
+| Min Z / Max Z | The elevation range the colours are spread over. Blank uses the surface's own lowest and highest points |
 
-Access surface properties by right-clicking the surface in the Data Explorer or in the 3D view.
+Open a surface's properties by right-clicking it on the canvas, or by choosing **Properties** from its right-click menu in the Data Explorer. See [Surface Gradients](gradients.md) for every field.
 
 ![Surface context menu in 3D](../screenshots/surfacesContext.png)
 *Right-click a surface in the 3D view to access properties, gradient options, and more.*
