@@ -2,6 +2,35 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.356
+
+_2026-10-13_
+
+**Feature**
+
+- Reorder Rows can leave hidden and locked holes as they are
+
+## Release v1.1.32.355
+
+_2026-10-13_
+
+**Bug Fix**
+
+- Reorder Rows keeps each hole's timing and blast group
+- Trunk Branch Connect no longer picks locked holes
+- Initiation point, bake and trunk messages now follow the chosen language
+
+## Release v1.1.32.354
+
+_2026-10-13_
+
+**Bug Fix**
+
+- A blank burden in pattern tools now becomes 1.0 m
+- Pattern Templates offers a free name instead of losing your entries
+- Renumber Holes keeps each hole's label settings on that hole
+- Connect Distance is remembered the next time Kirra opens
+
 ## Release v1.1.32.353
 
 _2026-10-13_
