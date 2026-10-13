@@ -252,7 +252,7 @@ Kirra has eight floating toolbars. Drag a toolbar by its title bar to move it. T
 | Toolbar | Purpose |
 |---------|---------|
 | **Select** | [Undo / redo, pointer and shape selection, H / K / V mode, ruler, protractor, zoom, reset view, section plane, find, orbit focus, Settings](../reference/select-toolbar.md) |
-| **Holes** | [Place holes and patterns, pattern templates, renumber, reorder rows, insert holes, charging, radii from holes](../blast-design/holes-toolbar.md) |
+| **Holes** | [Place holes and patterns, pattern templates, renumber, reorder rows, insert holes, coincident holes check, charging](../blast-design/holes-toolbar.md) |
 | **Surface** | [Triangulate, surface intersection, Solid Boolean, Trimesh Boolean, extrude, contour, clean mesh, clip, horizon slice](../surfaces/surfaces-toolbar.md) |
 | **Workspace** | [Switch between ten separate workspaces, or clear one](#workspace-toolbar) |
 | **Analyse** | [Flyrock shroud, blast analysis shader, Voronoi options, monitor points, site law regression, hole section, compare surfaces, blast animation, time window, block models, blast quality](../analysis/analyse-toolbar.md) |

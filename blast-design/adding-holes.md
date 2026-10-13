@@ -1,193 +1,143 @@
-# Adding Blast Holes
+# Add Hole
 
-Kirra gives you several ways to add blast holes to your design — from placing individual holes one at a time to importing entire patterns from CSV files. This page covers manual hole placement and the properties every hole carries.
+Places individual blast holes where you click on the canvas — one at a time, or a run of holes with
+the same settings. Use it for infill holes, relief holes, re-drills and small designs that no
+pattern tool fits.
 
----
-
-## Activating the Add Hole Tool
-
-1. Click the **Add Hole** button on the [Holes toolbar](holes-toolbar.md)
-2. Click on the canvas where the hole should go. The click snaps to nearby objects — the status bar shows what it snapped to
-3. The **Add a hole to the Pattern?** dialog opens with the clicked position filled in
+![Add a hole to the Pattern? dialog](../screenshots/AddHoleDialog.png)
+*The Add a hole to the Pattern? dialog, with Multiple, Cancel and Single in the footer.*
 
 ---
 
-## The Add Hole Dialog
+## Prerequisites
 
-The dialog sets the properties of the new hole. It remembers the values you last used, so they become your defaults for the next hole.
-
-| Field | Description | First-use value |
-|-------|-------------|-----------------|
-| **Template** | Fill the form from a saved [pattern template](pattern-templates.md) | — |
-| **Blast Name** | The blast (entity) the hole is added to | — |
-| **Use Custom Hole ID** / **Hole ID** | Type your own hole ID instead of the next number | Off |
-| **Location X** / **Location Y** | Collar position, from your click | Click position |
-| **Collar Z RL (m)** | Collar elevation | Snapped Z, or 0 |
-| **Delay** / **Delay Colour** / **Connector Curve (°)** | Timing delay and how its connector is drawn | 0 / red / 0 |
-| **Hole Type** | Free text classification | Production |
-| **Diameter (mm)** | Hole diameter | 115 |
-| **Bearing (°)** | Drill azimuth (0 = North, clockwise) | 0 |
-| **Dip/Angle (°)** | Drill angle from vertical (0 = vertical) | 0 |
-| **Subdrill (m)** | Vertical distance below grade (positive = downhole) | 0 |
-| **Use Grade Z** / **Grade Z RL (m)** / **Length (m)** | Set the hole by grade elevation, or by length | Length |
-| **Burden (m)** / **Spacing (m)** | Stored on the hole for analysis | 3.0 / 3.5 |
+- None. To place the hole on existing work, snap the click to a KAD point, vertex or hole.
 
 ---
 
-## Placing Holes on the Canvas
+## Place a hole
 
-1. Fill in the dialog, then click **Single** to place this one hole, or **Multiple** to place it and keep the settings
-2. In **Multiple** mode, each further click on the canvas places another hole with the same settings — no dialog
-3. Click the **Add Hole** button again to finish
+This tool is click-first: you click the position, then the dialog opens.
 
-Every tool that adds holes checks for a hole already at the same position in the same blast and warns you before placing a duplicate.
+1. Click **Add Hole** on the **Holes** toolbar. Hole ID labels are switched on so you can see the
+   numbering.
+2. Click the canvas where the hole goes. The click snaps to nearby objects; the status line says
+   what it snapped to.
+3. The **Add a hole to the Pattern?** dialog opens with the click in **Location X** / **Location Y**.
+4. Set the blast name and hole properties (see [The fields](#the-fields)).
+5. Click **Single** to place this one hole and finish, or **Multiple** to place it and keep going.
 
-> *Screenshot coming soon*
+### Place several holes with the same settings
 
----
+1. Fill in the dialog and click **Multiple**. The hole is placed and the dialog closes.
+2. Click the canvas again. Each click places another hole with the same settings — no dialog.
+3. Click **Add Hole** again, or press **Escape** twice, to finish.
 
-## Understanding Hole Properties
-
-Every blast hole in Kirra carries a full set of geometric and operational properties. These are grouped into several categories:
-
-### Geometry — Collar, Toe, and Grade
-
-Each hole is defined by three key 3D points:
-
-| Point | What It Represents |
-|-------|-------------------|
-| **Collar** (Start) | The top of the hole at the surface — Easting, Northing, and Elevation |
-| **Toe** (End) | The bottom of the hole — the deepest point drilled |
-| **Grade** (Floor) | Where the hole intersects the bench floor elevation |
-
-The relationship between these points determines all other geometric properties:
-
-- **Bench Height** = Collar Elevation minus Grade Elevation (always positive)
-- **Subdrill Amount** = Grade Elevation minus Toe Elevation (positive = hole extends below the floor)
-- **Hole Length** = 3D distance from Collar to Toe
-
-For angled holes, the Grade point is automatically interpolated along the hole vector between the Collar and Toe.
-
-### Orientation — Angle and Bearing
-
-| Property | Convention | Range |
-|----------|-----------|-------|
-| **Angle** | Measured from vertical (0 = straight down, 90 = horizontal) | 0 to 90 degrees |
-| **Bearing** | Compass direction measured clockwise from North | 0 to 359.99 degrees |
-
-> **Note:** Different mining software uses different angle conventions. Kirra uses "angle from vertical" where 0 is straight down. Some systems like Surpac use -90 for vertical. Always verify the convention when importing data from other software.
-
-### Dimensions
-
-| Property | Description |
-|----------|-------------|
-| **Hole Diameter** | Diameter in millimetres (115 mm on first use of the Add Hole dialog) |
-| **Hole Length** | Calculated 3D distance from collar to toe (metres) |
-| **Subdrill Length** | Vector distance along the hole from grade to toe (metres) |
-
-### Timing and Initiation
-
-| Property | Description |
-|----------|-------------|
-| **From Hole** | Which hole this one is connected to in the timing sequence |
-| **Delay** | Time delay in milliseconds from the connected hole |
-| **Connector Colour** | Colour of the timing connector line on the canvas |
-
-### Measured Data
-
-Kirra also stores actual field measurements alongside the design data:
-
-| Property | Description |
-|----------|-------------|
-| **Measured Length** | Actual drilled depth (metres) |
-| **Measured Mass** | Actual explosive mass loaded (kg) |
-| **Measured Comment** | Field notes or observations |
-| **Temperature** | Borehole temperature (if measured) |
-
-All measured fields include timestamps for audit trail purposes.
+The status line confirms each hole: *"Hole added to {blast name}"*.
 
 ---
 
-## Hole Types
+## The fields
 
-Each hole carries a type classification that controls its colour coding and how it is treated in reports and exports:
+| Field | First-use value | What it does |
+|---|---|---|
+| **Template** | -- None -- | Picking a [pattern template](pattern-templates.md) fills the blast name, type, diameter, angle, subdrill, burden, spacing and elevations. Its text setup and charging are applied to the new hole |
+| **Blast Name** | `Added_hole_` + a number | The blast the hole goes into. An existing name adds to that blast |
+| **Use Custom Hole ID** | Off | Tick to type the ID yourself |
+| **Hole ID** | — | The custom ID. A number at or below the blast's highest number becomes the next number after it; any other ID already in the blast is replaced with a free one |
+| **Location X** / **Location Y** | Your click | Collar position. You can type over them |
+| **Collar Z RL (m)** | Snapped elevation | The elevation of the object you snapped to, or the drawing elevation. If that is 0, the last value you used |
+| **Delay** | 0 | Remembered for next time. A new hole starts **untied at 0 ms** — tie it with the [Connect toolbar](connect-toolbar.md) |
+| **Delay Colour** | Red | Remembered for next time. A new hole starts with a red tie colour |
+| **Connector Curve (°)** | 0 | Remembered for next time. The dialog's tip: *"Curved connectors: 45° to 120°, -45° to -120° \| Straight: 0°"*. A new hole is untied, so it has no connector to curve |
+| **Hole Type** | Production | Free text |
+| **Diameter (mm)** | 115 | Hole diameter |
+| **Bearing (°)** | 0 | Direction an angled hole leans (0 = North, clockwise) |
+| **Dip/Angle (°)** | 0 | Angle from vertical. 0 = vertical |
+| **Subdrill (m)** | 0 | Vertical depth below grade |
+| **Use Grade Z** | Off | Ticked: the hole runs to **Grade Z RL (m)**. Unticked: it is set by **Length (m)** |
+| **Grade Z RL (m)** | Calculated | Floor RL. Editing it recalculates the length |
+| **Length (m)** | 0 | Collar-to-toe length, including subdrill. Editing it recalculates the grade |
+| **Burden (m)** | 3.0 | Stored on the hole for analysis |
+| **Spacing (m)** | 3.5 | Stored on the hole for analysis |
 
-| Type | Typical Use |
-|------|------------|
-| **Production** | Standard production blast holes |
-| **Presplit** | Pre-split perimeter holes for wall control |
-| **Buffer** | Buffer holes between production and presplit rows |
-| **Trim** | Trim or control holes |
-| **Relief** | Relief holes for burn cuts or tunnel rounds |
-| **Undefined** | Default — not yet classified |
+The dialog remembers what you entered, so your last values become the defaults. Its **Workflow**
+and **Tips** notes at the bottom summarise these steps.
 
-Custom hole types are also supported. You can enter any name you like.
-
----
-
-## Editing a Hole After Placement
-
-- **Click** a placed hole (with **Pointer Select** on) to select it
-- **Right-click** a hole to open the **Edit Hole** dialog — edit its properties and click **Apply**, or use the **Hide**, **Delete**, **Insert** and **Assign Blast** buttons
-- See [Editing Holes](editing-holes.md) for moving, bulk editing and deleting
-
-> *Screenshot coming soon*
-
----
-
-## Hole ID Numbering
-
-Kirra gives each new hole the next number in its blast. To use your own ID instead, tick **Use Custom Hole ID** in the Add Hole dialog and type it in **Hole ID**.
-
-To renumber an entire selection, use **Renumber Holes** on the [Holes toolbar](holes-toolbar.md).
+> **Note:** Add Hole has no **Hole Pivot Location** field — the click is always the collar.
 
 ---
 
-## Switching Back to Selection Mode
+## What to expect
 
-Click the **Add Hole** button again, or click **Pointer Select** on the Select toolbar, to stop placing holes. Accidentally placed holes can be removed by selecting them and pressing `Delete` or `Backspace`.
-
----
-
-## Coordinate System
-
-Kirra uses UTM-style real-world coordinates:
-
-| Axis | Direction |
-|------|-----------|
-| **X** | Easting (metres east, positive to the right) |
-| **Y** | Northing (metres north, positive upward on the canvas) |
-| **Z** | Elevation (metres altitude) |
-
-> **IREDES Warning:** If you import or export IREDES XML files, be aware that the IREDES standard swaps X and Y (X = Northing, Y = Easting). Kirra handles this swap automatically during import and export.
+- The hole appears at the clicked position, collar at **Collar Z RL (m)**, toe set by the angle,
+  bearing and length or grade.
+- Each hole is its own undo step — **Ctrl+Z** removes the last one.
+- If the new hole would sit on a hole already in the same blast, the **Hole Proximity Warning** asks
+  you to **Skip**, **Ignore**, **Skip All** or **Cancel**. Holes in **other** blasts are not checked.
+  See [Editing Holes → Hole coincidence](editing-holes.md#hole-coincidence).
+- The Data Explorer updates with the new hole under its blast.
 
 ---
 
-## Display Options
+## Hole geometry in brief
 
-You can control which hole labels appear on the canvas with the display toggle buttons along the bottom of the workspace. Hover over a button to see its name. They include:
+Every hole is defined by three points: the **collar** (top), the **grade** (where it crosses the
+design floor) and the **toe** (bottom).
 
-- Hole ID, Hole Type
-- Hole Length, Hole Diameter, Hole Subdrill
-- Hole Angle, Hole Dip, Hole Bearing
-- Delay Value, Hole Time, Ties
-- Row and Position
-- Hole X / Y / Z Location
+- **Bench height** = collar RL − grade RL
+- **Subdrill** = grade RL − toe RL (vertical; positive = below the floor)
+- **Length** = the 3D distance from collar to toe
+- **Angle** is measured from vertical; **bearing** clockwise from North
 
-Toggle these on and off as needed to keep the canvas readable.
-
-### Hole Visualisation
-
-| View | How Holes Appear |
-|------|-----------------|
-| **2D Canvas** | Circles at the collar position with timing connector lines |
-| **3D View** | Cylinders from collar to toe, colour-coded by type or timing |
+The full list of hole fields is in the [Hole Properties Reference](../reference/hole-properties.md);
+axes and angle conventions are in [Coordinate System](../reference/coordinate-system.md).
 
 ---
 
-## Related Topics
+## Other ways to use it
 
-- [Pattern Generation](pattern-generation.md) — generate grids, polygon, and line patterns automatically
-- [Editing Holes](editing-holes.md) — select, move, and bulk-edit holes
-- [Timing Sequences](timing-sequences.md) — assign initiation delays
-- [Hole Properties Reference](../reference/hole-properties.md) — every field explained
+| Method | Result |
+|---|---|
+| **Multiple** | Keep clicking to place holes with the same settings |
+| **Cancel** in the dialog | Closes it and switches the tool off |
+| **Escape** (twice) | Leaves the tool and returns to **Pointer Select** |
+| 3D view | Click in 3D; the same dialog opens, and **Multiple** works the same way |
+| Section work plane | In **Multiple** mode each click on the plane takes its own elevation |
+| [Insert Holes](insert-holes.md) | Adds holes **into an existing row**, renumbering the row |
+| [Add Pattern](add-pattern.md) and the other pattern tools | Many holes at once |
+
+---
+
+## Troubleshooting
+
+**"Invalid Blast Name"** or **"Invalid Type"**
+**Blast Name** or **Hole Type** is empty.
+
+**"No Location"** — *"Please click on the canvas to set hole location."*
+The dialog has no clicked position. Close it and click the canvas first.
+
+**The hole has no depth.**
+**Length (m)** is 0 on first use. Enter a length, or tick **Use Grade Z** and set the grade RL.
+
+**I typed a custom Hole ID but the hole got a different one.**
+That ID is already used in the blast, so Kirra gave the hole a free one.
+
+---
+
+## Editing a hole after placement
+
+Click the hole with **Pointer Select** to select it, then right-click for the **Edit Hole** dialog.
+See [Editing Holes](editing-holes.md) for moving, bulk editing and deleting.
+
+---
+
+## Related
+
+- [Add Pattern](add-pattern.md) — a rectangular grid
+- [Pattern in Polygon](pattern-in-polygon.md) — fill a boundary
+- [Holes Along Line](holes-along-line.md) and [Holes Along Polyline](holes-along-polyline.md) — rows
+- [Pattern Templates](pattern-templates.md)
+- [Editing Holes](editing-holes.md)
+- [Hole Properties Reference](../reference/hole-properties.md)
+- [Holes Toolbar](holes-toolbar.md)

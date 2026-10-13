@@ -19,13 +19,13 @@ Timing controls the order and delay between hole detonations in a blast. Correct
 
 ## Tying Holes
 
-1. Pick a connector product chip on the Connect toolbar (or type a **Delay Amount**)
+1. Pick a connector product chip on the Connect toolbar, or type a **Delay Amount** — see [Connector Settings](connector-settings.md)
 2. Choose a tie tool:
-   - **Tie Connect / Cord Inline / Reconnect to Trunk** — one tie at a time: click the source hole, then the target hole
-   - **Tie Connect Multi** — click the first and last hole of a line; every hole near the line is tied in order
-   - **Tie Connect Continuous** — click a run along the row, on holes or the ground between them
-   - **Trunk Branch Connect** — lay a trunk line; holes in the swath are tied with branches to it
-3. Make the first hole an **initiation point** — click it twice with a tie tool, or use **Self Connect Add IP**
+   - [Tie Connect](tie-connect.md) — one tie at a time: click the source hole, then the target hole
+   - [Tie Connect Multi](tie-connect-multi.md) — click the first and last hole of a line; every hole near the line is tied in order
+   - [Tie Connect Continuous](tie-connect-continuous.md) — click a run along the row, on holes or the ground between them
+   - [Trunk Branch Connect](trunk-branch-connect.md) — lay a trunk line; holes in the swath are tied with branches to it
+3. Make the first hole an **initiation point** — click it twice with a tie tool, or use [Self Connect Add IP](initiation-points.md)
 
 Each tie sets the target hole's **From Hole** and **Delay**. Firing times recalculate as you go. See the [Connect Toolbar](connect-toolbar.md) for every tool.
 
@@ -37,7 +37,7 @@ Use the display toggle buttons along the bottom of the workspace — **Ties** sh
 
 ### Removing ties
 
-- **Connectors Remove** on the Connect toolbar — hover a tie to highlight it, then click it (or press `Delete`) to remove it
+- [Connectors Remove](connectors-remove.md) on the Connect toolbar — hover a tie to highlight it, then click it (or press `Delete`) to remove it
 - **Reset Connections** — right-click selected holes in the Data Explorer. Each hole is tied to itself, so the surface ties are cleared
 
 ---
@@ -100,7 +100,7 @@ For **electronic detonators** in the charging design, you can build a **temporal
 
 - [Electronic Timing Constructs](electronic-timing-constructs.md)
 
-To move surface timing onto electronic detonators, use **Bake Delay** on the [Connect toolbar](connect-toolbar.md#bake-delay).
+To move surface timing onto electronic detonators, use **Bake Delay** on the [Connect toolbar](connect-toolbar.md) — see [Bake Delay](bake-delay.md).
 
 ---
 

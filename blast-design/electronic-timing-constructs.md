@@ -4,7 +4,7 @@
 
 This workflow is separate from **connector timing** (each hole's **From Hole** and **Delay**, shown as tie arrows between collars). Electronic timing writes **primer detonator** fields for initiators marked **Electronic** in the charge design.
 
-> **Availability:** Open the dialog with the **Electronic Timing Panel** button on the [Connect toolbar](connect-toolbar.md#electronic-timing-panel). The button is always shown; it does not depend on the charging design containing electronic detonators.
+> **Availability:** Open the dialog with the **Electronic Timing Panel** button on the [Connect toolbar](connect-toolbar.md). The button is always shown; it does not depend on the charging design containing electronic detonators.
 
 ---
 

@@ -67,12 +67,14 @@ Use this block to judge whether the docs may be ahead of or behind your installe
 - [Settings](working-in-kirra/settings.md) — theme, language, and every Settings field with its default
 
 ### Blast Hole Design
-- [Holes Toolbar](blast-design/holes-toolbar.md) — button-by-button reference
-- [Connect Toolbar](blast-design/connect-toolbar.md) — button-by-button reference *(updated with Continuous Connect)*
-- [Adding Holes](blast-design/adding-holes.md)
+- [Holes Toolbar](blast-design/holes-toolbar.md) — index of every button, with links
+  - [Pattern in Polygon](blast-design/pattern-in-polygon.md) · [Holes Along Line](blast-design/holes-along-line.md) · [Holes Along Polyline](blast-design/holes-along-polyline.md) · [Add Hole](blast-design/adding-holes.md) · [Add Pattern](blast-design/add-pattern.md)
+  - [Pattern Templates](blast-design/pattern-templates.md) · [Renumber Holes](blast-design/renumber-holes.md) · [Reorder Rows](blast-design/reorder-rows.md) · [Coincident Holes Check](blast-design/coincident-holes-check.md) · [Convert Holes to KAD Points](blast-design/holes-to-kad-points.md) · [Insert Holes](blast-design/insert-holes.md)
+- [Connect Toolbar](blast-design/connect-toolbar.md) — index of every control, with links
+  - [Temporal Mesh](blast-design/temporal-mesh.md) · [Tie Connect](blast-design/tie-connect.md) · [Tie Connect Multi](blast-design/tie-connect-multi.md) · [Tie Connect Continuous](blast-design/tie-connect-continuous.md) · [Trunk Branch Connect](blast-design/trunk-branch-connect.md)
+  - [Connectors Remove](blast-design/connectors-remove.md) · [Initiation Points](blast-design/initiation-points.md) · [Connector Settings](blast-design/connector-settings.md) · [Bake Delay](blast-design/bake-delay.md)
+- [Pattern Generation](blast-design/pattern-generation.md) — choosing a pattern tool, elevations, hole naming
 - [Editing Holes](blast-design/editing-holes.md)
-- [Pattern Generation](blast-design/pattern-generation.md)
-- [Pattern Templates](blast-design/pattern-templates.md)
 - [Timing Sequences](blast-design/timing-sequences.md)
 - [Electronic Timing Constructs](blast-design/electronic-timing-constructs.md) — timing surfaces and **firing groups**
 - [Timing Contours, First Movement and Relief](blast-design/timing-contours.md) — isochrones, what counts as one shot, colours and labels *(new)*

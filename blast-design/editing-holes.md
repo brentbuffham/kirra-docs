@@ -167,29 +167,11 @@ there.
 
 ## Renumbering Holes
 
-1. Click **Renumber Holes** on the [Holes toolbar](holes-toolbar.md)
-2. Set the options, then click **Start Selection**:
+Use [Renumber Holes](renumber-holes.md) on the Holes toolbar: pick the first and last hole of a
+run and give it new IDs, a row and positions. The start value you type chooses the naming scheme —
+`500` gives numbers, `A1` gives row names. Timing links and charging follow the new IDs.
 
-| Option | What it does |
-|---|---|
-| **Renumber Mode** | *Renumber Row from #* renumbers only the holes you pick. *Renumber All from #* moves those holes into the row you name, then renumbers the whole blast. |
-| **Row Direction** | *Keep current* reads the direction from your existing hole names and preserves it. *Serpentine* alternates each row; *Forward & Return* starts every row at the same end. |
-| **Start Renumbering #** | Also chooses the naming scheme — see below |
-| **Zone Width** | How wide the selection band is, in metres |
-| **Row ID to assign** | The row number the selected holes are given |
-
-3. Click the first hole, then the last hole in the run you want
-4. Hole IDs update throughout the project, including timing links and charge assignments
-
-### The start value chooses the naming scheme
-
-| You type | You get |
-|---|---|
-| `1` or `500` | **Numbers** — one running count across the blast: 500, 501, 502 … |
-| `A1` or `BH1` | **Row names** — the letter is the row and advances each row: A1…A20, then B1…B18 |
-
-The dialog previews what you will get as you type, and refuses a value it cannot read rather
-than quietly renumbering from 1.
+To rebuild every row and position in a blast from a row line, use [Reorder Rows](reorder-rows.md).
 
 ---
 
@@ -249,7 +231,7 @@ Two holes in the **same blast** must never share an XY position — a duplicate 
 - **Adding / inserting / pattern tools** — if a new hole would land on an existing hole in the same blast, a proximity warning appears with **Ignore** (place anyway), **Skip** (place only the non-clashing holes), **Skip All**, or **Cancel**.
 - **Move tool** — if a dragged hole is dropped on another hole in the same blast, the drop is flagged with **Keep** (allow) or **Revert** (snap the moved hole(s) back to their original positions).
 
-Coincidence is only flagged **within a blast** (same entity). Holes from *different* blasts may overlap in plan view by design — they sit on different benches at different elevations. To find coincident holes across blasts, use **Coincident Holes Check** on the [Holes toolbar](holes-toolbar.md#coincident-holes-check).
+Coincidence is only flagged **within a blast** (same entity). Holes from *different* blasts may overlap in plan view by design — they sit on different benches at different elevations. To find coincident holes across blasts, use [Coincident Holes Check](coincident-holes-check.md) on the Holes toolbar.
 
 ---
 
@@ -289,8 +271,9 @@ A duplicate cannot be undone with **Ctrl+Z** — delete the copy to remove it.
 
 ## Related Topics
 
-- [Adding Holes](adding-holes.md) — place individual holes manually
-- [Holes Toolbar → Insert Holes Tool](holes-toolbar.md#insert-holes-tool) — insert into a row before/after a hole
+- [Add Hole](adding-holes.md) — place individual holes manually
+- [Insert Holes](insert-holes.md) — insert into a row before or after a hole
+- [Renumber Holes](renumber-holes.md) and [Reorder Rows](reorder-rows.md)
 - [Hole Properties Reference](../reference/hole-properties.md) — every field explained
 - [Pattern Generation](pattern-generation.md) — generate patterns automatically
 - [Timing Sequences](timing-sequences.md) — assign initiation delays
