@@ -22,11 +22,16 @@ The Export dialog is tabbed by file family — identical layout to the Import di
 
 | Tab | Counts | What's on it |
 |-----|--------|--------------|
-| **Kirra** | 4 | KAP project, KAD drawing, Holes CSV / TXT, Measured Data |
-| **Blasts** | 7 | Custom CSV + vendor formats (CBLAST, ShotPlus, DigiShot, etc.) |
-| **Drawings / CAD** | 5 | DXF, Vulcan ARCH_D, Surpac, KML/KMZ, ESRI Shapefile |
-| **Surfaces / Mesh** | 4 | GeoTIFF, OBJ/GLTF, Point Cloud, LAS |
-| **Operations** | 2 | Epiroc Surface Manager, Wenco NAV |
+| **Kirra** | 5 | Kirra Application Project, Kirra App Template, Kirra App Drawing, Holes CSV / TXT (preset columns), Measured Data |
+| **Blasts** | 7 | Custom CSV, Charging CSV, CBLAST, Minestar AQM, DetNet ViewShot, DetNet DigiShot / ParVS3, Electronic Timing |
+| **Drawings / CAD** | 5 | Geometry CSV, DXF, Vulcan ARCH_D, Surpac, Micromine STR |
+| **Surfaces / Mesh** | 7 | GeoTIFF / Image, OBJ / GLTF, Point Cloud, LAS Point Cloud, Vulcan .00t Triangulation, Surpac Surface (STR + DTM), DXF Surface (3DFACE) |
+| **Geology** | 4 | Block Model — Datamine, Vulcan CSV, Vulcan BMF, Micromine |
+| **Miscellaneous** | 5 | Borehole Telemetry, Epiroc Surface Manager, Wenco NAV, KML / KMZ, ESRI Shapefile |
+| **Legacy** | 1 | ShotPlan 3 |
+
+Some rows are listed so you can find them but are greyed out as *coming soon* — Borehole
+Telemetry, and every block model except Vulcan CSV.
 
 ---
 
