@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.364
+
+_2026-10-14_
+
+**Bug Fix**
+
+- Barycentric surface colour gradient style now applies when chosen
+
+## Release v1.1.32.363
+
+_2026-10-14_
+
+**Bug Fix**
+
+- Print templates total only the explosive mass of printed blasts
+
 ## Release v1.1.32.362
 
 _2026-10-13_
