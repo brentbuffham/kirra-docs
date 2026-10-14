@@ -110,6 +110,7 @@ Right-click a row for its tools. The menu shows only the items that fit what you
 | **Blast Bounds** | Draws a red boundary polygon around each blast's visible holes (needs at least 3) |
 | **Assign Volume…** | Chooses how the blast volume is worked out — for example *Burden × Spacing × hole length* |
 | **Reset Connections** | (Holes only.) Removes the holes' ties: each hole is tied to itself, with zero delay and hole time |
+| **Statistics** | (Blasts only.) Opens the [Blast Statistics](../analysis/statistics-voronoi.md#blast-statistics) table — holes, drilling and charging by hole type |
 | **Properties** | Opens the hole editor for the hole, holes or blast |
 
 ### Groups
