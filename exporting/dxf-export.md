@@ -2,7 +2,7 @@
 
 Kirra exports blast designs and drawings to AutoCAD DXF format for use in CAD packages, mine planning software, and survey systems.
 
-> *Screenshot coming soon*
+![Export DXF dialog](../screenshots/ExportDXFDialog.png)
 
 ---
 

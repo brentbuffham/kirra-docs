@@ -2,7 +2,7 @@
 
 Export surfaces as georeferenced raster images for use in GIS software such as QGIS, ArcGIS, and Global Mapper.
 
-> *Screenshot coming soon*
+![GeoTIFF Export Settings dialog](../screenshots/GeoTIFFExportSettings.png)
 
 ---
 

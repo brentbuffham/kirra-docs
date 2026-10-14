@@ -2,22 +2,16 @@
 
 These tools connect KAD drawings to surface operations, enabling you to create 3D geometry from 2D design boundaries.
 
-> *Screenshot coming soon -- extruded polygon in 3D view*
+![A polygon extruded 12 m down into a solid, seen in 3D](../screenshots/ExtrudedPolygon3D.png)
+*A closed polygon around a blast, extruded 12 m down and shown part-transparent in 3D.*
 
 ---
 
 ## Extrude KAD to Solid
 
-Extrudes a closed KAD polygon vertically to create a 3D solid mesh.
-
-### How to Use
-
-1. Draw a closed polygon using the KAD Polygon tool
-2. Click the **Extrude KAD** button in the Surface toolbar
-3. Select the polygon entity
-4. Set the extrusion height (vertical distance)
-5. Click **Extrude**
-6. A 3D solid mesh is created from the polygon outline
+Extrudes a closed KAD polygon straight up or down into a closed 3D solid, from **Extrude KAD to
+Solid** on the **Surface** toolbar. Choose the **Polygon**, set **Depth (m) +ve=up, -ve=down**, and
+click **Apply**. See [Extrude KAD to Solid](../surfaces/extrude-kad-to-solid.md).
 
 ### Use Cases
 

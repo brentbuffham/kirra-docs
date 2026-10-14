@@ -67,7 +67,9 @@ Air bags, gas bags, or inert separators placed between charge decks. These creat
 
 **Purpose:** Modify energy distribution and fragmentation by decoupling charge zones.
 
-> *Screenshot coming soon*
+![A charge column with all four deck types](../screenshots/DeckTypesColumn.png)
+*One column with all four deck types: **INERT** stemming at the collar, a **COUPLED** ANFO deck,
+a gas bag **SPACER**, a stemming deck, and a **DECOUPLED** packaged deck at the toe — two primers.*
 
 ---
 

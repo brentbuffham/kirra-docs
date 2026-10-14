@@ -16,7 +16,10 @@ When opened from **Edit Rules**, the Deck Builder works in rule mode: the button
 
 The same editor also appears on the **Charging** tab of a pattern template, so you can build or change a template's charge rule without leaving the template. See [Pattern Templates](../blast-design/pattern-templates.md#charging-tab).
 
-> *Screenshot coming soon*
+![Deck Builder showing a charged hole](../screenshots/DeckBuilderCharged.png)
+*The Deck Builder opened on a charged hole: products on the left, the charge column in the
+centre (stemming, ANFO and an emulsion toe charge with one primer), the Formula Builder on the
+right. The line under the column totals the decks, primers, explosive mass and powder factor.*
 
 ---
 

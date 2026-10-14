@@ -2,7 +2,7 @@
 
 Kirra exports surfaces and analysis results to GLB (binary GLTF) format for use in 3D viewers, Blender, and other mesh tools.
 
-> *Screenshot coming soon*
+![Export dialog, Surfaces / Mesh tab, with GLTF chosen on the OBJ / GLTF row](../screenshots/ExportSurfacesMeshTab.png)
 
 ---
 

@@ -2,8 +2,6 @@
 
 Kirra generates 3D flyrock shroud surfaces representing the ballistic envelope of flyrock hazards around blast holes. **Four** published models are available, and they will not agree with each other — that is expected, and reading the disagreement is part of using them.
 
-> *Screenshot coming soon -- 3D flyrock shroud dome over blast pattern*
-
 ---
 
 ## ⚠️ Before you use these

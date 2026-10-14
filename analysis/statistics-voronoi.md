@@ -2,7 +2,7 @@
 
 Kirra provides real-time blast statistics and Voronoi analysis to help you verify your design before export.
 
-> *Screenshot coming soon -- statistics panel and Voronoi overlay*
+![Voronoi cells coloured by PF - Designed](../screenshots/VoronoiCellsPFDesigned.png)
 
 ---
 

@@ -29,7 +29,9 @@ Timing controls the order and delay between hole detonations in a blast. Correct
 
 Each tie sets the target hole's **From Hole** and **Delay**. Firing times recalculate as you go. See the [Connect Toolbar](connect-toolbar.md) for every tool.
 
-> *Screenshot coming soon*
+![A pattern tied row by row, with Ties and Hole Time switched on](../screenshots/TimingTiesHoleTimes.png)
+*A pattern tied row by row with **Ties** and **Hole Time** on. Each arrow runs from the hole that
+fires it; the red number beside each hole is its firing time in ms.*
 
 ### Viewing ties and times
 
