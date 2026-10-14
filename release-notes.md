@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.367
+
+_2026-10-14_
+
+**Feature**
+
+- Blast Statistics Refresh button updates the table after edits
+
+## Release v1.1.32.366
+
+_2026-10-14_
+
+**Feature**
+
+- Blast Statistics has a Numerical Precision setting for decimals
+
+## Release v1.1.32.365
+
+_2026-10-14_
+
+**Feature**
+
+- Blast Statistics table from the Data Explorer right-click menu
+
 ## Release v1.1.32.364
 
 _2026-10-14_
