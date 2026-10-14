@@ -2,6 +2,39 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.371
+
+_2026-10-15_
+
+**Feature**
+
+- Blast Analysis can build a closed 3D surface at a model's Target
+
+## Release v1.1.32.370
+
+_2026-10-15_
+
+**Feature**
+
+- Blast Analysis can draw polygons where a model reaches its Target
+- Blast Analysis has a Cell Size setting for generated geometry
+
+## Release v1.1.32.369
+
+_2026-10-15_
+
+**Bug Fix**
+
+- Blast Analysis value pass on every Target model
+
+## Release v1.1.32.368
+
+_2026-10-14_
+
+**Bug Fix**
+
+- Blast Statistics precision field stays visible when scrolling the table
+
 ## Release v1.1.32.367
 
 _2026-10-14_
