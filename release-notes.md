@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.379
+
+_2026-10-15_
+
+**Bug Fix**
+
+- Transform dialogs now describe the current and destination projections consistently
+
 ## Release v1.1.32.378
 
 _2026-10-15_
