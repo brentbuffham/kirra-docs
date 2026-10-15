@@ -2,6 +2,24 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.375
+
+_2026-10-15_
+
+**Bug Fix**
+
+- Password managers no longer pop up over the CRS Library filter
+
+## Release v1.1.32.374
+
+_2026-10-15_
+
+**Feature**
+
+- CRS Library manager on the Analyse toolbar lists every saved projection
+- Import many .prj, WKT, Proj4 or JSON projection files at once
+- Rename, delete and export saved projections from the CRS Library
+
 ## Release v1.1.32.373
 
 _2026-10-15_
