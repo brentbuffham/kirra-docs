@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.373
+
+_2026-10-15_
+
+**Feature**
+
+- Reprojection dialogs list your saved projections under a new Library option
+- Save a custom or EPSG projection to the Library from any reprojection dialog
+- Load .prj, WKT or Proj4 files straight into a reprojection dialog
+- EPSG projections keep working offline after their first download
+- Reprojection dialogs now ask for the current and destination projection
+
 ## Release v1.1.32.372
 
 _2026-10-15_
