@@ -2,6 +2,35 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.378
+
+_2026-10-15_
+
+**Feature**
+
+- Projection dialogs have a button to choose from the CRS Library
+
+## Release v1.1.32.377
+
+_2026-10-15_
+
+**Bug Fix**
+
+- Password managers no longer pop up over the CRS Library filter box
+
+## Release v1.1.32.376
+
+_2026-10-15_
+
+**Feature**
+
+- Projection choices in import and export dialogs now travel in KAP and KAT files
+- Custom projections can be saved to the Library when you press OK
+
+**Bug Fix**
+
+- Saving a projection under an existing name no longer replaces the first
+
 ## Release v1.1.32.375
 
 _2026-10-15_
