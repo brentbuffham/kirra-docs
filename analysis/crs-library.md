@@ -48,8 +48,9 @@ and **Select destination projection** (the system you want).
 | **Show:** Southern UTM / Northern UTM / Non-UTM | Filters the **EPSG Code** list |
 | **Show:** Library | Lists your CRS Library. The list label changes to **Projection:** |
 | **— Use Custom Definition —** | In the EPSG list: use the Proj4 / WKT box below instead |
-| **Load a projection file** (icon) | Reads a `.prj`, `.wkt`, `.proj4` or `.json` into the custom box |
-| **Save the active projection to the Library** (icon) | Names the current pick and saves it to the Library |
+| **Load a projection file** (open-file icon) | Reads a `.prj`, `.wkt`, `.proj4` or `.json` into the custom box |
+| **Save the active projection to the Library** (save icon) | Names the current pick and saves it to the Library |
+| **Choose a projection from the Library** (library icon) | Lists your CRS Library in the dropdown — the same as **Show:** Library. If the Library is empty, Kirra says where to import projections |
 
 ### Saving a custom definition when you press OK
 
