@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.372
+
+_2026-10-15_
+
+**Feature**
+
+- CRS Library store travels in KAP and kat
+
 ## Release v1.1.32.371
 
 _2026-10-15_
