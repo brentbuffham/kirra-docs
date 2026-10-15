@@ -35,16 +35,19 @@ Switching between **Standard** and **Transform** returns you to the first tab.
 1. Choose **Transform (reproject CRS)**, open the tab, and click **Open** on the row.
 2. Pick the file.
 3. Kirra asks for two coordinate systems:
-   - **Source CRS** — the system the file is in.
-   - **Target CRS** — your project's system.
+   - **Select current projection** — the system the file is in.
+   - **Select destination projection** — your project's system.
 
-   For each, pick an **EPSG** code (filter the list by hemisphere) or paste a Proj4 or WKT
-   definition. Both are required.
+   For each, pick an **EPSG** code (filter the list by hemisphere), choose **Library** to
+   pick from your [CRS Library](../analysis/crs-library.md), load a `.prj` / `.proj4` file,
+   or paste a Proj4 or WKT definition. Both are required.
 4. Click **Import** (or **Continue** for a point cloud or geometry CSV, which go on to their
    normal import dialog).
+5. If you used a custom definition that is not in the Library, Kirra asks **Save to
+   Library?** — name it and click **Save**, or click **Forget** to use it this once.
 
 Kirra remembers the last pair you used for each format, so for a regular survey you only
-choose them once.
+choose them once. That memory travels in your KAP and KAT files, with the Library.
 
 | Row | After the transform |
 |---|---|

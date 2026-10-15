@@ -72,8 +72,8 @@ and panel layout stay as they are.
 Import a **site template** from a `.kat` file. A KAT is everything a KAP carries
 **except the blast** — no holes, drawings, surfaces, images, blast groups, trunks,
 timing or firing groups. It brings a site's setup: explosive products, charge rules,
-pattern and print templates, measured seeds, PPV monitors and parameters, colour
-settings and work settings.
+pattern and print templates, measured seeds, PPV monitors and parameters, the
+[CRS Library](../analysis/crs-library.md), colour settings and work settings.
 
 **Into an empty workspace**, the template simply loads. Nothing is asked.
 

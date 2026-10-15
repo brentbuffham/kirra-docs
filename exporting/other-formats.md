@@ -116,7 +116,8 @@ not included.
 
 Save your **site setup** as a `.kat` file: everything a KAP carries **except the blast**.
 It holds your explosive products, charge rules, pattern and print templates, measured
-seeds, PPV monitors and parameters, colour settings and work settings — no holes,
+seeds, PPV monitors and parameters, the [CRS Library](../analysis/crs-library.md), colour
+settings and work settings — no holes,
 drawings, surfaces, images, groups, trunks or timing.
 
 Use a KAT to set up a new machine or a new site with the same catalogue and layouts, to

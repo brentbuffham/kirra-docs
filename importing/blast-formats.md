@@ -67,9 +67,10 @@ Reads a Davey Bickford blast plan (`.bpd`). These files hold positions in latitu
 longitude, so Kirra asks where to project them:
 
 1. Pick the file.
-2. **BPD Import — Coordinate System** asks for the **Source CRS (BPD file, usually WGS84)**
-   — already set to WGS84 — and the **Target CRS (your project)**. Choose an EPSG code or
-   paste a Proj4 / WKT definition.
+2. **BPD Import — Coordinate System** asks you to **Select current projection** — already
+   set to WGS84, the system BPD files use — and **Select destination projection**, your
+   project's system. Choose an EPSG code, a [CRS Library](../analysis/crs-library.md) entry,
+   or paste a Proj4 / WKT definition.
 3. Click **Project & Import**.
 
 A blast plan carries positions and timing, not hole geometry. Holes come in vertical, with

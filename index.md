@@ -108,6 +108,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 - [PPV Voronoi Modes (A – F)](analysis/ppv-voronoi-modes.md) — vibration per hole against your monitors
 - [Monitor Points & Seed Library](analysis/monitor-points.md)
 - [Site Law Regression](analysis/site-law-regression.md) — fit K and B from monitoring records
+- [CRS Library](analysis/crs-library.md) — your site's coordinate systems, for every import and export
 - [Blast Analysis Shader](analysis/overview.md) — vibration, damage and pressure models over the ground
 - [PPV & Vibration Models](analysis/ppv-models.md) — every shader model's settings
 - [Time Window Dialog — IDI, Spectrum, Synthesis, Forward Array, Detune, Constrain](analysis/time-window.md)
