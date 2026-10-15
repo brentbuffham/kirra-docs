@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.380
+
+_2026-10-15_
+
+**Feature**
+
+- Contour, slice, intersection, hole section and extrude settings now travel in KAP and KAT files
+
 ## Release v1.1.32.379
 
 _2026-10-15_
