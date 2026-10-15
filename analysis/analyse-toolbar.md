@@ -11,23 +11,51 @@ open it from its tab on the right edge of the window.
 
 ## The buttons
 
-Hover over a button to see its name.
+Hover over a button to see its name. The buttons sit in six groups, separated by a line,
+listed here from the top of the toolbar down.
+
+### Blast models
 
 | Button | What it does | Guide |
 |---|---|---|
 | **Flyrock Shroud Generator** | Builds a 3D flyrock envelope over the blast, from one of four published models | [Flyrock Modelling](flyrock.md) |
 | **Blast Analysis Shader** | Paints a vibration, damage, pressure or powder-factor model over the ground | [Blast Analysis Shader](overview.md) |
+
+### Surfaces
+
+| Button | What it does | Guide |
+|---|---|---|
 | **Compare Surfaces** | Colours a measured surface by its distance from a design surface | [Compare Surfaces](../surfaces/compare-surfaces.md) |
+
+### Holes as drilled
+
+| Button | What it does | Guide |
+|---|---|---|
 | **Hole Section Tool** | A section through one hole, showing its burden to the face, with staged edits | [Hole Section View](../reference/section-views.md#hole-section-view) |
 | **Blast Quality** | The spread of any hole attribute, and holes filed in the wrong row | [Blast Quality](blast-quality.md) |
+
+### Timing
+
+| Button | What it does | Guide |
+|---|---|---|
 | **Blast Animation** | Plays the firing sequence back in time | [Blast Animation](blast-animation.md) |
 | **Time Window** | Timing and vibration analysis — histograms, intervals, spectrum, waveform synthesis, detune and constrain | [Time Window](time-window.md) |
-| **Adjust Block Model Loaded** | Changes how the loaded block model is drawn | [The Load Block Model Dialog](../block-models/load-block-model-dialog.md) |
+
+### Block models
+
+| Button | What it does | Guide |
+|---|---|---|
+| **Adjust Block Model Loaded** | Changes how the loaded block model is drawn | [Below](#adjust-block-model-loaded) |
 | **Adjust Block Model Schema Colour** | Manages the named colour schemas for block-model attributes | [Below](#adjust-block-model-schema-colour) |
+
+### Vibration and libraries
+
+| Button | What it does | Guide |
+|---|---|---|
 | **Voronoi Options** | Sets up the Voronoi cells — what they show, the area basis, the legend and the PPV modes | [Voronoi Cells](voronoi.md) |
 | **Monitor Points Manager** | Adds and edits vibration monitors and the seed waveform library | [Monitor Points & Seed Library](monitor-points.md) |
-| **Site Law Regression — log-log PPV vs Scaled Distance** | Fits your site law from monitoring records and applies it to a monitor | [Site Law Regression](site-law-regression.md) |
-| **CRS Library — saved projections** | Keeps your site's coordinate systems — `.prj`, WKT, Proj4, EPSG — for every import and export dialog | [CRS Library](crs-library.md) |
+| **Site Law Regression** | Fits your site law (log-log PPV against scaled distance) from monitoring records and applies it to a monitor | [Site Law Regression](site-law-regression.md) |
+| **CRS Library** | Keeps your site's coordinate systems — `.prj`, WKT, Proj4, EPSG — for every import and export dialog | [CRS Library](crs-library.md) |
 
 ---
 
@@ -45,6 +73,8 @@ Hover over a button to see its name.
 | Do too many holes fire at once? | [Time Window](time-window.md) |
 | Does the firing run the way I designed it? | [Blast Animation](blast-animation.md) |
 | Are holes in the right rows, and is the drilling consistent? | [Blast Quality](blast-quality.md) |
+| How far is the survey from the design surface? | [Compare Surfaces](../surfaces/compare-surfaces.md) |
+| My file is on another grid — how do I bring it onto mine? | [CRS Library](crs-library.md), then [Transform Import](../importing/transform-import.md) |
 
 ---
 

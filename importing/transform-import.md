@@ -49,6 +49,10 @@ Switching between **Standard** and **Transform** returns you to the first tab.
 Kirra remembers the last pair you used for each format, so for a regular survey you only
 choose them once. That memory travels in your KAP and KAT files, with the Library.
 
+![Choosing projections from the CRS Library](../screenshots/CrsPickerLibrary.png)
+*The same picker appears in every transform import and export. The three icons load a
+file, save to the Library, and choose from the Library.*
+
 | Row | After the transform |
 |---|---|
 | **OBJ — Transform** | The OBJ imports as a surface. Select its `.mtl` and images too to keep the texture. Only `.obj` — not GLTF or GLB |

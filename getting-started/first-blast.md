@@ -520,7 +520,7 @@ You now have a complete blast: pattern from template, charged holes, timing casc
 
 | Goal | Where |
 |------|-------|
-| **Run vibration / PPV analysis** | [Analyse Toolbar](../analysis/analyse-toolbar.md) → Blast Shader Tools, Voronoi Options |
+| **Run vibration / PPV analysis** | [Analyse Toolbar](../analysis/analyse-toolbar.md) → Blast Analysis Shader, Voronoi Options |
 | **Frequency-domain / detune analysis** | [Time Window Dialog](../analysis/time-window.md) (IDI, Spectrum, Forward Array, Detune, Constrain) |
 | **Flyrock shroud** | [Flyrock Modelling](../analysis/flyrock.md) |
 | **Save the project** | **Import Export Print** menu (top bar) → **Export**, or App Navigation panel → **File Management → Export** → **Kirra Application Project** (.kap) |

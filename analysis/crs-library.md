@@ -26,6 +26,9 @@ stored.
 Click **CRS Library — saved projections** on the **Analyse** toolbar. The dialog is
 **CRS Library**.
 
+![CRS Library dialog](../screenshots/CrsLibraryDialog.png)
+*One entry ticked for Export or Delete; the highlighted entry shows its definition below.*
+
 | Part | What it does |
 |---|---|
 | **Import** | Reads one or many projection files at once. Files that cannot be read are listed in an amber banner |
@@ -43,6 +46,9 @@ Every dialog that asks for a coordinate system uses the same picker. A transform
 export asks two questions: **Select current projection** (the system the data is in now)
 and **Select destination projection** (the system you want).
 
+![KAD Transform Export with a Library projection chosen](../screenshots/CrsPickerLibrary.png)
+*The current projection comes from the Library; the destination is an EPSG code.*
+
 | Control | What it does |
 |---|---|
 | **Show:** Southern UTM / Northern UTM / Non-UTM | Filters the **EPSG Code** list |
@@ -56,6 +62,8 @@ and **Select destination projection** (the system you want).
 
 If you used a custom definition that is not in the Library, Kirra asks **Save to Library?**
 when you press the dialog's OK button:
+
+![Save to Library? prompt](../screenshots/CrsSaveToLibraryPrompt.png)
 
 - **Save** — type a **Projection Name** and save. The dialog remembers it by name next time.
 - **Forget** — use it this once. Nothing is kept.
