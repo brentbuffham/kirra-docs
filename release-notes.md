@@ -2,6 +2,39 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.384
+
+_2026-10-16_
+
+**Bug Fix**
+
+- Deck Builder: Interpret / Apply to Hole match the footer buttons
+
+## Release v1.1.32.383
+
+_2026-10-16_
+
+**Bug Fix**
+
+- Deck Builder: Apply to Hole ghosted until Interpret; compact buttons
+
+## Release v1.1.32.382
+
+_2026-10-16_
+
+**Feature**
+
+- Apply to Hole button sits under Interpret in the Deck Builder
+
+## Release v1.1.32.381
+
+_2026-10-16_
+
+**Feature**
+
+- Deck Builder builds a whole hole from one plain-English sentence
+- Product pickers confirm sentence matches before Apply to Hole
+
 ## Release v1.1.32.380
 
 _2026-10-15_
