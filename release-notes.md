@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.385
+
+_2026-10-16_
+
+**Bug Fix**
+
+- Adding or replacing primers before Bake no longer leaves the dialog stuck open
+
 ## Release v1.1.32.384
 
 _2026-10-16_
