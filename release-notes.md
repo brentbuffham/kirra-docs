@@ -2,6 +2,34 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.394
+
+_2026-10-17_
+
+**Feature**
+
+- Charging Check flags charges with no usable fire time
+
+**Bug Fix**
+
+- Monitor PPV, Time Window and contours now count the same charges at the same times
+
+## Release v1.1.32.393
+
+_2026-10-17_
+
+**Bug Fix**
+
+- Wall-compliance shader works in the analysis frame too
+
+## Release v1.1.32.392
+
+_2026-10-17_
+
+**Feature**
+
+- Holmberg-Persson damage can use the NIOSH-modified method, ticked by default
+
 ## Release v1.1.32.391
 
 _2026-10-17_
