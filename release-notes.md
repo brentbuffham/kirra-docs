@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.398
+
+_2026-10-17_
+
+**Bug Fix**
+
+- A charge with no fire time uses its hole's time when nothing else fires
+
+## Release v1.1.32.397
+
+_2026-10-17_
+
+**Bug Fix**
+
+- A charge with no fire time now fires with its hole's first deck
+
 ## Release v1.1.32.396
 
 _2026-10-17_
