@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.391
+
+_2026-10-17_
+
+**Bug Fix**
+
+- Holmberg-Persson damage treats a split charge column as one column
+- A deck without its own primer now fires with the deck it touches
+
+## Release v1.1.32.390
+
+_2026-10-17_
+
+**Bug Fix**
+
+- Blast analysis shaders are now accurate close to holes at large mine-grid coordinates
+
 ## Release v1.1.32.389
 
 _2026-10-17_
