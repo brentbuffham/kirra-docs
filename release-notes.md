@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.387
+
+_2026-10-17_
+
+**Bug Fix**
+
+- Charges copied with Apply to Selected no longer share hidden IDs between holes
+
 ## Release v1.1.32.386
 
 _2026-10-16_
