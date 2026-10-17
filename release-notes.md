@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.396
+
+_2026-10-17_
+
+**Feature**
+
+- Holmberg-Persson notes explain the 1979 and NIOSH-modified methods
+
+## Release v1.1.32.395
+
+_2026-10-17_
+
+**Bug Fix**
+
+- Holmberg-Persson now starts on the original 1979 method; NIOSH-modified is optional
+
 ## Release v1.1.32.394
 
 _2026-10-17_
