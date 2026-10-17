@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.386
+
+_2026-10-16_
+
+**Feature**
+
+- Deck Builder sentences can describe an air deck, with or without a gas bag
+
 ## Release v1.1.32.385
 
 _2026-10-16_
