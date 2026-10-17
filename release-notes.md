@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.399
+
+_2026-10-18_
+
+**Feature**
+
+- Electronic Timing Global Relief can now be typed and applies to all segments
+- Per-Segment mode shows the blast's area-weighted average relief
+
+**Bug Fix**
+
+- Newly drawn timing segments start at the Global Relief value
+
 ## Release v1.1.32.398
 
 _2026-10-17_
