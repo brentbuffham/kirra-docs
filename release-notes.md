@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.389
+
+_2026-10-17_
+
+**Feature**
+
+- Kirra warns on load about charged holes that look wrong, and never changes them
+- A Check Charging button lists odd charging by blast, with Select and Ignore
+
+## Release v1.1.32.388
+
+_2026-10-17_
+
+**Bug Fix**
+
+- Removing a deck then using Apply Changes no longer leaves gaps in holes
+
 ## Release v1.1.32.387
 
 _2026-10-17_
