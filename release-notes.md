@@ -2,6 +2,31 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.402
+
+_2026-10-18_
+
+**Feature**
+
+- Apply to Selected warns when holes are too short for fixed decks
+- Short holes can take a stemming and charge split, or be uncharged
+
+## Release v1.1.32.401
+
+_2026-10-18_
+
+**Bug Fix**
+
+- Dialog sliders now show their value while you drag them
+
+## Release v1.1.32.400
+
+_2026-10-18_
+
+**Bug Fix**
+
+- Primer depth formulas now hold when charging is applied to other holes
+
 ## Release v1.1.32.399
 
 _2026-10-18_
