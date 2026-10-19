@@ -2,6 +2,83 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.430
+
+_2026-10-19_
+
+**Bug Fix**
+
+- Template prints show symbols such as ▬ ● ▲ ◉ instead of junk
+- Template prints show Russian and Mongolian text correctly
+
+## Release v1.1.32.429
+
+_2026-10-19_
+
+**Feature**
+
+- Template dates can show day and month names and add days
+
+**Bug Fix**
+
+- A date format like DDD no longer prints a stray letter
+
+## Release v1.1.32.428
+
+_2026-10-19_
+
+**Feature**
+
+- Print a template on bigger paper, enlarged to fit, such as A3 on A1
+
+**Bug Fix**
+
+- Excel templates set to A2, A5, B4 or B5 print at that size
+
+## Release v1.1.32.427
+
+_2026-10-19_
+
+**Bug Fix**
+
+- Deleting a saved print template removes it from the list straight away
+- Switching a template print back to Kirra Inbuilt clears the template outline
+
+## Release v1.1.32.426
+
+_2026-10-19_
+
+History not available at the moment.
+
+## Release v1.1.32.425
+
+_2026-10-19_
+
+**Feature**
+
+- Template prints can override the template DPI for every map view
+
+## Release v1.1.32.424
+
+_2026-10-19_
+
+**Feature**
+
+- Printed ECW imagery is read at print resolution, not screen detail
+- Choose the Image DPI for printed aerial images
+
+## Release v1.1.32.423
+
+_2026-10-19_
+
+History not available at the moment.
+
+## Release v1.1.32.422
+
+_2026-10-19_
+
+History not available at the moment.
+
 ## Release v1.1.32.421
 
 _2026-10-19_
