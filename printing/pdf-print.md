@@ -412,25 +412,50 @@ fx:upper(entityName) & " — " & date
 | `today()` | Today's date (dd/mm/yyyy locale) | `fx:today()` | `28/03/2026` |
 | `today(offset)` | Today plus/minus N days | `fx:today(-1)` | `27/03/2026` |
 | `now()` | Current date and time | `fx:now()` | `28/03/2026, 14:30:00` |
-| `dateformat(fmt)` | Custom formatted date | `fx:dateformat("DD/MM/YYYY")` | `28/03/2026` |
+| `dateformat(value, fmt, days)` | Format a date, optionally adding days | `fx:dateformat(today(), "DDD DD-MM-YY", 1)` | `Sun 29-03-26` |
+| `dateformat(fmt)` | Format today's date (short form) | `fx:dateformat("DD/MM/YYYY")` | `28/03/2026` |
+
+### dateformat
+
+`dateformat(value, format, days)` has three parts:
+
+| Part | What it takes |
+|------|---------------|
+| `value` | The date to format: `today()`, `now()`, a date written `DD/MM/YYYY` (with or without a time), a date written `YYYY-MM-DD`, or `""` for now |
+| `format` | The layout, built from the tokens below. Anything that is not a token prints as written |
+| `days` | Optional. Days to add, or subtract with a minus sign, e.g. `1` for tomorrow, `-7` for a week ago |
+
+With a single argument, `dateformat("DD/MM/YYYY")` formats the current date and time, so older templates keep working.
+
+If `value` is not a date, the cell shows `#ERR: not a date`.
 
 ### dateformat Tokens
 
 | Token | Description | Example |
 |-------|-------------|---------|
 | `YYYY` or `yyyy` | 4-digit year | `2026` |
+| `YY` or `yy` | 2-digit year | `26` |
+| `MMMM` | Month name | `March` |
+| `MMM` | Short month name | `Mar` |
 | `MM` | 2-digit month (zero-padded) | `03` |
+| `DDDD` or `dddd` | Day name | `Saturday` |
+| `DDD` or `ddd` | Short day name | `Sat` |
 | `DD` or `dd` | 2-digit day (zero-padded) | `28` |
 | `hh` or `HH` | 2-digit hour (24h, zero-padded) | `14` |
 | `mm` | 2-digit minute (zero-padded) | `30` |
 | `ss` | 2-digit second (zero-padded) | `00` |
 
-**Examples:**
+Longer tokens are read first, so `DDD` is always a day name and never `DD` followed by a `D`. Day and month names print in English, whatever language Kirra is set to.
+
+**Examples** (on Saturday 28 March 2026 at 14:30):
 
 ```
-fx:dateformat("YYYY-MM-DD")          → 2026-03-28
-fx:dateformat("DD/MM/YYYY hh:mm")    → 28/03/2026 14:30
-fx:dateformat("YYYY")                → 2026
+fx:dateformat("YYYY-MM-DD")                   → 2026-03-28
+fx:dateformat("DD/MM/YYYY hh:mm")             → 28/03/2026 14:30
+fx:dateformat(today(), "DDDD DD MMMM YYYY")   → Saturday 28 March 2026
+fx:dateformat(today(), "DDD DD-MM-YY", 1)     → Sun 29-03-26
+fx:dateformat(today(), "DD MMM YYYY", -7)     → 21 Mar 2026
+fx:dateformat("31/12/2026", "DDDD")           → Thursday
 ```
 
 ---
@@ -618,6 +643,8 @@ Render tokens produce **graphics** (images), not text. The merged cell area in t
 | `fx:mapView(r, 300)` | Raster map at 300 DPI (default is 200) |
 | `fx:mapView(v)` | Vector map (crisp scalable lines and text) |
 | `fx:mapView(v, 8)` | Vector map with 8pt label font size |
+
+A number above 50 after the mode is read as the DPI, and a smaller number as a label font size. Ticking **Override template DPI setting** in the PDF Print dialog replaces the DPI in every map view. See [Map View Resolution](xlsx-templates.md#map-view-resolution-dpi).
 
 ### Map View with Display Codes
 

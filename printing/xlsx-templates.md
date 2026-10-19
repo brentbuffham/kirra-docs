@@ -11,7 +11,7 @@ Click the **Import Export Print** button (file icon) in the menu bar and choose 
 ![PDF Print dialog](../screenshots/PDFPrintDialog.png)
 *The PDF Print dialog.*
 
-The dialog's main fields are **Saved Template**, **Paper Size** and **Orientation** (**From Sheet** uses the custom template's own setting), **Print Preview**, **Blast Name**, **Designer**, **Title**, **Comment**, **Entity Filter** and **Output Format**. Footer buttons: **Save to Library**, **Formulas**, **Reference Pack**, **Delete**, **Help**, and **Print**.
+The dialog's main fields are **Saved Template**, **Paper Size** and **Orientation** (**From Sheet** uses the custom template's own setting), **Print Preview**, **Blast Name**, **Designer**, **Title**, **Comment**, **Entity Filter**, **Output Format**, **Override template DPI setting** and **DPI**. Footer buttons: **Save to Library**, **Formulas**, **Reference Pack**, **Delete**, **Help**, and **Print**.
 
 ---
 
@@ -27,6 +27,26 @@ The **Kirra Inbuilt** template is a built-in report format that requires no setu
 - Paper size and orientation chosen in the dialog (XLSX output is not available)
 
 Choose Kirra Inbuilt when you want a quick, standard report without creating a custom template.
+
+From this dialog, Kirra Inbuilt prints aerial images at 300 DPI. To choose a different resolution, use the **Print to PDF** button instead (below).
+
+#### Image DPI (Print to PDF)
+
+The **Print to PDF** button in **Print Management** (left sidenav ☰) prints the Kirra Inbuilt layout through the **Print Settings** dialog. Its **Image DPI** field sets the resolution of aerial images on the page.
+
+![Print Settings dialog](../screenshots/PrintSettingsDialog.png)
+*The Print Settings dialog, with Image DPI at its default of 300.*
+
+| Setting | Value |
+|---------|-------|
+| Range | 72 to 600 |
+| Default | 300 |
+| Remembered | Yes, for the next print |
+
+- **ECW imagery** is read again from its file at this resolution, up to the detail the file holds. A higher DPI gives a sharper print.
+- **GeoTIFF imagery** cannot gain detail it does not have. A higher DPI only makes a bigger PDF.
+- **High-Res Image PDF** pages stop at 300, whatever you enter.
+- Higher values take longer to make and give a bigger PDF.
 
 ### Custom XLSX Templates
 
@@ -52,6 +72,46 @@ Kirra print cells use the **`fx:`** print-template engine (not Deck Builder char
 4. **Output** — Choose PDF (raster or vector) or a populated XLSX spreadsheet
 
 For large templates, Kirra uses a background process to parse the file. A progress dialog appears so the interface stays responsive.
+
+---
+
+## Paper Size and Orientation
+
+**From Sheet** (the default) prints each sheet at the paper size and orientation set in Excel's Page Setup. Excel sheets set to A2, A5, B4 or B5 print at that size.
+
+Pick a size in **Paper Size** or **Orientation** to print on different paper without editing the template:
+
+- Choices are **A4**, **A3**, **A2**, **A1**, **A0**, **Letter**, **Legal** and **Tabloid**.
+- The sheet is enlarged (or reduced) to fit the new page, keeping its proportions, and centred.
+- For example, an A3 template printed on **A1** is drawn at twice the size.
+- Map views gain resolution with the enlargement, so they stay sharp on the bigger page.
+
+---
+
+## Map View Resolution (DPI)
+
+Each `mapView` formula can carry its own DPI, for example `fx:mapView(r, 300)`. The two DPI controls in the dialog decide whether that number is used.
+
+| Override template DPI setting | What prints |
+|------|-------------|
+| Unticked (default) | Raster map views use the DPI in their formula, or 200 if it has none. Vector map views draw their aerial images at 200. |
+| Ticked | Every map view, raster or vector, uses the **DPI** you enter for its images. |
+
+- **DPI** accepts 72 to 600 and is greyed out while the box is unticked.
+- Both settings are remembered for the next print.
+- ECW imagery is read from its file at the chosen DPI, up to the detail the file holds. See [ECW Imagery](../importing/ecw-imagery.md).
+
+---
+
+## Text from Excel
+
+Template text follows the cell formatting in your spreadsheet:
+
+- **Font family**: sans-serif fonts such as Calibri and Arial print as Helvetica. Serif fonts such as Times New Roman, Cambria and Georgia print as Times. Fixed-width fonts such as Courier and Consolas print as Courier.
+- **Bold, italic, size and colour** carry across as set in Excel.
+- **Shrink to fit**: text too wide for its cell is reduced until it fits. It is never enlarged, and wrapped cells are not shrunk, as in Excel.
+- **Indent**: each indent level moves the text in from the cell edge, as Excel does.
+- **Symbols and other alphabets**: characters such as ▬ ● ▲ ◉ print correctly, as does Russian and Mongolian text.
 
 ---
 
@@ -91,6 +151,8 @@ See [Template Examples](template-examples.md) for detailed walkthroughs of each 
 | **XLSX (Populated Spreadsheet)** | Populated spreadsheet; edit further in Excel (custom templates only) |
 
 The XLSX output option is available only when using a custom template. Use it when you need to export data to Excel for further editing or reporting.
+
+Aerial images and full-page pictures are stored in the PDF as JPEG, and everything else is compressed, so a print over imagery stays a manageable size to email.
 
 ---
 

@@ -4,6 +4,19 @@
 
 ---
 
+## Desktop App
+
+Kirra is also available as a desktop app from the [downloads page](../downloads/):
+
+- **Installers** for Windows, Mac and Linux.
+- **Windows no-install zip**, for work computers where you cannot install programs. Unzip it anywhere you can save files, such as Documents, and run **Kirra-Design.exe**.
+
+The no-install zip needs the Microsoft Edge WebView2 Runtime. Windows 11 and up-to-date Windows 10 already include it. If Kirra does not open, install the runtime free from [Microsoft](https://developer.microsoft.com/microsoft-edge/webview2/).
+
+The desktop app is not code-signed, so Windows SmartScreen may warn the first time you run it. Click **More info**, then **Run anyway**. To avoid the warning, right-click the zip, choose **Properties**, tick **Unblock**, then unzip.
+
+---
+
 ## Who Is Kirra For?
 
 | Role | How Kirra Helps |

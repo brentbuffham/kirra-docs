@@ -55,8 +55,13 @@ resolution you are looking at, and draws it over the overview. Pan and it decode
 zoom out and it goes back to the overview.
 
 This works in 2D and in 3D, including a tilted 3D view, and for an ECW converted from latitude
-and longitude at import. Prints of a zoomed-in view use the same detail, so they are as sharp as
-the screen.
+and longitude at import.
+
+Prints do not depend on how far you zoomed in. When you print, Kirra reads the ECW again for the
+printed area at the print resolution, up to the detail the file holds, so a print can be sharper
+than the screen. Set the resolution with **Image DPI** (Print to PDF) or the template DPI
+controls: see [Print from Template](../printing/xlsx-templates.md#image-dpi-print-to-pdf) and
+[Map View Resolution](../printing/xlsx-templates.md#map-view-resolution-dpi).
 
 ---
 
