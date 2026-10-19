@@ -41,6 +41,11 @@ import without asking.
 > A latitude / longitude image is converted by its corners, so it is stretched to fit
 > rather than warped. Over a mine site the difference is small.
 
+For a whole-world image, choose **4087 - WGS 84 / World Equidistant Cylindrical** under
+**Non-UTM** (see [ECW Imagery](ecw-imagery.md#import-an-ecw) for what it stretches). To see an
+image's size, cell size and colour histogram, right-click it in the Data Explorer and choose
+**Statistics** (see [Image Statistics](ecw-imagery.md#image-statistics)).
+
 ---
 
 ## Point Cloud

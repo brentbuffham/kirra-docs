@@ -75,7 +75,7 @@ See: [DXF Import](../importing/dxf.md) ·
 |---|---|:---:|:---:|---|
 | ESRI Shapefile | `.shp` (in/out), `.zip` (out) | Yes | Yes | Point, MultiPoint, PolyLine, Polygon, including Z and M variants. Import: select the `.shp` with its `.shx`, `.dbf` and `.prj`, or a `.zip` of them. Export bundles `.shp / .shx / .dbf / .prj` as a ZIP. |
 | GeoTIFF (raster) | `.tif`, `.tiff` | Yes | — | Elevation rasters and RGB / RGBA imagery. |
-| ERDAS ECW | `.ecw` | Yes | — | Orthophoto imagery, version 2. Overview plus full detail as you zoom in; clip to a polygon. See [ECW Imagery](../importing/ecw-imagery.md). |
+| ERDAS ECW | `.ecw` | Yes | — | Orthophoto imagery, version 2. Overview plus full detail as you zoom in; transparent black, white or colour; clip to a polygon. See [ECW Imagery](../importing/ecw-imagery.md). |
 | GeoTIFF export | `.tif` + `.prj` | — | Yes | Coloured image of each visible surface, as shown in Kirra. |
 | Elevation GeoTIFF export | `.tif` + `.prj` | — | Yes | Single-band elevation raster of each visible surface. |
 | KML / KMZ | `.kml`, `.kmz` | Yes | Yes | Google Earth — blast holes and geometry. |
