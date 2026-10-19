@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.33
+
+_2026-10-19_
+
+**Feature**
+
+- Kirra for Windows can be downloaded as a no-install zip
+
+## Release v1.1.32.431
+
+_2026-10-19_
+
+**Bug Fix**
+
+- Template text follows Excel's Shrink to fit and Indent settings
+- Template text uses the Excel font family where the PDF has a match
+
 ## Release v1.1.32.430
 
 _2026-10-19_
