@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.33.1
+
+_2026-10-19_
+
+**Bug Fix**
+
+- Kirra Inbuilt prints use the Image DPI set in the PDF Print dialog
+
 ## Release v1.1.33
 
 _2026-10-19_
