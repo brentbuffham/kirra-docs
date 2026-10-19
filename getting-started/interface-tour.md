@@ -221,8 +221,9 @@ Opened from the **Print** button in the side panel's Print Management group, or 
 | **Blast Name**, **Designer**, **Title**, **Comment** | Free text for the title block |
 | **Entity Filter** | **All Entities**, or one blast |
 | **Output Format** | **PDF Raster (High-Res Image)**, **PDF Vector (Scalable)** or **XLSX (Populated Spreadsheet)** |
-| **Override template DPI setting** | Use the **DPI** below for every map view in a template, instead of the DPI in its formulas |
-| **DPI** | Map view image resolution, 72 to 600. Greyed out until the override is ticked. See [Map View Resolution](../printing/xlsx-templates.md#map-view-resolution-dpi) |
+| **Image DPI** | Kirra Inbuilt only. Resolution of aerial images, 72 to 600, default 300. See [Image DPI](../printing/xlsx-templates.md#image-dpi) |
+| **Override template DPI setting** | Custom templates only. Use the **DPI** below for every map view, instead of the DPI in its formulas |
+| **DPI** | Custom templates only. Map view image resolution, 72 to 600. Greyed out until the override is ticked. See [Map View Resolution](../printing/xlsx-templates.md#map-view-resolution-dpi) |
 
 ### Footer buttons
 

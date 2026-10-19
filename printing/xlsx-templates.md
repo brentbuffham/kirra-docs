@@ -11,7 +11,7 @@ Click the **Import Export Print** button (file icon) in the menu bar and choose 
 ![PDF Print dialog](../screenshots/PDFPrintDialog.png)
 *The PDF Print dialog.*
 
-The dialog's main fields are **Saved Template**, **Paper Size** and **Orientation** (**From Sheet** uses the custom template's own setting), **Print Preview**, **Blast Name**, **Designer**, **Title**, **Comment**, **Entity Filter**, **Output Format**, **Override template DPI setting** and **DPI**. Footer buttons: **Save to Library**, **Formulas**, **Reference Pack**, **Delete**, **Help**, and **Print**.
+The dialog's main fields are **Saved Template**, **Paper Size** and **Orientation** (**From Sheet** uses the custom template's own setting), **Print Preview**, **Blast Name**, **Designer**, **Title**, **Comment**, **Entity Filter**, **Output Format**, and either **Image DPI** (Kirra Inbuilt) or **Override template DPI setting** and **DPI** (a custom template). Footer buttons: **Save to Library**, **Formulas**, **Reference Pack**, **Delete**, **Help**, and **Print**.
 
 ---
 
@@ -28,11 +28,11 @@ The **Kirra Inbuilt** template is a built-in report format that requires no setu
 
 Choose Kirra Inbuilt when you want a quick, standard report without creating a custom template.
 
-From this dialog, Kirra Inbuilt prints aerial images at 300 DPI. To choose a different resolution, use the **Print to PDF** button instead (below).
+#### Image DPI
 
-#### Image DPI (Print to PDF)
+With **Kirra Inbuilt** selected, the dialog shows an **Image DPI** field in place of the template DPI controls. It sets the resolution of aerial images on the page.
 
-The **Print to PDF** button in **Print Management** (left sidenav ☰) prints the Kirra Inbuilt layout through the **Print Settings** dialog. Its **Image DPI** field sets the resolution of aerial images on the page.
+The **Print to PDF** button in **Print Management** (left sidenav ☰) prints the same Kirra Inbuilt layout through the **Print Settings** dialog, which has the same **Image DPI** field. Both remember one shared value.
 
 ![Print Settings dialog](../screenshots/PrintSettingsDialog.png)
 *The Print Settings dialog, with Image DPI at its default of 300.*
