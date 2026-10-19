@@ -2,6 +2,174 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.32.421
+
+_2026-10-19_
+
+**Feature**
+
+- Pick an ECW's transparent colour by clicking the image
+
+## Release v1.1.32.420
+
+_2026-10-19_
+
+**Feature**
+
+- Image Statistics histogram is an area chart that resizes with its window
+
+## Release v1.1.32.419
+
+_2026-10-19_
+
+**Feature**
+
+- Image Statistics shows an image's details and an RGB histogram
+- Image Statistics marks the ECW transparency thresholds on the histogram
+
+**Bug Fix**
+
+- Lat/long images show their cell size in degrees, not metres
+
+## Release v1.1.32.418
+
+_2026-10-19_
+
+**Feature**
+
+- ECW imagery can make near-white pixels transparent
+- ECW imagery can make a chosen colour transparent, picked with the colour swatch
+
+## Release v1.1.32.417
+
+_2026-10-19_
+
+**Feature**
+
+- Choose Nearest or Average resampling for ECW imagery
+
+## Release v1.1.32.416
+
+_2026-10-19_
+
+**Feature**
+
+- ECW imagery converted from latitude and longitude also sharpens as you zoom in
+
+## Release v1.1.32.415
+
+_2026-10-19_
+
+**Feature**
+
+- World Equidistant Cylindrical (EPSG:4087) offered for whole-world imagery
+
+**Bug Fix**
+
+- Lat/long images converted to a world projection no longer appear mirrored
+
+## Release v1.1.32.414
+
+_2026-10-19_
+
+**Feature**
+
+- Ecw import message points to Reconnect, not re-import
+
+## Release v1.1.32.413
+
+_2026-10-19_
+
+**Bug Fix**
+
+- ECW imagery stays sharp when the 3D view is tilted
+
+## Release v1.1.32.412
+
+_2026-10-19_
+
+**Feature**
+
+- An ECW image's menu warns when its file needs reconnecting
+
+**Bug Fix**
+
+- The image menu's Hide and Show buttons are now translated
+
+## Release v1.1.32.411
+
+_2026-10-19_
+
+**Feature**
+
+- ECW images flag when their file must be reconnected after a reload
+- Reconnect an ECW image from the Data Explorer or its right-click menu
+
+## Release v1.1.32.410
+
+_2026-10-19_
+
+**Feature**
+
+- ECW images and the Images folder have their own icons in the Data Explorer
+
+## Release v1.1.32.409
+
+_2026-10-19_
+
+**Feature**
+
+- Set how dark an ECW pixel must be to become transparent
+
+## Release v1.1.32.408
+
+_2026-10-19_
+
+**Feature**
+
+- Choose whether an ECW's black border is transparent, from its right-click menu
+
+## Release v1.1.32.407
+
+_2026-10-19_
+
+**Feature**
+
+- Prints of zoomed-in ECW imagery are as sharp as the screen
+
+## Release v1.1.32.406
+
+_2026-10-19_
+
+**Feature**
+
+- Clip ECW imagery to a drawn polygon, with an optional hole
+
+## Release v1.1.32.405
+
+_2026-10-19_
+
+**Bug Fix**
+
+- One shared list of clip polygons (Clip Surface, Clip KAD)
+
+## Release v1.1.32.404
+
+_2026-10-19_
+
+**Feature**
+
+- ECW imagery sharpens to full detail as you zoom in, in 2D and 3D
+
+## Release v1.1.32.403
+
+_2026-10-19_
+
+**Feature**
+
+- Import ERDAS ECW orthophotos, including multi-gigabyte files
+- ECW images decode in the background with a cancellable progress bar
+
 ## Release v1.1.32.402
 
 _2026-10-18_
