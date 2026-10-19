@@ -10,6 +10,10 @@ _2026-10-19_
 
 - Kirra for Windows can be downloaded as a no-install zip
 
+**Bug Fix**
+
+- Printed PDFs with imagery are now a fraction of the size
+
 ## Release v1.1.32.431
 
 _2026-10-19_
