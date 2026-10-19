@@ -210,6 +210,11 @@
       </noscript>
     </div>
 
+    <p class="note" id="portable-note" style="display:none;">No permission to install
+    software? Use the Windows no-install zip. It needs Microsoft WebView2, already part of
+    Windows 11 and up-to-date Windows 10. Missing? Get it free from
+    <a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" style="color:inherit;">Microsoft</a>.</p>
+
     <hr>
 
     <div class="security">
@@ -254,7 +259,7 @@
       <details>
         <summary>How to compute a checksum</summary>
         <p><strong>Windows (PowerShell):</strong>
-        <code>Get-FileHash .\Windows-Kirra-*.exe -Algorithm SHA256</code></p>
+        <code>Get-FileHash .\Windows-Kirra-* -Algorithm SHA256</code></p>
         <p><strong>macOS:</strong> <code>shasum -a 256 Mac-Universal-Kirra-*.dmg</code></p>
         <p><strong>Linux:</strong> <code>sha256sum Linux-Kirra-*.deb</code></p>
       </details>
@@ -266,6 +271,10 @@
         <p>When you run the <code>.exe</code>, SmartScreen may say "Windows protected
         your PC." Click <strong>More info</strong>, then <strong>Run anyway</strong>.
         If your browser flags the download, choose <strong>Keep</strong>.</p>
+        <p><strong>No-install zip:</strong> right-click the <code>.zip</code>, choose
+        <strong>Properties</strong>, tick <strong>Unblock</strong>, then unzip and run
+        <code>Kirra-Design.exe</code>. Your settings and work are kept in your Windows user
+        profile, the same place an installed Kirra uses.</p>
       </details>
 
       <details>
@@ -323,17 +332,34 @@
 
     // Step 2) Build download buttons from the RELEASE_DATA injected by CI
     // CI replaces this line with: var RELEASE_DATA = { version: "1.0.40", files: [...] };
-        var RELEASE_DATA = { version: "1.1.30", files: [{"platform":"Linux-deb","name":"Linux-Kirra-v1.1.30.deb","sha256":"6e0966920e30a2d126f48e89fcc4ca45ad94a1e84165bb1aa676de30c264083b"},{"platform":"Mac-Universal","name":"Mac-Universal-Kirra-v1.1.30.dmg","sha256":"b4cfc2d3cb348387c47d9a57236061c6d1f9521c785868627cb1ebe2ebdaee29"},{"platform":"Windows","name":"Windows-Kirra-v1.1.30-Setup.exe","sha256":"665d27e7246dbf1241be9ac814c0fb5dccd45194428b8a8ad9235c161a672828"}] };
+        var RELEASE_DATA = { version: "1.1.30", files: [{"platform":"Linux-deb","name":"Linux-Kirra-v1.1.30.deb","sha256":"6e0966920e30a2d126f48e89fcc4ca45ad94a1e84165bb1aa676de30c264083b"},{"platform":"Mac-Universal","name":"Mac-Universal-Kirra-v1.1.30.dmg","sha256":"b4cfc2d3cb348387c47d9a57236061c6d1f9521c785868627cb1ebe2ebdaee29"},{"platform":"Windows","name":"Windows-Kirra-v1.1.30-Setup.exe","sha256":"665d27e7246dbf1241be9ac814c0fb5dccd45194428b8a8ad9235c161a672828"},{"platform":"Windows-Portable","name":"Windows-Kirra-v1.1.33-Portable.zip","sha256":"2e6846991b1be3682ce28a6a4639bb43ef03e57803023452e45575ec41401f0e"}] };
 
     if (typeof RELEASE_DATA !== "undefined") {
+      // Files can carry different versions: installers come from round-ten CI releases,
+      // the portable zip may come from a later local build. Show each, and the latest.
+      function fileVersion(name) { var m = /-v(\d+(?:\.\d+)+)/.exec(name || ""); return m ? m[1] : ""; }
+      function newer(x, y) {
+        var a = x.split("."), b = y.split(".");
+        for (var k = 0; k < Math.max(a.length, b.length); k++) {
+          var d = (parseInt(a[k], 10) || 0) - (parseInt(b[k], 10) || 0);
+          if (d) return d > 0;
+        }
+        return false;
+      }
+      var latest = RELEASE_DATA.version || "";
+      for (var vi = 0; vi < RELEASE_DATA.files.length; vi++) {
+        var fv = fileVersion(RELEASE_DATA.files[vi].name);
+        if (fv && (!latest || newer(fv, latest))) latest = fv;
+      }
       var badge = document.getElementById("version-badge");
-      badge.textContent = "Version: " + RELEASE_DATA.version;
+      badge.textContent = "Latest: " + latest;
 
       var grid = document.getElementById("download-grid");
       grid.innerHTML = "";
 
       var platformLabels = {
         "Windows": { label: "Windows 10/11", detail: "Setup installer (.exe)" },
+        "Windows-Portable": { label: "Windows 10/11 (no install)", detail: "Portable .zip: unzip, then run Kirra-Design.exe" },
         "Mac-Universal": { label: "Mac (Universal)", detail: "Intel + Apple Silicon (.dmg)" },
         "Linux-deb": { label: "Linux (Debian/Ubuntu)", detail: "DEB package — sudo dpkg -i" }
       };
@@ -351,7 +377,7 @@
         span1.textContent = info.label;
         span2 = document.createElement("span");
         span2.className = "file-detail";
-        span2.textContent = info.detail;
+        span2.textContent = info.detail + (fileVersion(f.name) ? " - v" + fileVersion(f.name) : "");
         a.appendChild(span1);
         a.appendChild(span2);
         // Per-file SHA-256 (injected by CI as f.sha256) for download verification
@@ -363,6 +389,10 @@
           a.appendChild(span3);
         }
         grid.appendChild(a);
+        if (key === "Windows-Portable") {
+          var portableNote = document.getElementById("portable-note");
+          if (portableNote) portableNote.style.display = "";
+        }
       }
 
       // Hide the SHA256SUMS.txt link if no checksums were published for this build
