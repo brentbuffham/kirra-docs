@@ -36,7 +36,7 @@ The four buttons at the right of the title bar:
 | **Blast** | One row per blast, each holding its holes (and groups, if any) |
 | **KAD** | Drawing layers, each holding points, lines, polygons, circles and text |
 | **Surfaces** | Surface layers, each holding surfaces and solids |
-| **Images** | Imported images such as GeoTIFFs |
+| **Images** | Imported images such as GeoTIFFs and ECWs. An amber warning on an ECW means its file needs [reconnecting](../importing/ecw-imagery.md#after-a-reload-reconnect) |
 | **Geology** | Block models |
 
 Click the ▶ arrow to open a row, ▼ to close it.

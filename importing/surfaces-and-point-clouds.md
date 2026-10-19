@@ -9,6 +9,7 @@ surfaces from Vulcan and Datamine.
 | Row | Extensions | Becomes |
 |---|---|---|
 | [**GeoTIFF / Image**](#geotiff--image) | `.tif` / `.tiff` | An image, or an elevation surface |
+| [**ECW (ERDAS)**](ecw-imagery.md) | `.ecw` | An image (see [ECW Imagery](ecw-imagery.md)) |
 | [**OBJ / GLTF**](3d-mesh.md) | `.obj` / `.gltf` / `.glb` | A surface (see [3D Mesh Import](3d-mesh.md)) |
 | [**Point Cloud**](#point-cloud) | `.xyz` / `.csv` / `.pts` / `.ptx` | Points, or a surface built from them |
 | [**LAS Point Cloud**](#las-point-cloud) | `.las` | Points by classification, or a surface |
@@ -146,6 +147,7 @@ that.
 ## Related topics
 
 - [The Import Dialog](import-dialog.md)
+- [ECW Imagery](ecw-imagery.md)
 - [3D Mesh Import](3d-mesh.md)
 - [Transform (Reproject) Import](transform-import.md)
 - [Importing Surfaces](../surfaces/importing-surfaces.md)

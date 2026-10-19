@@ -27,7 +27,7 @@ The formats are grouped into tabs. Each tab shows how many formats it holds.
 | **Kirra** | Kirra Application Project, Kirra App Template, Kirra App Drawing, Holes CSV / TXT (preset columns), Measured Data | [Kirra files](other-formats.md#kirra-files), [CSV Import](csv-formats.md) |
 | **Blasts** | Custom CSV, CBLAST, Orica ShotPlus, Davey BPD, DetNet ViewShot, DetNet DigiShot / ParVS3, Paradigm Terra | [Blast Design Formats](blast-formats.md), [CSV Import](csv-formats.md#custom-csv-import) |
 | **Drawings / CAD** | Geometry CSV, DXF, DWG (experimental), Vulcan ARCH_D, Vulcan Design Database, Surpac, Micromine STR, Deswik DUF, 12d Archive | [DXF](dxf.md), [Surpac](surpac-dtm-str.md), [Other CAD Formats](cad-formats.md) |
-| **Surfaces / Mesh** | GeoTIFF / Image, OBJ / GLTF, Point Cloud, LAS Point Cloud, Vulcan .00t Triangulation, Datamine Surface | [Surfaces and Point Clouds](surfaces-and-point-clouds.md), [3D Mesh](3d-mesh.md) |
+| **Surfaces / Mesh** | GeoTIFF / Image, ECW (ERDAS), OBJ / GLTF, Point Cloud, LAS Point Cloud, Vulcan .00t Triangulation, Datamine Surface | [Surfaces and Point Clouds](surfaces-and-point-clouds.md), [ECW Imagery](ecw-imagery.md), [3D Mesh](3d-mesh.md) |
 | **Geology** | Block Model — Datamine, Vulcan CSV, Vulcan BMF, Micromine | [Importing Block Models](../block-models/importing-block-models.md) |
 | **Miscellaneous** | Borehole Telemetry, Epiroc Surface Manager, Wenco NAV, KML / KMZ, ESRI Shapefile | [Other Formats](other-formats.md) |
 | **Legacy** | Datavis DBS, ShotPlan 3 | [Legacy formats](other-formats.md#legacy-formats) |

@@ -133,6 +133,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 - [Other CAD Formats](importing/cad-formats.md) — Geometry CSV, DWG, Vulcan, Micromine, Deswik, 12d
 - [3D Mesh (OBJ / GLTF / GLB)](importing/3d-mesh.md)
 - [Surfaces and Point Clouds](importing/surfaces-and-point-clouds.md) — GeoTIFF, point clouds, LAS, Vulcan .00t, Datamine
+- [ECW Imagery](importing/ecw-imagery.md): import, full detail on zoom, transparent background, clip, reconnect
 - [Transform (Reproject) Import](importing/transform-import.md)
 - [Other Formats](importing/other-formats.md) — Kirra files, telemetry, Epiroc, Wenco, KML, Shapefile, legacy
 
