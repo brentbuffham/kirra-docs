@@ -1,0 +1,32 @@
+# Builds the site with the same Jekyll builder GitHub Pages uses and checks the search index
+# came out whole. Report only: it runs beside the Pages deploy and cannot block it, so the
+# Kirra release-notes bot's pushes to main publish exactly as before.
+name: Check site builds
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Build with GitHub Pages' Jekyll
+              uses: actions/jekyll-build-pages@v1
+              with:
+                  source: ./
+                  destination: ./_site
+
+            - name: Check the search index
+              run: |
+                  node -e '
+                    const idx = JSON.parse(require("fs").readFileSync("_site/search.json", "utf8"));
+                    const bad = idx.filter(p => !p.url || typeof p.html !== "string" || !p.html.trim());
+                    if (idx.length < 50) throw new Error("search.json has only " + idx.length + " pages");
+                    if (bad.length) throw new Error("empty entries: " + bad.map(p => p.url).join(", "));
+                    if (!idx.some(p => p.url.endsWith("/release-notes.html"))) throw new Error("release notes missing");
+                    console.log("search.json: " + idx.length + " pages, " + (JSON.stringify(idx).length / 1e6).toFixed(2) + " MB");
+                  '

@@ -1,0 +1,22 @@
+---
+layout: null
+---
+{%- comment -%}
+  Search index, rebuilt by GitHub Pages on every push. Each entry is one doc page as rendered
+  HTML; assets/search/search.js splits it into sections at the headings in the browser.
+  Kept deliberately simple: a Liquid error here fails the whole Pages build, and the Kirra
+  release-notes bot pushes to this repo unattended.
+  Any .md page is indexed automatically. A page can opt out with "search: false" front matter.
+{%- endcomment -%}
+[
+{%- assign first = true -%}
+{%- for p in site.pages -%}
+  {%- assign ext = p.name | split: "." | last -%}
+  {%- assign top = p.path | split: "/" | first -%}
+  {%- if ext != "md" or p.search == false -%}{%- continue -%}{%- endif -%}
+  {%- if top == "ISEE-presentation" or top == "downloads" or top == "screenshots" or top == "README.md" -%}{%- continue -%}{%- endif -%}
+  {%- unless first -%},{%- endunless -%}
+  {%- assign first = false %}
+{"title":{{ p.title | default: p.name | jsonify }},"url":{{ p.url | relative_url | jsonify }},"html":{{ p.content | markdownify | jsonify }}}
+{%- endfor %}
+]

@@ -2,6 +2,8 @@
 
 Welcome to the official documentation for **Kirra**, a web-based blasting pattern design application developed by [Brent Buffham](https://blastingapps.com) for the mining, quarrying, and construction industries.
 
+**[🔍 Search the docs](search.html)** — or type in the search box at the top of any page.
+
 ---
 
 ## I want to…
