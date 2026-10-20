@@ -2,6 +2,140 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34
+
+_2026-10-20_
+
+**Feature**
+
+- Windows no-install zip updated with the block model work
+
+## Release v1.1.33.15
+
+_2026-10-20_
+
+**Bug Fix**
+
+- Block hover highlight sits on its block, hidden edges ghosted
+
+## Release v1.1.33.14
+
+_2026-10-20_
+
+**Feature**
+
+- Block hover highlight adds a green inner glow
+
+**Bug Fix**
+
+- Block hover highlight stays visible on see-through block models
+
+## Release v1.1.33.13
+
+_2026-10-20_
+
+**Bug Fix**
+
+- Section cut faces stay solid when the section sits on a bench RL
+
+## Release v1.1.33.12
+
+_2026-10-20_
+
+**Feature**
+
+- Section planes show solid cut faces through block models
+
+## Release v1.1.33.11
+
+_2026-10-20_
+
+**Bug Fix**
+
+- Block hover outline no longer shows its hidden back edges
+
+## Release v1.1.33.10
+
+_2026-10-20_
+
+**Bug Fix**
+
+- Block datatip and outline report the block a section shows
+- Block corner snap ignores blocks a section has cut away
+
+## Release v1.1.33.9
+
+_2026-10-20_
+
+**Feature**
+
+- Block model filters now stack across attributes
+- New Active Filters tab lists, switches off and removes filters
+
+## Release v1.1.33.8
+
+_2026-10-20_
+
+**Feature**
+
+- Rotated Surpac block models import, with sub-blocks on each axis
+
+## Release v1.1.33.7
+
+_2026-10-20_
+
+**Bug Fix**
+
+- Section plane now cuts surface wireframe, outline and glow overlays
+
+## Release v1.1.33.6
+
+_2026-10-20_
+
+**Feature**
+
+- Block model hover datatip outlines the block it describes
+
+**Bug Fix**
+
+- Block model datatip shows large coordinates in full
+
+## Release v1.1.33.5
+
+_2026-10-20_
+
+**Feature**
+
+- Surpac .mdl block models now import, with mixed block sizes
+
+## Release v1.1.33.4
+
+_2026-10-20_
+
+**Feature**
+
+- Surpac .fbm block models in Datamine format now import
+
+## Release v1.1.33.3
+
+_2026-10-20_
+
+**Feature**
+
+- Choose how each block model attribute shows: Number, Discrete or Category
+
+**Bug Fix**
+
+- Whole-number attributes such as density can use a min/max cut-off again
+
+## Release v1.1.33.2
+
+_2026-10-20_
+
+**Feature**
+
+- Block model filters can use a different attribute from the colour
+
 ## Release v1.1.33.1
 
 _2026-10-19_
