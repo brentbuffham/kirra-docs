@@ -109,6 +109,7 @@ Tick **Reverse Direction**, or untick the bearing box and type a **Hole Bearing 
 
 ## Related
 
+- [Design Underground Rings and Drives on a Section Plane](../tasks/underground-design.md) — setting holes out on a drive face
 - [Holes Along Line](holes-along-line.md) — a straight row between two clicks
 - [Pattern in Polygon](pattern-in-polygon.md) — Along Polyline mode fills a boundary with rows that follow a line
 - [Pattern Templates](pattern-templates.md)

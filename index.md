@@ -16,6 +16,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 | Review a blast before it is signed off | [Check a Blast Before Firing](tasks/check-a-blast.md) |
 | Bring in a design from other software or a drill rig | [Bring In a Design from Another System](tasks/bring-in-a-design.md) |
 | Record what was drilled and loaded, and re-fit the charging | [After Drilling and Charging](tasks/after-drilling.md) |
+| Design underground: a development round on a face, or an uphole ring | [Design Underground Rings and Drives on a Section Plane](tasks/underground-design.md) |
 | Back up a job, or move it to another computer | [Starting, Saving & Projects](working-in-kirra/starting-and-saving.md) |
 | Find a file format | [Supported File Formats](reference/supported-formats.md) |
 
@@ -66,6 +67,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 - [Check a Blast Before Firing](tasks/check-a-blast.md) — positions, rows, timing, powder factor, vibration, flyrock
 - [Bring In a Design from Another System](tasks/bring-in-a-design.md) — import, check, fix rows and numbering, send on
 - [After Drilling and Charging](tasks/after-drilling.md) — record actuals, re-fit charging, hand back the as-built
+- [Design Underground Rings and Drives on a Section Plane](tasks/underground-design.md) — development round on a face, uphole ring, charging upholes
 
 ### Blast Hole Design
 - [Holes Toolbar](blast-design/holes-toolbar.md) — index of every button, with links

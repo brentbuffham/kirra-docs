@@ -70,6 +70,9 @@ While it is on, a warning across the top of the dialog reads *WORK PLANE ACTIVE*
 **Show Section Plane** draws a grid on the section so you can see the plane you are
 looking at. The grid spacing is the **Step Increment**.
 
+This is how underground design works in Kirra — see
+[Design Underground Rings and Drives on a Section Plane](../tasks/underground-design.md).
+
 ### Finish
 
 **Close** leaves the dialog; the section stays on while **Enable Section Plane** is
