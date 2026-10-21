@@ -105,7 +105,7 @@ The **Import LAS Point Cloud** dialog offers:
 |---|---|
 | **Import As:** | **Point Cloud (KAD points by classification)** — the default — or **Surface (triangulated mesh)** |
 | **Classification Filter:** | **All Classifications**, or ground, vegetation, buildings or unclassified points only |
-| **Max Points:** | Point clouds: keep this many points, spread evenly over the whole file. **0** — the default — keeps every point |
+| **Max Points:** | Point clouds: keep this many points, spread evenly over the whole file. **0** — the default — keeps as many as Kirra can draw (1,000,000) |
 | **Tolerance (3D):** | Point clouds: remove points closer than this, in 3D, to one already kept. **0** — the default — keeps every point. Points above and below each other (a hole wall, a face) are kept unless they really are this close |
 | **Preserve LAS point colors (if available)** | Use the scanner's colours |
 | **XY Tolerance:** | Surfaces: points closer than this in plan are treated as one (default 0.001 m) — a surface keeps one height per position |
