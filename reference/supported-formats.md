@@ -89,7 +89,7 @@ See: [GeoTIFF Export](../exporting/geotiff-export.md) ·
 
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
-| ASPRS LAS | `.las` | Yes | Yes | LAS versions 1.2, 1.3, 1.4. Compressed `.laz` is not supported. |
+| ASPRS LAS / LAZ | `.las`, `.laz` | Yes | Yes (`.las`) | LAS versions 1.0 to 1.4. Compressed `.laz` (LASzip point formats 0–3 and 6–8) imports like `.las`; export writes `.las` only. |
 | Point Cloud (generic) | `.csv`, `.xyz`, `.txt`, `.pts`, `.ptx` | Yes | — | Auto-detects optional RGB / intensity columns. Import as points or a triangulated surface. |
 | Point Cloud XYZ export | `.xyz`, `.txt` | — | Yes | `X Y Z` or `X Y Z R G B`. |
 | Point Cloud CSV export | `.csv` | — | Yes | `X,Y,Z` or `X,Y,Z,R,G,B`. |

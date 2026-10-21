@@ -95,7 +95,9 @@ Export point data in various text formats:
 
 ## LAS (LiDAR)
 
-Export point data to ASPRS LAS format.
+Export point data to ASPRS LAS format: the points of visible surfaces and visible drawings
+(hidden ones are left out), written as LAS 1.2, point format 0. Export to compressed `.laz` is
+not available yet.
 
 ---
 

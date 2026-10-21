@@ -12,7 +12,7 @@ surfaces from Vulcan and Datamine.
 | [**ECW (ERDAS)**](ecw-imagery.md) | `.ecw` | An image (see [ECW Imagery](ecw-imagery.md)) |
 | [**OBJ / GLTF**](3d-mesh.md) | `.obj` / `.gltf` / `.glb` | A surface (see [3D Mesh Import](3d-mesh.md)) |
 | [**Point Cloud**](#point-cloud) | `.xyz` / `.csv` / `.pts` / `.ptx` | Points, or a surface built from them |
-| [**LAS Point Cloud**](#las-point-cloud) | `.las` | Points by classification, or a surface |
+| [**LAS Point Cloud**](#las-point-cloud) | `.las` / `.laz` | Points by classification, or a surface |
 | [**Vulcan .00t Triangulation**](#vulcan-00t-triangulation) | `.00t` | A surface |
 | [**Datamine Surface**](#datamine-surface) | `.dm` (pt + tr) | A surface |
 
@@ -89,8 +89,13 @@ bar, so a large survey does not run the browser out of memory.
 
 ## LAS Point Cloud
 
-Imports an ASPRS LiDAR `.las` file (versions 1.2 to 1.4). Compressed `.laz` files are not
-supported — convert them to `.las` first.
+Imports an ASPRS LiDAR `.las` file (versions 1.0 to 1.4), or a compressed `.laz` file
+(LASzip, point formats 0–3 and 6–8). Use the **LAS Point Cloud** row, or drag the file onto
+Kirra.
+
+Only the file's header is read before the dialog opens, so even a file of several gigabytes
+asks its questions straight away; the points are read afterwards, in pieces, with a progress
+bar. A `.laz` file is decompressed on all of your computer's processor cores.
 
 The **Import LAS Point Cloud** dialog offers:
 
@@ -100,8 +105,10 @@ The **Import LAS Point Cloud** dialog offers:
 |---|---|
 | **Import As:** | **Point Cloud (KAD points by classification)** — the default — or **Surface (triangulated mesh)** |
 | **Classification Filter:** | **All Classifications**, or ground, vegetation, buildings or unclassified points only |
-| **Max Points:** / **XY Tolerance:** | As for a point cloud |
+| **Max Points:** | Point clouds: keep this many points, spread evenly over the whole file. **0** — the default — keeps every point |
+| **Tolerance (3D):** | Point clouds: remove points closer than this, in 3D, to one already kept. **0** — the default — keeps every point. Points above and below each other (a hole wall, a face) are kept unless they really are this close |
 | **Preserve LAS point colors (if available)** | Use the scanner's colours |
+| **XY Tolerance:** | Surfaces: points closer than this in plan are treated as one (default 0.001 m) — a surface keeps one height per position |
 | **Max Surface Points:** | Surfaces: thin to this many points first. 500,000 is recommended for 3D |
 | **Surface Style:** | As for a point cloud, plus **LAS Point Colors** |
 
