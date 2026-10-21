@@ -56,7 +56,7 @@ See: [CSV Formats](../importing/csv-formats.md) ·
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
 | Kirra KAD | `.kad`, `.txt` | Yes | Yes | Native Kirra format — point, line, poly, circle, text. |
-| Kirra KAP | `.kap` | Yes | Yes | Complete project — the blast, drawings, surfaces, imagery, every library and your work settings. |
+| Kirra KAP | `.kap` | Yes | Yes | Complete project — the blast, drawings, surfaces, imagery, point clouds, every library and your work settings. Saving asks whether to include point clouds, and shows their size. |
 | Kirra KAT | `.kat` | Yes | Yes | Site template — everything in a KAP except the blast (libraries and work settings). |
 | DXF | `.dxf` | Yes | Yes | Import reads ASCII DXF: POINT, INSERT, LINE, POLYLINE, LWPOLYLINE, ARC, CIRCLE, ELLIPSE, TEXT, MTEXT and 3DFACE / polyface meshes — see [DXF Import](../importing/dxf.md). Export writes one ASCII DXF holding any mix of blast holes (standard 2-layer or Vulcan-tagged), KAD drawings and 3DFACE surfaces. |
 | DXF Surface (3DFACE) | `.dxf` | — | Yes | One `.dxf` per visible surface. On the **Surfaces / Mesh** tab. |
@@ -89,8 +89,8 @@ See: [GeoTIFF Export](../exporting/geotiff-export.md) ·
 
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
-| ASPRS LAS / LAZ | `.las`, `.laz` | Yes | Yes (`.las`) | LAS versions 1.0 to 1.4. Compressed `.laz` (LASzip point formats 0–3 and 6–8) imports like `.las`; export writes `.las` only. |
-| Point Cloud (generic) | `.csv`, `.xyz`, `.txt`, `.pts`, `.ptx` | Yes | — | Auto-detects optional RGB / intensity columns. Import as points or a triangulated surface. |
+| ASPRS LAS / LAZ | `.las`, `.laz` | Yes | Yes (`.las`) | LAS versions 1.0 to 1.4. Compressed `.laz` (LASzip point formats 0–3 and 6–8) imports like `.las`. Imports as a [point cloud](../surfaces/point-clouds.md) by default, or as KAD points or a surface. Export writes `.las` only, including visible point clouds (LAS point format 0 drops their colour and GPS time, and Kirra says so). |
+| Point Cloud (generic) | `.csv`, `.xyz`, `.txt`, `.pts`, `.ptx` | Yes | — | Auto-detects optional RGB / intensity columns. Import as a [point cloud](../surfaces/point-clouds.md), KAD points or a triangulated surface; files over 1,000,000 points start on a point cloud. |
 | Point Cloud XYZ export | `.xyz`, `.txt` | — | Yes | `X Y Z` or `X Y Z R G B`. |
 | Point Cloud CSV export | `.csv` | — | Yes | `X,Y,Z` or `X,Y,Z,R,G,B`. |
 | Point Cloud PTS export | `.pts` | — | Yes | Count header, `X Y Z I R G B`. |

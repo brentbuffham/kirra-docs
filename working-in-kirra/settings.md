@@ -92,6 +92,7 @@ The screenshots show one user's values, not the defaults.
 | **12d import heap budget (GB)** | 1.5 | Memory allowed when importing large 12d Archive files |
 | **Max triangles per surface (3D)** | 2,000,000 | A surface with more triangles is not drawn in 3D. It still shows in 2D, and can be reduced on import |
 | **Max total triangles (3D scene)** | 4,000,000 | Limit for all surfaces drawn in 3D together |
+| **Max Point-Cloud Points** | 30,000,000 | The most points Kirra reads and draws for a [point cloud](../surfaces/point-clouds.md). It uses about 24 bytes of memory a point, so 30,000,000 points is roughly 720 MB. Lower it on a low-memory machine |
 | **Boolean mesh split path** | Narrow-band | **Narrow-band — large surfaces** (avoids running out of memory) or **Legacy — full mesh** (small surfaces) |
 | **Narrow-band scoped triangle threshold** | 200,000 | Booleans on fewer triangles than this always use the legacy path |
 | **Vector PDF decimal places** | 3 | Decimals of a millimetre on the page in vector PDF plots. Raise it for large-scale plots that will be measured; files get bigger |

@@ -11,8 +11,8 @@ surfaces from Vulcan and Datamine.
 | [**GeoTIFF / Image**](#geotiff--image) | `.tif` / `.tiff` | An image, or an elevation surface |
 | [**ECW (ERDAS)**](ecw-imagery.md) | `.ecw` | An image (see [ECW Imagery](ecw-imagery.md)) |
 | [**OBJ / GLTF**](3d-mesh.md) | `.obj` / `.gltf` / `.glb` | A surface (see [3D Mesh Import](3d-mesh.md)) |
-| [**Point Cloud**](#point-cloud) | `.xyz` / `.csv` / `.pts` / `.ptx` | Points, or a surface built from them |
-| [**LAS Point Cloud**](#las-point-cloud) | `.las` / `.laz` | Points by classification, or a surface |
+| [**Point Cloud**](#point-cloud) | `.xyz` / `.csv` / `.pts` / `.ptx` | A [point cloud](../surfaces/point-clouds.md), KAD points, or a surface built from them |
+| [**LAS Point Cloud**](#las-point-cloud) | `.las` / `.laz` | A [point cloud](../surfaces/point-clouds.md), KAD points by classification, or a surface |
 | [**Vulcan .00t Triangulation**](#vulcan-00t-triangulation) | `.00t` | A surface |
 | [**Datamine Surface**](#datamine-surface) | `.dm` (pt + tr) | A surface |
 
@@ -66,18 +66,28 @@ After you pick the file, the **Import Point Cloud** dialog asks how to bring it 
 
 | Setting | What it does |
 |---|---|
-| **Import As:** | **Surface (triangulated mesh)** — the default — or **Point Cloud (KAD points)** |
+| **Import As:** | **Point Cloud (kadCloud)**, **Point Cloud (KAD points)** or **Surface (triangulated mesh)**. A file with more than 1,000,000 points starts on **Point Cloud (kadCloud)**; a smaller one starts on **Surface (triangulated mesh)** |
 | **Coordinate Transformation:** | Shown for a latitude / longitude file: **Keep as WGS84**, or **Transform to projected coordinates** with an **EPSG Code:** or **Custom Proj4:** |
-| **Max Points:** | Point clouds: thin the cloud to this many points. 0 keeps them all |
-| **XY Tolerance:** | Points closer than this in plan are treated as one |
+| **Tolerance (3D):** | Point Cloud (kadCloud): remove points closer than this, in 3D, to one already kept. 0 — the default — keeps every point |
+| **Max Points:** | KAD points: thin the cloud to this many points (50,000 to start). 0 keeps them all, up to the 1,000,000-point limit |
+| **XY Tolerance:** | KAD points and surfaces: points closer than this in plan are treated as one |
 | **Surface Name:** | The name of the new surface |
 | **Max Edge Length:** | Surfaces: remove triangles with an edge longer than this — the long, thin triangles that bridge gaps and the outside of the cloud. 0 for no limit |
 | **Min Internal Angle:** | Surfaces: drop sliver triangles thinner than this angle. 0 for no limit |
 | **Max Surface Points:** | Surfaces: thin the cloud to this many points first. 0 keeps them all |
 | **Surface Style:** | The surface's starting colours: Default (elevation), Hillshade, Viridis, Turbo, Parula, Cividis or Terrain |
 
-Click **Import**. A surface is built in the background (**Creating Surface**). Point
-clouds are coloured by elevation, blue low to red high.
+With **Point Cloud (kadCloud)** the dialog says it keeps up to the draw budget (30,000,000
+points unless you changed **Max Point-Cloud Points** on the **Performance** tab of
+**Settings**), spread evenly over the file. The cloud keeps the file's colour when every point
+has one, and is otherwise coloured by elevation; change it in
+[Cloud Properties](../surfaces/point-clouds.md#cloud-properties).
+
+Click **Import**. A surface is built in the background (**Creating Surface**). KAD points
+are coloured by elevation, blue low to red high.
+
+Choosing **Point Cloud (KAD points)** for a file of more than 1,000,000 points shows
+[Too Many Points for KAD Points](#too-many-points-for-kad-points).
 
 Text files over 50 MB are read in pieces, under a **Reading large point cloud** progress
 bar, so a large survey does not run the browser out of memory.
@@ -97,17 +107,19 @@ Only the file's header is read before the dialog opens, so even a file of severa
 asks its questions straight away; the points are read afterwards, in pieces, with a progress
 bar. A `.laz` file is decompressed on all of your computer's processor cores.
 
-The **Import LAS Point Cloud** dialog offers:
+The **Import LAS Point Cloud** dialog offers the choices below. **Import As:** starts on
+**Point Cloud (kadCloud)** for every LAS and LAZ file; see [Point Clouds](../surfaces/point-clouds.md).
 
 ![Import LAS Point Cloud — Point Cloud options](../screenshots/LASImportDialog.png)
 
 | Setting | What it does |
 |---|---|
-| **Import As:** | **Point Cloud (KAD points by classification)** — the default — or **Surface (triangulated mesh)** |
+| **Import As:** | **Point Cloud (kadCloud)** — the default — **Point Cloud (KAD points by classification)** or **Surface (triangulated mesh)** |
 | **Classification Filter:** | **All Classifications**, or ground, vegetation, buildings or unclassified points only |
-| **Max Points:** | Point clouds: keep this many points, spread evenly over the whole file. **0** — the default — keeps as many as Kirra can draw (1,000,000) |
+| **Max Points:** | Point clouds: keep this many points, spread evenly over the whole file. **0** — the default — keeps as many as Kirra can draw: the draw budget (30,000,000 unless you changed it) for **Point Cloud (kadCloud)**, 1,000,000 for KAD points. The line under the box shows the number |
 | **Tolerance (3D):** | Point clouds: remove points closer than this, in 3D, to one already kept. **0** — the default — keeps every point. Points above and below each other (a hole wall, a face) are kept unless they really are this close |
-| **Preserve LAS point colors (if available)** | Use the scanner's colours |
+| **Preserve LAS point colors (if available)** | KAD points: use the scanner's colours. Greyed out for **Point Cloud (kadCloud)**, which keeps the colour and lets you choose the colouring in [Cloud Properties](../surfaces/point-clouds.md#cloud-properties) |
+| **Keep GPS time** | **Point Cloud (kadCloud)** only: keeps each point's GPS time so the cloud can be coloured by time. Costs 8 bytes a point. Greyed out when the file's point format has no GPS time |
 | **XY Tolerance:** | Surfaces: points closer than this in plan are treated as one (default 0.001 m) — a surface keeps one height per position |
 | **Max Surface Points:** | Surfaces: thin to this many points first. 500,000 is recommended for 3D |
 | **Surface Style:** | As for a point cloud, plus **LAS Point Colors** |
@@ -115,8 +127,26 @@ The **Import LAS Point Cloud** dialog offers:
 **Ground Only** with **Surface** is the quick way to a bare-earth terrain from a LiDAR
 survey.
 
-A point cloud shows a preview of up to 1,000,000 points, spread evenly over the cloud; Kirra
-reports how many points it imported and how many are in the preview.
+Kirra reports how many points it imported. A **Point Cloud (kadCloud)** keeps up to the draw
+budget, spread evenly over the file if the file holds more. KAD points show a preview of up to
+1,000,000 points, spread evenly over the cloud, and Kirra reports how many are in the preview.
+
+The cloud appears in the **Point Clouds** group of the [Data Explorer](../working-in-kirra/data-explorer.md).
+If it lands 100 km or more from your other data, Kirra asks before importing it, and it never
+moves the cloud — see [Coordinates and scans that start at 0, 0](../surfaces/point-clouds.md#coordinates-and-scans-that-start-at-0-0).
+
+### Too Many Points for KAD Points
+
+Each KAD point carries more data than a point-cloud point, so KAD points are limited to
+1,000,000. If you choose **Point Cloud (KAD points)** for a bigger file, **Too Many Points for
+KAD Points** appears. It says KAD points are limited to 1,000,000 points, that for point clouds
+you should use a point cloud (kadCloud), and how many points the file has. Choose:
+
+| Button | Result |
+|---|---|
+| **Use kadCloud** | Import the file as a point cloud instead |
+| **Thin to 1,000,000 KAD points** | Keep KAD points, thinned to the number shown on the button: 1,000,000, or your **Max Points:** if that is lower |
+| **Cancel** | Stop. Nothing is imported |
 
 ---
 
@@ -159,6 +189,7 @@ that.
 ## Related topics
 
 - [The Import Dialog](import-dialog.md)
+- [Point Clouds](../surfaces/point-clouds.md)
 - [ECW Imagery](ecw-imagery.md)
 - [3D Mesh Import](3d-mesh.md)
 - [Transform (Reproject) Import](transform-import.md)

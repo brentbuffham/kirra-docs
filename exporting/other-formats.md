@@ -95,9 +95,29 @@ Export point data in various text formats:
 
 ## LAS (LiDAR)
 
-Export point data to ASPRS LAS format: the points of visible surfaces and visible drawings
-(hidden ones are left out), written as LAS 1.2, point format 0. Export to compressed `.laz` is
-not available yet.
+Export point data to ASPRS LAS format: the points of visible surfaces, visible drawings and
+visible [point clouds](../surfaces/point-clouds.md) (hidden ones are left out), written as LAS
+1.2, point format 0. Export to compressed `.laz` is not available yet.
+
+1. Open the Export dialog and click the export icon on the **LAS Point Cloud** row of the
+   **Surfaces / Mesh** tab.
+2. In **Export LAS Point Cloud**, type the **Filename:** and click **Export**.
+3. Kirra notes that LAS export with projection settings is not available yet and that it is
+   using default settings. Then choose where to save the file.
+
+**What a point cloud writes.** Every point of every visible cloud, at exactly the coordinates
+the cloud holds. Classification, intensity, return number and number of returns are written
+from the cloud; a cloud that does not have one of them writes classification 1
+(Unclassified), return 1 of 1 and intensity 0.
+
+**What point format 0 cannot hold.** Point format 0 stores no colour and no GPS time, so a
+cloud's colour and GPS time are not written. Kirra says so: **Export Complete** adds *The LAS
+point format used does not store colour, so the point cloud colour was not written.* and, for a
+cloud that kept GPS time, *The LAS point format used does not store GPS time, so the point cloud
+GPS time was not written.*
+
+A cloud of tens of millions of points takes a while to write; Kirra shows **Exporting LAS…**
+while it works.
 
 ---
 
@@ -112,6 +132,20 @@ backup and for sharing — the person who opens it can work exactly as you did.
 Settings that belong to your computer — theme, language, toolbar and panel layout — are
 not included.
 
+**Point clouds.** A KAP carries your [point clouds](../surfaces/point-clouds.md) with their
+colouring settings. They can be large, so when your workspace has any, saving a KAP first asks
+**Point Clouds** — *Point clouds add (size) to this project. Include them?* — and shows the
+size they will add:
+
+| Button | Result |
+|---|---|
+| **Include** | The KAP carries the clouds, then asks where to save |
+| **Leave out** | The KAP is saved without them. The clouds stay in your workspace |
+| **Cancel** | No file is saved. Closing the dialog cancels as well |
+
+The clouds are stored in the file as they are, not compressed, so the file grows by about the
+size shown.
+
 ---
 
 ## KAT (Kirra App Template)
@@ -120,7 +154,7 @@ Save your **site setup** as a `.kat` file: everything a KAP carries **except the
 It holds your explosive products, charge rules, pattern and print templates, measured
 seeds, PPV monitors and parameters, the [CRS Library](../analysis/crs-library.md), colour
 settings and work settings — no holes,
-drawings, surfaces, images, groups, trunks or timing.
+drawings, surfaces, images, point clouds, groups, trunks or timing.
 
 Use a KAT to set up a new machine or a new site with the same catalogue and layouts, to
 hand a contractor your products and charge rules without a blast, or to keep your site

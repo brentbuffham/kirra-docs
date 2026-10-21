@@ -23,8 +23,8 @@ Kirra supports importing 3D surfaces from multiple formats. Surfaces are used fo
 | **Datamine surface** | `.dm` (points + triangles) | Datamine |
 | **12d Archive TINs** | `.12da`, `.12daz` | 12d Model |
 | **Elevation GeoTIFF** | `.tif`, `.tiff` (one band) | Digital elevation models |
-| **Point clouds** | `.xyz`, `.csv`, `.pts`, text `.ply` | Surveys and scans, triangulated on import |
-| **LAS** | `.las` | LiDAR, triangulated on import (for example ground points only) |
+| **Point clouds** | `.xyz`, `.csv`, `.pts`, text `.ply` | Surveys and scans: a [point cloud](point-clouds.md), KAD points, or a surface triangulated on import |
+| **LAS** | `.las`, `.laz` | LiDAR: a [point cloud](point-clouds.md) by default, or a surface triangulated on import (for example ground points only) |
 
 See [Surfaces and Point Clouds](../importing/surfaces-and-point-clouds.md) for the point
 cloud, LiDAR and GeoTIFF options.

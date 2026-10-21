@@ -1,7 +1,7 @@
 # Data Explorer
 
 The **Data Explorer** lists everything loaded in the workspace — blasts and their holes, KAD
-drawings, surfaces, images and geology — as a tree. Use it to show and hide things, lock
+drawings, surfaces, images, point clouds and geology — as a tree. Use it to show and hide things, lock
 them, select them, and reach their right-click tools.
 
 ---
@@ -37,6 +37,7 @@ The four buttons at the right of the title bar:
 | **KAD** | Drawing layers, each holding points, lines, polygons, circles and text |
 | **Surfaces** | Surface layers, each holding surfaces and solids |
 | **Images** | Imported images such as GeoTIFFs and ECWs. An amber warning on an ECW means its file needs [reconnecting](../importing/ecw-imagery.md#after-a-reload-reconnect). Right-click an image and choose **Statistics** for its details and colour histogram (see [Image Statistics](../importing/ecw-imagery.md#image-statistics)) |
+| **Point Clouds** | [Point clouds](../surfaces/point-clouds.md) from LAS, LAZ and text point-cloud files, one row each. They are on no drawing layer |
 | **Geology** | Block models |
 
 Click the ▶ arrow to open a row, ▼ to close it.
@@ -49,6 +50,7 @@ Click the ▶ arrow to open a row, ▼ to close it.
 | Drawing layer | `(4 entities)` | Number of drawings in the layer, including its sub-folders |
 | Surface layer | `(8 surfaces)` | Number of surfaces in the layer |
 | Group | `(12 holes)` | Number of holes in the group; **fx** marks a live (formula) group |
+| Point cloud | `N=10,040,120` | Number of points in the cloud |
 
 ### Active layer
 
@@ -151,6 +153,16 @@ Right-click a row for its tools. The menu shows only the items that fit what you
 | **Statistics** | A surface | Opens a read-only **Surface Statistics** table |
 | **Properties** | A surface | Opens the surface menu |
 
+### Point clouds
+
+| Item | What it does |
+|------|--------------|
+| **Rename** | Renames the cloud |
+| **Properties** | Opens [Cloud Properties](../surfaces/point-clouds.md#cloud-properties): point size, colouring, limits, classes and **Remove duplicates** |
+
+**Hide** / **Show** and **Delete** are on the shared list below. **Sort…** is on the
+**Point Clouds** group.
+
 ### Trunks
 
 | Item | What it does |
@@ -172,6 +184,7 @@ Right-click a row for its tools. The menu shows only the items that fit what you
 | Holes, drawings, vertices | Deleted; **Undo** (Ctrl+Z) brings them back. Deleting some holes of a blast asks **Renumber Holes?** |
 | A layer | **Delete Layer(s)** asks: **Delete All** (the layer and its contents), **Keep Entities**, or **Cancel** |
 | A trunk or block model | Asks to confirm |
+| A point cloud | **Delete Point Cloud** asks *Delete 1 point cloud(s)? This cannot be undone.* — click **Delete** or **Cancel**. **Undo** does not bring it back |
 | A surface or image | **Deleted straight away — no confirmation and no undo** |
 
 > **Warning:** **Circle to Polygon**, **Remove Group**, **Reset Connections** and deleting a

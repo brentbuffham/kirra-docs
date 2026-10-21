@@ -59,7 +59,7 @@ In order, left to right:
 | 28 | **Comment** | The recorded comment |
 | 29 | **KAD Point IDs** | The point number at each vertex of KAD drawings |
 | 30 | **Voronoi** | Voronoi cells around the holes (right-click opens **Voronoi Options**) |
-| 31 | **Legend** | The colour legend for the active display. On by default |
+| 31 | **Legend** | The colour legend for the active display, including [point clouds](../surfaces/point-clouds.md#legend) coloured by elevation. On by default |
 
 Contours, Slope, Relief and First Movement are explained in
 [Timing Contours, First Movement and Relief](../blast-design/timing-contours.md). Voronoi

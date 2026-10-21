@@ -89,7 +89,7 @@ panel).
 
 | File | Holds | Use it to |
 |------|-------|-----------|
-| **Kirra Application Project** (`.kap`) | Everything in the workspace — blasts, drawings, surfaces, images, charging, timing and libraries | Back up a job, send it to someone, or move it to another workspace or computer |
+| **Kirra Application Project** (`.kap`) | Everything in the workspace — blasts, drawings, surfaces, images, point clouds, charging, timing and libraries | Back up a job, send it to someone, or move it to another workspace or computer |
 | **Kirra App Template** (`.kat`) | Site setup only — products, charge rules, pattern and print templates, seeds, monitors, schemas | Set up a new workspace or a colleague with your site's standards |
 
 ### Save a project
@@ -98,6 +98,10 @@ panel).
 2. On the **Kirra** tab, click **Save** on the **Kirra Application Project** row (or the
    **Kirra App Template** row).
 3. Choose where to save the file.
+
+If the workspace holds [point clouds](../surfaces/point-clouds.md), a KAP asks first: **Point
+Clouds** shows how much they add to the project, and offers **Include**, **Leave out** or
+**Cancel**. See [Other Export Formats](../exporting/other-formats.md#kap-kirra-app-project).
 
 ### Open a project into a workspace with work in it
 

@@ -24,6 +24,7 @@ share it with can work exactly as you did:
 |------|----------|
 | **The blast** | Holes, blast groups, trunks and connections, timing constructs and firing groups, charged holes |
 | **Drawings and surfaces** | KAD drawings and layers, surfaces (including textured and analysis surfaces), imagery |
+| **Point clouds** | Every [point cloud](../surfaces/point-clouds.md), with its colouring settings |
 | **Libraries** | Explosive products, charge rules, pattern templates, print templates, measured seeds, PPV monitors, block-model colour schemas |
 | **Settings** | Your work settings — hole and text sizes, colours, snapping, CSV column order and export preferences, dialog presets and similar |
 
@@ -52,7 +53,8 @@ toolbar and panel layout stay as they are.
    simply loads.
 
 In a **Merge**, a hole whose blast name and hole ID you already have is not brought in
-again.
+again, and nor is a point cloud you already have. A cloud whose name is taken by something
+else is renamed with `_2`, `_3` and so on.
 
 When the import finishes, **Import Complete** lists everything that arrived. If the file
 brought settings, the summary says so and **Kirra reloads when you click OK** so the
@@ -70,8 +72,8 @@ and panel layout stay as they are.
 ### KAT (Kirra App Template)
 
 Import a **site template** from a `.kat` file. A KAT is everything a KAP carries
-**except the blast** — no holes, drawings, surfaces, images, blast groups, trunks,
-timing or firing groups. It brings a site's setup: explosive products, charge rules,
+**except the blast** — no holes, drawings, surfaces, images, point clouds, blast groups,
+trunks, timing or firing groups. It brings a site's setup: explosive products, charge rules,
 pattern and print templates, measured seeds, PPV monitors and parameters, the
 [CRS Library](../analysis/crs-library.md), colour settings and work settings.
 
