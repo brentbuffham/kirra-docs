@@ -115,8 +115,8 @@ The **Import LAS Point Cloud** dialog offers:
 **Ground Only** with **Surface** is the quick way to a bare-earth terrain from a LiDAR
 survey.
 
-A point cloud shows a preview of up to 500,000 points; Kirra reports how many points it
-imported and how many are in the preview.
+A point cloud shows a preview of up to 1,000,000 points, spread evenly over the cloud; Kirra
+reports how many points it imported and how many are in the preview.
 
 ---
 
