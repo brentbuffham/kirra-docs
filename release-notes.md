@@ -2,6 +2,53 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.5
+
+_2026-10-21_
+
+**Bug Fix**
+
+- Importing a huge point cloud no longer runs out of memory
+
+## Release v1.1.34.4
+
+_2026-10-21_
+
+**Feature**
+
+- Point-cloud previews now show up to 1,000,000 points
+
+## Release v1.1.34.3
+
+_2026-10-21_
+
+**Bug Fix**
+
+- Point-cloud dedupe no longer collapses points stacked at one XY
+
+## Release v1.1.34.2
+
+_2026-10-21_
+
+**Feature**
+
+- LAS and LAZ imports now load every point by default
+
+## Release v1.1.34.1
+
+_2026-10-21_
+
+**Feature**
+
+- LAZ point clouds import, by drag and drop or Import LAS
+- Large LAS files reach the import dialog almost instantly
+
+**Bug Fix**
+
+- Thinned LAS imports now cover the whole file, not just its start
+- LAS files with 8-bit colour no longer import almost black
+- LAS export keeps never-classified points as class 0
+
 ## Release v1.1.34
 
 _2026-10-20_
