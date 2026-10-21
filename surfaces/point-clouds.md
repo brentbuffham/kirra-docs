@@ -112,19 +112,23 @@ they belong to each cloud.
 
 ### Colour by
 
-**Colour by** decides what colours each point. Kirra offers only the choices the cloud has data
-for. **Classification**, **Return number** and **GPS time** are offered only when the file holds
-varying values: a column that is the same for every point (GPS time all 0, for example) is greyed
-out with a note.
+**Colour by** decides what colours each point. The list holds only the choices the cloud has data
+for.
+
+**Classification**, **Return number** and **GPS time** are listed only when the cloud holds that
+column, and they are shown greyed out, with a short note, when every point has the same value
+and so nothing could be told apart. The note reads, for example, *GPS time (all values are 0)*
+or *Classification (all the same)*. **Intensity** is not checked this way. If a cloud's saved
+choice has become unavailable, it stays selected, greyed out.
 
 | Choice | Needs |
 |--------|-------|
 | **RGB (colour from the file)** | Colour in the file. The default for a cloud that has it |
 | **Elevation** | Nothing. The default for a cloud without colour |
 | **Intensity** | Intensity in the file |
-| **Classification** | Classification in the file, with more than one value |
-| **Return number** | Return numbers in the file, with more than one value |
-| **GPS time** | **Keep GPS time** ticked at import, and times that vary |
+| **Classification** | Classification in the file, with more than one value (otherwise greyed out with a note) |
+| **Return number** | Return numbers in the file, with more than one value (otherwise greyed out with a note) |
+| **GPS time** | **Keep GPS time** ticked at import. Greyed out with a note when every time is the same |
 | **Single colour** | Nothing |
 
 | Setting | When it is available | What it does |
@@ -147,7 +151,9 @@ only when **Limits** is **Fixed**; the blank box shows the data's own value.
 
 ### Classes
 
-Shown for a cloud that carries classification. One row for each class in the cloud, with:
+Shown for a cloud that holds more than one class; a cloud with a single class has nothing to
+tell apart and no **Classes** group (unless that one class has been hidden, so it can be shown
+again). One row for each class in the cloud, with:
 
 - a tick box: untick it to hide that class,
 - the class number (**Class 2**) and how many points it holds,
@@ -235,14 +241,18 @@ A text cloud with 1,000,000 points or fewer defaults to **Surface (triangulated 
 **Point Cloud (KAD Cloud Entity - Increased Point Capability)** in **Import As:**.
 
 **I chose KAD points and got Too Many Points for KAD Points.**
-KAD points carry more data per point and are limited to 1,000,000. Click **Use kadCloud** to
+KAD points carry more data per point and are limited to 1,000,000. Click **Use KAD Cloud** to
 import the whole file as a point cloud, **Thin to 1,000,000 KAD points** to keep KAD points, or
 **Cancel**. See
 [Surfaces and Point Clouds](../importing/surfaces-and-point-clouds.md#too-many-points-for-kad-points).
 
-**Colour by does not offer RGB, Intensity, Classification, Return number or GPS time.**
-The file did not hold it, or it holds the same value for every point. For GPS time, **Keep GPS time**
-may also not have been ticked when you imported; import the file again with it ticked.
+**Colour by has no RGB, Intensity or GPS time.**
+The file did not hold it. For GPS time, **Keep GPS time** may not have been ticked when you
+imported; import the file again with it ticked.
+
+**Classification, Return number or GPS time is greyed out in Colour by.**
+Every point in the cloud has the same value (the note says *all values are 0* or *all the same*),
+so colouring by it would show one colour. Choose another **Colour by**.
 
 **The cloud is not on the screen after import.**
 Check the eye on its row and on the **Point Clouds** group. If the cloud is 100 km or more from

@@ -111,9 +111,9 @@ from the cloud; a cloud that does not have one of them writes classification 1
 (Unclassified), return 1 of 1 and intensity 0.
 
 **What point format 0 cannot hold.** Point format 0 stores no colour and no GPS time, so a
-cloud's colour and GPS time are not written. Kirra says so: **Export Complete** adds *The LAS
-point format used does not store colour, so the point cloud colour was not written.* and, for a
-cloud that kept GPS time, *The LAS point format used does not store GPS time, so the point cloud
+cloud's colour and GPS time are not written. Kirra says so: for a cloud that has colour,
+**Export Complete** adds *The LAS point format used does not store colour, so the point cloud
+colour was not written.* and, for a cloud that kept GPS time, *The LAS point format used does not store GPS time, so the point cloud
 GPS time was not written.*
 
 A cloud of tens of millions of points takes a while to write; Kirra shows **Exporting LAS…**

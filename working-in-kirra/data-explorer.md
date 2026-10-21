@@ -10,7 +10,7 @@ them, select them, and reach their right-click tools.
 
 Click **Data Explorer** at the right-hand end of the top bar. Click it again to close it.
 
-![Data Explorer showing Blast, KAD, Surfaces, Images and Geology](../screenshots/DataExplorerTree.png)
+![The Data Explorer tree](../screenshots/DataExplorerTree.png)
 *The Data Explorer. Grey rows are hidden; the eye icon is green on visible rows.*
 
 The title reads **Data Explorer - Workspace #N** — the [workspace](workspaces.md) this window

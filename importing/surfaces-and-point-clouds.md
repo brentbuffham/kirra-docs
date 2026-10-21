@@ -139,12 +139,13 @@ moves the cloud — see [Coordinates and scans that start at 0, 0](../surfaces/p
 
 Each KAD point carries more data than a point-cloud point, so KAD points are limited to
 1,000,000. If you choose **Point Cloud (KAD points)** for a bigger file, **Too Many Points for
-KAD Points** appears. It says KAD points are limited to 1,000,000 points, that for point clouds
-you should use a point cloud (kadCloud), and how many points the file has. Choose:
+KAD Points** appears. It says *KAD points carry more data per point and are limited to
+1,000,000 points. For point clouds, use a point cloud (KAD Cloud).* and *This file has N
+points.* Choose:
 
 | Button | Result |
 |---|---|
-| **Use kadCloud** | Import the file as a point cloud instead |
+| **Use KAD Cloud** | Import the file as a point cloud instead |
 | **Thin to 1,000,000 KAD points** | Keep KAD points, thinned to the number shown on the button: 1,000,000, or your **Max Points:** if that is lower |
 | **Cancel** | Stop. Nothing is imported |
 
