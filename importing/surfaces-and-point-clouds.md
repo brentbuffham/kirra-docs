@@ -66,9 +66,9 @@ After you pick the file, the **Import Point Cloud** dialog asks how to bring it 
 
 | Setting | What it does |
 |---|---|
-| **Import As:** | **Point Cloud (kadCloud)**, **Point Cloud (KAD points)** or **Surface (triangulated mesh)**. A file with more than 1,000,000 points starts on **Point Cloud (kadCloud)**; a smaller one starts on **Surface (triangulated mesh)** |
+| **Import As:** | **Point Cloud (KAD Cloud Entity - Increased Point Capability)**, **Point Cloud (KAD points)** or **Surface (triangulated mesh)**. A file with more than 1,000,000 points starts on **Point Cloud (KAD Cloud Entity - Increased Point Capability)**; a smaller one starts on **Surface (triangulated mesh)** |
 | **Coordinate Transformation:** | Shown for a latitude / longitude file: **Keep as WGS84**, or **Transform to projected coordinates** with an **EPSG Code:** or **Custom Proj4:** |
-| **Tolerance (3D):** | Point Cloud (kadCloud): remove points closer than this, in 3D, to one already kept. 0 — the default — keeps every point |
+| **Tolerance (3D):** | Point Cloud (KAD Cloud Entity - Increased Point Capability): remove points closer than this, in 3D, to one already kept. 0 — the default — keeps every point |
 | **Max Points:** | KAD points: thin the cloud to this many points (50,000 to start). 0 keeps them all, up to the 1,000,000-point limit |
 | **XY Tolerance:** | KAD points and surfaces: points closer than this in plan are treated as one |
 | **Surface Name:** | The name of the new surface |
@@ -77,7 +77,7 @@ After you pick the file, the **Import Point Cloud** dialog asks how to bring it 
 | **Max Surface Points:** | Surfaces: thin the cloud to this many points first. 0 keeps them all |
 | **Surface Style:** | The surface's starting colours: Default (elevation), Hillshade, Viridis, Turbo, Parula, Cividis or Terrain |
 
-With **Point Cloud (kadCloud)** the dialog says it keeps up to the draw budget (30,000,000
+With **Point Cloud (KAD Cloud Entity - Increased Point Capability)** the dialog says it keeps up to the draw budget (30,000,000
 points unless you changed **Max Point-Cloud Points** on the **Performance** tab of
 **Settings**), spread evenly over the file. The cloud keeps the file's colour when every point
 has one, and is otherwise coloured by elevation; change it in
@@ -108,18 +108,18 @@ asks its questions straight away; the points are read afterwards, in pieces, wit
 bar. A `.laz` file is decompressed on all of your computer's processor cores.
 
 The **Import LAS Point Cloud** dialog offers the choices below. **Import As:** starts on
-**Point Cloud (kadCloud)** for every LAS and LAZ file; see [Point Clouds](../surfaces/point-clouds.md).
+**Point Cloud (KAD Cloud Entity - Increased Point Capability)** for every LAS and LAZ file; see [Point Clouds](../surfaces/point-clouds.md).
 
 ![Import LAS Point Cloud — Point Cloud options](../screenshots/LASImportDialog.png)
 
 | Setting | What it does |
 |---|---|
-| **Import As:** | **Point Cloud (kadCloud)** — the default — **Point Cloud (KAD points by classification)** or **Surface (triangulated mesh)** |
+| **Import As:** | **Point Cloud (KAD Cloud Entity - Increased Point Capability)** — the default — **Point Cloud (KAD points by classification)** or **Surface (triangulated mesh)** |
 | **Classification Filter:** | **All Classifications**, or ground, vegetation, buildings or unclassified points only |
-| **Max Points:** | Point clouds: keep this many points, spread evenly over the whole file. **0** — the default — keeps as many as Kirra can draw: the draw budget (30,000,000 unless you changed it) for **Point Cloud (kadCloud)**, 1,000,000 for KAD points. The line under the box shows the number |
+| **Max Points:** | Point clouds: keep this many points, spread evenly over the whole file. **0** — the default — keeps as many as Kirra can draw: the draw budget (30,000,000 unless you changed it) for **Point Cloud (KAD Cloud Entity - Increased Point Capability)**, 1,000,000 for KAD points. The line under the box shows the number |
 | **Tolerance (3D):** | Point clouds: remove points closer than this, in 3D, to one already kept. **0** — the default — keeps every point. Points above and below each other (a hole wall, a face) are kept unless they really are this close |
-| **Preserve LAS point colors (if available)** | KAD points: use the scanner's colours. Greyed out for **Point Cloud (kadCloud)**, which keeps the colour and lets you choose the colouring in [Cloud Properties](../surfaces/point-clouds.md#cloud-properties) |
-| **Keep GPS time** | **Point Cloud (kadCloud)** only: keeps each point's GPS time so the cloud can be coloured by time. Costs 8 bytes a point. Greyed out when the file's point format has no GPS time |
+| **Preserve LAS point colors (if available)** | KAD points: use the scanner's colours. Greyed out for **Point Cloud (KAD Cloud Entity - Increased Point Capability)**, which keeps the colour and lets you choose the colouring in [Cloud Properties](../surfaces/point-clouds.md#cloud-properties) |
+| **Keep GPS time** | **Point Cloud (KAD Cloud Entity - Increased Point Capability)** only: keeps each point's GPS time so the cloud can be coloured by time. Costs 8 bytes a point. Greyed out when the file's point format has no GPS time |
 | **XY Tolerance:** | Surfaces: points closer than this in plan are treated as one (default 0.001 m) — a surface keeps one height per position |
 | **Max Surface Points:** | Surfaces: thin to this many points first. 500,000 is recommended for 3D |
 | **Surface Style:** | As for a point cloud, plus **LAS Point Colors** |
@@ -127,7 +127,7 @@ The **Import LAS Point Cloud** dialog offers the choices below. **Import As:** s
 **Ground Only** with **Surface** is the quick way to a bare-earth terrain from a LiDAR
 survey.
 
-Kirra reports how many points it imported. A **Point Cloud (kadCloud)** keeps up to the draw
+Kirra reports how many points it imported. A **Point Cloud (KAD Cloud Entity - Increased Point Capability)** keeps up to the draw
 budget, spread evenly over the file if the file holds more. KAD points show a preview of up to
 1,000,000 points, spread evenly over the cloud, and Kirra reports how many are in the preview.
 

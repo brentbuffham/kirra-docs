@@ -4,7 +4,7 @@ A **point cloud** is a scan or survey kept as millions of plain points: no trian
 drawing objects, just each point's position and whatever the scanner recorded about it
 (colour, intensity, classification, return number and, if you asked for it, GPS time).
 
-Kirra keeps a point cloud as its own kind of data, labelled **Point Cloud (kadCloud)** on the
+Kirra keeps a point cloud as its own kind of data, labelled **Point Cloud (KAD Cloud Entity - Increased Point Capability)** on the
 import dialogs. It draws in 2D and 3D, prints, saves with your project and can be exported to
 LAS. LAS and LAZ files import this way by default, so a survey of tens of millions of points
 opens without being thinned to a drawing-object limit.
@@ -20,10 +20,10 @@ Use the import row for your file, or drag the file onto Kirra:
 | `.las` / `.laz` | **LAS Point Cloud** (Surfaces / Mesh tab) | **Import LAS Point Cloud** |
 | `.xyz` / `.txt` / `.csv` / `.pts` / `.ptx` / text `.ply` | **Point Cloud** (Surfaces / Mesh tab) | **Import Point Cloud** |
 
-In both dialogs, set **Import As:** to **Point Cloud (kadCloud)**. It is the default for every
+In both dialogs, set **Import As:** to **Point Cloud (KAD Cloud Entity - Increased Point Capability)**. It is the default for every
 LAS and LAZ file, and for a text cloud with more than 1,000,000 points. A smaller text cloud
 still defaults to **Surface (triangulated mesh)**, as it always has, so choose
-**Point Cloud (kadCloud)** yourself if you want a cloud.
+**Point Cloud (KAD Cloud Entity - Increased Point Capability)** yourself if you want a cloud.
 
 The full list of options is on [Surfaces and Point Clouds](../importing/surfaces-and-point-clouds.md#las-point-cloud).
 The ones that matter for a cloud:
@@ -113,16 +113,18 @@ they belong to each cloud.
 ### Colour by
 
 **Colour by** decides what colours each point. Kirra offers only the choices the cloud has data
-for:
+for. **Classification**, **Return number** and **GPS time** are offered only when the file holds
+varying values: a column that is the same for every point (GPS time all 0, for example) is greyed
+out with a note.
 
 | Choice | Needs |
 |--------|-------|
 | **RGB (colour from the file)** | Colour in the file. The default for a cloud that has it |
 | **Elevation** | Nothing. The default for a cloud without colour |
 | **Intensity** | Intensity in the file |
-| **Classification** | Classification in the file |
-| **Return number** | Return numbers in the file |
-| **GPS time** | **Keep GPS time** ticked at import |
+| **Classification** | Classification in the file, with more than one value |
+| **Return number** | Return numbers in the file, with more than one value |
+| **GPS time** | **Keep GPS time** ticked at import, and times that vary |
 | **Single colour** | Nothing |
 
 | Setting | When it is available | What it does |
@@ -230,7 +232,7 @@ editing individual points are not part of it. To work on points, import the file
 
 **My text point cloud became a surface.**
 A text cloud with 1,000,000 points or fewer defaults to **Surface (triangulated mesh)**. Choose
-**Point Cloud (kadCloud)** in **Import As:**.
+**Point Cloud (KAD Cloud Entity - Increased Point Capability)** in **Import As:**.
 
 **I chose KAD points and got Too Many Points for KAD Points.**
 KAD points carry more data per point and are limited to 1,000,000. Click **Use kadCloud** to
@@ -238,9 +240,9 @@ import the whole file as a point cloud, **Thin to 1,000,000 KAD points** to keep
 **Cancel**. See
 [Surfaces and Point Clouds](../importing/surfaces-and-point-clouds.md#too-many-points-for-kad-points).
 
-**Colour by does not offer RGB, Intensity or GPS time.**
-The file did not hold it, or, for GPS time, **Keep GPS time** was not ticked when you imported.
-Import the file again with it ticked.
+**Colour by does not offer RGB, Intensity, Classification, Return number or GPS time.**
+The file did not hold it, or it holds the same value for every point. For GPS time, **Keep GPS time**
+may also not have been ticked when you imported; import the file again with it ticked.
 
 **The cloud is not on the screen after import.**
 Check the eye on its row and on the **Point Clouds** group. If the cloud is 100 km or more from
