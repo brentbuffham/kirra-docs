@@ -2,6 +2,262 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.42
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.41
+
+_2026-10-22_
+
+**Bug Fix**
+
+- Point cloud export messages show the point count with thousands separators
+
+## Release v1.1.34.40
+
+_2026-10-22_
+
+**Feature**
+
+- The Section Plane can clip point clouds
+
+## Release v1.1.34.39
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.38
+
+_2026-10-22_
+
+**Bug Fix**
+
+- Input prompts no longer cut off long text
+
+## Release v1.1.34.37
+
+_2026-10-22_
+
+**Bug Fix**
+
+- Message boxes no longer cut off long text
+
+## Release v1.1.34.36
+
+_2026-10-22_
+
+**Bug Fix**
+
+- LAZ export never saves an uncompressed file
+
+## Release v1.1.34.35
+
+_2026-10-22_
+
+**Bug Fix**
+
+- LAS export leaves out point-cloud classes hidden in Cloud Properties
+
+## Release v1.1.34.34
+
+_2026-10-22_
+
+**Feature**
+
+- LAS export can write compressed LAZ files
+
+## Release v1.1.34.33
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.32
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.31
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.30
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.29
+
+_2026-10-22_
+
+**Feature**
+
+- Cloud Properties offers only the colourings a point cloud really holds
+
+## Release v1.1.34.28
+
+_2026-10-21_
+
+**Feature**
+
+- Projects carry point clouds, with a size warning on export
+
+## Release v1.1.34.27
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.26
+
+_2026-10-21_
+
+**Feature**
+
+- LAS export includes point clouds
+
+## Release v1.1.34.25
+
+_2026-10-21_
+
+**Bug Fix**
+
+- A point cloud that cannot be drawn never stops a print
+
+## Release v1.1.34.24
+
+_2026-10-21_
+
+**Feature**
+
+- Point clouds print in raster and vector plans
+
+## Release v1.1.34.23
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.22
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.21
+
+_2026-10-21_
+
+**Feature**
+
+- Point clouds import as compact clouds of up to 30 million points
+- Cloud Properties sets point size, colouring and limits
+- A Point Clouds folder lists every cloud in the Data Explorer
+
+## Release v1.1.34.20
+
+_2026-10-21_
+
+**Bug Fix**
+
+- KAD and hole locks in the Data Explorer now stay locked after a reload
+
+## Release v1.1.34.19
+
+_2026-10-21_
+
+**Feature**
+
+- Geology can be locked in the Data Explorer
+
+## Release v1.1.34.18
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.17
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.16
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.15
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.14
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.13
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.12
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.11
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.10
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.9
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.8
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.7
+
+_2026-10-21_
+
+History not available at the moment.
+
+## Release v1.1.34.6
+
+_2026-10-21_
+
+**Feature**
+
+- Performance settings set how many point-cloud points Kirra draws
+
 ## Release v1.1.34.5
 
 _2026-10-21_
