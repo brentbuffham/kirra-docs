@@ -6,8 +6,8 @@ drawing objects, just each point's position and whatever the scanner recorded ab
 
 Kirra keeps a point cloud as its own kind of data, labelled **Point Cloud (KAD Cloud Entity - Increased Point Capability)** on the
 import dialogs. It draws in 2D and 3D, prints, saves with your project and can be exported to
-LAS. You can select its points and delete, crop or split them, merge clouds, and make KAD points
-or a surface from them. LAS and LAZ files import this way by default, so a survey of tens of millions of points
+LAS. You can select its points and delete, crop or split them, merge clouds, make KAD points from
+them, and triangulate them into a surface. LAS and LAZ files import this way by default, so a survey of tens of millions of points
 opens without being thinned to a drawing-object limit.
 
 ---
@@ -84,7 +84,6 @@ Right-click a cloud row:
 | **Crop to Selection** | Keeps only the selected points (shown when the cloud has a selection) |
 | **Split Selection to New Cloud** | Moves the selected points into a new cloud (shown when the cloud has a selection) |
 | **Convert Selection to KAD Points** | Makes KAD points from the selection (shown when the cloud has a selection) |
-| **Create Surface** | Builds a surface from the selection, or from the whole cloud |
 | **Merge Clouds** | Joins two or more clouds into a new one (shown when two or more cloud rows are selected) |
 
 > **Warning:** Deleting a point cloud cannot be undone with **Undo**. Export a
@@ -282,7 +281,12 @@ Right-click the cloud row. Each item asks first and says how many points it affe
 | **Crop to Selection** | Only the selected points are kept |
 | **Split Selection to New Cloud** | The selected points move to a new cloud named after this one with *(selection)* added, for example `Cloud_scan (selection)` |
 | **Convert Selection to KAD Points** | The selected points become one KAD points entity, `<cloud> points`, in the colours they are drawn in. KAD points are limited to 1,000,000; above that Kirra asks to thin the selection evenly |
-| **Create Surface** | Opens **Create Surface** with the usual surface options. It uses the selection, or every drawn point when nothing is selected. Up to 2,000,000 points are used; above that Kirra asks to thin evenly |
+
+To build a surface from a cloud, use the **Triangulate** tool. It uses every visible cloud: the
+selection when the cloud has one, otherwise every drawn point. It uses up to half of **Max triangles
+per surface (3D)** in [Settings > Performance](../working-in-kirra/settings.md#performance-tab)
+points (a surface has about two triangles per point), spread evenly; the status bar says so when it
+thins. **Estimated points** in its dialog includes the cloud points.
 
 **Undo** (Ctrl+Z) reverses Delete, Crop and Split. A cloud larger than 256 MB cannot be undone;
 Kirra says so in the question before it changes anything.
