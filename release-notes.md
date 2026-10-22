@@ -2,6 +2,186 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.67
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.66
+
+_2026-10-22_
+
+**Bug Fix**
+
+- Point-cloud progress bars now follow the work instead of filling at once
+
+## Release v1.1.34.65
+
+_2026-10-22_
+
+**Feature**
+
+- Point clouds can be coloured by roughness to find noisy areas
+- Roughness is computed once and saved with the point cloud
+
+## Release v1.1.34.64
+
+_2026-10-22_
+
+**Feature**
+
+- Smooth points makes a smoothed copy of a noisy point cloud
+
+## Release v1.1.34.63
+
+_2026-10-22_
+
+**Feature**
+
+- Select Points can select stray points in a point cloud
+- Select Points can select sparse points, such as dust, in a point cloud
+
+## Release v1.1.34.62
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.61
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.60
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.59
+
+_2026-10-22_
+
+**Feature**
+
+- Remove duplicates runs in the background, with progress and Cancel
+
+## Release v1.1.34.58
+
+_2026-10-22_
+
+**Bug Fix**
+
+- Remove duplicates now works on point clouds of any size
+
+## Release v1.1.34.57
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.56
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.55
+
+_2026-10-22_
+
+**Feature**
+
+- Triangulate builds surfaces from visible point clouds
+
+## Release v1.1.34.54
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.53
+
+_2026-10-22_
+
+**Bug Fix**
+
+- Escape and a plain click clear selected point-cloud points
+
+## Release v1.1.34.52
+
+_2026-10-22_
+
+**Feature**
+
+- Merge two or more point clouds from the Data Explorer
+
+## Release v1.1.34.51
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.50
+
+_2026-10-22_
+
+**Feature**
+
+- Selected point-cloud points convert to editable KAD points
+
+## Release v1.1.34.49
+
+_2026-10-22_
+
+**Feature**
+
+- Delete, crop and split selected point-cloud points from the Data Explorer
+
+## Release v1.1.34.48
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.47
+
+_2026-10-22_
+
+**Feature**
+
+- Selected point-cloud points are highlighted in 2D and 3D
+
+## Release v1.1.34.46
+
+_2026-10-22_
+
+**Feature**
+
+- Select by Polygon picks point-cloud points in 2D
+
+## Release v1.1.34.45
+
+_2026-10-22_
+
+**Feature**
+
+- Select by Polygon picks point-cloud points in 3D
+
+## Release v1.1.34.44
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.43
+
+_2026-10-22_
+
+History not available at the moment.
+
 ## Release v1.1.34.42
 
 _2026-10-22_
