@@ -104,7 +104,7 @@ A three-way toggle that constrains which entity types selection tools pick up. T
 |------|---------|
 | **H** | Holes only |
 | **K** | KAD entities only (points, lines, polygons, circles, text) |
-| **V** | KAD vertices only (does not select hole collars) |
+| **V** | KAD vertices only (does not select hole collars). With **Polygon Select**, also the points of visible, unlocked [point clouds](../surfaces/point-clouds.md#selecting-points) |
 
 ### How to Use
 

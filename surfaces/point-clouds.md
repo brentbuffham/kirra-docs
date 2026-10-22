@@ -6,7 +6,8 @@ drawing objects, just each point's position and whatever the scanner recorded ab
 
 Kirra keeps a point cloud as its own kind of data, labelled **Point Cloud (KAD Cloud Entity - Increased Point Capability)** on the
 import dialogs. It draws in 2D and 3D, prints, saves with your project and can be exported to
-LAS. LAS and LAZ files import this way by default, so a survey of tens of millions of points
+LAS. You can select its points and delete, crop or split them, merge clouds, and make KAD points
+or a surface from them. LAS and LAZ files import this way by default, so a survey of tens of millions of points
 opens without being thinned to a drawing-object limit.
 
 ---
@@ -77,6 +78,14 @@ Right-click a cloud row:
 | **Properties** | Opens [Cloud Properties](#cloud-properties) |
 | **Hide** / **Show** | Hides or shows the cloud |
 | **Delete** | Deletes the cloud. Kirra asks first: **Delete Point Cloud** — *Delete 1 point cloud(s)? This cannot be undone.* |
+| **Select Points…** | Selects points by class and height — see [Selecting points](#selecting-points) |
+| **Clear Point Selection** | Clears the cloud's selected points (shown when the cloud has a selection) |
+| **Delete Selected Points** | Removes the selected points (shown when the cloud has a selection) |
+| **Crop to Selection** | Keeps only the selected points (shown when the cloud has a selection) |
+| **Split Selection to New Cloud** | Moves the selected points into a new cloud (shown when the cloud has a selection) |
+| **Convert Selection to KAD Points** | Makes KAD points from the selection (shown when the cloud has a selection) |
+| **Create Surface** | Builds a surface from the selection, or from the whole cloud |
+| **Merge Clouds** | Joins two or more clouds into a new one (shown when two or more cloud rows are selected) |
 
 > **Warning:** Deleting a point cloud cannot be undone with **Undo**. Export a
 > [KAP project](../exporting/other-formats.md#kap-kirra-app-project) first if you may want it
@@ -227,11 +236,70 @@ before you import it.
 
 ---
 
-## What a point cloud is for
+## Selecting points
 
-A point cloud is for looking at, colouring, printing and exporting. Selecting, snapping to and
-editing individual points are not part of it. To work on points, import the file as **KAD points**
-(up to 1,000,000 points) or as a **Surface** instead.
+You work on a point cloud by selecting a region of it and acting on the whole selection. Single
+points cannot be dragged; to edit single points, [convert a small selection to KAD
+points](#working-with-a-selection) and edit those.
+
+**With Polygon Select (2D or 3D)**
+
+1. On the [Select toolbar](../reference/select-toolbar.md), choose **V** (*Select KAD Vertices*).
+2. Click **Polygon Select**. Right-click it to choose **Polygon**, **Rectangle** or **Ellipse**.
+3. Draw the shape over the points. Hold **Shift** when you finish to add to the selection, or
+   **Ctrl** to take points out of it.
+
+Selected points are drawn in the selection colour, slightly larger than the rest. In 2D the shape
+selects what lies inside it in plan view; in 3D it selects what you see inside it on screen, and
+points cut away by the Section Plane are not selected. The status bar says how many points are
+selected, for example *121 point-cloud points selected*.
+
+**With Select Points…**
+
+Right-click the cloud row and choose **Select Points…**:
+
+| Field | What it does |
+|-------|--------------|
+| **Class n (count points)** | One tick per class in the cloud. Untick classes to leave them out |
+| **Min Z (m)** / **Max Z (m)** | A height band. Leave blank for no limit |
+| **Selection** | **Replace** the selection, **Add** to it, or **Remove** from it |
+
+Click **Select**.
+
+Only what is drawn can be selected: hidden clouds, locked clouds and classes hidden in
+[Cloud Properties](#classes) are left out. A selection is not saved; it is cleared when the cloud
+changes.
+
+---
+
+## Working with a selection
+
+Right-click the cloud row. Each item asks first and says how many points it affects.
+
+| Item | What happens |
+|------|--------------|
+| **Delete Selected Points** | The selected points are removed. With every point selected, Kirra offers to delete the cloud instead. The **Delete** key does the same when only cloud points are selected |
+| **Crop to Selection** | Only the selected points are kept |
+| **Split Selection to New Cloud** | The selected points move to a new cloud named after this one with *(selection)* added, for example `Cloud_scan (selection)` |
+| **Convert Selection to KAD Points** | The selected points become one KAD points entity, `<cloud> points`, in the colours they are drawn in. KAD points are limited to 1,000,000; above that Kirra asks to thin the selection evenly |
+| **Create Surface** | Opens **Create Surface** with the usual surface options. It uses the selection, or every drawn point when nothing is selected. Up to 2,000,000 points are used; above that Kirra asks to thin evenly |
+
+**Undo** (Ctrl+Z) reverses Delete, Crop and Split. A cloud larger than 256 MB cannot be undone;
+Kirra says so in the question before it changes anything.
+
+---
+
+## Merging clouds
+
+1. In the Data Explorer, select two or more cloud rows (Ctrl+click).
+2. Right-click one of them and choose **Merge Clouds**.
+
+Kirra makes a new cloud, **Merged cloud**, holding every point; the original clouds stay. The new
+cloud takes the first cloud's colouring and point size. If some clouds have no colour (or no GPS
+time, classification and so on), their points hold 0 there and the message says which — points
+with no colour show black until you colour the cloud another way. If the merged cloud would hold
+more points than the [draw budget](#the-draw-budget), Kirra asks to thin it evenly first.
+**Undo** removes the merged cloud.
 
 ---
 
