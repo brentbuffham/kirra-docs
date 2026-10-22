@@ -95,13 +95,17 @@ Export point data in various text formats:
 
 ## LAS (LiDAR)
 
-Export point data to ASPRS LAS format: the points of visible surfaces, visible drawings and
-visible [point clouds](../surfaces/point-clouds.md) (hidden ones are left out), written as LAS
-1.2, point format 0. Export to compressed `.laz` is not available yet.
+Export point data to ASPRS LAS format, or to compressed LAZ: the points of visible surfaces,
+visible drawings and visible [point clouds](../surfaces/point-clouds.md) (hidden ones are left
+out), written as LAS 1.2, point format 0. A LAZ file holds exactly the same points as the LAS,
+compressed with LASzip, so it is much smaller and opens in the same software.
 
-1. Open the Export dialog and click the export icon on the **LAS Point Cloud** row of the
-   **Surfaces / Mesh** tab.
-2. In **Export LAS Point Cloud**, type the **Filename:** and click **Export**.
+1. Open the Export dialog. On the **LAS Point Cloud** row of the **Surfaces / Mesh** tab, pick
+   **LAS** or **LAZ (compressed)** in the drop-down, then click the export icon. **LAS** is
+   the default.
+2. In **Export LAS Point Cloud**, check the **Filename:** and click **Export**. The name ends in
+   `.las` or `.laz` to match the drop-down. If you type `.las` or `.laz` yourself, Kirra
+   writes that format; a name with no extension gets the one the drop-down chose.
 3. Kirra notes that LAS export with projection settings is not available yet and that it is
    using default settings. Then choose where to save the file.
 
@@ -117,7 +121,8 @@ colour was not written.* and, for a cloud that kept GPS time, *The LAS point for
 GPS time was not written.*
 
 A cloud of tens of millions of points takes a while to write; Kirra shows **Exporting LAS…**
-while it works.
+(**Exporting LAZ…** for a LAZ file) while it works. Compressing takes longer than a plain LAS
+write, but uses your computer's processor cores in parallel.
 
 ---
 
