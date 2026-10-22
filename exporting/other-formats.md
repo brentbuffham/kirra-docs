@@ -110,7 +110,8 @@ compressed with LASzip, so it is much smaller and opens in the same software.
    using default settings. Then choose where to save the file.
 
 **What a point cloud writes.** Every point of every visible cloud, at exactly the coordinates
-the cloud holds. Classification, intensity, return number and number of returns are written
+the cloud holds, except the points of any class you unticked in **Cloud Properties** under
+**Classes**: the file matches what the screen and print show. Classification, intensity, return number and number of returns are written
 from the cloud; a cloud that does not have one of them writes classification 1
 (Unclassified), return 1 of 1 and intensity 0.
 
