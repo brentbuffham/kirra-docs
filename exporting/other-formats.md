@@ -98,7 +98,7 @@ Export point data in various text formats:
 Export point data to ASPRS LAS format, or to compressed LAZ: the points of visible surfaces,
 visible drawings and visible [point clouds](../surfaces/point-clouds.md) (hidden ones are left
 out), written as LAS 1.2, point format 0. A LAZ file holds exactly the same points as the LAS,
-compressed with LASzip, so it is much smaller and opens in the same software.
+compressed with LASzip, so it is much smaller and opens in software that reads LAZ.
 
 1. Open the Export dialog. On the **LAS Point Cloud** row of the **Surfaces / Mesh** tab, pick
    **LAS** or **LAZ (compressed)** in the drop-down, then click the export icon. **LAS** is

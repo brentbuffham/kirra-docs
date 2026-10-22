@@ -155,7 +155,8 @@ Shown for a cloud that holds more than one class; a cloud with a single class ha
 tell apart and no **Classes** group (unless that one class has been hidden, so it can be shown
 again). One row for each class in the cloud, with:
 
-- a tick box: untick it to hide that class (a hidden class is also left out of the LAS / LAZ export),
+- a tick box: untick it to hide that class (a hidden class is also left out of the
+  LAS / LAZ export),
 - the class number (**Class 2**) and how many points it holds,
 - a colour swatch: click it to change that class's colour. Classes start with a standard colour.
 
