@@ -2,6 +2,41 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.73
+
+_2026-10-23_
+
+**Feature**
+
+- Drag a range on the cloud histogram to select those points
+
+## Release v1.1.34.72
+
+_2026-10-23_
+
+History not available at the moment.
+
+## Release v1.1.34.71
+
+_2026-10-23_
+
+**Feature**
+
+- Cloud Properties has Properties, Statistics and Edit Tools tabs
+- Point cloud statistics show the LAS header, class counts and a histogram
+- Cloud Tools menu opens stray points, duplicates, smoothing and roughness
+- Select stray points on KAD point drawings from the Data Explorer
+
+## Release v1.1.34.70
+
+_2026-10-23_
+
+**Bug Fix**
+
+- Deleting a sub-layer in the Data Explorer now deletes its drawings
+- Deleting a drawing layer always removes its drawings
+- Properties no longer shows on layer rows, where it did nothing
+
 ## Release v1.1.34.69
 
 _2026-10-22_
