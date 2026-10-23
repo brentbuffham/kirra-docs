@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.75
+
+_2026-10-23_
+
+**Bug Fix**
+
+- The cloud histogram grows with its dialog and keeps outliers off its axis
+
+## Release v1.1.34.74
+
+_2026-10-23_
+
+**Feature**
+
+- Undo brings back a deleted drawing or surface layer
+
 ## Release v1.1.34.73
 
 _2026-10-23_
