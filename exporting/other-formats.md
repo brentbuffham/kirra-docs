@@ -119,18 +119,36 @@ exports, such as DXF, leave clouds out. To put cloud points in one of those, sel
 
 Export point data to ASPRS LAS format, or to compressed LAZ: the points of visible surfaces,
 visible drawings and visible [point clouds](../surfaces/point-clouds.md) (hidden ones are left
-out), written as LAS 1.2, point format 0 (LAS 1.4, point format 6, when a class is above 31; see
-below). A LAZ file holds exactly the same points as the LAS,
-compressed with LASzip, so it is much smaller and opens in software that reads LAZ.
+out). A LAZ file holds exactly the same points as the LAS, compressed with LASzip, so it is much
+smaller and opens in software that reads LAZ.
 
 1. Open the Export dialog. On the **LAS Point Cloud** row of the **Surfaces / Mesh** tab, pick
-   **LAS** or **LAZ (compressed)** in the drop-down, then click the export icon. **LAS** is
-   the default.
-2. In **Export LAS Point Cloud**, check the **Filename:** and click **Export**. The name ends in
-   `.las` or `.laz` to match the drop-down. If you type `.las` or `.laz` yourself, Kirra
-   writes that format; a name with no extension gets the one the drop-down chose.
+   **LAS (v1.2)**, **LAZ (v1.2)**, **LAS (v1.4)** or **LAZ (v1.4)** in the drop-down, then click
+   the export icon. **LAS (v1.2)** is the default.
+2. **Export LAS Point Cloud** shows a banner saying what the file will hold (see below). Check the
+   **Filename:** and click **Export**. The name ends in `.las` or `.laz` to match the drop-down. If
+   you type `.las` or `.laz` yourself, Kirra writes that one; the version still comes from the
+   drop-down.
 3. Kirra notes that LAS export with projection settings is not available yet and that it is
    using default settings. Then choose where to save the file.
+
+**Which version.** LAS 1.2 opens in almost any software; LAS 1.4 holds classes up to 255. Kirra
+picks the point format from what you export, so nothing it can store is dropped:
+
+| Version | Point format | Holds |
+|---------|--------------|-------|
+| v1.2 | 0 | XYZ, classes 0–31, intensity and returns |
+| v1.2 | 1 | the same, and GPS time (a cloud that kept GPS time) |
+| v1.2 | 2 | the same as 0, and colour (a coloured cloud, or drawings) |
+| v1.2 | 3 | colour and GPS time |
+| v1.4 | 6 | XYZ, classes 0–255, intensity, returns and GPS time |
+| v1.4 | 7 | the same, and colour |
+
+**The banner.** It names the format and what it keeps for this export, for example *LAZ (v1.2)
+writes point format 2: XYZ, classes 0–31, intensity, returns and colour. No GPS time.* With
+**v1.4** it adds that older software may not open LAS 1.4, so choose **LAS (v1.2)** for it. When a
+cloud has roughness, it adds that roughness is not written to LAS, and a
+[KAP project](#kap-kirra-app-project) keeps it.
 
 **What a point cloud writes.** Every point of every visible cloud, at exactly the coordinates
 the cloud holds, except the points of any class you unticked in **Cloud Properties** under
@@ -138,24 +156,18 @@ the cloud holds, except the points of any class you unticked in **Cloud Properti
 from the cloud; a cloud that does not have one of them writes classification 1
 (Unclassified), return 1 of 1 and intensity 0.
 
-**Classes above 31.** Point format 0 holds classes 0 to 31 only. When the export holds a class
+**Classes above 31.** LAS 1.2 holds classes 0 to 31 only. When a **v1.2** export holds a class
 above 31 (one you added with [Categorise](../surfaces/point-clouds.md#categorise), or one from a
-LAS 1.4 file), Kirra writes the file as LAS 1.4, point format 6, so every class is kept, and
-**Export Complete** adds *Classes above 31 need LAS 1.4, so the file was written as LAS 1.4 point
-format 6.* A class you have hidden is not written, so it does not count.
+LAS 1.4 file), Kirra writes the file as LAS 1.4 (point format 6, or 7 with colour) so every class
+is kept. The banner says so in amber before you export, and suggests **LAS (v1.4)** or **LAZ
+(v1.4)**; **Export Complete** repeats it: *Classes above 31 need LAS 1.4, so the file was written
+as LAS 1.4 point format 7.* A class you have hidden is not written, so it does not count.
 
 **Class names.** The names of a cloud's own classes (from the file it came from, or added with
 Categorise) are written into the file, and read back when it is imported. A LAS file holds names
 of up to 15 characters, in basic Latin letters, digits and symbols; a name it cannot hold is left
 out, and **Export Complete** lists those classes: *Class names a LAS file cannot hold (over 15
 characters, or letters outside basic Latin) were left out of the file (classes 65, 66).*
-
-**What point format 0 cannot hold.** Point format 0 stores no colour and no GPS time, so a
-cloud's colour and GPS time are not written (point format 6 stores GPS time, but not colour).
-Kirra says so: for a cloud that has colour,
-**Export Complete** adds *The LAS point format used does not store colour, so the point cloud
-colour was not written.* and, for a cloud that kept GPS time, *The LAS point format used does not store GPS time, so the point cloud
-GPS time was not written.*
 
 A cloud of tens of millions of points takes a while to write; Kirra shows **Exporting LAS…**
 (**Exporting LAZ…** for a LAZ file) while it works. Compressing takes longer than a plain LAS

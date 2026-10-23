@@ -89,7 +89,7 @@ See: [GeoTIFF Export](../exporting/geotiff-export.md) ·
 
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
-| ASPRS LAS / LAZ | `.las`, `.laz` | Yes | Yes (`.las`, `.laz`) | LAS versions 1.0 to 1.4. Compressed `.laz` (LASzip point formats 0–3 and 6–8) imports like `.las`. Imports as a [point cloud](../surfaces/point-clouds.md) by default, or as KAD points or a surface. Export writes `.las` or compressed `.laz`, chosen in the **LAS Point Cloud** row's drop-down, including visible point clouds (LAS point format 0 drops their colour and GPS time, and Kirra says so). |
+| ASPRS LAS / LAZ | `.las`, `.laz` | Yes | Yes (`.las`, `.laz`) | LAS versions 1.0 to 1.4. Compressed `.laz` (LASzip point formats 0–3 and 6–8) imports like `.las`. Imports as a [point cloud](../surfaces/point-clouds.md) by default, or as KAD points or a surface. Export writes LAS or compressed LAZ, version 1.2 or 1.4, chosen in the **LAS Point Cloud** row's drop-down, including visible point clouds; the point format follows the data, so colour, GPS time and classes are kept (see [LAS](../exporting/other-formats.md#las-lidar)). |
 | Point Cloud (generic) | `.csv`, `.xyz`, `.txt`, `.pts`, `.ptx` | Yes | — | Auto-detects optional RGB / intensity columns. Import as a [point cloud](../surfaces/point-clouds.md), KAD points or a triangulated surface; files over 1,000,000 points start on a point cloud. |
 | Point Cloud XYZ export | `.xyz`, `.txt` | — | Yes | `X Y Z` or `X Y Z R G B`. |
 | Point Cloud CSV export | `.csv` | — | Yes | `X,Y,Z` or `X,Y,Z,R,G,B`. |
