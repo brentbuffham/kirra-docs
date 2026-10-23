@@ -6,7 +6,9 @@ drawing objects, just each point's position and whatever the scanner recorded ab
 
 Kirra keeps a point cloud as its own kind of data, labelled **Point Cloud (KAD Cloud Entity - Increased Point Capability)** on the
 import dialogs. It draws in 2D and 3D, prints, saves with your project and can be exported to
-LAS. You can select its points and delete, crop or split them, merge clouds, make KAD points from
+LAS. You can select its points — by drawing a shape, by class and height, from a histogram, or
+the stray and sparse points a scan picks up — and delete, crop or split them. You can also remove
+duplicate points, smooth a noisy scan, measure its roughness, merge clouds, make KAD points from
 them, and triangulate them into a surface. LAS and LAZ files import this way by default, so a survey of tens of millions of points
 opens without being thinned to a drawing-object limit.
 
@@ -72,13 +74,15 @@ points, for example `N=10,040,120`.
 
 Right-click a cloud row:
 
+![The Cloud Tools submenu on a point cloud in the Data Explorer](../screenshots/CloudToolsMenu.png)
+
 | Item | What it does |
 |------|--------------|
 | **Rename** | Renames the cloud |
 | **Properties** | Opens [Cloud Properties](#cloud-properties) |
 | **Hide** / **Show** | Hides or shows the cloud |
 | **Delete** | Deletes the cloud. Kirra asks first: **Delete Point Cloud** — *Delete 1 point cloud(s)? This cannot be undone.* |
-| **Select Points…** | Selects points by class and height — see [Selecting points](#selecting-points) |
+| **Cloud Tools** ▸ **Stray or Sparse Points…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** | Opens [Cloud Properties](#cloud-properties) on its **Edit Tools** tab, set to that tool (shown when one cloud row is selected) |
 | **Clear Point Selection** | Clears the cloud's selected points (shown when the cloud has a selection) |
 | **Delete Selected Points** | Removes the selected points (shown when the cloud has a selection) |
 | **Crop to Selection** | Keeps only the selected points (shown when the cloud has a selection) |
@@ -99,26 +103,46 @@ A hidden cloud is not drawn in 2D or 3D, does not print and is not written to a 
 
 ## Cloud Properties
 
-Right-click a cloud in the Data Explorer and choose **Properties**. **Cloud Properties** opens
-with the cloud's current look. Every change shows on the canvas straight away.
+Right-click a cloud in the Data Explorer and choose **Properties**, or choose one of the
+**Cloud Tools** items to open it straight on that tool. **Cloud Properties** has three tabs:
 
-- **OK** keeps the changes and saves them with the cloud.
-- **Cancel**, the close button or **Escape** puts back the settings the cloud had when you
-  opened the dialog.
+| Tab | What it holds |
+|-----|---------------|
+| [**Properties**](#properties-tab) | How the cloud looks: point size, colouring, limits and classes |
+| [**Statistics**](#statistics-tab) | Facts about the cloud, its LAS header, class and return counts, and a histogram you can select points from |
+| [**Edit Tools**](#edit-tools-tab) | Select points, remove duplicates, smooth points and compute roughness |
+
+The footer has **OK**, **Cancel** and a third button that changes with the tab: none on
+**Properties**, **Clear Selection** on **Statistics**, and **Run** on **Edit Tools**. **Clear
+Selection** and **Run** keep the dialog open.
+
+- **OK** keeps the **Properties** tab's changes and saves them with the cloud.
+- **Cancel**, the close button or **Escape** puts back the **Properties** settings the cloud had
+  when you opened the dialog.
+
+What a tool on **Edit Tools** makes does not wait for **OK**: a new cloud is added when the tool
+finishes, and **Compute roughness** is saved with the cloud straight away. **Cancel** does not
+take either back.
+
+### Properties tab
+
+The cloud opens with its current look. Every change shows on the canvas straight away.
+
+![The Properties tab of Cloud Properties](../screenshots/CloudPropertiesProperties.png)
 
 The **Style** row at the top saves the dialog's settings as a named preset, so you can apply the
 same look to another cloud. Use the buttons beside it to save a new preset, update the selected
 one, delete it, or export and import presets as a file. Hidden classes are not part of a preset;
 they belong to each cloud.
 
-### Display
+#### Display
 
 | Setting | Default | What it does |
 |---------|---------|--------------|
 | **Point size (px)** | 1 | The size of each point on screen, 1 to 10 pixels. Larger points are easier to see and slower to draw. 1 is the fastest |
 | **Transparency** | 100% | A slider from 0% to 100% |
 
-### Colour by
+#### Colour by
 
 **Colour by** decides what colours each point. The list holds only the choices the cloud has data
 for.
@@ -137,16 +161,17 @@ choice has become unavailable, it stays selected, greyed out.
 | **Classification** | Classification in the file, with more than one value (otherwise greyed out with a note) |
 | **Return number** | Return numbers in the file, with more than one value (otherwise greyed out with a note) |
 | **GPS time** | **Keep GPS time** ticked at import. Greyed out with a note when every time is the same |
+| **Roughness** | [Compute roughness](#compute-roughness) run on the cloud. Points with no roughness value are grey |
 | **Single colour** | Nothing |
 
 | Setting | When it is available | What it does |
 |---------|----------------------|--------------|
 | **Colour** | **Single colour** | The colour of every point |
-| **Color Gradient** | Elevation, Intensity, Return number, GPS time | The colour ramp: **Default**, **Viridis**, **Turbo**, **Parula**, **Cividis** or **Terrain**. The same ramps as [surfaces](gradients.md) |
+| **Color Gradient** | Elevation, Intensity, Return number, GPS time, Roughness | The colour ramp: **Default**, **Viridis**, **Turbo**, **Parula**, **Cividis** or **Terrain**. The same ramps as [surfaces](gradients.md) |
 
 A setting that does not apply to the chosen **Colour by** is greyed out.
 
-### Limits
+#### Limits
 
 | Setting | What it does |
 |---------|--------------|
@@ -157,7 +182,7 @@ A setting that does not apply to the chosen **Colour by** is greyed out.
 **Limits**, **Max** and **Min** apply to the ramp choices only. **Max** and **Min** are active
 only when **Limits** is **Fixed**; the blank box shows the data's own value.
 
-### Classes
+#### Classes
 
 Shown for a cloud that holds more than one class; a cloud with a single class has nothing to
 tell apart and no **Classes** group (unless that one class has been hidden, so it can be shown
@@ -168,23 +193,140 @@ again). One row for each class in the cloud, with:
 - the class number (**Class 2**) and how many points it holds,
 - a colour swatch: click it to change that class's colour. Classes start with a standard colour.
 
-### From the library
+### Statistics tab
 
-| Setting | What it does |
-|---------|--------------|
-| **Tolerance (m, 3D)** | The distance used by **Remove duplicates** (default 0.01 m) |
-| **Remove duplicates** (button at the foot of the dialog) | Keeps the first point and drops any point closer than the tolerance, in 3D, to one already kept. The result is a **new** cloud named `<name> (deduped)`. The original is not changed |
+Read-only facts about the cloud, and a histogram you can select points from.
 
-Kirra reports how many points it removed, or that none were within the tolerance. The dialog
-stays open.
+![The Statistics tab of Cloud Properties, with a range selected on the histogram](../screenshots/CloudPropertiesStatistics.png)
 
-### Information
+#### Information
 
-Read-only facts about the cloud: **Name**, **Points**, **Easting (X)**, **Northing (Y)**,
-**Elevation (Z)** (each as a minimum to maximum), and **Attributes kept** (RGB, Intensity,
-Classification, Return number, GPS time). A cloud read from a LAS file also lists the **File
-format** (for example `LAS 1.2, format 3`), the **File CRS** when the file names one, and the
-**Source file**.
+**Name**, **Points**, **Easting (X)**, **Northing (Y)**, **Elevation (Z)** (each as a minimum to
+maximum), and **Attributes kept** (RGB, Intensity, Classification, Return number, GPS time). A
+cloud read from a LAS file also lists the **File format** (for example `LAS 1.2, format 3`), the
+**File CRS** when the file names one, and the **Source file**.
+
+#### LAS header
+
+For a cloud read from a LAS or LAZ file, the header fields Kirra kept:
+
+| Row | What it shows |
+|-----|---------------|
+| **Compression** | **LAZ (compressed)** or **LAS (not compressed)** |
+| **Points in file** | How many points the file held, before any thinning on import |
+| **Points by return (file)** | The file's own count of points for each return number |
+| **Scale (X, Y, Z)** / **Offset (X, Y, Z)** | The file's coordinate scale and offset |
+| **System** / **Software** | What the file says made it |
+| **Created** | The file's creation date |
+
+A row is left out when the file did not fill it in. A cloud imported with an earlier version of
+Kirra shows only **Points in file**; import the file again to see every row.
+
+#### Classes and Return numbers
+
+One row for each class, and for each return number, in the cloud: the value, how many
+**Points** hold it, and their **Share** of the cloud.
+
+#### Histogram
+
+**Histogram of** chooses what the histogram counts: **Elevation**, and **Intensity**, **GPS time**
+or **Roughness** when the cloud holds them. It opens on the cloud's **Colour by** when that is one
+of these.
+
+- The red bars split the values into 40 equal steps. Hover over a bar to see its value and count.
+- A **grey bar** at either end holds the points far outside the rest — a few stray points high
+  above a pit, for example — so they do not squash the other bars into one. The line under the
+  chart says how many there are and how far they go, for example *Grey bars: 12 above 412.500
+  (highest 690.204).*
+- When the cloud is coloured by the same value, dashed grey lines mark the **Properties** tab's
+  colour limits.
+
+The chart grows with the dialog: drag the dialog wider and the histogram gets wider and taller.
+
+**Select points from the histogram**
+
+1. Drag either lime line along the chart, or click a bar (a grey one too).
+2. The bars inside the range turn lime, and the points they hold are selected on the canvas,
+   drawn in the selection colour.
+3. The line under the chart reads, for example, *From 402.500 to 405.000 m: 1,500 points selected*.
+
+The range replaces the cloud's selection. Points in hidden classes are never selected. Click
+**Clear Selection** to clear it. Then use the cloud's right-click menu to delete, crop or split
+the selection — see [Working with a selection](#working-with-a-selection).
+
+### Edit Tools tab
+
+Choose a **Tool**, set it up, then press **Run**. Only the chosen tool's fields are shown, and
+the dialog stays open, so you can run another tool straight after. The line at the foot reads
+*Selected in this cloud: n points*.
+
+![The Edit Tools tab of Cloud Properties, showing Smooth points](../screenshots/CloudPropertiesEditTools.png)
+
+| Tool | What it does |
+|------|--------------|
+| [**Select Points**](#select-points) | Selects points in this cloud by class and elevation, or the stray or sparse points |
+| [**Remove duplicates**](#remove-duplicates) | Adds a new cloud without the duplicate points |
+| [**Smooth points**](#smooth-points) | Adds a new, smoothed cloud |
+| [**Compute roughness**](#compute-roughness) | Measures how rough the cloud is at each point, and colours by it |
+
+A run that takes more than a moment shows its progress, with **Cancel**. The cloud you started from is
+never changed by **Remove duplicates** or **Smooth points**.
+
+#### Select Points
+
+**Select by** chooses how points are picked:
+
+| Select by | Fields | Picks |
+|-----------|--------|-------|
+| **Class and elevation** | **Class n (count points)** ticks, **Min Z (m)**, **Max Z (m)** | The points in the ticked classes and the height band. Leave Min Z or Max Z blank for no limit |
+| **Stray points** | **Neighbours** (8), **Spread** (2) | Points much farther from their nearest neighbours than the cloud's average. Best on clouds of even density |
+| **Sparse points** | **Radius (m)** (0.5), **Min neighbours** (1) | Points with fewer than **Min neighbours** other points within **Radius**, in 3D. Best on handheld scans and for dust |
+
+- **Neighbours**: how many nearest neighbours to average over.
+- **Spread**: how many standard deviations above the average distance a point must be to count
+  as stray. **Lower** selects more points.
+- **Min neighbours** of 1 keeps thin features, such as scanned blastholes.
+
+**Selection** chooses **Replace**, **Add** or **Remove**. Press **Run**. The status bar says how
+many points are selected, for example *1,240 point-cloud points selected*. Delete, Crop and Split
+are on the cloud's right-click menu.
+
+#### Remove duplicates
+
+| Field | Default | What it does |
+|-------|---------|--------------|
+| **Tolerance (m, 3D)** | 0.01 | Keeps the first point and drops any point closer than this, in 3D, to one already kept. **Lower** removes fewer points |
+
+The result is a **new** cloud named `<name> (deduped)`. Kirra says how many points it removed,
+or that no points were within the tolerance and nothing was removed.
+
+#### Smooth points
+
+Smoothing takes the jitter out of a noisy scan, such as a handheld or drone scan of a face.
+Select and delete the stray points first, so they are not smoothed into the surface.
+
+| Field | Default | What it does |
+|-------|---------|--------------|
+| **Smoothing** | Keep edges sharp | **Keep edges sharp** moves each point along its surface normal, so crests and edges stay sharp. **Plane fit** moves each point onto its neighbours' best-fit plane |
+| **Neighbours** | 16 | How many nearest points to look at around each point |
+| **Max distance (m)** | 0.5 | Only neighbours within this distance count. Make it larger than the point spacing and smaller than the features you want to keep |
+| **Passes** | 1 | How many times to smooth, 1 to 5. More passes are smoother, and slower |
+
+The result is a **new** cloud named `<name> (smoothed)`. Kirra reports the noise before and
+after, for example *Smoothed 2,400,000 points. Noise 1.85 cm → 0.62 cm.*
+
+#### Compute roughness
+
+| Field | Default | What it does |
+|-------|---------|--------------|
+| **Neighbours** | 16 | How many nearest points to look at around each point |
+| **Max distance (m)** | 0.5 | Only neighbours within this distance count |
+
+Roughness is each point's distance from its neighbours' best-fit plane, in metres: near 0 on a
+smooth face, larger on broken ground. It is saved with this cloud, and the cloud is coloured by
+**Roughness** with **Min-Max (data)** limits. **Roughness** is then a choice in **Colour by** and
+in **Histogram of**. Points with too few neighbours within **Max distance** have no plane, and
+are drawn grey.
 
 ---
 
@@ -253,17 +395,16 @@ selects what lies inside it in plan view; in 3D it selects what you see inside i
 points cut away by the Section Plane are not selected. The status bar says how many points are
 selected, for example *121 point-cloud points selected*.
 
-**With Select Points…**
+**With Edit Tools**
 
-Right-click the cloud row and choose **Select Points…**:
+Right-click the cloud row and choose **Cloud Tools** ▸ **Stray or Sparse Points…**, or open
+**Properties** and go to the **Edit Tools** tab. Choose **Select Points** in **Tool**, then
+select by class and elevation, or the stray or sparse points. See [Select Points](#select-points).
 
-| Field | What it does |
-|-------|--------------|
-| **Class n (count points)** | One tick per class in the cloud. Untick classes to leave them out |
-| **Min Z (m)** / **Max Z (m)** | A height band. Leave blank for no limit |
-| **Selection** | **Replace** the selection, **Add** to it, or **Remove** from it |
+**With the histogram**
 
-Click **Select**.
+On the **Statistics** tab, drag the lime lines or click a bar: the points in that range of
+elevation, intensity, GPS time or roughness are selected. See [Histogram](#histogram).
 
 Only what is drawn can be selected: hidden clouds, locked clouds and classes hidden in
 [Cloud Properties](#classes) are left out. A selection is not saved; it is cleared when the cloud
@@ -335,6 +476,23 @@ your design, Kirra zooms out to take in both after the import, so your design lo
 **Point Cloud Not Saved.**
 The browser has no room to store the cloud. It stays open for this session but will not return
 after a reload. Export a KAP project, or free browser storage.
+
+**Smooth points added nothing.**
+Kirra says *No point has enough neighbours within 0.5 m to smooth*. The points are farther apart
+than **Max distance (m)**. Make **Max distance** larger than the point spacing and run it again.
+
+**Stray points selects too much, or too little, of a handheld scan.**
+**Stray points** compares each point with the cloud's average spacing, so it works best when the
+density is even. A handheld scan is dense near the scanner and thin far away: use **Sparse
+points** instead, with a **Radius (m)** a few times the point spacing.
+
+**Some points are grey after Compute roughness.**
+Those points had too few neighbours within **Max distance (m)** to fit a plane, so they have no
+roughness. Make **Max distance** larger, or remove the stray points first.
+
+**The LAS header shows only Points in file.**
+The cloud was imported with an earlier version of Kirra, which kept less of the header. Import the
+LAS or LAZ file again to see it all. A cloud from a text file has no LAS header.
 
 ---
 

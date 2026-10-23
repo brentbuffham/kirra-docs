@@ -135,8 +135,9 @@ Right-click a row for its tools. The menu shows only the items that fit what you
 | **Circle to Polygon** | Circles only | Replaces each circle with a 36-sided polygon. **The circles are removed** |
 | **Text to Poly** | Text only | Turns the text into line or polygon outlines. The text is kept |
 | **Select objects/holes fully inside** | Polygons | Selects the holes — or drawings or vertices, by the H / K / V mode — wholly inside the polygon |
+| **Select Stray Points…** | Points | Selects the stray or sparse points in the chosen point drawings — see [Select stray points](../kad/points-lines-polygons.md#select-stray-points) |
 | **Statistics** | Lines, polygons, points | Opens a read-only table of the drawing's statistics |
-| **Properties** | A drawing | Opens its editor |
+| **Properties** | A drawing (not a layer or sub-layer) | Opens its editor |
 
 ### Surfaces
 
@@ -158,7 +159,10 @@ Right-click a row for its tools. The menu shows only the items that fit what you
 | Item | What it does |
 |------|--------------|
 | **Rename** | Renames the cloud |
-| **Properties** | Opens [Cloud Properties](../surfaces/point-clouds.md#cloud-properties): point size, colouring, limits, classes and **Remove duplicates** |
+| **Cloud Tools** ▸ **Stray or Sparse Points…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** | Opens Cloud Properties on its **Edit Tools** tab, set to that tool (one cloud at a time) |
+| **Clear Point Selection**, **Delete Selected Points**, **Crop to Selection**, **Split Selection to New Cloud**, **Convert Selection to KAD Points** | Work on the cloud's selected points (shown when it has a selection) — see [Working with a selection](../surfaces/point-clouds.md#working-with-a-selection) |
+| **Merge Clouds** | Joins two or more selected clouds into a new one |
+| **Properties** | Opens [Cloud Properties](../surfaces/point-clouds.md#cloud-properties): the **Properties**, **Statistics** and **Edit Tools** tabs |
 
 **Hide** / **Show** and **Delete** are on the shared list below. **Sort…** is on the
 **Point Clouds** group.
@@ -182,7 +186,8 @@ Right-click a row for its tools. The menu shows only the items that fit what you
 | Deleting | What happens |
 |----------|--------------|
 | Holes, drawings, vertices | Deleted; **Undo** (Ctrl+Z) brings them back. Deleting some holes of a blast asks **Renumber Holes?** |
-| A layer | **Delete Layer(s)** asks: **Delete All** (the layer and its contents), **Keep Entities**, or **Cancel** |
+| A layer | **Delete Layer(s)** asks: **Delete All** (the layer and its contents), **Keep Entities** (moved to the default layer), or **Cancel**. **Undo** brings the layer back, with what was on it |
+| A sub-layer | **Delete Sub-Layer** asks *Delete the 3 drawings in this sub-layer? Undo brings them back.* — click **Delete** or **Cancel** |
 | A trunk or block model | Asks to confirm |
 | A point cloud | **Delete Point Cloud** asks *Delete 1 point cloud(s)? This cannot be undone.* — click **Delete** or **Cancel**. **Undo** does not bring it back |
 | A surface or image | **Deleted straight away — no confirmation and no undo** |

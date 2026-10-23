@@ -70,6 +70,38 @@ how each click places a point.
 
 ---
 
+## Select stray points
+
+Points imported from a survey or a scan often include a few strays: a point far off in the air,
+or a scatter of dust. **Select Stray Points…** finds them so you can delete them in one go.
+
+1. In the [Data Explorer](../working-in-kirra/data-explorer.md), select one or more point
+   drawings (Ctrl+click for more).
+2. Right-click one of them and choose **Select Stray Points…**.
+3. In **Select stray KAD points**, choose **Select by** and set its fields (below).
+4. Click **Select**. The status bar says, for example, *14 KAD points selected. Press Delete to
+   remove them.*
+5. Press **Delete**. **Undo** (Ctrl+Z) brings them all back in one step.
+
+| Select by | Field | Default | What it does |
+|---|---|---|---|
+| **Stray points** | **Neighbours** | 8 | How many nearest neighbours each point's distance is averaged over |
+| | **Spread** | 2 | How many standard deviations above the average distance a point must be to count as stray. **Lower** selects more points |
+| **Sparse points** | **Radius (m)** | 0.5 | Selects points with fewer than **Min neighbours** other points within this radius, in 3D |
+| | **Min neighbours** | 1 | 1 keeps thin features, such as a line of points along a scanned blasthole |
+
+**Stray points** works best when the points are evenly spaced. For a handheld scan, or for dust,
+use **Sparse points**.
+
+**Selection** chooses **Replace**, **Add** or **Remove**. **Replace** also clears any selected
+holes or drawings, so **Delete** removes only the stray points. Hidden and locked drawings are
+not searched.
+
+The same selection works on point clouds — see
+[Point Clouds](../surfaces/point-clouds.md#select-points).
+
+---
+
 ## Troubleshooting
 
 **Every click starts a new drawing.**
