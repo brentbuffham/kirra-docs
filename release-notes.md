@@ -2,6 +2,193 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.95
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Las-laz-js 0.9.1, trimesh-build-js 0.3.0, trimesh-boolean 0.7.7
+
+## Release v1.1.34.94
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Alignment pair dots are larger and easier to see
+
+## Release v1.1.34.93
+
+_2026-10-24_
+
+**Feature**
+
+- Alignment pairs show as coloured dots on the canvas
+- Alignment can move the original cloud or mesh, with undo
+
+**Bug Fix**
+
+- Alignment dialog rows no longer overlap
+
+## Release v1.1.34.92
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Dragging selected point-cloud points with Move no longer pans the view
+
+## Release v1.1.34.91
+
+_2026-10-24_
+
+**Feature**
+
+- Move tool drags selected point-cloud points in 2D and 3D
+- Transform tool shifts, rotates and scales selected point-cloud points
+
+## Release v1.1.34.90
+
+_2026-10-24_
+
+**Feature**
+
+- Mesh and Cloud Alignment tool on the Surfaces toolbar
+- Align clouds and meshes from picked pairs or scanner control files
+- ICP refines overlapping scans without picking any pairs
+
+## Release v1.1.34.89
+
+_2026-10-23_
+
+**Feature**
+
+- LAS and LAZ export can write version 1.2 or 1.4
+- LAS export says what the chosen format keeps, before you export
+
+**Bug Fix**
+
+- LAS export keeps point colour and GPS time
+
+## Release v1.1.34.88
+
+_2026-10-23_
+
+**Bug Fix**
+
+- Las-laz-js 0.8.0
+
+## Release v1.1.34.87
+
+_2026-10-23_
+
+**Bug Fix**
+
+- Reopening a blast analysis no longer leaks graphics memory
+
+## Release v1.1.34.86
+
+_2026-10-23_
+
+**Bug Fix**
+
+- Long 3D sessions no longer build up unused text labels in memory
+
+## Release v1.1.34.85
+
+_2026-10-23_
+
+**Bug Fix**
+
+- Drawing edits in 3D no longer leak graphics memory
+- 3D redraws no longer stall while shaders recompile
+
+## Release v1.1.34.84
+
+_2026-10-23_
+
+**Bug Fix**
+
+- Connecting holes in 3D no longer leaks graphics memory as the mouse moves
+- Selecting holes in 3D no longer leaks graphics memory
+
+## Release v1.1.34.83
+
+_2026-10-23_
+
+**Feature**
+
+- Categorise gives selected point-cloud points a class
+- Add your own named point-cloud classes, numbered 64 to 255
+
+## Release v1.1.34.82
+
+_2026-10-23_
+
+**Feature**
+
+- Point-cloud classes show their names, such as 2 – Ground
+- Class names in LAS files are read, kept and written back
+
+## Release v1.1.34.81
+
+_2026-10-23_
+
+**Feature**
+
+- Point classes 19 to 22 now have their own colours
+
+**Bug Fix**
+
+- LAS export keeps point classes above 31 by writing LAS 1.4
+
+## Release v1.1.34.80
+
+_2026-10-23_
+
+**Feature**
+
+- The 3D and 2D cursor now snaps to point-cloud points
+- Drawing and editing tools can snap onto a point cloud
+
+## Release v1.1.34.79
+
+_2026-10-23_
+
+**Bug Fix**
+
+- The Point Cloud export row in File Management lets you choose the format
+
+## Release v1.1.34.78
+
+_2026-10-23_
+
+**Feature**
+
+- Point Cloud export writes point clouds to XYZ, CSV, PTS, PTX and PLY
+- Large point-cloud exports show progress and can be cancelled
+
+**Bug Fix**
+
+- Point Cloud export now uses the format chosen in its list
+
+## Release v1.1.34.77
+
+_2026-10-23_
+
+**Bug Fix**
+
+- Point-cloud writer takes clouds, writes ply, writes in chunks
+
+## Release v1.1.34.76
+
+_2026-10-23_
+
+**Feature**
+
+- Save sink can abort a half-written export
+
 ## Release v1.1.34.75
 
 _2026-10-23_
