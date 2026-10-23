@@ -119,7 +119,8 @@ exports, such as DXF, leave clouds out. To put cloud points in one of those, sel
 
 Export point data to ASPRS LAS format, or to compressed LAZ: the points of visible surfaces,
 visible drawings and visible [point clouds](../surfaces/point-clouds.md) (hidden ones are left
-out), written as LAS 1.2, point format 0. A LAZ file holds exactly the same points as the LAS,
+out), written as LAS 1.2, point format 0 (LAS 1.4, point format 6, when a class is above 31; see
+below). A LAZ file holds exactly the same points as the LAS,
 compressed with LASzip, so it is much smaller and opens in software that reads LAZ.
 
 1. Open the Export dialog. On the **LAS Point Cloud** row of the **Surfaces / Mesh** tab, pick
@@ -137,8 +138,21 @@ the cloud holds, except the points of any class you unticked in **Cloud Properti
 from the cloud; a cloud that does not have one of them writes classification 1
 (Unclassified), return 1 of 1 and intensity 0.
 
+**Classes above 31.** Point format 0 holds classes 0 to 31 only. When the export holds a class
+above 31 (one you added with [Categorise](../surfaces/point-clouds.md#categorise), or one from a
+LAS 1.4 file), Kirra writes the file as LAS 1.4, point format 6, so every class is kept, and
+**Export Complete** adds *Classes above 31 need LAS 1.4, so the file was written as LAS 1.4 point
+format 6.* A class you have hidden is not written, so it does not count.
+
+**Class names.** The names of a cloud's own classes (from the file it came from, or added with
+Categorise) are written into the file, and read back when it is imported. A LAS file holds names
+of up to 15 characters, in basic Latin letters, digits and symbols; a name it cannot hold is left
+out, and **Export Complete** lists those classes: *Class names a LAS file cannot hold (over 15
+characters, or letters outside basic Latin) were left out of the file (classes 65, 66).*
+
 **What point format 0 cannot hold.** Point format 0 stores no colour and no GPS time, so a
-cloud's colour and GPS time are not written. Kirra says so: for a cloud that has colour,
+cloud's colour and GPS time are not written (point format 6 stores GPS time, but not colour).
+Kirra says so: for a cloud that has colour,
 **Export Complete** adds *The LAS point format used does not store colour, so the point cloud
 colour was not written.* and, for a cloud that kept GPS time, *The LAS point format used does not store GPS time, so the point cloud
 GPS time was not written.*

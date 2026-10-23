@@ -104,8 +104,20 @@ When several things are inside the radius, Kirra takes the first in this list:
 11. A point along a KAD polygon edge
 12. Block model cell corner
 13. Block model cell edge midpoint
-14. Surface point
-15. Surface face
+14. Point-cloud point
+15. Surface point
+16. Surface face
+
+**Point clouds.** The cursor snaps to the points of a visible, unlocked
+[point cloud](../surfaces/point-clouds.md), and goes green, the same as on any other target:
+
+- **In 3D** it takes the front-most points under the cursor, the ones on the surface you can see,
+  then the one nearest the cursor. A point on a far wall behind them is never picked.
+- **In 2D** it takes the nearest point in plan within the snap radius.
+- It never snaps to a hidden or locked cloud, to a class you have hidden in **Cloud Properties**,
+  or to points the [Section Plane](../reference/section-views.md#section-plane) cuts away.
+- The first time the cursor goes over a cloud of more than 2,000,000 points, Kirra shows
+  *Preparing point-cloud snap…* for a moment. After that, snapping to it is immediate.
 
 While the cursor is snapped, the **World 3D** line in the information overlay reads
 **Snapped 3D**.

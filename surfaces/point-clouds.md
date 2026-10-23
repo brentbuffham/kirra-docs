@@ -82,7 +82,7 @@ Right-click a cloud row:
 | **Properties** | Opens [Cloud Properties](#cloud-properties) |
 | **Hide** / **Show** | Hides or shows the cloud |
 | **Delete** | Deletes the cloud. Kirra asks first: **Delete Point Cloud** — *Delete 1 point cloud(s)? This cannot be undone.* |
-| **Cloud Tools** ▸ **Stray or Sparse Points…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** | Opens [Cloud Properties](#cloud-properties) on its **Edit Tools** tab, set to that tool (shown when one cloud row is selected) |
+| **Cloud Tools** ▸ **Stray or Sparse Points…** / **Categorise…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** | Opens [Cloud Properties](#cloud-properties) on its **Edit Tools** tab, set to that tool (shown when one cloud row is selected) |
 | **Clear Point Selection** | Clears the cloud's selected points (shown when the cloud has a selection) |
 | **Delete Selected Points** | Removes the selected points (shown when the cloud has a selection) |
 | **Crop to Selection** | Keeps only the selected points (shown when the cloud has a selection) |
@@ -190,7 +190,9 @@ again). One row for each class in the cloud, with:
 
 - a tick box: untick it to hide that class (a hidden class is also left out of the
   LAS / LAZ export),
-- the class number (**Class 2**) and how many points it holds,
+- the class number and name (**2 – Ground**) and how many points it holds. Standard LAS classes
+  show their standard name; a class the file named, or one you added with
+  [Categorise](#categorise), shows that name; a class with no name shows **Class 70**,
 - a colour swatch: click it to change that class's colour. Classes start with a standard colour.
 
 ### Statistics tab
@@ -225,7 +227,8 @@ Kirra shows only **Points in file**; import the file again to see every row.
 #### Classes and Return numbers
 
 One row for each class, and for each return number, in the cloud: the value, how many
-**Points** hold it, and their **Share** of the cloud.
+**Points** hold it, and their **Share** of the cloud. Classes are shown with their names, as in
+the **Classes** group (**2 – Ground**).
 
 #### Histogram
 
@@ -265,6 +268,7 @@ the dialog stays open, so you can run another tool straight after. The line at t
 | Tool | What it does |
 |------|--------------|
 | [**Select Points**](#select-points) | Selects points in this cloud by class and elevation, or the stray or sparse points |
+| [**Categorise**](#categorise) | Gives the selected points of this cloud a class |
 | [**Remove duplicates**](#remove-duplicates) | Adds a new cloud without the duplicate points |
 | [**Smooth points**](#smooth-points) | Adds a new, smoothed cloud |
 | [**Compute roughness**](#compute-roughness) | Measures how rough the cloud is at each point, and colours by it |
@@ -278,7 +282,7 @@ never changed by **Remove duplicates** or **Smooth points**.
 
 | Select by | Fields | Picks |
 |-----------|--------|-------|
-| **Class and elevation** | **Class n (count points)** ticks, **Min Z (m)**, **Max Z (m)** | The points in the ticked classes and the height band. Leave Min Z or Max Z blank for no limit |
+| **Class and elevation** | One tick per class, for example **2 – Ground (1,240 points)**, **Min Z (m)**, **Max Z (m)** | The points in the ticked classes and the height band. Leave Min Z or Max Z blank for no limit |
 | **Stray points** | **Neighbours** (8), **Spread** (2) | Points much farther from their nearest neighbours than the cloud's average. Best on clouds of even density |
 | **Sparse points** | **Radius (m)** (0.5), **Min neighbours** (1) | Points with fewer than **Min neighbours** other points within **Radius**, in 3D. Best on handheld scans and for dust |
 
@@ -290,6 +294,36 @@ never changed by **Remove duplicates** or **Smooth points**.
 **Selection** chooses **Replace**, **Add** or **Remove**. Press **Run**. The status bar says how
 many points are selected, for example *1,240 point-cloud points selected*. Delete, Crop and Split
 are on the cloud's right-click menu.
+
+#### Categorise
+
+Gives the points selected in this cloud a class: ground, a muckpile, waste, or any class of your
+own.
+
+![The Categorise tool on the Edit Tools tab of Cloud Properties, adding a new class](../screenshots/CloudPropertiesCategorise.png)
+
+1. Select the points, with [Select Points](#select-points) or by
+   [drawing a shape](#selecting-points).
+2. In **Tool**, choose **Categorise**.
+3. Choose the **Class**, or **New class…** to add your own and give it a **New class name**.
+4. Leave **Overwrite existing classes** unticked to change only points that have no class yet, or
+   tick it to change every selected point.
+5. Press **Run**.
+
+| Field | Default | What it does |
+|-------|---------|--------------|
+| **Class** | **2 – Ground** | The class the selected points get. The list holds the standard LAS classes (not the reserved 8 and 12), then this cloud's own classes, then **New class…** |
+| **New class number** | The first free number from 64 | Shown for **New class…**. Your own classes are numbered 64 to 255; the LAS standard keeps 0 to 63 |
+| **New class name** | Blank | Shown for **New class…**. Saved with the cloud and shown in every class list. A LAS or LAZ file keeps names of up to 15 characters, in basic Latin letters, digits and symbols |
+| **Overwrite existing classes** | Unticked | Unticked: only selected points that are **Unclassified** (1) or **Created, never classified** (0) change; points already classified keep their class. Ticked: every selected point changes |
+
+Kirra says what changed, for example *10,000 points are now 65 – Ore.* When some selected points
+already had a class and kept it, it says *n of the m selected points are now …* and that the
+others already had a class.
+
+After the run the cloud is coloured by **Classification**, and the new class appears in the
+**Classes** lists and in **Select Points**. **Undo** puts the old classes back. A class you add is
+drawn grey; give it a colour under [Classes](#classes) on the **Properties** tab.
 
 #### Remove duplicates
 
@@ -491,6 +525,14 @@ points** instead, with a **Radius (m)** a few times the point spacing.
 **Some points are grey after Compute roughness.**
 Those points had too few neighbours within **Max distance (m)** to fit a plane, so they have no
 roughness. Make **Max distance** larger, or remove the stray points first.
+
+**Categorise changed none of my points.**
+Kirra says *None of the n selected points changed: they already have a class.* Categorise keeps a
+point's class unless **Overwrite existing classes** is ticked. Tick it and press **Run** again.
+
+**My own class is drawn grey.**
+Classes you add have no standard colour. Set one with the swatch under [Classes](#classes) on
+the **Properties** tab.
 
 **The LAS header shows only Points in file.**
 The cloud was imported with an earlier version of Kirra, which kept less of the header. Import the
