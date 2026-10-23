@@ -2,6 +2,20 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.69
+
+_2026-10-22_
+
+History not available at the moment.
+
+## Release v1.1.34.68
+
+_2026-10-22_
+
+**Bug Fix**
+
+- Undoing a vertex delete restores the drawing's layer, colour and line width
+
 ## Release v1.1.34.67
 
 _2026-10-22_
