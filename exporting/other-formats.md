@@ -80,16 +80,38 @@ Export blast data to ESRI Shapefile format. Produces a ZIP archive containing `.
 
 ---
 
-## Point Cloud (XYZ, PTS, PTX, CSV)
+## Point Cloud (XYZ, TXT, CSV, PLY, PTS, PTX)
 
-Export point data in various text formats:
+Export the vertices of visible surfaces and the points of visible
+[point clouds](../surfaces/point-clouds.md) (hidden ones are left out).
 
-| Format | Extension | Description |
-|--------|-----------|-------------|
-| XYZ | `.xyz` | Space-separated X Y Z with optional R G B |
-| CSV | `.csv` | Comma-separated X,Y,Z with optional R,G,B |
-| PTS | `.pts` | Count header + X Y Z I R G B |
-| PTX | `.ptx` | Leica scanner format |
+1. Open the Export dialog. On the **Point Cloud** row of the **Surfaces / Mesh** tab, pick the
+   format in the drop-down, then click the export icon.
+2. In **Export Point Cloud**, check the **Filename:** and click **Export**. The name ends in the
+   chosen format's extension.
+3. Choose where to save the file. When the export holds a point cloud, Kirra asks where to save
+   it first, then writes it.
+
+| Format | Extension | Each row |
+|--------|-----------|----------|
+| XYZ | `.xyz` | X Y Z, space-separated, with R G B when there is colour |
+| TXT | `.txt` | The same as XYZ |
+| CSV | `.csv` | X,Y,Z, comma-separated, with R,G,B when there is colour |
+| PLY | `.ply` | Binary: X Y Z, with red, green, blue when there is colour, and intensity when a cloud has it |
+| PTS | `.pts` | A first line with the point count, then X Y Z I, with R G B when there is colour |
+| PTX | `.ptx` | Leica single-scan header, then X Y Z I, with R G B when there is colour |
+
+**What a point cloud writes.** Every point of every visible cloud, less the classes hidden in
+Cloud Properties, in world coordinates to the millimetre. Colour columns are written when a cloud
+in the export has colour; a cloud without colour is written grey (128, 128, 128). Exporting
+surfaces alone writes colour columns as before.
+
+**Large clouds.** A long export shows its progress, with a **Cancel** button. **Cancel** stops
+the export and saves nothing. Binary PLY is much faster and smaller than the text formats.
+
+Only point-cloud formats write point clouds: this row, and [LAS / LAZ](#las-lidar). Other
+exports, such as DXF, leave clouds out. To put cloud points in one of those, select them and use
+**Convert Selection to KAD Points** first.
 
 ---
 

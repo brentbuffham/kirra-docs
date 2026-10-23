@@ -372,7 +372,9 @@ before you import it.
 
 | To | Do this |
 |----|---------|
-| Write a LAS file | Visible clouds are included in the [LAS export](../exporting/other-formats.md#las-lidar). Only the LAS export writes point clouds; the XYZ, CSV, PTS and PTX point-cloud exports do not |
+| Write a LAS or LAZ file | Visible clouds are included in the [LAS export](../exporting/other-formats.md#las-lidar) |
+| Write XYZ, TXT, CSV, PLY, PTS or PTX | Visible clouds are included in the [Point Cloud export](../exporting/other-formats.md#point-cloud-xyz-txt-csv-ply-pts-ptx) |
+| Use it in another format | Other exports, such as DXF, leave point clouds out. Select the points and use **Convert Selection to KAD Points** first |
 | Keep it in a project | A [KAP project](../exporting/other-formats.md#kap-kirra-app-project) carries point clouds, and asks first because they can be large. A KAT template never does |
 
 ---
