@@ -2,6 +2,112 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.108
+
+_2026-10-24_
+
+**Feature**
+
+- Trace mode: follow an existing line or polygon while drawing
+- Press T to trace; Space takes the long way round a polygon
+
+## Release v1.1.34.107
+
+_2026-10-24_
+
+History not available at the moment.
+
+## Release v1.1.34.106
+
+_2026-10-24_
+
+**Feature**
+
+- Stereonet help: hover or click the ? for how to read it
+
+## Release v1.1.34.105
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Facets dialog: the sets table grows with the dialog
+
+## Release v1.1.34.104
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Popped-out dialog tabs sit on the left, clear of the toolbar tabs
+
+## Release v1.1.34.103
+
+_2026-10-24_
+
+**Feature**
+
+- Select joint sets with checkboxes; the dialog docks or pops out
+
+## Release v1.1.34.102
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Facets on a 4.3 M point wall no longer crash the tab
+
+## Release v1.1.34.101
+
+_2026-10-24_
+
+**Feature**
+
+- Facets and Joint Sets finds joint sets on point-cloud walls
+- Stereonet of facet poles with set means and 95% cones
+- Colour point clouds by facet or joint set
+- Facet outlines to KAD by set, with facet and set CSV export
+
+## Release v1.1.34.100
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Facets and Joint Sets dialog
+
+## Release v1.1.34.99
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Facets model: sets, CSV and KAD outlines
+
+## Release v1.1.34.98
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Clouds carry facet and joint-set columns
+
+## Release v1.1.34.97
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Facets job in the point-cloud worker
+
+## Release v1.1.34.96
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Stereonet helper (equal-area, Plotly polar)
+
 ## Release v1.1.34.95
 
 _2026-10-24_
