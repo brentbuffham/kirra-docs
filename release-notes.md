@@ -2,6 +2,119 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.136
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Edit Mesh's Check mesh always reports what it found
+
+## Release v1.1.34.135
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Deleting a large surface frees its memory; undo still works
+
+## Release v1.1.34.134
+
+_2026-10-25_
+
+**Feature**
+
+- Triangulate asks before keeping a surface whose breaklines could not be applied
+
+**Bug Fix**
+
+- A triangulation that runs out of memory now says so
+
+## Release v1.1.34.133
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Large point clouds triangulate in 2.5D without running out of memory
+
+## Release v1.1.34.132
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Triangulate page side: pack, plane, hand over, build once
+
+## Release v1.1.34.131
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Triangulate worker: indexed messages, arrays handed over
+
+## Release v1.1.34.130
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Triangulate worker: typed-array core (de-dup, breaklines, filters)
+
+## Release v1.1.34.129
+
+_2026-10-25_
+
+**Bug Fix**
+
+- 2.5D Triangulate worker: oracle tests + parity golden
+
+## Release v1.1.34.128
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Triangulate no longer opens Edit Mesh, which could exhaust memory
+
+## Release v1.1.34.127
+
+_2026-10-24_
+
+**Feature**
+
+- Edit Mesh has its own Surface toolbar button beside Clean Mesh
+- A 3D triangulation opens straight into Edit Mesh for repairs
+
+## Release v1.1.34.126
+
+_2026-10-24_
+
+**Feature**
+
+- Edit Mesh repairs holes with a choice of patch method and shows volume
+
+## Release v1.1.34.125
+
+_2026-10-24_
+
+History not available at the moment.
+
+## Release v1.1.34.124
+
+_2026-10-24_
+
+History not available at the moment.
+
+## Release v1.1.34.123
+
+_2026-10-24_
+
+**Feature**
+
+- 3D Triangulate orients open caves and drives the right way out
+
 ## Release v1.1.34.122
 
 _2026-10-24_
