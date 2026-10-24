@@ -2,6 +2,63 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.122
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Void Mesh panel text now matches the other dialogs
+- 3D Triangulate keeps its settings after a failed build
+
+## Release v1.1.34.121
+
+_2026-10-24_
+
+**Feature**
+
+- Void Mesh panel patches open holes and passes the void to Boolean
+
+## Release v1.1.34.120
+
+_2026-10-24_
+
+**Feature**
+
+- Triangulate builds 3D meshes of caves and voids from clouds and CAD
+
+## Release v1.1.34.119
+
+_2026-10-24_
+
+**Bug Fix**
+
+- 3D Triangulate session worker (trimesh-build-js)
+
+## Release v1.1.34.118
+
+_2026-10-24_
+
+**Bug Fix**
+
+- 3D Triangulate input and options mapping
+
+## Release v1.1.34.117
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Point clouds as columns for the 3D Triangulate method
+
+## Release v1.1.34.116
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Triangulate with breaklines now includes visible point clouds
+
 ## Release v1.1.34.115
 
 _2026-10-24_
