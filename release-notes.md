@@ -2,6 +2,38 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.115
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Trimesh-build-js 0.4.1
+
+## Release v1.1.34.114
+
+_2026-10-24_
+
+**Feature**
+
+- Heap Watch logs memory growth and names the actions that caused it
+
+## Release v1.1.34.113
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Las-laz-js 0.10.0
+
+## Release v1.1.34.112
+
+_2026-10-24_
+
+**Bug Fix**
+
+- KAD placement menu: divider above From Mouse and its fields
+
 ## Release v1.1.34.111
 
 _2026-10-24_
