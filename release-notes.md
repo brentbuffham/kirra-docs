@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.111
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Trace now heads the placement menu; distance and bearing sit with From Mouse
+
+## Release v1.1.34.110
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Trimesh-build-js 0.3.1
+
+## Release v1.1.34.109
+
+_2026-10-24_
+
+**Bug Fix**
+
+- Undo removes a whole traced section, not one traced point
+
 ## Release v1.1.34.108
 
 _2026-10-24_
