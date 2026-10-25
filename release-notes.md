@@ -2,6 +2,163 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35
+
+_2026-10-25_
+
+**Feature**
+
+- Edit Mesh Move vertex snaps, drops on a click, and offers a weld
+- Clean Mesh Open Edges patches each loop with its own method
+- Clean Mesh check rows explain each problem on hover
+
+**Bug Fix**
+
+- Edit Mesh keeps drawing the mesh after many edits
+- Edit Mesh undo and redo rebuild the surface once, much faster
+- Clean Mesh finds crossing and coincident triangles about ten times faster
+- Large meshes repair in seconds, patching only around each hole
+- 3D Triangulate fits large point clouds in memory
+- Escape ends the current Edit Mesh activity, never the whole tool set
+
+## Release v1.1.34.155
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Mesh repair comes from trimesh-repair-js 0.1.1; trimesh-build-js 0.6.0
+
+## Release v1.1.34.154
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Mesh repairs never patch the wrong surface after a 3D Triangulate
+- Closing Clean Mesh or Edit Mesh no longer cancels a running 3D Triangulate
+- Edit Mesh Patch all says when no hole is small enough to patch
+
+## Release v1.1.34.153
+
+_2026-10-25_
+
+**Feature**
+
+- Edit Mesh Move vertex snaps to points, edges and the surface
+- Dropping a mesh vertex on another offers to weld them
+
+**Bug Fix**
+
+- Escape in Edit Mesh leaves the current tool instead of closing Edit Mesh
+- Undoing an Edit Mesh weld restores every triangle
+
+## Release v1.1.34.152
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Clean Mesh and Edit Mesh open together never patch the wrong surface
+- Patch buttons pressed during a mesh read wait for it instead of doing nothing
+
+## Release v1.1.34.151
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Undo and redo in Edit Mesh take about half the time
+
+## Release v1.1.34.150
+
+_2026-10-25_
+
+History not available at the moment.
+
+## Release v1.1.34.149
+
+_2026-10-25_
+
+**Feature**
+
+- Clean Mesh explains each check when you hover its name
+
+## Release v1.1.34.148
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Clean Mesh checks for crossing, coincident and T-junction faults about ten times faster
+
+## Release v1.1.34.147
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Edit Mesh finds open loops again after each edit without Check mesh
+
+## Release v1.1.34.146
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Surfaces no longer vanish from 3D after many mesh edits
+- Edit Mesh Move vertex slides the vertex along its triangle
+
+## Release v1.1.34.145
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Mesh volume is right on a mesh closed across a tiny crack
+- Two holes touching at one corner are now patched separately
+- Edit Mesh patches holes on local mine grids and beside duplicate points
+- A patch after moving a vertex uses the moved position
+
+## Release v1.1.34.144
+
+_2026-10-25_
+
+**Bug Fix**
+
+- 3D Triangulate of a large point cloud no longer runs out of memory
+
+## Release v1.1.34.143
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Edit Mesh reads large meshes for repair in seconds, not minutes
+- Patching holes on large meshes can now be undone
+
+## Release v1.1.34.142
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Edit Mesh no longer makes large meshes vanish after each edit
+- Edit Mesh opens large meshes using far less memory
+- Edit Mesh shows its wireframe as soon as it opens
+
+## Release v1.1.34.141
+
+_2026-10-25_
+
+**Feature**
+
+- Mesh wireframe is lighter, so dense meshes no longer read black
+
+**Bug Fix**
+
+- Clean Mesh checks large meshes using far less memory
+
 ## Release v1.1.34.140
 
 _2026-10-25_
