@@ -1,6 +1,7 @@
 # Transform KAD
 
-Moves, rotates and scales selected drawings by exact amounts, with a live preview.
+Moves, rotates and scales selected drawings — and selected point-cloud points — by exact amounts,
+with a live preview.
 
 ![Transform dialog](../screenshots/TransformKADDialog.png)
 
@@ -14,8 +15,13 @@ Moves, rotates and scales selected drawings by exact amounts, with a live previe
 3. Type the amounts. With **Preview Transform** on, the drawings move as you type.
 4. Click **Apply**. **Cancel**, **×** or **Escape** puts everything back where it was.
 
-With nothing selected Kirra says *"Please select KAD objects to transform. This tool works with
-KAD entities only (points, lines, polygons, circles, text)."* Locked drawings are not moved.
+With nothing selected Kirra says *"Select KAD objects (points, lines, polygons, circles, text) or
+point-cloud points to transform."* Locked drawings are not moved.
+
+**Point clouds.** Select points in a shown, unlocked [point cloud](../surfaces/point-clouds.md#selecting-points)
+first. The dialog is then titled, for example, **Transform: 1,240 point-cloud points**, and the
+points move with the drawings. Each cloud's change is its own **Ctrl+Z** step, *"Transform
+point-cloud points"*.
 
 ---
 

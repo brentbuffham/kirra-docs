@@ -28,6 +28,10 @@ Pressing on empty space clears the selection.
 
 Points on surface-connector trunks can be dragged in any mode.
 
+**Point clouds.** Press on a **selected** point-cloud point and drag to move every cloud's
+selected points together, in plan — heights do not change. The selection is drawn where it will
+land while you drag, and **Escape** cancels. See [Moving points](../surfaces/point-clouds.md#moving-points).
+
 ---
 
 ## Other ways to use it

@@ -159,7 +159,8 @@ Right-click a row for its tools. The menu shows only the items that fit what you
 | Item | What it does |
 |------|--------------|
 | **Rename** | Renames the cloud |
-| **Cloud Tools** ▸ **Stray or Sparse Points…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** | Opens Cloud Properties on its **Edit Tools** tab, set to that tool (one cloud at a time) |
+| **Cloud Tools** ▸ **Stray or Sparse Points…** / **Categorise…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** | Opens Cloud Properties on its **Edit Tools** tab, set to that tool (one cloud at a time) |
+| **Cloud Tools** ▸ **Facets and Joint Sets…** | Opens [Facets and Joint Sets](../surfaces/facets-joint-sets.md) on that cloud |
 | **Clear Point Selection**, **Delete Selected Points**, **Crop to Selection**, **Split Selection to New Cloud**, **Convert Selection to KAD Points** | Work on the cloud's selected points (shown when it has a selection) — see [Working with a selection](../surfaces/point-clouds.md#working-with-a-selection) |
 | **Merge Clouds** | Joins two or more selected clouds into a new one |
 | **Properties** | Opens [Cloud Properties](../surfaces/point-clouds.md#cloud-properties): the **Properties**, **Statistics** and **Edit Tools** tabs |

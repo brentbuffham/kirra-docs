@@ -21,6 +21,16 @@ Open it from its tab on the right edge of the window.
 | **Clip Surface** | Cuts a surface or solid with a polygon | **Batch** tab for many cutters | [Clip Surface](clip-surface.md) |
 | **Solid Horizon Slice** | Cuts a solid into horizontal bands | **By count** for equal bands | [Solid Horizon Slice](solid-horizon-slice.md) |
 
+### Point-cloud tools
+
+Below the second divider are the tools that work on [point clouds](point-clouds.md):
+
+| Control | What it does | Other ways to use it | Guide |
+|---|---|---|---|
+| **Mesh and Cloud Alignment** | Moves a scan or mesh onto the grid, or onto another scan or mesh | **Pick ICP**, **Manual** and **Scanner Controls** tabs | [Mesh and Cloud Alignment](mesh-cloud-alignment.md) |
+| **Facets and Joint Sets** | Finds the flat facets of a rock wall in a cloud and groups them into joint sets, on a stereonet | Cloud's right-click menu → **Cloud Tools** ▸ **Facets and Joint Sets…** | [Facets and Joint Sets](facets-joint-sets.md) |
+| **Void Mesh** | Opens Triangulate with its **3D mesh (caves, voids)** method chosen | **Triangulate** → **Method** | [3D Triangulate](triangulate-3d.md) |
+
 Not sure which boolean to use? See [Which Boolean?](boolean-csg.md)
 
 ---
@@ -52,3 +62,4 @@ and [Surface Gradients](gradients.md).
 - [Importing Surfaces](importing-surfaces.md)
 - [Surface Gradients](gradients.md)
 - [Mesh Editing](mesh-editing.md)
+- [Point Clouds](point-clouds.md)

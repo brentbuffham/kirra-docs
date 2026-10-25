@@ -9,7 +9,8 @@ import dialogs. It draws in 2D and 3D, prints, saves with your project and can b
 LAS. You can select its points — by drawing a shape, by class and height, from a histogram, or
 the stray and sparse points a scan picks up — and delete, crop or split them. You can also remove
 duplicate points, smooth a noisy scan, measure its roughness, merge clouds, make KAD points from
-them, and triangulate them into a surface. LAS and LAZ files import this way by default, so a survey of tens of millions of points
+them, move them, align them to the grid or to another scan, find the facets and joint sets of a rock
+wall, and triangulate them into a surface — in plan, or as a 3D mesh of a cave or void. LAS and LAZ files import this way by default, so a survey of tens of millions of points
 opens without being thinned to a drawing-object limit.
 
 ---
@@ -83,6 +84,7 @@ Right-click a cloud row:
 | **Hide** / **Show** | Hides or shows the cloud |
 | **Delete** | Deletes the cloud. Kirra asks first: **Delete Point Cloud** — *Delete 1 point cloud(s)? This cannot be undone.* |
 | **Cloud Tools** ▸ **Stray or Sparse Points…** / **Categorise…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** | Opens [Cloud Properties](#cloud-properties) on its **Edit Tools** tab, set to that tool (shown when one cloud row is selected) |
+| **Cloud Tools** ▸ **Facets and Joint Sets…** | Opens [Facets and Joint Sets](facets-joint-sets.md) on this cloud |
 | **Clear Point Selection** | Clears the cloud's selected points (shown when the cloud has a selection) |
 | **Delete Selected Points** | Removes the selected points (shown when the cloud has a selection) |
 | **Crop to Selection** | Keeps only the selected points (shown when the cloud has a selection) |
@@ -162,6 +164,8 @@ choice has become unavailable, it stays selected, greyed out.
 | **Return number** | Return numbers in the file, with more than one value (otherwise greyed out with a note) |
 | **GPS time** | **Keep GPS time** ticked at import. Greyed out with a note when every time is the same |
 | **Roughness** | [Compute roughness](#compute-roughness) run on the cloud. Points with no roughness value are grey |
+| **Facet** | [Facets and Joint Sets](facets-joint-sets.md) run on the cloud. Each facet has its own colour; points on no facet are grey |
+| **Joint set** | [Facets and Joint Sets](facets-joint-sets.md) run on the cloud. Each joint set has its own colour; points in no set are grey |
 | **Single colour** | Nothing |
 
 | Setting | When it is available | What it does |
@@ -459,7 +463,8 @@ Right-click the cloud row. Each item asks first and says how many points it affe
 | **Split Selection to New Cloud** | The selected points move to a new cloud named after this one with *(selection)* added, for example `Cloud_scan (selection)` |
 | **Convert Selection to KAD Points** | The selected points become one KAD points entity, `<cloud> points`, in the colours they are drawn in. KAD points are limited to 1,000,000; above that Kirra asks to thin the selection evenly |
 
-To build a surface from a cloud, use the **Triangulate** tool. It uses every visible cloud: the
+To build a surface from a cloud, use the [Triangulate](triangulate.md) tool — or, for a cave, drive
+or void, its 3D mesh method, [Void Mesh](triangulate-3d.md). It uses every visible cloud: the
 selection when the cloud has one, otherwise every drawn point. It uses up to half of **Max triangles
 per surface (3D)** in [Settings > Performance](../working-in-kirra/settings.md#performance-tab)
 points (a surface has about two triangles per point), spread evenly; the status bar says so when it
@@ -467,6 +472,23 @@ thins. **Estimated points** in its dialog includes the cloud points.
 
 **Undo** (Ctrl+Z) reverses Delete, Crop and Split. A cloud larger than 256 MB cannot be undone;
 Kirra says so in the question before it changes anything.
+
+---
+
+## Moving points
+
+To move a region of a cloud — or a whole cloud, with every point selected — select the points
+first (see [Selecting points](#selecting-points)), then:
+
+| Tool | What it does |
+|------|--------------|
+| [**Move**](../kad/move.md) (Modify toolbar) | Press on a **selected** cloud point and drag. Every cloud's selection moves together, in plan; heights do not change. While you drag, the selection is drawn where it will land and the status line shows the shift. **Escape** cancels. On release the points move and stay selected |
+| [**Transform KAD**](../kad/transform.md) (Modify toolbar) | Moves, rotates and scales the selected points by exact amounts, about the centre of the selection. The dialog is titled, for example, **Transform: 1,240 point-cloud points** |
+| [**Mesh and Cloud Alignment**](mesh-cloud-alignment.md) (Surface toolbar) | Fits the move for you, from matching points, from the overlap with another scan, or from a scanner control file |
+
+Each move is one **Ctrl+Z** step for each cloud it changes (a cloud larger than 256 MB cannot be
+undone). Moving points removes the cloud's
+[facets and joint sets](facets-joint-sets.md).
 
 ---
 
@@ -545,5 +567,8 @@ LAS or LAZ file again to see it all. A cloud from a text file has no LAS header.
 - [Surfaces and Point Clouds](../importing/surfaces-and-point-clouds.md) — the import dialogs
 - [Data Explorer](../working-in-kirra/data-explorer.md)
 - [Surface Gradients](gradients.md) — the colour ramps
+- [3D Triangulate (Void Mesh)](triangulate-3d.md) — a 3D mesh of a cave, drive or void from a cloud
+- [Facets and Joint Sets](facets-joint-sets.md) — the planes of a rock wall, on a stereonet
+- [Mesh and Cloud Alignment](mesh-cloud-alignment.md) — put a scan on the grid
 - [Other Export Formats](../exporting/other-formats.md) — LAS and KAP
 - [Settings](../working-in-kirra/settings.md#performance-tab) — Max Point-Cloud Points
