@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.140
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Mesh repair Task 6: Clean Mesh Fill and Close through the front door
+
 ## Release v1.1.34.139
 
 _2026-10-25_
