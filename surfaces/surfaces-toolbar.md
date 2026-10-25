@@ -3,7 +3,10 @@
 The **Surface** toolbar builds, cuts, combines and repairs triangulated surfaces and solids.
 Open it from its tab on the right edge of the window.
 
-![Labelled Surface toolbar](../screenshots/SurfacesToolbar.png)
+![Labelled Surface toolbar: surface tools on top, the repair row, then the point-cloud tools](../screenshots/SurfacesToolbar.png)
+
+The buttons sit in three groups: the surface tools, then — below the first divider — the two
+repair tools, then — below the second — the point-cloud tools.
 
 ---
 
@@ -11,15 +14,21 @@ Open it from its tab on the right edge of the window.
 
 | Control | What it does | Other ways to use it | Guide |
 |---|---|---|---|
-| **Triangulate** | Builds a surface from visible points, lines and holes | Select a polygon first to clip to it | [Triangulate](triangulate.md) |
+| **Triangulate** | Builds a surface from visible point clouds, points, lines and holes | Select a polygon first to clip to it | [Triangulate](triangulate.md) |
 | **Surface Intersection** | Draws the line where two surfaces cross | Pick each surface in 3D | [Surface Intersection](surface-intersection.md) |
 | **Solid Boolean** | Union, intersect or subtract two closed solids | Normals button fixes an input | [Solid Boolean](solid-boolean.md) |
 | **Trimesh Boolean** | Splits two surfaces and keeps the pieces you choose | **Quick Boolean** tab; **Reclassify** | [Trimesh Boolean](trimesh-boolean.md) |
 | **Extrude KAD to Solid** | Pushes a closed polygon into a solid | Select the polygon first | [Extrude KAD to Solid](extrude-kad-to-solid.md) |
 | **Contour Surface** | Contour lines at a set interval | **Custom** start for bench RLs | [Contour Surface](contours.md) |
-| **Clean Mesh** | Finds and repairs mesh faults | Right-click a surface → **Clean** | [Clean Mesh](clean-mesh.md) |
 | **Clip Surface** | Cuts a surface or solid with a polygon | **Batch** tab for many cutters | [Clip Surface](clip-surface.md) |
 | **Solid Horizon Slice** | Cuts a solid into horizontal bands | **By count** for equal bands | [Solid Horizon Slice](solid-horizon-slice.md) |
+
+### Repair tools
+
+| Control | What it does | Other ways to use it | Guide |
+|---|---|---|---|
+| **Clean Mesh** | Finds and repairs mesh faults across a whole surface | Right-click a surface → **Clean** | [Clean Mesh](clean-mesh.md) |
+| **Edit and Repair Mesh** | Opens Edit Mesh: edit triangles by hand, and find and patch open loops | **Edit Mesh** in Clean Mesh | [Mesh Editing](mesh-editing.md) |
 
 ### Point-cloud tools
 
@@ -52,7 +61,6 @@ and [Surface Gradients](gradients.md).
 | Tool | Toolbar | Guide |
 |---|---|---|
 | **Compare Surfaces** — colour a survey by its distance from the design | Analyse | [Compare Surfaces](compare-surfaces.md) |
-| **Edit Mesh** — fix triangles by hand | Opened from **Clean Mesh** | [Mesh Editing](mesh-editing.md) |
 | **KAD Boolean** — booleans on polygons | Modify | [KAD Boolean](../kad/boolean.md) |
 
 ---

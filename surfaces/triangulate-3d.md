@@ -97,17 +97,16 @@ has **open loops**: holes in the mesh, bounded by a ring of edges. The build fil
 is built.
 
 To find and patch the rest, open the mesh in **Edit Mesh** (the **Edit and Repair Mesh** button on
-the **Surface** toolbar). Its repair section:
+the **Surface** toolbar). Its repair report shows the **Triangles**, whether the mesh is **Closed**,
+its **Enclosed volume (m³)**, the **Open loops** and the **Non-manifold edges**. Then:
 
-- **Check mesh** reports the **Triangles**, whether the mesh is **Closed**, its **Enclosed volume
-  (m³)**, the **Open loops** and the **Non-manifold edges**. The open loops are drawn red in the 3D
-  view.
-- **Patch method** chooses how a hole is filled: **Auto (best that works)**, **Fair (smooth,
-  follows the wall)**, **Fan (flat, loop points only)**, **Centroid (one centre point)** or
-  **Vertex fan (from one corner)**. Fair suits holes in cave or rock walls; Fan suits flat cuts such
-  as drive ends or section cuts.
-- **Patch all** fills every open loop with at most **Patch all: loops up to (edges)** edges. Larger
-  openings, such as a drive end or a portal, are left open unless you raise the limit.
+- **Loop Select** draws the open loops cyan; click one and **Fill** patches it with the **Patch
+  method** — **Auto (best that works)**, **Fair (smooth, follows the wall)**, **Fan (flat, loop
+  points only)**, **Centroid (one centre point)** or **Vertex fan (from one corner)**. Fair suits
+  holes in cave or rock walls; Fan suits flat cuts such as drive ends or section cuts.
+- **Patch all** fills every open loop with at most **Patch all: loops up to (edges)** edges (50 by
+  default). Larger openings, such as a drive end or a portal, are left open unless you raise the
+  limit.
 
 See [Mesh Editing](mesh-editing.md) and [Clean Mesh](clean-mesh.md). A mesh must be closed before
 it has a volume or can be used as a solid.

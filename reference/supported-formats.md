@@ -73,7 +73,7 @@ See: [DXF Import](../importing/dxf.md) ·
 
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
-| ESRI Shapefile | `.shp` (in/out), `.zip` (out) | Yes | Yes | Point, MultiPoint, PolyLine, Polygon, including Z and M variants. Import: select the `.shp` with its `.shx`, `.dbf` and `.prj`, or a `.zip` of them. Export bundles `.shp / .shx / .dbf / .prj` as a ZIP. |
+| ESRI Shapefile | `.shp`, `.zip` (in/out) | Yes | Yes | Point, MultiPoint, PolyLine, Polygon, including Z and M variants. Import: select the `.shp` with its `.shx`, `.dbf` and `.prj`, or a `.zip` of them. Export bundles `.shp / .shx / .dbf / .prj` as a ZIP. |
 | GeoTIFF (raster) | `.tif`, `.tiff` | Yes | — | Elevation rasters and RGB / RGBA imagery. |
 | ERDAS ECW | `.ecw` | Yes | — | Orthophoto imagery, version 2. Overview plus full detail as you zoom in; transparent black, white or colour; clip to a polygon. See [ECW Imagery](../importing/ecw-imagery.md). |
 | GeoTIFF export | `.tif` + `.prj` | — | Yes | Coloured image of each visible surface, as shown in Kirra. |

@@ -55,6 +55,13 @@ Each workspace has its own address: add `?ws=` and the number to Kirra's address
 example `?ws=3` for Workspace 3. Without it, Kirra opens Workspace 0. Bookmark an address to
 go straight to a job.
 
+### The same workspace in two windows
+
+If you open a workspace that is already open in another tab or window — by its address, for
+example — Kirra warns **Workspace Open Twice**: *"Workspace 3 is also open in another tab or
+window. Each one saves its own copy, so changes made in one can be overwritten by the other.
+Close one of them."* Close one of the two before you carry on working.
+
 ---
 
 ## Name a workspace
@@ -116,6 +123,10 @@ rules, templates — use a **KAT** template. See
 Check the window title and the red chip — you may be in a different workspace. Workspaces
 are kept by the browser: a different browser, a private window, or clearing the browser's
 site data shows empty workspaces.
+
+**Workspace Open Twice.**
+The same workspace is open in another tab or window. Close one of them, or changes in one can
+overwrite the other — see [The same workspace in two windows](#the-same-workspace-in-two-windows).
 
 **No chip is marked as having data.**
 Some browsers cannot report which workspaces hold data. The reset dialog says so when this

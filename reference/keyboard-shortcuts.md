@@ -47,7 +47,10 @@ A dialog that uses the keyboard keeps its own Escape, and Delete / Backspace do 
 | **KAD draw tools** (KAD toolbar) | Right-click | Finish the drawing; again to end the tool |
 | | **Backspace** / **Delete** | Remove the last point |
 | | **Ctrl+Z** | Undo the last point placed |
-| **Add KAD Points / Line / Polygon** | Right-click the **button** | Placement modes — [details](../kad/points-lines-polygons.md#placement-modes) |
+| **Add KAD Point / Line / Polygon** | Right-click the **button** | Placement modes — [details](../kad/points-lines-polygons.md#placement-modes) |
+| | **T** | Trace on or off — [details](../kad/points-lines-polygons.md#trace-an-existing-line-or-polygon) |
+| | **Space** (Trace run open, closed polygon) | Trace the other way round |
+| | **Escape** (Trace run open) | Cancel the run only |
 | **Hole Bearing** (Modify toolbar) | Right-click the **button** | Choose the pivot: collar, grade or toe |
 | | **F** (hold) | Focus mode |
 | **Move** (Modify toolbar) | **Shift** + press | Add to the selection (V mode; K or V in 3D) |

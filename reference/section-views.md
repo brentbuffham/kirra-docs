@@ -55,7 +55,7 @@ other way.
 ### Choose what is cut
 
 **Clip** sets which kinds of data the section applies to: **Blasts**, **KAD**,
-**Surfaces**, **Images** and **Blocks** (block models). Untick one to keep it whole while
+**Surfaces**, **Images**, **Blocks** (block models) and **Clouds** ([point clouds](../surfaces/point-clouds.md)). Untick one to keep it whole while
 the rest is sliced — for example, keep the topography whole while slicing the holes.
 
 ### Draw on the section

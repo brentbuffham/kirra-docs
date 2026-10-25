@@ -96,9 +96,10 @@ After the first point, a small readout follows the cursor with **Dist:** (metres
 
 ## Placement modes
 
-Right-click the **Add KAD Points**, **Add KAD Line** or **Add KAD Polygon** button to choose how
-each click places a point — on the cursor, between two clicks, or at a set distance and bearing.
-See [Placement modes](points-lines-polygons.md#placement-modes).
+Right-click the **Add KAD Point**, **Add KAD Line** or **Add KAD Polygon** button to choose how
+each click places a point — on the cursor, between two clicks, at a set distance and bearing, or
+traced along an existing line or polygon (**T** turns Trace on and off while you draw). See
+[Placement modes](points-lines-polygons.md#placement-modes).
 
 ---
 

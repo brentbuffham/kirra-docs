@@ -8,10 +8,10 @@ CSV.
 Use it to read the structure of a blasted wall, a pre-split face or a cut from a scan, without
 measuring each plane by hand.
 
-![The Facets and Joint Sets dialog after a run: settings, stereonet and the joint-sets table](../screenshots/FacetsJointSets.png)
+![The Facets and Joint Sets dialog after a run on a scanned pit wall: a saved preset, the stereonet and eight joint sets](../screenshots/FacetsJointSets.png)
 
-*Wookey Hole cave survey by CaveSurveys, freely distributable. Set 1 is the near-flat floor; set 2
-a near-vertical wall.*
+*A run on a 1.8 million point scan of a pit wall, with a saved preset (**ROCK**: Max distance 0.5 m,
+Max angle 25°) rather than the defaults.*
 
 ---
 
@@ -41,7 +41,7 @@ buttons in its title bar.
    *"Runs on the whole cloud (n points). Select the wall first to keep a big scan quick."*
 2. Check the facet settings and the joint-set settings (below).
 3. Click **Run facets**. A **Finding facets** progress window shows the work, with **Cancel**.
-4. The banner reports the result, for example *"44 facets, 2 joint sets."* The stereonet and the
+4. The banner reports the result, for example *"2109 facets, 8 joint sets."* The stereonet and the
    table fill in, and the cloud is coloured by joint set.
 
 Every button except **Close** keeps the dialog open, so you can change a setting and run again.
@@ -126,7 +126,9 @@ The table grows when you make the dialog taller.
 ### The cloud
 
 After a run the cloud is coloured by **Joint set** — each set in its colour, every other point grey
-— and the result is saved with the cloud. In [Cloud Properties](point-clouds.md#colour-by),
+— and the result is saved with the cloud.
+
+![The same pit-wall scan coloured by joint set, in plan](../screenshots/FacetsJointSetsCloud.png) In [Cloud Properties](point-clouds.md#colour-by),
 **Colour by** gains **Facet** (each facet its own colour) and **Joint set**.
 
 If the cloud changes after a run, the banner says so: *"The cloud has changed since these facets

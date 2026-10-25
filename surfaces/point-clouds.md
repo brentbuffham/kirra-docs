@@ -101,6 +101,9 @@ change.
 
 A hidden cloud is not drawn in 2D or 3D, does not print and is not written to a LAS export.
 
+In 3D, the [Section Plane](../reference/section-views.md#choose-what-is-cut) cuts point clouds too,
+while **Clouds** is ticked in its **Clip** row (on by default).
+
 ---
 
 ## Cloud Properties

@@ -16,9 +16,9 @@ Open it from its tab on the right edge of the window.
 | **Elevation Z** | Height of new points when nothing is snapped | Remembered in this browser | [Drawing Basics](drawing-basics.md#the-drawing-settings) |
 | **KAD Color** | Colour of new drawings | Change it mid-drawing | [Drawing Basics](drawing-basics.md#the-drawing-settings) |
 | **Point and Line Size** | Line width and point size | | [Drawing Basics](drawing-basics.md#the-drawing-settings) |
-| **Add KAD Points** | Places a set of points | **Right-click** for placement modes | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
-| **Add KAD Line** | Draws an open line | **Right-click** for placement modes | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
-| **Add KAD Polygon** | Draws a closed polygon | **Right-click** for placement modes | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
+| **Add KAD Point** | Places a set of points | **Right-click** for placement modes, including Trace | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
+| **Add KAD Line** | Draws an open line | **Right-click** for placement modes, including Trace | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
+| **Add KAD Polygon** | Draws a closed polygon | **Right-click** for placement modes, including Trace | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
 | **Add KAD Text** | Places text, including `fx:` formulas | Formula Builder; Format tab | [KAD Text](text.md) |
 | **Add KAD Circle** | Places circles | Change radius between clicks | [Points, Lines, Polygons and Circles](points-lines-polygons.md#draw-circles) |
 | **Circle Radius (m)** | Radius of the next circle | | |
@@ -34,6 +34,8 @@ Open it from its tab on the right edge of the window.
 | **Escape** | The same as right-click; twice returns to the Select Pointer |
 | **Backspace** / **Delete** | Removes the last point |
 | **Ctrl+Z** | Undoes the last point placed |
+| **T** (Point, Line, Polygon) | Trace on or off — follow an existing line or polygon. See [Trace](points-lines-polygons.md#trace-an-existing-line-or-polygon) |
+| **Space** (Trace, closed polygon) | Takes the traced run the other way round |
 
 Full detail: [Drawing Basics](drawing-basics.md).
 
