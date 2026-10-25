@@ -2,6 +2,28 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.34.139
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Deleting a surface now frees its memory straight away
+
+## Release v1.1.34.138
+
+_2026-10-25_
+
+History not available at the moment.
+
+## Release v1.1.34.137
+
+_2026-10-25_
+
+**Bug Fix**
+
+- Triangulate worker: one path (the object messages deleted)
+
 ## Release v1.1.34.136
 
 _2026-10-25_
