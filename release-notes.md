@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.1
+
+_2026-10-26_
+
+**Bug Fix**
+
+- LAS import errors stay visible in the dialog until fixed or cancelled
+
 ## Release v1.1.35
 
 _2026-10-25_
