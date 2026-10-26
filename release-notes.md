@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.3
+
+_2026-10-26_
+
+**Bug Fix**
+
+- Despike now keeps features taller than the chosen upper height
+
+## Release v1.1.35.2
+
+_2026-10-26_
+
+**Bug Fix**
+
+- Despike finds spikes on large clouds several times faster
+- Changing the despike height band now updates instantly
+
 ## Release v1.1.35.1
 
 _2026-10-26_
