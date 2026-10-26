@@ -2,6 +2,94 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.13
+
+_2026-10-26_
+
+**Bug Fix**
+
+- Mesh and Cloud Alignment now fits Rigid by default
+
+## Release v1.1.35.12
+
+_2026-10-26_
+
+**Bug Fix**
+
+- Declined long point cloud moves no longer report success
+- Coordinate files in any UTM zone apply their shift
+
+## Release v1.1.35.11
+
+_2026-10-26_
+
+**Feature**
+
+- LAS import warns when a cloud's real position is unknown
+- LAS import reads the shift from an ODM coords.txt file
+
+**Bug Fix**
+
+- LAS import no longer mistakes local coordinates for latitude and longitude
+
+## Release v1.1.35.10
+
+_2026-10-26_
+
+**Feature**
+
+- Projection pickers can load an ODM coords.txt, or a file of a chosen type
+
+## Release v1.1.35.9
+
+_2026-10-26_
+
+**Feature**
+
+- The coordinate mismatch warning says how much precision Ignore loses
+
+## Release v1.1.35.8
+
+_2026-10-26_
+
+**Feature**
+
+- Text point clouds can be shifted into mine coordinates on import
+
+## Release v1.1.35.7
+
+_2026-10-26_
+
+**Feature**
+
+- LAS and LAZ import can shift a local-grid cloud into mine coordinates
+
+## Release v1.1.35.6
+
+_2026-10-26_
+
+**Bug Fix**
+
+- Alignment Apply keeps full precision when a scan moves far
+- Alignment questions are no longer hidden behind the busy screen
+
+## Release v1.1.35.5
+
+_2026-10-26_
+
+**Bug Fix**
+
+- A point cloud imported into an emptied workspace keeps its full precision
+
+## Release v1.1.35.4
+
+_2026-10-26_
+
+**Feature**
+
+- Moving a point cloud far away keeps its full precision
+- Partial point cloud moves over 100 km are refused, not rounded
+
 ## Release v1.1.35.3
 
 _2026-10-26_
