@@ -2,6 +2,407 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.88
+
+_2026-10-28_
+
+History not available at the moment.
+
+## Release v1.1.35.87
+
+_2026-10-28_
+
+**Bug Fix**
+
+- The undo question starts with a red patience warning
+
+## Release v1.1.35.86
+
+_2026-10-28_
+
+History not available at the moment.
+
+## Release v1.1.35.85
+
+_2026-10-28_
+
+History not available at the moment.
+
+## Release v1.1.35.84
+
+_2026-10-28_
+
+**Feature**
+
+- Large point cloud edits ask whether to keep Undo, because Undo makes them much slower
+
+## Release v1.1.35.83
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Deleting, cropping or splitting a selection of a very large point cloud is much faster
+
+## Release v1.1.35.82
+
+_2026-10-28_
+
+History not available at the moment.
+
+## Release v1.1.35.81
+
+_2026-10-28_
+
+**Feature**
+
+- Stray points, Sparse points and Roughness work on point clouds too big for memory
+
+## Release v1.1.35.80
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Las-laz-js 0.17.0 and trimesh-build-js 0.6.5
+
+## Release v1.1.35.79
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Running out of browser storage while loading a large cloud now says so plainly
+
+## Release v1.1.35.78
+
+_2026-10-27_
+
+**Feature**
+
+- Categorise and Select by class work on every point of large clouds
+
+## Release v1.1.35.77
+
+_2026-10-27_
+
+**Feature**
+
+- 3D polygon, rectangle and ellipse selections work on large point clouds
+
+## Release v1.1.35.76
+
+_2026-10-27_
+
+**Feature**
+
+- Delete, Crop and Split work on point clouds too big for memory
+
+## Release v1.1.35.75
+
+_2026-10-27_
+
+**Feature**
+
+- Align works on point clouds too big for memory
+
+## Release v1.1.35.74
+
+_2026-10-27_
+
+**Feature**
+
+- Move and Transform work on whole point clouds too big for memory
+
+## Release v1.1.35.73
+
+_2026-10-27_
+
+**Feature**
+
+- Remove duplicates works on point clouds too big for memory
+- Smooth points works on point clouds too big for memory
+
+## Release v1.1.35.72
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Merge with... lists a cloud's stored point count
+
+## Release v1.1.35.71
+
+_2026-10-27_
+
+**Feature**
+
+- Point clouds too large for memory can now be merged
+
+## Release v1.1.35.70
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Las-laz-js 0.16.1 and trimesh-build-js 0.6.4
+
+## Release v1.1.35.69
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Importing large point clouds is faster
+
+## Release v1.1.35.68
+
+_2026-10-27_
+
+History not available at the moment.
+
+## Release v1.1.35.67
+
+_2026-10-27_
+
+History not available at the moment.
+
+## Release v1.1.35.66
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments size ranges now use distinct alternating colours by default
+
+## Release v1.1.35.65
+
+_2026-10-27_
+
+History not available at the moment.
+
+## Release v1.1.35.64
+
+_2026-10-27_
+
+**Bug Fix**
+
+- A small Lower limit no longer brings up a warning about the cloud's floor
+
+## Release v1.1.35.63
+
+_2026-10-27_
+
+**Feature**
+
+- Cancelling Fragments or Facets stops the processor cores at once
+
+## Release v1.1.35.62
+
+_2026-10-27_
+
+**Bug Fix**
+
+- The fragmentation report no longer opens with an amber warning on good scans
+
+## Release v1.1.35.61
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments size ranges can use Spectrum, other colour ramps, or alternating colours
+
+## Release v1.1.35.60
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments Lower limit now starts at 1 cm
+
+**Bug Fix**
+
+- Fragmentation report plan no longer drowns in black rock outlines
+
+## Release v1.1.35.59
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments and Facets use every processor core on large point clouds
+
+**Bug Fix**
+
+- Fragments and Facets menu items show their own icons
+
+## Release v1.1.35.58
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Saving Fragments and Facets results on large point clouds is much faster
+
+## Release v1.1.35.57
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments size ranges can be set by width, such as every 0.25 m
+
+**Bug Fix**
+
+- Fragments bar chart labels no longer overlap with many ranges
+
+## Release v1.1.35.56
+
+_2026-10-27_
+
+**Bug Fix**
+
+- A point cloud deleted or undone while saving no longer comes back
+
+## Release v1.1.35.55
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Saving and opening projects with large point clouds needs less memory
+
+## Release v1.1.35.54
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Several large point clouds together stay within the Detail Points setting
+
+## Release v1.1.35.53
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Point cloud GPS time is kept after a reload or project open
+
+## Release v1.1.35.52
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Cancelling Fragments or Facets on a large cloud no longer changes it
+
+## Release v1.1.35.51
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments and Facets results survive repeated project saves and opens
+
+## Release v1.1.35.50
+
+_2026-10-27_
+
+**Bug Fix**
+
+- A point cloud that fails to open is kept, not deleted
+
+## Release v1.1.35.49
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Large point clouds show their zoomed-in detail sooner
+
+## Release v1.1.35.48
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Tiles , Task 12: tile store housekeeping and clear storage errors
+
+## Release v1.1.35.47
+
+_2026-10-27_
+
+**Feature**
+
+- Project files carry large point clouds compactly as LAZ
+
+## Release v1.1.35.46
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments and Facets run on every stored point of large point clouds
+
+## Release v1.1.35.45
+
+_2026-10-27_
+
+**Feature**
+
+- Zoomed-in point cloud detail also shows in 2D, prints and images
+
+## Release v1.1.35.44
+
+_2026-10-27_
+
+**Feature**
+
+- Large point clouds draw finer detail as you zoom in, within a Detail Points budget
+
+## Release v1.1.35.43
+
+_2026-10-27_
+
+History not available at the moment.
+
+## Release v1.1.35.42
+
+_2026-10-27_
+
+History not available at the moment.
+
+## Release v1.1.35.41
+
+_2026-10-27_
+
+History not available at the moment.
+
+## Release v1.1.35.40
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Saving a point cloud no longer copies all its points, ending out-of-memory saves
+
+## Release v1.1.35.39
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Tiles , Task 2: the tile worker, its operations and client
+
+## Release v1.1.35.38
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Tiles , Task 1: pure tile helpers (resident set, tile index)
+
 ## Release v1.1.35.37
 
 _2026-10-27_
