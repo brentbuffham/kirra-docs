@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.37
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments keeps its result and warns clearly when the cloud cannot be saved
+
+## Release v1.1.35.36
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Point cloud Send to Image shows the same icon as surfaces
+
+## Release v1.1.35.35
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Deleting a point cloud now frees its memory
+
 ## Release v1.1.35.34
 
 _2026-10-27_
