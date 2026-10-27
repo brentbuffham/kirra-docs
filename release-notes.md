@@ -2,6 +2,17 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.34
+
+_2026-10-27_
+
+**Bug Fix**
+
+- CSV import preview numbers columns from 1, matching the column lists
+- CSV import charging tick can be ticked to map columns by hand
+- Pattern progress shows the correct row number
+- A cancelled hole import reports the correct total of holes
+
 ## Release v1.1.35.33
 
 _2026-10-27_
