@@ -2,6 +2,175 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.33
+
+_2026-10-27_
+
+**Feature**
+
+- Point clouds can be sent to an image for a transparent overlay
+
+## Release v1.1.35.32
+
+_2026-10-27_
+
+**Feature**
+
+- Fragmentation Report draws each rock's outline on the plan
+- Fragments keeps rock outlines with the run, so Make KAD works later
+
+## Release v1.1.35.31
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments credits the size-curve method to Segarra et al. (2024)
+
+## Release v1.1.35.30
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: the density panel keeps the size curve's warnings
+
+## Release v1.1.35.29
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments picks its area from a dropdown or a KAD polygon on the canvas
+
+**Bug Fix**
+
+- Fragments refuses a Max distance under the point spacing and says why
+- Fragments warns when its facet step found no rocks
+
+## Release v1.1.35.28
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments no longer stops drawing after a mistyped size range
+- Unseen fines are read as a percent in the fragment size curve
+
+## Release v1.1.35.27
+
+_2026-10-27_
+
+**Feature**
+
+- Fragmentation Report prints the size curve, bars, P-values and scan density
+
+## Release v1.1.35.26
+
+_2026-10-27_
+
+**Feature**
+
+- Print templates can show the fragment size curve, bars, table and legend
+
+## Release v1.1.35.25
+
+_2026-10-27_
+
+**Feature**
+
+- Fragments tool sizes muckpile rocks from a point cloud
+- Scan density warnings say when a cloud is too coarse to size rocks
+- Fragment size curve, size-range bars and P-values from a scan
+
+## Release v1.1.35.24
+
+_2026-10-27_
+
+**Feature**
+
+- Fragment size legend prints on raster, vector and template plots
+
+## Release v1.1.35.23
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: colour a cloud by fragment or size range, with its legend
+
+## Release v1.1.35.22
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: run scope (selection, inside a KAD poly, whole cloud)
+
+## Release v1.1.35.21
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: size curve and size-range bar chart figures
+
+## Release v1.1.35.20
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: the model (options, runs, distribution, CSV, KAD)
+
+## Release v1.1.35.19
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: worker jobs for fragments and point spacing
+
+## Release v1.1.35.18
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: scan density report
+
+## Release v1.1.35.17
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Point clouds remember how many points the file held
+
+## Release v1.1.35.16
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: the fragment column and its table are saved with the cloud
+
+## Release v1.1.35.15
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Fragments: size-range rule (edges, bins, colours, legend bands)
+
+## Release v1.1.35.14
+
+_2026-10-27_
+
+**Bug Fix**
+
+- Las-laz-js 0.12.0 and trimesh-build-js 0.6.1
+
 ## Release v1.1.35.13
 
 _2026-10-26_
