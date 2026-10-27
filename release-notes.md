@@ -2,6 +2,27 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.91
+
+_2026-10-28_
+
+History not available at the moment.
+
+## Release v1.1.35.90
+
+_2026-10-28_
+
+History not available at the moment.
+
+## Release v1.1.35.89
+
+_2026-10-28_
+
+**Feature**
+
+- Select Points opens on Sparse points
+- The point cloud import shows how many points will be kept in memory
+
 ## Release v1.1.35.88
 
 _2026-10-28_
