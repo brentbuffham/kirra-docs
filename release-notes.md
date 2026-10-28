@@ -2,6 +2,108 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.106
+
+_2026-10-28_
+
+**Feature**
+
+- Timing hole buttons show Assign, Remove, Clear and Check labels
+
+## Release v1.1.35.105
+
+_2026-10-28_
+
+**Feature**
+
+- Timing apply, reset, relief mode and regenerate use icons
+
+## Release v1.1.35.104
+
+_2026-10-28_
+
+**Feature**
+
+- Timing hole assignment sits at the top of the Design tab
+
+## Release v1.1.35.103
+
+_2026-10-28_
+
+**Feature**
+
+- Timing smoothing is an icon toggle on the Tool row
+
+## Release v1.1.35.102
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Chinese names for the timing and temporal meshes now use mining terms
+
+## Release v1.1.35.101
+
+_2026-10-28_
+
+**Feature**
+
+- Timing draw buttons are named Time Line, Time Line 1 and 2
+
+## Release v1.1.35.100
+
+_2026-10-28_
+
+**Feature**
+
+- Range timing draw buttons show an icon beside their label
+
+## Release v1.1.35.99
+
+_2026-10-28_
+
+**Bug Fix**
+
+- The selected timing tool, Relief or Range, now shows as selected
+
+## Release v1.1.35.98
+
+_2026-10-28_
+
+**Feature**
+
+- Timing display switches are compact icons on one row
+- Draw Time button shows an icon beside its label
+
+## Release v1.1.35.97
+
+_2026-10-28_
+
+**Feature**
+
+- Timing tools are compact icon toggles on the Tool row
+- Timing mesh display has its own tab
+
+## Release v1.1.35.96
+
+_2026-10-28_
+
+**Feature**
+
+- Electronic Timing panel split into Setup and Design tabs
+
+**Bug Fix**
+
+- Timing segment rows no longer hidden behind a sideways scroll
+
+## Release v1.1.35.95
+
+_2026-10-28_
+
+**Feature**
+
+- Las-laz-js 0.18.0 and trimesh-build-js 0.6.6 from npm
+
 ## Release v1.1.35.94
 
 _2026-10-28_
