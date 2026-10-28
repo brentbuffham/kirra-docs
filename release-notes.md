@@ -2,6 +2,102 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.118
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Stop tracking Claude Code's scheduled-tasks lock file
+
+## Release v1.1.35.117
+
+_2026-10-28_
+
+**Feature**
+
+- Reference: Strayos / adb fragmentation report PDF
+
+## Release v1.1.35.116
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Closed straight timing shapes cut cleanly at corners, one band per side
+
+## Release v1.1.35.115
+
+_2026-10-28_
+
+**Feature**
+
+- Timing Smooth uses the sine-wave icon
+
+## Release v1.1.35.114
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Flipping a timing arrow no longer makes its relief negative
+
+## Release v1.1.35.113
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Revert "Closed straight timing shapes use the straight cuts too
+
+## Release v1.1.35.112
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Closed straight timing shapes cut cleanly at corners, one band per side
+
+## Release v1.1.35.111
+
+_2026-10-28_
+
+**Feature**
+
+- Timing Check warns about missing delays and neighbours firing together
+
+## Release v1.1.35.110
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Straight timing lines cut cleanly at each bend, with no folds
+
+## Release v1.1.35.109
+
+_2026-10-28_
+
+**Bug Fix**
+
+- Holes timed to 0 ms now show 0 instead of NA
+
+## Release v1.1.35.108
+
+_2026-10-28_
+
+**Feature**
+
+- Regenerate the timing construct from the Tool row
+
+## Release v1.1.35.107
+
+_2026-10-28_
+
+**Feature**
+
+- Timing Auto Angles is an icon toggle with its label
+
 ## Release v1.1.35.106
 
 _2026-10-28_
