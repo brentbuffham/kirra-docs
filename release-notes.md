@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.93
+
+_2026-10-28_
+
+**Bug Fix**
+
+- A store build logs how long each phase took
+
 ## Release v1.1.35.92
 
 _2026-10-28_
