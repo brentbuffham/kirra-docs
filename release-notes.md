@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.94
+
+_2026-10-28_
+
+**Feature**
+
+- Timing segment buttons highlight their line and end node
+- Delete a timing segment, or move all its nodes together
+
+**Bug Fix**
+
+- Closed Bezier timing now rises outward on every side
+- Bezier timing contours follow the curve as true parallel offsets
+- Timing construct surface no longer folds, overlaps or drops holes
+- Timing surface colours now match between 2D and 3D
+
 ## Release v1.1.35.93
 
 _2026-10-28_
