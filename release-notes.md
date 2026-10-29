@@ -2,6 +2,43 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.121
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Icons: building-tunnel moves to the main icons folder
+
+## Release v1.1.35.120
+
+_2026-10-29_
+
+**Feature**
+
+- Timing lines can mix curved and sharp nodes while drawing
+- One button turns a whole timing line to Bezier or straight
+- Range line segment lists collapse and move per line
+
+**Bug Fix**
+
+- Closed Bezier range lines now curve all the way round
+
+## Release v1.1.35.119
+
+_2026-10-29_
+
+**Feature**
+
+- Closed range timing lines build a surface between nested rings
+- Range lines list their segments with highlight, delete and move buttons
+- Each range time line has its own clear button
+
+**Bug Fix**
+
+- Redrawing a range line no longer leaves the timing surface stale
+- Closed range lines no longer build an empty timing surface
+
 ## Release v1.1.35.118
 
 _2026-10-28_
