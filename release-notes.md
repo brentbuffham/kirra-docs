@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.139
+
+_2026-10-30_
+
+**Feature**
+
+- Faster 3D triangulation, mesh repair and point cloud dedupe
+
+## Release v1.1.35.138
+
+_2026-10-30_
+
+**Bug Fix**
+
+- Curved timing lines now time every hole, even a blast far away
+
 ## Release v1.1.35.137
 
 _2026-10-30_
