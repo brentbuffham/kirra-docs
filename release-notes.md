@@ -2,6 +2,50 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.130
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Timing line nodes look the same in 2D and 3D
+
+## Release v1.1.35.129
+
+_2026-10-29_
+
+**Feature**
+
+- Timing arrows, nodes and lines can be drawn larger from Mesh & View
+
+**Bug Fix**
+
+- Sliders in dialogs now start exactly at their shown value
+
+## Release v1.1.35.128
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Notched closed timing shapes now get straight cuts inside, not blobs
+
+## Release v1.1.35.127
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Timing shapes drawn with sharp corners in Bezier mode now get straight cuts
+
+## Release v1.1.35.126
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Auto Angles no longer turns arrows inward on notched closed timing shapes
+
 ## Release v1.1.35.125
 
 _2026-10-29_
