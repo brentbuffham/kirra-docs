@@ -2,6 +2,32 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.133
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Switching between draw tools no longer leaves a one-point shape
+- Starting a draw tool ends Transform, Renumber, Split and Join
+- The Radii dialog closes when you switch to another tool
+
+## Release v1.1.35.132
+
+_2026-10-29_
+
+**Feature**
+
+- Flip every timing arrow at once, and Auto Angles keeps the flip
+
+## Release v1.1.35.131
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Smoothed timing lines now give every hole a time
+
 ## Release v1.1.35.130
 
 _2026-10-29_
