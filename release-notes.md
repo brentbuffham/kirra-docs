@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.122
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Switching to another tool now ends the KAD draw tool
+- Extend Line clicks no longer add points to the previous line
+
 ## Release v1.1.35.121
 
 _2026-10-29_
