@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.125
+
+_2026-10-29_
+
+**Bug Fix**
+
+- Open range timing lines now time every hole, including past the line ends
+- Curved range timing lines no longer leave holes without a time
+
+## Release v1.1.35.124
+
+_2026-10-29_
+
+**Bug Fix**
+
+- In 3D the first drawn line no longer starts at elevation zero
+
 ## Release v1.1.35.123
 
 _2026-10-29_
