@@ -2,6 +2,38 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.137
+
+_2026-10-30_
+
+**Bug Fix**
+
+- Marching Squares no longer flattens out in the middle of a closed shape
+
+## Release v1.1.35.136
+
+_2026-10-30_
+
+**Bug Fix**
+
+- Marching Squares now follows the timing arrows and Flip All
+
+## Release v1.1.35.135
+
+_2026-10-30_
+
+**Bug Fix**
+
+- Marching Squares is greyed out unless the timing shape is closed
+
+## Release v1.1.35.134
+
+_2026-10-29_
+
+**Feature**
+
+- Marching Squares now warns that it is experimental
+
 ## Release v1.1.35.133
 
 _2026-10-29_
