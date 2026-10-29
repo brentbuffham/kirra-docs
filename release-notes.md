@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.123
+
+_2026-10-29_
+
+**Feature**
+
+- Drawing a timing line in 3D suggests drawing in 2D first
+
+**Bug Fix**
+
+- Timing lines drawn in 3D now land under the cursor
+- Clicking a hole while drawing a timing line no longer selects it
+
 ## Release v1.1.35.122
 
 _2026-10-29_
