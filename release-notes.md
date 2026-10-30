@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.140
+
+_2026-10-30_
+
+**Feature**
+
+- Timing lines can mix curved and sharp nodes, one node at a time
+
+**Bug Fix**
+
+- Timing segment rows no longer scroll sideways in the dialog
+
 ## Release v1.1.35.139
 
 _2026-10-30_
