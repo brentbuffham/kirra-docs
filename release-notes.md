@@ -2,6 +2,27 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.142
+
+_2026-10-30_
+
+History not available at the moment.
+
+## Release v1.1.35.141
+
+_2026-10-30_
+
+**Feature**
+
+- Section Plane view buttons look from north, south, east, west, top or bottom
+- Section Plane overview shows the section and the 3D view's limits
+- The Section Plane overview turns and zooms with the mouse
+- Section Plane dialog regrouped into two panels with a collapsible view
+
+**Bug Fix**
+
+- Section slice distances read Look Forward and See Behind in every mode
+
 ## Release v1.1.35.140
 
 _2026-10-30_
