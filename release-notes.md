@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.144
+
+_2026-10-31_
+
+**Feature**
+
+- Cloud Properties OK runs the chosen edit tool and closes
+
+**Bug Fix**
+
+- Very large LAS files no longer hang at 99% while importing
+- Point cloud import progress keeps moving to the end
+
 ## Release v1.1.35.143
 
 _2026-10-30_
