@@ -2,6 +2,20 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.143
+
+_2026-10-30_
+
+**Feature**
+
+- A drawn range time line stays ghosted until it is cleared
+- Backspace removes the last node while drawing a time line
+
+**Bug Fix**
+
+- Range time line buttons no longer stay stuck after switching lines
+- Escape while drawing a time line keeps the timing dialog open
+
 ## Release v1.1.35.142
 
 _2026-10-30_
