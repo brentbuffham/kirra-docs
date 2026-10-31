@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.156
+
+_2026-10-31_
+
+**Bug Fix**
+
+- Las-laz-js 0.19.4: large point-cloud crop shows progress as soon as it starts
+
+## Release v1.1.35.155
+
+_2026-10-31_
+
+**Bug Fix**
+
+- Large point-cloud crop, delete, split and categorise find points using every processor core
+
+## Release v1.1.35.154
+
+_2026-10-31_
+
+**Bug Fix**
+
+- Large point clouds crop, delete, split and categorise selections built by adding and removing
+
 ## Release v1.1.35.153
 
 _2026-10-31_
