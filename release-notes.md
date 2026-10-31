@@ -2,6 +2,43 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.147
+
+_2026-10-31_
+
+**Feature**
+
+- Right-click a point cloud to select it or open its properties
+- Selecting a point cloud selects and highlights every point
+- Colour a point cloud by GPS time without re-importing it
+- Point-cloud delete, crop and split show their progress
+
+**Bug Fix**
+
+- Zoomed-in point-cloud patches now take the new colours
+
+## Release v1.1.35.146
+
+_2026-10-31_
+
+**Bug Fix**
+
+- The section grid now appears where you are looking
+- Panning up or down in a section view no longer jumps back
+
+## Release v1.1.35.145
+
+_2026-10-31_
+
+**Feature**
+
+- Section Plane can draw exactly on the plane or anywhere visible
+- Section Plane switches are now toggle icons
+
+**Bug Fix**
+
+- Measure and snapping no longer pick up points hidden by the Section Plane
+
 ## Release v1.1.35.144
 
 _2026-10-31_
