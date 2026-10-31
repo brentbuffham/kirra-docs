@@ -2,6 +2,60 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.152
+
+_2026-10-31_
+
+**Feature**
+
+- Large point-cloud crop, delete and categorise show progress and can be cancelled
+
+**Bug Fix**
+
+- Exporting a large point cloud to LAS or LAZ now writes every point
+- Categorise on a large point cloud no longer appears to hang
+
+## Release v1.1.35.151
+
+_2026-10-31_
+
+History not available at the moment.
+
+## Release v1.1.35.150
+
+_2026-10-31_
+
+**Feature**
+
+- PLY point clouds keep their vertex colours
+
+**Bug Fix**
+
+- PLY meshes now import as surfaces instead of loose points
+- Binary PLY files import correctly
+
+## Release v1.1.35.149
+
+_2026-10-31_
+
+**Feature**
+
+- Ghosting tool finds a doubled point-cloud surface and moves it onto the real one
+- Show ghosting highlights the doubled layer without changing the cloud
+- Ghosting works on large tiled clouds, with Undo
+
+## Release v1.1.35.148
+
+_2026-10-31_
+
+**Feature**
+
+- Snapping reaches the extra points shown when zoomed into a large point cloud
+
+**Bug Fix**
+
+- Facets and Fragments warn when they will run on an entire large point cloud
+
 ## Release v1.1.35.147
 
 _2026-10-31_
