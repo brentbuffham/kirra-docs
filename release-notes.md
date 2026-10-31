@@ -2,6 +2,26 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.158
+
+_2026-10-31_
+
+**Feature**
+
+- Move and transform a selected part of a large point cloud
+
+**Bug Fix**
+
+- Large point-cloud crop is faster and its progress bar moves steadily
+
+## Release v1.1.35.157
+
+_2026-10-31_
+
+**Bug Fix**
+
+- Large clouds: crop, delete and categorise log where their time goes
+
 ## Release v1.1.35.156
 
 _2026-10-31_
