@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.153
+
+_2026-10-31_
+
+**Feature**
+
+- Large point-cloud categorise, crop and delete run faster
+
 ## Release v1.1.35.152
 
 _2026-10-31_
