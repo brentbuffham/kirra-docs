@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.177
+
+_2026-11-01_
+
+**Feature**
+
+- Cord on an underground face is timed along the face
+
+**Bug Fix**
+
+- Cord metres count legs that run straight up a face
+
 ## Release v1.1.35.176
 
 _2026-11-01_
