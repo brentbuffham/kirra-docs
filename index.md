@@ -98,8 +98,9 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
   - Combine: [Which Boolean?](surfaces/boolean-csg.md) · [Solid Boolean](surfaces/solid-boolean.md) · [Trimesh Boolean](surfaces/trimesh-boolean.md) · [Surface Intersection](surfaces/surface-intersection.md)
   - Cut and repair: [Clip Surface](surfaces/clip-surface.md) · [Solid Horizon Slice](surfaces/solid-horizon-slice.md) · [Clean Mesh](surfaces/clean-mesh.md) · [Mesh Editing](surfaces/mesh-editing.md)
 - [Importing Surfaces](surfaces/importing-surfaces.md)
-- [Point Clouds](surfaces/point-clouds.md) — LAS and text clouds: import, the Point Clouds folder, Cloud Properties, printing, LAS export and KAP
-  - [Facets and Joint Sets](surfaces/facets-joint-sets.md) — rock-wall planes and joint sets on a stereonet · [Mesh and Cloud Alignment](surfaces/mesh-cloud-alignment.md) — put a scan on the grid
+- [Point Clouds](surfaces/point-clouds.md) — LAS and text clouds: import, big clouds, Cloud Properties, ghosting, printing, LAS export and KAP
+  - [Cloud Toolbar](surfaces/cloud-toolbar.md) — every point-cloud button, and which cloud it works on
+  - [Facets and Joint Sets](surfaces/facets-joint-sets.md) — rock-wall planes and joint sets on a stereonet · [Fragments](surfaces/fragments.md) — rock sizes from a muckpile scan (experimental) · [Mesh and Cloud Alignment](surfaces/mesh-cloud-alignment.md) — put a scan on the grid
 - [Surface Gradients](surfaces/gradients.md)
 - [Compare Surfaces](surfaces/compare-surfaces.md) — design vs survey deviation heat map
 

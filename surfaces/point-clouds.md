@@ -8,10 +8,13 @@ Kirra keeps a point cloud as its own kind of data, labelled **Point Cloud (KAD C
 import dialogs. It draws in 2D and 3D, prints, saves with your project and can be exported to
 LAS. You can select its points — by drawing a shape, by class and height, from a histogram, or
 the stray and sparse points a scan picks up — and delete, crop or split them. You can also remove
-duplicate points, smooth a noisy scan, measure its roughness, merge clouds, make KAD points from
+duplicate points, smooth a noisy scan, measure its roughness, fix ghosting, merge clouds, make KAD points from
 them, move them, align them to the grid or to another scan, find the facets and joint sets of a rock
 wall, and triangulate them into a surface — in plan, or as a 3D mesh of a cave or void. LAS and LAZ files import this way by default, so a survey of tens of millions of points
 opens without being thinned to a drawing-object limit.
+
+The cloud tools are on the cloud's right-click menu in the Data Explorer, and on the
+[Cloud toolbar](cloud-toolbar.md).
 
 ---
 
@@ -32,16 +35,16 @@ still defaults to **Surface (triangulated mesh)**, as it always has, so choose
 The full list of options is on [Surfaces and Point Clouds](../importing/surfaces-and-point-clouds.md#las-point-cloud).
 The ones that matter for a cloud:
 
-- **Max Points:** (LAS) keeps this many points, spread evenly over the file. **0** keeps as many
-  as the draw budget allows.
+- **Max Points:** (LAS) keeps this many points, spread evenly over the file, all in memory, so
+  edits are quick. **0** imports every point, however many there are — see
+  [Big clouds](#big-clouds).
 - **Tolerance (3D):** removes points closer than this, in 3D, to one already kept. **0** keeps
   every point.
 - **Keep GPS time** (LAS) stores each point's GPS time so you can colour by time later. It costs
   8 bytes a point and is greyed out when the file's point format has no GPS time.
 
 When the import finishes, Kirra says how many points it imported, and zooms to fit all your
-data. If the file held more points than the draw budget, the message says so and that the points
-were thinned evenly.
+data.
 
 The cloud is named after the file, starting **Cloud_** (for example `Cloud_pit_scan`), with
 `_2`, `_3` and so on added if the name is taken.
@@ -50,14 +53,29 @@ The cloud is named after the file, starting **Cloud_** (for example `Cloud_pit_s
 > to store it, Kirra says **Point Cloud Not Saved**: the cloud stays open for that session but
 > will not return after a reload.
 
-### The draw budget
+### Big clouds
 
-The most points Kirra reads and draws for one import is set on the **Performance** tab of
-**Settings**: **Max Point-Cloud Points**, 30,000,000 by default. It uses about 24 bytes of memory
-a point, so 30,000,000 points is roughly 720 MB. Lower it on a computer with little memory.
-See [Settings](../working-in-kirra/settings.md#performance-tab).
+Kirra stores **every** point of a cloud in the browser's own storage, in tiles. Only part of a
+big cloud is kept in memory at once, so a scan of 100 million points or more opens without
+running out of memory.
 
-A file with more points than the budget is thinned evenly across the whole file, not cut off.
+Two settings on the **Performance** tab of [Settings](../working-in-kirra/settings.md#performance-tab)
+control this:
+
+| Setting | Default | What it does |
+|---------|---------|--------------|
+| **Max Point-Cloud Points** | 30,000,000 | The most points of each cloud kept in memory to draw and edit. A bigger cloud keeps an even sample of its points in memory. About 24 bytes a point, so 30,000,000 points is roughly 720 MB. Lower it on a computer with little memory |
+| **Detail Points** | 10,000,000 | Extra points drawn as you zoom into a cloud bigger than **Max Point-Cloud Points**, over all clouds together. Display only. About 16 bytes a point. **0** turns the extra detail off |
+
+A cloud bigger than **Max Point-Cloud Points** still works with every tool:
+
+- **Remove duplicates**, **Smooth points** and **Compute roughness** run on every stored point,
+  not only the ones in memory.
+- **Delete**, **Crop** and **Split** use the shape you selected with — see
+  [Working with a selection](#working-with-a-selection).
+- A long run shows a progress bar with **Cancel**, and uses every core of your computer.
+
+The **Reloading Data** dialog at start-up says *Loading point clouds...* while big clouds come back.
 
 ---
 
@@ -83,8 +101,11 @@ Right-click a cloud row:
 | **Properties** | Opens [Cloud Properties](#cloud-properties) |
 | **Hide** / **Show** | Hides or shows the cloud |
 | **Delete** | Deletes the cloud. Kirra asks first: **Delete Point Cloud** — *Delete 1 point cloud(s)? This cannot be undone.* |
-| **Cloud Tools** ▸ **Stray or Sparse Points…** / **Categorise…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** | Opens [Cloud Properties](#cloud-properties) on its **Edit Tools** tab, set to that tool (shown when one cloud row is selected) |
+| **Cloud Tools** ▸ **Stray or Sparse Points…** / **Categorise…** / **Remove Duplicates…** / **Smooth Points…** / **Compute Roughness…** / **Ghosting…** | Opens [Cloud Properties](#cloud-properties) on its **Edit Tools** tab, set to that tool (shown when one cloud row is selected) |
 | **Cloud Tools** ▸ **Facets and Joint Sets…** | Opens [Facets and Joint Sets](facets-joint-sets.md) on this cloud |
+| **Cloud Tools** ▸ **Fragments…** | Opens [Fragments](fragments.md) on this cloud: the rocks in a muckpile scan and their size curve. Experimental |
+| **Cloud Tools** ▸ **Merge with…** | Merges other clouds into this one, or into a new cloud — see [Merging clouds](#merging-clouds) |
+| **Cloud Tools** ▸ **Send to Image…** | Makes an image of the cloud seen from above, in its current colours, that you can lay over other data with transparency |
 | **Clear Point Selection** | Clears the cloud's selected points (shown when the cloud has a selection) |
 | **Delete Selected Points** | Removes the selected points (shown when the cloud has a selection) |
 | **Crop to Selection** | Keeps only the selected points (shown when the cloud has a selection) |
@@ -115,7 +136,7 @@ Right-click a cloud in the Data Explorer and choose **Properties**, or choose on
 |-----|---------------|
 | [**Properties**](#properties-tab) | How the cloud looks: point size, colouring, limits and classes |
 | [**Statistics**](#statistics-tab) | Facts about the cloud, its LAS header, class and return counts, and a histogram you can select points from |
-| [**Edit Tools**](#edit-tools-tab) | Select points, remove duplicates, smooth points and compute roughness |
+| [**Edit Tools**](#edit-tools-tab) | Select points, categorise, remove duplicates, smooth points, compute roughness and fix ghosting |
 
 The footer has **OK**, **Cancel** and a third button that changes with the tab: none on
 **Properties**, **Clear Selection** on **Statistics**, and **Run** on **Edit Tools**. **Clear
@@ -279,6 +300,7 @@ the dialog stays open, so you can run another tool straight after. The line at t
 | [**Remove duplicates**](#remove-duplicates) | Adds a new cloud without the duplicate points |
 | [**Smooth points**](#smooth-points) | Adds a new, smoothed cloud |
 | [**Compute roughness**](#compute-roughness) | Measures how rough the cloud is at each point, and colours by it |
+| [**Ghosting**](#ghosting) | Finds a doubled sheet of points just off the surface, shows it, and moves it back onto the surface |
 
 A run that takes more than a moment shows its progress, with **Cancel**. The cloud you started from is
 never changed by **Remove duplicates** or **Smooth points**.
@@ -368,6 +390,48 @@ smooth face, larger on broken ground. It is saved with this cloud, and the cloud
 **Roughness** with **Min-Max (data)** limits. **Roughness** is then a choice in **Colour by** and
 in **Histogram of**. Points with too few neighbours within **Max distance** have no plane, and
 are drawn grey.
+
+#### Ghosting
+
+A drone or photogrammetry scan sometimes matches the same ground twice, leaving a second, faint
+sheet of points a few centimetres above or below the real surface. **Ghosting** finds that sheet
+and moves it onto the surface. Rocks and rubble are left alone.
+
+![The Ghosting tool on the Edit Tools tab of Cloud Properties, with Advanced settings ticked](../screenshots/CloudPropertiesGhosting.png)
+
+1. In **Tool**, choose **Ghosting**, or press **Ghosting…** on the [Cloud toolbar](cloud-toolbar.md).
+2. Leave **Action** on **Show ghosting** and press **Run**. Kirra selects the ghost points so you
+   can see them, and says, for example, *Found 120,000 ghost points, about 0.04 m from the main
+   surface.* Nothing has changed yet.
+3. If too little or too much is found, change **Strength** and run again.
+4. Choose **Fix ghosting** and press **Run**. Kirra asks *Move the ghost points of `<cloud>` onto
+   the main surface?* Press **Fix**.
+
+**Undo** (Ctrl+Z) puts the points back.
+
+| Field | Default | What it does |
+|-------|---------|--------------|
+| **Action** | Show ghosting | **Show ghosting** selects what it finds and changes nothing. **Fix ghosting** moves it onto the main surface |
+| **Strength** | Normal | **Gentle: clear ghosts only**, **Normal**, **Thorough: fainter ghosts too** or **Aggressive: thin, scattered ghosts**. Aggressive can also take some real texture, so check with **Show ghosting** first |
+| **Advanced settings** | Unticked | Tick it to set the search yourself. The fields below appear; leave one blank (it shows *auto*) to use the value Kirra works out from the points |
+
+With **Advanced settings** ticked:
+
+| Field | What it does |
+|-------|--------------|
+| **Keep** | Which layer is the real surface where two are found: **Layer with most points** (the default), **Upper layer** or **Lower layer** |
+| **Move by** | **Offset (keeps shape)** moves the ghost by its distance from the surface (the default). **Flatten onto surface** puts it at the surface's height. **Meet half way** moves both layers towards each other |
+| **Cell (m)** | Plan size of the cells the points are sorted into: about one or two point spacings. Keep it small on a slope |
+| **Gap (m)** | A height jump this big inside a cell starts a second layer |
+| **Min patch (m²)** | A ghost must cover at least this much ground in one piece. Rocks are smaller |
+| **Steady (m)** | Neighbouring cells join one patch only when their offsets agree this closely. A ghost keeps a steady offset; rocks do not |
+| **Max gap (m)** | A layer farther away than this is real structure, not a ghost |
+| **Min points** | A layer with fewer points than this in a cell is ignored |
+| **Bridge (m)** | Pieces of a ghost this close join into one patch |
+| **Smooth (cells)** | How many rings of cells the offset is averaged over, so a drifting ghost is followed |
+
+When nothing is found, Kirra says *No ghosting was found at this strength. Try Thorough or
+Aggressive.*
 
 ---
 
@@ -473,8 +537,16 @@ per surface (3D)** in [Settings > Performance](../working-in-kirra/settings.md#p
 points (a surface has about two triangles per point), spread evenly; the status bar says so when it
 thins. **Estimated points** in its dialog includes the cloud points.
 
-**Undo** (Ctrl+Z) reverses Delete, Crop and Split. A cloud larger than 256 MB cannot be undone;
-Kirra says so in the question before it changes anything.
+**On a [big cloud](#big-clouds)**, only a sample of the points is in memory, so Delete, Crop and
+Split use the **shape** you selected with: every stored point inside the polygon, rectangle or
+ellipse is deleted, kept or split off, not only the points you see. Select with
+[Polygon Select](#selecting-points) or [Select Points](#select-points) for this. A selection
+made another way, such as by **Show ghosting**, has no shape, and Kirra says so. The question says how many points are selected in memory, and a
+progress bar shows the work.
+
+**Undo** (Ctrl+Z) reverses Delete, Crop and Split, and **Redo** puts them back. On a big cloud each
+step takes a few seconds and shows the busy indicator. A cloud held fully in memory that is
+larger than 256 MB cannot be undone; Kirra says so in the question before it changes anything.
 
 ---
 
@@ -489,8 +561,8 @@ first (see [Selecting points](#selecting-points)), then:
 | [**Transform KAD**](../kad/transform.md) (Modify toolbar) | Moves, rotates and scales the selected points by exact amounts, about the centre of the selection. The dialog is titled, for example, **Transform: 1,240 point-cloud points** |
 | [**Mesh and Cloud Alignment**](mesh-cloud-alignment.md) (Surface toolbar) | Fits the move for you, from matching points, from the overlap with another scan, or from a scanner control file |
 
-Each move is one **Ctrl+Z** step for each cloud it changes (a cloud larger than 256 MB cannot be
-undone). Moving points removes the cloud's
+Each move is one **Ctrl+Z** step for each cloud it changes. While you transform a selection, the
+preview shows the points moving in 2D as well as 3D. Moving points removes the cloud's
 [facets and joint sets](facets-joint-sets.md).
 
 ---
@@ -503,9 +575,18 @@ undone). Moving points removes the cloud's
 Kirra makes a new cloud, **Merged cloud**, holding every point; the original clouds stay. The new
 cloud takes the first cloud's colouring and point size. If some clouds have no colour (or no GPS
 time, classification and so on), their points hold 0 there and the message says which — points
-with no colour show black until you colour the cloud another way. If the merged cloud would hold
-more points than the [draw budget](#the-draw-budget), Kirra asks to thin it evenly first.
+with no colour show black until you colour the cloud another way. When every cloud is fully in
+memory and the merged cloud would hold more than **Max Point-Cloud Points**, Kirra asks to thin it
+evenly first; a merge that includes a [big cloud](#big-clouds) keeps every point.
 **Undo** removes the merged cloud.
+
+**Merge with…** (on **Cloud Tools**, or **Merge Clouds** on the [Cloud toolbar](cloud-toolbar.md)
+with one cloud) starts from one cloud:
+
+1. Tick the clouds to merge in. Each row shows its number of points.
+2. In **Result**, choose **A new cloud**, or **Add into `<cloud>`** to add the points to this cloud,
+   keeping its name and look.
+3. Press **Merge**.
 
 ---
 
