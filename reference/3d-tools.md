@@ -129,18 +129,26 @@ Slice thickness and step are remembered between sessions.
   swaps which side is forward and which is behind.
 - **Rotation** tilts the slice away from vertical.
 - **Clip** chooses which categories the section applies to: Blasts, KAD, Surfaces,
-  Images and Blocks.
+  Images, Blocks and Clouds. A point the section hides is never snapped to.
 - **Reset** returns the settings to their defaults without closing the dialog.
+- The **View** panel's keys (**N**, **E**, **S**, **W**, **T**, **B**, **A**) turn the camera
+  to look from a side, from above or below, or square to the section, and its overview
+  shows the cut and the main view's limits. See
+  [Section Views — the View panel](section-views.md#look-at-the-section--the-view-panel).
 
-### Drawing on the section — Draw on plane
+### Drawing on the section — two draw switches
 
-A section is for **looking** until you ask otherwise: tools still work in plan. Tick
-**Draw on plane** to make the section the plane the tools work in — offset, extend, hole
-set-out, move, Design Plane tagging and triangulation. It needs **Enable Section Plane**
-and the 3D view, and ticking it also shows the plane.
+A section is for **looking** until you ask otherwise: tools still work in plan. Turn on
+**Draw on Section Plane** or **Draw anywhere visible** to make the section the plane the
+tools work in — offset, extend, hole set-out, move, Design Plane tagging, triangulation and
+electronic timing lines. Both need **Enable Section Plane** and the 3D view, and turning
+either on also shows the plane.
 
-While it is on, the dialog shows a *WORK PLANE ACTIVE* warning. Untick **Draw on plane**
-to work in plan again. It is never remembered between sessions, so a section opened later
+- **Draw on Section Plane** drops a snapped point square onto the plane.
+- **Draw anywhere visible** keeps a snapped point where it is, inside the slice.
+
+While one is on, the dialog shows a *WORK PLANE ACTIVE* warning. Click the lit switch to
+work in plan again. Neither is remembered between sessions, so a section opened later
 never changes how the tools behave on its own.
 
 **Show Section Plane** draws a grid on the section so you can see the plane. The grid

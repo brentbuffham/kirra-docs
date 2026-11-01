@@ -12,7 +12,8 @@ drive back and fanned up to a target surface (red).*
 **Kirra does not have a ring generator or a face (burn-cut) generator yet.** You set the holes out
 with the drawing and hole tools below, and edit them in **Edit Hole**. Sections are not saved
 either: Kirra remembers the thickness, step, rotation and clip settings, but not the section line,
-and **Draw on plane** is off at the start of every session.
+and both draw switches (**Draw on Section Plane** and **Draw anywhere visible**) are off at the
+start of every session.
 
 ---
 
@@ -27,19 +28,25 @@ and **Draw on plane** is off at the start of every session.
 
 ## 1. Take the section and work on it
 
-![The Section Plane dialog with Draw on plane ticked and the WORK PLANE ACTIVE warning](../screenshots/SectionPlaneWorkPlaneActive.png)
+![The Section Plane dialog with Draw on Section Plane lit and the WORK PLANE ACTIVE warning](../screenshots/SectionPlaneWorkPlaneActive.png)
+*The switches along the top are toggle icons: **Enable Section Plane**, **Draw on Section Plane**,
+**Draw anywhere visible** and **Show Section Plane**. Hover over one to read its name.*
 
 1. Click **Section Plane** on the **Select** toolbar.
-2. Tick **Enable Section Plane**.
+2. Click **Enable Section Plane**.
 3. Set **Plane** to **Two Points** and click two points **across** the drive where the face or the
    ring is to be. The view turns to look along the drive at the section. **Segment** does the same
-   from a line you have already drawn.
-4. Tick **Draw on plane**. The warning *WORK PLANE ACTIVE* appears across the top of the dialog:
-   from now on drawing, offset, extend, triangulation and hole set-out work in the section, not in
-   plan.
-5. Tick **Show Section Plane** for a grid on the section. The grid spacing is the
-   **Step Increment**.
-6. Set the slice. **Look Forward** and **See Behind** of **1** show just the face; **20** shows a
+   from a line you have already drawn. The **A** key in the **View** panel turns back to this view
+   at any time.
+4. Click **Draw on Section Plane**. The warning *WORK PLANE ACTIVE* appears across the top of the
+   dialog: from now on drawing, offset, extend, triangulation, hole set-out and timing lines work in
+   the section, not in plan. **Show Section Plane** comes on with it, for a grid on the section; the
+   grid spacing is the **Step Increment**.
+   - **Draw on Section Plane** drops every snapped point flat onto the section — use it for the
+     face profile and the rows on it.
+   - **Draw anywhere visible** keeps a snapped point where it is in the slice — use it to draw
+     through points that sit in front of or behind the section.
+5. Set the slice. **Look Forward** and **See Behind** of **1** show just the face; **20** shows a
    whole ring fan, as in [step 4](#4-design-an-uphole-ring).
 
 ![Looking along the drive at a face round, with the Section Plane dialog set to Two Points and Draw on plane](../screenshots/UndergroundDriveFaceSection.png)
@@ -54,7 +61,7 @@ To move to the next face or ring, step the section with the double-chevron butto
 
 ## 2. Draw the drive profile on the section
 
-With **Draw on plane** ticked, KAD points, lines and polygons land on the section instead of in
+With a draw switch on, KAD points, lines and polygons land on the section instead of in
 plan — see [Drawing Tools](../kad/drawing-tools.md).
 
 - **Profile.** Draw the drive outline as a KAD polygon or line on the section.
@@ -115,8 +122,29 @@ in place of the plan ones.
 **Add Hole**, **Add Pattern**, **Pattern in Polygon** and **Holes Along Line** also click on the
 section, but they drill by plan angle and bearing. To turn holes made with them into face holes,
 select them, open **Edit Hole**, and on the **Additional** tab set **Design Plane** to
-**Non X-Y hole — active section plane**. It needs **Draw on plane** ticked.
+**Non X-Y hole — active section plane**. It needs a draw switch on.
 [Insert Holes](../blast-design/insert-holes.md) continues a row of face holes in their Design Plane.
+
+### Time the face
+
+Electronic timing lines can be drawn on the face too, so each row fires by its height on the
+face — the lifters first and the back holes above them later, not all together as they would in
+plan.
+
+![A Time Range construct drawn on the drive face, with timing contours from the cut to the perimeter](../screenshots/ElectronicTimingOnDriveFace.png)
+*A **Time Range** construct on the face: **Time Line 1** round the cut, **Time Line 2** round the
+perimeter.*
+
+1. With the section and a draw switch on as in step 1, open **Electronic Timing** and make a new
+   timing construct.
+2. Click **Time Line** (or **Time Line 1** for a **Time Range**), click **Understood** on the
+   **Drawing in 3D** warning, and click the line on the face. Double-click or press **Enter** to
+   finish.
+3. Assign the face holes and apply the timing.
+
+The construct keeps that face's plane after you move or close the section. On a face, an arrow's
+**Direction (°)** of **0** points up the face. Full details:
+[Timing an underground face](../blast-design/electronic-timing-constructs.md#timing-an-underground-face).
 
 ---
 
@@ -224,6 +252,8 @@ per-hole powder factors are estimates.
 | **Collar Elevation (m)** in Holes Along Polyline does nothing on a section | Ignore it — the collars sit on the line you picked |
 | On the **Additional** tab of **Edit Hole**, the **Design Plane (now Non X-Y)** label runs into its list | The list still works |
 | The section line is not saved | Take the section again each session — **Two Points** across the drive at the same place |
+| The two **Slice** boxes can read **+Offset** and **-Offset** when the Section Plane dialog opens on a line section | They are **Look Forward** and **See Behind** |
+| A timing construct on a face is still read in plan by the firing group's **Temporal Mesh**, the neighbouring-holes check and the timing DXF export | Check face timing on the face construct itself |
 | No export for underground drill rigs yet | See below |
 
 ### Exporting to an underground drill rig
@@ -242,3 +272,4 @@ check against, and none has been provided so far. If you have one you can share,
 - [Editing Holes](../blast-design/editing-holes.md)
 - [Offset](../kad/offset.md) and [Triangulate](../surfaces/triangulate.md) on a section
 - [Deck Builder](../charging/deck-builder.md)
+- [Electronic Timing Constructs](../blast-design/electronic-timing-constructs.md#timing-an-underground-face) — timing lines on a face

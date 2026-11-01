@@ -6,7 +6,7 @@ inside a hole. Kirra has three section views, each for a different job.
 
 | Section view | Where | Use it to |
 |---|---|---|
-| [**Section Plane**](#section-plane) | **Select** toolbar | Slice the whole 3D scene — holes, drawings, surfaces, images and block models — and step the slice through the pattern |
+| [**Section Plane**](#section-plane) | **Select** toolbar | Slice the whole 3D scene — holes, drawings, surfaces, images, block models and point clouds — and step the slice through the pattern |
 | [**Hole Section View**](#hole-section-view) | **Analyse** toolbar → **Hole Section Tool** | Check one hole's burden to the face, and adjust the hole while you watch |
 | [**Deck Builder section**](#deck-builder-section) | Charging → **Deck Builder** | See and edit the decks inside a hole, collar to toe |
 
@@ -21,10 +21,31 @@ pattern.
 ![A Two Points section through the front rows of a blast and the pre-blast face](../screenshots/SectionViewTool.png)
 *A Two Points section across the front of a blast: the face profile, the angled front-row holes and the vertical holes behind them. The grid is **Show Section Plane**.*
 
+### The dialog
+
+![The Section Plane dialog: switches, Plane, Position, Slice and Clip on the left, the View panel with the view keys and overview on the right](../screenshots/SectionPlaneWorkPlaneActive.png)
+*A Two Points section across a drive face, with **Enable Section Plane**, **Draw on Section Plane** and **Show Section Plane** lit and the *WORK PLANE ACTIVE* warning across the top.*
+
+The dialog has two panels. The left panel holds the section: the switches, **Plane**,
+**Position**, **Slice** and **Clip**. The right panel is **View**: the view keys and the
+overview. The button at the right end of the switch row shows or hides the **View** panel,
+and Kirra remembers which you chose. Drag the dialog's corner to make it larger, and the
+overview grows with it.
+
+The switches along the top are toggle icons, lit while they are on. Hover over one to read
+its name.
+
+| Switch | What it does |
+|---|---|
+| **Enable Section Plane** | Cuts the 3D view at the plane. Switches to the 3D view. |
+| **Draw on Section Plane** | Tools draw on the section, and every point lands exactly on the plane — see [Draw on the section](#draw-on-the-section). |
+| **Draw anywhere visible** | Tools draw on the section, and a snapped point keeps its true position inside the slice. |
+| **Show Section Plane** | Draws a grid on the section. The grid spacing is the **Step Increment**. |
+
 ### Take a section
 
 1. Click **Section Plane** on the **Select** toolbar.
-2. Tick **Enable Section Plane**. The view switches to 3D — a section is a 3D view.
+2. Click **Enable Section Plane**. The view switches to 3D — a section is a 3D view.
 3. Choose the **Plane**:
 
    | Plane | The slice |
@@ -39,18 +60,26 @@ pattern.
    a line you have drawn. Press **Esc** or right-click to cancel a pick.
 
 The view turns to look along the section. The direction you clicked or drew the line in
-sets which way the view faces; the reverse button beside the **Plane** list looks the
-other way.
+sets which way the view faces. The two buttons at the end of the **Plane** row pick the
+line again and look the other way along it.
 
 ### Set the thickness and step through
 
-- **Look Forward** and **See Behind** set how far either side of the section line stays
-  visible. Both default to **1**, a 2 m slice. For the **XY**, **YZ** and **XZ** planes the
-  same two boxes are labelled by axis, for example **+Y** and **-Y**.
 - **Position** moves the slice off the section line; **0** sits on it.
-- **Step Increment** is how far each step moves. Step with the double-chevron buttons either side
-  of **Position**, or **Page Up** / **Page Down**. Hold **Shift** to land on exact multiples of the step.
-- **Rotation** tilts the slice away from vertical.
+- **Step Increment** is how far each step moves. Step the slice with the double-chevron
+  buttons either side of **Position**, or **Page Up** / **Page Down**. Hold **Shift** to land
+  on exact multiples of the step. The double-chevron buttons beside **Step Increment** itself
+  move it up and down a 1-2-5 ladder, from 0.01 to 100.
+- **Look Forward** and **See Behind**, under **Slice**, set how far either side of the plane
+  stays visible. Both default to **1**, a 2 m slice. They read the same for every plane:
+  **Look Forward** is the way the **A** view key looks, so for **XY (Elevation)** it is
+  downward. Their double-chevron buttons change them by one step and never go below 0.
+- **Rotation** tilts the slice away from vertical. Its double-chevron buttons turn it 1° at
+  a time.
+
+> When the dialog first opens on a **Two Points** or **Segment** section, the two **Slice**
+> boxes can read **+Offset** and **-Offset** instead of **Look Forward** and **See Behind**.
+> They are the same two boxes.
 
 ### Choose what is cut
 
@@ -58,25 +87,55 @@ other way.
 **Surfaces**, **Images**, **Blocks** (block models) and **Clouds** ([point clouds](../surfaces/point-clouds.md)). Untick one to keep it whole while
 the rest is sliced — for example, keep the topography whole while slicing the holes.
 
+Snapping follows the clip: a point the section has hidden is never snapped to, so
+**Measure** and the drawing tools only pick up what you can see.
+
 ### Draw on the section
 
-By default a section is for **looking**: tools still work in plan. Tick **Draw on plane**
-to make the section the plane the tools work in — offset, extend, hole set-out, move,
-Design Plane tagging and triangulation. It needs **Enable Section Plane** and the 3D view.
+By default a section is for **looking**: tools still work in plan. Turn on one of the two
+draw switches to make the section the plane the tools work in — offset, extend, hole
+set-out, move, Design Plane tagging, triangulation and
+[electronic timing lines](../blast-design/electronic-timing-constructs.md#timing-an-underground-face).
+Both need **Enable Section Plane** and the 3D view. They differ only in where a **snapped**
+point lands:
 
-While it is on, a warning across the top of the dialog reads *WORK PLANE ACTIVE*. Untick
-**Draw on plane** to go back to working in plan. It is never remembered between sessions.
+| Switch | A snapped point |
+|---|---|
+| **Draw on Section Plane** | Is dropped square onto the plane, so everything you draw is flat on the section |
+| **Draw anywhere visible** | Keeps its true position, anywhere inside the slice (**Look Forward** / **See Behind**) |
 
-**Show Section Plane** draws a grid on the section so you can see the plane you are
-looking at. The grid spacing is the **Step Increment**.
+Only one can be on at a time: clicking the other switches to it, and clicking the lit one
+turns drawing off. Turning either on also turns on **Show Section Plane**, so you can see
+the plane you are drawing on; turn the grid off again if it is in the way.
+
+While a draw switch is on, a warning across the top of the dialog reads *WORK PLANE
+ACTIVE*. Neither is remembered between sessions.
 
 This is how underground design works in Kirra — see
 [Design Underground Rings and Drives on a Section Plane](../tasks/underground-design.md).
 
+### Look at the section — the View panel
+
+The view keys turn the camera only; the section does not move.
+
+| Key | The view |
+|---|---|
+| **N** / **E** / **S** / **W** | From that side, looking across — **N** stands at the north and looks south |
+| **T** | From the top, looking down (plan) |
+| **B** | From the bottom, looking up |
+| **A** | Square to the active section. It needs **Enable Section Plane**, and for **Two Points** or **Segment** a picked line |
+
+The letters follow the language Kirra is set to.
+
+Below the keys, the **overview** shows the whole scene, uncut. The red outlines are where
+the section cuts through the data, and the blue dashed rectangle with its arrow is what the
+main 3D view is showing. Drag the overview to turn it, use the wheel to zoom, and click
+**R** or double-click to reset it. The overview never moves the main view.
+
 ### Finish
 
-**Close** leaves the dialog; the section stays on while **Enable Section Plane** is
-ticked. **Reset** returns the settings to their defaults.
+**Close** leaves the dialog; the section stays on while **Enable Section Plane** is lit.
+**Reset** returns the slice, tilt and clip settings to their defaults.
 
 Full reference: [3D View — Section Plane](3d-tools.md#section-plane).
 

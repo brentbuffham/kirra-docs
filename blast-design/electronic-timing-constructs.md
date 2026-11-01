@@ -1,6 +1,6 @@
 # Electronic Timing Constructs
 
-**Electronic Timing** builds a **temporal mesh**: a triangulated surface in plan view where **Z represents firing time in milliseconds**, not ground elevation. You draw one or two **timing contours** (polylines or sampled Bézier curves), set timing parameters, then assign **electronic detonators** in the charging design so their fire times follow that surface.
+**Electronic Timing** builds a **temporal mesh**: a triangulated surface in plan view (or [on an underground face](#timing-an-underground-face)) where **Z represents firing time in milliseconds**, not ground elevation. You draw one or two **timing contours** (polylines or sampled Bézier curves), set timing parameters, then assign **electronic detonators** in the charging design so their fire times follow that surface.
 
 This workflow is separate from **connector timing** (each hole's **From Hole** and **Delay**, shown as tie arrows between collars). Electronic timing writes **primer detonator** fields for initiators marked **Electronic** in the charge design.
 
@@ -39,7 +39,7 @@ This workflow is separate from **connector timing** (each hole's **From Hole** a
 1. **Charge the holes** with at least one **Electronic** detonator on primers that should follow the mesh.
 2. **Create a timing construct** and draw geometry (see below).
 3. **Assign holes** to the construct (only assigned holes are considered when applying times).
-4. Use **Apply & Keep Offsets** or **Apply & Reset Offsets** to re-sample times from the temporal surface at each assigned hole’s **collar XY** and write electronic detonator fields (including a link back to the construct id). See **Apply timing and offsets** below.
+4. Use **Apply & Keep Offsets** or **Apply & Reset Offsets** to re-sample times from the temporal surface at each assigned hole’s **collar XY** (on a face, the collar’s position on the face) and write electronic detonator fields (including a link back to the construct id). See **Apply timing and offsets** below.
 
 Connector-based hole-to-hole delays and electronic mesh times can coexist in one project; they address different initiation models.
 
@@ -121,11 +121,16 @@ With the **Electronic Timing** dialog open (and the draw tool idle), **hover and
 
 ### Drawing
 
-- **Relief:** **Draw Polyline** — Click vertices on the 2D canvas or 3D view; **double-click** or **Enter** finishes (minimum two points). **Escape** cancels.
-- **Range:** **Draw Line 1** / **Draw Line 2** — Same interaction; the mesh regenerates after **both** lines are complete.
-- **Clear** — Removes the relief polyline **or** both range lines, depending on mode.
+- **Relief:** **Time Line** — Click vertices on the 2D canvas or 3D view; **double-click** or **Enter** finishes (minimum two points). **Escape** cancels.
+- **Range:** **Time Line 1** / **Time Line 2** — Same interaction; the mesh regenerates after **both** lines are complete.
+- **Clear** — The trash button beside each **Time Line** button clears that line.
 
 While drawing, canvas panning is suspended.
+
+Starting a line in the 3D view first shows a **Drawing in 3D** warning: the 3D cursor cannot
+always tell how deep you are pointing. Click **Understood** to draw. On a bench, draw in 2D and
+check in 3D. On an underground face you draw in 3D on the section — see
+[Timing an underground face](#timing-an-underground-face).
 
 ### Segments (Relief / sampled Bézier)
 
@@ -152,6 +157,55 @@ Colour stops define how **time** maps to colours on the canvas for construct vis
 
 - **Regenerate** — Re-runs surface generation from current geometry (useful after manual fixes or parameter tweaks).
 - Status text shows triangle and vertex counts when a surface exists.
+
+---
+
+## Timing an underground face
+
+On a bench, a timing construct works in plan: each hole reads its time at its collar's X and Y.
+On a vertical face that fails — a lifter and the back hole straight above it share the same X
+and Y, so they would read the same time. Draw the construct **on the face** instead, and it
+works in the face: each hole reads its time where its collar sits on the face, so a row higher
+up fires later, by the relief times the distance up.
+
+![A Time Range construct drawn on a drive face, with timing contours spreading from the cut to the perimeter](../screenshots/ElectronicTimingOnDriveFace.png)
+*A **Time Range** construct drawn on a drive face, looking along the drive: **Time Line 1** round
+the cut in the middle, **Time Line 2** round the perimeter, and the timing contours between them.*
+
+### Draw a construct on the face
+
+1. Take a section across the drive at the face, and turn on **Draw on Section Plane** (or
+   **Draw anywhere visible**) — see
+   [Design Underground Rings and Drives](../tasks/underground-design.md#1-take-the-section-and-work-on-it).
+2. Open **Electronic Timing** and make a new timing construct.
+3. Choose **Timing Relief** or **Time Range**, then click **Time Line** (or **Time Line 1**).
+   Click **Understood** on the **Drawing in 3D** warning.
+4. Click the points of the line on the face, and double-click or press **Enter** to finish.
+   Clicks snap to holes and points first; elsewhere they land on the section.
+5. Assign the face holes and apply the timing as usual.
+
+The construct takes the section's plane at the moment you start drawing, and keeps it — it
+stays on that face when you move the section, close the dialog or reload. In **Time Range**,
+**Time Line 2** goes on the same face as **Time Line 1**. A construct drawn with no draw switch
+on is an ordinary plan construct, exactly as before.
+
+### On the face
+
+| | A construct on a face |
+|---|---|
+| **Holes** | Read their time at the collar, measured on the face. A collar set back into the rock reads the same time as the point on the face straight in front of it. |
+| **Direction (°)** | Measured on the face: **0** points straight up the face, and angles run clockwise as you look at the face. **Flip** still adds 180°. |
+| **Surface** | The timing surface stands in the face. Time lifts it off the face toward you, the way it lifts a bench surface upward. |
+| **Editing** | Drag knots and handles in the 3D view; they slide across the face. In 2D they cannot be dragged. |
+| **2D view** | The lines and arrows show as seen from above — usually a thin line along the face — and the surface is not drawn. |
+
+### Not on the face yet
+
+These still work in plan for a construct on a face:
+
+- The **Temporal Mesh** of the whole firing group.
+- The check for neighbouring holes firing together.
+- Exporting the timing surface to DXF.
 
 ---
 
