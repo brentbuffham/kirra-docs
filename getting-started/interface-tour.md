@@ -247,21 +247,22 @@ See [Print to PDF](../printing/pdf-print.md) and [Print from Template (XLSX)](..
 
 ## Floating Toolbars
 
-Kirra has eight floating toolbars. Drag a toolbar by its title bar to move it. The **−** button in a toolbar's header docks it as a vertical tab on the right edge of the viewport; click the tab to bring the toolbar back. **Toggle Toolbars** in the top bar fans them all out or docks them all at once.
+Kirra has nine floating toolbars. Their default places form one row along the top of the view, starting just right of the legend so they never cover it; a narrow window wraps the rest onto a second row. Drag a toolbar by its title bar to move it. The **−** button in a toolbar’s header docks it as a vertical tab on the right edge of the viewport; click the tab to bring the toolbar back. **Toggle Toolbars** in the top bar fans them all out or docks them all at once.
 
 ![Floating toolbars](../screenshots/toolbarsfloating.png)
-*Seven of the eight floating toolbars. The Connect toolbar is docked here, as a tab on the right edge of the viewport.*
+*An earlier layout, before the Cloud toolbar and the default row. The Connect toolbar is docked here, as a tab on the right edge of the viewport.*
 
 | Toolbar | Purpose |
 |---------|---------|
-| **Select** | [Undo / redo, pointer and shape selection, H / K / V mode, ruler, protractor, zoom, reset view, section plane, find, orbit focus, Settings](../reference/select-toolbar.md) |
+| **Select** | [Undo / redo, pointer and shape selection, H / K / V mode, ruler, protractor, zoom, reset view, section plane, View strip, orbit focus, find, Settings](../reference/select-toolbar.md) |
 | **Holes** | [Place holes and patterns, pattern templates, renumber, reorder rows, insert holes, coincident holes check, charging](../blast-design/holes-toolbar.md) |
-| **Surface** | [Triangulate, surface intersection, Solid Boolean, Trimesh Boolean, extrude, contour, clean mesh, clip, horizon slice](../surfaces/surfaces-toolbar.md) |
-| **Workspace** | [Switch between ten separate workspaces, or clear one](#workspace-toolbar) |
-| **Analyse** | [Flyrock shroud, blast analysis shader, Voronoi options, monitor points, site law regression, hole section, compare surfaces, blast animation, time window, block models, blast quality](../analysis/analyse-toolbar.md) |
+| **Connect** | [Temporal mesh, tie connect tools, trunk branch, connector removal, electronic timing, harness wire, bake delay](../blast-design/connect-toolbar.md) |
 | **KAD** | [Drawing elevation / colour / size, points, lines, polygons, text, circles, roads and ramps](../kad/kad-toolbar.md) |
 | **Modify** | [Assign surface / grade, hole bearing, move, transform, offset, radii, boolean, join, split, extend, grade line, simplify, snap to surface](../kad/modify-tools.md) |
-| **Connect** | [Temporal mesh, tie connect tools, trunk branch, connector removal, electronic timing, harness wire, bake delay](../blast-design/connect-toolbar.md) |
+| **Surface** | [Triangulate, surface intersection, Solid Boolean, Trimesh Boolean, extrude, contour, clip, horizon slice, clean mesh, edit mesh, void mesh](../surfaces/surfaces-toolbar.md) |
+| **Analyse** | [Flyrock shroud, blast analysis shader, Voronoi options, monitor points, site law regression, hole section, compare surfaces, blast animation, time window, block models, blast quality](../analysis/analyse-toolbar.md) |
+| **Cloud** | [Point-cloud tools: stray points, categorise, duplicates, smooth, roughness, ghosting, crop, split, to KAD, merge, alignment, facets, fragments](../surfaces/cloud-toolbar.md) |
+| **Workspace** | [Switch between ten separate workspaces, or clear one](#workspace-toolbar) |
 
 ---
 

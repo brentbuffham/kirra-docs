@@ -1,15 +1,15 @@
 # Select Toolbar
 
-The Select toolbar groups the workspace-wide tools for selecting entities, measuring distances and angles, controlling the view, and setting the selection mode. It is one of the eight floating toolbars in the Kirra workspace.
+The Select toolbar groups the workspace-wide tools for selecting entities, measuring distances and angles, controlling the view, and setting the selection mode. It is one of the nine floating toolbars in the Kirra workspace.
 
-Despite the name, this toolbar is not only about selection — undo/redo, zoom, reset view, section plane, orbit focus, and the Settings dialog all live here because they apply across every other tool.
+Despite the name, this toolbar is not only about selection — undo/redo, zoom, reset view, section plane, the View strip, orbit focus, and the Settings dialog all live here because they apply across every other tool.
 
 ---
 
 ## Toolbar Overview
 
 ![Labelled Select toolbar](../screenshots/LabledSelectToolbar.png)
-*The Select toolbar with its controls labelled.*
+*The Select toolbar with its controls labelled. An earlier picture: it does not yet show the **View** button, which sits after **Section Plane**.*
 
 The Select toolbar contains the following controls:
 
@@ -26,8 +26,9 @@ The Select toolbar contains the following controls:
 | **Zoom Out** | View | Zoom the viewport out by one step |
 | **Reset View** | View | Reset the camera — click repeatedly to step through three modes |
 | **Section Plane** | View | Slice the scene with a section plane |
-| **Find Select Zoom** | Dialog | Search holes / KAD by criteria (colour, shape, ID, type, length, bearing, mass, delay…), combine criteria, then zoom to the result |
+| **View** | View | Open the [View strip](#view-strip) — one row of keys that turn the camera to look from the north, east, south, west, top or bottom, or square-on to the section, plus Reset View |
 | **Orbit Focus** | View | Click a point in the 3D scene to set it as the new orbit centre |
+| **Find Select Zoom** | Dialog | Search holes / KAD by criteria (colour, shape, ID, type, length, bearing, mass, delay…), combine criteria, then zoom to the result |
 | **3D Settings** | Dialog | Open the **Settings** dialog — 2D view sizes and snap tolerance, 3D camera and lighting, and performance limits |
 
 ---
@@ -208,6 +209,44 @@ Slices the scene with a section plane so you can see inside surfaces or cut thro
 
 See [3D View — Section Plane](3d-tools.md#section-plane) for every option, and
 [Section Views](section-views.md) for how it compares with the Hole Section View.
+
+---
+
+## View Strip
+
+The **View** button opens a small one-row dialog, **View**, holding the camera keys. They
+are the same keys as the view bar in the Section Plane dialog, plus **R** for Reset View,
+so you can turn the camera without opening the Section Plane dialog.
+
+| Key | Turns the camera to |
+|-----|---------------------|
+| **N** | View from the north, looking south |
+| **E** | View from the east, looking west |
+| **S** | View from the south, looking north |
+| **W** | View from the west, looking east |
+| **T** | View from the top, looking down (plan) |
+| **B** | View from the bottom, looking up |
+| **A** | Look square at the active section |
+| **R** | Reset View — the same as the Select toolbar's **Reset View** button |
+
+- **N**, **E**, **S**, **W**, **T**, **B** and **A** switch to the 3D view if you are in 2D.
+  They keep the current zoom and the centre of the view.
+- **A** needs a section. With the section plane off, the strip says
+  *Enable the section plane first.* under the keys and the camera does not move. A section along a line you have not picked yet says
+  *Pick the section line first.*
+- **R** steps through the same three modes as [Reset View](#reset-view-three-modes):
+  click once for plan view (or north up in 2D), twice for the visible data, three times
+  for all data. The button and **R** share one count, so a click on either moves to the
+  next mode.
+
+### How to Use
+
+1. Click the **View** button on the Select toolbar
+2. Click a letter key to turn the camera
+3. Click **View** again, or the **×** in the strip's title bar, to close it
+
+The strip can be docked: click **Dock to edge** in its title bar, or **Open in new window**
+to pop it out.
 
 ---
 

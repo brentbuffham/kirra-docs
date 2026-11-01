@@ -4,9 +4,13 @@ The **Surface** toolbar builds, cuts, combines and repairs triangulated surfaces
 Open it from its tab on the right edge of the window.
 
 ![Labelled Surface toolbar: surface tools on top, the repair row, then the point-cloud tools](../screenshots/SurfacesToolbar.png)
+*An earlier picture: the three point-cloud tools at the bottom have since moved to the Cloud toolbar, leaving Void Mesh.*
 
 The buttons sit in three groups: the surface tools, then — below the first divider — the two
-repair tools, then — below the second — the point-cloud tools.
+repair tools, then — below the second — **Void Mesh**.
+
+> **Moved:** **Mesh and Cloud Alignment**, **Facets and Joint Sets** and **Fragments** are
+> point-cloud tools, and now sit on the [Cloud toolbar](cloud-toolbar.md).
 
 ---
 
@@ -30,15 +34,16 @@ repair tools, then — below the second — the point-cloud tools.
 | **Clean Mesh** | Finds and repairs mesh faults across a whole surface | Right-click a surface → **Clean** | [Clean Mesh](clean-mesh.md) |
 | **Edit and Repair Mesh** | Opens Edit Mesh: edit triangles by hand, and find and patch open loops | **Edit Mesh** in Clean Mesh | [Mesh Editing](mesh-editing.md) |
 
-### Point-cloud tools
+### Void Mesh
 
-Below the second divider are the tools that work on [point clouds](point-clouds.md):
+Below the second divider:
 
 | Control | What it does | Other ways to use it | Guide |
 |---|---|---|---|
-| **Mesh and Cloud Alignment** | Moves a scan or mesh onto the grid, or onto another scan or mesh | **Pick ICP**, **Manual** and **Scanner Controls** tabs | [Mesh and Cloud Alignment](mesh-cloud-alignment.md) |
-| **Facets and Joint Sets** | Finds the flat facets of a rock wall in a cloud and groups them into joint sets, on a stereonet | Cloud's right-click menu → **Cloud Tools** ▸ **Facets and Joint Sets…** | [Facets and Joint Sets](facets-joint-sets.md) |
 | **Void Mesh** | Opens Triangulate with its **3D mesh (caves, voids)** method chosen | **Triangulate** → **Method** | [3D Triangulate](triangulate-3d.md) |
+
+The other point-cloud tools — **Mesh and Cloud Alignment**, **Facets and Joint Sets** and
+**Fragments** — are on the [Cloud toolbar](cloud-toolbar.md).
 
 Not sure which boolean to use? See [Which Boolean?](boolean-csg.md)
 
@@ -62,6 +67,9 @@ and [Surface Gradients](gradients.md).
 |---|---|---|
 | **Compare Surfaces** — colour a survey by its distance from the design | Analyse | [Compare Surfaces](compare-surfaces.md) |
 | **KAD Boolean** — booleans on polygons | Modify | [KAD Boolean](../kad/boolean.md) |
+| **Mesh and Cloud Alignment** — move a scan or mesh onto the grid, or onto another | Cloud | [Mesh and Cloud Alignment](mesh-cloud-alignment.md) |
+| **Facets and Joint Sets** — rock-wall facets grouped into joint sets | Cloud | [Facets and Joint Sets](facets-joint-sets.md) |
+| **Fragments** — rock sizes from a point cloud | Cloud | [Cloud Toolbar](cloud-toolbar.md) |
 
 ---
 
@@ -71,3 +79,4 @@ and [Surface Gradients](gradients.md).
 - [Surface Gradients](gradients.md)
 - [Mesh Editing](mesh-editing.md)
 - [Point Clouds](point-clouds.md)
+- [Cloud Toolbar](cloud-toolbar.md)

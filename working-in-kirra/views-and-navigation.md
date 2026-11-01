@@ -57,8 +57,13 @@ data can look tiny — hide the other data, or zoom in.
 
 ## Arrange the toolbars
 
-Kirra's tools sit on eight floating toolbars — Select, Holes, Surface, Workspace, Analyse,
-KAD, Modify and Connect.
+Kirra's tools sit on nine floating toolbars. Their default places form one row along the
+top of the view, starting just right of the legend so they never cover it, in this order:
+
+**Select**, **Holes**, **Connect**, **KAD**, **Modify**, **Surface**, **Analyse**, **Cloud**,
+**Workspace**
+
+If the window is too narrow for one row, the rest wrap onto a second row below.
 
 | Do this | Result |
 |---------|--------|
