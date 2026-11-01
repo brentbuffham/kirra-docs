@@ -9,7 +9,7 @@ Despite the name, this toolbar is not only about selection — undo/redo, zoom, 
 ## Toolbar Overview
 
 ![Labelled Select toolbar](../screenshots/LabledSelectToolbar.png)
-*The Select toolbar with its controls labelled. An earlier picture: it does not yet show the **View** button, which sits after **Section Plane**.*
+*The Select toolbar with its controls labelled.*
 
 The Select toolbar contains the following controls:
 
@@ -217,6 +217,8 @@ See [3D View — Section Plane](3d-tools.md#section-plane) for every option, and
 The **View** button opens a small one-row dialog, **View**, holding the camera keys. They
 are the same keys as the view bar in the Section Plane dialog, plus **R** for Reset View,
 so you can turn the camera without opening the Section Plane dialog.
+
+![The View strip: the N, E, S, W, T, B, A and R keys in one row](../screenshots/ViewStrip.png)
 
 | Key | Turns the camera to |
 |-----|---------------------|

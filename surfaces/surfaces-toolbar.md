@@ -3,8 +3,7 @@
 The **Surface** toolbar builds, cuts, combines and repairs triangulated surfaces and solids.
 Open it from its tab on the right edge of the window.
 
-![Labelled Surface toolbar: surface tools on top, the repair row, then the point-cloud tools](../screenshots/SurfacesToolbar.png)
-*An earlier picture: the three point-cloud tools at the bottom have since moved to the Cloud toolbar, leaving Void Mesh.*
+![Labelled Surface toolbar: surface tools on top, the repair row, then Void Mesh](../screenshots/SurfacesToolbar.png)
 
 The buttons sit in three groups: the surface tools, then — below the first divider — the two
 repair tools, then — below the second — **Void Mesh**.
