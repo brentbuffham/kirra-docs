@@ -2,6 +2,36 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.176
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Path Assignment no longer stays on after switching tools
+- Path labels show in 3D as soon as they are switched on
+
+## Release v1.1.35.175
+
+_2026-11-01_
+
+**Feature**
+
+- Trunk and branch tie-ups can be drawn on an underground face
+- Holes re-attached to a trunk stay on the chosen segment
+
+**Bug Fix**
+
+- Path Assignment now selects holes and trunks in 3D
+
+## Release v1.1.35.174
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Selected holes no longer show huge rings in the Section Plane overview
+
 ## Release v1.1.35.172
 
 _2026-11-01_
