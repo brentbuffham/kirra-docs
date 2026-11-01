@@ -1,5 +1,8 @@
 # Facets and Joint Sets
 
+> **Experimental.** Facets and Joint Sets is new and its settings and results may change between versions.
+> Check a run against a compass-clinometer reading of a few planes before you rely on it.
+
 Finds the flat faces — **facets** — in a [point cloud](point-clouds.md) of a rock wall or face,
 measures the dip and dip direction of each, and groups them into **joint sets**. The results show
 on a stereonet and in a table, colour the cloud, and can be drawn as KAD polygons or exported as
