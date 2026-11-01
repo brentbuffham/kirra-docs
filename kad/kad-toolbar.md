@@ -16,7 +16,7 @@ Open it from its tab on the right edge of the window.
 | **Elevation Z** | Height of new points when nothing is snapped | Remembered in this browser | [Drawing Basics](drawing-basics.md#the-drawing-settings) |
 | **KAD Color** | Colour of new drawings | Change it mid-drawing | [Drawing Basics](drawing-basics.md#the-drawing-settings) |
 | **Point and Line Size** | Line width and point size | | [Drawing Basics](drawing-basics.md#the-drawing-settings) |
-| **Add KAD Point** | Places a set of points | **Right-click** for placement modes, including Trace | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
+| **Add KAD Points** | Places a set of points | **Right-click** for placement modes, including Trace | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
 | **Add KAD Line** | Draws an open line | **Right-click** for placement modes, including Trace | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
 | **Add KAD Polygon** | Draws a closed polygon | **Right-click** for placement modes, including Trace | [Points, Lines, Polygons and Circles](points-lines-polygons.md) |
 | **Add KAD Text** | Places text, including `fx:` formulas | Formula Builder; Format tab | [KAD Text](text.md) |

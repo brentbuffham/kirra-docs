@@ -15,6 +15,7 @@ surfaces from Vulcan and Datamine.
 | [**LAS Point Cloud**](#las-point-cloud) | `.las` / `.laz` | A [point cloud](../surfaces/point-clouds.md), KAD points by classification, or a surface |
 | [**Vulcan .00t Triangulation**](#vulcan-00t-triangulation) | `.00t` | A surface |
 | [**Datamine Surface**](#datamine-surface) | `.dm` (pt + tr) | A surface |
+| [**MineSight .msr**](#minesight-msr) | `.msr` | A surface for each shell |
 
 Surpac `.dtm` / `.str` and DXF `3DFACE` surfaces are on the **Drawings / CAD** tab — see
 [Surpac DTM / STR](surpac-dtm-str.md) and [DXF Import](dxf.md).
@@ -176,6 +177,21 @@ files. Kirra tells the two apart by their content, not their names.
 
 When you drop the pair on the canvas instead, they are matched by name: `…pt.dm` with
 `…tr.dm`.
+
+---
+
+## MineSight .msr
+
+Imports the surfaces (shells) from a MineSight / MinePlan 3D resource file. Each shell becomes
+its own surface, and Kirra says, for example, *Imported MineSight surface pit_shell (84,212
+triangles)*. Import only: Kirra cannot write `.msr`.
+
+Only shells are read so far. A file holding only points, lines or a blast design, or a very small
+MineSight Hub link file with no geometry, imports nothing, and Kirra says *No surfaces were found
+in this file.*
+
+A shell with more triangles than the 3D limit gets the same **Large Surface** choices as a
+[Vulcan .00t](#vulcan-00t-triangulation).
 
 ---
 

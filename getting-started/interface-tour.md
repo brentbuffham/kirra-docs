@@ -249,8 +249,8 @@ See [Print to PDF](../printing/pdf-print.md) and [Print from Template (XLSX)](..
 
 Kirra has nine floating toolbars. Their default places form one row along the top of the view, starting just right of the legend so they never cover it; a narrow window wraps the rest onto a second row. Drag a toolbar by its title bar to move it. The **−** button in a toolbar’s header docks it as a vertical tab on the right edge of the viewport; click the tab to bring the toolbar back. **Toggle Toolbars** in the top bar fans them all out or docks them all at once.
 
-![Floating toolbars](../screenshots/toolbarsfloating.png)
-*An earlier layout, before the Cloud toolbar and the default row. The Connect toolbar is docked here, as a tab on the right edge of the viewport.*
+![The nine floating toolbars in their default row, right of the legend: Select, Holes, Connect, KAD, Modify, Surface, Analyse, Cloud and Workspace](../screenshots/toolbarsfloating.png)
+*The nine toolbars in their default row, starting just right of the legend.*
 
 | Toolbar | Purpose |
 |---------|---------|

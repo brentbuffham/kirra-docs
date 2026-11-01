@@ -22,6 +22,8 @@ If none of these settles it, a small dialog asks. Choose the cloud in **Point cl
 the target button beside it and click a point of the cloud on the canvas. The target turns red
 while it is waiting for your click. Then press **OK**.
 
+![The cloud picker for Ghosting, with the target button armed](../screenshots/CloudToolbarChooseCloud.png)
+
 Only clouds that are shown and unlocked are offered. With none, Kirra says *Load or show a point
 cloud first.*
 
