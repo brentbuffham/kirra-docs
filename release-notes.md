@@ -2,6 +2,88 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.172
+
+_2026-11-01_
+
+**Feature**
+
+- Electronic timing lines can be drawn on an underground face
+
+**Bug Fix**
+
+- Face holes above one another no longer fire at the same time
+
+## Release v1.1.35.171
+
+_2026-11-01_
+
+**Feature**
+
+- New View strip puts the eight camera view keys one click away
+- The View strip docks like other panels
+
+## Release v1.1.35.170
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Transforming selected point-cloud points now previews in 2D
+
+## Release v1.1.35.169
+
+_2026-11-01_
+
+**Bug Fix**
+
+- The startup progress dialog shows point clouds loading
+
+## Release v1.1.35.168
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Progress bars are no longer hidden behind the busy indicator
+
+## Release v1.1.35.167
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Pick target buttons show red on hover and while picking
+
+## Release v1.1.35.166
+
+_2026-11-01_
+
+**Feature**
+
+- Large point-cloud tools now use every processor core
+
+**Bug Fix**
+
+- Remove duplicates, stray points and smoothing show steady progress
+- Splitting a large point cloud shows progress and can be cancelled
+
+## Release v1.1.35.165
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Importing a project file no longer reloads Kirra; its settings apply straight away
+
+## Release v1.1.35.164
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Workspace toolbar now opens beside the Cloud toolbar, not the far right
+
 ## Release v1.1.35.163
 
 _2026-11-01_
