@@ -2,6 +2,63 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.35.163
+
+_2026-11-01_
+
+**Feature**
+
+- New Cloud toolbar puts the point-cloud tools one click away
+- Cloud tools pick the selected cloud, or ask which cloud to use
+
+**Bug Fix**
+
+- Crop, Split and Convert to KAD say when no points are selected
+- Cloud menu icons now match the Cloud toolbar
+
+## Release v1.1.35.162
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Undo and Redo on large point clouds show the busy indicator
+- Large point-cloud ghost fix shows steady progress
+
+## Release v1.1.35.161
+
+_2026-11-01_
+
+**Feature**
+
+- New Cloud toolbar in the default toolbar row
+
+**Bug Fix**
+
+- Default toolbars no longer cover the legend
+- Workspace toolbar stays against the right edge
+
+## Release v1.1.35.160
+
+_2026-11-01_
+
+**Feature**
+
+- Large point-cloud crop, delete, split and ghost fix always keep Undo
+
+**Bug Fix**
+
+- Undo no longer makes large point-cloud edits slow
+
+## Release v1.1.35.159
+
+_2026-11-01_
+
+**Bug Fix**
+
+- Moving part of a large point cloud is quicker
+- Large point-cloud crop with undo copies the cloud faster
+
 ## Release v1.1.35.158
 
 _2026-10-31_
