@@ -1,4 +1,4 @@
 665d27e7246dbf1241be9ac814c0fb5dccd45194428b8a8ad9235c161a672828  Windows-Kirra-v1.1.30-Setup.exe
 b4cfc2d3cb348387c47d9a57236061c6d1f9521c785868627cb1ebe2ebdaee29  Mac-Universal-Kirra-v1.1.30.dmg
 6e0966920e30a2d126f48e89fcc4ca45ad94a1e84165bb1aa676de30c264083b  Linux-Kirra-v1.1.30.deb
-e7220d3d949d9e1788882046d62643b3a117faec6dcc0158d304377d2d5a8116  Windows-Kirra-v1.1.35-Portable.zip
+dcfba79caef230f7bfc0aafac6537ebe19d4418e46d21a9f6bc38022fecd0735  Windows-Kirra-v1.1.36-Portable.zip
