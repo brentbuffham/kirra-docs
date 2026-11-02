@@ -2,6 +2,26 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36
+
+_2026-11-02_
+
+**Feature**
+
+- Portable release
+
+## Release v1.1.35.178
+
+_2026-11-02_
+
+**Feature**
+
+- Large ECW orthophotos decode about three times faster on multi-core computers
+
+**Bug Fix**
+
+- A stopped ECW decoding thread now shows a clear message and recovers
+
 ## Release v1.1.35.177
 
 _2026-11-01_
