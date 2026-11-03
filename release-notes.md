@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.8
+
+_2026-11-03_
+
+**Bug Fix**
+
+- CRS Library grid records: matrix, Helmert, cp pairs (store, validity, KAP)
+
+## Release v1.1.36.7
+
+_2026-11-03_
+
+**Bug Fix**
+
+- CRS grid transforms: final-review fixes (Helmert keys, .env_tran layout guard, rx/ry oracle)
+
+## Release v1.1.36.6
+
+_2026-11-03_
+
+**Bug Fix**
+
+- CRS grid transforms: matrix, Helmert, control-point fits, Vulcan .env_tran (maths only)
+
 ## Release v1.1.36.5
 
 _2026-11-03_
