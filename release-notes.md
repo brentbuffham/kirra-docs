@@ -2,6 +2,50 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.4
+
+_2026-11-03_
+
+**Feature**
+
+- Export a projection as a .prj, .wkt, .txt or .proj4 file
+- EPSG codes export as a one-line text file
+
+## Release v1.1.36.3
+
+_2026-11-03_
+
+**Feature**
+
+- ECW images with unreadable blocks now import, slightly softer in those areas
+- Dropping an ECW with its .eww and .prj files imports them together
+
+**Bug Fix**
+
+- An unsupported ECW compression mode is no longer reported as a damaged file
+
+## Release v1.1.36.2
+
+_2026-11-03_
+
+**Feature**
+
+- CRS Library: ghosted Export/Delete tooltip only, no warning line
+
+## Release v1.1.36.1
+
+_2026-11-03_
+
+**Feature**
+
+- CRS Library is now a table with New, Edit, Import, Export and Delete
+- Type or paste a projection to add it to the CRS Library
+- CRS Library shows which projections are valid, broken or unchecked
+
+**Bug Fix**
+
+- Delete and Export in the CRS Library now need ticked rows
+
 ## Release v1.1.36
 
 _2026-11-02_
