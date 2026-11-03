@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.12
+
+_2026-11-04_
+
+**Feature**
+
+- Select inside polygon also selects point-cloud points in Vertices mode
+
+**Bug Fix**
+
+- Deleting points from a tiled point cloud in 2D works again
+- A point-cloud edit that fails now says why
+
 ## Release v1.1.36.11
 
 _2026-11-04_
