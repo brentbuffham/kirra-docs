@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.5
+
+_2026-11-03_
+
+**Feature**
+
+- Import several ECW files at once with their .eww and .prj files
+- One shared .prj file now applies to every ECW tile without its own
+
 ## Release v1.1.36.4
 
 _2026-11-03_
