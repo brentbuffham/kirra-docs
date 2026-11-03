@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.11
+
+_2026-11-04_
+
+**Bug Fix**
+
+- ECW files with range-coded edge blocks now import in full
+
 ## Release v1.1.36.10
 
 _2026-11-03_
