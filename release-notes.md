@@ -2,6 +2,24 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.10
+
+_2026-11-03_
+
+**Bug Fix**
+
+- CRS Library calls a grid transform's target its Destination CRS
+
+## Release v1.1.36.9
+
+_2026-11-03_
+
+**Feature**
+
+- Add matrix, Helmert and control-point mine-grid transforms to the CRS Library
+- Import Vulcan transformation files and reports into the CRS Library
+- CRS Library shows each grid transform's base coordinate system
+
 ## Release v1.1.36.8
 
 _2026-11-03_
