@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.15
+
+_2026-11-04_
+
+**Feature**
+
+- Reference files move to the private kirra-reference-files repo
+
 ## Release v1.1.36.14
 
 _2026-11-04_
