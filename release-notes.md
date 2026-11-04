@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.13
+
+_2026-11-04_
+
+**Bug Fix**
+
+- Deleted point-cloud areas no longer leave stale patches on screen
+
 ## Release v1.1.36.12
 
 _2026-11-04_
