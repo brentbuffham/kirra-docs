@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.17
+
+_2026-11-05_
+
+**Bug Fix**
+
+- Fragments: Undo and Redo of rock edits on big scans now work
+- Fragments edit buttons now explain why they cannot be used
+
 ## Release v1.1.36.16
 
 _2026-11-04_
