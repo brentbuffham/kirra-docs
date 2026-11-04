@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.14
+
+_2026-11-04_
+
+**Bug Fix**
+
+- Triangulate and Void Mesh work on visible point clouds with drawings hidden
+
 ## Release v1.1.36.13
 
 _2026-11-04_
