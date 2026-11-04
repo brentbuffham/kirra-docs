@@ -2,6 +2,19 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.16
+
+_2026-11-04_
+
+**Feature**
+
+- Fragments: fix the result by hand - make rock, make fines, remove
+- Fragments: split a rock with a knife line
+
+**Bug Fix**
+
+- Fragments on big scans no longer freezes at 98 percent
+
 ## Release v1.1.36.15
 
 _2026-11-04_
