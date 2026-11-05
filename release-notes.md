@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.24
+
+_2026-11-05_
+
+**Feature**
+
+- Lasso selection: press and drag a freehand outline, release to select
+- The selection outline shows as a pink line while you draw
+
 ## Release v1.1.36.23
 
 _2026-11-05_
