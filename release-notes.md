@@ -2,6 +2,54 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.23
+
+_2026-11-05_
+
+**Bug Fix**
+
+- An image's elevation and transparency are now kept after reloading
+
+## Release v1.1.36.22
+
+_2026-11-05_
+
+**Feature**
+
+- Fragments Pick rocks: click a rock to select all of it
+- Shift-click adds rocks and Ctrl-click removes them while picking
+
+## Release v1.1.36.21
+
+_2026-11-05_
+
+History not available at the moment.
+
+## Release v1.1.36.20
+
+_2026-11-05_
+
+**Bug Fix**
+
+- The orthomosaic now shows evenly through a transparent point cloud in 3D
+
+## Release v1.1.36.19
+
+_2026-11-05_
+
+**Bug Fix**
+
+- Point cloud transparency now fades evenly across the whole slider
+
+## Release v1.1.36.18
+
+_2026-11-05_
+
+**Bug Fix**
+
+- Interface no longer slows down with the Fragments dialog open
+- Fragments size chart draws quickly on runs with many rocks
+
 ## Release v1.1.36.17
 
 _2026-11-05_
