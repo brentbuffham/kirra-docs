@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.34
+
+_2026-11-06_
+
+**Bug Fix**
+
+- Projects with overlapping blast versions no longer freeze the browser on load
+- Blast volumes no longer shrink when another blast overlaps or touches
+
 ## Release v1.1.36.33
 
 _2026-11-06_
