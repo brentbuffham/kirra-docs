@@ -2,6 +2,21 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.38
+
+_2026-11-07_
+
+History not available at the moment.
+
+## Release v1.1.36.37
+
+_2026-11-07_
+
+**Feature**
+
+- Fragmentation Report shows the Kirra icon, web address and page numbers on every page
+- Fragmentation Report ends with a disclaimer on accuracy against other fragmentation tools
+
 ## Release v1.1.36.34
 
 _2026-11-06_
