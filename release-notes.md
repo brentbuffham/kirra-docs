@@ -2,6 +2,63 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.29
+
+_2026-11-06_
+
+**Feature**
+
+- CSV import can set a mapped deck's type, such as explosive, for every hole
+
+## Release v1.1.36.28
+
+_2026-11-06_
+
+**Bug Fix**
+
+- CSV import presets now keep hand-mapped charging decks and primers
+- CSV import charging rows and subdrill no longer crowded
+
+## Release v1.1.36.27
+
+_2026-11-06_
+
+**Feature**
+
+- Background images can be aligned by picked control points
+- Alignment matches can snap to blast holes or drawings only
+
+**Bug Fix**
+
+- Alignment adds a moved copy unless Move the original is ticked
+
+## Release v1.1.36.26
+
+_2026-11-06_
+
+**Feature**
+
+- CSV hole import lists fields as ticks with a column picker for each
+- CSV import previews scroll through every row of the file
+
+**Bug Fix**
+
+- CSV import no longer auto-picks empty columns
+- CSV import preview marks cells that will not import
+
+## Release v1.1.36.25
+
+_2026-11-06_
+
+**Feature**
+
+- CSV hole import can flip negative subdrill, such as Blast Logic charge standoff
+- CSV hole import maps burden, spacing and connector curve
+
+**Bug Fix**
+
+- CSV import previews show more rows and fill the dialog
+
 ## Release v1.1.36.24
 
 _2026-11-05_
