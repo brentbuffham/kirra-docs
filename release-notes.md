@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.33
+
+_2026-11-06_
+
+**Bug Fix**
+
+- Import Timing reads BPD files (it found no times before)
+- Import Timing leaves holes with no detonator untimed
+
 ## Release v1.1.36.32
 
 _2026-11-06_
