@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.30
+
+_2026-11-06_
+
+**Bug Fix**
+
+- Alignment to blast holes or drawings no longer refuses on the Pick ICP tab
+
 ## Release v1.1.36.29
 
 _2026-11-06_
