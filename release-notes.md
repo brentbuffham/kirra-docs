@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.31
+
+_2026-11-06_
+
+**Feature**
+
+- After a CSV import, a Charge Check lists charging that needs correcting
+- Unknown imported products can be swapped for a catalogue product in one pick
+
 ## Release v1.1.36.30
 
 _2026-11-06_
