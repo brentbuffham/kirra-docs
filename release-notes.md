@@ -2,6 +2,20 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.65
+
+_2026-11-07_
+
+History not available at the moment.
+
+## Release v1.1.36.64
+
+_2026-11-07_
+
+**Feature**
+
+- Facet Report shows the wall from the sides it faces, not only from above
+
 ## Release v1.1.36.63
 
 _2026-11-07_
