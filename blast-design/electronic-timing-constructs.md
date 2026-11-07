@@ -294,6 +294,27 @@ are the [timing contours](timing-contours.md) it produces.
 | ![A closed four-sided time line in the middle of the blast; the contours spread out as sharp-cornered rings](../screenshots/ElectronicTimingClosedStraight.png) | ![A closed curved time line in the middle of the blast; the contours spread out as rounded rings](../screenshots/ElectronicTimingClosedBezier.png) |
 | **Closed** with sharp nodes: centre-fire, with straight-sided rings. | **Closed** with curved nodes: centre-fire, with rounded rings. |
 
+### A Time Range construct
+
+**Time Range** times the blast between two lines instead of from one. Here **Time Line 1** crosses
+one end of the blast at **Line 1 Time** 1000 ms, and **Time Line 2** crosses the other end at
+**Line 2 Time** 2000 ms. The holes between them are timed in between, and holes beyond a line carry
+on at the same rate.
+
+| The Design tab in Time Range | The result |
+|---|---|
+| ![The Design tab with Time Range chosen: Range Parameters for Line 1 and Line 2, the Time Line 1 and Time Line 2 buttons greyed out once drawn, and Move L1 / Move L2 rows](../screenshots/ElectronicTimingDesignTabRange.png) | ![Two green time lines across opposite ends of the blast, with evenly spaced timing contours between them](../screenshots/ElectronicTimingTimeRange.png) |
+| **Range Parameters** replace Start Time and Relief. Once drawn, each Time Line button is greyed out; clear it with its bin to redraw. | The contours step evenly from 1000 ms at Time Line 1 to 2000 ms at Time Line 2. |
+
+To draw one:
+
+1. Make a new timing construct and choose **Time Range** on the Tool row.
+2. Set **Line 1 Time (ms)** and **Line 2 Time (ms)**.
+3. Click **Time Line 1**, click its nodes on the canvas, and press **Enter**.
+4. Click **Time Line 2**, draw it the same way, and press **Enter**. The surface builds once both
+   lines exist.
+5. Select the holes, click **Assign**, then **Apply & Keep**.
+
 ---
 
 ## Timing an underground face
