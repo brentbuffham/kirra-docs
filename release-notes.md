@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.59
+
+_2026-11-07_
+
+**Feature**
+
+- Project files can include block models; saving asks first and shows the size
+- Saving warns that large projects can exhaust browser memory
+
 ## Release v1.1.36.58
 
 _2026-11-07_
