@@ -2,6 +2,27 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.63
+
+_2026-11-07_
+
+**Feature**
+
+- Facet Report prints joint sets, a stereonet and a rose diagram as a PDF
+- Joint set observations list each set ready to enter by hand
+
+## Release v1.1.36.62
+
+_2026-11-07_
+
+History not available at the moment.
+
+## Release v1.1.36.61
+
+_2026-11-07_
+
+History not available at the moment.
+
 ## Release v1.1.36.60
 
 _2026-11-07_
