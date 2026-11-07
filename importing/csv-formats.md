@@ -203,70 +203,109 @@ If you have an unusual header layout, use **Custom CSV** instead — it does hea
 
 ## Custom CSV Import
 
-If your CSV does not match a preset (different column order, different field names, extra columns), use **Custom CSV** on the **Blasts** tab of the Import dialog. The separator — comma, tab, semicolon and so on — is detected automatically.
+If your CSV does not match a preset (different column order, different field names, extra columns), use **Custom CSV**. It works with exports from other systems — the example below is a 217-column BlastLogic design export. The separator — comma, tab, semicolon and so on — is detected automatically.
 
 ![Import dialog — Blasts tab](../screenshots/filemanager2.png)
 *Custom CSV is the first entry on the Blasts tab — "Pick your own column order, units, and custom fields".*
 
-1. Open the **Import** dialog
-2. **Blasts** tab → **Custom CSV** → click **Open**
-3. Choose your `.csv` file. (For a `.txt`, drop it onto the canvas and choose **Holes**.)
-4. The **Import CSV: Map Columns** dialog opens — review the auto-detected mapping (or override manually) and click **Import**
+There are two ways in:
+
+- **Import dialog** — **Blasts** tab → **Custom CSV** → **Open**, then choose your file.
+- **Drag and drop** — drop the `.csv` or `.txt` onto the canvas. Kirra asks what is in the file;
+  click **Holes**.
+
+![The Unrecognised file format dialog, asking whether the file holds a block model, holes, geometry or a downhole survey](../screenshots/UnrecognisedCSVBlockChoice.png)
+*A dropped CSV that Kirra cannot place asks what it holds: **Telemetry**, **Block**, **Geometry** or **Holes**.*
+
+Either way the **Import CSV: Map Columns** dialog opens.
 
 ### The Map Columns dialog
 
-![Custom CSV Import — Map Columns dialog](../screenshots/CustomCSVImport-MapColumns.png)
-*Import CSV: Map Columns — file header, dialog-wide settings, column mapping (left), and live preview (right).*
+![Import CSV: Map Columns with the DESIGN-BLASTLOGIC preset applied: settings at the top, Fields to Import ticks on the left, Column Mapping in the middle, and the Original and Mapped Data previews on the right](../screenshots/CustomCSVImport-MapColumns.png)
+*A BlastLogic export with the **DESIGN-BLASTLOGIC** preset applied. The ticks on the left choose
+the fields, the middle column says where each one comes from, and the previews on the right show
+the file and the result.*
 
-The dialog shows the file name and row / column counts at the top, followed by dialog-wide settings, the column mapper, and a live preview.
+The dialog has five parts, top to bottom and left to right:
 
-#### Dialog-wide settings
+1. **Preset** — saved mappings.
+2. **File and settings** — the file name, its rows and columns, and the settings that apply to the
+   whole file.
+3. **Fields to Import** — a tick per Kirra field.
+4. **Column Mapping** — the file column each ticked field comes from, and the charging decks and
+   primers.
+5. **Original Data Preview** and **Mapped Data Preview** — every row of the file, before and after
+   the mapping. Both scroll.
+
+#### Presets
+
+A preset saves everything in the dialog — the settings, the ticks, the mapping and the charging
+slots — so a file from the same source imports in one step next time.
+
+| Control | What it does |
+|---|---|
+| **Preset** dropdown | Applies a saved preset. |
+| **Name** | Type a name, then press **+** to save it. Edit it while a preset is selected to rename that preset. |
+| **+** | Saves the current settings as a new preset. |
+| **Save** | Updates the selected preset from the current settings. |
+| **Bin** | Deletes the selected preset. |
+| **Export** | Saves the selected preset to a JSON file — or every preset in the list when none is selected. |
+| **Import** | Loads presets from a JSON file. |
+
+Presets are kept in Kirra for the workspace you are in. They do not travel in a KAP, so use
+**Export** and **Import** to move them to another workspace or computer.
+
+#### Settings for the whole file
 
 | Control | Purpose |
 |---------|---------|
-| **Header rows to skip** | Number of rows to ignore at the top of the file (default 1) |
-| **Column Detection** | **Auto detect columns** (match the header names — the default), **Use last used column order**, or **Manual - don't detect columns** |
-| **Duplicate Handling** | Radio buttons — **Update by Blast+ID** (default), **Update by location** (0.01 m tolerance), **Skip duplicates** |
-| **Angle Convention** | Dropdown — **Angle (0° = vertical)** for Kirra's native convention, or *Dip (0° = horizontal)* to convert (`90 − value`) |
-| **Diameter Units** | Dropdown — `mm` (default), `m`, `in` — values are converted to mm on import |
+| **Header rows to skip** | Rows to ignore at the top of the file (1 to start with). |
+| **Column Detection** | **Auto detect columns** (match the header names), **Use last used column order**, or **Manual - don't detect columns**. |
+| **Auto-detect spatial rows** | Ticked to start with. See [Smart row detection](#smart-row-detection). |
+| **Duplicate Handling** | **Update by Blast+ID** (the default), **Update by location** (0.01 m tolerance), or **Skip duplicates**. |
+| **Angle Convention** | **Angle (0° = vertical)**, Kirra's own, or **Dip (0° = horizontal)**, converted as 90 − value. |
+| **Diameter Units** | **mm**, **m** or **inches** — converted to mm on import. |
 
-#### Column Mapping panel
+#### Fields to Import
 
-The left side groups Kirra fields by category. Each row has a dropdown — pick which **CSV column** in the file (`Col 1: <name>`, `Col 2: <name>`, …) supplies that Kirra field, or leave it as `-- calculate --` to let Kirra derive it from the other fields.
+The ticks on the left choose which Kirra fields the file supplies. Only ticked fields get a row in
+**Column Mapping**. Fields marked **\*** are required and always imported.
 
 | Group | Fields |
 |-------|--------|
-| **Hole Identifiers** | Blast Name, **Hole ID** (required, marked with *), Hole Type, Row ID, Position ID |
-| **Hole Location - Collar** | **Start X (mE)** *, **Start Y (mN)** *, **Start Z (mRL)** * (all required) |
-| **Hole Location - End/Toe** | End X (mE), End Y (mN), End Z (mRL) |
-| **Hole Location - Grade** | Grade X (mE), Grade Y (mN), Grade Z (mRL) |
-| **Hole Geometry** | Hole Angle/Dip, Hole Bearing, Hole Length, Bench Height (m), Subdrill (m), Diameter |
-| **Timing & Connections** | From Hole ID, Timing Delay (ms), Initiation Time, Tie Color |
+| **Hole Identifiers** | Blast Name, **Hole ID\***, Hole Type, Row ID, Position ID |
+| **Hole Location - Collar** | **Start X(mE)\***, **Start Y(mN)\***, **Start Z(mRL)\*** |
+| **Hole Location - End/Toe** | End X(mE), End Y(mN), End Z(mRL) |
+| **Hole Location - Grade** | Grade X(mE), Grade Y(mN), Grade Z(mRL) |
+| **Hole Geometry** | Hole Angle/Dip, Hole Bearing, Hole Length, Bench Height(m), Subdrill(m), Diameter, Burden (m), Spacing (m) |
+| **Timing & Connections** | From Hole ID, Timing Delay (ms), Initiation Time, Tie Color, Connector Curve (°) |
 | **Measured Values** | Measured Length, Measured Mass, Measured Comment |
-| **Charging (decks & primers)** | Shown when the file has deck or primer columns — see [Charging columns](#charging-columns-v10270) |
 
-Required fields are marked with **`*`** and shaded pink in the preview until mapped.
+#### Column Mapping
 
-A preset bar at the top of the dialog saves a mapping, so a file from the same source
-imports in one click next time.
+Each ticked field has a dropdown listing the file's columns as **Col 1: name**, **Col 2: name**
+and so on, numbered from 1 as a spreadsheet counts them. An empty column is marked **(empty)** and
+cannot be picked. A field that is not required can be left on **-- calculate --**, and Kirra
+derives it from the others.
 
-#### Live preview panels (right side)
+**Subdrill** has one extra tick:
 
-| Panel | Shows |
-|-------|-------|
-| **Original Data Preview** | Top of the source file with column names as Kirra read them |
-| **Mapped Data Preview** | What each Kirra field will receive after the mapping is applied. Pink-highlighted cells are required fields that are not yet mapped |
+- **Negative below grade** — tick it when the file stores subdrill as a negative number below grade,
+  as BlastLogic's *Design charge standoff* does. Kirra flips the sign, so a −0.3 in the file becomes
+  0.3 m of subdrill.
 
-#### Footer
+#### Previews and the footer
 
-| Button | Action |
-|--------|--------|
-| **Cancel** | Discard the mapping and close |
-| **Import** *(green)* | Apply the mapping, run the parser, and load the holes |
+The **Mapped Data Preview** shows what each Kirra field will receive. A required field that is not
+mapped yet is shaded pink. **Import** (green) loads the holes; **Cancel** closes without importing.
+
+After the import a message says how many holes came in, for example *Imported 370 holes
+successfully*. If charging came in too, **Charge Check** follows — see
+[Check the charging](#check-the-charging).
 
 ### Header auto-detection
 
-`CsvColumnAutoDetect.autoDetectColumns()` scans the header row, normalises each header (lowercase, alphanumeric only), and matches against a keyword list per Kirra field. Match priority:
+With **Auto detect columns**, Kirra reads each header in lower case with the punctuation removed, and matches it against a list of names for each Kirra field. Match priority:
 
 1. **Exact match**
 2. **Longest matching keyword**
@@ -283,6 +322,9 @@ Examples of headers Kirra recognises out of the box:
 | `Bearing`, `Azimuth` | `holeBearing` |
 | `Dip` | interpreted via `angle_convention` (dip-from-horizontal converts to Kirra's angle-from-vertical as `90 − value`) |
 | `Diameter`, `Dia` | `holeDiameter` (with unit conversion) |
+
+Short codes of two letters — `cx`, `cy`, `gx`, `gy`, `tx`, `rl` and so on — only match a header that is
+that code alone, ignoring a unit in brackets: `GY (m)` matches Grade Y, but `Energy` does not.
 
 A bare `X`, `Y` or `Z` header is deliberately **not** matched: it would also match `EndX`,
 `ToeX` and so on. Map those columns by hand. Any header Kirra does not recognise can be
@@ -302,7 +344,7 @@ Subdrill is always the **vertical Δz**, not along-hole.
 
 ### Smart row detection
 
-For files without explicit `rowID` / `posID` (this always runs):
+For files without a Row ID or Position ID:
 
 - **Alphanumeric IDs** (e.g. `A1, A2, B1`) — letter becomes the row, number becomes the position
 - **Pure numeric** — fits holes to linear sequences using collar XY (tolerance `2 × diameter`)
@@ -335,13 +377,85 @@ Invalid coordinates **do not abort** the import:
 - `grade ← collar` when the grade is bad
 - The rows that fell back are listed in the browser console
 
-### Charging columns (v1.0.270+)
+### Charging columns
 
-When the first row has any `deck…[N]` or `primer…[N]` header (e.g. `deckType[1]`, `primerDepth[2]`), the dialog shows **Import charging (N decks, M primers per hole)**, ticked. Each hole's charging is rebuilt from the deck and primer cells, including verbatim `fx:` formula strings. Untick it to import the holes without charging; the slot list lets you check or change which columns feed each deck and primer.
+**Charging (decks & primers)** sits at the bottom of **Column Mapping**. It brings each hole's decks
+and primers in with the holes.
 
-Round-trip is full for design, formulas, and primer assignments — but live formula re-evaluation does not happen on import. The imported numeric values are the source of truth until a charge rule is next applied to the holes.
+- When the first row has bracketed headers such as `deckType[1]` or `primerDepth[2]` — the columns
+  Kirra's own **Custom CSV** export writes — the tick reads **Import charging (N decks, M primers per
+  hole)**, already ticked, and the slots fill themselves.
+- When it has none, the tick reads **No charging columns detected — tick to map them below**. Tick it
+  and map the decks and primers by hand from whatever columns the file has.
 
-To see the exact charging columns Kirra writes, export a charged blast with **Custom CSV** — see [CSV Export](../exporting/csv-export.md).
+Untick it to import the holes without charging.
+
+![The Charging Decks and Charging Primers slots, mapped from a BlastLogic export: an inert stemming deck, a coupled explosive deck, and a primer with its detonator and booster](../screenshots/CustomCSVImport-ChargingSlots.png)
+*Charging mapped by hand from a BlastLogic export: a stemming deck, an explosive deck, and one primer.*
+
+#### Decks
+
+**Charging Decks** holds one slot per deck, numbered from the collar down. **Auto from Deck Headers**
+builds the slots from bracketed deck headers when the file has them. Each slot has:
+
+| Row | Maps |
+|---|---|
+| **Deck type** | A column, or one type for every hole: **Inert (stemming, air)**, **Coupled (bulk explosive)**, **Decoupled (packaged explosive)** or **Spacer (gas bag, plug)**. |
+| **Product** | The product name. |
+| **Top depth** / **Base depth** | Where the deck starts and ends, as depths down the hole. |
+| **Density** | The product density, if the file carries one. |
+
+#### Primers
+
+**Charging Primers** holds one slot per primer:
+
+| Row | Maps |
+|---|---|
+| **Depth** | A depth column, or **Metres above toe** with a distance in the box: the same height above the toe for every hole. |
+| **Detonator** / **Detonator qty** | The detonator name and how many. |
+| **Booster** / **Booster mass** | The booster name and its mass. |
+
+#### Every slot row
+
+Each row in a slot has three parts:
+
+1. **The column** the value comes from, or **— not mapped —**.
+2. **Split** — when one cell holds several values, the character that separates them: **comma**,
+   **semicolon**, **pipe**, **slash** or **space**. **no split** uses the whole cell.
+3. **Piece** — which piece of the split cell to use, counting from 1.
+
+Use **+** under the decks or the primers to add a slot (*Map a deck from other columns*, *Map a primer
+from other columns*), and the bin on a slot to remove it. A preset saves the slots, so hand-mapped
+charging comes back with the preset.
+
+Formula cells (`fx:`) in Kirra's own export come in as written, but they are not re-evaluated on
+import. The imported numbers stand until a charge rule is next applied to the holes.
+
+To see the exact charging columns Kirra writes, export a charged blast with **Custom CSV** — see
+[CSV Export](../exporting/csv-export.md).
+
+### Check the charging
+
+When charging comes in, **Charge Check** opens after the import. It lists what would stop the holes
+firing as designed:
+
+- **Products not in your catalogue** — a product the file names that your
+  [product catalogue](../charging/product-manager.md) does not have. Those decks carry only the name
+  and density from the file. Pick a catalogue product in **Use catalogue product** and every deck
+  that uses that name switches to it at once.
+- **Holes that will not fire** — for example, every charge deck calculates to zero mass. The holes are
+  listed by ID.
+
+| Before | After one pick |
+|---|---|
+| ![Charge Check after a BlastLogic import: AquaMAX1270 1.15 is not in the catalogue, and all 370 holes calculate to zero mass](../screenshots/ChargeCheckAfterCsvImport.png) | ![Charge Check after picking EMULGEX CORE 70 1.15: the imported charging looks complete](../screenshots/ChargeCheckResolved.png) |
+| The file's AquaMAX1270 1.15 is not in this catalogue, so all 370 holes have no explosive mass. | Picking a catalogue product of the same density fixes all 370 decks. |
+
+| Button | What it does |
+|---|---|
+| **Fix Products…** | Opens the Product Manager beside Charge Check, to add or correct a product. |
+| **Re-check** | Checks the holes again, so the list shrinks as you fix things. |
+| **Close** | Closes Charge Check. Anything not fixed can be corrected later in the Deck Builder. |
 
 ---
 
