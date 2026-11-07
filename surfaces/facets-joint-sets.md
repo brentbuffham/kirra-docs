@@ -11,10 +11,10 @@ CSV.
 Use it to read the structure of a blasted wall, a pre-split face or a cut from a scan, without
 measuring each plane by hand.
 
-![The Facets and Joint Sets dialog after a run on a scanned pit wall: a saved preset, the stereonet and eight joint sets](../screenshots/FacetsJointSets.png)
+![The Facets and Joint Sets dialog after a run on a 10.8 million point wall scan: a saved preset, the stereonet and six joint sets](../screenshots/FacetsJointSets.png)
 
-*A run on a 1.8 million point scan of a pit wall, with a saved preset (**ROCK**: Max distance 0.5 m,
-Max angle 25°) rather than the defaults.*
+*A run on a 10.8 million point scan of a pit wall, with a saved preset (Max angle 15°, Plane
+distance 0.5 m, Max distance 0.3 m) rather than the defaults: 1,863 facets in six joint sets.*
 
 ---
 
@@ -44,6 +44,9 @@ buttons in its title bar.
    *"Runs on the whole cloud (n points). Select the wall first to keep a big scan quick."*
 2. Check the facet settings and the joint-set settings (below).
 3. Click **Run facets**. A **Finding facets** progress window shows the work, with **Cancel**.
+
+   ![The Finding facets progress window: a progress bar, the number of points, the time so far and the estimated finish](../screenshots/FacetsProgress.png)
+
 4. The banner reports the result, for example *"2109 facets, 8 joint sets."* The stereonet and the
    table fill in, and the cloud is coloured by joint set.
 
@@ -81,8 +84,23 @@ Click **Group sets** to group the facets again with new joint-set settings. It i
 not find the facets again. A window that is not three numbers is named in the banner, for example
 *Set window 2 "70/200" is not dip/dip direction/angle*.
 
-**Settings** at the top saves both groups of settings as a named preset, so you can use the same
-settings on the next scan.
+### Settings presets
+
+**Settings** at the top saves both groups of settings as a named preset, so the next scan of the
+same rock runs with the same settings.
+
+| Control | What it does |
+|---|---|
+| **Settings** dropdown | Applies a saved preset. |
+| **Name** | Type a name, then press **+** to save it. Edit it while a preset is selected to rename that preset. |
+| **+** | Saves the current settings as a new preset. |
+| **Save** | Updates the selected preset from the current settings. |
+| **Bin** | Deletes the selected preset. |
+| **Export** / **Import** | Saves presets to a JSON file, or loads them from one. |
+
+A name that records the settings, such as *15degsMA - 500mmPD - 300mmMD* (Max angle, Plane distance,
+Max distance), makes the list easy to read. Presets are kept in Kirra for the workspace you are in;
+use **Export** and **Import** to take them to another workspace or computer.
 
 ---
 
@@ -143,10 +161,11 @@ were found (… points then, … now). Run facets again to update them."*
 
 ---
 
-## Make KAD, Export CSV and Clear facets
+## Make KAD, Export CSV, Clear facets and Print report
 
 | Button | What it does |
 |---|---|
+| **Print report** | Prints a [Facet Report](#print-a-facet-report) PDF of this run |
 | **Make KAD** | Draws each facet that is in a joint set as one closed 3D KAD polygon, in the set's colour, with a sub-layer per set (*\<cloud\> Set 1*, *\<cloud\> Set 2* …) under the **Analysis** layer — or on the active layer when one is set. Above 2,000 polygons Kirra asks first. The banner says *"Made n facet polygons, a layer per joint set."* |
 | **Export CSV** | Saves two files: `<cloud>_facets.csv` (one row per facet: id, x, y, z, dip, dipDirection, area, rms, set, points) and `<cloud>_joint_sets.csv` (one row per set: id, dip, dipDirection, fisherK, cone95, facets, area). Facet centres are in world coordinates |
 | **Clear facets** | Removes the facets and joint sets from the cloud. A cloud coloured by facet or joint set goes back to its usual colouring |
@@ -155,6 +174,56 @@ were found (… points then, … now). Run facets again to update them."*
 > **Make KAD needs this session's run.** Facet outlines are kept only while the dialog is open. If
 > you close it and come back, **Make KAD** says *"Run facets first: facet outlines are kept only
 > until the dialog closes."* Click **Run facets** again.
+
+---
+
+## Print a Facet Report
+
+**Print report** turns the run into an A4 PDF to hand on: the joint sets, where they are on the
+wall, and what they mean, in the same style as the [Fragmentation Report](fragments.md).
+
+1. Run facets, and check the joint sets look right.
+2. Click **Print report**.
+3. In **Print Facet Report**, type a **Report title** — a wall, a bench or a pit — and an
+   **Author**. A blank title uses the cloud's name. Click **Print**.
+4. Kirra builds the report under the busy indicator, then shows it in a preview with its
+   **File name** and size. Read through the pages there.
+5. Click **Save PDF** to save it, or **Discard** to throw it away.
+
+![The Print Facet Report prompt, with a report title and an author](../screenshots/FacetReportPrompt.png)
+
+![The Facet Report preview: the file name, the page thumbnails and page 1 of the report, with Discard and Save PDF](../screenshots/FacetReportPreview.png)
+*The preview before saving. Kirra names the file from the title, here `Test_wall_facet_report.pdf`.*
+
+### What the report holds
+
+| Page | What is on it |
+|---|---|
+| **1** | The title, date, Kirra version and author; the cloud, its point count and what the run covered; four summary cards (**Facets**, **Joint sets**, **In sets**, **Main set**); and a plan of the scan coloured by joint set, with a north arrow, a scale bar and a legend of each set's dip/dip direction |
+| **Views from the sides** | The scan seen from the side, square to the wall, coloured by joint set, with RL and distance scales. Kirra picks one view for each way the wall's steep facets face, three to a page. When no wall direction stands out it shows the four compass sides instead |
+| **Stereonet and joint sets** | The stereonet (lower hemisphere, equal area, poles sized by area, mean planes dashed, 95 % cones), a rose diagram of dip directions in 10° bins by facet area, and the joint-set table with a plain-words description of each set (for example *steeply dipping SSE*) and its share of the facet area |
+| **Observations** | A line per set — its orientation, size, how tightly it clusters, and a warning when it has only a few facets — then **Between sets**: the angle between each pair of sets, and whether they cross obliquely or are near perpendicular and cut the rock into blocks. The facets that fit no set are counted |
+| **Last page** | **Run settings**, every setting the run used, and **Limits**: what the method cannot see |
+
+| Page 1 | Stereonet and joint sets |
+|---|---|
+| ![Facet Report page 1: the header, four summary cards and a plan of the wall coloured by joint set](../screenshots/FacetReportPage1.png) | ![Facet Report page 3: the stereonet, the rose diagram and the joint-set table](../screenshots/FacetReportPage3.png) |
+
+| Views from the sides | Observations |
+|---|---|
+| ![Facet Report page 2: the wall seen from 150°, looking 330°, coloured by joint set, with RL and distance scales](../screenshots/FacetReportPage2.png) | ![Facet Report page 4: an observation for each joint set, and the angles between the sets](../screenshots/FacetReportPage4.png) |
+
+*The five-page report from the run above.*
+
+> **Read the limits.** The report says so on its last page: facets are fitted to the scanned
+> surface, so joints that face the scanner show as large facets, and joints that meet the wall
+> nearly edge-on show only as traces and are under-counted. The results describe a wall, crest or
+> face scan — facets on broken rock, such as a muckpile, are not joints. Joint spacing and
+> persistence are not measured. Orientations are dip/dip direction from grid north, in the cloud's
+> coordinate system.
+
+Each set's dip/dip direction can be typed in wherever a model asks for joint orientation, such as
+a Kuz-Ram rock factor.
 
 ---
 
