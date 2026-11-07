@@ -127,6 +127,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 ### Printing
 - [Print from Template (XLSX)](printing/xlsx-templates.md) — the PDF Print dialog, Kirra Inbuilt and your own templates
 - [Print Formula Reference](printing/pdf-print.md) — cells, aggregation, maps, legends
+- Reports from the point-cloud tools: [Fragmentation Report](surfaces/fragments.md#print-a-fragmentation-report) · [Facet Report](surfaces/facets-joint-sets.md#print-a-facet-report) — A4 PDFs printed from the Fragments and Facets dialogs
 - [Template Examples](printing/template-examples.md) — worked XLSX templates for advanced print formulas
 - [Example Template Downloads](printing/examples/README.md) — the downloadable XLSX example files
 - [Claude Print Template Skill — Install & Use](printing/print-skill.md) — optional AI helper for building templates; [download](printing/KirraDesign-USER-Print-Skill.zip)
