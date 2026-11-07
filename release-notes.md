@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.39
+
+_2026-11-07_
+
+**Feature**
+
+- Fragmentation Report shows the images and drawings under and over the rocks
+
 ## Release v1.1.36.38
 
 _2026-11-07_
