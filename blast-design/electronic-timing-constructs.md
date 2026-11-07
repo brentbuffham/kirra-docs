@@ -155,6 +155,11 @@ The row under the Apply buttons nudges the **selected** holes' electronic detona
    fire at the same time, a **Timing check** message lists how many. Kirra selects those holes so you
    can see them. Ignore it if the timing is meant to be that way.
 
+| The message | The holes it selected |
+|---|---|
+| ![The Timing check message: adjacent holes appear to be firing at the same time (12), and the holes are selected](../screenshots/ElectronicTimingCheckMessage.png) | ![The closed Bezier blast with six pairs of neighbouring holes ringed, each pair firing at the same time](../screenshots/ElectronicTimingCheckSelected.png) |
+| **Check** on a closed Bezier construct finds 12 neighbouring holes firing at the same time. | The 12 holes are selected, so each double-up shows as a ringed pair. |
+
 When nothing needs reconciling, the status line says *Assignments already match the holes — nothing
 to reconcile*.
 
