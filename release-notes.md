@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.46
+
+_2026-11-07_
+
+**Bug Fix**
+
+- Alignment lifts a cloud moved together with its image, and offers Rigid again
+
+## Release v1.1.36.44
+
+_2026-11-07_
+
+**Feature**
+
+- Alignment moves a ticked list of clouds, meshes and images by one fit
+
 ## Release v1.1.36.42
 
 _2026-11-07_
