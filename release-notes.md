@@ -2,6 +2,30 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.42
+
+_2026-11-07_
+
+**Feature**
+
+- Alignment can move other clouds, meshes and images with A by the same fit
+
+## Release v1.1.36.41
+
+_2026-11-07_
+
+**Bug Fix**
+
+- Block model limits warn when the limit surface is gone or keeps no blocks
+
+## Release v1.1.36.40
+
+_2026-11-07_
+
+**Feature**
+
+- CSV import can place a mapped primer a set distance above the toe
+
 ## Release v1.1.36.39
 
 _2026-11-07_
