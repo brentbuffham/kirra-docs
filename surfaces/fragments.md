@@ -197,7 +197,22 @@ beside what the scan measured.
 | **Drilling deviation (m)**, **Rock P-wave velocity (km/s)**, **Delay scatter (ms)**, **Fallback RWS (% ANFO)** | The blast inputs the model needs beyond the holes and their charging. |
 
 The prediction is worked out from the blast's holes and their charging; each hole's rock volume is
-its burden × spacing × bench. When there is a result, the report gains a Kuz-Ram page.
+its burden × spacing × bench.
+
+![The Kuz-Ram tab with a result for SHOT5 and rock factor A 17: the Kuz-Ram and measured P-values side by side, and the blast's minimum, median and maximum for each input](../screenshots/FragmentsKuzRamResult.png)
+
+*A result for the blast SHOT5 with **A** = 17. The note at the top gives the prediction (P50 0.38 m,
+P80 0.61 m, uniformity n 1.77) and says which inputs were held at the model's limits. The table sets
+the Kuz-Ram P-values against the measured ones, and the blast table gives each input's minimum,
+median and maximum over its holes.*
+
+With a result, the **Size curve** tab draws the Kuz-Ram curve over the measured one, and the
+P-value table gains a **Kuz-Ram (m)** row. The report gains a Kuz-Ram page.
+
+![The Size curve tab with the Kuz-Ram curve in blue over the measured curve and the Swebrec fit, and the P-value table with Measured and Kuz-Ram rows](../screenshots/FragmentsSizeCurveKuzRam.png)
+
+*Above the 0.51 m scan floor the two curves lie almost on top of each other. Below it the scan cannot
+confirm the prediction.*
 
 The orientation of a joint set from [Facets and Joint Sets](facets-joint-sets.md) helps choose
 **Joints to the face**.
@@ -237,13 +252,19 @@ these fragments were found. Run again to update them."*
 |---|---|
 | **1** | The title, date, Kirra version and author; the cloud, its points, the area, the method and the point spacing; five summary cards (**P50**, **P80**, **P90**, **Rocks** and the fit); the scan-density note; and a plan of the cloud coloured by size range inside the area, in the scan's own colours outside it, with a north arrow, a scale bar and the size-range legend |
 | **2** | The size curve, the size-range bars (fines hatched), the P-values with those under the scan floor in red, the run's numbers, the method and its reference, and a disclaimer |
-| **3** | Only when the **Kuz-Ram** tab has a result: the Kuz-Ram prediction beside the measured curve |
+| **3** | Only when the **Kuz-Ram** tab has a result: the Kuz-Ram curve over the measured one, the P-values side by side with their difference, a note on where they agree, the blast's inputs (minimum, median, maximum), the rock factor and model settings, and the model's reference |
 
 | Page 1 | Page 2 |
 |---|---|
 | ![Fragmentation Report page 1: the header, five summary cards, the scan-density note and a plan of the muckpile coloured by size range](../screenshots/FragmentReportPage1.png) | ![Fragmentation Report page 2: the size curve, the size-range bars, the P-values, the run's numbers, the method and the disclaimer](../screenshots/FragmentReportPage2.png) |
 
-*The two-page report from the run above. A card in red, like P50 here, is under the scan's floor.*
+| Page 3 (with a Kuz-Ram result) | The preview |
+|---|---|
+| ![Fragmentation Report page 3: the Kuz-Ram curve over the measured curve, the P-values and their difference, the blast's inputs and the model settings](../screenshots/FragmentReportPage3.png) | ![The Fragmentation Report preview: the file name, the three page thumbnails and page 1, with Discard and Save PDF](../screenshots/FragmentReportPreview.png) |
+
+*The three-page report from the run above, with the Kuz-Ram result. On page 1 the P80 and P90 cards
+show the Kuz-Ram value under the measured one, and a card in red, like P50 here, is under the scan's
+floor.*
 
 ---
 
