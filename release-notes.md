@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.48
+
+_2026-11-07_
+
+**Feature**
+
+- Alignment moves an image with a Rigid fit by the fit's plan part
+
+**Bug Fix**
+
+- New alignment pairs no longer reuse the name of an existing pair
+
 ## Release v1.1.36.46
 
 _2026-11-07_
