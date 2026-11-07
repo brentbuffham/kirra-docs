@@ -200,6 +200,22 @@ size they will add:
 The clouds are stored in the file as they are, not compressed, so the file grows by about the
 size shown.
 
+**Block models.** A KAP can carry your block models too, with their display settings. When your
+workspace has any, saving a KAP first asks **Block Models** — *Block models add up to (size) to
+this project. Include them?* — before the point-cloud question:
+
+| Button | Result |
+|---|---|
+| **Include** | The KAP carries the block models |
+| **Leave out** | The KAP is saved without them. The block models stay in your workspace |
+| **Cancel** | No file is saved. Closing the dialog cancels as well |
+
+Block models are packed compactly and compressed, so the file usually grows by much less than
+the size shown. A large project can run out of browser memory when it is saved, opened or
+merged: if that is a concern, leave the block model out and save it on its own with **Export**
+in its Block Model dialog. A block model too large for a project file (over 1 GB) is left out,
+and Kirra names it.
+
 ---
 
 ## KAT (Kirra App Template)

@@ -56,7 +56,7 @@ See: [CSV Formats](../importing/csv-formats.md) ·
 | Format | Extensions | Import | Export | Notes |
 |---|---|:---:|:---:|---|
 | Kirra KAD | `.kad`, `.txt` | Yes | Yes | Native Kirra format — point, line, poly, circle, text. |
-| Kirra KAP | `.kap` | Yes | Yes | Complete project — the blast, drawings, surfaces, imagery, point clouds, every library and your work settings. Saving asks whether to include point clouds, and shows their size. |
+| Kirra KAP | `.kap` | Yes | Yes | Complete project — the blast, drawings, surfaces, imagery, point clouds, block models, every library and your work settings. Saving asks whether to include block models and point clouds, and shows their size. |
 | Kirra KAT | `.kat` | Yes | Yes | Site template — everything in a KAP except the blast (libraries and work settings). |
 | DXF | `.dxf` | Yes | Yes | Import reads ASCII DXF: POINT, INSERT, LINE, POLYLINE, LWPOLYLINE, ARC, CIRCLE, ELLIPSE, TEXT, MTEXT and 3DFACE / polyface meshes — see [DXF Import](../importing/dxf.md). Export writes one ASCII DXF holding any mix of blast holes (standard 2-layer or Vulcan-tagged), KAD drawings and 3DFACE surfaces. |
 | DXF Surface (3DFACE) | `.dxf` | — | Yes | One `.dxf` per visible surface. On the **Surfaces / Mesh** tab. |
