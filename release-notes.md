@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.67
+
+_2026-11-07_
+
+**Bug Fix**
+
+- Panning up or down in a side view no longer snaps back or misaligns selection
+
+## Release v1.1.36.66
+
+_2026-11-07_
+
+**Bug Fix**
+
+- Facet Report side views fill the page, three to a page, never stretched
+
 ## Release v1.1.36.65
 
 _2026-11-07_
