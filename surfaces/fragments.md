@@ -12,7 +12,7 @@ broke the rock, without sieving.
 
 ![The Fragments dialog after a run on a drone scan of a muckpile: Run on a KAD polygon, the scan-density note, the default settings, the result line, the size curve and the size-range bars](../screenshots/FragmentsDialog.png)
 
-*The **Settings** tab after a run with the default settings, on the 14.6 million points of a drone
+*The **Settings** tab after a run with the default settings, on the 46.3 million stored points of a drone
 scan inside a KAD polygon: 43,949 rocks, 33 % fines, P50 0.34 m, P80 0.62 m.*
 
 The dialog has three tabs: **Settings** (the run and the size curve), **Size curve** (the curve at
