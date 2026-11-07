@@ -2,6 +2,26 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.51
+
+_2026-11-07_
+
+**Bug Fix**
+
+- CSV import no longer guesses an Energy column as Grade Y
+
+## Release v1.1.36.50
+
+_2026-11-07_
+
+**Feature**
+
+- Alignment shows the busy indicator from Apply until the move is done
+
+**Bug Fix**
+
+- Questions asked during busy work are no longer hidden behind the indicator
+
 ## Release v1.1.36.48
 
 _2026-11-07_
