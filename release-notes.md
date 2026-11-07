@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.52
+
+_2026-11-07_
+
+**Bug Fix**
+
+- A product's RWS and energy now reach the charged decks (recharge or Product Manager edit)
+
 ## Release v1.1.36.51
 
 _2026-11-07_
