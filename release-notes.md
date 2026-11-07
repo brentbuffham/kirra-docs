@@ -2,6 +2,46 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.58
+
+_2026-11-07_
+
+**Feature**
+
+- Hovered blocks in 2D are outlined in lime, as in 3D
+
+## Release v1.1.36.57
+
+_2026-11-07_
+
+**Feature**
+
+- Block model datatips now work in 2D, showing the top block
+
+## Release v1.1.36.56
+
+_2026-11-07_
+
+History not available at the moment.
+
+## Release v1.1.36.55
+
+_2026-11-07_
+
+**Feature**
+
+- Block models in 2D look like the 3D view from above
+
+**Bug Fix**
+
+- Block models in 2D no longer show dark stripes between tiles
+
+## Release v1.1.36.54
+
+_2026-11-07_
+
+History not available at the moment.
+
 ## Release v1.1.36.53
 
 _2026-11-07_
