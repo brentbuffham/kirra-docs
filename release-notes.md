@@ -2,6 +2,27 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.71
+
+_2026-11-08_
+
+**Bug Fix**
+
+- Prints: every cloud point 1 device pixel
+
+## Release v1.1.36.70
+
+_2026-11-08_
+
+**Feature**
+
+- Facet Report shows several side views around a curved wall
+
+**Bug Fix**
+
+- Facet Report areas and counts carry thousands separators
+- Facet Report side views print points at the same size as other prints
+
 ## Release v1.1.36.69
 
 _2026-11-08_
