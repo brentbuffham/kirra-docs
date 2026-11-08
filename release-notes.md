@@ -2,6 +2,20 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.69
+
+_2026-11-08_
+
+**Bug Fix**
+
+- Prints: every cloud point 2 device pixels; thousands separators in the Fragmentation Report
+
+## Release v1.1.36.68
+
+_2026-11-08_
+
+History not available at the moment.
+
 ## Release v1.1.36.67
 
 _2026-11-07_
