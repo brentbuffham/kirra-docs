@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.73
+
+_2026-11-09_
+
+**Feature**
+
+- A short note explains why single rows or holes only advance one step
+
+## Release v1.1.36.72
+
+_2026-11-09_
+
+**Feature**
+
+- Timing offsets can now ramp smoothly across selected holes, adding relief with distance
+- Offset buttons now offer Step, Linear and Exponent shapes
+
 ## Release v1.1.36.71
 
 _2026-11-08_
