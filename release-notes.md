@@ -2,6 +2,124 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.95
+
+_2026-11-10_
+
+History not available at the moment.
+
+## Release v1.1.36.94
+
+_2026-11-10_
+
+**Bug Fix**
+
+- Clicking an IDI interval now highlights its two holes on the plan
+
+## Release v1.1.36.93
+
+_2026-11-10_
+
+**Bug Fix**
+
+- Out of Order finds local kinks in the Temporal Mesh; one bar per hole
+
+## Release v1.1.36.92
+
+_2026-11-10_
+
+**Feature**
+
+- Time Window shows holes firing out of order against the time contours
+- Time Window shows neighbouring holes with too little relief
+
+## Release v1.1.36.91
+
+_2026-11-10_
+
+**Feature**
+
+- Timing design check: holes out of order, pairs with low relief
+
+## Release v1.1.36.90
+
+_2026-11-10_
+
+**Bug Fix**
+
+- Hide the scatter probability; spec revised to a design check
+
+## Release v1.1.36.89
+
+_2026-11-10_
+
+**Feature**
+
+- Time Window flags neighbouring holes that fire against signal order
+
+## Release v1.1.36.88
+
+_2026-11-10_
+
+**Feature**
+
+- Time Window shows overlap probability between neighbouring holes
+- Time Window shows crowding probability with a choice of rule
+
+## Release v1.1.36.87
+
+_2026-11-10_
+
+**Feature**
+
+- Overlap controller and Time Window options
+
+## Release v1.1.36.86
+
+_2026-11-10_
+
+**Feature**
+
+- Overlap run scoring and Time Window chart data
+
+## Release v1.1.36.85
+
+_2026-11-10_
+
+**Feature**
+
+- Overlap sampler: neighbours, tau rules, one sampled blast
+
+## Release v1.1.36.84
+
+_2026-11-10_
+
+History not available at the moment.
+
+## Release v1.1.36.83
+
+_2026-11-10_
+
+**Feature**
+
+- Products can store measured mean delay and scatter
+
+## Release v1.1.36.82
+
+_2026-11-10_
+
+**Feature**
+
+- Delay scatter model and measured scatter fields
+
+## Release v1.1.36.81
+
+_2026-11-10_
+
+**Feature**
+
+- Delay overlap closed form with an accurate tail
+
 ## Release v1.1.36.80
 
 _2026-11-10_
