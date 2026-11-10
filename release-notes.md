@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.75
+
+_2026-11-10_
+
+**Bug Fix**
+
+- Dropping a product on the hole bottom no longer leaves a sliver of air
+- Applied charging no longer carries a hidden empty air deck
+
 ## Release v1.1.36.74
 
 _2026-11-10_
