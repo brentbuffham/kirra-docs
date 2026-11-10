@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.76
+
+_2026-11-10_
+
+**Feature**
+
+- Timing contours and relief can be plotted at toe, primer or product
+- Relief now follows the contour time basis
+
 ## Release v1.1.36.75
 
 _2026-11-10_
