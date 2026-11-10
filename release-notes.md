@@ -2,6 +2,43 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.80
+
+_2026-11-10_
+
+**Feature**
+
+- Blast Animation has a playhead you can drag to scrub the firing
+
+**Bug Fix**
+
+- Paused or stepped animation keeps holes in the firing colour
+
+## Release v1.1.36.79
+
+_2026-11-10_
+
+**Bug Fix**
+
+- Bake undo finds the live holes when the objects were replaced
+
+## Release v1.1.36.78
+
+_2026-11-10_
+
+**Bug Fix**
+
+- Remove Tie, Initiation Point and Reset Connections can now be undone
+
+## Release v1.1.36.77
+
+_2026-11-10_
+
+**Bug Fix**
+
+- Undoing a trunk or tie step keeps later ties made by other tools
+- Undoing a tie restores the harness path it cleared
+
 ## Release v1.1.36.76
 
 _2026-11-10_
