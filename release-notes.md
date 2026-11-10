@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.74
+
+_2026-11-10_
+
+**Feature**
+
+- Template prints can now show sequence numbers, harness names and path colours
+- Print label size takes a multiplier and follows on-screen text size
+- Label size is set in metres with a multiplier from 0.1 to 100
+- Contours and first-movement arrows now print from template codes alone
+
+**Bug Fix**
+
+- Downhole times no longer overlap hole IDs on rotated prints
+- Printed hole markers now match the on-screen hole size
+- Editing one label setting no longer resets the others on other holes
+
 ## Release v1.1.36.73
 
 _2026-11-09_
