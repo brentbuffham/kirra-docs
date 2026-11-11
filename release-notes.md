@@ -2,6 +2,16 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.96
+
+_2026-11-11_
+
+**Bug Fix**
+
+- 3D print in Kirra Inbuilt no longer comes out squashed or shrunk
+- 3D print boundary now stays when changing orientation or paper size
+- 2D drawing lines now have rounded corners
+
 ## Release v1.1.36.95
 
 _2026-11-10_
