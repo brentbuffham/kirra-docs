@@ -2,6 +2,32 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.99
+
+_2026-11-12_
+
+**Feature**
+
+- Time Window checks now measure at the Contour Plot at point
+
+## Release v1.1.36.98
+
+_2026-11-12_
+
+**Bug Fix**
+
+- Fix deploy: mn / ru / es translations for Same Time Adjacent Holes
+
+## Release v1.1.36.97
+
+_2026-11-12_
+
+**Feature**
+
+- Time Window has a Same Time Adjacent Holes chart
+- Time Window bars: Shift+click adds, Ctrl+click removes
+- Clicking empty chart space clears the Time Window selection
+
 ## Release v1.1.36.96
 
 _2026-11-11_
