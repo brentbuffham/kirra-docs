@@ -2,6 +2,29 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.103
+
+_2026-11-12_
+
+**Feature**
+
+- Voronoi Options can hide dummy, zero-diameter and uncharged holes
+- Find, Select and Zoom has a Hide button
+
+**Bug Fix**
+
+- Hiding a hole no longer hides a same-named hole in another blast
+
+## Release v1.1.36.102
+
+_2026-11-12_
+
+**Bug Fix**
+
+- Deleting a hole now also deletes its charge
+- Undoing a hole delete restores the hole's charge
+- Project files no longer keep charges for deleted holes
+
 ## Release v1.1.36.101
 
 _2026-11-12_
