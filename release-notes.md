@@ -2,6 +2,20 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.101
+
+_2026-11-12_
+
+History not available at the moment.
+
+## Release v1.1.36.100
+
+_2026-11-12_
+
+**Feature**
+
+- Pressing Enter confirms the record length, mass and comment dialogs
+
 ## Release v1.1.36.99
 
 _2026-11-12_
