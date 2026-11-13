@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.110
+
+_2026-11-13_
+
+**Bug Fix**
+
+- Temporal mesh and Time Window checks now include downline travel time
+- Same-time warnings compare the whole milliseconds shown on the plan
+
 ## Release v1.1.36.109
 
 _2026-11-13_
