@@ -2,6 +2,61 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.109
+
+_2026-11-13_
+
+**Feature**
+
+- Colour a surface by slope to read bench and wall angles
+- Slope colour bands can be inserted or split in the band editor
+
+## Release v1.1.36.108
+
+_2026-11-13_
+
+**Bug Fix**
+
+- Renaming a blast keeps ties and connections from other blasts
+- Data Explorer shows the new blast name straight after a rename
+
+## Release v1.1.36.107
+
+_2026-11-13_
+
+**Feature**
+
+- Voronoi legend has a Custom option with your own minimum and maximum
+
+**Bug Fix**
+
+- Uncharged holes no longer show the lowest colour on Designed Mass
+- Holes without a measured mass now show as no data on measured powder factor
+
+## Release v1.1.36.106
+
+_2026-11-13_
+
+**Bug Fix**
+
+- Open tabs keep working after a new version is released
+
+## Release v1.1.36.105
+
+_2026-11-13_
+
+**Bug Fix**
+
+- Saving a project without its .kap ending now warns you
+
+## Release v1.1.36.104
+
+_2026-11-13_
+
+**Bug Fix**
+
+- Saving a project or template offers only its own file type
+
 ## Release v1.1.36.103
 
 _2026-11-12_
