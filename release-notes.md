@@ -2,6 +2,18 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.131
+
+_2026-11-14_
+
+**Feature**
+
+- Range lines with different peak counts split or merge the peaks
+
+**Bug Fix**
+
+- Range timing now runs peak to peak between the two lines
+
 ## Release v1.1.36.130
 
 _2026-11-14_
