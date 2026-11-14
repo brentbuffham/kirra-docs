@@ -2,6 +2,127 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.124
+
+_2026-11-14_
+
+**Bug Fix**
+
+- Facet Report lists angles between joint sets in one compact grid
+- Facet Report joint set table no longer runs under the page footer
+
+## Release v1.1.36.123
+
+_2026-11-14_
+
+**Bug Fix**
+
+- Measured Data imports now name missing swap products and hot holes
+- Measured Data export leaves unmeasured values blank
+- A zero dip tolerance no longer flags holes drilled to design
+
+## Release v1.1.36.122
+
+_2026-11-14_
+
+**Bug Fix**
+
+- A deck product picked by hand is no longer swapped back
+- Applying a charge rule swaps only the decks water reaches
+- Swap rules read temperatures recorded in kelvin correctly
+
+## Release v1.1.36.121
+
+_2026-11-14_
+
+**Bug Fix**
+
+- Unticking Wet on a hole now swaps its decks back
+- Diptek dips with no water height now mark the hole dry
+
+## Release v1.1.36.120
+
+_2026-11-13_
+
+**Feature**
+
+- Find facets and joint sets on a surface, with a stereonet
+- Colour a surface by joint set in 2D, 3D and print
+- Facet Report now prints for surfaces
+
+## Release v1.1.36.119
+
+_2026-11-13_
+
+**Feature**
+
+- Import Diptek Pulse dips onto a blast
+
+## Release v1.1.36.118
+
+_2026-11-13_
+
+**Feature**
+
+- Measured data files carry water, temperature, conditions and collar
+
+**Bug Fix**
+
+- Blank cells in a measured data file no longer erase values
+
+## Release v1.1.36.117
+
+_2026-11-13_
+
+**Feature**
+
+- Water length on hole conditions swaps only the decks it reaches
+- Hot holes over the site limit are marked do-not-charge
+
+**Bug Fix**
+
+- Changing hole conditions now re-charges the hole
+
+## Release v1.1.36.116
+
+_2026-11-13_
+
+**Feature**
+
+- Field Settings for the hot-hole limit and dip tolerances
+
+## Release v1.1.36.115
+
+_2026-11-13_
+
+**Feature**
+
+- Re-fit a loaded hole after a re-dip (same mass, new depths)
+
+## Release v1.1.36.114
+
+_2026-11-13_
+
+**Bug Fix**
+
+- Per-deck water swaps, and products swap back when a condition clears
+
+## Release v1.1.36.113
+
+_2026-11-13_
+
+**Feature**
+
+- Charging follows the dipped hole length, not just the design
+
+## Release v1.1.36.112
+
+_2026-11-13_
+
+**Bug Fix**
+
+- Hole field-data model for Kirra Field (dips, conditions, water, hot holes, compliance)
+
 ## Release v1.1.36.110
 
 _2026-11-13_
