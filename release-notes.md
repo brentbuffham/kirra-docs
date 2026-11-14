@@ -2,6 +2,36 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.129
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.128
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.127
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.126
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.125
+
+_2026-11-14_
+
+History not available at the moment.
+
 ## Release v1.1.36.124
 
 _2026-11-14_
