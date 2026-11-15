@@ -2,6 +2,116 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.149
+
+_2026-11-15_
+
+**Bug Fix**
+
+- A re-dip no longer changes the charge of a hole with loaded amounts entered
+
+## Release v1.1.36.148
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.147
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.146
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.145
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.144
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.143
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.142
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.141
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.140
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.139
+
+_2026-11-15_
+
+History not available at the moment.
+
+## Release v1.1.36.138
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.137
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.136
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.135
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.134
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.133
+
+_2026-11-14_
+
+History not available at the moment.
+
+## Release v1.1.36.132
+
+_2026-11-14_
+
+History not available at the moment.
+
 ## Release v1.1.36.131
 
 _2026-11-14_
