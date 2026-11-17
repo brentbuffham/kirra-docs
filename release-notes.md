@@ -2,6 +2,23 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.168
+
+_2026-11-17_
+
+**Feature**
+
+- Data Explorer converts drawings to polygons, lines or points
+- Conversions that cannot apply are greyed out in the menu
+
+## Release v1.1.36.167
+
+_2026-11-17_
+
+**Feature**
+
+- Despike can clean walls and faces on the section plane
+
 ## Release v1.1.36.166
 
 _2026-11-17_
