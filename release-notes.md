@@ -2,6 +2,36 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.172
+
+_2026-11-17_
+
+History not available at the moment.
+
+## Release v1.1.36.171
+
+_2026-11-17_
+
+History not available at the moment.
+
+## Release v1.1.36.170
+
+_2026-11-17_
+
+History not available at the moment.
+
+## Release v1.1.36.169
+
+_2026-11-17_
+
+**Feature**
+
+- Despike circles lie on the section plane when despiking a wall
+
+**Bug Fix**
+
+- Edit Mesh touching button shows red when on
+
 ## Release v1.1.36.168
 
 _2026-11-17_
