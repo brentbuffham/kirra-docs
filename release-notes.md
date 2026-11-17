@@ -2,6 +2,25 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.166
+
+_2026-11-17_
+
+**Feature**
+
+- Recalculate warns when a charge no longer fits its hole
+- Recalculate warns when a deck formula fails, such as a missing product
+- Check Charging lists charges too long for their hole
+
+## Release v1.1.36.165
+
+_2026-11-17_
+
+**Feature**
+
+- Edit Mesh selects with polygon, rectangle, ellipse or lasso
+- Edit Mesh button switches between touching and fully-inside faces
+
 ## Release v1.1.36.164
 
 _2026-11-17_
