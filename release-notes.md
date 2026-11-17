@@ -2,6 +2,81 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.36.164
+
+_2026-11-17_
+
+**Bug Fix**
+
+- Project files with small surfaces are now much smaller
+
+## Release v1.1.36.163
+
+_2026-11-17_
+
+**Bug Fix**
+
+- Fix the red suite left by .161 (split-formula notice placeholder)
+
+## Release v1.1.36.162
+
+_2026-11-17_
+
+**Bug Fix**
+
+- Edit Mesh wireframe and points now follow the Section Plane cut
+
+## Release v1.1.36.161
+
+_2026-11-17_
+
+**Bug Fix**
+
+- A deck split by a new deck keeps its scaling, formulas and density
+- Apply Changes gives every hole the added deck's scaling and formulas
+
+## Release v1.1.36.160
+
+_2026-11-17_
+
+**Feature**
+
+- Deck formulas can now read decks above or below them
+
+**Bug Fix**
+
+- Recalculating a charge keeps the decks contiguous from collar to toe
+- Apply to Selected and Recalculate now lay out decks the same way
+
+## Release v1.1.36.159
+
+_2026-11-17_
+
+**Bug Fix**
+
+- Interpret reads kilograms inside if and otherwise sentences
+- Interpret finds a product named in the sentence without quotes
+
+## Release v1.1.36.158
+
+_2026-11-17_
+
+**Feature**
+
+- Deck Builder labels can be switched to all, kg and metres, or none
+
+**Bug Fix**
+
+- Deck scaling badges now show on every deck, including proportional ones
+
+## Release v1.1.36.157
+
+_2026-11-17_
+
+**Bug Fix**
+
+- Clicking a deck boundary no longer clears the deck formulas
+
 ## Release v1.1.36.156
 
 _2026-11-16_
