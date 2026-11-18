@@ -2,6 +2,36 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37
+
+_2026-11-18_
+
+**Bug Fix**
+
+- Portable release
+
+## Release v1.1.36.179
+
+_2026-11-18_
+
+History not available at the moment.
+
+## Release v1.1.36.178
+
+_2026-11-18_
+
+**Bug Fix**
+
+- Desktop: each workspace opens in its own window
+
+## Release v1.1.36.177
+
+_2026-11-18_
+
+**Bug Fix**
+
+- Desktop app no longer freezes at start-up on some Windows PCs
+
 ## Release v1.1.36.176
 
 _2026-11-18_
