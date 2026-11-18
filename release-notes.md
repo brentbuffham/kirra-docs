@@ -20,9 +20,9 @@ History not available at the moment.
 
 _2026-11-18_
 
-**Bug Fix**
+**Feature**
 
-- Desktop: each workspace opens in its own window
+- Desktop app opens each workspace in its own window
 
 ## Release v1.1.36.177
 
