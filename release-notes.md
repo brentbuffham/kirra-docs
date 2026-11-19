@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.7
+
+_2026-11-19_
+
+**Feature**
+
+- Describe a fixed stemming length, like stem 3.5 m
+
+**Bug Fix**
+
+- A primer at 10% of the charge is no longer placed 10 m up
+- Number words like half a metre are read; unclear primer distances are refused
+- Not less than and not more than limits are now kept
+- Rounding to the nearest 0.5 m now rounds to that step
+- A stem given as a multiple of the burden is read in whole-hole descriptions
+
 ## Release v1.1.37.6
 
 _2026-11-19_
