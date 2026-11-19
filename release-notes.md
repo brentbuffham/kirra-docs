@@ -2,6 +2,57 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.12
+
+_2026-11-19_
+
+**Feature**
+
+- The charging sentence box is now called Ask Kirra
+
+**Bug Fix**
+
+- Chinese and Spanish box examples now show sentences the box understands
+
+## Release v1.1.37.11
+
+_2026-11-19_
+
+**Bug Fix**
+
+- Ask Kirra phase A: shared number reader, masker, recipe, gold set
+
+## Release v1.1.37.10
+
+_2026-11-19_
+
+History not available at the moment.
+
+## Release v1.1.37.9
+
+_2026-11-19_
+
+**Bug Fix**
+
+- Apply Changes now warns about holes too short for the design
+- Pattern templates now ask what to do with holes too short to charge
+- Fitting a short hole never copies an upside-down deck
+
+## Release v1.1.37.8
+
+_2026-11-19_
+
+**Feature**
+
+- Describe a deck mass that changes with hole length
+
+**Bug Fix**
+
+- Millimetres such as 300 mil are no longer read as metres
+- A stem in hole diameters now uses millimetres correctly
+- Unclear charge descriptions are refused instead of losing a deck or primer
+- Formulas use the product name exactly as the Product Manager spells it
+
 ## Release v1.1.37.7
 
 _2026-11-19_
