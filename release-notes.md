@@ -2,6 +2,44 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.6
+
+_2026-11-19_
+
+**Feature**
+
+- Charge descriptions can use burden, spacing, area and powder factor
+- Charge descriptions can be typed in Chinese, including engineering shorthand
+
+**Bug Fix**
+
+- Stemming bands by hole length now keep every band and the default
+- "6 m or less" and "less than or equal to" now read correctly
+
+## Release v1.1.37.5
+
+_2026-11-19_
+
+History not available at the moment.
+
+## Release v1.1.37.4
+
+_2026-11-19_
+
+History not available at the moment.
+
+## Release v1.1.37.3
+
+_2026-11-19_
+
+History not available at the moment.
+
+## Release v1.1.37.2
+
+_2026-11-19_
+
+History not available at the moment.
+
 ## Release v1.1.37.1
 
 _2026-11-19_
