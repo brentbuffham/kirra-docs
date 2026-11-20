@@ -2,6 +2,63 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.18
+
+_2026-11-20_
+
+**Feature**
+
+- KAP/kat manifest counts the block-model colour schemas it carries
+
+## Release v1.1.37.17
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Importing a KAT or KAP no longer deletes your block model colour schemas
+
+## Release v1.1.37.16
+
+_2026-11-20_
+
+**Feature**
+
+- Charging sentences read booster and prime as primer words
+
+**Bug Fix**
+
+- Unreadable primer sentences are refused, not placed at a default
+
+## Release v1.1.37.15
+
+_2026-11-20_
+
+**Feature**
+
+- Charging sentences read fractions like 1/2 m and 1 1/2 m
+
+**Bug Fix**
+
+- Primer distances from the toe are read, not replaced by 0.3 m
+- A primer below the toe is refused, not moved above it
+
+## Release v1.1.37.14
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Ask Kirra no longer calls a reachable kg/m impossible when no product fits
+
+## Release v1.1.37.13
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Ask Kirra gold set batch 2 (data only) and Brent's tick-list page
+
 ## Release v1.1.37.12
 
 _2026-11-19_
