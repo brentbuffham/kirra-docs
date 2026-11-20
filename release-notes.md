@@ -2,6 +2,14 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.34
+
+_2026-11-21_
+
+**Feature**
+
+- Measured length, mass and comment now sit under one Field display button
+
 ## Release v1.1.37.33
 
 _2026-11-20_
