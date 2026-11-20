@@ -2,6 +2,115 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.33
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Recharge stays dom-free again: the Kirra-Field tablet builds
+
+## Release v1.1.37.32
+
+_2026-11-20_
+
+History not available at the moment.
+
+## Release v1.1.37.31
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Translations: surface strings checked against the mining glossary
+
+## Release v1.1.37.30
+
+_2026-11-20_
+
+**Feature**
+
+- Describe a whole hole with stemming down to a named surface
+
+## Release v1.1.37.29
+
+_2026-11-20_
+
+History not available at the moment.
+
+## Release v1.1.37.28
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Charge to surface: the warning says each hole keeps its last calculated depth
+
+## Release v1.1.37.27
+
+_2026-11-20_
+
+**Feature**
+
+- Describe-it box reads "stem to the clay seam" and stops each hole there
+
+## Release v1.1.37.26
+
+_2026-11-20_
+
+History not available at the moment.
+
+## Release v1.1.37.25
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Charge to surface T5: Ask Kirra reads surfaces as S1-S3 slots, (surface S1 [N])
+
+## Release v1.1.37.24
+
+_2026-11-20_
+
+**Feature**
+
+- Charge formulas can stop a deck at a loaded surface, per hole
+- Charging warns when holes miss a surface or the surface is missing
+
+## Release v1.1.37.23
+
+_2026-11-20_
+
+History not available at the moment.
+
+## Release v1.1.37.22
+
+_2026-11-20_
+
+History not available at the moment.
+
+## Release v1.1.37.21
+
+_2026-11-20_
+
+History not available at the moment.
+
+## Release v1.1.37.20
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Charge to surface T2: one hole-position helper for every formula engine
+
+## Release v1.1.37.19
+
+_2026-11-20_
+
+**Bug Fix**
+
+- Charge to surface T1: first crossing of a surface along the hole
+
 ## Release v1.1.37.18
 
 _2026-11-20_
