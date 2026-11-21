@@ -2,6 +2,68 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.43
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.42
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.41
+
+_2026-11-21_
+
+**Feature**
+
+- Stand-off: an inert deck either side of a coal seam, per hole
+
+## Release v1.1.37.40
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.39
+
+_2026-11-21_
+
+**Feature**
+
+- Charge top or toe can sit a set distance above or below a surface
+
+## Release v1.1.37.38
+
+_2026-11-21_
+
+**Feature**
+
+- Charge to a surface asks whether the top or the toe is meant
+
+## Release v1.1.37.37
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.36
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.35
+
+_2026-11-21_
+
+**Feature**
+
+- Formulas can find where a hole leaves a closed seam solid
+
 ## Release v1.1.37.34
 
 _2026-11-21_
