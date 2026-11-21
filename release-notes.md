@@ -2,6 +2,32 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.56
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.55
+
+_2026-11-21_
+
+**Bug Fix**
+
+- The Field display button no longer turns on every label at once
+
+## Release v1.1.37.54
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.53
+
+_2026-11-21_
+
+History not available at the moment.
+
 ## Release v1.1.37.52
 
 _2026-11-21_
