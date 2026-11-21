@@ -2,6 +2,69 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.52
+
+_2026-11-21_
+
+**Bug Fix**
+
+- "Stem 3 m, or 2.5 m if short" no longer stems the whole hole
+- Charge base at grade and "don't charge the subdrill" now read correctly
+- Top of charge below the stemming is no longer measured from itself
+- "Stem" in a sentence now picks the Stemming product
+
+## Release v1.1.37.51
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.50
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.49
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.48
+
+_2026-11-21_
+
+**Bug Fix**
+
+- Charging Check no longer warns when dipped holes are deeper than designed
+
+## Release v1.1.37.47
+
+_2026-11-21_
+
+**Bug Fix**
+
+- Charging Check no longer warns when dipped holes are shorter than designed
+
+## Release v1.1.37.46
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.45
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.44
+
+_2026-11-21_
+
+History not available at the moment.
+
 ## Release v1.1.37.43
 
 _2026-11-21_
