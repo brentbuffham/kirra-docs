@@ -262,6 +262,20 @@ fx:deckBase[3] - packageLength(1, "GB230MM")      // top of one gas bag above de
 
 A count of 0 gives 0 m. If the product isn't in your product list, has no Length (mm), or the count is not a whole number, the formula doesn't evaluate and Kirra tells you which holes fell back.
 
+#### vertical(distance)
+
+Turns a vertical distance into metres along the hole, so a depth measured straight down works on an angled hole too. On a hole at 20° from vertical, `vertical(1)` is 1.064 m along the hole.
+
+| Parameter | Description |
+|-----------|-------------|
+| `distance` | A vertical distance in metres |
+
+```
+fx:holeLength - vertical(subdrillAmount + 1)   // 1 m (vertically) above the grade
+```
+
+Up-holes and face holes are measured along the hole, so there `vertical(1)` is simply 1 m. If the point would land outside the hole (on a nearly flat hole a short vertical distance is very long along it), the formula doesn't evaluate and Kirra tells you which holes fell back.
+
 #### sdobStem(targetSDoB, density)
 
 Calculates the stemming length required to achieve a target Scaled Depth of Burial. This is the Chiappetta SDoB formula used in flyrock risk assessment, solved in reverse to give you the stemming.
