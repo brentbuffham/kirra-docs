@@ -2,6 +2,90 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.88
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.87
+
+_2026-11-22_
+
+**Feature**
+
+- Charge formulas can fit the nearest whole number of cartridges, never part sticks
+
+## Release v1.1.37.86
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.85
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.84
+
+_2026-11-22_
+
+**Bug Fix**
+
+- Kirra depends on blast-physics-js 0.6.0 (the us Customary units table; no app change yet)
+
+## Release v1.1.37.83
+
+_2026-11-22_
+
+**Feature**
+
+- Packaged product and gas bags show each cartridge, with ×2 and ×3 for double-ups
+
+**Bug Fix**
+
+- Overlap patterns with more than one double-up are kept when a deck is edited
+
+## Release v1.1.37.82
+
+_2026-11-22_
+
+**Feature**
+
+- Packaged product given by mass loads the nearest whole number of cartridges
+
+## Release v1.1.37.81
+
+_2026-11-22_
+
+**Bug Fix**
+
+- A primer depth formula is evaluated on every hole it is applied to
+
+## Release v1.1.37.80
+
+_2026-11-22_
+
+**Feature**
+
+- Charging Check warns about a detonator without a booster in non cap-sensitive product
+
+## Release v1.1.37.79
+
+_2026-11-22_
+
+**Bug Fix**
+
+- A primer with a detonator alone is drawn without a booster
+
+## Release v1.1.37.78
+
+_2026-11-22_
+
+History not available at the moment.
+
 ## Release v1.1.37.77
 
 _2026-11-22_
