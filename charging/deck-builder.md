@@ -375,6 +375,24 @@ For multi-deck configurations, you can add multiple primers targeting different 
 - Primer 1: `fx:deckBase[8] - 0.3` (targets the bottom charge deck)
 - Primer 2: `fx:deckBase[4] - 0.3` (targets the upper charge deck)
 
+### Reading the Primer Symbols
+
+The charge column draws each primer as it is loaded. The detonator is the small centre square. A booster, when the primer has one, is the red box around it. A dotted line runs from the primer up to the collar: the downline, in the colour of its initiator (detonating cord, shock tube or electronic).
+
+| Symbol | What is loaded |
+|---|---|
+| ![Detonator only](../screenshots/PrimerSymbol-det-only.png) | **Detonator only.** The centre square and its line to the collar, no booster. Used for cap-sensitive packaged product. |
+| ![Detonator and booster](../screenshots/PrimerSymbol-det-booster.png) | **Detonator and booster.** The centre square inside the red booster box, and the line to the collar. |
+| ![Two primers at one depth](../screenshots/PrimerSymbol-two-primers.png) | **Two primers at the same depth.** Drawn side by side. |
+| ![Two detonators in one primer](../screenshots/PrimerSymbol-two-dets-booster.png) | **Two detonators in one primer.** Two squares inside the one red booster box. |
+| ![Two detonators, no booster](../screenshots/PrimerSymbol-two-dets-only.png) | **Two detonators, no booster.** Two squares side by side with a thin outline round both. |
+| ![Two detonator-only primers at one depth](../screenshots/PrimerSymbol-two-det-only-primers.png) | **Two detonator-only primers at the same depth.** Two single squares side by side. |
+| ![Detonating cord in a presplit](../screenshots/PrimerSymbol-det-cord.png) | **Detonating cord, no booster** (a presplit): the centre square at the top of the sticks, and the cord's red line up through the air deck to the collar. |
+
+A selected primer's outline turns blue.
+
+The list beside each primer names what it holds: the booster first, then one line per detonator.
+
 ---
 
 ## Swap Conditions (Product Substitution)
