@@ -245,6 +245,23 @@ fx:chargeTop[4] - massLength(50, 0.85)    // 50 kg ANFO above deck 4
 fx:chargeTop[4] - massLength(50, "ANFO")  // Same, using product lookup
 ```
 
+#### packageLength(count, "Product")
+
+The length of a set number of whole packages (cartridges, sticks or gas bags) stacked end to end: the count times the product's **Length (mm)** from the Product Manager.
+
+| Parameter | Description |
+|-----------|-------------|
+| `count` | How many packages: a whole number, 0 or more |
+| `"Product"` | The product's name in quotes. It needs a Length (mm) |
+
+```
+fx:holeLength - packageLength(4, "PRE32MM")       // top of 4 sticks sitting on the toe
+fx:holeLength - packageLength(1, "PRE32MM") / 2   // a primer in the bottom stick
+fx:deckBase[3] - packageLength(1, "GB230MM")      // top of one gas bag above deck 3's base
+```
+
+A count of 0 gives 0 m. If the product isn't in your product list, has no Length (mm), or the count is not a whole number, the formula doesn't evaluate and Kirra tells you which holes fell back.
+
 #### sdobStem(targetSDoB, density)
 
 Calculates the stemming length required to achieve a target Scaled Depth of Burial. This is the Chiappetta SDoB formula used in flyrock risk assessment, solved in reverse to give you the stemming.
