@@ -2,6 +2,175 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.77
+
+_2026-11-22_
+
+**Feature**
+
+- Charge formulas can place a set number of cartridges or gas bags
+
+## Release v1.1.37.76
+
+_2026-11-22_
+
+**Bug Fix**
+
+- Fixed-mass decoupled decks keep their cartridges when the hole diameter changes
+
+## Release v1.1.37.75
+
+_2026-11-22_
+
+**Bug Fix**
+
+- Decoupled decks draw the same number of cartridges they weigh
+- Saving Edit Deck without changing the quantity keeps the deck length
+
+## Release v1.1.37.74
+
+_2026-11-22_
+
+**Bug Fix**
+
+- Decoupled decks no longer drop a cartridge from the mass
+
+## Release v1.1.37.73
+
+_2026-11-22_
+
+**Bug Fix**
+
+- Formula builder chips are larger and easier to read
+
+## Release v1.1.37.72
+
+_2026-11-22_
+
+**Bug Fix**
+
+- Hole section view: opt-in named depth markers (used by the Ask Kirra picture tick page)
+
+## Release v1.1.37.71
+
+_2026-11-21_
+
+**Feature**
+
+- Describe a charge and a seam stand-off in one sentence
+
+## Release v1.1.37.70
+
+_2026-11-21_
+
+**Bug Fix**
+
+- A seam drawn as one surface now uses its top and bottom for stand-offs
+
+## Release v1.1.37.69
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.68
+
+_2026-11-21_
+
+**Bug Fix**
+
+- Up-holes and face holes measure offsets from grade along the hole
+- A vertical offset that falls outside the hole is refused, not applied
+
+## Release v1.1.37.67
+
+_2026-11-21_
+
+**Feature**
+
+- Charge up to a surface, or a set distance below it, in one sentence
+
+**Bug Fix**
+
+- Stem to a surface then "ANFO below" now reads as a whole hole
+- The sentence reader names the words it could not read
+
+## Release v1.1.37.66
+
+_2026-11-21_
+
+**Bug Fix**
+
+- Wet, damp and reactive swaps now change only the actual charge, not the design
+
+## Release v1.1.37.65
+
+_2026-11-21_
+
+**Bug Fix**
+
+- Hot holes and dips no longer change the design charge, only the actual view
+
+## Release v1.1.37.64
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.63
+
+_2026-11-21_
+
+**Bug Fix**
+
+- Offsets above or below grade in charge sentences are now vertical, as designed
+
+## Release v1.1.37.62
+
+_2026-11-21_
+
+**Feature**
+
+- Legend colour boxes now sit before their labels in every language
+
+## Release v1.1.37.61
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.60
+
+_2026-11-21_
+
+**Feature**
+
+- Charging Check flags any charge column without a primer
+
+## Release v1.1.37.59
+
+_2026-11-21_
+
+**Feature**
+
+- Stand-off asks for a detonator and booster when the hole has none
+
+**Bug Fix**
+
+- A stand-off that splits a charge now primes every charge column
+
+## Release v1.1.37.58
+
+_2026-11-21_
+
+History not available at the moment.
+
+## Release v1.1.37.57
+
+_2026-11-21_
+
+History not available at the moment.
+
 ## Release v1.1.37.56
 
 _2026-11-21_
