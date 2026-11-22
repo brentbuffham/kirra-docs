@@ -2,6 +2,83 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.103
+
+_2026-11-23_
+
+**Feature**
+
+- Importing a blast asks whether to add spacers under decks resting on air
+
+## Release v1.1.37.102
+
+_2026-11-22_
+
+**Bug Fix**
+
+- Removing a deck no longer leaves later deck formulas pointing at the wrong deck
+
+## Release v1.1.37.101
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.100
+
+_2026-11-22_
+
+**Feature**
+
+- Chinese charging sentences understand primers, air decks, gas bags, sticks and detonators
+- Surfaces and products named in Chinese are found by their name
+
+## Release v1.1.37.99
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.98
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.97
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.96
+
+_2026-11-22_
+
+**Feature**
+
+- Charge rules add a spacer under any deck resting on an air gap
+- Charging Check warns when a deck rests on air with nothing holding it
+- Spacer products can carry the hole diameter range they suit
+
+## Release v1.1.37.95
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.94
+
+_2026-11-22_
+
+History not available at the moment.
+
+## Release v1.1.37.93
+
+_2026-11-22_
+
+History not available at the moment.
+
 ## Release v1.1.37.92
 
 _2026-11-22_
