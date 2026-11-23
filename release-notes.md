@@ -2,6 +2,33 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.108
+
+_2026-11-23_
+
+**Feature**
+
+- Performance Monitor opens from a toolbar button beside Data Explorer
+- Developer panel rollback and detail options now sit in closed sections
+
+## Release v1.1.37.107
+
+_2026-11-23_
+
+History not available at the moment.
+
+## Release v1.1.37.106
+
+_2026-11-23_
+
+History not available at the moment.
+
+## Release v1.1.37.105
+
+_2026-11-23_
+
+History not available at the moment.
+
 ## Release v1.1.37.104
 
 _2026-11-23_
