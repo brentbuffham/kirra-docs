@@ -2,6 +2,24 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.110
+
+_2026-11-23_
+
+History not available at the moment.
+
+## Release v1.1.37.109
+
+_2026-11-23_
+
+**Feature**
+
+- Charge sentences find an explosive or booster by its product name
+
+**Bug Fix**
+
+- A primer depth written in a charge sentence is used, not the default
+
 ## Release v1.1.37.108
 
 _2026-11-23_
