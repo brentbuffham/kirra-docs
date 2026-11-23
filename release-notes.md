@@ -2,6 +2,25 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.112
+
+_2026-11-23_
+
+**Feature**
+
+- Describe a decked hole with several charges in one sentence
+- Charge sentences place primers by depth, fraction or one per charge
+
+**Bug Fix**
+
+- Numbers a charge sentence cannot use are refused instead of dropped
+
+## Release v1.1.37.111
+
+_2026-11-23_
+
+History not available at the moment.
+
 ## Release v1.1.37.110
 
 _2026-11-23_
