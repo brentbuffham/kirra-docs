@@ -2,6 +2,50 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.126
+
+_2026-11-24_
+
+History not available at the moment.
+
+## Release v1.1.37.125
+
+_2026-11-24_
+
+**Bug Fix**
+
+- Deck Builder reads "65 mm packages" and "pre-split charge" as products
+
+## Release v1.1.37.124
+
+_2026-11-24_
+
+History not available at the moment.
+
+## Release v1.1.37.123
+
+_2026-11-24_
+
+**Feature**
+
+- Save as Rule shows and saves a decoupled deck's double-up pattern
+
+## Release v1.1.37.122
+
+_2026-11-24_
+
+**Bug Fix**
+
+- Charge rules with a deck that reads the deck below now lay out correctly
+
+## Release v1.1.37.121
+
+_2026-11-24_
+
+**Feature**
+
+- Deck Builder's Apply to Selected is now amber, Apply Changes green
+
 ## Release v1.1.37.120
 
 _2026-11-24_
