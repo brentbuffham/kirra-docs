@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.120
+
+_2026-11-24_
+
+**Feature**
+
+- Small primers, packages and thin decks enlarge under the mouse for easier picking
+
+## Release v1.1.37.119
+
+_2026-11-24_
+
+**Bug Fix**
+
+- Charging config zips import when their files sit inside a folder
+
 ## Release v1.1.37.118
 
 _2026-11-24_
