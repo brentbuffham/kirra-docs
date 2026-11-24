@@ -2,6 +2,52 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.133
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.132
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.131
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.130
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.129
+
+_2026-11-25_
+
+**Bug Fix**
+
+- Deck Builder selections show in bold red, including on a pop-out
+
+## Release v1.1.37.128
+
+_2026-11-25_
+
+**Feature**
+
+- Choose metres or feet when importing or exporting hole CSV files
+
+## Release v1.1.37.127
+
+_2026-11-24_
+
+History not available at the moment.
+
 ## Release v1.1.37.126
 
 _2026-11-24_
