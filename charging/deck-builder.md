@@ -293,6 +293,26 @@ fx:holeLength - vertical(subdrillAmount + 1)   // 1 m (vertically) above the gra
 
 Up-holes and face holes are measured along the hole, so there `vertical(1)` is simply 1 m. If the point would land outside the hole (on a nearly flat hole a short vertical distance is very long along it), the formula doesn't evaluate and Kirra tells you which holes fell back.
 
+#### ft(n), inch(n), lb(n)
+
+Formulas work in metres and kilograms, in every project. A formula travels in charge rules, deck templates and KAPs, so it has to load the same charge on whichever machine opens it. To use a number in feet, inches or pounds, wrap it and Kirra converts it.
+
+| Function | Reads `n` as | Example |
+|----------|--------------|---------|
+| `ft(n)` | feet | `ft(10)` = 3.048 m |
+| `inch(n)` | inches | `inch(18)` = 0.4572 m |
+| `lb(n)` | pounds | `lb(250)` = 113.398 kg |
+
+```
+fx:holeLength - ft(10)                       // 10 ft above the toe
+fx:chargeBase - inch(18)                     // 18 in above the charge base
+fx:chargeTop - massLength(lb(250), "ANFO")   // a 250 lb ANFO column
+```
+
+`ft( )` is always the international foot (0.3048 m), never the US survey foot, and `lb( )` is the exact pound (0.45359237 kg). Inches are `inch( )`, not `in( )`, because `in` is a reserved word. A number without a wrapper is still metres or kilograms. The **ft(n)**, **inch(n)** and **lb(n)** chips put them in the formula for you.
+
+<!-- TODO SCREENSHOT: the formula panel's function chips showing ft(n), inch(n) and lb(n). Chrome is off for now; capture when Brent OKs it. -->
+
 #### surfaceDepth("Surface", fallback)
 
 Charge to a surface: a clay seam, a coal top, a water level, an RL plane. It gives the depth in metres along the hole from the collar to the first place the hole crosses the named surface. Each hole gets its own depth, so a deck follows an undulating seam. Angled holes and up-holes are measured along the hole, not vertically.

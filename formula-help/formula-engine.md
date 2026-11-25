@@ -46,6 +46,8 @@ Used in the [Deck Builder](../charging/deck-builder.md), charge rule templates, 
 
 **Power functions:** `massLength`, `sdobStem`, `sdobKg`, `ppvKG` (+ optional charge exponent `e`, default 0.5), `ppvKG3D` (3D slant distance), `ppvKGPoE` / `ppvKGPoE3D` (probability-of-exceedance charge limit, Blair 2011 site σ), indexed deck/charge depths (`deckBase[2]`, `chargeDensity[N]`, etc.).
 
+**Units:** charging formulas are always metres and kilograms, in every project. To write a number in US units, wrap it: `ft(10)`, `inch(18)`, `lb(250)`. See [Deck Builder → ft(n), inch(n), lb(n)](../charging/deck-builder.md#ftn-inchn-lbn).
+
 **Don't want to write it yourself?** The Deck Builder's **"Describe it…"** box turns plain English ("stem to SDoB 1.5 but never under 1.6 m", "biggest charge under 10 mm/s at the monitors") into the `fx:` formula. It's deterministic and refuses out-of-scope requests rather than guessing — see [Deck Builder → Describe it in plain English](../charging/deck-builder.md#describe-it-in-plain-english).
 
 **Start here:** [Deck Builder Formula Guide & Examples](../charging/Deck%20Builder%20Formula%20Guide%20Examples.md) — variables, functions, PPV/SDoB patterns, CSV round-trip notes.
