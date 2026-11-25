@@ -104,8 +104,9 @@ The Custom CSV export — accessed from the **Blasts** tab in the Export dialog 
 options as the import: **Metres (m)**, **International foot (0.3048 m)** and
 **US survey foot (1200/3937 m)**.
 
-<!-- TODO SCREENSHOT: the Custom CSV Export preset bar with File units set to US survey foot, and
-the column labels reading "Start X (ft)". Chrome is off for now; capture when Brent OKs it. -->
+![Custom CSV Export: Select Columns with File units set to US survey foot (1200/3937 m) on the Name row. Convert diameter to has switched to Inches, and the collar and toe columns read Start X (ft), End X (ft) and so on](../screenshots/CustomCSVExport-FileUnits.png)
+*Exporting in US survey feet. **Convert diameter to** switched to **Inches** and the coordinate
+columns read **(ft)**.*
 
 It sets the unit the file is written in, whatever Kirra's display units are. The dialog opens on
 the choice from your last export, or **Metres (m)** if there isn't one.

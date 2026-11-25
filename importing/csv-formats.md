@@ -260,8 +260,9 @@ Presets are kept in Kirra for the workspace you are in. They do not travel in a 
 **File units** sits on the preset bar's **Name** row, under the preset icons. It tells Kirra what
 unit the file's numbers are in.
 
-<!-- TODO SCREENSHOT: the Map Columns preset bar with File units set to US survey foot, and the
-collar labels reading "Start X (ft)*". Chrome is off for now; capture when Brent OKs it. -->
+![Import CSV: Map Columns with File units set to US survey foot (1200/3937 m) on the Name row. Diameter Units has switched to inches, and the collar fields read Start X (ft)*, Start Y (ft)* and Start Z (ft)*](../screenshots/CustomCSVImport-FileUnits.png)
+*A file in US survey feet. Picking the foot switched **Diameter Units** to inches and relabelled
+the coordinate and length fields **(ft)**.*
 
 | Option | One unit is |
 |---|---|
