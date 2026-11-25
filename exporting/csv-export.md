@@ -85,6 +85,8 @@ The writer key for this preset is **`blasthole-csv-actual`**.
 
 The Custom CSV export — accessed from the **Blasts** tab in the Export dialog — is the escape hatch when you need a non-Kirra column layout. It opens the **Custom CSV Export — Select Columns** dialog.
 
+The dialog opens with the columns and options from your last export, so check them before you export for a different system.
+
 ![Custom CSV Export — Select Columns dialog](../screenshots/CustomCSVExport.png)
 *Left: field picker grouped by category. Right: column order (drag to reorder). Bottom: custom text fields and Export button.*
 
