@@ -2,6 +2,96 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.151
+
+_2026-11-26_
+
+**Feature**
+
+- Kirra is now available in Polish
+- Polish letters print sharply in PDF plans
+
+## Release v1.1.37.150
+
+_2026-11-26_
+
+History not available at the moment.
+
+## Release v1.1.37.149
+
+_2026-11-26_
+
+**Feature**
+
+- Deck formulas accept ft( ), inch( ) and lb( ) for feet, inches and pounds
+
+## Release v1.1.37.148
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.147
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.146
+
+_2026-11-25_
+
+**Bug Fix**
+
+- Interpret reads quoted detonator and booster names as those products
+- Interpret reads heavy and heavy ANFO as a blended product
+
+## Release v1.1.37.145
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.144
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.143
+
+_2026-11-25_
+
+**Feature**
+
+- Print templates can force metres or feet with imp( ) and met( )
+
+## Release v1.1.37.142
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.141
+
+_2026-11-25_
+
+History not available at the moment.
+
+## Release v1.1.37.140
+
+_2026-11-25_
+
+**Bug Fix**
+
+- CSV import preview headers show the file's units, without a doubled asterisk
+
+## Release v1.1.37.139
+
+_2026-11-25_
+
+History not available at the moment.
+
 ## Release v1.1.37.138
 
 _2026-11-25_
