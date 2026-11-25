@@ -24,6 +24,7 @@ produced from Kirra itself — so it describes the build you actually have rathe
 | **Per-hole-type blocks** | `groupTable(...)`, and the `countif`/`sumif` pattern when you need one type per cell |
 | **Layout** | Why text is clipped, when to merge, row heights, wrap text |
 | **Timing** | `fireTime[i]` vs `holeTime[i]`, harness/tie-in sheets |
+| **Units** | `imp( )` for US Customary, `met( )` for metric, `unitLabel("length")` for the matching unit |
 | **Graphics** | `mapView`, `legend`, `northArrow`, `scale`, `holeSection`, `sectionView` |
 
 It also knows the limits and says so plainly: rows do **not** grow to fit content, `groupTable`

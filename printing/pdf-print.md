@@ -18,6 +18,7 @@ All formulas are entered in XLSX cells with the `fx:` prefix. Standard Excel for
 - [Aggregation Functions](#aggregation-functions)
 - [Group Functions](#group-functions)
 - [Math and Rounding Functions](#math-and-rounding-functions)
+- [Metric or US Customary Units](#metric-or-us-customary-units)
 - [String Functions](#string-functions)
 - [Date Functions](#date-functions)
 - [Conditional and Logic Functions](#conditional-and-logic-functions)
@@ -372,6 +373,44 @@ When `n` is negative, rounding happens at tens, hundreds, etc.:
 fx:round(1927.35, -1)   → 1930
 fx:round(1927.35, -2)   → 1900
 ```
+
+---
+
+## Metric or US Customary Units
+
+Kirra keeps every value in metric, and a template prints in metric unless you say otherwise. To
+print part of a template in US Customary units, wrap it in `imp( )`. `met( )` prints a block in
+metric.
+
+| Function | Description | Example | Result |
+|----------|-------------|---------|--------|
+| `imp(expr)` | Works out everything inside in US Customary units: lengths and coordinates in ft, diameters in in, mass in lb, volume in yd³, powder factor in lb/yd³ | `fx:imp(round(sum(holeLength[i]),1))` | `1250.4` |
+| `met(expr)` | Works out everything inside in metric units: m, mm, kg, m³, kg/m³ | `fx:met(round(sum(holeLength[i]),1))` | `381.1` |
+| `unitLabel(q)` | The unit symbol for the units in force where it's used | `fx:unitLabel("mass")` | `kg`, or `lb` inside `imp( )` |
+
+The wrapper changes how Kirra reads values inside the brackets, so every field, total and
+`unitLabel( )` in there follows it. The innermost wrapper wins. Feet are international feet
+(0.3048 m).
+
+What doesn't change:
+
+- A number you type yourself. `imp(10)` is still 10.
+- Angles, times, counts and text.
+
+`unitLabel( )` takes one of these names: `length`, `coordinate`, `diameter`, `mass`, `volume`,
+`area`, `powderFactor`, `linearCharge`, `density`, `rockDensity`, `ppv`, `velocity`. Any other
+name prints nothing.
+
+Put `unitLabel( )` next to the number, inside the same wrapper, so the label always agrees with it:
+
+```
+fx:imp(round(sum(holeLength[i]),1) & " " & unitLabel("length"))   → 1250.4 ft
+fx:met(round(totalMass,0) & " " & unitLabel("mass"))               → 18250 kg
+```
+
+Don't type the unit into the text yourself (`& " m"`) next to a value that might print in feet.
+
+Inside `imp( )`, burden × spacing × height in feet gives cubic **feet**, 27 times the number of cubic yards. Use `totalVolume`, which prints in yd³ there, or divide by 27.
 
 ---
 
