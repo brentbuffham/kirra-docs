@@ -262,6 +262,23 @@ fx:deckBase[3] - packageLength(1, "GB230MM")      // top of one gas bag above de
 
 A count of 0 gives 0 m. If the product isn't in your product list, has no Length (mm), or the count is not a whole number, the formula doesn't evaluate and Kirra tells you which holes fell back.
 
+#### packageFit(length, "Product")
+
+The length of the nearest whole number of packages to a length you give, so a deck never ends in part of a stick. Where two counts are equally close, it takes the lower one.
+
+| Parameter | Description |
+|-----------|-------------|
+| `length` | The length you'd like, in metres |
+| `"Product"` | The product's name in quotes. It needs a Length (mm) |
+
+```
+fx:holeLength - packageFit(holeLength - 2.2, "PRE32MM")   // sticks up to about 2.2 m from the collar
+```
+
+On a 10 m hole with 0.4 m sticks, that asks for 7.8 m, gets 19 sticks (7.6 m) and puts the top at 2.4 m.
+
+A length of 0 or less gives 0 m. Anything more gets at least one package. When the whole packages come out at a different length from the one asked for, the notice after you apply says so, under **Loaded in whole cartridges**. An unknown product, or one with no Length (mm), means the formula doesn't evaluate, as for `packageLength`.
+
 #### vertical(distance)
 
 Turns a vertical distance into metres along the hole, so a depth measured straight down works on an angled hole too. On a hole at 20° from vertical, `vertical(1)` is 1.064 m along the hole.
@@ -275,6 +292,47 @@ fx:holeLength - vertical(subdrillAmount + 1)   // 1 m (vertically) above the gra
 ```
 
 Up-holes and face holes are measured along the hole, so there `vertical(1)` is simply 1 m. If the point would land outside the hole (on a nearly flat hole a short vertical distance is very long along it), the formula doesn't evaluate and Kirra tells you which holes fell back.
+
+#### surfaceDepth("Surface", fallback)
+
+Charge to a surface: a clay seam, a coal top, a water level, an RL plane. It gives the depth in metres along the hole from the collar to the first place the hole crosses the named surface. Each hole gets its own depth, so a deck follows an undulating seam. Angled holes and up-holes are measured along the hole, not vertically.
+
+| Parameter | Description |
+|-----------|-------------|
+| `"Surface"` | The loaded surface's name in quotes, exactly as it's loaded (capitals count) |
+| `fallback` | Optional. The depth in metres to use where a hole misses the surface |
+
+```
+fx:surfaceDepth("Clay seam")                       // stemming down to the clay seam
+fx:surfaceDepth("Clay seam", 3)                    // 3 m where a hole misses the seam
+fx:Math.max(surfaceDepth("Coal top", 3), 2.5)      // down to the coal, but never less than 2.5 m
+```
+
+Depth runs down the hole, so **+** is below the surface and **−** is above it:
+
+```
+fx:surfaceDepth("Clay seam") + 1      // 1 m below the clay
+fx:surfaceDepth("Clay seam") - 0.5    // 0.5 m above the clay
+```
+
+What happens when it can't find the surface:
+
+- **The hole misses it** (the surface is above the collar, below the toe, or not over the hole): the fallback is used. With no fallback the formula doesn't evaluate.
+- **The surface isn't loaded**: each hole keeps the depth it last worked out for that surface. A hole with no depth remembered uses the fallback.
+- **Two loaded surfaces share the name**: the formula doesn't evaluate. Rename one.
+
+Every apply and Recalculate tells you, under **Charged to a surface**, which holes used a fallback or a remembered depth.
+
+#### surfaceExitDepth("Solid", fallback)
+
+For a seam with thickness drawn as a closed solid. It gives the depth along the hole to where the hole **leaves** the solid: the crossing after it goes in, or the first crossing if the collar is already inside.
+
+```
+fx:surfaceExitDepth("Coal")         // the bottom of the coal, per hole
+fx:surfaceExitDepth("Coal") + 2     // 2 m below the seam
+```
+
+The solid must be closed. An open surface is refused, even with a fallback, and the notice says to use a closed solid or the seam's top and bottom surfaces. If your seam is two surfaces instead of a solid, use `surfaceDepth` once for each. A hole that ends inside the solid, or misses it, uses the fallback.
 
 #### sdobStem(targetSDoB, density)
 
