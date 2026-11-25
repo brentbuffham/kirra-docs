@@ -152,11 +152,13 @@ Drag or click operator chips: `+`, `-`, `*`, `/`, `(`, `)`, `?`, `:`, `&&`, `||`
 4. The formula bar shows: `fx:holeLength * 0.3` with a preview like `= 3.60 m`
 5. Click **Apply to Field**
 
-### Describe it in plain English
+### Ask Kirra (plain English)
 
-At the top of the Formula Builder is a **"Describe it…"** box. Type what you want the deck to do in
+At the top of the Formula Builder is the **Ask Kirra…** box (called **Describe it…** before Kirra 1.1.37.12). Type what you want the deck to do in
 ordinary English, click **Interpret**, and Kirra fills the formula bar with the matching `fx:`
 formula and shows a one-line readback of what it understood. You can edit the result before applying.
+
+The box reads English and Chinese, whatever language Kirra is set to. In other languages the placeholder shows an English example, because that is what the box reads.
 
 This is a **deterministic translator**, not a chatbot — it recognises a fixed set of charging
 patterns and will tell you plainly when a request is outside what a charge formula can express
@@ -180,6 +182,8 @@ fields).
 | `25% if hole > 5 m, 40% if 5 to 3 m, 75% if 3 to 1.5 m` | nested ternary on `holeLength` |
 | `25% of the hole length only if the subdrill is 1 m else 35%` | `fx:subdrillLength == 1 ? holeLength * 0.25 : holeLength * 0.35` |
 | `25% of hole length rounded to 0.1` | `fx:Math.round((holeLength * 0.25) * 10) / 10` |
+| `1.5 times the burden, at least 1.6 m` | `fx:Math.max(1.6, 1.5 * burden)` |
+| `powder factor 0.8` (a mass, in a mass field) | `fx:0.8 * burden * spacing * benchHeight` |
 
 **Conditional words** it knows: `if`, `when`, `while`, `then`, `else`/`otherwise`; comparators
 `more than` / `over` / `greater than` (→ `>`), `less than` / `under` / `below` (→ `<`),
@@ -215,16 +219,25 @@ The PPV flow understands several refinements:
   own site-law regression rather than relying on the 0.22 default. See the
   [Probability of Exceedance](../analysis/) analytics for the underlying maths.
 
-**What it refuses (on purpose).** A charge formula can only see the hole's geometry and its deck
-depths, so the box declines requests built on quantities it has no variable for, and explains why
-instead of returning a wrong-but-plausible formula: **powder factor**, **burden** / **spacing**,
-**volume** / **area**, **VED (vertical energy distribution)**, and **fragmentation / P80 / X50**.
-Those belong to the solver or pattern tools, not a deck formula.
+**Burden, spacing and powder factor.** The box knows the hole's burden, spacing and bench height, so *"1.5 times the burden"* and *"powder factor 0.8"* work. "Area" means burden × spacing, and "volume" means burden × spacing × bench height. A powder factor gives the deck's mass in kilograms.
+
+**What it refuses (on purpose).** The box declines requests a single hole's formula cannot hold, and explains why
+instead of returning a wrong-but-plausible formula: a **blast volume** (the whole blast, not one hole), **VED (vertical energy distribution)**, and **fragmentation / P80 / X50**.
+Those belong to the solver or analysis tools, not a deck formula.
 
 **Typos.** If a word is close to one it knows ("lenght" → "length"), it suggests the correction and
 asks you to confirm — it never silently auto-corrects.
 
-> The Describe-it box is a starting point. Always sanity-check the readback and the placeholder
+**A whole hole in one sentence.** Describe the whole hole and Ask Kirra builds every deck at once:
+
+```
+3.5 m stem then ANFO to the toe with a primer
+3 m stemming on a gas bag, then 2 m air deck, then ANFO to the toe with a primer
+```
+
+After **Interpret**, Kirra shows a product picker for each part (stemming, explosive, detonator, booster), filled in with the best match from your Product Manager. Product names in a sentence rarely match exactly, so check each picker. Then click **Apply to Hole** to load the stemming, the explosive and the primer. Apply to Hole stays greyed out until you click Interpret, and editing the sentence greys it out again.
+
+> Ask Kirra is a starting point. Always sanity-check the readback and the placeholder
 > values (density, monitor constants) before applying the formula to your holes.
 
 ### Custom Functions
