@@ -36,7 +36,7 @@ The core blast design application, covering:
 - **Dockview panels** for resizable, dockable workspace layout
 - **Pattern Templates** for reusable pattern configurations across projects
 - **Orbit Focus** tool for targeted 3D inspection around any clicked point
-- **Internationalisation** with English, Chinese, French, Mongolian, Russian, and Spanish language support
+- **Internationalisation** with English, Chinese, French, Mongolian, Polish, Russian, and Spanish language support
 - **Dark/Light themes** with customisable colour schemes
 
 For access, visit [kirra-design.com](https://kirra-design.com).

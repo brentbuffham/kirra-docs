@@ -68,7 +68,7 @@ Switches for recording as-drilled / as-charged values against your design holes.
 
 ### Language
 
-The same eight language editions as the **Select Language** menu in the top bar.
+The same nine language editions as the **Select Language** menu in the top bar.
 
 ### About
 
