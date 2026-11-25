@@ -98,6 +98,37 @@ The Custom CSV export — accessed from the **Blasts** tab in the Export dialog 
 | **Convert diameter to** | Unit conversion for the diameter column — dropdown with three options: **Millimeters**, **Meters**, **Inches**. `mm → in` divides by 25.4; `mm → m` divides by 1000 |
 | **Convert subdrill to negative** | When ticked, subdrill values are written as negatives (some downstream systems expect this) |
 
+### File units
+
+**File units** sits on the preset bar's **Name** row, under the preset icons. It has the same three
+options as the import: **Metres (m)**, **International foot (0.3048 m)** and
+**US survey foot (1200/3937 m)**.
+
+<!-- TODO SCREENSHOT: the Custom CSV Export preset bar with File units set to US survey foot, and
+the column labels reading "Start X (ft)". Chrome is off for now; capture when Brent OKs it. -->
+
+It sets the unit the file is written in, whatever Kirra's display units are. The dialog opens on
+the choice from your last export, or **Metres (m)** if there isn't one.
+
+- **Coordinates**: Start, End and Grade X, Y and Z are written in the foot you picked.
+- **Lengths**: Hole Length, Subdrill Amount, Subdrill Length, Bench Height, Burden, Spacing and
+  Measured Length are always written in international feet, even in a US survey foot file.
+- **Diameter**: picking a foot sets **Convert diameter to** to **Inches**. You can change it back.
+- **Charging columns** (deck depths and masses) are written in metres and kilograms.
+- Angles, bearings and timing are never converted.
+
+The column labels in the dialog change to match, so **Start X (mE)** reads **Start X (ft)**. A
+custom header is your own text and Kirra leaves it alone, so if you've typed `Easting (m)` into one,
+fix it before you export in feet.
+
+Here's the difference the foot makes. A collar Z of 334.3311 m writes as **1096.8846** in US survey
+feet and **1096.8868** in international feet. On a northing of 6,770,000 m the two are about 44 ft
+apart, so use the foot the receiving system expects. Many older US State Plane coordinates are in US
+survey feet.
+
+The choice is remembered with the rest of the export settings, which travel in a KAP, and it's
+saved in presets. **Holes CSV / TXT (preset columns)** has no File units: it always writes metres.
+
 ### Select Columns to Export
 
 Fields are grouped by category. Tick each column you want to include. Each row has a **Custom header** input — type a name to override the default column header in the output CSV.
@@ -229,7 +260,7 @@ The Blasts tab in the Export dialog also includes:
 
 ## Tips
 
-- **Coordinate units** — Easting (X), Northing (Y), Elevation (Z) in metres
+- **Coordinate units** — Easting (X), Northing (Y), Elevation (Z) in metres, or in feet when Custom CSV's [File units](#file-units) says so
 - **Diameter** — millimetres by default; Custom CSV lets you convert to inches or metres
 - **Delays** — milliseconds, relative to `fromHoleID`. Use `na`, `n/a`, `null`, or `nan` to write a null connector (the harness-wire convention)
 - **File encoding** — UTF-8 (no BOM)

@@ -255,6 +255,47 @@ slots — so a file from the same source imports in one step next time.
 Presets are kept in Kirra for the workspace you are in. They do not travel in a KAP, so use
 **Export** and **Import** to move them to another workspace or computer.
 
+#### File units
+
+**File units** sits on the preset bar's **Name** row, under the preset icons. It tells Kirra what
+unit the file's numbers are in.
+
+<!-- TODO SCREENSHOT: the Map Columns preset bar with File units set to US survey foot, and the
+collar labels reading "Start X (ft)*". Chrome is off for now; capture when Brent OKs it. -->
+
+| Option | One unit is |
+|---|---|
+| **Metres (m)** | 1 m |
+| **International foot (0.3048 m)** | 0.3048 m exactly |
+| **US survey foot (1200/3937 m)** | 1200/3937 m, about 0.3048006 m |
+
+The choice is about the file, not your screen, so Kirra's display units don't change it. A metric
+user can read a feet file and a US user can read a metres one. The dialog opens on **Metres (m)**.
+**Use last used column order** (under **Column Detection**) and a preset put back the choice you
+last imported with.
+
+What it converts:
+
+- **Coordinates**: Start, End and Grade X, Y and Z are read in the foot you picked.
+- **Lengths**: Hole Length, Bench Height, Subdrill, Burden, Spacing and Measured Length are always
+  read in international feet, even when the file is in US survey feet.
+- **Diameter** keeps its own **Diameter Units** setting. Picking a foot sets it to **inches**, and
+  you can change it back.
+- **Charging columns** (deck depths and masses) are read in metres and kilograms, whatever the file
+  units say.
+- Angles, bearings and timing are never converted.
+
+Picking a foot relabels the coordinate and length fields, so **Start X(mE)\*** reads
+**Start X (ft)\*** and **Hole Length** reads **Hole Length (ft)**. Go back to metres and the labels
+go back too. The holes land in Kirra in metres, the same as any other import.
+
+Why two feet? Over a hole's length the two agree to four decimals. Over a big northing they don't:
+at 6,770,000 m they're about 44 ft apart. Many older US State Plane coordinates are in US survey
+feet. If you aren't sure which foot a file uses, check with whoever supplied it before you import.
+
+The choice is saved with the last-used column order, which travels in a KAP, and in any preset you
+save.
+
 #### Settings for the whole file
 
 | Control | Purpose |
@@ -366,6 +407,8 @@ If the CSV provides absolute `holeTime` but no `timingDelayMilliseconds`, Kirra 
 
 ### Unit conversion
 
+- **Coordinates and lengths**: from metres, international feet or US survey feet, set by
+  [File units](#file-units)
 - **Diameter** — `m → mm` (× 1000) or `in → mm` (× 25.4) on import; reverse on export
 - **Angle** — `dip-from-horizontal` (90 = horizontal) converts to Kirra's `angle-from-vertical` (0 = vertical) as `90 − value`
 
