@@ -2,6 +2,55 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.158
+
+_2026-11-26_
+
+**Bug Fix**
+
+- Skew mine grids defined in feet now place data in the right spot
+
+## Release v1.1.37.157
+
+_2026-11-26_
+
+**Feature**
+
+- The DXF export can write feet, for sites whose software works in feet
+- XYZ, CSV and other point files can be imported in feet
+
+## Release v1.1.37.156
+
+_2026-11-26_
+
+History not available at the moment.
+
+## Release v1.1.37.155
+
+_2026-11-26_
+
+**Feature**
+
+- DXF files drawn in feet now import at the correct size
+
+## Release v1.1.37.154
+
+_2026-11-26_
+
+History not available at the moment.
+
+## Release v1.1.37.153
+
+_2026-11-26_
+
+History not available at the moment.
+
+## Release v1.1.37.152
+
+_2026-11-26_
+
+History not available at the moment.
+
 ## Release v1.1.37.151
 
 _2026-11-26_
