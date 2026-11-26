@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.159
+
+_2026-11-26_
+
+**Feature**
+
+- Vulcan design databases in feet or yards now import at the correct size
+- DXF files drawn in yards now import at the correct size
+
 ## Release v1.1.37.158
 
 _2026-11-26_
