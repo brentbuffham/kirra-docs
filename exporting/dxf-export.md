@@ -27,9 +27,28 @@ One DXF file can carry any mix of holes, drawings and surfaces.
 | **Include Blast Holes** | On | Export the visible blast holes |
 | **Include KAD Drawings (points / lines / polys / circles / text)** | On | Export the visible KAD drawings |
 | **Include Surfaces (3DFACE triangles)** | Off | Export visible surface triangles as 3DFACE entities, one layer per surface |
+| **File units** | Metres (m) | **Metres (m)**, **International foot (0.3048 m)** or **US survey foot (1200/3937 m)**. See [File units](#file-units) |
 | **Filename** | `KIRRA_<content>_<date>_<time>.dxf` | Updated automatically as you change the options |
 
 To export each visible surface to its own DXF file, use the **DXF Surface (3DFACE)** row on the **Surfaces / Mesh** tab of the Export dialog instead.
+
+### File units
+
+Use **File units** when the site's other software works in feet.
+
+- **Metres (m)** writes the file exactly as before.
+- Either foot writes every coordinate and size in that foot: positions, the collar, grade and
+  toe circles, and text heights. Kirra also marks the file as feet in its header (`$INSUNITS`
+  2 for the international foot, 21 for the US survey foot), so CAD software that reads the
+  header knows what it has.
+
+**File units** doesn't depend on the Units switch. The dialog remembers your choice until
+Kirra is reloaded. A DXF exported in feet comes back at the right size when you
+[import it](../importing/dxf.md#drawings-in-feet-or-yards) again.
+
+Not sure which foot? On a large northing the two differ by tens of feet. Check with whoever
+receives the file. See [File units](../importing/csv-formats.md#file-units) on the CSV page
+for the difference.
 
 ---
 

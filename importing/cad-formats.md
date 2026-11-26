@@ -76,6 +76,11 @@ does not come in cleanly, export DXF from your CAD package instead.
 
 Reads a Maptek Vulcan design file: blast holes and the drawings around them.
 
+**Project units.** After you pick the file, **Vulcan ARCH_D — Project units** asks which
+units the Vulcan project uses. Pick them in **Project units**, or click **Load project .dg1**
+to read them from the project file, then click **Load**. See
+[Vulcan project units](#vulcan-project-units).
+
 **Holes.** Vulcan holes are recognised by their Link / MVAR data or a "blast hole"
 description. Each keeps its collar, grade and toe; holes with several intervals are
 accepted. Holes are grouped into blasts by their Vulcan layer. Diameter and hole type come
@@ -106,10 +111,39 @@ in with their Vulcan MVAR attributes. The database is read only; Kirra does not 
    **Entities**, **Points** and whether it holds a **Blast**. Tick **Load** for the layers
    you want, or **Load every layer**.
 3. Optionally **Load specifications.dab** for hole diameters.
-4. Click **Load**.
+4. Set **Project units**, or click **Load project .dg1** to read them. See
+   [Vulcan project units](#vulcan-project-units).
+5. Click **Load**.
 
 This import uses the browser's private file storage to read large databases. If the
 browser does not provide it, Kirra says so.
+
+---
+
+## Vulcan project units
+
+Vulcan's files don't record their units. A design database or archive from a feet project
+holds the same plain numbers as one from a metres project. The unit is set on the Vulcan
+project itself, in its `.dg1` file. So both Vulcan imports ask:
+
+| Project units | One unit is |
+|---|---|
+| **Metres (m)** | 1 m. Nothing is converted |
+| **International yard (0.9144 m)** | 3 international feet |
+| **International foot (0.3048 m)** | 0.3048 m |
+
+These are the three coordinate units Vulcan offers. One unit covers every number Vulcan
+stores, coordinates and lengths alike, so with yards or feet Kirra converts all of them to
+metres.
+
+**Load project .dg1** is optional. Kirra reads the project's unit from the file, sets
+**Project units** to match, and shows it beside the button. If the `.dg1` doesn't name a
+unit, Kirra says so and leaves the choice to you.
+
+The choice is remembered until Kirra is reloaded, and shared by the ARCH_D import, the design
+database import and the [ARCH_D export](../exporting/other-formats.md#maptek-vulcan-arch_d).
+When Kirra converts, the import's closing message says so, for example "design.arch_d is
+drawn in feet; Kirra converted it to metres."
 
 ---
 
@@ -122,8 +156,15 @@ Reads Micromine Extended Data string files.
 - Single points become point entities, one per string number.
 - Colours are read from the file; strings without one are white.
 
-There is no dialog. If the file turns out to be a Surpac string file, Kirra says so — use
-the **Surpac** row instead.
+A Micromine STR doesn't record its units, so **Micromine STR — Project units** asks which
+units the Micromine project uses: **Metres (m)**, **International foot (0.3048 m)**, **US
+survey foot (1200/3937 m)** or **International yard (0.9144 m)**. Click **Load**. With feet
+or yards, every coordinate converts to metres, and the message after the import says so.
+The choice is remembered until Kirra is reloaded, and the
+[Micromine STR export](../exporting/other-formats.md#micromine-str) uses it too.
+
+If the file turns out to be a Surpac string file, Kirra says so — use the **Surpac** row
+instead.
 
 A Micromine `.str` dropped on the canvas is recognised automatically.
 

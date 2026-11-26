@@ -178,6 +178,27 @@ dialog, or **Save** on the **Block Model — Vulcan CSV** row of the Export dial
 
 ---
 
+## Files in feet or yards
+
+Kirra works in metres. These formats can be read or written in feet, and some in yards
+too. Each is set by the file or in its dialog, whatever the Units switch says.
+
+| Format | Import | Export | Where it's set |
+|---|---|---|---|
+| Custom CSV (blast holes) | Metres, international feet, US survey feet | Same | **File units** on the preset bar. See [CSV Formats](../importing/csv-formats.md#file-units) and [CSV Export](../exporting/csv-export.md#file-units) |
+| DXF | Feet, US survey feet or yards, read from the file's `$INSUNITS` | Metres, international feet, US survey feet | Import: automatic, see [DXF Import](../importing/dxf.md#drawings-in-feet-or-yards). Export: **File units**, see [DXF Export](../exporting/dxf-export.md#file-units) |
+| Point clouds (`.xyz`, `.txt`, `.csv`, `.pts`, `.ptx`, text `.ply`) | Metres, international feet, US survey feet | — | **File units:** in **Import Point Cloud**. See [Point files in feet](../importing/surfaces-and-point-clouds.md#point-files-in-feet) |
+| Vulcan ARCH_D | Metres, yards, feet | Same | **Project units**, or **Load project .dg1**. See [Vulcan project units](../importing/cad-formats.md#vulcan-project-units) |
+| Vulcan Design Database | Metres, yards, feet | — | **Project units**, or **Load project .dg1** |
+| Micromine STR | Metres, international feet, US survey feet, yards | Same | **Micromine STR — Project units**, asked on import and export. See [Other CAD Formats](../importing/cad-formats.md#micromine-str) |
+| Datamine wireframe (`.dm` pair) | Metres, international feet, US survey feet, yards | — | **Datamine wireframe — Project units**. See [Surfaces and Point Clouds](../importing/surfaces-and-point-clouds.md#datamine-surface) |
+| ESRI `.prj` skewed mine grid | The `.prj`'s own unit | — | Read from the `.prj`. See [CRS Library](../analysis/crs-library.md#notes) |
+
+**Holes CSV / TXT (preset columns)** always writes metres. Formats not in this table have no
+units setting.
+
+---
+
 ## Untested exports — please verify before production use
 
 These formats are registered and produce files without errors, but they
@@ -188,7 +209,7 @@ end-to-end.
 
 | Format | Direction | What still needs verification |
 |---|---|---|
-| Maptek Vulcan ARCH_D (`.arch_d`) | Export | Re-import in Vulcan to confirm hole geometry, layer name, and any vendor-specific Attr templates are preserved. |
+| Maptek Vulcan ARCH_D (`.arch_d`) | Export | Re-import in Vulcan to confirm hole geometry, layer name, and any vendor-specific Attr templates are preserved, and that a feet or yard export loads at the right size in a feet or yard project. |
 | Orica i-kon IKN (`.ikn`) | Export | Load into an Orica i-kon logger / SHOTPlus and verify the `TimingPlan.xml` schema, hole IDs, and delays are accepted. |
 | **Other formats may also be untested** | — | If you successfully (or unsuccessfully) exchange a file with a third-party system, please tell us with the **Report** or **Request** button on the welcome dialog that opens when Kirra starts, so this list can be kept honest. |
 

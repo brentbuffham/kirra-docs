@@ -91,7 +91,9 @@ travels with your KAP and KAT files to sites that have none.
 ## Notes
 
 - Only X and Y are converted. Elevations are never changed.
-- ESRI `.prj` files for skewed mine grids (*Rectified Skew Orthomorphic*) are supported.
+- ESRI `.prj` files for skewed mine grids (*Rectified Skew Orthomorphic*) are supported,
+  in metres or in the feet the `.prj` names (international or US survey feet). The false
+  easting and northing are read in the grid's own unit.
 - The GeoTIFF export picker lists only Library entries with an EPSG code, because the file
   must record one.
 

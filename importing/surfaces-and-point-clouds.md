@@ -68,6 +68,7 @@ After you pick the file, the **Import Point Cloud** dialog asks how to bring it 
 | Setting | What it does |
 |---|---|
 | **Import As:** | **Point Cloud (KAD Cloud Entity - Increased Point Capability)**, **Point Cloud (KAD points)** or **Surface (triangulated mesh)**. A file with more than 1,000,000 points starts on **Point Cloud (KAD Cloud Entity - Increased Point Capability)**; a smaller one starts on **Surface (triangulated mesh)** |
+| **File units:** | The units of the file's X, Y and Z: **Metres (m)**, **International foot (0.3048 m)** or **US survey foot (1200/3937 m)**. See [Point files in feet](#point-files-in-feet) |
 | **Coordinate Transformation:** | Shown for a latitude / longitude file: **Keep as WGS84**, or **Transform to projected coordinates** with an **EPSG Code:** or **Custom Proj4:** |
 | **Tolerance (3D):** | Point Cloud (KAD Cloud Entity - Increased Point Capability): remove points closer than this, in 3D, to one already kept. 0 — the default — keeps every point |
 | **Max Points:** | KAD points: thin the cloud to this many points (50,000 to start). 0 keeps them all, up to the 1,000,000-point limit |
@@ -89,6 +90,25 @@ are coloured by elevation, blue low to red high.
 
 Choosing **Point Cloud (KAD points)** for a file of more than 1,000,000 points shows
 [Too Many Points for KAD Points](#too-many-points-for-kad-points).
+
+### Point files in feet
+
+A text point file doesn't say its units, so **File units:** tells Kirra. It opens on
+**Metres (m)**, or on your last choice since Kirra was loaded. It doesn't depend on the
+Units switch.
+
+With a foot chosen, every X, Y and Z is converted to metres as the points are read, before
+the shift and before the cloud or surface is built. Kirra uses the international foot for
+**International foot (0.3048 m)** and the US survey foot for **US survey foot (1200/3937 m)**.
+The tolerances, **Max Edge Length:** and the other distances in the dialog are in metres,
+because they apply to the converted points.
+
+**File units:** isn't shown for a latitude / longitude file, nor for a
+[Transform (reproject CRS)](transform-import.md) import. There the coordinate system
+decides the units.
+
+A Geometry CSV read as a **Point Cloud** comes to this same dialog, so it has **File units:**
+too.
 
 Text files over 50 MB are read in pieces, under a **Reading large point cloud** progress
 bar, so a large survey does not run the browser out of memory.
@@ -177,6 +197,12 @@ files. Kirra tells the two apart by their content, not their names.
 
 When you drop the pair on the canvas instead, they are matched by name: `…pt.dm` with
 `…tr.dm`.
+
+A `.dm` file doesn't record its units, so **Datamine wireframe — Project units** asks which
+units the Datamine project uses: **Metres (m)**, **International foot (0.3048 m)**, **US
+survey foot (1200/3937 m)** or **International yard (0.9144 m)**. Click **Load**. With feet
+or yards, every point converts to metres, and the message after the import says so. The
+choice is remembered until Kirra is reloaded.
 
 ---
 

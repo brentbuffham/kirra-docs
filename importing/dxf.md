@@ -65,9 +65,34 @@ text label at their first point.
 
 ## Coordinates
 
-X, Y and Z are kept exactly as they are in the file. If your DXF is in a different
-coordinate system from your project, use **DXF — Transform (reproject CRS)** — see
-[Transform Import](transform-import.md).
+X, Y and Z are kept exactly as they are in the file, unless the file says it is drawn in
+feet or yards. If your DXF is in a different coordinate system from your project, use
+**DXF — Transform (reproject CRS)** — see [Transform Import](transform-import.md).
+
+### Drawings in feet or yards
+
+Kirra works in metres. A DXF records its drawing units in its header (`$INSUNITS`), and
+Kirra reads three of them:
+
+| `$INSUNITS` | Drawn in | What Kirra does |
+|---|---|---|
+| 2 | Feet | Converts to metres, using the international foot (0.3048 m) |
+| 21 | US survey feet | Converts to metres, using the US survey foot (1200/3937 m) |
+| 10 | Yards | Converts to metres (0.9144 m to the yard) |
+
+Every X, Y and Z converts, and so does each circle's radius. **Import Complete** then adds a
+line for each converted file, for example "pit_crest.dxf is drawn in feet; Kirra converted
+it to metres."
+
+There is nothing to set. The conversion happens whatever the Units switch says, because it
+depends on the file, not on how Kirra shows numbers.
+
+Any other unit code, or none at all, reads as metres, exactly as before. Many CAD packages
+and templates write a default code that doesn't match the drawing: some metre UTM
+files say inches. A feet or yard code is never a default, so Kirra trusts only those.
+
+A DXF imported through **DXF — Transform (reproject CRS)** is not converted. There the
+source coordinate system decides the units.
 
 ---
 

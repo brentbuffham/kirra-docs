@@ -34,6 +34,17 @@ Each hole carries its ID, collar, grade and toe, sub-drill, dip, bearing, burden
 and spacing. Holes with sub-drill export with three points (collar, grade, toe);
 holes without export with two.
 
+**Project units.** The **Export Vulcan ARCH_D (Basic Round Trip)** dialog has a
+**Project units** row: **Metres (m)**, **International yard (0.9144 m)** or **International
+foot (0.3048 m)**. Set it to the units of the Vulcan project that will load the file, or
+click **Load project .dg1** to read them from the project. Vulcan's files don't record their
+units, so a metres file loaded into a feet project would come in 3.28 times too small.
+
+With yards or feet, Kirra writes every position and length in that unit. Angles and
+bearings don't change. The message after the export says which unit was written, for example
+"design.arch_d is written in feet, for a feet project." **Metres (m)** writes the file
+exactly as before. The choice is shared with the [Vulcan imports](../importing/cad-formats.md#vulcan-project-units).
+
 **Three things the file does not carry.** Each is quick to set right, and knowing
 when saves re-exporting:
 
@@ -58,6 +69,25 @@ different palette, recolour in Vulcan after loading.
 > per row of its *Hole Intervals* grid. Kirra's model is collar, grade and end,
 > so a hole imported with more than one interval keeps the last (the bench floor)
 > and the others are discarded. Re-exporting such a hole will not restore them.
+
+---
+
+## Micromine STR
+
+Export the visible KAD drawings to a Micromine Extended Data string file (`.str`): lines,
+polygons and points.
+
+1. **Export Micromine STR** asks for the **Filename:**. Text is not exported, because a
+   Micromine STR has no text. If text is visible, the prompt says how much will be left out.
+2. **Micromine STR — Project units** asks which units the file is for: **Metres (m)**,
+   **International foot (0.3048 m)**, **US survey foot (1200/3937 m)** or **International
+   yard (0.9144 m)**. Click **Export**.
+
+A Micromine STR doesn't record its units, so pick the units of the Micromine project that
+will load it. With feet or yards, Kirra converts every coordinate from metres as the file is
+written, and **Export Complete** says which unit was written. **Metres (m)** writes the file
+exactly as before. The choice is shared with the
+[Micromine STR import](../importing/cad-formats.md#micromine-str).
 
 ---
 
