@@ -2,6 +2,31 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.162
+
+_2026-11-26_
+
+**Feature**
+
+- Micromine string files can be imported and exported in feet or yards
+- Datamine wireframes from feet or yard projects import at the correct size
+
+## Release v1.1.37.161
+
+_2026-11-26_
+
+**Feature**
+
+- Vulcan archive export can write feet or yards for imperial projects
+
+## Release v1.1.37.160
+
+_2026-11-26_
+
+**Feature**
+
+- Vulcan archives from feet or yard projects now import at the correct size
+
 ## Release v1.1.37.159
 
 _2026-11-26_
