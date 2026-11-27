@@ -2,6 +2,22 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.176
+
+_2026-11-27_
+
+**Feature**
+
+- Timing design check shows relief in ms/ft and spacing in feet
+
+## Release v1.1.37.175
+
+_2026-11-27_
+
+**Feature**
+
+- Electronic Timing relief reads and takes ms/ft in US units
+
 ## Release v1.1.37.174
 
 _2026-11-27_
