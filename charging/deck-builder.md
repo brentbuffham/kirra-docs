@@ -237,6 +237,8 @@ asks you to confirm — it never silently auto-corrects.
 
 After **Interpret**, Kirra shows a product picker for each part (stemming, explosive, detonator, booster), filled in with the best match from your Product Manager. Product names in a sentence rarely match exactly, so check each picker. Then click **Apply to Hole** to load the stemming, the explosive and the primer. Apply to Hole stays greyed out until you click Interpret, and editing the sentence greys it out again.
 
+**A stand-off from a seam.** `2 m stand-off from the coal seam` puts an inert deck 2 m either side of a coal seam, in every hole. See [Stand-off from a Seam](#stand-off-from-a-seam).
+
 > Ask Kirra is a starting point. Always sanity-check the readback and the placeholder
 > values (density, monitor constants) before applying the formula to your holes.
 
@@ -565,6 +567,115 @@ Click **Apply to Selected** in the Deck Builder to write the charge design to th
 5. Kirra evaluates all formulas for each hole and generates the charge columns
 
 To re-fit existing charging after hole lengths change, select the holes and click **Reapply Charging** in the **Holes** toolbar. **Remove Charges** clears charging from the selected holes.
+
+---
+
+## Stand-off from a Seam
+
+A stand-off keeps explosive away from a coal seam or a clay band. It is an inert deck that runs
+a set distance above and below the seam. Kirra works out its depths for each hole, from where
+that hole crosses the seam, so one stand-off covers a whole blast even where the seam dips.
+
+### Before you start
+
+- **Load the seam.** Kirra reads it four ways:
+
+  | The seam is | The stand-off runs from | To |
+  |---|---|---|
+  | One surface | N m above where the hole crosses it | N m below the same crossing |
+  | One surface with a top and a bottom sheet | N m above the top sheet | N m below the bottom sheet |
+  | A closed solid | N m above where the hole enters it | N m below where it leaves |
+  | Two surfaces, a top and a bottom | N m above the top surface | N m below the bottom surface |
+
+  For two surfaces, give each name a separate word that says which is which, for example
+  `Coal Top` and `Coal Bottom`. Kirra reads **top**, **roof**, **hanging** or **upper** for the
+  top, and **bottom**, **floor**, **foot**, **footwall**, **base** or **lower** for the bottom.
+- **Charge the hole first.** A stand-off splits the charge that is already in the hole. Or
+  describe the charge and the stand-off in [one sentence](#a-charge-and-a-stand-off-in-one-sentence).
+- **Have an inert product for it.** The stand-off product must be a **Stemming**, **Drill
+  Cuttings** or **Air** product in the [Product Manager](product-manager.md).
+
+### Adding a stand-off
+
+1. Select the holes, and open the Deck Builder on a charged hole that crosses the seam.
+2. In the **Ask Kirra…** box, type the stand-off, for example `2 m stand-off from the coal seam`,
+   and click **Interpret**.
+3. The readback says what Kirra read, for example "Stand-off: 2 m either side of Coal_Seam,
+   worked out per hole." Choose the **Stand-off product**. If the sentence names drill
+   cuttings, stemming or air, Kirra picks the closest product for you; check it.
+4. If the hole has no primer, also choose a **Detonator** and a **Booster**. The stand-off
+   splits the charge in two, and each part needs a primer.
+5. Click **Apply to Hole**. The section view shows the stand-off on this hole.
+6. Click **Apply Changes** to put the stand-off on every selected hole, each at its own seam
+   depth.
+
+Name the seam with a word from its surface name: `coal` finds `Coal_Seam`. If the word fits
+more than one loaded surface, Kirra lists them and asks which one you meant. If the surface
+isn't loaded, Kirra asks you to load it first.
+
+Sentences Kirra reads as a stand-off:
+
+| You type | Stand-off product |
+|---|---|
+| `2 m stand-off from the coal seam` | You choose it |
+| `Protect seam 2m Stand-off` | You choose it |
+| `2 m stand-off from the coal seam with drill cuttings` | Drill cuttings, picked for you |
+| `Stem Deck 2m either side of coal to protect` | Stemming, picked for you |
+| `air 1.5 m either side of the coal` | Air, picked for you |
+
+A sentence needs one distance and one seam. Without a distance, Kirra asks how far either side
+of the seam. Without a seam, it asks you to name one. Two distances in one sentence are refused.
+
+### A charge and a stand-off in one sentence
+
+Describe the hole and the stand-off together:
+
+```
+3 m stem, ANFO, stem 2 m either side of the coal seam, ANFO to the toe
+```
+
+Kirra builds the charge (3 m of stemming, then ANFO to the toe), then splits it with a 2 m
+stemming stand-off either side of the coal. Choose the products in the pickers, then click
+**Apply to Hole**.
+
+Two things aren't read yet, and Kirra says so rather than guessing:
+
+- **A different charge either side of the seam**, such as ANFO above and emulsion below. Use one
+  product, or build the decks by hand.
+- **More than one stand-off.** Describe one, and add the others by hand.
+
+### What happens in each hole
+
+For example, a hole with stemming to 3.5 m and ANFO from 3.5 m to the 10 m toe crosses coal at
+6 m. A 2 m stand-off gives ANFO from 3.5 to 4 m, the stand-off from 4 to 8 m, and ANFO from 8 to
+10 m.
+
+Some holes need more than a split. Kirra handles each case as follows, and the **Stand-off from
+the seam** message after **Apply Changes** lists the holes it affected:
+
+| When | Kirra |
+|---|---|
+| The hole doesn't reach the seam | Leaves its charge as it was. To avoid the warning, give those holes a charge rule without the stand-off |
+| The stand-off reaches the stemming, with no explosive left between them | Joins it to the stemming. With the same product they become one deck; with another product they stay two inert decks |
+| The stand-off runs past the toe or above the collar | Stops it at the toe or the collar, and says how much was cut |
+| It splits a fixed-mass deck | Takes the stand-off's share out of the mass: 6 m of ANFO cut to 4 m keeps 4/6 of its kilograms |
+| It splits a charge into two columns | Gives each column a primer, copied from the charge or the hole, 10% of the column's length up from its base |
+| A primer sits inside the stand-off | Moves it into the column below that has no primer, or the one above if there is none below |
+| There is no primer to copy, and none was chosen | Adds none. The message names the column without a primer: add one |
+
+### When the hole or the seam changes
+
+The stand-off is worked out from the seam surface each time Kirra recalculates the charge, for
+example with **Recalculate Loading** in the Edit Hole dialog. If a hole is re-dipped, the
+stand-off follows the seam at the new angle and stops at the new toe if it has to.
+
+If a hole no longer reaches the seam, the stand-off comes out again. The charge joins back up,
+the stemming gets its old base back, and any primers the stand-off added or moved go back to how
+they were. Kirra says so on the status line.
+
+If the seam surface is no longer loaded, the stand-off stays where it was, with a notice.
+
+The stand-off is saved with the hole's charging, in the project and in KAP files.
 
 ---
 
