@@ -2,6 +2,29 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.170
+
+_2026-11-27_
+
+History not available at the moment.
+
+## Release v1.1.37.169
+
+_2026-11-27_
+
+**Feature**
+
+- OBJ, GLTF and Surpac surfaces import in feet, yards or metres
+- OBJ, GLB and Surpac surface exports write feet, yards or metres
+
+## Release v1.1.37.168
+
+_2026-11-27_
+
+**Feature**
+
+- Deck Builder reads a booster every set distance up an empty hole
+
 ## Release v1.1.37.167
 
 _2026-11-27_
