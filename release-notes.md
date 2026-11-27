@@ -2,6 +2,40 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.174
+
+_2026-11-27_
+
+**Feature**
+
+- DXFs that do not say their unit now ask for the project units
+- Diptek Pulse files in feet import, converted to metres
+
+**Bug Fix**
+
+- Flyrock rock density help asks for pounds per cubic foot in US units
+
+## Release v1.1.37.173
+
+_2026-11-27_
+
+History not available at the moment.
+
+## Release v1.1.37.172
+
+_2026-11-27_
+
+History not available at the moment.
+
+## Release v1.1.37.171
+
+_2026-11-27_
+
+**Feature**
+
+- Surpac STR holes and strings import and export in feet, yards or metres
+- Surpac DTM and STR export from the Drawings tab writes feet or yards
+
 ## Release v1.1.37.170
 
 _2026-11-27_
