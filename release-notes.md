@@ -2,6 +2,15 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.164
+
+_2026-11-27_
+
+**Feature**
+
+- Micromine plain-text string files now import, in feet, yards or metres
+- Datamine string files import on their own, in feet, yards or metres
+
 ## Release v1.1.37.163
 
 _2026-11-26_
