@@ -2,6 +2,49 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.181
+
+_2026-11-28_
+
+**Bug Fix**
+
+- VXT holes with lettered labels no longer import as hole 0
+
+## Release v1.1.37.180
+
+_2026-11-28_
+
+**Feature**
+
+- Surpac STR files in feet or yards store hole diameter in inches
+
+## Release v1.1.37.179
+
+_2026-11-28_
+
+**Feature**
+
+- Relief map colour bands are edited in ms/ft when US units are on
+
+**Bug Fix**
+
+- Printed relief legend no longer labels ms/ft bands as ms/m
+
+## Release v1.1.37.178
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.177
+
+_2026-11-27_
+
+**Feature**
+
+- DXF 3DFACE and Baked OBJ / GLB surface exports write feet, yards or metres
+- PLY meshes import in feet, yards or metres
+
 ## Release v1.1.37.176
 
 _2026-11-27_
