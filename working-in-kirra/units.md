@@ -10,6 +10,9 @@ Kirra starts in Metric. Nothing changes until you choose US Customary.
 ## Choose your units
 
 1. Click **Units**: the ruler button in the top bar, beside **Help**.
+
+   ![The top bar with the Units button outlined in red, beside the Help button](../screenshots/UnitsButton.png)
+
 2. Under **Unit system**, choose **Metric (m, mm, kg)** or **US Customary (ft, in, lb)**.
 3. For US Customary, choose a **Coordinate foot**:
    - **International foot (0.3048 m)**;
@@ -20,6 +23,9 @@ Kirra starts in Metric. Nothing changes until you choose US Customary.
 4. For US Customary, choose **Explosive density**: **g/cc (as on loading sheets)** or
    **lb/ft³**.
 5. Click **OK**.
+
+![The Units dialog with US Customary chosen: Coordinate foot set to International foot (0.3048 m), the note on the two feet under it, and Explosive density set to g/cc](../screenshots/UnitsDialog.png)
+*US Customary with the international foot. The note under **Coordinate foot** says when each foot applies.*
 
 Kirra remembers your choice in this browser, for every [workspace](workspaces.md).
 
@@ -71,6 +77,8 @@ A KAP project or KAT template remembers the units it was made in. When you open 
 units differ from yours, **Project units** says, for example, *This project uses US
 Customary (ft, in, lb), US survey foot. You are using Metric (m, mm, kg). Your data is the
 same either way; only how numbers are shown changes.*
+
+![The Project units prompt: This project uses US Customary (ft, in, lb), US survey foot. You are using Metric (m, mm, kg). Buttons Keep Metric and Switch to US Customary](../screenshots/UnitsProjectPrompt.png)
 
 - **Switch to US Customary** shows the project in its units.
 - **Keep Metric** leaves your units as they are.
