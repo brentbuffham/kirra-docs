@@ -95,7 +95,7 @@ Choosing **Point Cloud (KAD points)** for a file of more than 1,000,000 points s
 
 A text point file doesn't say its units, so **File units:** tells Kirra. It opens on
 **Metres (m)**, or on your last choice since Kirra was loaded. It doesn't depend on the
-Units switch.
+[units Kirra shows](../working-in-kirra/units.md).
 
 With a foot chosen, every X, Y and Z is converted to metres as the points are read, before
 the shift and before the cloud or surface is built. Kirra uses the international foot for
@@ -147,6 +147,19 @@ The **Import LAS Point Cloud** dialog offers the choices below. **Import As:** s
 
 **Ground Only** with **Surface** is the quick way to a bare-earth terrain from a LiDAR
 survey.
+
+### LAS files in feet
+
+Under **File Units:**, **Coordinates in** sets the unit of the file's X, Y and Z: **Metres (m)**,
+**International foot (0.3048 m)** or **US survey foot (1200/3937 m)**. A LAS file states its unit
+only through its coordinate system. When it does, Kirra picks it for you and the note under the
+choice says so, for example *From the file's coordinate system: US survey foot (1200/3937 m).*
+If you pick a different unit, the note warns that the file's coordinate system says otherwise,
+and Kirra uses your pick. A file with no unit says *The file does not say its unit. Pick it if
+it is not metres.*
+
+Feet are converted to metres as the points are read, before the shift. For a latitude /
+longitude file the unit applies to elevations only.
 
 Kirra reports how many points it imported. A **Point Cloud (KAD Cloud Entity - Increased Point Capability)** keeps up to the draw
 budget, spread evenly over the file if the file holds more. KAD points show a preview of up to

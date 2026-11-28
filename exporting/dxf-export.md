@@ -42,7 +42,7 @@ Use **File units** when the site's other software works in feet.
   2 for the international foot, 21 for the US survey foot), so CAD software that reads the
   header knows what it has.
 
-**File units** doesn't depend on the Units switch. The dialog remembers your choice until
+**File units** doesn't depend on the [units Kirra shows](../working-in-kirra/units.md). The dialog remembers your choice until
 Kirra is reloaded. A DXF exported in feet comes back at the right size when you
 [import it](../importing/dxf.md#drawings-in-feet-or-yards) again.
 

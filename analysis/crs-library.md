@@ -53,6 +53,7 @@ and **Select destination projection** (the system you want).
 |---|---|
 | **Show:** Southern UTM / Northern UTM / Non-UTM | Filters the **EPSG Code** list |
 | **Show:** Library | Lists your CRS Library. The list label changes to **Projection:** |
+| **Other code:** | Type any EPSG code, for example `2232` for Colorado Central (US survey feet), and press **Enter**. Kirra looks up its definition in your CRS Library, then on epsg.io |
 | **— Use Custom Definition —** | In the EPSG list: use the Proj4 / WKT box below instead |
 | **Load a projection file** (open-file icon) | Reads a `.prj`, `.wkt`, `.proj4` or `.json` into the custom box |
 | **Save the active projection to the Library** (save icon) | Names the current pick and saves it to the Library |

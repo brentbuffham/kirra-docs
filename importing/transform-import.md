@@ -38,7 +38,8 @@ Switching between **Standard** and **Transform** returns you to the first tab.
    - **Select current projection** — the system the file is in.
    - **Select destination projection** — your project's system.
 
-   For each, pick an **EPSG** code (filter the list by hemisphere), choose **Library** to
+   For each, pick an **EPSG** code (filter the list by hemisphere, or type any code in
+   **Other code:** and press **Enter**), choose **Library** to
    pick from your [CRS Library](../analysis/crs-library.md), load a `.prj` / `.proj4` file,
    or paste a Proj4 or WKT definition. Both are required.
 4. Click **Import** (or **Continue** for a point cloud or geometry CSV, which go on to their

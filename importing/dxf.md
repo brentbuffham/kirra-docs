@@ -84,8 +84,8 @@ Every X, Y and Z converts, and so does each circle's radius. **Import Complete**
 line for each converted file, for example "pit_crest.dxf is drawn in feet; Kirra converted
 it to metres."
 
-There is nothing to set. The conversion happens whatever the Units switch says, because it
-depends on the file, not on how Kirra shows numbers.
+There is nothing to set. The conversion happens whatever [units Kirra shows](../working-in-kirra/units.md), because
+it depends on the file, not on how Kirra shows numbers.
 
 Any other unit code, or none at all, reads as metres, exactly as before. Many CAD packages
 and templates write a default code that doesn't match the drawing: some metre UTM

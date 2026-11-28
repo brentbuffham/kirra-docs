@@ -1,6 +1,6 @@
 # Settings
 
-This page covers the theme, the language, and the **Settings** dialog — label sizes, snap
+This page covers the theme, the language, units, and the **Settings** dialog — label sizes, snap
 tolerance, camera and lighting, and performance limits.
 
 ---
@@ -22,6 +22,15 @@ the side panel (**☰**).
 Kirra switches straight away and remembers the choice. Blasting terms are translated as
 blasting terms, not word for word — see the [Blasting Glossary](../reference/blasting-glossary.md).
 Parts of Kirra not yet translated show in English.
+
+---
+
+## Units
+
+Click **Units**, the ruler button in the top bar, to show numbers in **Metric (m, mm, kg)** or
+**US Customary (ft, in, lb)**. For US Customary you also choose the coordinate foot and how
+explosive density is shown. Kirra always stores metric, so switching changes only what you
+see and type. Full guide: [Units](units.md).
 
 ---
 
@@ -129,6 +138,7 @@ Performance tab, or reduce the surface when importing it.
 
 ## Related
 
+- [Units](units.md)
 - [Display Options](display-options.md)
 - [Views & Navigation](views-and-navigation.md)
 - [3D View & Orbit Focus](../reference/3d-tools.md)

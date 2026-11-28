@@ -60,6 +60,7 @@ Welcome to the official documentation for **Kirra**, a web-based blasting patter
 - [Selection & Snapping](working-in-kirra/selection-and-snapping.md) — H / K / V, shapes, modifier keys, snap targets
 - [Views & Navigation](working-in-kirra/views-and-navigation.md) — 2D and 3D, mouse controls, toolbars
 - [Settings](working-in-kirra/settings.md) — theme, language, and every Settings field with its default
+- [Units](working-in-kirra/units.md) — Metric or US Customary; which foot; projects and files in feet
 
 ### Task Guides
 - [Plan a Shot, Start to Finish](tasks/plan-a-shot.md) — template, pattern, ground, charge, tie, check, print, export

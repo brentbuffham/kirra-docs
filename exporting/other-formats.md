@@ -95,6 +95,10 @@ exactly as before. The choice is shared with the
 
 Export surfaces to Surpac format (paired `.dtm` and `.str` files). Kirra automatically deduplicates shared vertices and writes both files with matching base filenames.
 
+Kirra asks which units the files are for. Feet and yards are converted from Kirra's metres as the
+files are written. For blast holes in Surpac STR, see
+[Exporting back to Surpac](../importing/surpac-dtm-str.md#exporting-back-to-surpac).
+
 ---
 
 ## KML / KMZ (Google Earth)
@@ -155,11 +159,15 @@ smaller and opens in software that reads LAZ.
 1. Open the Export dialog. On the **LAS Point Cloud** row of the **Surfaces / Mesh** tab, pick
    **LAS (v1.2)**, **LAZ (v1.2)**, **LAS (v1.4)** or **LAZ (v1.4)** in the drop-down, then click
    the export icon. **LAS (v1.2)** is the default.
-2. **Export LAS Point Cloud** shows a banner saying what the file will hold (see below). Check the
+2. **LAS point cloud — Project units** asks which units the file is for: **Metres (m)**,
+   **International foot (0.3048 m)**, **US survey foot (1200/3937 m)** or **International yard
+   (0.9144 m)**. A LAS file doesn't record its unit, so tell whoever opens it. Feet and yards are
+   converted as the file is written.
+3. **Export LAS Point Cloud** shows a banner saying what the file will hold (see below). Check the
    **Filename:** and click **Export**. The name ends in `.las` or `.laz` to match the drop-down. If
    you type `.las` or `.laz` yourself, Kirra writes that one; the version still comes from the
    drop-down.
-3. Kirra notes that LAS export with projection settings is not available yet and that it is
+4. Kirra notes that LAS export with projection settings is not available yet and that it is
    using default settings. Then choose where to save the file.
 
 **Which version.** LAS 1.2 opens in almost any software; LAS 1.4 holds classes up to 255. Kirra

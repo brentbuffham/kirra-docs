@@ -45,7 +45,8 @@ first rows of the file. For each, choose what it is: **Hole ID**, **Length**, **
 | Setting | What it does |
 |---|---|
 | **Starter layout** | Fill in the mapping from a common layout: **Survey (10-field)**, **Survey (5-field)** or **Surpac 6.3 DrillBlast** |
-| **Diameter unit** | Whether the diameter descriptor is in **metres (×1000)** or **millimetres** |
+| **Project units** | The units of the file's coordinates and hole lengths: **Metres (m)**, **International foot (0.3048 m)**, **US survey foot (1200/3937 m)** or **International yard (0.9144 m)**. It starts on the units Kirra shows, or your last Surpac choice |
+| **Diameter unit** | In metres, whether the diameter descriptor is in **metres (×1000)** or **millimetres**. In feet or yards it shows **inches** and can't be changed: a feet or yards file gives hole diameter in inches |
 | **Default Ø (mm)** | The diameter for holes with no diameter descriptor |
 
 Click **Import**. The holes form one blast named after the file. If any land on top of
@@ -64,6 +65,9 @@ Each string becomes a drawing entity:
 - The colour follows the Surpac string number.
 - Strings longer than 10,000 points are split into parts.
 
+Surpac string files don't record their units, so **Surpac STR — Project units** asks which units
+the file is in. Feet and yards convert to metres on import.
+
 All of the file's drawings go into one drawing layer named after the file. Text in the
 descriptors is kept as point labels; no separate text entities are made.
 
@@ -80,6 +84,9 @@ A Surpac surface is two files:
 
 Select **both** together — hold **Ctrl** (**Cmd** on a Mac) and click each. With only one,
 Kirra reports **Missing Files**.
+
+A Surpac surface doesn't record its units, so **Surpac surface — Project units** asks which units
+the project uses. Feet and yards convert to metres on import.
 
 All the triangulations in the file are merged into **one surface**, drawn green with the
 default elevation colours, in a surface layer named after the `.dtm`. If the surface has
@@ -126,7 +133,12 @@ grades, contours, GeoTIFF export and blast analytics. See
 
 In the **Export** dialog's **Surfaces / Mesh** tab, click **Save** on the
 **Surpac Surface (STR + DTM)** row. One `.str` and `.dtm` pair is written for each visible
-surface.
+surface. Kirra asks which units the files are for; feet and yards are converted as they're
+written.
+
+For blast holes, choose **STR holes** on the **Surpac** row. **STR Holes — export field order** has
+the same **Project units** choice, and its preview shows the values in those units. In feet or
+yards, **Diameter unit** shows **inches** and can't be changed.
 
 ---
 
@@ -137,6 +149,7 @@ surface.
 | **Missing Files** | Select both the `.dtm` and the `.str` |
 | A dropped `.dtm` is not imported | Drop it together with its `.str`, both with the same name |
 | Holes have the wrong diameter | Check **Diameter unit** in the descriptor mapping |
+| Holes are 3.28 times too long or too far apart | The file is in feet: set **Project units** in the descriptor mapping |
 | The data lands in the wrong place | Check the file really is Surpac (Y, X, Z); a Micromine `.str` belongs on the **Micromine STR** row |
 
 ---

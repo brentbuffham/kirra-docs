@@ -45,6 +45,14 @@ The GeoTIFF contains:
 - **Geotransform**: Maps pixel coordinates to real-world coordinates
 - **CRS metadata**: The EPSG code you selected
 
+**Coordinate systems in feet.** When the EPSG code you pick is measured in feet (a US State Plane
+zone, for example), the GeoTIFF is written in that system's feet and marked as feet, and Kirra
+says so when the export finishes: *Coordinates are written in US survey feet, the unit of
+EPSG:2232.* If Kirra can't read the system's unit, it writes metres and says that instead.
+
+A code that isn't in the list can be typed in **Other code:**, for example `2232`, then press
+**Enter**. See [CRS Library](../analysis/crs-library.md).
+
 The gradient visible in Kirra at the time of export is preserved in the GeoTIFF.
 
 ---

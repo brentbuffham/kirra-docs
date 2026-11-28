@@ -185,6 +185,11 @@ variants; multipatch shapes are skipped.
 **Import ESRI Shapefile** offers a projection for latitude / longitude files and a
 **Master RL Offset (Optional)** to raise or lower everything by a fixed elevation.
 
+**Coordinates in** sets the unit of the shapefile's X, Y and Z: **Metres (m)**, **International
+foot (0.3048 m)** or **US survey foot (1200/3937 m)**. A shapefile states its unit only in its
+`.prj`. When it does, Kirra picks it for you; if you pick another, a note warns you and Kirra
+uses your pick. Feet are converted to metres as the shapes are read.
+
 
 ---
 

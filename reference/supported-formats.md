@@ -181,18 +181,27 @@ dialog, or **Save** on the **Block Model — Vulcan CSV** row of the Export dial
 ## Files in feet or yards
 
 Kirra works in metres. These formats can be read or written in feet, and some in yards
-too. Each is set by the file or in its dialog, whatever the Units switch says.
+too. Each is set by the file or in its dialog, whatever [units Kirra shows](../working-in-kirra/units.md).
 
 | Format | Import | Export | Where it's set |
 |---|---|---|---|
 | Custom CSV (blast holes) | Metres, international feet, US survey feet | Same | **File units** on the preset bar. See [CSV Formats](../importing/csv-formats.md#file-units) and [CSV Export](../exporting/csv-export.md#file-units) |
-| DXF | Feet, US survey feet or yards, read from the file's `$INSUNITS` | Metres, international feet, US survey feet | Import: automatic, see [DXF Import](../importing/dxf.md#drawings-in-feet-or-yards). Export: **File units**, see [DXF Export](../exporting/dxf-export.md#file-units) |
+| DXF | Feet, US survey feet or yards, read from the file's `$INSUNITS`; an older DXF with no unit code asks | Metres, international feet, US survey feet | Import: automatic, see [DXF Import](../importing/dxf.md#drawings-in-feet-or-yards). Export: **File units**, see [DXF Export](../exporting/dxf-export.md#file-units) |
 | Point clouds (`.xyz`, `.txt`, `.csv`, `.pts`, `.ptx`, text `.ply`) | Metres, international feet, US survey feet | — | **File units:** in **Import Point Cloud**. See [Point files in feet](../importing/surfaces-and-point-clouds.md#point-files-in-feet) |
 | Vulcan ARCH_D | Metres, yards, feet | Same | **Project units**, or **Load project .dg1**. See [Vulcan project units](../importing/cad-formats.md#vulcan-project-units) |
 | Vulcan Design Database | Metres, yards, feet | — | **Project units**, or **Load project .dg1** |
 | Micromine STR | Metres, international feet, US survey feet, yards | Same | **Micromine STR — Project units**, asked on import and export. See [Other CAD Formats](../importing/cad-formats.md#micromine-str) |
 | Datamine wireframe (`.dm` pair) | Metres, international feet, US survey feet, yards | — | **Datamine wireframe — Project units**. See [Surfaces and Point Clouds](../importing/surfaces-and-point-clouds.md#datamine-surface) |
 | ESRI `.prj` skewed mine grid | The `.prj`'s own unit | — | Read from the `.prj`. See [CRS Library](../analysis/crs-library.md#notes) |
+| Surpac STR holes | Metres, international feet, US survey feet, yards; diameter in inches for feet or yards | Same | **Project units** in the descriptor mapping and in **STR Holes — export field order**. See [Surpac STR / DTM](../importing/surpac-dtm-str.md#str-holes) |
+| Surpac STR drawings, Surpac surfaces | Metres, international feet, US survey feet, yards | Same | **Surpac STR — Project units** / **Surpac surface — Project units** |
+| OBJ, GLTF / GLB surfaces | Metres, international feet, US survey feet, yards | Same | **OBJ surface — Project units** / **GLTF surface — Project units** |
+| PLY surfaces | Metres, international feet, US survey feet, yards | — | **PLY surface — Project units** |
+| LAS / LAZ point clouds | Metres, international feet, US survey feet, picked from the file's coordinate system | Metres, international feet, US survey feet, yards | Import: **Coordinates in**, see [LAS files in feet](../importing/surfaces-and-point-clouds.md#las-files-in-feet). Export: **LAS point cloud — Project units** |
+| ESRI Shapefile | Metres, international feet, US survey feet, picked from the `.prj` | — | **Coordinates in** in **Import ESRI Shapefile** |
+| MineSight `.msr` | Metres, international feet, US survey feet, yards | — | **MineSight — Project units** |
+| DetNet ViewShot `.vxt` | A feet file: international or US survey foot for coordinates; diameters in inches | Metres, international feet, US survey feet | **ViewShot VXT — Project units** |
+| GeoTIFF | — | The unit of the EPSG code you pick: a feet system writes feet | Automatic, see [GeoTIFF Export](../exporting/geotiff-export.md#what-gets-exported) |
 
 **Holes CSV / TXT (preset columns)** always writes metres. Formats not in this table have no
 units setting.
