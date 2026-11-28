@@ -2,6 +2,133 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.203
+
+_2026-11-29_
+
+**Feature**
+
+- Metric or US Customary units for everyone, from the Units button
+
+## Release v1.1.37.202
+
+_2026-11-29_
+
+**Feature**
+
+- Ask Kirra explains what it can read and where to get help
+
+**Bug Fix**
+
+- Deck Builder PPV charge limit reads in in/s in US units
+
+## Release v1.1.37.201
+
+_2026-11-29_
+
+History not available at the moment.
+
+## Release v1.1.37.200
+
+_2026-11-29_
+
+History not available at the moment.
+
+## Release v1.1.37.199
+
+_2026-11-29_
+
+**Bug Fix**
+
+- Deck Builder summary always shows the hole on screen, after switching holes or edits
+
+## Release v1.1.37.198
+
+_2026-11-28_
+
+**Bug Fix**
+
+- Surpac STR hole import shows diameter in inches for feet projects
+
+## Release v1.1.37.197
+
+_2026-11-28_
+
+**Bug Fix**
+
+- Surpac hole export shows its preview in feet and inches for a feet project
+
+## Release v1.1.37.196
+
+_2026-11-28_
+
+**Bug Fix**
+
+- Calculated burden and spacing keep full precision; a 16 ft spacing reads 16.00 ft
+
+## Release v1.1.37.195
+
+_2026-11-28_
+
+**Feature**
+
+- Coordinate system pickers take any EPSG code, such as State Plane 2232
+
+## Release v1.1.37.194
+
+_2026-11-28_
+
+**Feature**
+
+- Kirra warns when burden × spacing is far from the Voronoi cell, or zero
+
+## Release v1.1.37.193
+
+_2026-11-28_
+
+**Feature**
+
+- Imports into a feet coordinate system now land in metres correctly
+
+**Bug Fix**
+
+- Vibration monitor labels and seed traces show inches per second in US units
+- Deck Builder shows depth, length, diameter and mass in US units
+- Voronoi cutoff, legends and timing relief follow the chosen units
+
+## Release v1.1.37.192
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.191
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.190
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.189
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.188
+
+_2026-11-28_
+
+**Feature**
+
+- LAS and LAZ point clouds import and export in feet or US survey feet
+- Shapefiles in feet import using the unit their .prj states
+
 ## Release v1.1.37.187
 
 _2026-11-28_
