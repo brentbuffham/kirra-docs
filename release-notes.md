@@ -2,6 +2,44 @@
 
 Generated from the Kirra source history. Newest first.
 
+## Release v1.1.37.187
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.186
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.185
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.184
+
+_2026-11-28_
+
+History not available at the moment.
+
+## Release v1.1.37.183
+
+_2026-11-28_
+
+**Feature**
+
+- Edit Product can change a product's category; decks using it follow
+
+## Release v1.1.37.182
+
+_2026-11-28_
+
+History not available at the moment.
+
 ## Release v1.1.37.181
 
 _2026-11-28_
